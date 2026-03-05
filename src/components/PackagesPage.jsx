@@ -64,23 +64,23 @@ const packages = [
     id: 'backlink-package',
     name: 'Backlink Package',
     price: '฿49,900',
-    tagline: '1 × DR50+ editorial backlink',
+    tagline: '3 × DR50+ editorial backlinks',
     icon: Link2,
     color: 'from-blue-50 to-indigo-50',
     border: 'border-blue-100',
     iconBg: 'bg-blue-100',
     iconColor: 'text-blue-600',
     items: [
-      'Niche-relevant placement',
-      'Permanent do-follow link',
-      'Full report on placement',
+      '3 × niche-relevant placements',
+      'Permanent do-follow links',
+      'Full report on all placements',
     ],
     description:
-      'A single, high-authority editorial backlink from a DR50+ website in your niche. Backlinks remain one of the strongest ranking signals for Google — and a trusted link from a relevant publication tells both Google and AI models that your brand is credible.',
+      '3 high-authority editorial backlinks from DR50+ websites in your niche. Backlinks remain one of the strongest ranking signals for Google — and trusted links from relevant publications tell both Google and AI models that your brand is credible.',
     details: [
       {
         icon: Shield,
-        title: 'DR50+ Domain Rating',
+        title: '3 × DR50+ Domain Rating',
         body: 'We only place links on websites with a Domain Rating of 50 or above — meaning they have real authority and pass real ranking power. No PBNs, no link farms.',
       },
       {
@@ -144,24 +144,24 @@ const packages = [
     id: 'premium-backlinks',
     name: 'Premium Backlink Bundle',
     price: '฿89,900',
-    tagline: '3 × DR50+ editorial backlinks',
+    tagline: '5 × DR50+ editorial backlinks',
     icon: Layers,
     color: 'from-purple-50 to-violet-50',
     border: 'border-purple-100',
     iconBg: 'bg-purple-100',
     iconColor: 'text-purple-600',
     items: [
-      'Niche-matched placements',
+      '5 × niche-matched placements',
       'Permanent do-follow links',
       'Full placement report',
     ],
     description:
-      '3 high-authority editorial backlinks from DR50+ websites in your niche. Triple the link equity, triple the authority signal. For businesses in competitive markets where a single link isn\'t enough to move the needle.',
+      '5 high-authority editorial backlinks from DR50+ websites in your niche. Five links across five different domains — the strongest authority signal in our catalogue. For businesses in competitive markets that want to dominate.',
     details: [
       {
         icon: Shield,
-        title: '3 × DR50+ Links',
-        body: 'Three independent placements on three different high-authority domains. This diversified profile looks natural to Google and delivers a meaningful boost to your domain authority.',
+        title: '5 × DR50+ Links',
+        body: 'Five independent placements on five different high-authority domains. This diversified profile looks completely natural to Google and delivers a substantial, lasting boost to your domain authority.',
       },
       {
         icon: Globe,
@@ -171,12 +171,12 @@ const packages = [
       {
         icon: TrendingUp,
         title: 'Compound Authority',
-        body: 'Three DR50+ links can push a site from invisible to page 1 for competitive keywords. The combined authority signal accelerates rankings faster than a single link could achieve.',
+        body: 'Five DR50+ links can move a site from invisible to top 3 for competitive keywords. The combined authority signal accelerates rankings faster and further than any smaller package.',
       },
       {
         icon: FileText,
         title: 'Detailed Report for Each',
-        body: 'You receive a full placement report for each of the three links — domain metrics, live URL, anchor text, and screenshot. Full transparency on every placement.',
+        body: 'You receive a full placement report for each of the five links — domain metrics, live URL, anchor text, and screenshot. Full transparency on every placement.',
       },
     ],
   },
