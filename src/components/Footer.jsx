@@ -4,54 +4,110 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="py-[60px] px-10 bg-[#F9F9F9] border-t border-gray-200">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-start">
-          
-          {/* Left Column: Logo */}
-          <div className="flex justify-center lg:justify-start">
+    <footer style={{
+      background: 'var(--bg)',
+      borderTop: '1px solid var(--bdr)',
+      padding: '72px 0 40px'
+    }}>
+      <div className="l-container">
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '48px', marginBottom: '64px'
+        }}>
+          {/* Logo + tagline */}
+          <div>
             <Link to="/">
-              <img 
-                src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" 
-                alt="Locully Logo" 
-                className="w-[180px] md:w-[220px] h-auto object-contain"
+              <img
+                src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png"
+                alt="Locully Logo"
+                style={{ width: '160px', height: 'auto', objectFit: 'contain', marginBottom: '16px', filter: 'brightness(0) invert(1)' }}
               />
             </Link>
+            <p className="l-body-sm" style={{ maxWidth: '220px' }}>
+              SEO & AI Visibility Experts.<br />Rank #1 in AI Search.
+            </p>
           </div>
 
-          {/* Middle Column: Links */}
-          <div className="flex flex-col items-center justify-center space-y-3">
-            <Link to="/" className="text-[#666666] hover:text-[#CC6432] transition-colors cursor-pointer text-base font-medium">Home</Link>
-            <Link to="/lead-gen-partner" className="text-[#666666] hover:text-[#CC6432] transition-colors cursor-pointer text-base font-medium">Lead Gen Partner</Link>
-            <span className="text-[#666666] hover:text-[#CC6432] transition-colors cursor-pointer text-base font-medium">Privacy Policy</span>
-            <span className="text-[#666666] hover:text-[#CC6432] transition-colors cursor-pointer text-base font-medium">Terms of Service</span>
-            <span className="text-[#666666] hover:text-[#CC6432] transition-colors cursor-pointer text-base font-medium">Contact</span>
-          </div>
-
-          {/* Right Column: Company Info */}
-          <div className="flex flex-col items-center lg:items-end text-center lg:text-right space-y-2">
-            <h3 className="text-black text-2xl font-bold">Locully</h3>
-            <p className="text-[#666666] text-base">SEO & AI Visibility Experts</p>
-            <p className="text-[#666666] text-base">Rank #1 in AI Search</p>
-            <div className="pt-2">
-              <p className="text-[#666666] text-sm">Contact: <a href="mailto:sunny@locully.org" className="hover:text-[#CC6432]">sunny@locully.org</a></p>
-              <p className="text-[#666666] text-sm">+66 62 695 9444</p>
+          {/* Nav links */}
+          <div>
+            <div style={{
+              fontFamily: 'var(--mono)', fontSize: '10px', letterSpacing: '0.15em',
+              textTransform: 'uppercase', color: 'var(--muted2)', marginBottom: '20px'
+            }}>Navigation</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                { label: 'Home', to: '/' },
+                { label: 'About', to: '/about' },
+                { label: 'Lead Gen Partner', to: '/lead-gen-partner' },
+                { label: 'One-Off Packages', to: '/packages' },
+              ].map(({ label, to }) => (
+                <Link key={to} to={to} style={{
+                  color: 'var(--muted)', fontSize: '14px', textDecoration: 'none',
+                  transition: 'color 0.2s'
+                }}
+                  onMouseEnter={e => e.target.style.color = 'var(--terra)'}
+                  onMouseLeave={e => e.target.style.color = 'var(--muted)'}
+                >{label}</Link>
+              ))}
             </div>
           </div>
 
+          {/* Contact */}
+          <div>
+            <div style={{
+              fontFamily: 'var(--mono)', fontSize: '10px', letterSpacing: '0.15em',
+              textTransform: 'uppercase', color: 'var(--muted2)', marginBottom: '20px'
+            }}>Contact</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <a href="mailto:sunny@locully.org" className="l-body-sm" style={{ textDecoration: 'none', color: 'var(--muted)' }}>
+                sunny@locully.org
+              </a>
+              <span className="l-body-sm">+66 62 695 9444</span>
+              <div style={{ display: 'flex', gap: '10px', marginTop: '8px' }}>
+                <a href="https://www.linkedin.com/company/locully" target="_blank" rel="noopener noreferrer" style={{
+                  width: '36px', height: '36px', borderRadius: '8px',
+                  background: 'var(--surface)', border: '1px solid var(--bdr)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: 'var(--muted)', transition: 'all 0.2s'
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'var(--terra)'; e.currentTarget.style.borderColor = 'var(--terra)'; e.currentTarget.style.color = '#fff'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'var(--surface)'; e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.color = 'var(--muted)'; }}
+                >
+                  <Linkedin style={{ width: '16px', height: '16px' }} />
+                </a>
+                <a href="https://instagram.com/locully.th" target="_blank" rel="noopener noreferrer" style={{
+                  width: '36px', height: '36px', borderRadius: '8px',
+                  background: 'var(--surface)', border: '1px solid var(--bdr)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: 'var(--muted)', transition: 'all 0.2s'
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'var(--terra)'; e.currentTarget.style.borderColor = 'var(--terra)'; e.currentTarget.style.color = '#fff'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'var(--surface)'; e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.color = 'var(--muted)'; }}
+                >
+                  <Instagram style={{ width: '16px', height: '16px' }} />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom Row: Social & Copyright */}
-        <div className="mt-16 pt-8 border-t border-gray-200 flex flex-col items-center gap-6">
-           <div className="flex gap-4">
-              <a href="https://www.linkedin.com/company/locully" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-[#CC6432] hover:border-[#CC6432] hover:text-white transition-all text-[#1F1F1F]">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://instagram.com/locully.th" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-[#CC6432] hover:border-[#CC6432] hover:text-white transition-all text-[#1F1F1F]">
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div>
-            <p className="text-[#666666] text-sm text-center">© 2026 Locully Co. Ltd. All rights reserved.</p>
+        {/* Bottom row */}
+        <div style={{
+          paddingTop: '28px', borderTop: '1px solid var(--bdr)',
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          flexWrap: 'wrap', gap: '12px'
+        }}>
+          <p style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>
+            © 2026 Locully Co. Ltd. All rights reserved.
+          </p>
+          <div style={{ display: 'flex', gap: '24px' }}>
+            {['Privacy Policy', 'Terms of Service'].map(item => (
+              <span key={item} style={{
+                fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)',
+                cursor: 'pointer', transition: 'color 0.2s'
+              }}>{item}</span>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

@@ -16,7 +16,7 @@ const Testimonials = () => {
     {
       name: 'Marketing Director',
       role: 'Aesthetic Clinic',
-      content: 'Locully\'s AI visibility strategy was a game-changer. Organic enquiries doubled in 6 months.',
+      content: "Locully's AI visibility strategy was a game-changer. Organic enquiries doubled in 6 months.",
       rating: 5
     },
     {
@@ -28,46 +28,59 @@ const Testimonials = () => {
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-24 px-4 bg-[#F9F9F9]">
-      <div className="max-w-7xl mx-auto">
+    <section ref={ref} className="l-section" style={{ background: 'var(--bg3)' }}>
+      <div className="l-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10 md:mb-16"
+          transition={{ duration: 0.7 }}
+          style={{ textAlign: 'center', marginBottom: '72px' }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black">
-            Success Stories
+          <span className="l-label" style={{ marginBottom: '24px', display: 'inline-flex' }}>Success Stories</span>
+          <h2 className="l-h2" style={{ marginBottom: '16px' }}>
+            Trusted by Bangkok's <em className="l-serif-em">Leading Clinics</em>
           </h2>
-          <p className="text-lg md:text-xl text-[#1F1F1F] max-w-3xl mx-auto px-2">
-            Trusted by Bangkok's leading clinics
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {testimonials.map((testimonial, index) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+          {testimonials.map((t, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-white p-6 md:p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
+              style={{
+                background: 'var(--surface)', border: '1px solid var(--bdr)',
+                borderRadius: '14px', padding: '36px',
+                display: 'flex', flexDirection: 'column'
+              }}
             >
-              <div className="flex gap-1 mb-4 md:mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-[#CC6432] text-[#CC6432]" />
+              <div style={{ display: 'flex', gap: '4px', marginBottom: '24px' }}>
+                {[...Array(t.rating)].map((_, i) => (
+                  <Star key={i} style={{ width: '16px', height: '16px', fill: 'var(--terra)', color: 'var(--terra)' }} />
                 ))}
               </div>
 
-              <p className="text-[#1F1F1F] mb-6 md:mb-8 leading-relaxed flex-grow text-base md:text-lg italic">
-                "{testimonial.content}"
+              <p style={{
+                fontFamily: 'var(--serif)', fontSize: '17px', color: 'var(--cream)',
+                lineHeight: 1.65, fontStyle: 'italic', fontWeight: 300,
+                flex: 1, marginBottom: '28px'
+              }}>
+                "{t.content}"
               </p>
 
-              <div className="flex items-center gap-3 md:gap-4 mt-auto pt-4 md:pt-6 border-t border-gray-100">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-200 flex-shrink-0" />
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: '14px',
+                paddingTop: '20px', borderTop: '1px solid var(--bdr)'
+              }}>
+                <div style={{
+                  width: '40px', height: '40px', borderRadius: '50%',
+                  background: 'var(--bg3)', border: '1px solid var(--bdr2)',
+                  flexShrink: 0
+                }} />
                 <div>
-                  <div className="font-bold text-black text-sm md:text-base">{testimonial.name}</div>
-                  <div className="text-xs md:text-sm text-[#666666]">{testimonial.role}</div>
+                  <div style={{ color: 'var(--cream)', fontWeight: 600, fontSize: '14px' }}>{t.name}</div>
+                  <div style={{ color: 'var(--muted2)', fontSize: '12px', fontFamily: 'var(--mono)' }}>{t.role}</div>
                 </div>
               </div>
             </motion.div>

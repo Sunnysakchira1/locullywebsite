@@ -16,9 +16,7 @@ const ServicesDropdown = ({ isMobile = false, closeMenu }) => {
 
   const handleMouseLeave = () => {
     if (isMobile) return;
-    timeoutId = setTimeout(() => {
-      setIsOpen(false);
-    }, 150);
+    timeoutId = setTimeout(() => setIsOpen(false), 150);
   };
 
   const toggleDropdown = () => {
@@ -30,88 +28,110 @@ const ServicesDropdown = ({ isMobile = false, closeMenu }) => {
     setIsOpen(false);
   };
 
+  const linkStyle = {
+    display: 'block', padding: '14px 20px', textDecoration: 'none',
+    transition: 'background 0.15s',
+    borderRadius: '0'
+  };
+
   return (
-    <div className={`flex ${isMobile ? 'flex-col items-start w-full' : 'flex-row items-center gap-6'}`}>
-      <Link 
-        to="/about" 
-        className={`text-[#1F1F1F] font-semibold hover:text-[#CC6432] transition-colors ${isMobile ? 'py-3 w-full border-b border-gray-50' : 'py-2'}`}
+    <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? 0 : '28px' }}>
+      <Link
+        to="/about"
+        style={{
+          color: 'var(--muted)', fontWeight: 500, fontSize: '14px', textDecoration: 'none',
+          padding: isMobile ? '12px 0' : '8px 0',
+          borderBottom: isMobile ? '1px solid var(--bdr)' : 'none',
+          width: isMobile ? '100%' : 'auto', transition: 'color 0.2s'
+        }}
         onClick={handleLinkClick}
+        onMouseEnter={e => e.target.style.color = 'var(--terra)'}
+        onMouseLeave={e => e.target.style.color = 'var(--muted)'}
       >
         About
       </Link>
 
-      <div 
-        className={`${isMobile ? 'w-full' : 'relative z-50'}`}
+      <div
+        style={{ position: isMobile ? 'static' : 'relative', zIndex: 50, width: isMobile ? '100%' : 'auto' }}
         ref={dropdownRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <button 
-          className={`flex items-center gap-1.5 text-[#1F1F1F] font-semibold hover:text-[#CC6432] transition-colors ${isMobile ? 'py-3 w-full justify-between' : 'py-2'}`}
+        <button
+          style={{
+            display: 'flex', alignItems: 'center', gap: '6px',
+            color: 'var(--muted)', fontWeight: 500, fontSize: '14px',
+            background: 'none', border: 'none', cursor: 'pointer',
+            padding: isMobile ? '12px 0' : '8px 0',
+            width: isMobile ? '100%' : 'auto',
+            justifyContent: isMobile ? 'space-between' : 'flex-start',
+            transition: 'color 0.2s'
+          }}
           aria-expanded={isOpen}
           onClick={toggleDropdown}
+          onMouseEnter={e => e.currentTarget.style.color = 'var(--terra)'}
+          onMouseLeave={e => e.currentTarget.style.color = 'var(--muted)'}
         >
           Services
-          <motion.div
-            animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <ChevronDown className="w-4 h-4" />
+          <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+            <ChevronDown style={{ width: '15px', height: '15px' }} />
           </motion.div>
         </button>
 
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={isMobile ? { height: 0, opacity: 0 } : { opacity: 0, y: 10, scale: 0.95 }}
+              initial={isMobile ? { height: 0, opacity: 0 } : { opacity: 0, y: 8, scale: 0.97 }}
               animate={isMobile ? { height: 'auto', opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-              exit={isMobile ? { height: 0, opacity: 0 } : { opacity: 0, y: 10, scale: 0.95 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className={isMobile 
-                ? 'overflow-hidden bg-gray-50 rounded-lg w-full mt-2' 
-                : 'absolute top-full right-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden'
-              }
+              exit={isMobile ? { height: 0, opacity: 0 } : { opacity: 0, y: 8, scale: 0.97 }}
+              transition={{ duration: 0.18, ease: 'easeOut' }}
+              style={isMobile ? {
+                overflow: 'hidden', background: 'var(--surface)',
+                borderRadius: '8px', marginTop: '8px', width: '100%'
+              } : {
+                position: 'absolute', top: 'calc(100% + 8px)', right: 0,
+                width: '260px', background: 'var(--bg3)',
+                border: '1px solid var(--bdr2)', borderRadius: '10px',
+                overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,0.5)'
+              }}
             >
-              <div className={isMobile ? 'py-2' : 'py-2'}>
-                <Link 
-                  to="/" 
-                  className="block px-5 py-3.5 hover:bg-orange-50 transition-colors group"
-                  onClick={handleLinkClick}
+              <div style={{ padding: '8px 0' }}>
+                <Link to="/" style={linkStyle} onClick={handleLinkClick}
+                  onMouseEnter={e => e.currentTarget.style.background = 'rgba(204,100,50,0.08)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                 >
-                  <div className="text-sm font-bold text-gray-900 group-hover:text-[#CC6432] mb-0.5">
+                  <div style={{ fontFamily: 'var(--sans)', fontSize: '13px', fontWeight: 600, color: 'var(--cream)', marginBottom: '3px' }}>
                     SEO & AIO
                   </div>
-                  <div className="text-xs text-gray-500 font-medium">
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>
                     Rank #1 in AI Search Results
                   </div>
                 </Link>
-                
-                <div className="h-px bg-gray-100 mx-5 my-1" />
 
-                <Link
-                  to="/lead-gen-partner"
-                  className="block px-5 py-3.5 hover:bg-orange-50 transition-colors group"
-                  onClick={handleLinkClick}
+                <div style={{ height: '1px', background: 'var(--bdr)', margin: '0 16px' }} />
+
+                <Link to="/lead-gen-partner" style={linkStyle} onClick={handleLinkClick}
+                  onMouseEnter={e => e.currentTarget.style.background = 'rgba(204,100,50,0.08)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                 >
-                  <div className="text-sm font-bold text-gray-900 group-hover:text-[#CC6432] mb-0.5">
+                  <div style={{ fontFamily: 'var(--sans)', fontSize: '13px', fontWeight: 600, color: 'var(--cream)', marginBottom: '3px' }}>
                     Lead Gen Partner
                   </div>
-                  <div className="text-xs text-gray-500 font-medium">
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>
                     Local Marketing Partner for Expos
                   </div>
                 </Link>
 
-                <div className="h-px bg-gray-100 mx-5 my-1" />
+                <div style={{ height: '1px', background: 'var(--bdr)', margin: '0 16px' }} />
 
-                <Link
-                  to="/packages"
-                  className="block px-5 py-3.5 hover:bg-orange-50 transition-colors group"
-                  onClick={handleLinkClick}
+                <Link to="/packages" style={linkStyle} onClick={handleLinkClick}
+                  onMouseEnter={e => e.currentTarget.style.background = 'rgba(204,100,50,0.08)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                 >
-                  <div className="text-sm font-bold text-gray-900 group-hover:text-[#CC6432] mb-0.5">
+                  <div style={{ fontFamily: 'var(--sans)', fontSize: '13px', fontWeight: 600, color: 'var(--cream)', marginBottom: '3px' }}>
                     One-Off Packages
                   </div>
-                  <div className="text-xs text-gray-500 font-medium">
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>
                     Content, backlinks & SEO — no retainer
                   </div>
                 </Link>
