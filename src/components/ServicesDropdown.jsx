@@ -87,9 +87,9 @@ const ServicesDropdown = ({ isMobile = false, closeMenu }) => {
                 </Link>
                 
                 <div className="h-px bg-gray-100 mx-5 my-1" />
-                
-                <Link 
-                  to="/lead-gen-partner" 
+
+                <Link
+                  to="/lead-gen-partner"
                   className="block px-5 py-3.5 hover:bg-orange-50 transition-colors group"
                   onClick={handleLinkClick}
                 >
@@ -98,6 +98,21 @@ const ServicesDropdown = ({ isMobile = false, closeMenu }) => {
                   </div>
                   <div className="text-xs text-gray-500 font-medium">
                     Local Marketing Partner for Expos
+                  </div>
+                </Link>
+
+                <div className="h-px bg-gray-100 mx-5 my-1" />
+
+                <Link
+                  to="/packages"
+                  className="block px-5 py-3.5 hover:bg-orange-50 transition-colors group"
+                  onClick={handleLinkClick}
+                >
+                  <div className="text-sm font-bold text-gray-900 group-hover:text-[#CC6432] mb-0.5">
+                    One-Off Packages
+                  </div>
+                  <div className="text-xs text-gray-500 font-medium">
+                    Content, backlinks & SEO — no retainer
                   </div>
                 </Link>
               </div>

@@ -14,6 +14,7 @@ import Footer from '@/components/Footer';
 import LeadGenerationPage from '@/components/LeadGenerationPage';
 import LeadGenPartnerPage from '@/components/LeadGenPartnerPage';
 import AboutPage from '@/components/AboutPage';
+import PackagesPage from '@/components/PackagesPage';
 import ScrollToTop from '@/components/ScrollToTop';
 
 // Shared Layout/Home Component
@@ -51,6 +52,7 @@ function App() {
           <Route path="/lead-generation" element={<LeadGenerationPage />} />
           <Route path="/lead-gen-partner" element={<LeadGenPartnerPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/packages" element={<PackagesPage />} />
         </Routes>
         <Toaster />
       </div>
