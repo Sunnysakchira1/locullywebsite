@@ -12,9 +12,7 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,24 +26,8 @@ const ContactForm = () => {
       setIsSubmitted(true);
       toast({ title: "Request Sent!", description: "We've received your audit request." });
       logFormSubmission('AI Visibility Audit Request', true);
-      setTimeout(() => {
-        setFormData({ name: '', email: '', website: '' });
-        setIsSubmitted(false);
-      }, 3000);
+      setTimeout(() => { setFormData({ name: '', email: '', website: '' }); setIsSubmitted(false); }, 3000);
     }, 1500);
-  };
-
-  const inputStyle = {
-    width: '100%', background: 'var(--bg3)', border: '1px solid var(--bdr)',
-    borderRadius: '8px', padding: '14px 18px', color: 'var(--cream)',
-    fontFamily: 'var(--sans)', fontSize: '15px', outline: 'none',
-    transition: 'border-color 0.2s', boxSizing: 'border-box'
-  };
-
-  const labelStyle = {
-    display: 'block', fontFamily: 'var(--mono)', fontSize: '11px',
-    letterSpacing: '0.12em', textTransform: 'uppercase',
-    color: 'var(--muted)', marginBottom: '8px'
   };
 
   return (
@@ -55,130 +37,92 @@ const ContactForm = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          style={{ textAlign: 'center', marginBottom: '60px' }}
+          style={{ textAlign: 'center', marginBottom: '56px' }}
         >
-          <span className="l-label" style={{ marginBottom: '24px', display: 'inline-flex' }}>Free Audit</span>
+          <span className="l-label" style={{ marginBottom: '20px', display: 'inline-flex' }}>Free Audit</span>
           <h2 className="l-h2" style={{ marginBottom: '16px' }}>
             Get Your <em className="l-serif-em">Free AI Audit</em>
           </h2>
-          <p className="l-body" style={{ maxWidth: '480px', margin: '0 auto' }}>
+          <p className="l-body" style={{ maxWidth: '460px', margin: '0 auto' }}>
             See where you rank in ChatGPT, Google AI, and Claude — in 48 hours.
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'start' }}>
+        <div className="l-contact-grid">
           {/* Form */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{
-              background: 'var(--surface)', border: '1px solid var(--bdr)',
-              borderRadius: '16px', padding: '44px'
-            }}
+            className="l-form-wrap"
           >
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div>
-                <label htmlFor="name" style={labelStyle}>Your Name *</label>
-                <input
-                  id="name" name="name" type="text"
-                  value={formData.name} onChange={handleChange}
-                  placeholder="John Smith"
-                  style={inputStyle}
-                  disabled={isSubmitting || isSubmitted}
-                  required
-                  onFocus={e => e.target.style.borderColor = 'var(--terra)'}
-                  onBlur={e => e.target.style.borderColor = 'var(--bdr)'}
-                />
+            <form onSubmit={handleSubmit}>
+              <div className="l-form-group">
+                <label htmlFor="name" className="l-form-label">Your Name *</label>
+                <input id="name" name="name" type="text" value={formData.name} onChange={handleChange}
+                  placeholder="John Smith" className="l-form-input"
+                  disabled={isSubmitting || isSubmitted} required />
               </div>
-              <div>
-                <label htmlFor="email" style={labelStyle}>Email Address *</label>
-                <input
-                  id="email" name="email" type="email"
-                  value={formData.email} onChange={handleChange}
-                  placeholder="john@company.com"
-                  style={inputStyle}
-                  disabled={isSubmitting || isSubmitted}
-                  required
-                  onFocus={e => e.target.style.borderColor = 'var(--terra)'}
-                  onBlur={e => e.target.style.borderColor = 'var(--bdr)'}
-                />
+              <div className="l-form-group">
+                <label htmlFor="email" className="l-form-label">Email Address *</label>
+                <input id="email" name="email" type="email" value={formData.email} onChange={handleChange}
+                  placeholder="john@company.com" className="l-form-input"
+                  disabled={isSubmitting || isSubmitted} required />
               </div>
-              <div>
-                <label htmlFor="website" style={labelStyle}>Website URL *</label>
-                <input
-                  id="website" name="website" type="url"
-                  value={formData.website} onChange={handleChange}
-                  placeholder="https://yourwebsite.com"
-                  style={inputStyle}
-                  disabled={isSubmitting || isSubmitted}
-                  required
-                  onFocus={e => e.target.style.borderColor = 'var(--terra)'}
-                  onBlur={e => e.target.style.borderColor = 'var(--bdr)'}
-                />
+              <div className="l-form-group">
+                <label htmlFor="website" className="l-form-label">Website URL *</label>
+                <input id="website" name="website" type="url" value={formData.website} onChange={handleChange}
+                  placeholder="https://yourwebsite.com" className="l-form-input"
+                  disabled={isSubmitting || isSubmitted} required />
               </div>
 
               <button
                 type="submit"
+                className="l-form-submit"
                 disabled={isSubmitting || isSubmitted}
-                className="l-btn"
-                style={{
-                  width: '100%', justifyContent: 'center', padding: '16px 28px',
-                  background: isSubmitted ? '#22c55e' : 'var(--terra)',
-                  opacity: (isSubmitting || isSubmitted) ? 0.85 : 1
-                }}
+                style={{ background: isSubmitted ? '#22c55e' : 'var(--terra)', opacity: (isSubmitting || isSubmitted) ? 0.85 : 1 }}
               >
                 {isSubmitting ? (
-                  <>
-                    <div style={{
-                      width: '18px', height: '18px', border: '2px solid rgba(255,255,255,0.3)',
-                      borderTopColor: '#fff', borderRadius: '50%', animation: 'lspin 0.7s linear infinite'
-                    }} />
-                    Sending...
-                  </>
+                  <><div style={{ width: 16, height: 16, border: '2px solid rgba(255,255,255,0.3)', borderTopColor: '#fff', borderRadius: '50%', animation: 'lspin 0.7s linear infinite' }} /> Sending...</>
                 ) : isSubmitted ? (
-                  <><CheckCircle2 style={{ width: '18px', height: '18px' }} /> Request Sent!</>
+                  <><CheckCircle2 style={{ width: 18, height: 18 }} /> Request Sent!</>
                 ) : (
-                  <>Get Free Audit <Send style={{ width: '16px', height: '16px' }} /></>
+                  <>Get Free Audit <Send style={{ width: 16, height: 16 }} /></>
                 )}
               </button>
 
-              <p style={{ textAlign: 'center', fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>
-                Secure submission · We respect your privacy
-              </p>
+              <p className="l-form-note" style={{ marginTop: '14px' }}>Secure submission · We respect your privacy</p>
             </form>
           </motion.div>
 
           {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.35 }}
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
           >
-            {[
-              { label: 'Growth', value: '+280%', sub: 'more enquiries' },
-              { label: 'Visibility', value: '70%', sub: 'Top 3 Ranking' },
-              { label: 'Quality', value: '4.4×', sub: 'conversion rate' },
-            ].map(({ label, value, sub }) => (
-              <div key={label} style={{
-                background: 'var(--bg3)', border: '1px solid var(--bdr)',
-                borderRadius: '12px', padding: '28px 32px',
-                display: 'flex', alignItems: 'center', gap: '24px'
-              }}>
-                <div style={{
-                  fontFamily: 'var(--serif)', fontSize: '42px', fontWeight: 600,
-                  color: 'var(--terra)', lineHeight: 1, minWidth: '110px'
-                }}>{value}</div>
-                <div>
-                  <div style={{
-                    fontFamily: 'var(--mono)', fontSize: '10px', letterSpacing: '0.14em',
-                    textTransform: 'uppercase', color: 'var(--muted2)', marginBottom: '4px'
-                  }}>{label}</div>
-                  <div style={{ color: 'var(--muted)', fontSize: '15px' }}>{sub}</div>
+            <div className="l-metrics-stack">
+              {[
+                { label: 'Growth', value: '+280%', sub: 'more enquiries' },
+                { label: 'Visibility', value: '70%', sub: 'Top 3 Ranking' },
+                { label: 'Quality', value: '4.4×', sub: 'conversion rate' },
+              ].map(({ label, value, sub }) => (
+                <div key={label} className="l-metric-row">
+                  <div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted2)', marginBottom: '3px' }}>{label}</div>
+                    <div style={{ color: 'var(--muted)', fontSize: '13px' }}>{sub}</div>
+                  </div>
+                  <span className="l-metric-val" style={{ fontSize: '32px', fontFamily: 'var(--serif)', fontWeight: 600 }}>{value}</span>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <div style={{ marginTop: '28px', padding: '24px', background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: '10px', borderLeft: '3px solid var(--terra)' }}>
+              <p className="l-body" style={{ margin: 0 }}>
+                <span style={{ color: 'var(--terra)', fontWeight: 600 }}>Free, no obligation.</span>{' '}
+                We'll send you a full report on your current AI visibility and what it would take to rank #1.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
