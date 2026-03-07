@@ -25,9 +25,10 @@ const ContactForm = () => {
       const res = await fetch('https://formspree.io/f/mbdzjegj', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, _subject: 'New AI Visibility Audit Request — Locully' }),
       });
-      if (!res.ok) throw new Error('Submission failed');
+      const data = await res.json();
+      if (!res.ok || data.error) throw new Error(data.error || 'Submission failed');
       setIsSubmitted(true);
       toast({ title: "Request Sent!", description: "We've received your audit request and will be in touch shortly." });
       logFormSubmission('AI Visibility Audit Request', true);
