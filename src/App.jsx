@@ -28,6 +28,7 @@ const HomePage = () => {
       <Helmet>
         <title>Locully | AI Search Visibility Experts</title>
         <meta name="description" content="Rank #1 in AI Search Results. We help clinics and brands dominate ChatGPT, Google AI, and Claude recommendations." />
+        <link rel="canonical" href="https://locully.org/" />
       </Helmet>
       <Hero />
       <HowPeopleSearch />

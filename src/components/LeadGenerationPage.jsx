@@ -19,6 +19,7 @@ const LeadGenerationPage = () => {
       <Helmet>
         <title>Lead Generation & Performance Marketing | Locully</title>
         <meta name="description" content="High-performance lead generation and marketing strategies designed to scale your business." />
+        <link rel="canonical" href="https://locully.org/lead-generation" />
       </Helmet>
 
       <div className="min-h-screen bg-white flex flex-col">

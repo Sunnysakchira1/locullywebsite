@@ -30,6 +30,7 @@ const AboutPage = () => {
       <Helmet>
         <title>About Locully | SEO & Revenue-Focused Marketing</title>
         <meta name="description" content="Locully is a revenue-focused SEO agency. We drive growth." />
+        <link rel="canonical" href="https://locully.org/about" />
       </Helmet>
 
       <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
