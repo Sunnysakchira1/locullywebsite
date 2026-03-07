@@ -28,8 +28,8 @@ const HomePage = () => {
       </Helmet>
       <Hero />
       <HowPeopleSearch />
-      <HowItWorks />
       <AiRecommendationFlow />
+      <HowItWorks />
       <ConversionComparison />
       <CaseStudies />
       <Testimonials />
