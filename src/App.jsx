@@ -7,6 +7,7 @@ import Hero from '@/components/Hero';
 import HowPeopleSearch from '@/components/HowPeopleSearch';
 import AiRecommendationFlow from '@/components/AiRecommendationFlow';
 import ConversionComparison from '@/components/ConversionComparison';
+import HowItWorks from '@/components/HowItWorks';
 import CaseStudies from '@/components/CaseStudies';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
@@ -27,6 +28,7 @@ const HomePage = () => {
       </Helmet>
       <Hero />
       <HowPeopleSearch />
+      <HowItWorks />
       <AiRecommendationFlow />
       <ConversionComparison />
       <CaseStudies />
