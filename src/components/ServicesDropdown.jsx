@@ -110,6 +110,20 @@ const ServicesDropdown = ({ isMobile = false, closeMenu }) => {
 
                 <div style={{ height: '1px', background: 'var(--bdr)', margin: '0 16px' }} />
 
+                <Link to="/ai-optimization/" style={linkStyle} onClick={handleLinkClick}
+                  onMouseEnter={e => e.currentTarget.style.background = 'rgba(204,100,50,0.08)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                >
+                  <div style={{ fontFamily: 'var(--sans)', fontSize: '13px', fontWeight: 600, color: 'var(--cream)', marginBottom: '3px' }}>
+                    AI Optimization for Clinics
+                  </div>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>
+                    Get recommended by ChatGPT & Perplexity
+                  </div>
+                </Link>
+
+                <div style={{ height: '1px', background: 'var(--bdr)', margin: '0 16px' }} />
+
                 <Link to="/lead-gen-partner" style={linkStyle} onClick={handleLinkClick}
                   onMouseEnter={e => e.currentTarget.style.background = 'rgba(204,100,50,0.08)'}
                   onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
