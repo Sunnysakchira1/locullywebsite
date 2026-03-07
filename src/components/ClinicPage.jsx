@@ -174,7 +174,7 @@ export default function ClinicPage({ slug }) {
                 transition={{ delay: 0.35, duration: 0.6 }}
               >
                 <div className="l-stat-cell"><span className="l-stat-num">10×</span><span className="l-stat-lbl">AI Citations</span></div>
-                <div className="l-stat-cell"><span className="l-stat-num">90d</span><span className="l-stat-lbl">To Results</span></div>
+                <div className="l-stat-cell"><span className="l-stat-num">+350%</span><span className="l-stat-lbl">AI Mentions</span></div>
                 <div className="l-stat-cell"><span className="l-stat-num">3+</span><span className="l-stat-lbl">AI Platforms</span></div>
               </motion.div>
             </motion.div>
@@ -229,7 +229,7 @@ export default function ClinicPage({ slug }) {
                     {checkedCount} of 8 — your clinic is underrepresented in AI search.
                   </p>
                   <p className="l-body" style={{ color: 'var(--muted)', marginBottom: 16, fontSize: 14 }}>
-                    This is fixable. Locully specialises in exactly this situation — we've taken Bangkok clinics from zero AI citations to appearing in top recommendations within 90 days.
+                    This is fixable. Locully specialises in exactly this situation — we've taken Bangkok clinics from zero AI citations to appearing consistently across ChatGPT, Perplexity, and Google AI Overviews.
                   </p>
                   <button className="l-btn l-btn-sm" onClick={scrollToContact} style={{ border: 'none' }}>
                     Get a free audit — see where you stand
@@ -280,17 +280,33 @@ export default function ClinicPage({ slug }) {
           </div>
         </section>
 
-        {/* Why underrepresented */}
+        {/* Problem section */}
         <section className="l-section" style={{ background: 'var(--bg2, #130E0A)' }}>
           <div className="l-container">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5 }}>
               <div className="l-label" style={{ marginBottom: 16 }}>The Problem</div>
-              <h2 className="l-h2" style={{ marginBottom: 14 }}>
-                Why {clinic.name.toLowerCase()} clinics are <em className="l-serif-em">underrepresented</em> in AI search
+              <h2 className="l-h2" style={{ marginBottom: 20 }}>
+                While you wait, AI is recommending <em className="l-serif-em">your competitors.</em>
               </h2>
-              <p className="l-body" style={{ color: 'var(--muted)', maxWidth: 560, fontSize: 18 }}>
+              <p className="l-body" style={{ color: 'var(--muted)', maxWidth: 560, marginBottom: 48, fontSize: 18 }}>
                 {clinic.painPoint}
               </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
+                {clinic.problemPoints.map((point, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    style={{ padding: '24px', background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 12 }}
+                  >
+                    <div style={{ width: 32, height: 2, background: 'var(--terra)', marginBottom: 16, borderRadius: 2 }} />
+                    <h3 style={{ color: 'var(--cream)', fontWeight: 600, fontSize: 16, marginBottom: 10, fontFamily: 'var(--sans)', lineHeight: 1.4 }}>{point.heading}</h3>
+                    <p className="l-body" style={{ color: 'var(--muted)', fontSize: 14 }}>{point.body}</p>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
@@ -363,10 +379,10 @@ export default function ClinicPage({ slug }) {
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 20, marginBottom: 32 }}>
                 <div style={{ background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 12, padding: '24px' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--terra)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>Healthcare · Bangkok</div>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--terra)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>Bangkok Clinic · Case Result</div>
                   <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--cream)', marginBottom: 8 }}>10×</div>
                   <p className="l-body" style={{ color: 'var(--muted)', marginBottom: 16, fontSize: 14 }}>
-                    Increase in AI-driven recommendations within 90 days — from zero citations to appearing consistently across ChatGPT, Perplexity, and Google AI Overviews.
+                    Increase in AI-driven recommendations — from zero citations to appearing consistently across ChatGPT, Perplexity, and Google AI Overviews.
                   </p>
                   <div style={{ borderTop: '1px solid var(--bdr)', paddingTop: 14 }}>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -378,16 +394,19 @@ export default function ClinicPage({ slug }) {
                 </div>
 
                 <div style={{ background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 12, padding: '24px' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--terra)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>Typical 90-day Progress</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--terra)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>Why AI visibility compounds</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                     {[
-                      { label: 'Month 1', desc: 'AI audit complete. Content gaps identified. First optimizations live.' },
-                      { label: 'Month 2', desc: 'Schema, Q&A content, and authority signals indexed. First citations appear.' },
-                      { label: 'Month 3', desc: 'Consistent AI mentions across platforms. Enquiries from AI-referred patients begin.' },
+                      { label: 'Citations build authority', desc: 'Each time AI cites your clinic, it reinforces your relevance signal — making future citations more likely across more queries.' },
+                      { label: 'Content compounds over time', desc: 'Unlike ads that stop when you stop paying, optimized content continues attracting AI citations and patient enquiries indefinitely.' },
+                      { label: 'Early movers hold the position', desc: 'AI recommendation slots are finite. Clinics that establish visibility now make it structurally harder for competitors to displace them.' },
                     ].map((row, i) => (
                       <div key={i} style={{ display: 'flex', gap: 14 }}>
-                        <span style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: 'var(--terra)', paddingTop: 2, minWidth: 60 }}>{row.label}</span>
-                        <span className="l-body" style={{ color: 'var(--muted)', fontSize: 13 }}>{row.desc}</span>
+                        <span style={{ flexShrink: 0, width: 6, height: 6, borderRadius: '50%', background: 'var(--terra)', marginTop: 7 }} />
+                        <div>
+                          <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--cream)', display: 'block', marginBottom: 3 }}>{row.label}</span>
+                          <span className="l-body" style={{ color: 'var(--muted)', fontSize: 13 }}>{row.desc}</span>
+                        </div>
                       </div>
                     ))}
                   </div>

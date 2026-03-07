@@ -18,6 +18,11 @@ export const clinics = [
       "Patients searching for physio care often describe their condition, not the clinic type. AI engines match those descriptions to clinics — if yours lacks structured condition-specific content, it won't appear.",
     painPoint:
       'AI favors clinics with structured treatment information, condition-specific content, and practitioner authority signals. Most physiotherapy websites lack all three — making them invisible even when patients are actively searching.',
+    problemPoints: [
+      { heading: 'Generic sites can\'t win specific queries', body: 'Patients ask AI about specific conditions — back pain, sports injuries, post-surgery rehab. Clinics without condition-specific content don\'t appear in these answers, no matter how good the clinic is.' },
+      { heading: 'Practitioner authority signals are missing', body: 'AI references therapist credentials, specializations, and treatment outcomes when deciding who to recommend. Most physio websites list staff names — not the depth of expertise AI needs to cite you confidently.' },
+      { heading: 'Google Maps optimization isn\'t AI optimization', body: 'Reviews and location pins help with Google Maps. They don\'t determine who ChatGPT or Perplexity recommends. The two systems have almost nothing in common.' },
+    ],
     serviceItems: [
       'Structuring condition and treatment pages for AI citation',
       'Building Q&A content around injury and recovery queries',
@@ -66,6 +71,11 @@ export const clinics = [
       "Dental patients — especially expats and medical tourists — increasingly rely on AI for clinic recommendations before booking. They ask ChatGPT with high intent: they're ready to visit, they just need a trustworthy recommendation.",
     painPoint:
       "Dental is saturated on Google but thin on AI signals. Reviews, structured data, treatment-specific Q&A, and clear pricing signals determine who AI recommends. Most Bangkok dental sites are built for aesthetics — not AI readability.",
+    problemPoints: [
+      { heading: 'One "Services" page can\'t win every query', body: 'AI treats "teeth whitening Bangkok" and "dental implants Bangkok" as completely different searches. Clinics with a single services page can\'t rank in either — while clinics with treatment-specific pages dominate both.' },
+      { heading: 'Pricing signals are a competitive advantage', body: 'Patients ask AI what things cost. Clinics that provide clear pricing information get cited in those answers. Clinics that don\'t are skipped entirely — regardless of their actual prices.' },
+      { heading: 'The expat audience is underserved', body: '"English speaking dentist Bangkok" and "best dental clinic Bangkok for foreigners" are high-intent queries. Most Bangkok dental sites aren\'t structured to capture them.' },
+    ],
     serviceItems: [
       'Treatment-level content optimization (implants, whitening, orthodontics)',
       'Structured pricing and FAQ content for AI citation',
@@ -114,6 +124,11 @@ export const clinics = [
       '"Wellness" is a broad category. AI engines get highly specific queries — about IV drips, detox programs, sleep optimization, burnout recovery. Clinics that create content around specific treatments get cited; generalist sites don\'t.',
     painPoint:
       '"Wellness" is too broad for AI to recommend confidently. Without treatment-specific content and clear positioning, AI engines can\'t place your clinic in the right context. You need to be specific to appear in specific searches.',
+    problemPoints: [
+      { heading: '"Wellness" is too broad for AI to cite confidently', body: 'AI engines need to know exactly what your clinic does before recommending it. A generic wellness positioning means competing for everything and winning nothing — while treatment-specific clinics dominate the queries that matter.' },
+      { heading: 'Each treatment needs its own authority', body: 'IV therapy, detox programs, and longevity treatments are searched separately. A clinic that covers all three with one page will be outranked by specialists who create depth around each treatment.' },
+      { heading: 'Trust signals for wellness require specific credibility markers', body: 'Wellness recommendations require practitioner certifications, treatment protocols, and outcome transparency. Without them, AI defaults to recommending whatever it can verify — and that won\'t be you.' },
+    ],
     serviceItems: [
       'Treatment-specific content for detox, IV therapy, recovery programs',
       'Positioning architecture to reduce AI category confusion',
@@ -162,6 +177,11 @@ export const clinics = [
       'Fertility patients research intensively before committing. They ask AI engines detailed, trust-heavy questions: success rates, doctor credentials, language accessibility, cost transparency. Clinics that answer these questions in their content get recommended.',
     painPoint:
       'Fertility is a high-stakes decision. AI engines reflect that by recommending clinics with strong trust signals: published success rates, accreditations, English-language content, and thorough patient FAQs. Clinics missing these signals are excluded from AI recommendations regardless of quality.',
+    problemPoints: [
+      { heading: 'Success rate data isn\'t AI-readable', body: 'Fertility patients ask AI directly about success rates. If your clinic\'s outcomes aren\'t published in a structured, parseable format, AI has nothing to cite — and will recommend a competitor who made their data accessible.' },
+      { heading: 'Doctor credentials aren\'t linked to clinic authority', body: 'AI builds trust by connecting specialist credentials to clinical outcomes. Most IVF clinic websites list doctors in isolation from results — missing the authority chain AI engines look for.' },
+      { heading: 'High-stakes searches demand deeper Q&A', body: 'Fertility patients research more intensively than almost any other patient group. They ask long, specific questions. Clinics without comprehensive Q&A content are absent from those answers entirely.' },
+    ],
     serviceItems: [
       'Success rate and outcome data structured for AI citation',
       'Doctor profile and credential authority architecture',
@@ -210,6 +230,11 @@ export const clinics = [
       'Beauty patients search by treatment, not clinic name. They ask AI for "the best place for Botox in Bangkok" or "a trusted laser clinic near Thonglor." Clinics that create treatment-level content for each service capture these high-intent queries.',
     painPoint:
       'Ranking for "aesthetic clinic Bangkok" is nearly impossible — the term is too broad and too competitive. But ranking in AI for "filler clinic Asoke" or "skin booster Bangkok recommendation" is very achievable. Treatment-level optimization is where beauty clinics win.',
+    problemPoints: [
+      { heading: 'Treatment pages beat service lists every time', body: 'AI searches for "Botox Bangkok," "filler Bangkok," and "laser skin Bangkok" are three separate queries. Clinics with dedicated treatment pages appear in all three. Clinics with one services page appear in none.' },
+      { heading: 'Location signals are weaker than you think', body: 'Bangkok patients search by neighborhood — "Thonglor aesthetic clinic" or "filler near Asoke." Without location-aware content signals, your clinic won\'t appear in proximity-based recommendations even if you\'re right there.' },
+      { heading: 'Instagram presence doesn\'t transfer to AI', body: 'A strong social following tells AI nothing about your clinical credibility. The signals that drive social discovery are completely different from what drives AI recommendation — and most aesthetic clinics haven\'t made the switch.' },
+    ],
     serviceItems: [
       'Treatment-specific pages for Botox, fillers, laser, skin boosters, and more',
       'Location-aware content for Thonglor, Asoke, Sukhumvit areas',
