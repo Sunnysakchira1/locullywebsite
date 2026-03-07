@@ -12,7 +12,6 @@ const Footer = () => {
               <img
                 src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png"
                 alt="Locully Logo"
-                style={{ filter: 'brightness(0) invert(1)' }}
               />
             </Link>
             <p className="l-footer-desc">SEO & AI Visibility Experts.<br />Rank #1 in AI Search.</p>
