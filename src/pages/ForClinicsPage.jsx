@@ -29,13 +29,15 @@ export default function ForClinicsPage() {
           name="description"
           content="Locully helps Bangkok clinics appear in ChatGPT, Perplexity, and Google AI Overviews. Choose your clinic type to see how AIO works for you."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://locully.org/ai-optimization/" />
         <link rel="canonical" href="https://locully.org/ai-optimization/" />
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-white">
         {/* Breadcrumb */}
-        <nav className="max-w-5xl mx-auto px-6 pt-6 pb-2 text-sm text-gray-400 flex items-center gap-1">
+        <nav aria-label="Breadcrumb" className="max-w-5xl mx-auto px-6 pt-6 pb-2 text-sm text-gray-400 flex items-center gap-1">
           <Link to="/" className="hover:text-gray-600">Home</Link>
           <ChevronRight className="w-3 h-3" />
           <span className="text-gray-600">For Clinics</span>
@@ -64,7 +66,7 @@ export default function ForClinicsPage() {
                   <h2 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-indigo-600 transition-colors">
                     {clinic.namePlural}
                   </h2>
-                  <p className="text-sm text-gray-500 mb-4">{clinic.intro.slice(0, 80)}…</p>
+                  <p className="text-sm text-gray-500 mb-4 line-clamp-2">{clinic.intro}</p>
                   <span className="inline-flex items-center gap-1 text-sm text-indigo-600 font-medium">
                     Learn more <ChevronRight className="w-4 h-4" />
                   </span>

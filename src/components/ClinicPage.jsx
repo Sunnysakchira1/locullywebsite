@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { MessageSquare, AlertCircle, Settings, TrendingUp, ChevronRight } from 'lucide-react';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
-import { clinics } from '@/data/clinicData';
+import { clinics, getClinic } from '@/data/clinicData';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -13,7 +13,7 @@ const fadeUp = {
 };
 
 export default function ClinicPage({ slug }) {
-  const clinic = clinics.find((c) => c.slug === slug);
+  const clinic = getClinic(slug);
 
   if (!clinic) return null;
 
@@ -53,7 +53,7 @@ export default function ClinicPage({ slug }) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://locully.org' },
       { '@type': 'ListItem', position: 2, name: 'For Clinics', item: 'https://locully.org/ai-optimization/' },
-      { '@type': 'ListItem', position: 3, name: clinic.namePlural },
+      { '@type': 'ListItem', position: 3, name: clinic.namePlural, item: `https://locully.org/ai-optimization/${clinic.slug}/` },
     ],
   };
 
@@ -75,7 +75,7 @@ export default function ClinicPage({ slug }) {
 
       <div className="min-h-screen bg-white">
         {/* Breadcrumb */}
-        <nav className="max-w-5xl mx-auto px-6 pt-6 pb-2 text-sm text-gray-400 flex items-center gap-1">
+        <nav aria-label="Breadcrumb" className="max-w-5xl mx-auto px-6 pt-6 pb-2 text-sm text-gray-400 flex items-center gap-1">
           <Link to="/" className="hover:text-gray-600">Home</Link>
           <ChevronRight className="w-3 h-3" />
           <Link to="/ai-optimization/" className="hover:text-gray-600">For Clinics</Link>
@@ -249,7 +249,7 @@ export default function ClinicPage({ slug }) {
         </section>
 
         {/* CTA / Contact Form */}
-        <section id="contact">
+        <section>
           <div className="max-w-5xl mx-auto px-6 pb-4">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               Get your {clinic.name.toLowerCase()} clinic found on AI search
