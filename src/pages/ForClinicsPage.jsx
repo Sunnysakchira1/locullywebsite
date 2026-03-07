@@ -16,7 +16,7 @@ const schemaBreadcrumb = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://locully.org' },
-    { '@type': 'ListItem', position: 2, name: 'For Clinics', item: 'https://locully.org/for/' },
+    { '@type': 'ListItem', position: 2, name: 'For Clinics', item: 'https://locully.org/ai-optimization/' },
   ],
 };
 
@@ -29,7 +29,7 @@ export default function ForClinicsPage() {
           name="description"
           content="Locully helps Bangkok clinics appear in ChatGPT, Perplexity, and Google AI Overviews. Choose your clinic type to see how AIO works for you."
         />
-        <link rel="canonical" href="https://locully.org/for/" />
+        <link rel="canonical" href="https://locully.org/ai-optimization/" />
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
       </Helmet>
 
@@ -58,7 +58,7 @@ export default function ForClinicsPage() {
               {clinics.map((clinic) => (
                 <Link
                   key={clinic.slug}
-                  to={`/for/${clinic.slug}/`}
+                  to={`/ai-optimization/${clinic.slug}/`}
                   className="group border border-gray-200 rounded-xl p-6 hover:border-indigo-300 hover:shadow-sm transition-all"
                 >
                   <h2 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-indigo-600 transition-colors">

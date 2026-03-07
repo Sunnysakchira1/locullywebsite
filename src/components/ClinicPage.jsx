@@ -52,7 +52,7 @@ export default function ClinicPage({ slug }) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://locully.org' },
-      { '@type': 'ListItem', position: 2, name: 'For Clinics', item: 'https://locully.org/for/' },
+      { '@type': 'ListItem', position: 2, name: 'For Clinics', item: 'https://locully.org/ai-optimization/' },
       { '@type': 'ListItem', position: 3, name: clinic.namePlural },
     ],
   };
@@ -66,8 +66,8 @@ export default function ClinicPage({ slug }) {
         <meta name="description" content={clinic.metaDescription} />
         <meta property="og:title" content={`${clinic.headline} | Locully`} />
         <meta property="og:description" content={clinic.metaDescription} />
-        <meta property="og:url" content={`https://locully.org/for/${clinic.slug}/`} />
-        <link rel="canonical" href={`https://locully.org/for/${clinic.slug}/`} />
+        <meta property="og:url" content={`https://locully.org/ai-optimization/${clinic.slug}/`} />
+        <link rel="canonical" href={`https://locully.org/ai-optimization/${clinic.slug}/`} />
         <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
@@ -78,7 +78,7 @@ export default function ClinicPage({ slug }) {
         <nav className="max-w-5xl mx-auto px-6 pt-6 pb-2 text-sm text-gray-400 flex items-center gap-1">
           <Link to="/" className="hover:text-gray-600">Home</Link>
           <ChevronRight className="w-3 h-3" />
-          <Link to="/for/" className="hover:text-gray-600">For Clinics</Link>
+          <Link to="/ai-optimization/" className="hover:text-gray-600">For Clinics</Link>
           <ChevronRight className="w-3 h-3" />
           <span className="text-gray-600">{clinic.namePlural}</span>
         </nav>
@@ -237,7 +237,7 @@ export default function ClinicPage({ slug }) {
               {otherClinics.map((c) => (
                 <Link
                   key={c.slug}
-                  to={`/for/${c.slug}/`}
+                  to={`/ai-optimization/${c.slug}/`}
                   className="inline-flex items-center gap-2 border border-gray-200 rounded-lg px-4 py-2 text-sm text-gray-700 hover:border-indigo-300 hover:text-indigo-600 transition-colors"
                 >
                   {c.namePlural}
