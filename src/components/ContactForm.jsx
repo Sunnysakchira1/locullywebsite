@@ -72,8 +72,11 @@ const ContactForm = () => {
               <div className="l-form-group">
                 <label htmlFor="website" className="l-form-label">Website URL *</label>
                 <input id="website" name="website" type="url" value={formData.website} onChange={handleChange}
-                  placeholder="https://yourwebsite.com" className="l-form-input"
+                  placeholder="https://www.yourwebsite.com" className="l-form-input"
                   disabled={isSubmitting || isSubmitted} required />
+                <p style={{ margin: '6px 0 0', fontSize: 12, color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
+                  Include https://www. — e.g. https://www.yourclinic.com
+                </p>
               </div>
 
               <button
