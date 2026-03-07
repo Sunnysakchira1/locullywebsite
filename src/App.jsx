@@ -17,6 +17,8 @@ import LeadGenPartnerPage from '@/components/LeadGenPartnerPage';
 import AboutPage from '@/components/AboutPage';
 import PackagesPage from '@/components/PackagesPage';
 import ScrollToTop from '@/components/ScrollToTop';
+import ForClinicsPage from '@/pages/ForClinicsPage';
+import ClinicPage from '@/components/ClinicPage';
 
 // Shared Layout/Home Component
 const HomePage = () => {
@@ -55,6 +57,12 @@ function App() {
           <Route path="/lead-gen-partner" element={<LeadGenPartnerPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/packages" element={<PackagesPage />} />
+          <Route path="/ai-optimization/" element={<ForClinicsPage />} />
+          <Route path="/ai-optimization/physiotherapy-clinics/" element={<ClinicPage slug="physiotherapy-clinics" />} />
+          <Route path="/ai-optimization/dental-clinics/" element={<ClinicPage slug="dental-clinics" />} />
+          <Route path="/ai-optimization/wellness-clinics/" element={<ClinicPage slug="wellness-clinics" />} />
+          <Route path="/ai-optimization/fertility-clinics/" element={<ClinicPage slug="fertility-clinics" />} />
+          <Route path="/ai-optimization/beauty-clinics/" element={<ClinicPage slug="beauty-clinics" />} />
         </Routes>
         <Toaster />
       </div>
