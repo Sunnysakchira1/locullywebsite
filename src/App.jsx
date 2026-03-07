@@ -19,6 +19,7 @@ import PackagesPage from '@/components/PackagesPage';
 import ScrollToTop from '@/components/ScrollToTop';
 import ForClinicsPage from '@/pages/ForClinicsPage';
 import ClinicPage from '@/components/ClinicPage';
+import SiteSchema from '@/components/SiteSchema';
 
 // Shared Layout/Home Component
 const HomePage = () => {
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <Router>
+      <SiteSchema />
       <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Routes>

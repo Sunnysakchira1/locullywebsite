@@ -60,7 +60,7 @@ export default function ClinicPage({ slug }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: `AI Optimization for ${clinic.namePlural}`,
-    provider: { '@type': 'Organization', name: 'Locully', url: 'https://locully.org' },
+    provider: { '@id': 'https://locully.org/#organization' },
     areaServed: { '@type': 'City', name: 'Bangkok' },
     description: clinic.metaDescription,
     serviceType: 'AI Search Optimization',

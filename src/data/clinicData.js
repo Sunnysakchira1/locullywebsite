@@ -145,11 +145,11 @@ export const clinics = [
   },
   {
     slug: 'fertility-clinics',
-    name: 'Fertility / IVF',
-    namePlural: 'Fertility & IVF Clinics',
-    headline: 'AI Optimization for Fertility & IVF Clinics in Bangkok',
+    name: 'IVF',
+    namePlural: 'IVF Clinics',
+    headline: 'AI Optimization for IVF Clinics in Bangkok',
     metaDescription:
-      "Help patients find your fertility clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok IVF clinics.",
+      "Help patients find your IVF clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok IVF clinics.",
     intro:
       "Fertility decisions are among the most researched a patient makes. They ask ChatGPT detailed questions before they ever contact a clinic. AI optimization ensures your clinic is recommended at the moment patients are ready to act.",
     aiQueries: [
@@ -193,11 +193,11 @@ export const clinics = [
   },
   {
     slug: 'beauty-clinics',
-    name: 'Beauty & Aesthetic',
-    namePlural: 'Beauty & Aesthetic Clinics',
-    headline: 'AI Optimization for Beauty & Aesthetic Clinics in Bangkok',
+    name: 'Beauty',
+    namePlural: 'Beauty Clinics',
+    headline: 'AI Optimization for Beauty Clinics in Bangkok',
     metaDescription:
-      "Help patients find your beauty clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok aesthetic clinics.",
+      "Help patients find your beauty clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok beauty clinics.",
     intro:
       "Bangkok's aesthetic clinic market is enormous — and increasingly, patients use AI to find trusted recommendations before booking. Clinics optimized for AI search get the consultation. Everyone else competes on Instagram.",
     aiQueries: [
