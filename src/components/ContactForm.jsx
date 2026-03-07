@@ -21,13 +21,22 @@ const ContactForm = () => {
       return;
     }
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch('https://formspree.io/f/mbdzjegj', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Submission failed');
       setIsSubmitted(true);
-      toast({ title: "Request Sent!", description: "We've received your audit request." });
+      toast({ title: "Request Sent!", description: "We've received your audit request and will be in touch shortly." });
       logFormSubmission('AI Visibility Audit Request', true);
-      setTimeout(() => { setFormData({ name: '', email: '', website: '' }); setIsSubmitted(false); }, 3000);
-    }, 1500);
+      setTimeout(() => { setFormData({ name: '', email: '', website: '' }); setIsSubmitted(false); }, 4000);
+    } catch {
+      toast({ title: "Something went wrong", description: "Please try again or email us at admin@locully.org", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
