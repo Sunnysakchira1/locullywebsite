@@ -12,7 +12,6 @@ import CaseStudies from '@/components/CaseStudies';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
-import LeadGenerationPage from '@/components/LeadGenerationPage';
 import LeadGenPartnerPage from '@/components/LeadGenPartnerPage';
 import AboutPage from '@/components/AboutPage';
 import PackagesPage from '@/components/PackagesPage';
@@ -56,7 +55,6 @@ function App() {
       <div className="min-h-screen bg-white">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/lead-generation" element={<LeadGenerationPage />} />
           <Route path="/lead-gen-partner" element={<LeadGenPartnerPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/packages" element={<PackagesPage />} />
