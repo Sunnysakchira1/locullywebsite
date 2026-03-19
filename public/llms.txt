@@ -1,0 +1,2 @@
+## Pages
+- [AI Optimization for Bangkok Clinics | Locully](/forclinics): Locully helps Bangkok clinics appear in ChatGPT, Perplexity, and Google AI Overviews. Choose your clinic type to see how AIO works for you.

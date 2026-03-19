@@ -46,6 +46,7 @@ const Hero = () => {
             <Link to="/ai-optimization/" onClick={() => setMenuOpen(false)}>AI Optimization for Clinics</Link>
             <Link to="/packages" onClick={() => setMenuOpen(false)}>One-Off Packages</Link>
             <Link to="/lead-gen-partner" onClick={() => setMenuOpen(false)}>Lead Gen Partner</Link>
+            <Link to="/blog/" onClick={() => setMenuOpen(false)}>Blog</Link>
             <button onClick={scrollToContact} style={{ color: 'var(--muted)', background: 'none', border: 'none', cursor: 'pointer', padding: '14px 0', fontFamily: 'var(--sans)', fontSize: 16, textAlign: 'left', width: '100%' }}>
               Get Free Audit
             </button>
