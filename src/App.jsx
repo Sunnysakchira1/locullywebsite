@@ -18,6 +18,8 @@ import PackagesPage from '@/components/PackagesPage';
 import ScrollToTop from '@/components/ScrollToTop';
 import ForClinicsPage from '@/pages/ForClinicsPage';
 import ClinicPage from '@/components/ClinicPage';
+import BlogIndexPage from '@/pages/BlogIndexPage';
+import BlogPostPage from '@/pages/BlogPostPage';
 import SiteSchema from '@/components/SiteSchema';
 
 // Shared Layout/Home Component
@@ -64,6 +66,14 @@ function App() {
           <Route path="/ai-optimization/wellness-clinics/" element={<ClinicPage slug="wellness-clinics" />} />
           <Route path="/ai-optimization/fertility-clinics/" element={<ClinicPage slug="fertility-clinics" />} />
           <Route path="/ai-optimization/beauty-clinics/" element={<ClinicPage slug="beauty-clinics" />} />
+          <Route path="/blog/" element={<BlogIndexPage />} />
+          <Route path="/blog/ai-search-optimization-clinics-thailand/" element={<BlogPostPage slug="ai-search-optimization-clinics-thailand" />} />
+          <Route path="/blog/why-clinic-not-showing-chatgpt/" element={<BlogPostPage slug="why-clinic-not-showing-chatgpt" />} />
+          <Route path="/blog/how-chatgpt-chooses-clinic-recommendation/" element={<BlogPostPage slug="how-chatgpt-chooses-clinic-recommendation" />} />
+          <Route path="/blog/ai-optimization-dental-clinics-thailand/" element={<BlogPostPage slug="ai-optimization-dental-clinics-thailand" />} />
+          <Route path="/blog/geo-vs-seo-clinics-bangkok/" element={<BlogPostPage slug="geo-vs-seo-clinics-bangkok" />} />
+          <Route path="/blog/ai-search-audit-clinic-bangkok/" element={<BlogPostPage slug="ai-search-audit-clinic-bangkok" />} />
+          <Route path="/blog/how-to-choose-ai-optimization-agency-clinic-thailand/" element={<BlogPostPage slug="how-to-choose-ai-optimization-agency-clinic-thailand" />} />
         </Routes>
         <Toaster />
       </div>

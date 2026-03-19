@@ -30,6 +30,7 @@ const Footer = () => {
             <div className="l-footer-links">
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
+              <Link to="/blog/">Blog</Link>
               <Link to="/lead-gen-partner">Lead Gen Partner</Link>
               <Link to="/packages">One-Off Packages</Link>
               <Link to="/ai-optimization/">AI Optimization for Clinics</Link>
