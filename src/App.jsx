@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Toaster } from '@/components/ui/toaster';
 import { logPageView } from '@/lib/analytics';
@@ -60,6 +60,15 @@ function App() {
           <Route path="/lead-gen-partner" element={<LeadGenPartnerPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/packages" element={<PackagesPage />} />
+          {/* Trailing-slash redirects */}
+          <Route path="/ai-optimization" element={<Navigate to="/ai-optimization/" replace />} />
+          <Route path="/ai-optimization/physiotherapy-clinics" element={<Navigate to="/ai-optimization/physiotherapy-clinics/" replace />} />
+          <Route path="/ai-optimization/dental-clinics" element={<Navigate to="/ai-optimization/dental-clinics/" replace />} />
+          <Route path="/ai-optimization/wellness-clinics" element={<Navigate to="/ai-optimization/wellness-clinics/" replace />} />
+          <Route path="/ai-optimization/fertility-clinics" element={<Navigate to="/ai-optimization/fertility-clinics/" replace />} />
+          <Route path="/ai-optimization/beauty-clinics" element={<Navigate to="/ai-optimization/beauty-clinics/" replace />} />
+          <Route path="/blog" element={<Navigate to="/blog/" replace />} />
+
           <Route path="/ai-optimization/" element={<ForClinicsPage />} />
           <Route path="/ai-optimization/physiotherapy-clinics/" element={<ClinicPage slug="physiotherapy-clinics" />} />
           <Route path="/ai-optimization/dental-clinics/" element={<ClinicPage slug="dental-clinics" />} />
