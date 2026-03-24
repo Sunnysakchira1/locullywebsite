@@ -32,7 +32,7 @@ const FounderCard = () => {
         </blockquote>
 
         <div className="l-founder-links">
-          <a href="https://www.linkedin.com/in/sunnysak/" target="_blank" rel="noopener noreferrer" className="l-founder-link">
+          <a href="https://www.linkedin.com/in/rachaphon-sakchiraphong/" target="_blank" rel="noopener noreferrer" className="l-founder-link">
             <Linkedin style={{ width: '16px', height: '16px' }} />
             LinkedIn
           </a>

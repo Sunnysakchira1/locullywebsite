@@ -34,7 +34,7 @@ const ContactForm = () => {
       logFormSubmission('AI Visibility Audit Request', true);
       setTimeout(() => { setFormData({ name: '', email: '', website: '' }); setIsSubmitted(false); }, 4000);
     } catch {
-      toast({ title: "Something went wrong", description: "Please try again or email us at admin@locully.org", variant: "destructive" });
+      toast({ title: "Something went wrong", description: "Please try again or email us at admin@locully.org.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }

@@ -96,15 +96,15 @@ const ServicesDropdown = ({ isMobile = false, closeMenu }) => {
               }}
             >
               <div style={{ padding: '8px 0' }}>
-                <Link to="/" style={linkStyle} onClick={handleLinkClick}
+                <Link to="/ai-search-visibility" style={linkStyle} onClick={handleLinkClick}
                   onMouseEnter={e => e.currentTarget.style.background = 'rgba(204,100,50,0.08)'}
                   onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                 >
                   <div style={{ fontFamily: 'var(--sans)', fontSize: '13px', fontWeight: 600, color: 'var(--cream)', marginBottom: '3px' }}>
-                    SEO & AIO
+                    AI Search Visibility
                   </div>
                   <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>
-                    Rank #1 in AI Search Results
+                    Rank #1 in ChatGPT, Perplexity & Google AI
                   </div>
                 </Link>
 

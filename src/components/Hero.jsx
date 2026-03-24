@@ -43,6 +43,7 @@ const Hero = () => {
             transition={{ duration: 0.18 }}
           >
             <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+            <Link to="/ai-search-visibility" onClick={() => setMenuOpen(false)}>AI Search Visibility</Link>
             <Link to="/ai-optimization/" onClick={() => setMenuOpen(false)}>AI Optimization for Clinics</Link>
             <Link to="/packages" onClick={() => setMenuOpen(false)}>One-Off Packages</Link>
             <Link to="/lead-gen-partner" onClick={() => setMenuOpen(false)}>Lead Gen Partner</Link>

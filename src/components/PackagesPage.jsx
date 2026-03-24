@@ -99,7 +99,9 @@ const PackagesPage = () => {
             <motion.div className="l-nav-mobile" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.18 }}>
               <Link to="/" onClick={() => setMenuOpen(false)}>← Home</Link>
               <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-              <Link to="/lead-gen-partner" onClick={() => setMenuOpen(false)}>Lead Gen Partner</Link>
+              <Link to="/ai-search-visibility" onClick={() => setMenuOpen(false)}>AI Search Visibility</Link>
+              <Link to="/ai-optimization/" onClick={() => setMenuOpen(false)}>AI Optimization for Clinics</Link>
+              <Link to="/blog/" onClick={() => setMenuOpen(false)}>Blog</Link>
               <button onClick={openCalendly} style={{ color: 'var(--terra)', background: 'none', border: 'none', cursor: 'pointer', padding: '14px 0', fontFamily: 'var(--sans)', fontSize: 16, textAlign: 'left', width: '100%', fontWeight: 600 }}>
                 Book a Call →
               </button>

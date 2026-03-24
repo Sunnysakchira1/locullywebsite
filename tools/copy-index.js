@@ -28,6 +28,7 @@ const routes = [
   'blog/ai-search-audit-clinic-bangkok',
   'blog/how-to-choose-ai-optimization-agency-clinic-thailand',
   'privacy-policy',
+  'ai-search-visibility',
 ];
 
 for (const route of routes) {

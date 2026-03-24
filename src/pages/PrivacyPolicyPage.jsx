@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
       <Helmet>
         <title>Privacy Policy | Locully</title>
         <meta name="description" content="Locully's privacy policy — how we collect, use, and protect your personal data." />
-        <link rel="canonical" href="https://www.locully.org/privacy-policy" />
+        <link rel="canonical" href="https://locully.org/privacy-policy" />
         <meta name="robots" content="noindex" />
       </Helmet>
 
@@ -45,6 +45,8 @@ export default function PrivacyPolicyPage() {
         {menuOpen && (
           <motion.div className="l-nav-mobile" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.18 }}>
             <Link to="/" onClick={() => setMenuOpen(false)}>← Home</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+            <Link to="/ai-search-visibility" onClick={() => setMenuOpen(false)}>AI Search Visibility</Link>
             <Link to="/ai-optimization/" onClick={() => setMenuOpen(false)}>AI Optimization for Clinics</Link>
             <Link to="/packages" onClick={() => setMenuOpen(false)}>One-Off Packages</Link>
             <Link to="/blog/" onClick={() => setMenuOpen(false)}>Blog</Link>

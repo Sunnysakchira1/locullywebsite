@@ -3,118 +3,122 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://www.locully.org/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Core service pages -->
   <url>
-    <loc>https://www.locully.org/ai-optimization/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/ai-search-visibility</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://locully.org/ai-optimization/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/packages</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/packages</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/lead-gen-partner</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/lead-gen-partner</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/about</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/about</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Clinic-type AI optimization pages -->
   <url>
-    <loc>https://www.locully.org/ai-optimization/physiotherapy-clinics/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/ai-optimization/physiotherapy-clinics/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/ai-optimization/dental-clinics/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/ai-optimization/dental-clinics/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/ai-optimization/wellness-clinics/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/ai-optimization/wellness-clinics/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/ai-optimization/fertility-clinics/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/ai-optimization/fertility-clinics/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/ai-optimization/beauty-clinics/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/ai-optimization/beauty-clinics/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog index -->
+  <!-- Blog -->
   <url>
-    <loc>https://www.locully.org/blog/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/blog/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Blog posts -->
   <url>
-    <loc>https://www.locully.org/blog/ai-search-optimization-clinics-thailand/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/blog/ai-search-optimization-clinics-thailand/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/blog/why-clinic-not-showing-chatgpt/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/blog/why-clinic-not-showing-chatgpt/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/blog/how-chatgpt-chooses-clinic-recommendation/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/blog/how-chatgpt-chooses-clinic-recommendation/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/blog/ai-optimization-dental-clinics-thailand/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/blog/ai-optimization-dental-clinics-thailand/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/blog/geo-vs-seo-clinics-bangkok/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/blog/geo-vs-seo-clinics-bangkok/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/blog/ai-search-audit-clinic-bangkok/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/blog/ai-search-audit-clinic-bangkok/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.locully.org/blog/how-to-choose-ai-optimization-agency-clinic-thailand/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://locully.org/blog/how-to-choose-ai-optimization-agency-clinic-thailand/</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

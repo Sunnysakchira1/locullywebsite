@@ -21,6 +21,7 @@ import ClinicPage from '@/components/ClinicPage';
 import BlogIndexPage from '@/pages/BlogIndexPage';
 import BlogPostPage from '@/pages/BlogPostPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
+import SeoAioPage from '@/pages/SeoAioPage';
 import SiteSchema from '@/components/SiteSchema';
 
 // Shared Layout/Home Component
@@ -85,6 +86,7 @@ function App() {
           <Route path="/blog/ai-search-audit-clinic-bangkok/" element={<BlogPostPage slug="ai-search-audit-clinic-bangkok" />} />
           <Route path="/blog/how-to-choose-ai-optimization-agency-clinic-thailand/" element={<BlogPostPage slug="how-to-choose-ai-optimization-agency-clinic-thailand" />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/ai-search-visibility" element={<SeoAioPage />} />
         </Routes>
         <Toaster />
       </div>
