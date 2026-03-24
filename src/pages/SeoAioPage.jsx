@@ -228,6 +228,23 @@ export default function SeoAioPage() {
           </div>
         </section>
 
+        {/* CTA Strip 1 */}
+        <div style={{ background: 'var(--terra)', padding: '28px 0' }}>
+          <div className="l-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap' }}>
+            <p style={{ fontFamily: 'var(--sans)', fontSize: 15, fontWeight: 500, color: '#fff', margin: 0 }}>
+              Want to see where your brand stands in AI search right now?
+            </p>
+            <div style={{ display: 'flex', gap: 10, flexShrink: 0 }}>
+              <button onClick={scrollToContact} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: 'var(--terra)', padding: '10px 22px', borderRadius: 6, border: 'none', fontWeight: 700, fontSize: 13, cursor: 'pointer', fontFamily: 'var(--sans)' }}>
+                Get Free Audit <ArrowRight style={{ width: 14, height: 14 }} />
+              </button>
+              <button onClick={openCalendly} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.15)', color: '#fff', padding: '10px 22px', borderRadius: 6, border: '1px solid rgba(255,255,255,0.35)', fontWeight: 600, fontSize: 13, cursor: 'pointer', fontFamily: 'var(--sans)' }}>
+                Book a Call
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Our Methodology */}
         <section className="l-section" style={{ background: 'var(--bg2)', paddingTop: 80, paddingBottom: 80 }}>
           <div className="l-container">
@@ -378,6 +395,24 @@ export default function SeoAioPage() {
             </div>
           </div>
         </section>
+
+        {/* CTA Strip 2 */}
+        <div style={{ background: 'var(--surface)', borderTop: '1px solid var(--bdr)', borderBottom: '1px solid var(--bdr)', padding: '28px 0' }}>
+          <div className="l-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap' }}>
+            <p style={{ fontFamily: 'var(--sans)', fontSize: 15, fontWeight: 500, color: 'var(--cream)', margin: 0 }}>
+              Ready to build your AI search presence?{' '}
+              <span style={{ color: 'var(--muted)', fontWeight: 400 }}>Free audit, no commitment.</span>
+            </p>
+            <div style={{ display: 'flex', gap: 10, flexShrink: 0 }}>
+              <button onClick={scrollToContact} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--terra)', color: '#fff', padding: '10px 22px', borderRadius: 6, border: 'none', fontWeight: 700, fontSize: 13, cursor: 'pointer', fontFamily: 'var(--sans)' }}>
+                Get Free Audit <ArrowRight style={{ width: 14, height: 14 }} />
+              </button>
+              <button onClick={openCalendly} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'none', color: 'var(--terra)', padding: '10px 22px', borderRadius: 6, border: '1px solid var(--terra)', fontWeight: 600, fontSize: 13, cursor: 'pointer', fontFamily: 'var(--sans)' }}>
+                Book a Call
+              </button>
+            </div>
+          </div>
+        </div>
 
         {/* Who It's For */}
         <section className="l-section" style={{ background: 'var(--bg2)', paddingTop: 80, paddingBottom: 80 }}>
