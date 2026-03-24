@@ -237,10 +237,10 @@ export default function BlogIndexPage() {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <span className="l-label" style={{ marginBottom: 20, justifyContent: 'center', display: 'inline-flex' }}>Free Audit</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 600, color: 'var(--cream)', lineHeight: 1.15, marginBottom: 16 }}>
-                Ready to see where your clinic stands in <em style={{ fontStyle: 'italic', color: 'var(--terra)', fontWeight: 300 }}>AI search?</em>
+                Ready to see where your brand stands in <em style={{ fontStyle: 'italic', color: 'var(--terra)', fontWeight: 300 }}>AI search?</em>
               </h2>
               <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, fontWeight: 300, marginBottom: 32 }}>
-                We'll audit your current AI visibility across ChatGPT, Perplexity, and Google AI Overviews — and show you exactly where you're missing patients.
+                We'll audit your current AI visibility across ChatGPT, Perplexity, and Google AI Overviews — and show you exactly where you're missing out.
               </p>
               <a href="/#contact" className="l-btn">
                 Get Your Free AI Audit

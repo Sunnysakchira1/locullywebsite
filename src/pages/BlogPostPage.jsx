@@ -42,6 +42,16 @@ export default function BlogPostPage({ slug }) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://locully.org/blog/${post.slug}/` },
   };
 
+  const schemaFaq = post.faqs && post.faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: post.faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  } : null;
+
   const schemaBreadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -71,6 +81,7 @@ export default function BlogPostPage({ slug }) {
         <link rel="canonical" href={`https://locully.org/blog/${post.slug}/`} />
         <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
+        {schemaFaq && <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>}
       </Helmet>
 
       <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
@@ -238,10 +249,10 @@ export default function BlogPostPage({ slug }) {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <div className="l-label" style={{ marginBottom: 16 }}>Get Started</div>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 600, color: 'var(--cream)', lineHeight: 1.1, marginBottom: 12 }}>
-                See where your clinic stands <em style={{ fontStyle: 'italic', color: 'var(--terra)', fontWeight: 300 }}>in AI search</em>
+                See where your brand stands <em style={{ fontStyle: 'italic', color: 'var(--terra)', fontWeight: 300 }}>in AI search</em>
               </h2>
               <p style={{ fontSize: 16, color: 'var(--muted)', maxWidth: 480, marginBottom: 0, fontWeight: 300, lineHeight: 1.7 }}>
-                We'll run your clinic across ChatGPT, Perplexity, and Google AI Overviews — and show you exactly what it would take to get recommended.
+                We'll run your brand across ChatGPT, Perplexity, and Google AI Overviews — and show you exactly what it would take to get recommended.
               </p>
             </motion.div>
           </div>
