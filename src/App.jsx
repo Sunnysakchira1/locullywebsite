@@ -23,6 +23,7 @@ import BlogPostPage from '@/pages/BlogPostPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import SeoAioPage from '@/pages/SeoAioPage';
 import SiteSchema from '@/components/SiteSchema';
+import WhatsAppPopup from '@/components/WhatsAppPopup';
 
 // Shared Layout/Home Component
 const HomePage = () => {
@@ -56,6 +57,7 @@ function App() {
     <Router>
       <SiteSchema />
       <ScrollToTop />
+      <WhatsAppPopup />
       <div className="min-h-screen bg-white">
         <Routes>
           <Route path="/" element={<HomePage />} />
