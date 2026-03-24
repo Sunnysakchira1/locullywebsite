@@ -942,6 +942,716 @@ export const posts = [
     ),
   },
 
+  // ── POST 8: WHAT IS SEO ─────────────────────────────────────────────────────
+  {
+    slug: 'what-is-seo-complete-guide',
+    title: 'What Is SEO? A Complete Guide to Search Engine Optimisation',
+    metaTitle: 'What Is SEO? Complete Guide to Search Engine Optimisation',
+    metaDescription: 'SEO explained from the ground up — how search engines work, what the three pillars are, how ranking actually happens, and what SEO looks like in 2026 alongside AI search.',
+    publishDate: '2026-03-24',
+    updatedDate: '2026-03-24',
+    category: 'Guide',
+    readTime: '10 min read',
+    excerpt: 'SEO explained from scratch — how search engines decide what to rank, what actually moves the needle, and why SEO in 2026 means optimising for both Google and AI.',
+    relatedPosts: ['on-page-seo-optimization-guide', 'backlinks-guide-seo', 'programmatic-seo-guide', 'geo-vs-seo-clinics-bangkok'],
+    relatedClinics: [],
+    Content: () => (
+      <div>
+        <p style={s.p}>
+          SEO — Search Engine Optimisation — is the practice of improving a website so it appears higher in search results and attracts more organic (unpaid) traffic. That's the textbook definition. But in 2026, it's incomplete.
+        </p>
+        <p style={s.p}>
+          Search is no longer just Google. It's ChatGPT, Perplexity, Google AI Overviews, and Gemini. People search by asking questions and expect direct answers — not ten blue links. SEO still matters enormously, but the landscape it operates in has fundamentally changed.
+        </p>
+        <p style={s.p}>
+          This guide explains how SEO works, what the three pillars are, how Google actually decides what to rank, and what effective SEO strategy looks like now.
+        </p>
+
+        <h2 style={s.h2}>How Search Engines Work</h2>
+        <p style={s.p}>
+          Before you can optimise for search engines, you need to understand what they do. Every major search engine — Google, Bing, DuckDuckGo — operates a three-stage process:
+        </p>
+
+        <h3 style={s.h3}>1. Crawling</h3>
+        <p style={s.p}>
+          Search engines send automated bots (called crawlers or spiders) across the web. These bots follow links from page to page, discovering new content. If a page has no links pointing to it, crawlers may never find it — and if they can't find it, they can't rank it.
+        </p>
+        <p style={s.p}>
+          Crawlers follow rules. A file called <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>robots.txt</code> on your website tells crawlers which pages to access and which to skip. Getting this wrong — accidentally blocking important pages — is one of the most common technical SEO mistakes.
+        </p>
+
+        <h3 style={s.h3}>2. Indexing</h3>
+        <p style={s.p}>
+          Once a crawler reads a page, it processes the content and stores it in an index — a massive database of everything the search engine has read. When someone searches, Google doesn't scan the web live. It queries its index.
+        </p>
+        <p style={s.p}>
+          Not everything crawled gets indexed. Google applies quality filters — thin content, duplicate pages, and content flagged as low-value may be excluded. Getting into the index is step one. Getting ranked well is step two.
+        </p>
+
+        <h3 style={s.h3}>3. Ranking</h3>
+        <p style={s.p}>
+          When someone enters a query, Google's algorithm determines which indexed pages are most relevant and authoritative — and in what order to show them. The algorithm evaluates hundreds of signals simultaneously. The most important ones fall into three categories: relevance, authority, and experience.
+        </p>
+
+        <h2 style={s.h2}>The Three Pillars of SEO</h2>
+        <p style={s.p}>
+          SEO work divides into three interconnected areas. Ignoring any one of them creates a ceiling on what the other two can achieve.
+        </p>
+
+        <h3 style={s.h3}>Technical SEO</h3>
+        <p style={s.p}>
+          Technical SEO ensures search engines can crawl, index, and render your site correctly. It has nothing to do with content — it's about infrastructure.
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>Site speed</strong> — Google uses Core Web Vitals (LCP, INP, CLS) as direct ranking signals. Slow sites rank lower.</Li>
+          <Li><strong style={s.strong}>Mobile usability</strong> — Google indexes the mobile version of your site first. If your mobile experience is broken, your rankings suffer on desktop too.</Li>
+          <Li><strong style={s.strong}>Crawlability</strong> — Clean robots.txt, a valid XML sitemap, no broken internal links, no redirect chains.</Li>
+          <Li><strong style={s.strong}>HTTPS</strong> — Google uses secure connection (SSL/TLS) as a ranking signal. Non-HTTPS sites are flagged in browsers and penalised.</Li>
+          <Li><strong style={s.strong}>Structured data</strong> — Schema markup (JSON-LD) helps search engines understand what your content means — not just what it says.</Li>
+        </Ul>
+        <Callout>
+          Technical SEO doesn't directly improve rankings on its own — but it removes the ceiling. You can have the best content in the world and rank nowhere if Google can't crawl and index it properly.
+        </Callout>
+
+        <h3 style={s.h3}>On-Page SEO</h3>
+        <p style={s.p}>
+          On-page SEO is the process of optimising individual pages to rank for specific queries. It covers everything visible on the page — headings, copy, images, internal links — as well as the invisible elements like title tags and meta descriptions.
+        </p>
+        <p style={s.p}>
+          The goal is to make each page a clear, direct, authoritative answer to the query it targets. We cover on-page SEO in depth in our <Link to="/blog/on-page-seo-optimization-guide/" style={s.ilink}>complete on-page SEO guide</Link>.
+        </p>
+
+        <h3 style={s.h3}>Off-Page SEO (Authority Building)</h3>
+        <p style={s.p}>
+          Off-page SEO is about building your site's authority through external signals — primarily backlinks. A backlink is a link from another website to yours. Google interprets links as votes of trust: if authoritative sites link to you, you're probably trustworthy too.
+        </p>
+        <p style={s.p}>
+          Not all links are equal. A single editorial link from a high-authority publication outweighs hundreds of low-quality directory links. Quality, relevance, and context all matter. Read our full <Link to="/blog/backlinks-guide-seo/" style={s.ilink}>guide to backlinks</Link> for the mechanics and strategy.
+        </p>
+
+        <h2 style={s.h2}>How Google Actually Decides What Ranks</h2>
+        <p style={s.p}>
+          Google has never published its full ranking algorithm — and it changes hundreds of times per year. But from a decade of analysis, leaked documents, and empirical testing, the core factors are well understood.
+        </p>
+
+        <h3 style={s.h3}>Search intent match</h3>
+        <p style={s.p}>
+          The single most important ranking factor is whether your page matches the searcher's intent. Google classifies every query by intent — informational ("what is"), navigational ("company name"), commercial ("best X"), transactional ("buy X"). A page that doesn't match intent won't rank regardless of how well optimised it is.
+        </p>
+
+        <h3 style={s.h3}>Content quality and depth</h3>
+        <p style={s.p}>
+          Google's Helpful Content system rewards pages that are genuinely useful to the person reading them — not pages written primarily to game rankings. Depth, accuracy, originality, and demonstration of real expertise (E-E-A-T) are all evaluated.
+        </p>
+
+        <h3 style={s.h3}>Page authority and domain authority</h3>
+        <p style={s.p}>
+          Authority flows through links. A page with many high-quality links pointing to it has more authority and ranks higher — all else being equal. Domain-level authority matters too: new domains take longer to rank because they have no established trust signal history.
+        </p>
+
+        <h3 style={s.h3}>User experience signals</h3>
+        <p style={s.p}>
+          Google uses Core Web Vitals and behavioral signals (though it denies the latter publicly) to assess whether users are satisfied with a page. A page that loads fast, is easy to use, and keeps visitors engaged is treated more favorably than one that's slow and bouncy.
+        </p>
+
+        <InfoBox title="E-E-A-T: What Google Looks for in 2026">
+          <p style={{ ...s.p, marginBottom: 8 }}><strong style={s.strong}>Experience</strong> — Has the author actually done the thing they're writing about?</p>
+          <p style={{ ...s.p, marginBottom: 8 }}><strong style={s.strong}>Expertise</strong> — Do they have relevant knowledge or credentials?</p>
+          <p style={{ ...s.p, marginBottom: 8 }}><strong style={s.strong}>Authoritativeness</strong> — Is the site/author recognised as authoritative in their field?</p>
+          <p style={{ ...s.p, marginBottom: 0 }}><strong style={s.strong}>Trustworthiness</strong> — Is the content accurate, transparent, and honest?</p>
+        </InfoBox>
+
+        <h2 style={s.h2}>How Long Does SEO Take?</h2>
+        <p style={s.p}>
+          This is the most common question in SEO — and the honest answer is: it depends, and anyone who gives you a specific number without knowing your site is guessing.
+        </p>
+        <p style={s.p}>
+          As a general framework:
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>New domain, competitive niche:</strong> 9–18 months to rank meaningfully for valuable terms.</Li>
+          <Li><strong style={s.strong}>Established domain, competitive niche:</strong> 3–6 months to see movement on target terms.</Li>
+          <Li><strong style={s.strong}>Established domain, low-competition niche:</strong> 4–12 weeks with strong content and basic optimisation.</Li>
+          <Li><strong style={s.strong}>Technical fixes:</strong> Can impact rankings within days to weeks.</Li>
+        </Ul>
+        <p style={s.p}>
+          SEO compounds over time. A page that ranks #5 today can move to #1 in 6 months as it accumulates links and engagement. This is the fundamental difference from paid advertising: SEO builds an asset that appreciates. Ads disappear the moment you stop paying.
+        </p>
+
+        <h2 style={s.h2}>SEO in 2026: Google and AI Search Together</h2>
+        <p style={s.p}>
+          The biggest shift in search since mobile happened between 2023 and 2026: AI-generated answers became the dominant format for high-intent queries.
+        </p>
+        <p style={s.p}>
+          Google AI Overviews appear at the top of results for nearly half of all searches. ChatGPT handles over 100 million queries per day. Perplexity crossed 100 million monthly users.
+        </p>
+        <p style={s.p}>
+          The signals that drive AI citations overlap significantly with traditional SEO — authoritative content, clean technical infrastructure, strong external links — but the output is different. In AI search, the goal isn't to rank #1 in a list. It's to be named within a generated answer.
+        </p>
+        <p style={s.p}>
+          Effective search strategy in 2026 optimises for both simultaneously. Good SEO practice feeds AI visibility. AI-optimised content tends to perform better in traditional search. They aren't competing strategies — they're two faces of the same discipline.
+        </p>
+        <p style={s.p}>
+          For a deeper look at how the two interact, see our guide on <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO vs SEO</Link> and the <Link to="/ai-search-visibility" style={s.ilink}>Locully AI Search Visibility service</Link>.
+        </p>
+
+        <Divider />
+
+        <h2 style={s.h2}>FAQ</h2>
+
+        <h3 style={s.h3}>Is SEO still worth investing in?</h3>
+        <p style={s.p}>
+          Yes — categorically. Organic search remains the largest source of website traffic globally. The channels have expanded (AI search, voice search), but Google still processes 8.5 billion searches per day. The question isn't whether to do SEO. It's whether your SEO strategy also accounts for AI search.
+        </p>
+
+        <h3 style={s.h3}>What's the difference between SEO and SEM?</h3>
+        <p style={s.p}>
+          SEM (Search Engine Marketing) covers both paid and organic search. SEO is specifically the organic component — improving rankings without paying for ad placement. Google Ads (PPC) is paid search. Many organisations run both in parallel: ads for immediate traffic, SEO for long-term organic growth.
+        </p>
+
+        <h3 style={s.h3}>Can I do SEO myself?</h3>
+        <p style={s.p}>
+          Partially. Content optimisation, internal linking, and basic technical checks (fixing broken links, writing title tags) can be managed by a capable non-specialist. Technical SEO audits, schema implementation, and authority building campaigns typically require specialist knowledge or tools. The return on hiring a specialist for those areas tends to outweigh the cost.
+        </p>
+
+        <h3 style={s.h3}>How does Google know if I'm trying to manipulate rankings?</h3>
+        <p style={s.p}>
+          Google's spam detection has become significantly more sophisticated since the introduction of machine learning-based ranking systems. Tactics that worked in 2015 — keyword stuffing, low-quality link schemes, thin content — are actively penalised today. The safest and most durable approach is also the correct one: produce genuinely useful content, earn real links, and build authority through expertise.
+        </p>
+
+        <h3 style={s.h3}>What's a realistic budget for SEO?</h3>
+        <p style={s.p}>
+          For small to medium businesses in competitive markets, effective SEO typically requires ฿20,000–80,000/month in agency or specialist costs, depending on content volume, link building, and technical scope. One-off packages for specific deliverables — content sprints or backlink campaigns — are available at lower entry points. See our <Link to="/packages" style={s.ilink}>packages page</Link> for fixed-price options.
+        </p>
+      </div>
+    ),
+  },
+
+  // ── POST 9: ON-PAGE SEO ──────────────────────────────────────────────────────
+  {
+    slug: 'on-page-seo-optimization-guide',
+    title: 'On-Page SEO Optimization: The Complete 2026 Guide',
+    metaTitle: 'On-Page SEO Optimization: Complete 2026 Guide',
+    metaDescription: 'Everything you need to know about on-page SEO — title tags, headers, content depth, internal linking, featured snippets, and E-E-A-T signals that move rankings.',
+    publishDate: '2026-03-24',
+    updatedDate: '2026-03-24',
+    category: 'Guide',
+    readTime: '11 min read',
+    excerpt: 'The complete on-page SEO playbook — every element that affects how Google ranks individual pages, from title tags to content structure to E-E-A-T signals.',
+    relatedPosts: ['what-is-seo-complete-guide', 'backlinks-guide-seo', 'programmatic-seo-guide', 'ai-search-optimization-clinics-thailand'],
+    relatedClinics: [],
+    Content: () => (
+      <div>
+        <p style={s.p}>
+          On-page SEO is the process of optimising individual pages so they rank higher for the queries they target. It's the most direct lever in search engine optimisation — you control every element on your own pages. And unlike link building, you can execute it without anyone else's cooperation.
+        </p>
+        <p style={s.p}>
+          Done right, on-page SEO simultaneously improves Google rankings, increases AI citation rates, and improves conversion. This guide covers every major element, in priority order.
+        </p>
+
+        <h2 style={s.h2}>1. Title Tags</h2>
+        <p style={s.p}>
+          The title tag is the single most influential on-page ranking factor. It appears as the clickable headline in search results and tells Google (and users) exactly what the page is about.
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>Length:</strong> 55–62 characters. Google truncates beyond that. Shorter wastes visible space; longer gets cut.</Li>
+          <Li><strong style={s.strong}>Primary keyword:</strong> Include the target keyword, ideally near the front.</Li>
+          <Li><strong style={s.strong}>Uniqueness:</strong> Every page must have a different title tag. Duplicate titles confuse Google about which page to rank.</Li>
+          <Li><strong style={s.strong}>No keyword stuffing:</strong> "Bangkok Dental Clinic | Best Dental Bangkok | Cheap Dental Bangkok" is a spam signal, not a ranking tactic.</Li>
+        </Ul>
+        <Callout>
+          Write title tags for humans first, search engines second. A title that accurately describes the page and invites a click is always better than one engineered purely around keywords.
+        </Callout>
+
+        <h2 style={s.h2}>2. Meta Descriptions</h2>
+        <p style={s.p}>
+          Meta descriptions don't directly affect rankings — Google confirmed this years ago. But they have a large indirect effect: a well-written meta description increases click-through rate, which brings more traffic to your page.
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>Length:</strong> 140–155 characters. Google shows approximately 150–160 characters on desktop.</Li>
+          <Li><strong style={s.strong}>Answer the query immediately:</strong> Tell the reader what they'll find on the page in the first clause.</Li>
+          <Li><strong style={s.strong}>Include a differentiator:</strong> Why click your result over the others on the page? Make it clear.</Li>
+          <Li><strong style={s.strong}>Don't repeat the title:</strong> The description should add new information, not rephrase what's already in the title.</Li>
+        </Ul>
+
+        <h2 style={s.h2}>3. Header Hierarchy (H1, H2, H3)</h2>
+        <p style={s.p}>
+          Headers organise your content and communicate structure to both users and search engines. Google uses header text as signals for what a page covers and at what depth.
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>H1:</strong> One per page, always. Should match or closely paraphrase the title tag. Tells Google the primary topic of the page.</Li>
+          <Li><strong style={s.strong}>H2s:</strong> Major section headings. Should collectively cover the key sub-topics of the query. Google reads these as an outline of the page's scope.</Li>
+          <Li><strong style={s.strong}>H3s:</strong> Sub-sections within an H2. Use for detailed breakdowns, step-by-step lists, or specific sub-questions.</Li>
+        </Ul>
+        <p style={s.p}>
+          Strong header architecture also dramatically improves AI citability. AI models extract information by section — a page with clear, descriptive headers gives AI engines a map of what each section covers and when to cite it.
+        </p>
+
+        <h2 style={s.h2}>4. Content Depth and Search Intent</h2>
+        <p style={s.p}>
+          Content depth is not about word count. It's about covering a topic thoroughly enough that the searcher gets their question fully answered — and doesn't need to go back to Google.
+        </p>
+        <p style={s.p}>
+          Google calls this "search intent match." Every query has an underlying intent — informational, navigational, commercial, or transactional. A page that matches the intent ranks; one that doesn't, doesn't.
+        </p>
+
+        <h3 style={s.h3}>Informational queries</h3>
+        <p style={s.p}>
+          The searcher wants to learn. Content should lead with a direct answer, then provide depth. FAQs, how-to sections, and supporting examples all increase relevance.
+        </p>
+
+        <h3 style={s.h3}>Commercial queries</h3>
+        <p style={s.p}>
+          The searcher is comparing options. Content should present options, criteria, and comparisons. Pure sales copy ranks poorly for "best X" queries.
+        </p>
+
+        <h3 style={s.h3}>Transactional queries</h3>
+        <p style={s.p}>
+          The searcher wants to take action. Content should focus on conversion signals: price, availability, trust indicators, clear call-to-action. Long educational introductions slow down users who are ready to buy.
+        </p>
+
+        <InfoBox title="Practical content depth test">
+          <p style={{ ...s.p, marginBottom: 0 }}>Open the top 3 results for your target query. What sections do they cover? What questions do they answer? Your page should cover all of those — plus something they miss. If you can't identify a gap, your differentiation becomes quality of execution: clearer writing, better structure, more current information.</p>
+        </InfoBox>
+
+        <h2 style={s.h2}>5. Keyword Usage and Semantic Coverage</h2>
+        <p style={s.p}>
+          Modern Google doesn't need you to repeat your target keyword 20 times. Its language models understand synonyms, related concepts, and topical context. What it's looking for is semantic coverage — does your page demonstrate that you've genuinely addressed the topic?
+        </p>
+        <Ul>
+          <Li>Use the primary keyword naturally in the title, H1, first paragraph, and at least one H2.</Li>
+          <Li>Include related terms and synonyms throughout. If you're writing about "dental implants Bangkok," terms like "osseointegration," "implant crown," "titanium post," and "missing teeth" signal genuine expertise.</Li>
+          <Li>Avoid keyword stuffing — any instance where keyword repetition reads as unnatural to a human reader is a negative signal.</Li>
+          <Li>Use question-format subheadings that mirror how people actually phrase queries. These improve featured snippet eligibility and AI citation rates simultaneously.</Li>
+        </Ul>
+
+        <h2 style={s.h2}>6. URL Structure</h2>
+        <p style={s.p}>
+          URLs should be short, descriptive, and keyword-bearing. Google uses URL structure as a weak ranking signal and as a way to communicate page context to crawlers.
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>Good:</strong> <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/dental-implants-bangkok/</code></Li>
+          <Li><strong style={s.strong}>Bad:</strong> <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/page?id=4382&cat=services&sub=dental</code></Li>
+          <Li>Use hyphens, not underscores, to separate words.</Li>
+          <Li>Keep URLs as shallow as possible — avoid deeply nested structures like <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/services/dental/implants/bangkok/</code>.</Li>
+          <Li>Never change URLs that are already indexed without implementing a 301 redirect — each change resets the authority that URL has accumulated.</Li>
+        </Ul>
+
+        <h2 style={s.h2}>7. Internal Linking</h2>
+        <p style={s.p}>
+          Internal links do two things: they help Google understand the relationship between pages on your site, and they distribute PageRank (authority) from strong pages to weaker ones. Both matter.
+        </p>
+        <p style={s.p}>
+          A page with no internal links pointing to it — an "orphan page" — is harder for Google to discover and receives none of your site's accumulated authority. Every important page should receive at least 2–3 internal links from other relevant pages.
+        </p>
+        <Ul>
+          <Li>Use descriptive anchor text — "physiotherapy clinics in Bangkok" is a better anchor than "click here" or "read more."</Li>
+          <Li>Link from high-authority pages (homepage, pillar posts) to pages you want to rank.</Li>
+          <Li>Avoid linking to the same page repeatedly from the same article with different anchor texts — this can dilute the signal.</Li>
+          <Li>Internal linking also improves session depth: users who follow internal links to related content stay longer, which is a positive engagement signal.</Li>
+        </Ul>
+
+        <h2 style={s.h2}>8. Image Optimisation</h2>
+        <p style={s.p}>
+          Images are a consistent on-page SEO opportunity that many sites neglect. Poor image optimisation slows page load (a ranking signal) and misses the opportunity to reinforce topical relevance.
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>Alt text:</strong> Every image should have descriptive alt text — both for accessibility and for Google's image search index. Describe what the image shows, including relevant keywords where natural.</Li>
+          <Li><strong style={s.strong}>File format:</strong> Use WebP or AVIF for web images. These formats are significantly smaller than JPEG/PNG without visible quality loss — directly improving load speed.</Li>
+          <Li><strong style={s.strong}>File size:</strong> Compress images before upload. A hero image should be under 200KB. Page images under 100KB. Use tools like Squoosh or TinyPNG.</Li>
+          <Li><strong style={s.strong}>File names:</strong> <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>dental-implant-consultation-bangkok.webp</code> is better than <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>IMG_4821.jpg</code>.</Li>
+        </Ul>
+
+        <h2 style={s.h2}>9. Schema Markup</h2>
+        <p style={s.p}>
+          Schema markup (JSON-LD structured data) is code added to a page that explicitly tells search engines and AI engines what the content means — not just what it says.
+        </p>
+        <p style={s.p}>
+          For a blog post, Article schema tells Google who wrote it and when. For a service business, LocalBusiness schema provides your name, address, phone, hours, and category in a machine-readable format. For a product, Product schema enables price and availability to appear in rich results.
+        </p>
+        <p style={s.p}>
+          Schema doesn't directly boost rankings, but it improves rich result eligibility (star ratings, FAQs, breadcrumbs appearing in search results) and significantly increases AI citability — AI models rely heavily on structured data to identify and recommend entities.
+        </p>
+
+        <h2 style={s.h2}>10. E-E-A-T Signals</h2>
+        <p style={s.p}>
+          E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) is Google's quality framework for evaluating content. It's especially important for YMYL (Your Money Your Life) topics — health, finance, legal advice — where low-quality information can cause real harm.
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>Author information:</strong> Who wrote the page? A named author with verifiable credentials is more trustworthy than anonymous content.</Li>
+          <Li><strong style={s.strong}>Last updated date:</strong> Visible "last updated" timestamps tell users and Google that information is current.</Li>
+          <Li><strong style={s.strong}>Source attribution:</strong> Cite statistics and claims with links to original sources. This signals research depth, not copying.</Li>
+          <Li><strong style={s.strong}>About page and contact information:</strong> Transparent company information is a basic trust signal. Pages with no "About" or contact information score lower on trustworthiness.</Li>
+        </Ul>
+
+        <Divider />
+
+        <h2 style={s.h2}>FAQ</h2>
+
+        <h3 style={s.h3}>How many keywords should one page target?</h3>
+        <p style={s.p}>
+          One primary keyword and 3–5 closely related secondary terms. A page trying to rank for too many unrelated terms sends a confused signal. Each distinct topic should have its own page. This is the foundation of topic clustering — a structure where each page owns a specific query and links to related pages.
+        </p>
+
+        <h3 style={s.h3}>Does content length matter for rankings?</h3>
+        <p style={s.p}>
+          Word count alone doesn't matter. Depth does. A 600-word page that fully answers a simple question outranks a 3,000-word page that pads out the same answer with filler. That said, competitive head terms typically require more depth — analysis of top-ranking pages tends to show that thorough content wins. The key question is: does the page fully satisfy the query? If yes, it's the right length.
+        </p>
+
+        <h3 style={s.h3}>How often should I update existing pages?</h3>
+        <p style={s.p}>
+          High-value pages should be reviewed quarterly. Update statistics, add new FAQs that reflect current search behaviour, improve sections where Google Search Console shows impressions but low click-through. Content freshness is a positive signal — but only for meaningful updates. Changing a sentence doesn't count.
+        </p>
+
+        <h3 style={s.h3}>What's the difference between on-page SEO and content marketing?</h3>
+        <p style={s.p}>
+          On-page SEO is the technical and structural optimisation of pages for search performance. Content marketing is the strategy of creating valuable content to attract and engage an audience. In practice, the best results come from doing both: content strategically planned around search demand, then technically optimised to rank for it.
+        </p>
+      </div>
+    ),
+  },
+
+  // ── POST 10: BACKLINKS ───────────────────────────────────────────────────────
+  {
+    slug: 'backlinks-guide-seo',
+    title: 'Backlinks: What They Are, Why They Matter, and How to Build Them',
+    metaTitle: 'Backlinks Guide: What They Are & How to Build Them',
+    metaDescription: 'The complete guide to backlinks — how Google uses them to measure authority, what makes a link valuable, and which link building strategies actually work in 2026.',
+    publishDate: '2026-03-24',
+    updatedDate: '2026-03-24',
+    category: 'Guide',
+    readTime: '10 min read',
+    excerpt: "How Google uses backlinks to measure authority, what separates a valuable link from a worthless one, and the link building strategies that still work in 2026.",
+    relatedPosts: ['what-is-seo-complete-guide', 'on-page-seo-optimization-guide', 'programmatic-seo-guide', 'how-to-choose-ai-optimization-agency-clinic-thailand'],
+    relatedClinics: [],
+    Content: () => (
+      <div>
+        <p style={s.p}>
+          Backlinks are links from one website to another. When Site A publishes an article and includes a link pointing to Site B, that's a backlink for Site B.
+        </p>
+        <p style={s.p}>
+          Google treats links as votes of trust. If hundreds of credible websites link to your content, Google interprets that as a signal that your content is valuable enough to reference. This remains one of the three most important ranking signals in Google's algorithm — and it has been for over 25 years.
+        </p>
+        <p style={s.p}>
+          This guide explains how Google uses backlinks, what makes a link genuinely valuable, and which link building strategies are worth your time and budget.
+        </p>
+
+        <h2 style={s.h2}>Why Google Still Relies on Backlinks</h2>
+        <p style={s.p}>
+          Google was built on backlinks. The original PageRank algorithm — the mathematical model Larry Page and Sergey Brin published in 1998 — treated links as citations. In academic publishing, a paper cited hundreds of times is more influential than one nobody references. They applied the same logic to the web.
+        </p>
+        <p style={s.p}>
+          That logic still holds in 2026. Links are hard to fake at scale. Anyone can write content. Earning links from credible third parties requires that your content is useful, accurate, and worth referencing. It's a quality signal that's expensive to manufacture — which is exactly why Google trusts it.
+        </p>
+        <Callout>
+          Google's own documentation and leaked internal communications confirm that PageRank — link-based authority — remains one of the top three ranking signals alongside relevance and user experience.
+        </Callout>
+
+        <h2 style={s.h2}>What Makes a Backlink Valuable?</h2>
+        <p style={s.p}>
+          Not all links are equal. A single editorial link from a major publication can outweigh 500 low-quality directory links. Four factors determine link value:
+        </p>
+
+        <h3 style={s.h3}>1. Domain authority</h3>
+        <p style={s.p}>
+          A link from the New York Times, Forbes, or a respected industry publication passes far more authority than a link from a newly registered blog with no traffic. Domain authority (commonly measured by tools like Ahrefs as DR — Domain Rating, or Moz as DA — Domain Authority) is a proxy for how much trust Google has in the linking site.
+        </p>
+        <p style={s.p}>
+          As a practical benchmark: links from DR50+ sites are meaningful. Links from DR30+ are decent for building diversity. Links from DR0–20 sites with no traffic have negligible value — and in bulk, can signal to Google that you're involved in link schemes.
+        </p>
+
+        <h3 style={s.h3}>2. Relevance</h3>
+        <p style={s.p}>
+          A link from a healthcare publication to a clinic's website is more valuable than the same DR link from a fishing website. Google evaluates topical relevance when determining how much trust a link should pass. Links from contextually related sites reinforce your authority in a specific domain — not just in general.
+        </p>
+
+        <h3 style={s.h3}>3. Anchor text</h3>
+        <p style={s.p}>
+          Anchor text is the visible, clickable text of a link. It tells Google what the linked page is about. A link with anchor text "best physiotherapy clinic Bangkok" passes more relevant signal for that query than one that says "click here."
+        </p>
+        <p style={s.p}>
+          However, over-optimised anchor text — where every link to your page uses the exact same keyword phrase — is a spam signal. A natural link profile contains a mix of branded anchors ("Locully"), partial-match anchors, and generic anchors ("read more"), with keyword-rich anchors as a minority.
+        </p>
+
+        <h3 style={s.h3}>4. Do-follow vs no-follow</h3>
+        <p style={s.p}>
+          By default, links pass authority — these are "do-follow" links. A "no-follow" attribute (<code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>rel="nofollow"</code>) tells Google not to pass PageRank through that link.
+        </p>
+        <p style={s.p}>
+          No-follow links — common on social media, Wikipedia, and most comment sections — don't directly pass ranking authority. They're not worthless (brand visibility, referral traffic, and trust signals still apply), but they're less valuable than do-follow editorial links for rankings.
+        </p>
+
+        <h2 style={s.h2}>Link Building Strategies That Work in 2026</h2>
+
+        <h3 style={s.h3}>1. Digital PR and editorial outreach</h3>
+        <p style={s.p}>
+          The highest-value links come from journalists and editors who choose to reference your content or expertise. Digital PR involves creating genuinely newsworthy assets — original research, data studies, expert commentary, or strong opinion pieces — and proactively pitching them to relevant publications.
+        </p>
+        <p style={s.p}>
+          Done well, a single digital PR campaign can earn 10–50 links from high-authority publications. Done poorly (spammy mass outreach), it damages your brand and relationship with journalists.
+        </p>
+
+        <h3 style={s.h3}>2. Guest posting on industry publications</h3>
+        <p style={s.p}>
+          Writing articles for other publications in your industry — with a link back to your site — is one of the most consistent link building tactics. The key is publishing on genuinely relevant, high-quality sites, not content farms that accept anything.
+        </p>
+        <p style={s.p}>
+          Google has explicitly stated that guest posting "purely for links" is against its guidelines. The practical line: guest posts should be genuinely useful articles on reputable sites, not 500-word filler published purely to drop a link.
+        </p>
+
+        <h3 style={s.h3}>3. Resource page link building</h3>
+        <p style={s.p}>
+          Many websites maintain "resource" pages — curated lists of useful tools, guides, or services in a specific area. If your content or service belongs on such a list, reaching out to the site owner with a relevant suggestion is a low-friction way to earn links.
+        </p>
+
+        <h3 style={s.h3}>4. Broken link building</h3>
+        <p style={s.p}>
+          Find pages on relevant websites that link to content that no longer exists (broken links). Reach out to the site owner, flag the broken link, and suggest your content as a replacement. This provides genuine value to the site owner — which makes the pitch non-spammy and more likely to succeed.
+        </p>
+
+        <h3 style={s.h3}>5. Building linkable assets</h3>
+        <p style={s.p}>
+          The most scalable link acquisition strategy is creating content so useful that people link to it naturally. Original research, comprehensive guides, free tools, data visualizations, and authoritative statistics attract links without active outreach.
+        </p>
+        <p style={s.p}>
+          This is higher investment upfront but lower ongoing effort. A well-researched study can attract links for years without any active link building activity.
+        </p>
+
+        <h2 style={s.h2}>Backlinks and AI Search</h2>
+        <p style={s.p}>
+          The relationship between backlinks and AI citation is indirect but real. AI models like ChatGPT and Perplexity are trained on data from the web — and high-authority sites with many quality inbound links are more likely to be included in that training data and to appear in AI search results.
+        </p>
+        <p style={s.p}>
+          More directly: when Perplexity pulls sources to answer a query, it tends to cite sites with established domain authority. A strong backlink profile isn't just a Google signal — it's a trust signal that AI systems inherit from their training data.
+        </p>
+
+        <h2 style={s.h2}>Links to Avoid</h2>
+        <p style={s.p}>
+          Google's Penguin algorithm update (and its successors) actively penalises manipulative link schemes. The following can hurt your rankings rather than help them:
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>Private blog networks (PBNs):</strong> Networks of fake sites created purely to link to target sites. Google detects these at scale and issues manual penalties.</Li>
+          <Li><strong style={s.strong}>Paid links without disclosure:</strong> Buying links and presenting them as editorial is against Google's guidelines. Paid placements that disclose their nature (sponsored/no-follow) are permissible.</Li>
+          <Li><strong style={s.strong}>Link farms:</strong> Low-quality sites that exist purely to sell links with no real content or audience.</Li>
+          <Li><strong style={s.strong}>Irrelevant directory links in bulk:</strong> Hundreds of links from generic directories in unrelated industries signal link scheme activity.</Li>
+          <Li><strong style={s.strong}>Comment spam:</strong> Leaving links in blog comments or forum posts at scale is a spam signal — particularly on sites using no-follow.</Li>
+        </Ul>
+
+        <InfoBox title="How to check your backlink profile">
+          <p style={{ ...s.p, marginBottom: 0 }}>Use Ahrefs Site Explorer, Moz Link Explorer, or Google Search Console (which shows a sample of your links for free). Look at the DR distribution of your referring domains, the relevance of linking sites, and the anchor text spread. A healthy profile looks varied — a single anchor text on 80% of your links is a red flag.</p>
+        </InfoBox>
+
+        <Divider />
+
+        <h2 style={s.h2}>FAQ</h2>
+
+        <h3 style={s.h3}>How many backlinks do I need to rank?</h3>
+        <p style={s.p}>
+          There's no universal number — it depends entirely on the competitiveness of your target keyword. Check the top 3 results for your target query in Ahrefs or Moz. Look at the referring domain count for each. That's your benchmark. For low-competition local queries, 10–20 quality links can be enough. National competitive terms might need hundreds from high-DR domains.
+        </p>
+
+        <h3 style={s.h3}>Can I buy backlinks?</h3>
+        <p style={s.p}>
+          Paying for editorial placements is common practice — many agencies do it. The distinction Google draws is between transparent paid placements (which should be disclosed or no-followed) and undisclosed paid links designed to manipulate rankings. High-quality editorial placements from relevant, reputable sites that happen to involve payment are widely used and generally safe. Low-quality bulk link packages are not.
+        </p>
+
+        <h3 style={s.h3}>Do social media links count as backlinks?</h3>
+        <p style={s.p}>
+          Most social media platforms apply no-follow to outbound links, meaning they don't pass PageRank directly. They're not worthless — brand visibility, traffic, and indirect authority signals matter — but they're not a substitute for editorial do-follow links from relevant sites.
+        </p>
+
+        <h3 style={s.h3}>How long does it take for a new backlink to affect rankings?</h3>
+        <p style={s.p}>
+          Typically 2–8 weeks after Google crawls and processes the linking page. The impact depends on the authority of the linking site, how many other new links you've acquired recently, and the competitiveness of the query. Sudden spikes in new links — particularly from low-quality sources — can temporarily suppress rankings before recovering.
+        </p>
+      </div>
+    ),
+  },
+
+  // ── POST 11: PROGRAMMATIC SEO ────────────────────────────────────────────────
+  {
+    slug: 'programmatic-seo-guide',
+    title: 'Programmatic SEO: How to Build Pages at Scale That Actually Rank',
+    metaTitle: 'Programmatic SEO Guide: Build Pages at Scale That Rank',
+    metaDescription: 'How programmatic SEO works, the 12 proven playbooks, when to use it, what separates pages that rank from thin content that gets penalised — and how to build it right.',
+    publishDate: '2026-03-24',
+    updatedDate: '2026-03-24',
+    category: 'Guide',
+    readTime: '12 min read',
+    excerpt: 'Programmatic SEO explained — how to build hundreds of search-optimised pages from data at scale, the 12 proven playbooks, and the quality line between ranking and penalty.',
+    relatedPosts: ['what-is-seo-complete-guide', 'on-page-seo-optimization-guide', 'backlinks-guide-seo', 'ai-search-optimization-clinics-thailand'],
+    relatedClinics: [],
+    Content: () => (
+      <div>
+        <p style={s.p}>
+          Programmatic SEO is the practice of creating large numbers of search-optimised pages automatically — using templates populated with data, rather than writing each page individually.
+        </p>
+        <p style={s.p}>
+          Instead of writing one article about "best physiotherapy clinics in Bangkok," you build a system that generates "best physiotherapy clinics in Bangkok," "best physiotherapy clinics in Phuket," "best physiotherapy clinics in Chiang Mai" — and a hundred more variations — each populated with location-specific data and genuinely differentiated content.
+        </p>
+        <p style={s.p}>
+          Done correctly, programmatic SEO is one of the highest-leverage growth tactics in organic search. Done incorrectly, it produces the thin, repetitive content Google penalises. This guide explains how to build it right.
+        </p>
+
+        <h2 style={s.h2}>How Programmatic SEO Works</h2>
+        <p style={s.p}>
+          The core idea is to identify keyword patterns — repeating structures where the intent is consistent but a variable changes — and build a template that generates a unique, useful page for each variation.
+        </p>
+
+        <h3 style={s.h3}>The three components</h3>
+        <Ol>
+          <NumLi n="1"><strong style={s.strong}>Keyword pattern</strong> — A repeating search query structure with identifiable variables. "[Service] in [City]" is a pattern. "Best [tool] for [use case]" is a pattern. "[Competitor] alternative" is a pattern.</NumLi>
+          <NumLi n="2"><strong style={s.strong}>Data source</strong> — Information that makes each page unique and useful. Location data, product specs, pricing, reviews, statistics, provider lists. Without proprietary or differentiated data, you produce thin content.</NumLi>
+          <NumLi n="3"><strong style={s.strong}>Page template</strong> — A consistent structure that ensures each generated page is well-optimised (correct title tag, H1, schema markup, internal links) while incorporating the unique data that differentiates each page.</NumLi>
+        </Ol>
+
+        <InfoBox title="The thin content problem">
+          <p style={{ ...s.p, marginBottom: 0 }}>The most common programmatic SEO failure is building pages that are structurally identical with only a city name or variable swapped. Google's Helpful Content system specifically targets these — pages that are "doorway pages" providing no real value to the visitor. Every page must provide genuine, unique utility. The variable changes are not sufficient differentiation on their own.</p>
+        </InfoBox>
+
+        <h2 style={s.h2}>The 12 Programmatic SEO Playbooks</h2>
+        <p style={s.p}>
+          There are 12 proven patterns that produce scalable, rankable programmatic pages. Each works because it matches a real search pattern with genuine user intent.
+        </p>
+
+        <h3 style={s.h3}>1. Locations</h3>
+        <p style={s.p}>
+          "[Service] in [City]" pages are the most common programmatic SEO use case. Effective only when the page includes actual local data — real providers, local pricing, local regulations — not just a city name inserted into boilerplate text.
+        </p>
+
+        <h3 style={s.h3}>2. Comparisons</h3>
+        <p style={s.p}>
+          "[Product A] vs [Product B]" pages capture high-commercial-intent traffic from users comparing options. The best comparison pages include honest assessments of both options, a clear recommendation by use case, and regularly updated feature data.
+        </p>
+
+        <h3 style={s.h3}>3. Templates</h3>
+        <p style={s.p}>
+          "[Type] template" pages attract users who need a starting point for a deliverable — invoice templates, proposal templates, contract templates. These work best when the template is actually downloadable or usable directly on the page.
+        </p>
+
+        <h3 style={s.h3}>4. Alternatives</h3>
+        <p style={s.p}>
+          "Best [competitor] alternatives" pages capture users who are dissatisfied with an existing solution. These have high commercial intent and convert well, particularly in SaaS and tools categories.
+        </p>
+
+        <h3 style={s.h3}>5. Integrations</h3>
+        <p style={s.p}>
+          "[Your product] + [other product] integration" pages are highly effective for SaaS companies with integration ecosystems. Users searching for specific integrations have high purchase intent and are often evaluating whether to switch tools.
+        </p>
+
+        <h3 style={s.h3}>6. Conversions</h3>
+        <p style={s.p}>
+          "[Unit] to [unit] converter" or "[Currency] to [currency]" pages generate massive traffic with minimal content — but require accurate, real-time data. This is a winner-take-all category dominated by utility.
+        </p>
+
+        <h3 style={s.h3}>7. Glossary</h3>
+        <p style={s.p}>
+          "What is [term]" and "[term] definition" pages build topical authority and capture top-of-funnel awareness. Each term needs genuine depth — not a dictionary definition, but an explanation with context and examples.
+        </p>
+
+        <h3 style={s.h3}>8. Directory</h3>
+        <p style={s.p}>
+          Comprehensive directories — "[Category] tools," "[Industry] companies" — work when they provide genuine aggregation value: filtering, comparison, reviews, detailed profiles. A list of company names with no other information is thin content.
+        </p>
+
+        <h3 style={s.h3}>9. Personas</h3>
+        <p style={s.p}>
+          "[Product] for [audience]" pages — "project management for freelancers," "CRM for real estate agents" — let you address specific segments at scale. They work best when each persona page genuinely addresses the specific needs of that audience, not just mentions them in the intro.
+        </p>
+
+        <h3 style={s.h3}>10. Examples</h3>
+        <p style={s.p}>
+          "[Type] examples" and "[Category] inspiration" pages attract research-phase traffic. Galleries of real examples with analysis of why they work outperform pages that are just a list of screenshots.
+        </p>
+
+        <h3 style={s.h3}>11. Profiles</h3>
+        <p style={s.p}>
+          Pages about specific entities — companies, people, products — scale well in B2B, research, and news-adjacent contexts. Profile pages must be factually accurate, regularly updated, and provide information not easily found elsewhere.
+        </p>
+
+        <h3 style={s.h3}>12. Translations</h3>
+        <p style={s.p}>
+          Publishing your core content in multiple languages opens entirely new markets, often with less competition than English. Requires genuine localisation — not machine translation — and correct hreflang implementation to avoid duplicate content penalties.
+        </p>
+
+        <h2 style={s.h2}>What Separates Rankings from Penalties</h2>
+        <p style={s.p}>
+          Google's Helpful Content system and spam policies specifically target programmatic content. The distinction it makes is clear: pages that exist to rank, versus pages that exist to help users.
+        </p>
+
+        <h3 style={s.h3}>Pages that rank</h3>
+        <Ul>
+          <Li>Provide unique value specific to each page — not just a swapped variable</Li>
+          <Li>Are built around proprietary or differentiated data</Li>
+          <Li>Answer the query fully without requiring users to go elsewhere</Li>
+          <Li>Have a logical place in the site's information architecture</Li>
+          <Li>Connect through internal links to related content</Li>
+        </Ul>
+
+        <h3 style={s.h3}>Pages that get penalised</h3>
+        <Ul>
+          <Li>Swap a single variable (city name, product name) in otherwise identical content</Li>
+          <Li>Have no real data differentiating each page</Li>
+          <Li>Exist solely to funnel users to another page (doorway pages)</Li>
+          <Li>Are not accessible from the main site navigation or sitemaps</Li>
+          <Li>Generate in volumes that dilute the overall quality of the domain</Li>
+        </Ul>
+
+        <h2 style={s.h2}>Technical Requirements</h2>
+        <p style={s.p}>
+          Programmatic SEO has specific technical requirements beyond standard on-page SEO:
+        </p>
+        <Ul>
+          <Li><strong style={s.strong}>URL structure:</strong> Always use subfolders (<code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/locations/bangkok/</code>), not subdomains (<code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>bangkok.yoursite.com</code>). Subdomains don't inherit domain authority.</Li>
+          <Li><strong style={s.strong}>Canonical tags:</strong> Set canonical URLs on each programmatic page to prevent cross-page duplicate content issues.</Li>
+          <Li><strong style={s.strong}>Indexing control:</strong> Not every programmatic page should be indexed. Very thin or low-traffic variations can be excluded (noindex) to prevent them from diluting your domain's quality signal.</Li>
+          <Li><strong style={s.strong}>Sitemaps:</strong> Submit programmatic page sitemaps separately so Google can process them at scale. Monitor indexation rate — if Google is de-indexing your pages, it's a quality signal problem.</Li>
+          <Li><strong style={s.strong}>Crawl budget:</strong> Large programmatic sites need to manage crawl budget carefully. Avoid infinite pagination, parameter-based URLs, and unnecessary URL variations.</Li>
+        </Ul>
+
+        <h2 style={s.h2}>Programmatic SEO and AI Search</h2>
+        <p style={s.p}>
+          Programmatic pages can contribute to AI search visibility, but the bar is higher. AI models don't cite thin content. If a programmatic page provides genuine, specific information — real clinic data, real location-specific facts, specific product comparisons — it can be cited.
+        </p>
+        <p style={s.p}>
+          The advantage of programmatic pages in AI search is coverage: a well-built location directory gives AI engines a rich data source for location-specific queries. The risk is the same as with Google: low-quality pages at scale can damage the domain's overall trustworthiness.
+        </p>
+        <p style={s.p}>
+          For businesses combining programmatic SEO with AI search strategy, we recommend building programmatic pages on solid data first, then layering AI-optimisation signals (schema, FAQs, citation-friendly formatting) onto the template.
+        </p>
+
+        <Divider />
+
+        <h2 style={s.h2}>FAQ</h2>
+
+        <h3 style={s.h3}>How many pages should a programmatic SEO project generate?</h3>
+        <p style={s.p}>
+          Start smaller than you think. A focused first phase of 50–200 high-quality pages is better than 10,000 thin ones. Validate that your pages are being indexed, getting traffic, and ranking before scaling. The most common mistake is scaling before proving the template works.
+        </p>
+
+        <h3 style={s.h3}>What technology stack do I need?</h3>
+        <p style={s.p}>
+          The right stack depends on your scale and existing infrastructure. Common approaches: Next.js or Gatsby with a headless CMS or database for content-heavy sites; WordPress with custom post types for mid-scale; static site generators (Astro, Eleventy) for very high page counts where server-side rendering is too slow. The database or CMS that stores your differentiated data is more important than the framework.
+        </p>
+
+        <h3 style={s.h3}>Can programmatic SEO work for small businesses?</h3>
+        <p style={s.p}>
+          Yes — the pattern doesn't require technical resources. A clinic with multiple treatment pages structured consistently, a service provider generating location-specific landing pages, or a consultant building use-case pages can all benefit. The scale doesn't need to be thousands of pages. Even 20–50 well-structured pages built from a consistent template is programmatic SEO in principle.
+        </p>
+
+        <h3 style={s.h3}>Does programmatic SEO replace editorial content?</h3>
+        <p style={s.p}>
+          No. Programmatic and editorial content serve different purposes. Programmatic pages capture specific, high-volume search patterns at scale. Editorial content — long-form guides, opinion pieces, original research — builds topical authority and earns links. The strongest content strategies use both. Programmatic pages without editorial authority tend to plateau; editorial content without programmatic coverage misses long-tail opportunities.
+        </p>
+
+        <h3 style={s.h3}>How do I know if my programmatic pages are thin?</h3>
+        <p style={s.p}>
+          Apply this test: if you swap the variable (city, product, audience) and the page remains 90% the same, it's too thin. Each page should have a meaningful, substantive section that could only exist for that specific variable — local data, specific comparisons, audience-specific use cases. If you can't generate that, reconsider whether programmatic is the right approach for that keyword pattern.
+        </p>
+      </div>
+    ),
+  },
+
 ];
 
 export const getPost = (slug) => posts.find((p) => p.slug === slug);

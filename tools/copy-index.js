@@ -27,6 +27,10 @@ const routes = [
   'blog/geo-vs-seo-clinics-bangkok',
   'blog/ai-search-audit-clinic-bangkok',
   'blog/how-to-choose-ai-optimization-agency-clinic-thailand',
+  'blog/what-is-seo-complete-guide',
+  'blog/on-page-seo-optimization-guide',
+  'blog/backlinks-guide-seo',
+  'blog/programmatic-seo-guide',
   'privacy-policy',
   'ai-search-visibility',
 ];

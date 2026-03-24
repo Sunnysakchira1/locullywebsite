@@ -87,6 +87,10 @@ function App() {
           <Route path="/blog/geo-vs-seo-clinics-bangkok/" element={<BlogPostPage slug="geo-vs-seo-clinics-bangkok" />} />
           <Route path="/blog/ai-search-audit-clinic-bangkok/" element={<BlogPostPage slug="ai-search-audit-clinic-bangkok" />} />
           <Route path="/blog/how-to-choose-ai-optimization-agency-clinic-thailand/" element={<BlogPostPage slug="how-to-choose-ai-optimization-agency-clinic-thailand" />} />
+          <Route path="/blog/what-is-seo-complete-guide/" element={<BlogPostPage slug="what-is-seo-complete-guide" />} />
+          <Route path="/blog/on-page-seo-optimization-guide/" element={<BlogPostPage slug="on-page-seo-optimization-guide" />} />
+          <Route path="/blog/backlinks-guide-seo/" element={<BlogPostPage slug="backlinks-guide-seo" />} />
+          <Route path="/blog/programmatic-seo-guide/" element={<BlogPostPage slug="programmatic-seo-guide" />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/ai-search-visibility" element={<SeoAioPage />} />
         </Routes>
