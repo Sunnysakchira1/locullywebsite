@@ -50,9 +50,8 @@ const Footer = () => {
         <div className="l-footer-bottom">
           <p className="l-footer-copy">© 2026 Locully Co. Ltd. All rights reserved.</p>
           <div style={{ display: 'flex', gap: '24px' }}>
-            {['Privacy Policy', 'Terms of Service'].map(item => (
-              <span key={item} style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)', cursor: 'pointer' }}>{item}</span>
-            ))}
+            <Link to="/privacy-policy" style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)', textDecoration: 'none' }}>Privacy Policy</Link>
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>Terms of Service</span>
           </div>
         </div>
       </div>
