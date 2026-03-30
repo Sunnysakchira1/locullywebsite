@@ -38,7 +38,7 @@ const AboutPage = () => {
         <nav className="l-subpage-nav">
           <Link to="/">
             <img
-              src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png"
+              src="/locully-logo.png"
               alt="Locully"
               className="l-subpage-logo"
             />
@@ -87,14 +87,38 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Founder */}
+        {/* Team */}
         <section className="l-section" style={{ background: 'var(--bg2)', paddingTop: '80px', paddingBottom: '80px' }}>
           <div className="l-container">
             <div style={{ textAlign: 'center', marginBottom: '52px' }}>
-              <span className="l-label" style={{ marginBottom: '16px', display: 'inline-flex' }}>Founder</span>
-              <h2 className="l-h2">Meet the Mind Behind Locully</h2>
+              <span className="l-label" style={{ marginBottom: '16px', display: 'inline-flex' }}>The Team</span>
+              <h2 className="l-h2">Meet the People Behind Locully</h2>
             </div>
-            <FounderCard />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <FounderCard />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="l-founder"
+              >
+                <div className="l-founder-img">
+                  <img
+                    src="/rachanon.jpeg"
+                    alt="Rachanon Sakchiraphong - Head of Partnerships at Locully"
+                  />
+                </div>
+                <div className="l-founder-body">
+                  <div className="l-founder-tag">Head of Partnerships</div>
+                  <div className="l-founder-name">Rachanon Sakchiraphong</div>
+                  <div className="l-founder-role">Head of Partnerships</div>
+                  <blockquote className="l-founder-quote">
+                    Rachanon brings years of hands-on experience spanning large-scale events management, government projects, and professional events organisation across Thailand and Southeast Asia. His background coordinating high-profile initiatives — from public sector programmes to major corporate events — gives Locully a unique edge in building the strategic partnerships and relationships that drive real-world authority for our clients.
+                  </blockquote>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
