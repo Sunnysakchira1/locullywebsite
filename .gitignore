@@ -1,11 +1,8 @@
 # Dependencies
 node_modules/
-checker/node_modules/
 
 # Build output
 dist/
-checker/.next/
-checker/tsconfig.tsbuildinfo
 
 # Environment
 .env
