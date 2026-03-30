@@ -14,7 +14,7 @@ const FounderCard = () => {
       {/* Image */}
       <div className="l-founder-img">
         <img
-          src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/3500a91a4c149ce4bd90f26531350113.jpg"
+          src="/sunny.jpeg"
           alt="Sunny Sakchiraphong - Founder of Locully"
         />
       </div>
