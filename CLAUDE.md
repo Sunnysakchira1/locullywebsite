@@ -3,7 +3,7 @@
 ## What this project is
 The marketing website for **Locully** — an SEO & AI visibility agency based in Bangkok, Thailand.
 - Live at: **locully.org**
-- Hosted on: **Cloudflare Pages** (deployed via GitHub)
+- Hosted on: **Vercel** (project `locullywebsite` under `sunnys-projects-eb8b2cd3`; auto-deploys from GitHub `main`)
 - Stack: React 18 + Vite + React Router v7 + Tailwind CSS + Radix UI + Framer Motion
 
 ---
@@ -45,7 +45,7 @@ npm run preview   # Preview production build at localhost:3000
 npm run lint      # ESLint
 ```
 
-**Deployment:** Push to `main` on GitHub → Cloudflare Pages auto-deploys.
+**Deployment:** Push to `main` on GitHub → Vercel auto-builds (`npm run build`) and deploys to production. No preview unless you open a PR.
 
 ---
 
@@ -53,7 +53,7 @@ npm run lint      # ESLint
 
 SPA with React Router. All routes defined in `src/App.jsx`.
 
-**Cloudflare Pages SPA routing:** Handled natively via `public/_redirects` (`/* /index.html 200`). No server-side config needed.
+**Vercel SPA routing:** Handled by `vercel.json` rewrites (`/(.*) → /index.html`). The `public/_redirects` file is a leftover Cloudflare artifact and is ignored by Vercel.
 
 Trailing-slash redirects are explicit in `App.jsx` for all `/ai-optimization/` and `/blog/` routes.
 
@@ -147,3 +147,20 @@ public/
 - GKP keyword data must come from real CSV exports — never fabricate
 - Always verify client location before writing keyword targets — don't infer from website copy
 - AIO is bundled under SEO — not separately priced in proposals
+
+---
+
+## ⚠️ SEO ROUTING RULE — ALL SEO WORK RUNS THROUGH CFT ORCHESTRATOR
+
+**Standing instruction (2026-06-12): "SEO runs through CFT."**
+
+Whenever Sunny assigns ANY SEO task — keyword research, content, on-page, technical SEO, link building, entity/Knowledge Graph, audits, topical maps, AI/GEO visibility, recovery, CTR, schema — the **FIRST action is to invoke the `the-orchestrator-cft` skill** to analyze the objective and plan/sequence the work. Do NOT start executing or jump straight into a sub-skill without orchestrating first.
+
+The orchestrator does not hardcode a fixed workflow. It diagnoses state (entity, SERP, technical, authority), identifies gaps and dependencies, then ROUTES to the correct downstream skills, e.g.:
+- Content writing → `locully-content-writer` (still mandatory for the actual writing)
+- SERP/competitor/on-page → `serp-consensus-analyser-cft`, `competitor-content-consensus-cft`, `onpage-optimisation-cft`
+- Topical maps → `modern-topical-mapper-cft`; Links → `link-profile-auditor-cft` / `competitor-backlink-analyser-cft`
+- Entity → `entity-analyzer-cft`; AI citations → `ai-citation-optimizer-cft`; QA → `self-audit-qa-gate-cft`
+- Keyword data → `keyword-research`
+
+This rule sits ABOVE the existing "always invoke the correct skill before writing content" rule: **orchestrate first, then the orchestrator selects the downstream skill.** No conflict — sequencing, not replacement.
