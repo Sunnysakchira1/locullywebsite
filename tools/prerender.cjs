@@ -25,12 +25,13 @@ const path = require('path');
  */
 async function launchBrowser() {
   if (process.env.VERCEL || process.env.CI) {
-    const chromium = require('@sparticuz/chromium');
+    const mod = require('@sparticuz/chromium');
+    const chromium = mod.default || mod; // v149 is ESM → real object on .default
     const puppeteer = require('puppeteer-core');
     return puppeteer.launch({
       args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
       executablePath: await chromium.executablePath(),
-      headless: chromium.headless,
+      headless: chromium.headless ?? true,
     });
   }
   const puppeteer = require('puppeteer');
