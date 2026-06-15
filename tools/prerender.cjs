@@ -16,7 +16,26 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const puppeteer = require('puppeteer');
+
+/**
+ * Launch headless Chrome. Vercel's build container lacks the system libs
+ * stock Chrome needs (libnspr4 etc.), so there we drive @sparticuz/chromium
+ * (a Chromium built to run in minimal serverless environments) via
+ * puppeteer-core. Locally we use full puppeteer with its bundled browser.
+ */
+async function launchBrowser() {
+  if (process.env.VERCEL || process.env.CI) {
+    const chromium = require('@sparticuz/chromium');
+    const puppeteer = require('puppeteer-core');
+    return puppeteer.launch({
+      args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  }
+  const puppeteer = require('puppeteer');
+  return puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+}
 
 const DIST = path.join(__dirname, '..', 'dist');
 const SITEMAP = path.join(__dirname, '..', 'public', 'sitemap.xml');
@@ -109,10 +128,7 @@ async function main() {
     throw new Error('dist/index.html missing — run vite build first.');
   }
   const server = await startServer();
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+  const browser = await launchBrowser();
 
   let ok = 0;
   console.log(`\n[prerender] ${routes.length} routes →`);
