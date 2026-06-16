@@ -893,7 +893,8 @@ img { max-width: 100%; height: auto; }
   background: linear-gradient(90deg, transparent, var(--terra) 30%, var(--terra) 70%, transparent);
   opacity: 0.5;
 }
-.gnav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.gnav-logo { display: flex; align-items: center; text-decoration: none; }
+.gnav-logo-img { height: 26px; width: auto; display: block; }
 .gnav-mark {
   width: 32px; height: 32px; background: var(--terra); border-radius: 7px;
   display: flex; align-items: center; justify-content: center;

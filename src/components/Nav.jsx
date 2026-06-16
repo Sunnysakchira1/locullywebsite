@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom';
 const Nav = () => (
   <nav className="gnav">
     <Link to="/" className="gnav-logo" aria-label="Locully home">
-      <span className="gnav-mark">L</span>
-      <span className="gnav-word">Locully</span>
+      <img src="/locully-wordmark.png" alt="Locully" className="gnav-logo-img" />
     </Link>
 
     <ul className="gnav-links">
