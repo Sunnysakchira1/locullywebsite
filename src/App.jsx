@@ -17,6 +17,7 @@ import LeadGenPartnerPage from '@/components/LeadGenPartnerPage';
 import AboutPage from '@/components/AboutPage';
 import PackagesPage from '@/components/PackagesPage';
 import ScrollToTop from '@/components/ScrollToTop';
+import Nav from '@/components/Nav';
 import ForClinicsPage from '@/pages/ForClinicsPage';
 import ClinicPage from '@/components/ClinicPage';
 import BlogIndexPage from '@/pages/BlogIndexPage';
@@ -61,6 +62,7 @@ function App() {
       <ScrollToTop />
       <WhatsAppPopup />
       <div className="min-h-screen bg-white">
+        <Nav />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/lead-gen-partner" element={<LeadGenPartnerPage />} />
