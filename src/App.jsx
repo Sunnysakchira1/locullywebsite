@@ -18,6 +18,8 @@ import AboutPage from '@/components/AboutPage';
 import PackagesPage from '@/components/PackagesPage';
 import ScrollToTop from '@/components/ScrollToTop';
 import Nav from '@/components/Nav';
+import homeHtml from '@/home-content.html?raw';
+import '@/home-scoped.css';
 import ForClinicsPage from '@/pages/ForClinicsPage';
 import ClinicPage from '@/components/ClinicPage';
 import BlogIndexPage from '@/pages/BlogIndexPage';
@@ -27,24 +29,49 @@ import SeoAioPage from '@/pages/SeoAioPage';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
 
-// Shared Layout/Home Component
+// Homepage — ported 1:1 from homepage-mockup.html (CSS scoped under .lcm).
 const HomePage = () => {
+  useEffect(() => {
+    // AI Visibility Score self-test (was a <script> in the mockup)
+    const grid = document.getElementById('selfTest');
+    const card = document.getElementById('scoreCard');
+    if (!grid || !card) return;
+    const valEl = document.getElementById('scoreVal');
+    const fill = document.getElementById('scoreFill');
+    const labelEl = document.getElementById('scoreLabel');
+    const msgEl = document.getElementById('scoreMsg');
+    const numEl = card.querySelector('.score-num');
+    let touched = false;
+    const tier = (s) =>
+      s >= 70 ? { c: '#2D7A4F', t: 'STRONG — BUT DEFEND IT', m: "You're ahead — but AI rankings decay and competitors are catching up. The audit shows exactly where you're exposed." }
+      : s >= 40 ? { c: '#A87820', t: 'AT RISK', m: "Competitors are pulling ahead in AI answers. There's clear ground to win back — and fast." }
+      : { c: '#C13030', t: 'CRITICAL — LARGELY INVISIBLE', m: "AI almost never recommends you. Ready-to-book patients are handed to competitors every week. This is fixable." };
+    const update = () => {
+      const checked = grid.querySelectorAll('.test-cb:checked').length;
+      const score = Math.round((8 - checked) / 8 * 100);
+      const t = tier(score);
+      valEl.textContent = score;
+      fill.style.width = score + '%';
+      fill.style.background = t.c;
+      numEl.style.color = t.c;
+      labelEl.textContent = t.t;
+      labelEl.style.color = t.c;
+      if (touched) msgEl.textContent = t.m;
+    };
+    const onChange = () => { touched = true; update(); };
+    grid.addEventListener('change', onChange);
+    update();
+    return () => grid.removeEventListener('change', onChange);
+  }, []);
+
   return (
     <>
       <Helmet>
-        <title>Locully | AI Search Visibility Experts</title>
-        <meta name="description" content="Rank #1 in AI Search Results. We help clinics and brands dominate ChatGPT, Google AI, and Claude recommendations." />
+        <title>Locully | Get Your Business Recommended by ChatGPT</title>
+        <meta name="description" content="Get recommended by ChatGPT when patients search for clinics like yours. Locully makes your brand the answer AI search engines give." />
         <link rel="canonical" href="https://locully.org/" />
       </Helmet>
-      <Hero />
-      <HowPeopleSearch />
-      <SelfTest />
-      <AiRecommendationFlow />
-      <HowItWorks />
-      <ConversionComparison />
-      <CaseStudies />
-      <Testimonials />
-      <ContactForm />
+      <div className="lcm" dangerouslySetInnerHTML={{ __html: homeHtml }} />
       <Footer />
     </>
   );

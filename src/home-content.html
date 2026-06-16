@@ -1,0 +1,2309 @@
+comments
+  ══════════════════════════════════════════
+  --&gt;
+
+  <style>
+    /* ══ TOKENS ══ */
+    :root {
+      --bg:      #FFFFFF;
+      --bg2:     #F8F5F1;
+      --bg3:     #F2EDE6;
+      --surface: #EAE3D8;
+      --bdr:     rgba(26,17,8,0.10);
+      --bdr2:    rgba(204,100,50,0.30);
+      --bdr-w:   rgba(26,17,8,0.07);
+      --terra:   #CC6432;
+      --terra2:  #E8753D;
+      --ink:     #1A1108;
+      --cream:   #1A1108;
+      --muted:   rgba(26,17,8,0.58);
+      --muted2:  rgba(26,17,8,0.36);
+      --green:   #16a34a;
+      --serif:   'Fraunces', Georgia, serif;
+      --mono:    'IBM Plex Mono', monospace;
+      --sans:    'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; }
+
+    /* grain overlay removed for light theme */
+
+    /* ══ LAYOUT ══ */
+    .c     { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+    .sec   { padding: 100px 0; }
+    .sec-sm{ padding: 64px 0; }
+
+    /* ══ TYPOGRAPHY ══ */
+    .label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--terra); font-weight: 500;
+    }
+    .label::before { content: ''; width: 18px; height: 1px; background: var(--terra); }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(52px, 5.5vw, 80px);
+      font-weight: 600; line-height: 1.04;
+      color: var(--cream); letter-spacing: -0.02em;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(34px, 4vw, 56px);
+      font-weight: 600; line-height: 1.1;
+      color: var(--cream); letter-spacing: -0.02em;
+    }
+    h3 {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 600; color: var(--cream); line-height: 1.25;
+    }
+    em.accent { font-style: italic; color: var(--terra); font-weight: 300; }
+    .body    { font-size: 16px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+    .body-sm { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+    .mono    { font-family: var(--mono); }
+
+    /* ══ BUTTONS ══ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--terra); color: #fff;
+      padding: 14px 28px; border-radius: 6px;
+      font-family: var(--sans); font-size: 14px; font-weight: 600;
+      letter-spacing: 0.02em; text-decoration: none;
+      border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 32px rgba(204,100,50,0.3);
+    }
+    .btn:hover { background: var(--terra2); transform: translateY(-2px); }
+    .btn-lg { padding: 16px 36px; font-size: 15px; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--muted); font-family: var(--sans);
+      font-size: 14px; font-weight: 500;
+      border: 1px solid var(--bdr2); border-radius: 6px;
+      padding: 14px 28px; background: none; cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-ghost:hover { color: var(--cream); border-color: rgba(255,255,255,0.25); }
+
+    /* ══ CARD ══ */
+    .card {
+      background: #fff; border: 1px solid var(--bdr);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(26,17,8,0.06);
+    }
+
+    /* ══════════════════════════════════
+       1. NAV
+    ══════════════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; padding: 0 32px;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(20px) saturate(1.5);
+      border-bottom: 1px solid var(--bdr);
+    }
+    nav::after {
+      content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--terra) 30%, var(--terra) 70%, transparent);
+      opacity: 0.5;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-mark {
+      width: 32px; height: 32px;
+      background: var(--terra);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 14px; font-weight: 700;
+      color: white;
+      box-shadow: 0 2px 8px rgba(204,100,50,0.3);
+    }
+    .nav-logo-text {
+      font-family: var(--serif); font-size: 18px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 28px; list-style: none;
+    }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      display: flex; align-items: center; gap: 12px;
+    }
+
+    /* ══════════════════════════════════
+       2. HERO
+    ══════════════════════════════════ */
+    .hero {
+      min-height: 100vh; padding: 120px 0 80px;
+      display: flex; align-items: center;
+      background: var(--bg);
+      position: relative; overflow: hidden;
+      background-image:
+        linear-gradient(rgba(26,17,8,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,17,8,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-glow {
+      position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+      width: 1100px; height: 800px;
+      background: radial-gradient(ellipse at center,
+        rgba(204,100,50,0.18) 0%, rgba(204,100,50,0.07) 35%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+    }
+
+    /* CRO: Proof hook above headline */
+    .hero-proof-hook {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(204,100,50,0.08);
+      border: 1px solid rgba(204,100,50,0.28);
+      border-radius: 4px;
+      padding: 7px 14px 7px 10px;
+      margin-bottom: 24px;
+    }
+    .hero-proof-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+      animation: pulsedot 2s ease-in-out infinite;
+    }
+    @keyframes pulsedot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+    .hero-proof-text {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--terra); letter-spacing: 0.1em;
+    }
+
+    .hero-tag {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--terra);
+      border: 1px solid rgba(204,100,50,0.35);
+      background: rgba(204,100,50,0.08);
+      padding: 5px 12px; border-radius: 3px;
+      display: inline-block; margin-bottom: 24px;
+    }
+    .hero-sub {
+      font-size: 17px; color: var(--muted); line-height: 1.7;
+      font-weight: 300; max-width: 440px; margin-bottom: 40px;
+    }
+    .hero-cta-row {
+      display: flex; align-items: center; gap: 12px;
+      flex-wrap: wrap; margin-bottom: 16px;
+    }
+
+    /* CRO: Scarcity line below CTAs */
+    .hero-scarcity {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 40px;
+    }
+    .hero-scarcity-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+    }
+    .hero-scarcity-text {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--muted2); letter-spacing: 0.06em;
+    }
+
+    .stat-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      background: rgba(204,100,50,0.18);
+      border: 1px solid rgba(204,100,50,0.28);
+      border-radius: 8px; overflow: hidden;
+    }
+    .stat-cell {
+      background: rgba(204,100,50,0.06);
+      padding: 18px; text-align: center;
+    }
+    .stat-num {
+      font-family: var(--mono); font-size: 24px;
+      font-weight: 500; color: var(--terra);
+      display: block; margin-bottom: 4px;
+    }
+    .stat-lbl {
+      font-size: 10px; color: var(--muted2);
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    /* Chat widget */
+    .chat {
+      background: #fff; border: 1px solid rgba(26,17,8,0.12);
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(26,17,8,0.12), 0 4px 16px rgba(26,17,8,0.06);
+    }
+    .chat-topbar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 18px; border-bottom: 1px solid rgba(26,17,8,0.08);
+      background: #faf9f7;
+    }
+    .chat-dots { display: flex; gap: 6px; }
+    .chat-dot  { width: 10px; height: 10px; border-radius: 50%; }
+    .chat-title { font-family: var(--mono); font-size: 11px; color: rgba(26,17,8,0.4); letter-spacing: 0.1em; }
+    .chat-body  { padding: 20px 18px; display: flex; flex-direction: column; gap: 14px; }
+    .chat-msg   { display: flex; gap: 10px; align-items: flex-start; }
+    .chat-av    { width: 26px; height: 26px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-family: var(--mono); font-weight: 500; }
+    .chat-av-u  { background: rgba(204,100,50,0.15); color: var(--terra); border: 1px solid rgba(204,100,50,0.2); }
+    .chat-av-ai { background: rgba(26,17,8,0.06); color: var(--ink); border: 1px solid rgba(26,17,8,0.1); }
+    .chat-bubble{ background: #f5f3ef; border: 1px solid rgba(26,17,8,0.07); border-radius: 2px 10px 10px 10px; padding: 12px 14px; font-size: 13.5px; color: var(--muted); line-height: 1.6; flex: 1; }
+    .chat-bubble-u { background: rgba(204,100,50,0.08); border-color: rgba(204,100,50,0.18); border-radius: 10px 2px 10px 10px; }
+    .chat-hl   { color: var(--cream); background: rgba(204,100,50,0.15); padding: 1px 5px; border-radius: 3px; }
+    .chat-src  { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(26,17,8,0.08); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .chat-pill { font-family: var(--mono); font-size: 10px; color: rgba(26,17,8,0.4); border: 1px solid rgba(26,17,8,0.1); border-radius: 3px; padding: 3px 8px; letter-spacing: 0.06em; }
+    .chat-footer{ padding: 10px 18px 14px; border-top: 1px solid rgba(26,17,8,0.08); display: flex; align-items: center; gap: 10px; }
+    .chat-input { flex: 1; background: #f5f3ef; border: 1px solid rgba(26,17,8,0.09); border-radius: 8px; padding: 9px 14px; font-size: 12px; font-family: var(--mono); color: var(--muted2); }
+    .chat-send  { width: 30px; height: 30px; background: var(--terra); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+    /* CRO: Platform trust bar below chat */
+    .chat-trust-bar {
+      margin-top: 16px;
+      display: flex; align-items: center; gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chat-trust-text {
+      font-family: var(--mono); font-size: 10px;
+      color: var(--muted2); letter-spacing: 0.08em;
+    }
+    .platform-pill {
+      font-family: var(--mono); font-size: 10px;
+      border: 1px solid var(--bdr2);
+      border-radius: 3px; padding: 3px 9px;
+      color: var(--muted); letter-spacing: 0.06em;
+    }
+
+    /* ══════════════════════════════════
+       3. TRUST BAND [NEW]
+    ══════════════════════════════════ */
+    .trust-band {
+      background: var(--bg2);
+      border-top: 1px solid rgba(26,17,8,0.08);
+      border-bottom: 1px solid rgba(26,17,8,0.08);
+      padding: 28px 0;
+    }
+    .trust-band-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+      flex-wrap: wrap;
+    }
+    .trust-left {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .trust-count {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--muted2); letter-spacing: 0.1em;
+      padding-right: 10px;
+      border-right: 1px solid var(--bdr2);
+      margin-right: 2px;
+    }
+    .trust-client-dots {
+      display: flex; gap: 6px;
+    }
+    .trust-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1px solid rgba(26,17,8,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 9px;
+      color: rgba(26,17,8,0.5);
+      background: #fff;
+      font-weight: 500; letter-spacing: 0;
+    }
+    .trust-dot.more {
+      background: rgba(204,100,50,0.1);
+      border-color: rgba(204,100,50,0.3);
+      color: var(--terra);
+    }
+    .trust-center {
+      display: flex; align-items: center; gap: 10px;
+      flex: 1; justify-content: center;
+    }
+    .trust-center-text {
+      font-family: var(--mono); font-size: 10px;
+      color: var(--muted2); letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .platform-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      border: 1px solid rgba(26,17,8,0.12);
+      border-radius: 4px; padding: 5px 10px;
+      font-family: var(--mono); font-size: 10px;
+      color: var(--muted); letter-spacing: 0.08em;
+      background: #fff;
+    }
+    .platform-badge-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--green);
+    }
+    .trust-right {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--muted2); letter-spacing: 0.08em;
+    }
+    .trust-right strong { color: var(--terra); font-weight: 500; }
+
+    /* ══════════════════════════════════
+       4. FLAGSHIP PROOF BLOCK [NEW]
+    ══════════════════════════════════ */
+    .proof-block {
+      background: var(--bg2);
+      border-top: 1px solid rgba(26,17,8,0.08);
+      border-bottom: 1px solid rgba(204,100,50,0.15);
+      padding: 72px 0;
+      position: relative; overflow: hidden;
+    }
+    .proof-block::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 60% 50%, rgba(204,100,50,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .proof-inner {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 72px; align-items: center; position: relative; z-index: 1;
+    }
+    .proof-eyebrow {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--terra);
+      margin-bottom: 12px;
+    }
+    .proof-headline {
+      font-family: var(--serif); font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 600; line-height: 1.08; color: var(--cream);
+      letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .proof-body {
+      font-size: 15px; color: var(--muted); line-height: 1.7;
+      font-weight: 300; margin-bottom: 28px; max-width: 420px;
+    }
+    .proof-chart {
+      background: #fff; border: 1px solid rgba(26,17,8,0.1);
+      border-radius: 12px; padding: 32px;
+      box-shadow: 0 4px 24px rgba(26,17,8,0.08);
+    }
+    .proof-chart-title {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted2);
+      margin-bottom: 24px;
+    }
+    .proof-bars {
+      display: flex; align-items: flex-end; gap: 10px;
+      height: 120px; margin-bottom: 12px;
+    }
+    .proof-bar-wrap {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 6px; flex: 1;
+    }
+    .proof-bar {
+      width: 100%; border-radius: 4px 4px 0 0;
+      background: rgba(26,17,8,0.1); position: relative;
+      transition: background 0.2s;
+      min-height: 4px;
+    }
+    .proof-bar.last {
+      background: var(--terra);
+      box-shadow: 0 0 20px rgba(204,100,50,0.4);
+    }
+    .proof-bar-num {
+      font-family: var(--mono); font-size: 11px;
+      font-weight: 500; color: var(--muted2); letter-spacing: 0.04em;
+    }
+    .proof-bar-lbl {
+      font-family: var(--mono); font-size: 9px;
+      color: var(--muted2); letter-spacing: 0.06em;
+    }
+    .proof-bar-lbl.last-lbl { color: var(--terra); }
+    .proof-growth-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(204,100,50,0.12);
+      border: 1px solid rgba(204,100,50,0.3);
+      border-radius: 4px; padding: 6px 12px;
+      font-family: var(--mono); font-size: 11px;
+      color: var(--terra); letter-spacing: 0.06em;
+    }
+    .proof-meta {
+      display: flex; gap: 24px; margin-top: 16px;
+    }
+    .proof-meta-item {
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .proof-meta-val {
+      font-family: var(--mono); font-size: 22px;
+      font-weight: 500; color: var(--terra);
+    }
+    .proof-meta-lbl {
+      font-family: var(--mono); font-size: 9px;
+      color: var(--muted2); letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ══════════════════════════════════
+       5. HOW PEOPLE SEARCH
+    ══════════════════════════════════ */
+    .search-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .search-card { background: #fff; border: 1px solid rgba(26,17,8,0.1); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(26,17,8,0.06); }
+    .search-card.active { border-color: rgba(204,100,50,0.5); box-shadow: 0 4px 24px rgba(204,100,50,0.1); }
+    .sc-head { padding: 18px 22px; border-bottom: 1px solid rgba(26,17,8,0.08); display: flex; align-items: center; justify-content: space-between; background: rgba(26,17,8,0.02); }
+    .sc-tag  { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
+    .sc-tag-dead { color: rgba(26,17,8,0.38); }
+    .sc-tag-live { color: var(--terra); }
+    .sc-badge    { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; }
+    .sc-badge-dead{ background: rgba(26,17,8,0.05); color: rgba(26,17,8,0.42); border: 1px solid rgba(26,17,8,0.1); }
+    .sc-badge-live{ background: rgba(204,100,50,0.1); color: var(--terra); border: 1px solid rgba(204,100,50,0.25); }
+    .sc-body { padding: 24px 22px; }
+    .serp-bar { display: flex; align-items: center; gap: 10px; background: #f5f3ef; border: 1px solid rgba(26,17,8,0.09); border-radius: 6px; padding: 9px 13px; margin-bottom: 18px; }
+    .serp-query { font-family: var(--mono); font-size: 12px; color: rgba(26,17,8,0.5); }
+    .serp-list  { display: flex; flex-direction: column; gap: 12px; }
+    .serp-item  { display: flex; flex-direction: column; gap: 3px; opacity: 0.35; }
+    .serp-url   { font-size: 11px; color: #4ade80; font-family: var(--mono); }
+    .serp-title { font-size: 14px; color: #8ab4f8; font-weight: 500; }
+    .serp-snip  { font-size: 11px; color: rgba(26,17,8,0.4); line-height: 1.5; }
+    .notice     { display: flex; align-items: flex-start; gap: 8px; margin-top: 18px; padding: 12px; border-radius: 6px; }
+    .notice-bad { background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.18); }
+    .notice-good{ background: rgba(204,100,50,0.06); border: 1px solid rgba(204,100,50,0.2); }
+    .notice span{ font-family: var(--mono); font-size: 11.5px; line-height: 1.5; }
+    .notice-bad span  { color: rgba(239,68,68,0.7); }
+    .notice-good span { color: rgba(204,100,50,0.9); }
+    .ai-bar  { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .ai-logo { width: 22px; height: 22px; background: var(--terra); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; font-family: var(--mono); }
+    .ai-name { font-family: var(--mono); font-size: 12px; color: rgba(26,17,8,0.4); letter-spacing: 0.08em; }
+    .ai-box  { background: rgba(204,100,50,0.04); border: 1px solid rgba(204,100,50,0.22); border-radius: 8px; padding: 18px; }
+    .ai-text { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+    .ai-brand{ color: var(--terra); background: rgba(204,100,50,0.12); padding: 1px 6px; border-radius: 3px; font-weight: 600; }
+    .ai-cites{ display: flex; gap: 6px; flex-wrap: wrap; }
+    .cite    { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; border: 1px solid var(--bdr2); border-radius: 3px; padding: 3px 8px; color: var(--muted2); }
+
+    /* ══════════════════════════════════
+       6. SELF-TEST
+    ══════════════════════════════════ */
+    .test-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 10px; margin-bottom: 28px;
+    }
+    .test-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 14px 16px;
+      border-radius: 8px; border: 1px solid rgba(26,17,8,0.1);
+      background: #fff;
+    }
+    .test-item.checked {
+      background: rgba(204,100,50,0.1);
+      border-color: var(--terra);
+    }
+    .test-check {
+      width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px;
+    }
+    .test-text {
+      font-size: 13.5px; line-height: 1.5; color: var(--muted);
+    }
+    .test-item.checked .test-text { color: var(--cream); }
+    .test-result {
+      padding: 20px 24px;
+      background: rgba(204,100,50,0.06);
+      border: 1px solid rgba(204,100,50,0.4);
+      border-radius: 10px; max-width: 580px;
+    }
+
+    /* ══════════════════════════════════
+       7. HOW IT WORKS
+    ══════════════════════════════════ */
+    .process-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border: 1px solid rgba(26,17,8,0.1); border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(26,17,8,0.08);
+    }
+    .process-step {
+      padding: 44px 36px;
+      border-right: 1px solid rgba(26,17,8,0.1);
+      background: #fff;
+      position: relative;
+    }
+    .process-step:last-child { border-right: none; }
+    .process-step:hover { background: rgba(204,100,50,0.04); }
+    .process-num {
+      font-family: var(--serif); font-size: 60px; font-weight: 300;
+      color: var(--terra); opacity: 0.22; line-height: 1;
+      margin-bottom: 18px; letter-spacing: -0.03em;
+    }
+    .process-title {
+      font-family: var(--serif); font-size: 21px; font-weight: 600;
+      color: var(--cream); margin-bottom: 12px;
+      letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .process-body {
+      font-size: 14px; font-weight: 300;
+      color: var(--muted); line-height: 1.75;
+    }
+
+    /* ══════════════════════════════════
+       8. CONVERSION COMPARISON
+    ══════════════════════════════════ */
+    .conv-wrap { display: flex; align-items: stretch; justify-content: center; gap: 0; }
+    .conv-card {
+      background: #fff; border: 1px solid rgba(26,17,8,0.1);
+      border-radius: 12px; padding: 18px 22px; flex: 1 1 260px; max-width: 320px;
+      box-shadow: 0 2px 12px rgba(26,17,8,0.06);
+    }
+    .conv-card.winner {
+      border-color: rgba(204,100,50,0.5);
+      background: linear-gradient(135deg, rgba(204,100,50,0.06) 0%, #fff 100%);
+      box-shadow: 0 8px 40px rgba(204,100,50,0.14), 0 0 0 1px rgba(204,100,50,0.15);
+      position: relative;
+    }
+    .conv-title{ font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted2); margin-bottom: 16px; }
+    .conv-row  { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(26,17,8,0.08); }
+    .conv-row:last-of-type { border-bottom: none; }
+    .conv-key  { font-size: 13.5px; color: var(--muted); }
+    .conv-val  { font-family: var(--mono); font-size: 15px; font-weight: 500; color: var(--cream); }
+    .conv-val.accent { color: var(--terra); }
+    .conv-val.big    { font-size: 22px; }
+    .conv-badge{ font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; background: var(--terra); color: white; padding: 3px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle; }
+    .conv-mid  { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 20px; }
+    .conv-vs   { width: 34px; height: 34px; background: var(--terra); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11px; font-weight: 500; color: white; box-shadow: 0 0 24px rgba(204,100,50,0.35); }
+    .winner-badge{ position: absolute; top: -12px; right: 22px; background: var(--terra); color: white; font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 3px; }
+    .callout { margin-top: 40px; background: #fff; border: 1px solid rgba(204,100,50,0.25); border-left: 3px solid var(--terra); border-radius: 0 8px 8px 0; padding: 22px 26px; max-width: 720px; margin-left: auto; margin-right: auto; box-shadow: 0 2px 12px rgba(26,17,8,0.06); }
+    .callout p { font-size: 15px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+    .callout strong { color: var(--cream); font-weight: 500; }
+
+    /* ══════════════════════════════════
+       9. CASE STUDIES
+    ══════════════════════════════════ */
+    .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .case { background: #fff; border: 1px solid rgba(26,17,8,0.1); border-radius: 12px; padding: 36px; transition: border-color 0.3s, box-shadow 0.3s; box-shadow: 0 2px 12px rgba(26,17,8,0.06); }
+    .case:hover { border-color: rgba(204,100,50,0.4); box-shadow: 0 8px 32px rgba(26,17,8,0.1); }
+    .case.featured { border-color: rgba(204,100,50,0.5); background: linear-gradient(135deg, rgba(204,100,50,0.05) 0%, #fff 60%); box-shadow: 0 8px 40px rgba(204,100,50,0.12); }
+    .case-ind  { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+    .case-name { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--cream); margin-bottom: 28px; line-height: 1.2; }
+    .case-stats{ display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--bdr); border: 1px solid var(--bdr); border-radius: 6px; overflow: hidden; margin-bottom: 24px; }
+    .case-stat { background: #faf8f5; padding: 16px 10px; text-align: center; }
+    .case-snum { font-family: var(--mono); font-size: 20px; font-weight: 500; color: var(--terra); display: block; margin-bottom: 4px; }
+    .case-slbl { font-size: 10px; color: var(--muted2); letter-spacing: 0.08em; text-transform: uppercase; }
+    .prompts-head { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted2); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .prompts-head::before { content: '●'; color: #4ade80; font-size: 8px; }
+    .prompt-tag{ display: inline-block; font-family: var(--mono); font-size: 11px; border: 1px solid var(--bdr2); border-radius: 3px; padding: 3px 9px; color: var(--muted2); margin: 0 4px 5px 0; }
+    .case-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); text-decoration: none; transition: gap 0.2s; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--bdr); }
+    .case-link:hover { gap: 10px; }
+    .case-timeline {
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 20px;
+    }
+    .case-timeline-month {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+    }
+    .case-timeline-bar {
+      height: 32px; background: var(--bdr); border-radius: 2px;
+      position: relative;
+    }
+    .case-timeline-fill {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: var(--terra); border-radius: 2px;
+      transition: height 0.5s;
+    }
+    .case-timeline-num {
+      font-family: var(--mono); font-size: 9px;
+      color: var(--muted2); letter-spacing: 0.04em;
+    }
+    .case-timeline-mo {
+      font-family: var(--mono); font-size: 9px;
+      color: var(--muted2);
+    }
+    .case-arrow-row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+    }
+    .case-arrow-before {
+      font-family: var(--mono); font-size: 28px;
+      font-weight: 500; color: rgba(26,17,8,0.30);
+    }
+    .case-arrow-icon {
+      color: var(--terra); font-size: 20px;
+    }
+    .case-arrow-after {
+      font-family: var(--mono); font-size: 36px;
+      font-weight: 500; color: var(--terra);
+    }
+    .case-arrow-lbl {
+      font-family: var(--mono); font-size: 9px;
+      color: var(--muted2); letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ══════════════════════════════════
+       10. TESTIMONIALS
+    ══════════════════════════════════ */
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .testi { background: #fff; border: 1px solid rgba(26,17,8,0.1); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; box-shadow: 0 2px 12px rgba(26,17,8,0.06); }
+    .testi:hover { border-color: rgba(204,100,50,0.35); box-shadow: 0 6px 24px rgba(26,17,8,0.08); }
+    .stars { display: flex; gap: 3px; margin-bottom: 18px; }
+    .star  { color: var(--terra); font-size: 14px; }
+    .quote { font-size: 14.5px; color: var(--muted); line-height: 1.7; font-style: italic; font-family: var(--serif); font-weight: 300; flex: 1; margin-bottom: 20px; }
+    .testi-auth { padding-top: 18px; border-top: 1px solid rgba(26,17,8,0.08); }
+    .testi-name { font-size: 13.5px; font-weight: 600; color: var(--cream); margin-bottom: 2px; }
+    .testi-role { font-family: var(--mono); font-size: 10px; color: var(--muted2); letter-spacing: 0.1em; }
+
+    /* ══════════════════════════════════
+       11. FAQ [NEW]
+    ══════════════════════════════════ */
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .faq-item {
+      background: #fff; border: 1px solid rgba(26,17,8,0.1);
+      border-radius: 10px; padding: 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 6px rgba(26,17,8,0.05);
+    }
+    .faq-item:hover { border-color: rgba(204,100,50,0.35); box-shadow: 0 4px 16px rgba(26,17,8,0.08); }
+    .faq-item.open {
+      border-color: rgba(204,100,50,0.45);
+      background: rgba(204,100,50,0.03);
+    }
+    .faq-q {
+      font-family: var(--serif); font-size: 17px;
+      font-weight: 600; color: var(--cream);
+      margin-bottom: 10px; line-height: 1.3;
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 12px;
+    }
+    .faq-icon {
+      width: 22px; height: 22px; flex-shrink: 0;
+      border: 1px solid var(--bdr2); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 14px; color: var(--terra);
+      margin-top: 2px;
+    }
+    .faq-a {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.7; font-weight: 300;
+    }
+    .faq-callout {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .faq-callout p {
+      font-family: var(--mono); font-size: 12px;
+      color: var(--muted2); letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+
+    /* ══════════════════════════════════
+       12. FREE AUDIT FORM
+    ══════════════════════════════════ */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .form-card {
+      background: #fff; border: 1px solid rgba(26,17,8,0.1);
+      border-radius: 12px; padding: 40px;
+      box-shadow: 0 8px 40px rgba(26,17,8,0.1);
+    }
+    .form-title {
+      font-family: var(--serif); font-size: 26px; font-weight: 600;
+      color: var(--cream); margin-bottom: 6px;
+    }
+    .form-subtitle {
+      font-size: 14px; color: var(--muted); margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block; font-family: var(--mono); font-size: 10px;
+      font-weight: 500; color: var(--muted); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 7px;
+    }
+    .form-input {
+      width: 100%; background: #faf8f5;
+      border: 1px solid rgba(26,17,8,0.15); border-radius: 6px;
+      padding: 12px 15px; font-size: 14px; color: var(--ink);
+      font-family: var(--sans); outline: none;
+    }
+    .form-input::placeholder { color: rgba(26,17,8,0.3); }
+    .form-submit {
+      width: 100%; background: var(--terra); border: none;
+      border-radius: 6px; padding: 15px; cursor: pointer;
+      font-size: 14px; font-weight: 600; color: white;
+      letter-spacing: 0.03em;
+      box-shadow: 0 8px 24px rgba(204,100,50,0.28);
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; font-family: var(--sans);
+      margin-top: 22px;
+    }
+    .form-note {
+      text-align: center; margin-top: 12px;
+      font-family: var(--mono); font-size: 10px;
+      color: var(--muted2); letter-spacing: 0.08em;
+    }
+
+    /* CRO: Form value props list */
+    .form-value-props {
+      display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px;
+    }
+    .form-vp {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .form-vp-icon {
+      width: 28px; height: 28px; border-radius: 6px;
+      background: rgba(204,100,50,0.1);
+      border: 1px solid rgba(204,100,50,0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 14px;
+    }
+    .form-vp-body {
+      flex: 1;
+    }
+    .form-vp-title {
+      font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 2px;
+    }
+    .form-vp-text {
+      font-size: 13px; color: var(--muted); line-height: 1.5;
+    }
+    .form-divider {
+      height: 1px; background: var(--bdr); margin: 24px 0;
+    }
+    .form-social-proof {
+      background: #faf8f5; border: 1px solid rgba(26,17,8,0.1);
+      border-radius: 8px; padding: 16px 18px;
+      border-left: 2px solid var(--terra);
+    }
+    .form-sp-quote {
+      font-family: var(--serif); font-size: 13.5px; font-style: italic;
+      color: var(--muted); line-height: 1.6; margin-bottom: 8px;
+    }
+    .form-sp-author {
+      font-family: var(--mono); font-size: 10px;
+      color: var(--muted2); letter-spacing: 0.08em;
+    }
+
+    /* CRO: urgency row */
+    .form-urgency {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px;
+      background: rgba(204,100,50,0.08);
+      border: 1px solid rgba(204,100,50,0.2);
+      border-radius: 6px; margin-bottom: 20px;
+    }
+    .form-urgency-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+      animation: pulsedot 2s ease-in-out infinite;
+    }
+    .form-urgency-text {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--terra); letter-spacing: 0.06em;
+    }
+
+    /* Metrics stack (right column) */
+    .metrics-stack { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(26,17,8,0.1); border-radius: 8px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(26,17,8,0.05); }
+    .metric-row    { display: flex; justify-content: space-between; align-items: center; padding: 16px 18px; background: #fff; border-bottom: 1px solid rgba(26,17,8,0.08); }
+    .metric-row:last-child { border-bottom: none; }
+    .metric-lbl { font-size: 13px; color: var(--muted); }
+    .metric-sublbl { font-family: var(--mono); font-size: 10px; color: var(--muted2); letter-spacing: 0.04em; }
+    .metric-val { font-family: var(--mono); font-size: 28px; color: var(--terra); font-weight: 500; }
+    .or-divider {
+      text-align: center; margin: 20px 0;
+      font-family: var(--mono); font-size: 11px;
+      color: var(--muted2); letter-spacing: 0.12em;
+      position: relative;
+    }
+    .or-divider::before, .or-divider::after {
+      content: '';
+      position: absolute; top: 50%;
+      width: calc(50% - 24px); height: 1px;
+      background: var(--bdr);
+    }
+    .or-divider::before { left: 0; }
+    .or-divider::after  { right: 0; }
+    .calendly-btn {
+      display: flex; align-items: center; gap: 10px;
+      border: 1px solid rgba(26,17,8,0.15);
+      border-radius: 8px; padding: 14px 18px;
+      font-family: var(--sans); font-size: 14px;
+      color: var(--muted); cursor: pointer; background: #faf8f5;
+      width: 100%; justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .calendly-btn:hover { border-color: rgba(255,255,255,0.2); color: var(--cream); }
+    .calendly-icon {
+      width: 20px; height: 20px; border-radius: 4px;
+      background: rgba(204,100,50,0.15); border: 1px solid var(--bdr2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    footer {
+      background: var(--bg2); border-top: 1px solid rgba(26,17,8,0.1);
+      padding: 56px 0 32px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .footer-desc { font-size: 13px; color: var(--muted2); line-height: 1.7; max-width: 280px; font-weight: 300; }
+    .footer-col-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted2); margin-bottom: 14px; }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; }
+    .footer-links a { font-size: 13.5px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--terra); }
+    .footer-bottom { padding-top: 28px; border-top: 1px solid rgba(26,17,8,0.08); display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-family: var(--mono); font-size: 11px; color: var(--muted2); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════
+       MOCKUP ANNOTATION LAYER
+    ══════════════════════════════════ */
+    .cro-note {
+      display: none; /* hidden in final — toggle to 'inline-flex' to show */
+    }
+    /* Uncomment to show annotations: */
+    /*
+    .cro-note {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(255, 200, 0, 0.15); border: 1px solid rgba(255,200,0,0.3);
+      border-radius: 3px; padding: 2px 8px;
+      font-family: var(--mono); font-size: 10px; color: #fbbf24;
+      letter-spacing: 0.06em; margin-left: 8px; vertical-align: middle;
+    }
+    */
+
+    /* ══ UTIL ══ */
+    .text-center { text-align: center; }
+    .mb-4  { margin-bottom: 16px; }
+    .mb-6  { margin-bottom: 24px; }
+    .mb-8  { margin-bottom: 32px; }
+    .mb-10 { margin-bottom: 40px; }
+    .mb-14 { margin-bottom: 56px; }
+    .mt-8  { margin-top: 32px; }
+    .block { display: block; }
+
+    /* ══ SVG ICONS ══ */
+    .icon-check { width: 14px; height: 14px; fill: none; stroke: #4ade80; stroke-width: 2.5; }
+    .icon-x     { width: 14px; height: 14px; fill: none; stroke: #ef4444; stroke-width: 2.5; }
+    .icon-arrow { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+    /* ══ SECTION BG VARIANTS ══ */
+    .bg-default { background: var(--bg); }
+    .bg-2       { background: var(--bg2); }
+    .bg-3       { background: var(--bg3); }
+    .hiw-section {
+      background: var(--bg2); position: relative; overflow: hidden;
+    }
+    .hiw-section::before {
+      content: '';
+      position: absolute; top: -160px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 600px;
+      background: radial-gradient(ellipse, rgba(204,100,50,0.09) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    /* ══ PROBLEM AGITATION ══ */
+    .pain-band {
+      background: #1A1108; color: #F5F2EC;
+      padding: 20px 0;
+      border-top: 1px solid rgba(204,100,50,0.25);
+      border-bottom: 1px solid rgba(204,100,50,0.25);
+      text-align: center;
+    }
+    .pain-ticker {
+      font-family: var(--mono); font-size: 12px;
+      letter-spacing: 0.08em; color: rgba(245,242,236,0.6);
+    }
+    .pain-ticker strong { color: var(--terra); }
+
+    .pain-section { background: #F2EDE6; padding: 100px 0; }
+    .pain-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .pain-headline {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.8vw, 52px);
+      font-weight: 600; line-height: 1.08;
+      color: #1A1108; letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .pain-body { font-size: 15px; color: rgba(26,17,8,0.6); line-height: 1.75; font-weight: 300; margin-bottom: 28px; }
+    .pain-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid rgba(26,17,8,0.1);
+      border-radius: 8px;
+      border-left: 3px solid rgba(239,68,68,0.6);
+    }
+    .pain-item-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .pain-item-text { font-size: 14px; color: rgba(26,17,8,0.65); line-height: 1.55; }
+    .pain-item-text strong { color: #1A1108; font-weight: 600; }
+    .pain-calc {
+      background: #fff;
+      border: 1px solid rgba(204,100,50,0.25);
+      border-radius: 12px; padding: 28px;
+      box-shadow: 0 4px 24px rgba(26,17,8,0.08);
+    }
+    .pain-calc-title {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(26,17,8,0.4); margin-bottom: 20px;
+    }
+    .pain-calc-row {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 12px 0;
+      border-bottom: 1px solid rgba(26,17,8,0.07);
+      font-size: 13.5px;
+    }
+    .pain-calc-row:last-of-type { border-bottom: none; }
+    .pain-calc-key { color: rgba(26,17,8,0.55); }
+    .pain-calc-val { font-family: var(--mono); font-weight: 500; color: #1A1108; }
+    .pain-calc-val.loss { color: #dc2626; }
+    .pain-calc-total {
+      margin-top: 16px; padding: 14px 16px;
+      background: rgba(220,38,38,0.06);
+      border: 1px solid rgba(220,38,38,0.18);
+      border-radius: 6px;
+    }
+    .pain-calc-total p {
+      font-family: var(--mono); font-size: 11.5px;
+      color: #dc2626; letter-spacing: 0.04em; line-height: 1.5;
+    }
+    .pain-cta-row { display: flex; align-items: center; gap: 10px; margin-top: 24px; }
+    .pain-cta-text {
+      font-family: var(--mono); font-size: 11px;
+      color: rgba(26,17,8,0.4); letter-spacing: 0.06em;
+    }
+
+    /* ══ WHO IT'S FOR ══ */
+    .fit-section { background: var(--bg); padding: 100px 0; }
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .fit-card {
+      border-radius: 12px; padding: 36px;
+      border: 1px solid rgba(26,17,8,0.1);
+    }
+    .fit-card.yes {
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(26,17,8,0.07);
+    }
+    .fit-card.no {
+      background: #faf8f5;
+    }
+    .fit-header {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 24px; padding-bottom: 18px;
+      border-bottom: 1px solid rgba(26,17,8,0.08);
+    }
+    .fit-badge {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; flex-shrink: 0;
+    }
+    .fit-badge.yes { background: rgba(22,163,74,0.12); }
+    .fit-badge.no  { background: rgba(220,38,38,0.1); }
+    .fit-title {
+      font-family: var(--serif); font-size: 22px;
+      font-weight: 600; color: #1A1108; line-height: 1.2;
+    }
+    .fit-list { display: flex; flex-direction: column; gap: 12px; }
+    .fit-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; line-height: 1.55;
+    }
+    .fit-item-icon { flex-shrink: 0; margin-top: 1px; font-size: 13px; }
+    .fit-item-text { color: rgba(26,17,8,0.65); }
+    .fit-item-text strong { color: #1A1108; font-weight: 600; }
+
+    /* ══ AUTHORITY STRIP ══ */
+    .authority-strip {
+      background: #1A1108;
+      padding: 48px 0;
+      border-top: 1px solid rgba(204,100,50,0.2);
+      border-bottom: 1px solid rgba(204,100,50,0.2);
+    }
+    .authority-inner {
+      display: flex; align-items: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .authority-divider {
+      width: 1px; height: 56px;
+      background: rgba(204,100,50,0.2);
+      flex-shrink: 0;
+    }
+    .authority-item { flex: 1; min-width: 200px; }
+    .authority-label {
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(245,242,236,0.3); margin-bottom: 6px;
+    }
+    .authority-text {
+      font-family: var(--serif); font-size: 17px;
+      font-weight: 600; color: #F5F2EC; line-height: 1.3;
+    }
+    .authority-text em { font-style: italic; color: var(--terra); font-weight: 300; }
+    .authority-subtext {
+      font-size: 13px; color: rgba(245,242,236,0.45);
+      line-height: 1.5; margin-top: 4px;
+    }
+
+    /* ══ THE STACK ══ */
+    .stack-section { background: var(--bg2); padding: 100px 0; }
+    .stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .stack-list { display: flex; flex-direction: column; gap: 0; }
+    .stack-item {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(26,17,8,0.08);
+    }
+    .stack-item:last-of-type { border-bottom: none; }
+    .stack-item-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(204,100,50,0.1);
+      border: 1px solid rgba(204,100,50,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .stack-item-body { flex: 1; }
+    .stack-item-title { font-size: 14.5px; font-weight: 600; color: #1A1108; margin-bottom: 2px; }
+    .stack-item-desc  { font-size: 13px; color: rgba(26,17,8,0.5); line-height: 1.45; }
+    .stack-item-val {
+      font-family: var(--mono); font-size: 12px;
+      color: rgba(26,17,8,0.35); letter-spacing: 0.04em;
+      flex-shrink: 0; text-decoration: line-through;
+    }
+    .stack-total {
+      background: #fff;
+      border: 1px solid rgba(26,17,8,0.1);
+      border-radius: 12px; padding: 28px;
+      box-shadow: 0 4px 20px rgba(26,17,8,0.08);
+    }
+    .stack-total-row {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 10px 0;
+      border-bottom: 1px dashed rgba(26,17,8,0.1);
+    }
+    .stack-total-row:last-of-type { border-bottom: none; }
+    .stack-total-key { font-size: 13px; color: rgba(26,17,8,0.5); }
+    .stack-total-val { font-family: var(--mono); font-size: 14px; color: rgba(26,17,8,0.35); text-decoration: line-through; }
+    .stack-you-pay {
+      margin-top: 20px; padding: 18px;
+      background: rgba(204,100,50,0.07);
+      border: 1px solid rgba(204,100,50,0.3);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .stack-you-pay-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); }
+    .stack-you-pay-val { font-family: var(--serif); font-size: 36px; font-weight: 600; color: var(--terra); }
+    .stack-note {
+      margin-top: 12px; font-family: var(--mono); font-size: 11px;
+      color: rgba(26,17,8,0.4); letter-spacing: 0.04em; text-align: center;
+    }
+    .stack-bottom-copy {
+      display: flex; flex-direction: column; gap: 16px; margin-top: 20px;
+    }
+    .stack-check-row { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: rgba(26,17,8,0.6); }
+    .stack-check-icon { color: #16a34a; font-size: 14px; flex-shrink: 0; }
+
+    /* ══ RISK REVERSAL ══ */
+    .guarantee-section { background: #1A1108; padding: 80px 0; }
+    .guarantee-inner {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 64px; align-items: center;
+    }
+    .guarantee-badge {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      border: 2px solid var(--terra);
+      box-shadow: 0 0 48px rgba(204,100,50,0.2), inset 0 0 24px rgba(204,100,50,0.06);
+      text-align: center; margin: 0 auto;
+    }
+    .guarantee-badge-days {
+      font-family: var(--serif); font-size: 52px; font-weight: 600;
+      color: var(--terra); line-height: 1;
+    }
+    .guarantee-badge-label {
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(245,242,236,0.5);
+    }
+    .guarantee-headline {
+      font-family: var(--serif); font-size: clamp(28px, 3vw, 42px);
+      font-weight: 600; line-height: 1.1;
+      color: #F5F2EC; letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .guarantee-headline em { font-style: italic; color: var(--terra); font-weight: 300; }
+    .guarantee-body {
+      font-size: 15px; color: rgba(245,242,236,0.55);
+      line-height: 1.75; font-weight: 300; margin-bottom: 24px;
+    }
+    .guarantee-fine {
+      font-family: var(--mono); font-size: 11px;
+      color: rgba(245,242,236,0.3); letter-spacing: 0.04em;
+      line-height: 1.6; font-style: italic;
+    }
+
+    /* ══════════════════════════════════
+       WHAT HAPPENS WHEN AI RECOMMENDS YOU
+    ══════════════════════════════════ */
+    .recommend-section { background:var(--bg3); padding:100px 0; position:relative; overflow:hidden; }
+    .recommend-section::before { content:''; position:absolute; top:-140px; left:50%; transform:translateX(-50%); width:900px; height:560px; background:radial-gradient(ellipse, rgba(204,100,50,0.10) 0%, transparent 68%); pointer-events:none; }
+    .recommend-section .c { position:relative; z-index:1; }
+    .recommend-sub { font-size:16px; color:var(--muted); line-height:1.7; font-weight:300; max-width:520px; }
+    .recommend-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:52px; }
+    .recommend-card { background:#fff; border:1px solid rgba(26,17,8,0.1); border-radius:14px; padding:28px 24px; box-shadow:0 2px 12px rgba(26,17,8,0.06); transition:border-color .25s, box-shadow .25s, transform .25s; }
+    .recommend-card:hover { border-color:rgba(204,100,50,0.4); box-shadow:0 8px 28px rgba(26,17,8,0.10); transform:translateY(-3px); }
+    .recommend-icon { width:44px; height:44px; border-radius:10px; background:rgba(204,100,50,0.1); border:1px solid rgba(204,100,50,0.22); display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:18px; }
+    .recommend-card-title { font-family:var(--serif); font-size:19px; font-weight:600; color:var(--cream); line-height:1.25; margin-bottom:10px; }
+    .recommend-card-text { font-size:13.5px; color:var(--muted); line-height:1.65; font-weight:300; }
+
+    /* ══════════════════════════════════
+       SELF-TEST — real checkbox (CSS-driven via :checked / :has)
+    ══════════════════════════════════ */
+    html { scroll-behavior: smooth; }
+    .test-item { cursor: pointer; user-select: none; transition: background .15s, border-color .15s; }
+    .test-cb { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    .test-box {
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;
+      border: 2px solid rgba(26,17,8,0.25); border-radius: 5px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, border-color .15s;
+    }
+    .test-box::after {
+      content: ''; width: 9px; height: 5px; margin-bottom: 2px;
+      border-left: 2px solid #fff; border-bottom: 2px solid #fff;
+      transform: rotate(-45deg); opacity: 0; transition: opacity .15s;
+    }
+    .test-cb:checked + .test-box { background: var(--terra); border-color: var(--terra); }
+    .test-cb:checked + .test-box::after { opacity: 1; }
+    .test-item:has(.test-cb:checked) { background: rgba(204,100,50,0.1); border-color: var(--terra); }
+    .test-item:has(.test-cb:checked) .test-text { color: var(--cream); }
+    .test-cb:focus-visible + .test-box { outline: 2px solid var(--terra); outline-offset: 2px; }
+
+    /* AI Visibility Score tool */
+    .score-card { max-width:620px; background:#fff; border:1px solid var(--bdr); border-radius:14px; padding:28px 30px; box-shadow:0 4px 24px rgba(26,17,8,0.08); }
+    .score-eyebrow { font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted2); margin-bottom:10px; }
+    .score-num { font-family:var(--serif); font-weight:600; line-height:1; color:var(--terra); font-size:58px; }
+    .score-num .score-den { font-size:22px; color:var(--muted2); font-weight:400; margin-left:2px; }
+    .score-label { font-family:var(--mono); font-size:12px; letter-spacing:0.1em; font-weight:500; margin-top:8px; color:var(--terra); }
+    .score-meter { height:10px; border-radius:99px; background:var(--surface); overflow:hidden; margin:18px 0 16px; }
+    .score-meter-fill { height:100%; width:100%; border-radius:99px; background:var(--terra); transition:width .45s ease, background .45s ease; }
+    .score-msg { font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:20px; }
+
+    /* ══════════════════════════════════
+       FAQ — real accordion (answer collapses unless .open)
+    ══════════════════════════════════ */
+    .faq-icon { display: none; }   /* all answers shown — no toggle */
+
+    /* ══════════════════════════════════
+       RESPONSIVE — stack every 2/3-col grid on tablet & phone
+    ══════════════════════════════════ */
+    @media (max-width: 880px) {
+      .c { padding: 0 22px; }
+      .sec { padding: 64px 0; }
+      .sec-sm { padding: 48px 0; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-cta .btn-ghost { display: none; }   /* keep only the primary CTA on mobile */
+
+      .hero { min-height: auto; padding: 100px 0 64px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-sub { max-width: none; }
+
+      .proof-inner { grid-template-columns: 1fr; gap: 40px; }
+      .pain-grid { grid-template-columns: 1fr; gap: 40px; }
+      .search-grid { grid-template-columns: 1fr; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid rgba(26,17,8,0.1); }
+      .process-step:last-child { border-bottom: none; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .recommend-grid { grid-template-columns: 1fr 1fr; }
+      .stack-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      .conv-wrap { flex-direction: column; align-items: stretch; }
+      .conv-card { max-width: none; }
+      .conv-mid { padding: 16px 0; }
+      .conv-vs { transform: rotate(90deg); }
+
+      .guarantee-inner { grid-template-columns: 1fr; gap: 36px; }
+      .authority-inner { flex-direction: column; align-items: flex-start; gap: 28px; }
+      .authority-divider { display: none; }
+
+      .trust-band-inner { justify-content: flex-start; }
+      .trust-center { flex: 0 1 auto; justify-content: flex-start; }
+      .trust-right { width: 100%; }
+    }
+
+    @media (max-width: 520px) {
+      .c { padding: 0 16px; }
+      .hero-cta-row { flex-direction: column; align-items: stretch; }
+      .hero-cta-row .btn, .hero-cta-row .btn-ghost { justify-content: center; }
+      .pain-band .pain-ticker { font-size: 11px; }
+      .pain-cta-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .stack-you-pay-val { font-size: 30px; }
+      .guarantee-badge { width: 140px; height: 140px; }
+      .guarantee-badge-days { font-size: 40px; }
+      .form-card { padding: 28px 22px; }
+      .recommend-grid { grid-template-columns: 1fr; }
+      .case, .conv-card, .testi, .fit-card { padding: 26px; }
+    }
+
+  </style>
+
+
+
+
+
+
+
+
+<section class="hero">
+  <div class="hero-glow"></div>
+
+  <div class="c">
+    <div class="hero-grid">
+
+      
+      <div>
+        <div class="hero-tag">AI Search Visibility Experts</div>
+
+        <h1 style="margin-bottom: 18px; font-size: clamp(38px, 4.6vw, 62px); line-height:1.08;">
+          Get Your Business Recommended by <em class="accent">ChatGPT</em>
+        </h1>
+
+        <p class="hero-sub">
+          Millions of people use ChatGPT, Google AI, and Perplexity to find clinics, brands, and services. We make sure your brand is the answer they get.
+        </p>
+
+        
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn btn-lg">
+            Get My Free AI Visibility Audit
+            <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+        
+        <div class="hero-scarcity">
+          <div class="hero-scarcity-dot"></div>
+          <span class="hero-scarcity-text">3 client spots remaining this month</span>
+        </div>
+
+        
+        <div class="stat-grid">
+          <div class="stat-cell">
+            <span class="stat-num">5+</span>
+            <span class="stat-lbl">AI Engines Covered</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num">#1</span>
+            <span class="stat-lbl">The Brand AI Names</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num">24/7</span>
+            <span class="stat-lbl">Always-On Referrals</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <div>
+        <div class="chat">
+          <div class="chat-topbar">
+            <div class="chat-dots">
+              <div class="chat-dot" style="background:#FF5F57"></div>
+              <div class="chat-dot" style="background:#FEBC2E"></div>
+              <div class="chat-dot" style="background:#28C840"></div>
+            </div>
+            <span class="chat-title">ChatGPT · Live Recommendation</span>
+          </div>
+          <div class="chat-body">
+            <div class="chat-msg">
+              <div class="chat-av chat-av-u">U</div>
+              <div class="chat-bubble chat-bubble-u">Best physio clinic in Thonglor for sports recovery?</div>
+            </div>
+            <div class="chat-msg">
+              <div class="chat-av chat-av-ai">AI</div>
+              <div class="chat-bubble">
+                <div style="margin-bottom:6px;font-size:13px;color:var(--muted);">Based on patient reviews and online authority,</div>
+                <div>
+                  <strong><span class="chat-hl">Physio Clinic, Bangkok</span></strong> is the top-recommended physio in Thonglor — 4.9★ from 670+ reviews, consistent across ChatGPT, Perplexity, and Google AI.
+                </div>
+                <div class="chat-src">
+                  <span class="chat-pill">Sources cited: 4</span>
+                  <span class="chat-pill">Confidence: High</span>
+                  <span class="chat-pill" style="color:var(--green);border-color:rgba(74,222,128,0.25);">● Live result</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-footer">
+            <div class="chat-input">Ask ChatGPT anything...</div>
+            <div class="chat-send">
+              <svg style="width:13px;height:13px;fill:white" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"></path></svg>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="chat-trust-bar" style="margin-top:14px;">
+          <span class="chat-trust-text">Your brand, cited in:</span>
+          <span class="platform-pill"><span style="color:var(--green);font-size:8px;margin-right:3px;">●</span> ChatGPT</span>
+          <span class="platform-pill"><span style="color:var(--green);font-size:8px;margin-right:3px;">●</span> Perplexity</span>
+          <span class="platform-pill"><span style="color:var(--green);font-size:8px;margin-right:3px;">●</span> Google AI</span>
+          <span class="platform-pill"><span style="color:var(--green);font-size:8px;margin-right:3px;">●</span> Claude</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec-sm bg-2">
+  <div class="c">
+    <div class="text-center" style="margin-bottom:28px;">
+      <span class="label mb-4 block">Proven Result</span>
+      <h2 style="font-size:clamp(24px,2.8vw,34px);">A Bangkok clinic, <em class="accent">recommended by AI</em></h2>
+    </div>
+    <div style="max-width:600px;margin:0 auto;">
+      <div class="case featured">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <div class="case-ind">Aesthetics · Bangkok</div>
+          <span style="font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;background:rgba(204,100,50,0.15);border:1px solid rgba(204,100,50,0.3);border-radius:3px;padding:3px 8px;color:var(--terra);">Featured Result</span>
+        </div>
+        <div class="case-name">Aesthetic Clinic,<br>Bangkok</div>
+        <div class="case-arrow-row">
+          <span class="case-arrow-before">18%</span>
+          <span class="case-arrow-icon">→</span>
+          <span class="case-arrow-after">75%</span>
+          <div style="margin-left:8px;">
+            <div style="font-family:var(--mono);font-size:10px;color:var(--terra);font-weight:500;">booking conversion</div>
+            <div style="font-family:var(--mono);font-size:9px;color:var(--muted2);">AI-referred leads vs Google Ads</div>
+          </div>
+        </div>
+        <div class="case-stats">
+          <div class="case-stat"><span class="case-snum">+289%</span><span class="case-slbl">AI Mentions</span></div>
+          <div class="case-stat"><span class="case-snum">70%</span><span class="case-slbl">Top 3 Rankings</span></div>
+          <div class="case-stat"><span class="case-snum">10–12</span><span class="case-slbl">AI Enquiries/Mo</span></div>
+        </div>
+        <div style="margin:18px 0;padding:14px;background:var(--surface);border:1px dashed var(--bdr);border-radius:8px;">
+          <div class="prompts-head">Dominating Prompts</div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;">
+            <span class="prompt-tag">"Best Botox clinic Bangkok"</span>
+            <span class="prompt-tag">"Where to get fillers Bangkok"</span>
+            <span class="prompt-tag">"Top aesthetic clinic Bangkok"</span>
+          </div>
+        </div>
+        <p class="body-sm" style="margin:18px 0 20px;">
+          Featured in ChatGPT's top recommendations within 90 days — converting AI-referred leads at 75%, versus 18% from Google Ads. Now in the Top 3 for 70% of aesthetic-related AI prompts in Bangkok.
+        </p>
+        <a href="https://locully-client-success-m8a58k2.gamma.site/" class="case-link" target="_blank" rel="noopener noreferrer">
+          View Full Case Study →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="trust-band">
+  <div class="c">
+    <div class="trust-band-inner">
+
+      
+      <div class="trust-left">
+        <span class="trust-count">7+ Bangkok Clinics</span>
+        <div class="trust-client-dots">
+          <div class="trust-dot">FC</div>
+          <div class="trust-dot">CC</div>
+          <div class="trust-dot">VM</div>
+          <div class="trust-dot">IF</div>
+          <div class="trust-dot more">+3</div>
+        </div>
+      </div>
+
+      
+      <div class="trust-center" style="gap:8px;flex-wrap:wrap;">
+        <span class="trust-center-text" style="margin-right:4px;">Ranking your brand in</span>
+        <span class="platform-badge"><span class="platform-badge-dot"></span>ChatGPT</span>
+        <span class="platform-badge"><span class="platform-badge-dot"></span>Perplexity</span>
+        <span class="platform-badge"><span class="platform-badge-dot"></span>Google AI Overviews</span>
+        <span class="platform-badge"><span class="platform-badge-dot"></span>Claude</span>
+        <span class="platform-badge"><span class="platform-badge-dot"></span>Bing Copilot</span>
+      </div>
+
+      
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<section class="pain-section">
+  <div class="c">
+    <div class="pain-grid">
+
+      
+      <div>
+        <span class="label" style="margin-bottom:16px;display:inline-flex;">The Problem</span>
+        <h2 class="pain-headline">
+          When people ask AI, one brand<br>
+          gets recommended.<br>
+          <em style="font-style:italic;color:var(--terra);font-weight:300;">Make sure it's you.</em>
+        </h2>
+        <p class="pain-body">
+          AI visibility doesn't work like ads — you can't turn it on overnight. Every citation, every article, every backlink your competitor has earned compounds into a moat you can't buy your way past.
+        </p>
+        <div class="pain-list">
+          <div class="pain-item">
+            <span class="pain-item-icon">🔴</span>
+            <span class="pain-item-text"><strong>AI picks one winner.</strong> Not 10 results. Not 3. One recommendation — and right now it isn't you.</span>
+          </div>
+          <div class="pain-item">
+            <span class="pain-item-icon">🔴</span>
+            <span class="pain-item-text"><strong>Every month you wait, the gap widens.</strong> AI citation authority compounds. A competitor who started 6 months ago already has a head start you'll need 6 months to close.</span>
+          </div>
+          <div class="pain-item">
+            <span class="pain-item-icon">🔴</span>
+            <span class="pain-item-text"><strong>The leads are real and they're going somewhere.</strong> Our physio clinic client now gets 27 confirmed paid bookings/month from AI alone. Those patients came from ChatGPT. They asked. An answer was given. It wasn't you.</span>
+          </div>
+        </div>
+        <div class="pain-cta-row">
+          <a href="#contact" class="btn" style="font-size:13px;padding:12px 22px;">Find out where you stand — free</a>
+          <span class="pain-cta-text">48-hour report · no commitment</span>
+        </div>
+      </div>
+
+      
+      <div>
+        <div class="pain-calc">
+          <div class="pain-calc-title">What invisibility costs a Bangkok clinic — per month</div>
+
+          <div class="pain-calc-row">
+            <span class="pain-calc-key">AI searches for your service (Bangkok)</span>
+            <span class="pain-calc-val">~2,400/mo</span>
+          </div>
+          <div class="pain-calc-row">
+            <span class="pain-calc-key">Enquiries if you were #1 in AI</span>
+            <span class="pain-calc-val">~24–36</span>
+          </div>
+          <div class="pain-calc-row">
+            <span class="pain-calc-key">Enquiries you currently receive</span>
+            <span class="pain-calc-val loss">~0–3</span>
+          </div>
+          <div class="pain-calc-row">
+            <span class="pain-calc-key">Enquiries lost to competitors</span>
+            <span class="pain-calc-val loss">21–33/mo</span>
+          </div>
+          <div class="pain-calc-row">
+            <span class="pain-calc-key">Avg consultation value</span>
+            <span class="pain-calc-val">฿2,500</span>
+          </div>
+          <div class="pain-calc-row">
+            <span class="pain-calc-key">Monthly revenue left on the table</span>
+            <span class="pain-calc-val loss">฿52,500–82,500</span>
+          </div>
+
+          <div class="pain-calc-total">
+            <p>
+              <strong>That's ฿630,000–990,000 per year</strong> going to competitors because AI doesn't know you exist.
+              And that number compounds every month you wait.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="sec bg-default">
+  <div class="c">
+    <div class="text-center mb-14">
+      <span class="label mb-4 block">The Shift</span>
+      <h2 style="margin-top:16px;margin-bottom:14px;">How People Search <em class="accent">Now</em></h2>
+      <p class="body" style="max-width:520px;margin:0 auto;">AI tools are replacing Google blue links. Your brand needs to show up when people ask AI — not just when they scroll results pages.</p>
+    </div>
+
+    <div class="search-grid">
+      
+      <div class="search-card">
+        <div class="sc-head">
+          <span class="sc-tag sc-tag-dead">Traditional Search</span>
+          <span class="sc-badge sc-badge-dead">Declining</span>
+        </div>
+        <div class="sc-body">
+          <div class="serp-bar">
+            <svg style="width:15px;height:15px;opacity:0.3;fill:none;stroke:rgba(255,255,255,0.4);stroke-width:2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+            <span class="serp-query">"best botox clinic bangkok"</span>
+          </div>
+          <div class="serp-list">
+            <div class="serp-item">
+              <span class="serp-url">www.bangkokpost.com › health</span>
+              <span class="serp-title">Top 10 Botox Clinics in Bangkok 2024</span>
+              <span class="serp-snip">A roundup based on price and location...</span>
+            </div>
+            <div class="serp-item">
+              <span class="serp-url">ads · bangkokbotox.com</span>
+              <span class="serp-title">Bangkok Botox Specials — from ฿2,999</span>
+              <span class="serp-snip">Walk-in available. Certified doctors...</span>
+            </div>
+            <div class="serp-item">
+              <span class="serp-url">tripadvisor.com › Bangkok</span>
+              <span class="serp-title">Best Aesthetic Clinics — Traveller Reviews</span>
+              <span class="serp-snip">Ranked based on thousands of reviews...</span>
+            </div>
+          </div>
+          <div class="notice notice-bad">
+            <svg class="icon-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+            <span>People scroll past 10 links looking for a direct answer. Most never find you.</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="search-card active">
+        <div class="sc-head">
+          <span class="sc-tag sc-tag-live">AI Recommendation</span>
+          <span class="sc-badge sc-badge-live">The New Reality</span>
+        </div>
+        <div class="sc-body">
+          <div class="ai-bar">
+            <div class="ai-logo">AI</div>
+            <span class="ai-name">ChatGPT · User Query</span>
+          </div>
+          <div class="ai-box">
+            <p class="ai-text">
+              "What's the best botox clinic in Bangkok?"<br><br>
+              <strong style="color:var(--cream)">Based on reviews and online authority,</strong>
+              <span class="ai-brand">Allure Aesthetic Clinic</span> is consistently recommended — 4.8★ from 500+ verified patients.
+            </p>
+            <div class="ai-cites">
+              <span class="cite">allure-clinic.com</span>
+              <span class="cite">google-reviews</span>
+              <span class="cite">+2 sources</span>
+            </div>
+          </div>
+          <div class="notice notice-good" style="margin-top:14px;">
+            <svg class="icon-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4 12 14.01l-3-3"></path></svg>
+            <span>AI picks ONE winner. We engineer it to be you — every time.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="recommend-section">
+  <div class="c">
+    <div class="text-center mb-14">
+      <span class="label mb-4 block">The Payoff</span>
+      <h2 style="margin-top:16px;margin-bottom:14px;">What happens when <em class="accent">AI recommends you?</em></h2>
+      <p class="recommend-sub" style="margin:0 auto;">AI doesn't hand people ten options. It names one. When that one is you, here's what changes.</p>
+    </div>
+
+    <div class="recommend-grid">
+      <div class="recommend-card">
+        <div class="recommend-icon">🎯</div>
+        <div class="recommend-card-title">You become the default answer</div>
+        <div class="recommend-card-text">Ask AI for the best in your category and your name comes up first — not only when you're paying for ads.</div>
+      </div>
+      <div class="recommend-card">
+        <div class="recommend-icon">🤝</div>
+        <div class="recommend-card-title">Customers arrive already sold</div>
+        <div class="recommend-card-text">AI vouched for you, so people show up ready to book — not to compare. Less convincing, faster yes.</div>
+      </div>
+      <div class="recommend-card">
+        <div class="recommend-icon">🚫</div>
+        <div class="recommend-card-title">Competitors leave the conversation</div>
+        <div class="recommend-card-text">AI names one brand, not a page of ten. When it's you, the rest simply aren't mentioned.</div>
+      </div>
+      <div class="recommend-card">
+        <div class="recommend-icon">♾️</div>
+        <div class="recommend-card-title">Referrals that never clock off</div>
+        <div class="recommend-card-text">Every AI search becomes a recommendation — 24/7, no click costs, compounding every month.</div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:44px;">
+      <a href="#contact" class="btn btn-lg">
+        Get My Free AI Visibility Audit
+        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec bg-2">
+  <div class="c">
+    <span class="label mb-4 block">Self-Test</span>
+    <h2 style="margin-bottom:12px;">Is your brand <em class="accent">invisible</em> to AI?</h2>
+    <p class="body" style="margin-bottom:36px;max-width:480px;">
+      Tick every statement that applies right now. Most Bangkok businesses tick 5 or more.
+    </p>
+
+    
+    <div class="test-grid" id="selfTest">
+      <label class="test-item">
+        <input type="checkbox" class="test-cb"><span class="test-box"></span>
+        <span class="test-text">You've never searched for your own brand on ChatGPT or Perplexity</span>
+      </label>
+      <label class="test-item">
+        <input type="checkbox" class="test-cb"><span class="test-box"></span>
+        <span class="test-text">When you do search, your brand doesn't appear in the recommendations</span>
+      </label>
+      <label class="test-item">
+        <input type="checkbox" class="test-cb"><span class="test-box"></span>
+        <span class="test-text">You rely entirely on Google Ads or paid media to drive enquiries</span>
+      </label>
+      <label class="test-item">
+        <input type="checkbox" class="test-cb"><span class="test-box"></span>
+        <span class="test-text">Customers rarely or never mention finding you through AI search</span>
+      </label>
+      <label class="test-item">
+        <input type="checkbox" class="test-cb"><span class="test-box"></span>
+        <span class="test-text">Your website has no structured FAQ or Q&amp;A section</span>
+      </label>
+      <label class="test-item">
+        <input type="checkbox" class="test-cb"><span class="test-box"></span>
+        <span class="test-text">You don't know which AI-generated queries your competitors appear in</span>
+      </label>
+      <label class="test-item">
+        <input type="checkbox" class="test-cb"><span class="test-box"></span>
+        <span class="test-text">Your website content hasn't been updated in over a year</span>
+      </label>
+      <label class="test-item">
+        <input type="checkbox" class="test-cb"><span class="test-box"></span>
+        <span class="test-text">You've never heard of 'AI share of voice' for your industry</span>
+      </label>
+    </div>
+
+    
+    <div class="score-card" id="scoreCard">
+      <div class="score-eyebrow">Your AI Visibility Score</div>
+      <div class="score-num"><span id="scoreVal">100</span><span class="score-den">/100</span></div>
+      <div class="score-label" id="scoreLabel">STRONG</div>
+      <div class="score-meter"><div class="score-meter-fill" id="scoreFill"></div></div>
+      <p class="score-msg" id="scoreMsg">Tick the statements above that apply — your score updates live.</p>
+      <a href="#contact" class="btn" style="font-size:13px;padding:12px 22px;">
+        Get My Free AI Visibility Audit
+        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="fit-section">
+  <div class="c">
+    <div class="text-center mb-14">
+      <span class="label mb-4 block">Is This For You?</span>
+      <h2 style="margin-bottom:14px;">
+        Built for the <em class="accent">right businesses.</em>
+      </h2>
+      <p class="body" style="max-width:460px;margin:0 auto;">
+        We take on a small number of clients. We want to make sure we're a fit before you invest your time.
+      </p>
+    </div>
+
+    <div class="fit-grid">
+
+      
+      <div class="fit-card yes">
+        <div class="fit-header">
+          <div class="fit-badge yes">✓</div>
+          <div class="fit-title">This is for you if...</div>
+        </div>
+        <div class="fit-list">
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#16a34a;">✓</span>
+            <span class="fit-item-text">You run a <strong>clinic, service brand, or local business</strong> in Thailand and want a predictable AI referral channel</span>
+          </div>
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#16a34a;">✓</span>
+            <span class="fit-item-text">You already have <strong>Google reviews, a website, and some online presence</strong> — we amplify what exists, not build from zero</span>
+          </div>
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#16a34a;">✓</span>
+            <span class="fit-item-text">You're willing to <strong>invest in content-driven growth</strong> and understand results compound over 3–6 months</span>
+          </div>
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#16a34a;">✓</span>
+            <span class="fit-item-text">You want <strong>leads that arrive pre-sold</strong>, not cold ad traffic that needs convincing</span>
+          </div>
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#16a34a;">✓</span>
+            <span class="fit-item-text">You care about <strong>revenue and bookings</strong>, not vanity metrics like impressions and clicks</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="fit-card no">
+        <div class="fit-header">
+          <div class="fit-badge no">✕</div>
+          <div class="fit-title">This is NOT for you if...</div>
+        </div>
+        <div class="fit-list">
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#dc2626;">✕</span>
+            <span class="fit-item-text">You need <strong>results in 30 days or less</strong> — AI visibility is a compounding asset, not a tap you switch on</span>
+          </div>
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#dc2626;">✕</span>
+            <span class="fit-item-text">Your website has <strong>fewer than 10 pages</strong> or hasn't been updated in years — we need a foundation to work with</span>
+          </div>
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#dc2626;">✕</span>
+            <span class="fit-item-text">You want to be <strong>completely hands-off</strong> — we move faster when clients can provide context about their services</span>
+          </div>
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#dc2626;">✕</span>
+            <span class="fit-item-text">You're looking for the <strong>cheapest option</strong> — we're not the lowest price, and we don't compete on price</span>
+          </div>
+          <div class="fit-item">
+            <span class="fit-item-icon" style="color:#dc2626;">✕</span>
+            <span class="fit-item-text">You're <strong>not willing to track revenue from AI referrals</strong> — we measure by bookings and revenue, not traffic</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec hiw-section" style="position:relative;overflow:hidden;">
+  <div class="c">
+    <div style="margin-bottom:52px;">
+      <div class="label mb-4 block">How It Works</div>
+      <h2 style="margin-bottom:14px;">From invisible to <em class="accent">undeniable</em></h2>
+      <p class="body" style="max-width:460px;color:var(--muted);">
+        Three steps to make your brand the answer AI engines recommend — every time.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-title">Audit your <em class="accent" style="font-size:inherit;">AI visibility</em></div>
+        <p class="process-body">We map exactly where and how AI engines mention your brand — and diagnose every gap where competitors are stealing your share of voice.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-title">Build <em class="accent" style="font-size:inherit;">citation authority</em></div>
+        <p class="process-body">Content, backlinks, and structured data engineered to make ChatGPT, Gemini, and Google AI cite your brand as the trusted answer.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-title">Compound <em class="accent" style="font-size:inherit;">every month</em></div>
+        <p class="process-body">AI visibility compounds over time. Each article, citation, and link builds a moat competitors cannot replicate overnight.</p>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:44px;position:relative;z-index:1;">
+      <a href="#contact" class="btn btn-lg">
+        See Your Business on ChatGPT
+        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec-sm bg-2">
+  <div class="c">
+    <div class="text-center mb-8">
+      <span class="label mb-4 block">The Conversion Gap</span>
+      <h2 style="margin-bottom:10px;font-size:clamp(22px,2.4vw,30px);">AI Traffic Converts at <em class="accent">4.4×</em></h2>
+      <p class="body" style="max-width:500px;margin:0 auto;">
+        Quality over quantity. AI-referred visitors arrive pre-sold and ready to book — not browsing.
+      </p>
+    </div>
+
+    <div class="conv-wrap" style="gap:0;margin-bottom:22px;">
+      
+      <div class="conv-card" style="opacity:0.72;">
+        <div class="conv-title">Traditional Search</div>
+        <div class="conv-row"><span class="conv-key">Visitors</span><span class="conv-val">100</span></div>
+        <div class="conv-row"><span class="conv-key">Conversion Rate</span><span class="conv-val">2–3%</span></div>
+        <div class="conv-row"><span class="conv-key">New Leads / 100</span><span class="conv-val big">2–3</span></div>
+        <p class="body-sm" style="margin-top:14px;font-style:italic;color:var(--muted2);">High volume. Low intent.</p>
+      </div>
+
+      
+      <div class="conv-mid">
+        <div class="conv-vs">→</div>
+      </div>
+
+      
+      <div class="conv-card winner">
+        <div class="winner-badge">WINNER</div>
+        <div class="conv-title" style="color:var(--terra);">AI Recommendation</div>
+        <div class="conv-row"><span class="conv-key">Visitors</span><span class="conv-val">100</span></div>
+        <div class="conv-row">
+          <span class="conv-key">Conversion Rate</span>
+          <span class="conv-val accent">10%+ <span class="conv-badge">4.4×</span></span>
+        </div>
+        <div class="conv-row"><span class="conv-key">New Leads / 100</span><span class="conv-val accent big">10–15</span></div>
+        <p class="body-sm" style="margin-top:14px;font-style:italic;color:var(--terra);">Lower volume. Highest intent.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:22px;">
+      <p>
+        <strong>Pre-qualified leads.</strong> AI search delivers visitors who've already researched their options and chosen your brand. They arrive ready to book — not to browse.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec bg-default">
+  <div class="c">
+    <div class="text-center mb-14">
+      <span class="label mb-4 block">Case Studies</span>
+      <h2 style="margin-bottom:14px;">Numbers, <em class="accent">not promises.</em></h2>
+      <p class="body" style="max-width:480px;margin:0 auto;">
+        How Bangkok clinics turned AI visibility into booked revenue.
+      </p>
+    </div>
+
+    <div class="cases-grid" style="grid-template-columns:1fr;max-width:560px;margin:0 auto;">
+
+      
+      <div class="case">
+        <div class="case-ind">Healthcare · Bangkok</div>
+        <div class="case-name">Physio Clinic, Bangkok &amp; Wellness</div>
+
+        <div class="case-stats">
+          <div class="case-stat"><span class="case-snum">+350%</span><span class="case-slbl">AI Mentions</span></div>
+          <div class="case-stat"><span class="case-snum">90%</span><span class="case-slbl">Top 3 Rankings</span></div>
+          <div class="case-stat"><span class="case-snum">27</span><span class="case-slbl">AI Bookings/Mo</span></div>
+        </div>
+
+        <div style="margin-bottom:18px;padding:14px;background:var(--surface);border:1px dashed var(--bdr);border-radius:8px;">
+          <div class="prompts-head">Dominating Prompts</div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;">
+            <span class="prompt-tag">"Best physio in Thonglor"</span>
+            <span class="prompt-tag">"Physio for runners Bangkok"</span>
+            <span class="prompt-tag">"Best Chinese medicine Bangkok"</span>
+          </div>
+        </div>
+
+        <p class="body-sm" style="margin-bottom:20px;">
+          Increased AI mentions from 30 to 112. Now appears in Top 3 for 90% of all physio-related AI prompts in Bangkok — 27 confirmed paid bookings/month from ChatGPT, Perplexity &amp; Google AI.
+        </p>
+
+        <a href="https://locully-client-success-m8a58k2.gamma.site/" class="case-link" target="_blank" rel="noopener noreferrer">
+          View Case Study →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec" style="background:var(--bg2);">
+  <div class="c">
+    <div class="text-center mb-14">
+      <span class="label mb-4 block">Success Stories</span>
+      <h2>Trusted by Bangkok's <em class="accent">Leading Clinics</em></h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"We went from Page 3 to #1 for 'best physio Bangkok' in 90 days. Patient calls increased 172%."</p>
+        <div class="testi-auth">
+          <div class="testi-name">Clinic Owner</div>
+          <div class="testi-role">Physio &amp; Wellness · Bangkok</div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Locully's AI visibility strategy was a game-changer. Organic enquiries doubled in 6 months."</p>
+        <div class="testi-auth">
+          <div class="testi-name">Marketing Director</div>
+          <div class="testi-role">Aesthetic Clinic · Bangkok</div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The quality of patients from AI search is remarkable. Conversion rate is 4× higher than Google Ads."</p>
+        <div class="testi-auth">
+          <div class="testi-name">Founder</div>
+          <div class="testi-role">Wellness Brand · Bangkok</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="authority-strip">
+  <div class="c">
+    <div class="authority-inner">
+
+      <div class="authority-item">
+        <div class="authority-label">Our Philosophy</div>
+        <div class="authority-text">
+          We Don't Just Do Marketing.<br>
+          <em>We Drive Revenue.</em>
+        </div>
+        <div class="authority-subtext">"No impact on revenue = no point in marketing." — Sunny, Founder</div>
+      </div>
+
+      <div class="authority-divider"></div>
+
+      <div class="authority-item">
+        <div class="authority-label">Track Record</div>
+        <div class="authority-text">6+ years in SEO.</div>
+        <div class="authority-subtext">First agency in Southeast Asia to productise AI Visibility Optimization as a service.</div>
+      </div>
+
+      <div class="authority-divider"></div>
+
+      <div class="authority-item">
+        <div class="authority-label">What We Optimise For</div>
+        <div class="authority-text">Bookings. Revenue.<br><em>Not vanity metrics.</em></div>
+        <div class="authority-subtext">Traffic is vanity. Conversion is sanity. We report on what moves your bottom line.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<section class="sec bg-2">
+  <div class="c">
+    <div class="text-center mb-14">
+      <span class="label mb-4 block">FAQ</span>
+      <h2 style="margin-bottom:14px;">Answered <em class="accent">before you ask.</em></h2>
+      <p class="body" style="max-width:440px;margin:0 auto;">
+        The honest answers to what clinic owners ask us first.
+      </p>
+    </div>
+
+    <div class="faq-grid">
+
+      <div class="faq-item open">
+        <div class="faq-q">
+          How is AI Visibility Optimization different from SEO?
+          <span class="faq-icon">−</span>
+        </div>
+        <p class="faq-a">
+          Traditional SEO gets you ranking in Google's blue links — AIO gets you cited as the answer in ChatGPT, Perplexity, Google AI Overviews, and Claude. Both matter, but AI citations drive 4.4× higher conversion because users arrive pre-sold. We do both, with AIO bundled into every SEO retainer at no extra cost.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          How quickly will I see results?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">
+          Most clients see their first AI citations within 60–90 days. The Physio Clinic, Bangkok case study went from 3 to 13 AI bookings/month in just the first 30 days of active work. Full compounding effect typically kicks in at month 3–4.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Which AI platforms do you optimize for?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">
+          ChatGPT, Google AI Overviews, Perplexity AI, Claude (Anthropic), Bing Copilot, and Gemini. We track your brand's citation rate across all major platforms and report monthly on share of voice, citation frequency, and ranking position.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          I'm already doing SEO. Do I need this?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">
+          Traditional SEO and AIO use different signals. A site that ranks well on Google can be completely invisible to AI — and vice versa. Your free audit will show you exactly where you stand on both dimensions. Most clients discover they're strong on Google but scoring near zero in AI visibility.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          What does it cost?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">
+          Retainers start at $1,500/month. AIO is bundled with SEO — not sold separately. We also offer one-off packages for audits and infrastructure setup. The free audit gives you a full picture of your current AI visibility with no obligation.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Do you work with businesses outside healthcare?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">
+          Yes. Our methodology works across verticals — healthcare, restaurants, hospitality, property, professional services. If your customers use AI to research purchases, you need AI visibility. The clinic case studies are our most measurable proof, but the approach is industry-agnostic.
+        </p>
+      </div>
+
+    </div>
+
+    
+    <div class="faq-callout">
+      <p>Still have questions? We're happy to talk through your specific situation before you commit to anything.</p>
+      <a href="#contact" class="btn-ghost" style="border-radius:6px;padding:12px 24px;font-size:14px;">
+        Talk to us — it's free
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="stack-section">
+  <div class="c">
+    <div class="text-center mb-14">
+      <span class="label mb-4 block">The Free Audit</span>
+      <h2 style="margin-bottom:14px;">
+        Here's <em class="accent">exactly</em> what you get.
+      </h2>
+      <p class="body" style="max-width:460px;margin:0 auto;">
+        Not a vague "AI report." A specific, actionable deliverable — built for your brand, your industry, your prompts.
+      </p>
+    </div>
+
+    <div class="stack-grid">
+
+      
+      <div>
+        <div class="stack-list">
+          <div class="stack-item">
+            <div class="stack-item-icon">📊</div>
+            <div class="stack-item-body">
+              <div class="stack-item-title">AI Visibility Score (5 platforms)</div>
+              <div class="stack-item-desc">Your citation rate across ChatGPT, Perplexity, Google AI, Claude, and Bing Copilot. Where you appear, where you don't, and how often.</div>
+            </div>
+            <span class="stack-item-val">$297</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">🏆</div>
+            <div class="stack-item-body">
+              <div class="stack-item-title">Competitor Citation Gap Analysis</div>
+              <div class="stack-item-desc">The exact prompts where your top 3 competitors appear and you don't. These are the gaps we close first.</div>
+            </div>
+            <span class="stack-item-val">$197</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">🔍</div>
+            <div class="stack-item-body">
+              <div class="stack-item-title">Top 10 Priority Prompts</div>
+              <div class="stack-item-desc">The 10 highest-volume AI search queries in your category where ranking #1 would have the most commercial impact.</div>
+            </div>
+            <span class="stack-item-val">$147</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">⚡</div>
+            <div class="stack-item-body">
+              <div class="stack-item-title">3 Quick-Win Action Items</div>
+              <div class="stack-item-desc">Three specific things you can implement this month — without a retainer — to start appearing in AI recommendations.</div>
+            </div>
+            <span class="stack-item-val">$97</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon">📄</div>
+            <div class="stack-item-body">
+              <div class="stack-item-title">Full PDF Report — 48hr Delivery</div>
+              <div class="stack-item-desc">A formatted, shareable report you can take to your team or board. Not a generic template — built for your brand.</div>
+            </div>
+            <span class="stack-item-val">฿0 rush</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <div>
+        <div class="stack-total">
+          <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,17,8,0.4);margin-bottom:18px;">Audit Value Breakdown</div>
+
+          <div class="stack-total-row">
+            <span class="stack-total-key">AI Visibility Score</span>
+            <span class="stack-total-val">$297</span>
+          </div>
+          <div class="stack-total-row">
+            <span class="stack-total-key">Competitor Gap Analysis</span>
+            <span class="stack-total-val">$197</span>
+          </div>
+          <div class="stack-total-row">
+            <span class="stack-total-key">Priority Prompts</span>
+            <span class="stack-total-val">$147</span>
+          </div>
+          <div class="stack-total-row">
+            <span class="stack-total-key">Quick-Win Actions</span>
+            <span class="stack-total-val">$97</span>
+          </div>
+          <div class="stack-total-row">
+            <span class="stack-total-key">PDF Report (48hr)</span>
+            <span class="stack-total-val">$49</span>
+          </div>
+          <div class="stack-total-row" style="border-top:2px solid rgba(26,17,8,0.1);margin-top:8px;padding-top:12px;">
+            <span style="font-weight:600;color:#1A1108;font-size:14px;">Total value</span>
+            <span style="font-family:var(--mono);font-size:16px;color:rgba(26,17,8,0.4);text-decoration:line-through;">$787</span>
+          </div>
+
+          <div class="stack-you-pay">
+            <span class="stack-you-pay-label">You pay today</span>
+            <span class="stack-you-pay-val">฿0</span>
+          </div>
+
+          <p class="stack-note">No credit card. No pitch call unless you want one.</p>
+
+          <div class="stack-bottom-copy">
+            <div class="stack-check-row"><span class="stack-check-icon">✓</span> Delivered to your inbox in 48 hours</div>
+            <div class="stack-check-row"><span class="stack-check-icon">✓</span> No obligation to become a client</div>
+            <div class="stack-check-row"><span class="stack-check-icon">✓</span> Keep the report regardless</div>
+          </div>
+
+          <a href="#contact" class="btn btn-lg" style="width:100%;justify-content:center;display:flex;margin-top:24px;text-decoration:none;">
+            Claim Your Free Audit
+            <svg style="width:16px;height:16px;fill:none;stroke:white;stroke-width:2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="contact" class="sec bg-default">
+  <div class="c">
+    <div class="text-center mb-14">
+      <span class="label mb-4 block">Free Audit</span>
+      <h2 style="margin-bottom:14px;">
+        See your AI ranking <em class="accent">in 48 hours</em>
+      </h2>
+      <p class="body" style="max-width:440px;margin:0 auto;">
+        Free. No obligation. We'll show you exactly where you rank in ChatGPT, Google AI, Perplexity, and Claude — and what it would take to be #1.
+      </p>
+    </div>
+
+    <div class="form-grid">
+
+      
+      <div class="form-card">
+        
+        <div class="form-urgency">
+          <div class="form-urgency-dot"></div>
+          <span class="form-urgency-text">We cap new audits each week — get yours in the queue</span>
+        </div>
+
+        <div class="form-title">Get Your Free AI Audit</div>
+        <p class="form-subtitle">Three fields. That's all we need to show you where you stand.</p>
+
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input type="text" class="form-input" placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" class="form-input" placeholder="john@company.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Website URL *</label>
+          <input type="url" class="form-input" placeholder="https://www.yourwebsite.com">
+        </div>
+
+        <button class="form-submit">
+          Get Free Audit — 48hr Turnaround
+          <svg style="width:16px;height:16px;fill:none;stroke:white;stroke-width:2" viewBox="0 0 24 24"><path d="M22 2L11 13"></path><path d="M22 2L15 22l-4-9-9-4 20-7z"></path></svg>
+        </button>
+        <p class="form-note">Secure submission · No spam · We respect your privacy</p>
+      </div>
+
+      
+      <div>
+        
+        <div class="label mb-4 block" style="margin-bottom:16px;">Client Results</div>
+        <div class="metrics-stack">
+          <div class="metric-row">
+            <div>
+              <div class="metric-lbl">AI Bookings Growth</div>
+              <div class="metric-sublbl">Physio Clinic, Bangkok</div>
+            </div>
+            <span class="metric-val">+9×</span>
+          </div>
+          <div class="metric-row">
+            <div>
+              <div class="metric-lbl">Top 3 AI Rankings</div>
+              <div class="metric-sublbl">Physio queries, Bangkok</div>
+            </div>
+            <span class="metric-val">90%</span>
+          </div>
+          <div class="metric-row">
+            <div>
+              <div class="metric-lbl">AI vs Ads Conversion</div>
+              <div class="metric-sublbl">AI-referred leads</div>
+            </div>
+            <span class="metric-val">4.4×</span>
+          </div>
+        </div>
+
+        
+        <div class="form-social-proof" style="margin-top:20px;">
+          <p class="form-sp-quote">
+            "We went from 3 AI bookings a month to 27. These are confirmed paid consultations from ChatGPT and Perplexity. It's the most cost-effective channel we have."
+          </p>
+          <div class="form-sp-author">Clinic Owner · Physio Clinic, Bangkok · Bangkok</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
