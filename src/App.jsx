@@ -19,6 +19,7 @@ import PackagesPage from '@/components/PackagesPage';
 import ScrollToTop from '@/components/ScrollToTop';
 import Nav from '@/components/Nav';
 import homeHtml from '@/home-content.html?raw';
+import CaseStudyGate from '@/components/CaseStudyGate';
 import '@/home-scoped.css';
 import ForClinicsPage from '@/pages/ForClinicsPage';
 import ClinicPage from '@/components/ClinicPage';
@@ -72,6 +73,7 @@ const HomePage = () => {
         <link rel="canonical" href="https://locully.org/" />
       </Helmet>
       <div className="lcm" dangerouslySetInnerHTML={{ __html: homeHtml }} />
+      <CaseStudyGate />
       <Footer />
     </>
   );
