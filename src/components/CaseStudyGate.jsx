@@ -52,26 +52,26 @@ const CaseStudyGate = () => {
         <button className="csg-close" onClick={() => setOpen(false)} aria-label="Close">×</button>
         {status === 'done' ? (
           <>
-            <div className="csg-eyebrow">Access granted</div>
-            <h3>Opening the case study…</h3>
-            <p>It's opening in a new tab. If it didn't, <a href={PROFILE_URL} target="_blank" rel="noopener noreferrer">click here</a>.</p>
+            <div className="csg-eyebrow">You're in</div>
+            <h3>Here you go.</h3>
+            <p>The case study is opening in a new tab. If it didn't, <a href={PROFILE_URL} target="_blank" rel="noopener noreferrer">click here</a>.</p>
           </>
         ) : (
           <>
-            <div className="csg-eyebrow">Client Results · By Request</div>
-            <h3>See the full case study</h3>
-            <p>Our detailed client results are shared with prospective clients. Pop in your email and we'll open it for you.</p>
+            <div className="csg-eyebrow">Real Client Results</div>
+            <h3>Want to see the numbers?</h3>
+            <p>These are real, confidential client results. Drop your email and we'll take you straight in.</p>
             <form onSubmit={submit}>
               <input
                 type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@yourclinic.com" required autoFocus
               />
               <button type="submit" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Opening…' : 'Unlock the case study'}
+                {status === 'sending' ? 'Opening…' : 'Show me the results'}
               </button>
             </form>
             {status === 'error' && <p className="csg-err">Please enter a valid email and try again.</p>}
-            <p className="csg-fine">No spam. We'll only use this to share results and follow up if relevant.</p>
+            <p className="csg-fine">No spam — just the results.</p>
           </>
         )}
       </div>
