@@ -189,7 +189,7 @@ export const posts = [
   {
     slug: 'why-clinic-not-showing-chatgpt',
     title: "Why Your Clinic Doesn't Appear in ChatGPT Results (And How to Fix It)",
-    metaTitle: "Why Your Clinic Doesn't Show in ChatGPT Search | Locully",
+    metaTitle: "Why Your Clinic Doesn't Show in ChatGPT Search",
     metaDescription: "Six specific reasons Thailand clinics are invisible in ChatGPT, Perplexity, and Google AI — and the exact fixes to start appearing in AI recommendations.",
     publishDate: '2026-03-19',
     updatedDate: '2026-03-19',
@@ -447,7 +447,7 @@ export const posts = [
   {
     slug: 'ai-optimization-dental-clinics-thailand',
     title: 'AI Optimization for Dental Clinics in Thailand: A 2026 Guide',
-    metaTitle: 'AI Optimization for Dental Clinics in Thailand | Locully',
+    metaTitle: 'AI Optimization for Dental Clinics in Thailand',
     metaDescription: 'The specific AI search signals dental clinics in Thailand need to get recommended by ChatGPT, Perplexity, and Google AI Overviews in 2026.',
     publishDate: '2026-03-19',
     updatedDate: '2026-03-19',
@@ -567,7 +567,7 @@ export const posts = [
   {
     slug: 'geo-vs-seo-clinics-bangkok',
     title: 'GEO vs SEO for Clinics: What Bangkok Clinic Owners Actually Need',
-    metaTitle: 'GEO vs SEO for Clinics: What Bangkok Owners Need | Locully',
+    metaTitle: 'GEO vs SEO for Clinics: What Bangkok Owners Need',
     metaDescription: 'GEO vs SEO for Bangkok clinics: what each one does, how the ranking signals differ, and which to prioritize for maximum patient visibility in 2026.',
     publishDate: '2026-03-19',
     updatedDate: '2026-03-19',
