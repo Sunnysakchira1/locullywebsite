@@ -37,7 +37,7 @@ fs.writeFileSync('src/home-scoped.css', scoped);
 
 // 2) Extract <body>, strip the mockup's own nav, footer, script (we use the shared Nav + React Footer)
 let body = src.match(/<body[^>]*>([\s\S]*?)<\/body>/)[1];
-body = body.replace(/<nav>[\s\S]*?<\/nav>/, '');         // mockup nav -> shared <Nav>
+body = body.replace(/<style[\s\S]*?<\/style>/gi, ''); body = body.replace(/<nav>[\s\S]*?<\/nav>/, '');         // mockup nav -> shared <Nav>
 body = body.replace(/<footer>[\s\S]*?<\/footer>/, '');   // mockup footer -> React <Footer>
 body = body.replace(/<script>[\s\S]*?<\/script>/g, '');  // JS re-implemented in useEffect
 body = body.replace(/<!--[\s\S]*?-->/g, '');             // strip comments
