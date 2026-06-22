@@ -124,6 +124,7 @@ function App() {
           <Route path="/blog/on-page-seo-optimization-guide/" element={<BlogPostPage slug="on-page-seo-optimization-guide" />} />
           <Route path="/blog/backlinks-guide-seo/" element={<BlogPostPage slug="backlinks-guide-seo" />} />
           <Route path="/blog/programmatic-seo-guide/" element={<BlogPostPage slug="programmatic-seo-guide" />} />
+          <Route path="/blog/ai-search-statistics/" element={<BlogPostPage slug="ai-search-statistics" />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/ai-search-visibility" element={<SeoAioPage />} />
         </Routes>

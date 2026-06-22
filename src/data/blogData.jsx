@@ -30,6 +30,10 @@ const NumLi = ({ n, children }) => <li style={s.li}><span style={s.num}>{n}</spa
 const Callout = ({ children }) => <div style={s.callout}><p style={s.calloutText}>{children}</p></div>;
 const InfoBox = ({ title, children }) => <div style={s.infoBox}><div style={s.infoTitle}>{title}</div>{children}</div>;
 const Divider = () => <div style={s.divider} />;
+// External citation link (opens in new tab). Used on the stats pillar.
+const Ext = ({ href, children }) => <a href={href} target="_blank" rel="noopener noreferrer" style={s.ilink}>{children}</a>;
+// One stat line: bold lead number + claim + source. Kept extractable in isolation for AI citation.
+const Stat = ({ lead, children }) => <li style={s.li}><span style={s.dot} /><span><strong style={s.strong}>{lead}</strong> — {children}</span></li>;
 
 // ─── POST DATA ───────────────────────────────────────────────────────────────
 
@@ -1747,6 +1751,232 @@ export const posts = [
         <p style={s.p}>
           Apply this test: if you swap the variable (city, product, audience) and the page remains 90% the same, it's too thin. Each page should have a meaningful, substantive section that could only exist for that specific variable — local data, specific comparisons, audience-specific use cases. If you can't generate that, reconsider whether programmatic is the right approach for that keyword pattern.
         </p>
+      </div>
+    ),
+  },
+
+  // ── POST: AI SEARCH STATISTICS (CITATION-MAGNET PILLAR) ──────────────────────
+  {
+    slug: 'ai-search-statistics',
+    title: 'AI Search Statistics 2026: 60+ Cited Data Points on ChatGPT, AI Overviews & GEO',
+    metaTitle: 'AI Search Statistics 2026: 60+ Cited Data Points',
+    metaDescription: '60+ verified AI search statistics for 2026 — ChatGPT, Google AI Overviews, zero-click, referral traffic and GEO citation data. Every stat sourced and linked to its original publisher.',
+    publishDate: '2026-06-22',
+    updatedDate: '2026-06-22',
+    category: 'Statistics',
+    readTime: '12 min read',
+    excerpt: '60+ verified AI search statistics for 2026 — adoption, AI Overviews, zero-click search, LLM referral traffic, and how AI chooses what to cite. Every number sourced and linked.',
+    relatedPosts: ['ai-search-optimization-clinics-thailand', 'geo-vs-seo-clinics-bangkok', 'why-clinic-not-showing-chatgpt'],
+    faqs: [
+      { q: 'How many people use AI search in 2026?', a: 'ChatGPT alone has 900 million weekly active users and handles 2.5 billion prompts per day, while Google AI Overviews reach over 2 billion people monthly and the Gemini app has 750 million monthly users. In the US, 34% of adults have used ChatGPT, rising to 58% of under-30s. AI search is now mainstream, not niche.' },
+      { q: 'Do AI Overviews really reduce website clicks?', a: 'Yes. Pew Research found users clicked through to a website on only 8% of searches that showed an AI summary, versus 15% without one — roughly halving click-through. Only 1% clicked a link inside the AI summary itself. Ahrefs separately measured a 34.5% click-through drop for the #1 organic result when an AI Overview is present.' },
+      { q: 'What percentage of Google searches are zero-click?', a: 'About 68% of US Google searches ended without a click in early 2026, according to SparkToro using Similarweb data — up from roughly 60% in 2024. That means less than one third of searches now send a click to the open web, driven partly by AI summaries and featured answers.' },
+      { q: 'What actually makes an LLM cite your brand?', a: 'The strongest measured signal is brand mentions across the web, which correlated with AI Overview visibility about three times more strongly than backlinks in Ahrefs research on 75,000 brands. Academic research found that citing sources, adding quotations, and including statistics each lifted AI visibility 30–40%. Notably, schema markup showed no meaningful citation uplift, and keyword stuffing reduced visibility.' },
+      { q: 'Is AI search traffic worth optimising for if it is still small?', a: 'The volume is small — around 0.13% of total sessions — but the quality is high. ChatGPT referral traffic converted at 7.1% in Similarweb data, second only to paid search, and Microsoft Clarity found LLM visitors signed up at over ten times the rate of search visitors. AI referral traffic also grew 357% year over year, and 94% of enterprises plan to increase GEO investment in 2026.' },
+      { q: 'Are people really using AI to find clinics and local businesses?', a: '45% of US consumers now use AI tools to find or choose a local business, up from 6% a year earlier. In healthcare specifically, 40 million people ask ChatGPT a health question every day, and about 70% of those conversations happen outside clinic hours. For service businesses, being named in AI answers is becoming a primary discovery channel.' },
+    ],
+    Content: () => (
+      <div>
+        <p style={s.p}>
+          AI search has moved from novelty to default. ChatGPT now handles <strong style={s.strong}>2.5 billion prompts a day</strong>, Google&rsquo;s AI Overviews reach <strong style={s.strong}>over 2 billion monthly users</strong>, and on searches where an AI summary appears, only <strong style={s.strong}>8% of users click through to a website</strong>.
+        </p>
+        <p style={s.p}>
+          This page collects the most important AI search statistics for 2026 — every number verified against its original source and linked, so you can cite it with confidence.
+        </p>
+
+        <InfoBox title="Key AI search statistics for 2026">
+          <Ul>
+            <Stat lead="2.5 billion">ChatGPT prompts sent per day globally (<Ext href="https://techcrunch.com/2025/07/21/chatgpt-users-send-2-5-billion-prompts-a-day/">OpenAI via TechCrunch, 2025</Ext>).</Stat>
+            <Stat lead="900 million">ChatGPT weekly active users (<Ext href="https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users">OpenAI, Feb 2026</Ext>).</Stat>
+            <Stat lead="2 billion+">monthly users of Google AI Overviews (<Ext href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2025/">Alphabet Q2 2025</Ext>).</Stat>
+            <Stat lead="18%">of all Google searches now produce an AI summary (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research, Jul 2025</Ext>).</Stat>
+            <Stat lead="8% vs 15%">click-through when an AI summary is present versus absent — roughly half (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research, Jul 2025</Ext>).</Stat>
+            <Stat lead="68%">of US Google searches now end without a click (<Ext href="https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/">SparkToro, Jun 2026</Ext>).</Stat>
+            <Stat lead="25%">forecast drop in traditional search engine volume by 2026 (<Ext href="https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents">Gartner, Feb 2024</Ext>).</Stat>
+            <Stat lead="~3× stronger">brand mentions correlate with AI Overview visibility than backlinks do (<Ext href="https://ahrefs.com/blog/ai-overview-brand-correlation/">Ahrefs, May 2025</Ext>).</Stat>
+            <Stat lead="40 million">people ask ChatGPT a health question every single day (<Ext href="https://www.healthcaredive.com/news/40-million-use-chatgpt-health-questions-openai/808861/">OpenAI, Jan 2026</Ext>).</Stat>
+            <Stat lead="45%">of US consumers use AI tools to find or choose a local business (<Ext href="https://www.brightlocal.com/research/lcrs-ai-trust/">BrightLocal, Mar 2026</Ext>).</Stat>
+          </Ul>
+        </InfoBox>
+
+        <Callout>
+          <strong style={s.strong}>TL;DR:</strong> In 2026, AI search is mainstream. Billions use ChatGPT, Gemini and Google AI Overviews weekly, and a large, growing share of searches resolve inside an AI answer with no click to any website. AI-referred visitors are still a small slice of total traffic but convert at among the highest rates of any channel. Getting <em>named</em> inside those answers — Generative Engine Optimisation (GEO) — is now a distinct discipline from traditional SEO, driven more by brand mentions and citable content than by backlinks or schema.
+        </Callout>
+
+        <Divider />
+
+        <h2 style={s.h2}>1. AI Search Adoption &amp; Usage Statistics</h2>
+        <p style={s.p}>
+          How many people actually use AI search? The headline numbers are now measured in billions.
+        </p>
+        <Ul>
+          <Stat lead="900 million">people use ChatGPT every week as of February 2026, up from 800 million in October 2025 (<Ext href="https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users">OpenAI via TechCrunch</Ext>).</Stat>
+          <Stat lead="2.5 billion">prompts are sent to ChatGPT every day, roughly 330 million from the US (<Ext href="https://techcrunch.com/2025/07/21/chatgpt-users-send-2-5-billion-prompts-a-day/">OpenAI via Axios/TechCrunch, Jul 2025</Ext>).</Stat>
+          <Stat lead="750 million+">people use the Google Gemini app each month, up from 650 million the prior quarter (<Ext href="https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/">Alphabet Q4 2025 earnings</Ext>).</Stat>
+          <Stat lead="2 billion+">people use Google AI Overviews monthly across 200+ countries and 40 languages — up from 1.5 billion a quarter earlier (<Ext href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2025/">Alphabet Q2 2025 earnings</Ext>).</Stat>
+          <Stat lead="2.5 billion+">monthly AI Overviews users as of May 2026, per Google&rsquo;s CEO — reported via CNBC video, treat as directional (<Ext href="https://www.cnbc.com/video/2026/05/19/google-ceo-pichai-ai-overviews-now-has-over-2-point-5-billion-monthly-users.html">CNBC, May 2026</Ext>).</Stat>
+          <Stat lead="780 million">queries were processed by Perplexity in May 2025, growing 20%+ month over month (<Ext href="https://techcrunch.com/2025/06/05/perplexity-received-780-million-queries-last-month-ceo-says">Perplexity CEO, Jun 2025</Ext>).</Stat>
+          <Stat lead="20 million+">paid Microsoft 365 Copilot seats are now active across enterprises (<Ext href="https://techcrunch.com/2026/04/29/microsoft-says-it-has-over-20m-paid-copilot-users-and-they-really-are-using-it/">Microsoft Q3 FY2026 earnings</Ext>).</Stat>
+          <Stat lead="34%">of US adults have used ChatGPT — about double the 2023 share — rising to 58% of under-30s (<Ext href="https://www.pewresearch.org/short-reads/2025/06/25/34-of-us-adults-have-used-chatgpt-about-double-the-share-in-2023/">Pew Research, Jun 2025</Ext>).</Stat>
+          <Stat lead="121 million">Americans (35.8%) used generative AI in 2025, forecast to reach 133 million (39.2%) in 2026 (<Ext href="https://www.emarketer.com/content/faq-on-generative-ai--how-consumer-adoption-steering-marketing-2026">eMarketer, 2026</Ext>).</Stat>
+          <Stat lead="~55%">ChatGPT&rsquo;s estimated share of AI-chatbot web visits in early 2026, down from ~76% a year earlier — Similarweb data via aggregator, directional (<Ext href="https://vertu.com/lifestyle/ai-chatbot-market-share-2026-chatgpt-drops-to-68-as-google-gemini-surges-to-18-2">reported Apr 2026</Ext>).</Stat>
+        </Ul>
+        <p style={s.p}>
+          AI search isn&rsquo;t early-adopter behaviour anymore — it&rsquo;s how a third of US adults, and the majority of under-30s, already research questions. For the mechanics, see our guide to <Link to="/blog/how-chatgpt-chooses-clinic-recommendation/" style={s.ilink}>how ChatGPT chooses which clinic to recommend</Link>.
+        </p>
+
+        <h2 style={s.h2}>2. Google AI Overviews Statistics</h2>
+        <p style={s.p}>
+          Google AI Overviews (formerly SGE) are the most-seen AI search feature on Earth, sitting on top of the world&rsquo;s biggest search engine. Here&rsquo;s how often they appear — and what they do to clicks.
+        </p>
+        <Ul>
+          <Stat lead="18%">of all Google searches now produce an AI Overview, and 58% of users saw at least one in a month (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research, Jul 2025</Ext>).</Stat>
+          <Stat lead="8% vs 15%">users clicked through on just 8% of searches showing an AI summary, versus 15% without — roughly half (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research, Jul 2025</Ext>).</Stat>
+          <Stat lead="1%">of users clicked a source link inside an AI summary — the &ldquo;quoted but not visited&rdquo; problem (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research, Jul 2025</Ext>).</Stat>
+          <Stat lead="26% vs 16%">share of users who ended their session entirely after an AI-summary page versus a standard results page (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research, Jul 2025</Ext>).</Stat>
+          <Stat lead="88%">of AI summaries cited three or more sources, with a median length of just 67 words (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research, Jul 2025</Ext>).</Stat>
+          <Stat lead="8% to 53%">AI Overviews triggered on 8% of one-to-two-word queries but 53% of 10+ word queries, and 60% of question-format queries (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research, Jul 2025</Ext>).</Stat>
+          <Stat lead="−34.5%">the drop in click-through for the #1 organic result when an AI Overview is present, across 300,000 keywords (<Ext href="https://ahrefs.com/blog/ai-overviews-reduce-clicks/">Ahrefs, 2025</Ext>).</Stat>
+          <Stat lead="11 links">the average number of sources cited per AI Overview (<Ext href="https://www.semrush.com/blog/ai-overviews-study/">Semrush, 2025</Ext>).</Stat>
+          <Stat lead="20–26%">the overlap between AI Overview links and the top-10 organic results; the #1 result appeared in only 46% of desktop AI Overviews (<Ext href="https://www.semrush.com/blog/ai-overviews-study/">Semrush, 2025</Ext>).</Stat>
+          <Stat lead="94%">of AI Overviews cite at least one top-20 URL, but 44% of citations come from beyond the top 20 — ranking helps but isn&rsquo;t required (<Ext href="https://www.seoclarity.net/research/aio-rankings-overlap">seoClarity, Oct 2025</Ext>).</Stat>
+          <Stat lead="29.9%">of keywords showed an AI Overview, rising to 74% for problem-solving queries — Authoritas Dec 2024 dataset, own taxonomy (<Ext href="https://www.authoritas.com/blog/ai-overview-user-intent-research">Authoritas</Ext>).</Stat>
+        </Ul>
+        <p style={s.p}>
+          Every study agrees: AI Overviews appear most on informational and question queries, cut clicks roughly in half, and pull sources from well beyond page one. If your business is invisible here, see <Link to="/blog/why-clinic-not-showing-chatgpt/" style={s.ilink}>why your clinic isn&rsquo;t showing in ChatGPT</Link>.
+        </p>
+
+        <h2 style={s.h2}>3. Zero-Click &amp; Search Behaviour Shift Statistics</h2>
+        <p style={s.p}>
+          The bigger story is the decline of the click itself. Users increasingly get their answer on the results page and never visit a website.
+        </p>
+        <Ul>
+          <Stat lead="25%">Gartner&rsquo;s forecast drop in traditional search engine volume by 2026 as users shift to AI chatbots. Exact wording: &ldquo;traditional search engine volume will drop 25%.&rdquo; A forecast about volume, not traffic (<Ext href="https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents">Gartner, Feb 2024</Ext>).</Stat>
+          <Stat lead="68%">of US Google searches ended without a click in early 2026, up from 60% in 2024 — under one third now send a click to the open web (<Ext href="https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/">SparkToro / Similarweb, Jun 2026</Ext>).</Stat>
+          <Stat lead="58.5%">of US searches ended in zero clicks in the prior benchmark; per 1,000 searches only 360 clicks reached the open web (<Ext href="https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/">SparkToro / Datos, Jul 2024</Ext>).</Stat>
+          <Stat lead="~80%">of consumers rely on zero-click results in at least 40% of searches, cutting organic traffic an estimated 15–25% (<Ext href="https://www.bain.com/insights/goodbye-clicks-hello-ai-zero-click-search-redefines-marketing/">Bain &amp; Company, Feb 2025</Ext>).</Stat>
+          <Stat lead="41%">of Gen Z turn to social platforms first when searching, ahead of search engines (32%) and AI chat (11%) (<Ext href="https://investors.sproutsocial.com/news/news-details/2025/New-Research-from-Sprout-Social-Finds-Social-Media-is-the-Top-Place-Gen-Z-Turns-to-for-Search-Surpassing-Traditional-Search-Engines/default.aspx">Sprout Social, May 2025</Ext>).</Stat>
+          <Stat lead="+4,700%">year-over-year growth in generative-AI referral traffic to US retail sites by July 2025 (<Ext href="https://business.adobe.com/blog/generative-ai-powered-shopping-rises-with-traffic-to-retail-sites">Adobe Analytics, Aug 2025</Ext>).</Stat>
+          <Stat lead="73%">of consumers who shop with AI say it is now their primary source of product research (<Ext href="https://business.adobe.com/blog/generative-ai-powered-shopping-rises-with-traffic-to-retail-sites">Adobe Analytics, Aug 2025</Ext>).</Stat>
+          <Stat lead="53%">of consumers distrust AI search results, and 61% want a way to turn AI summaries off — adoption and trust aren&rsquo;t the same thing (<Ext href="https://www.gartner.com/en/newsroom/press-releases/2025-09-03-gartner-survey-finds-53-percent-of-consumers-distrust-ai-powered-search-results0">Gartner, Sep 2025</Ext>).</Stat>
+        </Ul>
+        <p style={s.p}>
+          The shift is structural, not seasonal. Search is becoming an answer engine, and the click — what traditional SEO was built to win — is no longer guaranteed. That&rsquo;s exactly why <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO and SEO are now different disciplines</Link>.
+        </p>
+
+        <h2 style={s.h2}>4. Business Impact: LLM Referral Traffic &amp; Conversion Statistics</h2>
+        <p style={s.p}>
+          If AI keeps the click, does it still send business? The data says yes — in small but unusually high-quality volumes.
+        </p>
+        <Ul>
+          <Stat lead="1.13 billion">referral visits were sent to websites by AI platforms in June 2025 alone — still tiny next to Google&rsquo;s 191 billion (<Ext href="https://www.similarweb.com/blog/insights/ai-news/ai-referral-traffic-winners/">Similarweb, Jul 2025</Ext>).</Stat>
+          <Stat lead="+357%">year-over-year growth in AI referral traffic from June 2024 to June 2025 (<Ext href="https://www.similarweb.com/blog/insights/ai-news/ai-referral-traffic-winners/">Similarweb, Jul 2025</Ext>).</Stat>
+          <Stat lead="7.1%">the conversion rate of ChatGPT referral traffic, second only to paid search (7.8%) and ahead of organic, direct and social (<Ext href="https://www.similarweb.com/blog/marketing/geo/gen-ai-stats/">Similarweb, May 2026</Ext>).</Stat>
+          <Stat lead="1.66% vs 0.15%">LLM-referred visitors signed up at over ten times the rate of search-referred visitors across 1,277 domains (<Ext href="https://clarity.microsoft.com/blog/ai-traffic-converts-at-3x-the-rate-of-other-channels-study/">Microsoft Clarity, Nov 2025</Ext>).</Stat>
+          <Stat lead="+155.6%">growth in AI-driven traffic over eight months, versus +24% for search and +21.5% for social (<Ext href="https://clarity.microsoft.com/blog/ai-traffic-converts-at-3x-the-rate-of-other-channels-study/">Microsoft Clarity, Nov 2025</Ext>).</Stat>
+          <Stat lead="+527%">year-over-year surge in AI-sourced sessions across a 1.96-million-session study (<Ext href="https://previsible.io/seo-strategy/ai-seo-study-2025/">Previsible, Dec 2025</Ext>).</Stat>
+          <Stat lead="0.13%">AI traffic as a share of total sessions, but it concentrates on high-intent pages, reaching 1.14% on industry/solution pages (<Ext href="https://previsible.io/seo-strategy/ai-seo-study-2025/">Previsible, Dec 2025</Ext>).</Stat>
+          <Stat lead="4.4×">the value of an average LLM visitor versus an organic one, by conversion — original Semrush post offline, figure preserved via MarTech (<Ext href="https://martech.org/average-llm-visitor-worth-4-4x-organic-search-visitors/">MarTech, Jun 2025</Ext>).</Stat>
+          <Stat lead="No significant difference">one rigorous counter-study found LLM traffic converted at 4.87% versus organic&rsquo;s 4.60% (p=0.794) — a useful reality check (<Ext href="https://www.amsive.com/insights/seo/does-llm-traffic-convert-better-than-organic-a-new-data-backed-study/">Amsive, Sep 2025</Ext>).</Stat>
+          <Stat lead="12% → 94%">enterprises put 12% of digital budgets into answer-engine optimisation in 2025, and 94% plan to increase it in 2026 (<Ext href="https://finance.yahoo.com/news/conductor-survey-enterprise-cmos-shows-135600386.html">Conductor, Jan 2026</Ext>).</Stat>
+          <Stat lead="45%">of B2B buyers used generative AI during a recent purchase (<Ext href="https://www.digitalcommerce360.com/2026/03/17/gartner-b2b-buyers-rep-free-purchasing-ai-reshapes-sales/">Gartner, May 2026</Ext>).</Stat>
+        </Ul>
+        <p style={s.p}>
+          The honest read: AI referral volume is still small, conversion-quality numbers vary by study, and at least one careful analysis finds no edge over organic. But the direction is unambiguous, and the visitors that do arrive are high-intent — which is why nearly every enterprise is now funding GEO.
+        </p>
+
+        <h2 style={s.h2}>5. How LLMs Choose &amp; Cite Sources (GEO/AEO Mechanics)</h2>
+        <p style={s.p}>
+          This is the section that matters most if you want to get cited. What actually drives whether an AI names your brand?
+        </p>
+        <Ul>
+          <Stat lead="Up to 40%">the improvement in a source&rsquo;s visibility within AI answers achievable with GEO techniques, per the foundational academic paper (<Ext href="https://arxiv.org/abs/2311.09735">Aggarwal et al., KDD 2024</Ext>).</Stat>
+          <Stat lead="30–40%">the relative uplift from the three most effective GEO tactics — citing sources, adding quotations, and adding statistics. Keyword stuffing decreased visibility (<Ext href="https://arxiv.org/html/2311.09735v2">Aggarwal et al., arXiv</Ext>).</Stat>
+          <Stat lead="~3× stronger">brand mentions correlated with AI Overview visibility (0.664) than backlinks did (0.218) across 75,000 brands — correlation, not proven causation (<Ext href="https://ahrefs.com/blog/ai-overview-brand-correlation/">Ahrefs, May 2025</Ext>).</Stat>
+          <Stat lead="No uplift from schema">adding schema markup changed AI citations by roughly nothing and slightly reduced AI Overview citations (−4.6%) on already-cited pages (<Ext href="https://ahrefs.com/blog/schema-ai-citations/">Ahrefs, 2026</Ext>).</Stat>
+          <Stat lead="YouTube 20.9%, Reddit 19.6%, Facebook 11.6%">the most-cited domains in Google AI Overviews — AI leans heavily on UGC, social and video (<Ext href="https://ahrefs.com/blog/most-cited-domains-ai-overviews/">Ahrefs Brand Radar, Jun 2026</Ext>).</Stat>
+          <Stat lead="Reddit #1">the most-cited domain across all AI engines combined, followed by YouTube and LinkedIn, across 30 million sources (<Ext href="https://searchengineland.com/ai-search-engines-cite-reddit-youtube-and-linkedin-most-study-473138">Peec AI via Search Engine Land, Mar 2026</Ext>).</Stat>
+          <Stat lead="61.7%">of AI citations don&rsquo;t produce a brand mention at all — the &ldquo;ghost citation&rdquo; problem, where your link is used but your name never appears (<Ext href="https://www.semrush.com/blog/the-ghost-citations-study/">Semrush, Jun 2026</Ext>).</Stat>
+          <Stat lead="119 words">the average length of an AI Overview answer on desktop (91 on mobile) — concise, extractable passages win (<Ext href="https://www.semrush.com/blog/ai-overviews-study/">Semrush, Sep 2024</Ext>).</Stat>
+          <Stat lead="32.3% → 54.5%">the rise in AI Overview citations that also rank organically over 16 months — but nearly half still come from non-ranking pages (<Ext href="https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio">BrightEdge, Oct 2025</Ext>).</Stat>
+        </Ul>
+        <p style={s.p}>
+          The mechanics point one way: get mentioned across the web (especially Reddit, YouTube and authoritative third-party sites), write concise quotable passages, cite your own sources, and add real statistics. Schema and keyword density barely move the needle here. For the fundamentals underneath all of it, see our guides to <Link to="/blog/on-page-seo-optimization-guide/" style={s.ilink}>on-page SEO</Link> and <Link to="/blog/backlinks-guide-seo/" style={s.ilink}>building backlinks and brand mentions</Link>.
+        </p>
+
+        <h2 style={s.h2}>6. Local, Healthcare &amp; Thailand AI Search Statistics</h2>
+        <p style={s.p}>
+          For clinics, restaurants and local businesses — especially in Thailand — the AI search shift is already changing how patients and customers find you.
+        </p>
+        <Ul>
+          <Stat lead="40 million">people ask ChatGPT a health question every single day (<Ext href="https://www.healthcaredive.com/news/40-million-use-chatgpt-health-questions-openai/808861/">OpenAI, Jan 2026</Ext>).</Stat>
+          <Stat lead="200 million">of ChatGPT&rsquo;s weekly users — one in four — ask at least one health question; over 5% of all messages are health-related (<Ext href="https://www.beckershospitalreview.com/healthcare-information-technology/ai/40m-americans-turn-to-chatgpt-for-healthcare-report/">OpenAI via Becker&rsquo;s, Jan 2026</Ext>).</Stat>
+          <Stat lead="~70%">of health conversations on ChatGPT happen outside normal clinic hours — when no receptionist is answering (<Ext href="https://www.healthcaredive.com/news/40-million-use-chatgpt-health-questions-openai/808861/">OpenAI via Healthcare Dive, Jan 2026</Ext>).</Stat>
+          <Stat lead="25%">of US adults have used an AI tool for health info; among them, 59% research before a doctor visit. Only 4% strongly trust AI&rsquo;s accuracy (<Ext href="https://news.gallup.com/poll/707789/americans-turning-supplement-healthcare-visits.aspx">West Health–Gallup, Apr 2026</Ext>).</Stat>
+          <Stat lead="45%">of US consumers use AI tools to find or choose a local business — up from 6% a year earlier, now the third most-used recommendation tool behind Google and Facebook (<Ext href="https://www.brightlocal.com/research/lcrs-ai-trust/">BrightLocal, Mar 2026</Ext>).</Stat>
+          <Stat lead="2.42 billion">people worldwide actively use generative AI tools — 29.2% of the global population — after a 141% YoY jump (<Ext href="https://datareportal.com/reports/digital-2026-mid-year-global-update-report">DataReportal, Apr 2026</Ext>).</Stat>
+          <Stat lead="91.8%">of online adults in Southeast Asia report using AI tools — broad &ldquo;AI tools&rdquo; definition, directional (<Ext href="https://datareportal.com/reports/digital-2026-mid-year-global-update-report">DataReportal, Apr 2026</Ext>).</Stat>
+          <Stat lead="67.8 million">internet users in Thailand — 94.7% of the population — a near-saturated, highly connected market (<Ext href="https://datareportal.com/reports/digital-2026-thailand">DataReportal Digital 2026 Thailand, Nov 2025</Ext>).</Stat>
+          <Stat lead="84.3%">of Thai AI users choose ChatGPT as their primary AI tool, far ahead of Gemini (6.3%) — reported via Nation Thailand (<Ext href="https://www.nationthailand.com/news/general/40058632">Nation Thailand, Nov 2025</Ext>).</Stat>
+          <Stat lead="~3 million">international medical tourists visited Thailand in 2024 — a high-value, English-language audience that researches online before booking — TAT/embassy summaries, directional (<Ext href="https://www.statista.com/topics/12559/medical-tourism-in-thailand/">Statista topic hub</Ext>).</Stat>
+        </Ul>
+        <p style={s.p}>
+          Put these together and the opportunity is obvious. Thailand has a near-universal, English-comfortable, AI-using population and millions of high-value medical tourists who ask ChatGPT for recommendations — often at night, when your clinic is closed. The clinics that get named in those answers win the booking. The rest never know they were in the running. Our <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>AI search optimization guide for Thailand clinics</Link> and the <Link to="/blog/ai-search-audit-clinic-bangkok/" style={s.ilink}>10-point AI search audit</Link> show exactly how to start.
+        </p>
+
+        <Divider />
+
+        <h2 style={s.h2}>How We Verified These Statistics</h2>
+        <p style={s.p}>
+          Every statistic on this page was checked against its original source before publishing. We prioritised primary sources — company earnings calls, Pew Research, Gartner, academic papers and first-party platform data — over second-hand roundups. Where a number could only be confirmed through a reputable secondary outlet (for example, a CEO statement reported by TechCrunch), we say so and link to it. Figures marked <em>directional</em> come from third-party estimates or single-outlet reports and should be treated as indicative. We dropped dozens of widely-circulated &ldquo;AI search stats&rdquo; we couldn&rsquo;t trace to a verifiable source. This page is updated as new studies are published.
+        </p>
+
+        <Divider />
+
+        <h2 style={s.h2}>Frequently Asked Questions</h2>
+
+        <h3 style={s.h3}>How many people use AI search in 2026?</h3>
+        <p style={s.p}>
+          ChatGPT alone has 900 million weekly active users and handles 2.5 billion prompts per day, while Google AI Overviews reach over 2 billion people monthly and the Gemini app has 750 million monthly users. In the US, 34% of adults have used ChatGPT, rising to 58% of under-30s. AI search is now mainstream, not niche.
+        </p>
+
+        <h3 style={s.h3}>Do AI Overviews really reduce website clicks?</h3>
+        <p style={s.p}>
+          Yes. Pew Research found users clicked through to a website on only 8% of searches that showed an AI summary, versus 15% without one — roughly halving click-through. Only 1% clicked a link inside the AI summary itself. Ahrefs separately measured a 34.5% click-through drop for the #1 organic result when an AI Overview is present.
+        </p>
+
+        <h3 style={s.h3}>What percentage of Google searches are zero-click?</h3>
+        <p style={s.p}>
+          About 68% of US Google searches ended without a click in early 2026, according to SparkToro using Similarweb data — up from roughly 60% in 2024. That means less than one third of searches now send a click to the open web, driven partly by AI summaries and featured answers.
+        </p>
+
+        <h3 style={s.h3}>What actually makes an LLM cite your brand?</h3>
+        <p style={s.p}>
+          The strongest measured signal is brand mentions across the web, which correlated with AI Overview visibility about three times more strongly than backlinks in Ahrefs research on 75,000 brands. Academic research found that citing sources, adding quotations and including statistics each lifted AI visibility 30–40%. Notably, schema markup showed no meaningful citation uplift, and keyword stuffing reduced visibility.
+        </p>
+
+        <h3 style={s.h3}>Is AI search traffic worth optimising for if it is still small?</h3>
+        <p style={s.p}>
+          The volume is small — around 0.13% of total sessions — but the quality is high. ChatGPT referral traffic converted at 7.1% in Similarweb data, second only to paid search, and Microsoft Clarity found LLM visitors signed up at over ten times the rate of search visitors. AI referral traffic also grew 357% year over year, and 94% of enterprises plan to increase GEO investment in 2026.
+        </p>
+
+        <h3 style={s.h3}>Are people really using AI to find clinics and local businesses?</h3>
+        <p style={s.p}>
+          45% of US consumers now use AI tools to find or choose a local business, up from 6% a year earlier. In healthcare specifically, 40 million people ask ChatGPT a health question every day, and about 70% of those conversations happen outside clinic hours. For service businesses, being named in AI answers is becoming a primary discovery channel.
+        </p>
+
+        <Divider />
+
+        <h2 style={s.h2}>Your Business Is Being Recommended by AI — Or It Isn&rsquo;t</h2>
+        <p style={s.p}>
+          Every statistic on this page points to the same conclusion: AI search is now where a large and growing share of buying decisions begin. The businesses that get named inside ChatGPT, Perplexity and Google AI Overviews capture that demand. Everyone else is invisible to it — and won&rsquo;t even see the leads they&rsquo;re losing.
+        </p>
+        <p style={s.p}>
+          Locully helps clinics and businesses in Thailand get found and recommended in AI search — we took one Bangkok clinic from 3 to 27 AI-sourced consultations a month in six months. To see where you stand, <Link to="/ai-search-visibility/" style={s.ilink}>see how our AI Visibility Optimization works</Link>, <Link to="/packages/" style={s.ilink}>explore our packages</Link>, or <Link to="/ai-optimization/" style={s.ilink}>start with a free AI search audit</Link>.
+        </p>
+        <Callout>
+          <strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout and updated as new research is released.
+        </Callout>
       </div>
     ),
   },
