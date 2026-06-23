@@ -31,3 +31,8 @@
     color: #666666;
   }
 }
+/* Lead-magnet popup — stack to one column on mobile, hide the dark offer panel */
+@media (max-width: 640px) {
+  .lm-modal { grid-template-columns: 1fr !important; max-width: 420px !important; }
+  .lm-modal .lm-left { display: none !important; }
+}

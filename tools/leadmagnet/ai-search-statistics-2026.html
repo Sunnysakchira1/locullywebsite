@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Search Statistics 2026 — Locully</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: 338.67mm 190.5mm; margin: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:#FFFFFF; --bg2:#F8F6F3; --bg3:#F2EEE9; --bdr:#E2DDD6; --bdr2:#C8C0B5;
+  --ink:#1A1108; --ink2:#3D2F1E; --muted:#6B5D4F; --muted2:#9A8C7E;
+  --terra:#CC6432; --green:#2D7A4F; --amber:#A87820; --red:#C13030;
+  --serif:'Fraunces',Georgia,serif; --mono:'DM Mono','Courier New',monospace; --sans:'DM Sans',sans-serif;
+}
+body { font-family:var(--sans); background:#DDD9D3; color:var(--ink); -webkit-font-smoothing:antialiased; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+@media print { body { background:white; } .page { margin:0; box-shadow:none; } }
+
+.page { width:338.67mm; height:190.5mm; overflow:hidden; background:var(--bg); position:relative; margin:0 auto 4mm; display:grid; grid-template-rows:auto 1fr auto; page-break-after:always; }
+.page:last-child { page-break-after:auto; margin-bottom:0; }
+
+/* HEADER / FOOTER */
+.ph { display:flex; align-items:center; justify-content:space-between; padding:4.5mm 16mm 4mm; border-bottom:0.5pt solid var(--bdr); }
+.ph img { height:6mm; width:auto; object-fit:contain; }
+.ph-right { font-family:var(--mono); font-size:7.5pt; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted2); }
+.pf { border-top:0.5pt solid var(--bdr); padding:3.5mm 16mm; display:flex; align-items:center; justify-content:space-between; }
+.pf-copy { font-family:var(--mono); font-size:6.5pt; color:var(--muted2); letter-spacing:0.08em; }
+.outro-contact { display:flex; gap:9mm; }
+.oc-l { font-family:var(--mono); font-size:6pt; letter-spacing:0.14em; text-transform:uppercase; color:var(--terra); margin-bottom:0.8mm; }
+.oc-v { font-family:var(--mono); font-size:7.5pt; color:var(--muted); }
+
+/* CATEGORY PAGE BODY */
+.pc { padding:11mm 16mm; display:grid; grid-template-rows:auto 1fr auto; gap:9mm; overflow:hidden; }
+
+.cat-head { display:flex; align-items:flex-end; justify-content:space-between; gap:10mm; }
+.sec-eyebrow { font-family:var(--mono); font-size:8pt; letter-spacing:0.24em; text-transform:uppercase; color:var(--terra); display:flex; align-items:center; gap:7pt; margin-bottom:4mm; }
+.sec-eyebrow .line { display:inline-block; width:18pt; height:0.6pt; background:var(--terra); }
+.sec-eyebrow.green { color:var(--green); } .sec-eyebrow.green .line { background:var(--green); }
+.sec-eyebrow.amber { color:var(--amber); } .sec-eyebrow.amber .line { background:var(--amber); }
+.sec-title { font-family:var(--serif); font-size:27pt; font-weight:700; color:var(--ink); line-height:1.08; letter-spacing:-0.02em; }
+.sec-title span { color:var(--terra); }
+.sec-title .gspan { color:var(--green); } .sec-title .aspan { color:var(--amber); }
+.sec-intro { font-size:11pt; color:var(--muted); line-height:1.6; max-width:120mm; flex-shrink:0; text-align:right; }
+.sec-num-watermark { font-family:var(--serif); font-size:30pt; font-weight:700; color:var(--bdr); line-height:1; }
+
+/* HERO STAT CARDS */
+.scards { display:grid; grid-template-columns:repeat(4,1fr); gap:5mm; align-items:stretch; }
+.scard { background:var(--bg2); border-top:3pt solid var(--terra); padding:7mm 6.5mm; display:flex; flex-direction:column; gap:4mm; }
+.scard.green { border-top-color:var(--green); } .scard.amber { border-top-color:var(--amber); }
+.scard-num { font-family:var(--serif); font-size:33pt; font-weight:700; color:var(--terra); line-height:0.95; letter-spacing:-0.02em; }
+.scard.green .scard-num { color:var(--green); } .scard.amber .scard-num { color:var(--amber); }
+.scard-claim { font-size:9.5pt; color:var(--ink2); line-height:1.5; }
+.scard-src { font-family:var(--mono); font-size:6.5pt; color:var(--muted2); letter-spacing:0.03em; margin-top:auto; text-transform:uppercase; padding-top:3mm; border-top:0.5pt solid var(--bdr); }
+
+/* WHY IT MATTERS PANEL */
+.why { background:var(--bg2); border-left:3pt solid var(--terra); padding:6mm 7mm; }
+.why.green { border-left-color:var(--green); } .why.amber { border-left-color:var(--amber); }
+.why-l { font-family:var(--mono); font-size:7pt; letter-spacing:0.16em; text-transform:uppercase; color:var(--terra); margin-bottom:4mm; }
+.why.green .why-l { color:var(--green); } .why.amber .why-l { color:var(--amber); }
+.why-list { list-style:none; display:grid; grid-template-columns:1fr 1fr 1fr; gap:7mm; }
+.why-list li { font-size:9.5pt; color:var(--muted); line-height:1.5; padding-left:5mm; position:relative; }
+.why-list li::before { content:'—'; position:absolute; left:0; color:var(--terra); font-weight:600; }
+.why.green .why-list li::before { color:var(--green); }
+.why.amber .why-list li::before { color:var(--amber); }
+.why-list li strong { color:var(--ink); font-weight:600; }
+
+/* COVER */
+.cover-pc { padding:12mm 16mm; display:flex; flex-direction:column; gap:7mm; }
+.top-bar { display:grid; grid-template-columns:1fr auto; gap:8mm; align-items:center; padding-bottom:6mm; border-bottom:0.5pt solid var(--bdr); }
+.page-title { font-family:var(--serif); font-size:42pt; font-weight:700; color:var(--ink); line-height:0.98; letter-spacing:-0.03em; }
+.page-title span { color:var(--terra); }
+.page-sub { font-family:var(--mono); font-size:8pt; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-top:4mm; }
+.title-pills { display:flex; flex-direction:column; gap:2mm; align-items:flex-end; }
+.tp { font-family:var(--mono); font-size:7pt; letter-spacing:0.06em; text-transform:uppercase; color:var(--terra); border:0.5pt solid rgba(204,100,50,0.4); border-radius:30px; padding:2.5mm 5mm; white-space:nowrap; }
+.panel { background:var(--bg2); border-left:3pt solid var(--terra); padding:6mm 7mm; }
+.panel-l { font-family:var(--mono); font-size:6.5pt; letter-spacing:0.14em; text-transform:uppercase; color:var(--terra); margin-bottom:4mm; }
+.lead { font-size:10.5pt; color:var(--ink2); line-height:1.75; }
+.lead strong { color:var(--ink); font-weight:600; }
+.meta-grid { display:grid; grid-template-columns:1fr; border:0.5pt solid var(--bdr); }
+.meta-c { padding:4mm 5mm; } .meta-c + .meta-c { border-top:0.5pt solid var(--bdr); }
+.meta-l { font-family:var(--mono); font-size:5.5pt; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:2mm; }
+.meta-v { font-family:var(--sans); font-size:9.5pt; font-weight:600; color:var(--ink2); }
+.hl-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:5mm; }
+.hl { background:var(--bg2); border-top:3pt solid var(--terra); padding:5mm 6mm; }
+.hl-num { font-family:var(--serif); font-size:28pt; font-weight:700; color:var(--terra); line-height:1; }
+.hl-l { font-size:8.5pt; color:var(--muted); line-height:1.45; margin-top:2.5mm; }
+
+/* CLOSING */
+.close-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:9mm; align-items:stretch; }
+.proof-row { display:flex; gap:6mm; margin-top:6mm; }
+.proof-b { background:var(--bg2); border-top:3pt solid var(--green); padding:5mm 6mm; flex:1; }
+.proof-n { font-family:var(--serif); font-size:30pt; font-weight:700; color:var(--green); line-height:1; }
+.proof-l { font-family:var(--mono); font-size:7pt; color:var(--muted); letter-spacing:0.04em; margin-top:2.5mm; line-height:1.45; }
+.cta-btn { display:inline-block; margin-top:7mm; background:var(--terra); color:#fff; font-family:var(--mono); font-size:9pt; letter-spacing:0.06em; text-transform:uppercase; padding:5mm 9mm; border-radius:7px; text-decoration:none; }
+.src-note { font-size:8.5pt; color:var(--muted); line-height:1.6; }
+.src-note strong { color:var(--ink2); }
+.src-list { display:flex; flex-wrap:wrap; gap:2mm; margin-top:4mm; }
+.src-chip { font-family:var(--mono); font-size:6.5pt; color:var(--ink2); background:var(--bg3); border:0.5pt solid var(--bdr); border-radius:3px; padding:1.5mm 2.5mm; letter-spacing:0.02em; }
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══ -->
+<div class="page">
+  <div class="ph">
+    <img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully">
+    <div class="ph-right">AI Visibility Report · 2026</div>
+  </div>
+  <div class="cover-pc">
+    <div class="top-bar">
+      <div>
+        <div class="page-title">AI Search Statistics <span>2026</span></div>
+        <div class="page-sub">60+ cited data points &nbsp;·&nbsp; ChatGPT · AI Overviews · GEO &nbsp;·&nbsp; every stat sourced</div>
+      </div>
+      <div class="title-pills">
+        <span class="tp">6 categories</span>
+        <span class="tp">Every stat cited</span>
+        <span class="tp">Updated Jun 2026</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:8mm;align-items:start;">
+      <div class="panel">
+        <div class="panel-l">What this report covers</div>
+        <div class="lead">AI search has moved from novelty to default. ChatGPT handles <strong>2.5 billion prompts a day</strong>, Google's AI Overviews reach <strong>over 2 billion monthly users</strong>, and on searches where an AI summary appears, only <strong>8% of people click through to a website</strong>. This report collects the data that matters for 2026 across six categories — adoption, AI Overviews, zero-click behaviour, referral traffic, how AI chooses what to cite, and the local &amp; healthcare picture. <strong>Every number is verified against its original publisher</strong> — Pew, Gartner, Google, OpenAI, Ahrefs, Semrush and more. Figures we couldn't trace to a source were dropped.</div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-c"><div class="meta-l">Prepared By</div><div class="meta-v">Locully — SEO &amp; AI Visibility, Bangkok</div></div>
+        <div class="meta-c"><div class="meta-l">Coverage</div><div class="meta-v">6 categories · 60+ verified statistics</div></div>
+        <div class="meta-c"><div class="meta-l">Method</div><div class="meta-v">Primary sources, cited &amp; dated</div></div>
+        <div class="meta-c"><div class="meta-l">For</div><div class="meta-v">Marketers &amp; business owners</div></div>
+      </div>
+    </div>
+    <div class="hl-strip">
+      <div class="hl"><div class="hl-num">2.5B</div><div class="hl-l">ChatGPT prompts sent per day</div></div>
+      <div class="hl"><div class="hl-num">2B+</div><div class="hl-l">Monthly Google AI Overviews users</div></div>
+      <div class="hl"><div class="hl-num">68%</div><div class="hl-l">US Google searches end without a click</div></div>
+      <div class="hl"><div class="hl-num">45%</div><div class="hl-l">Of consumers use AI to find local businesses</div></div>
+    </div>
+  </div>
+  <div class="pf">
+    <div class="outro-contact">
+      <div><div class="oc-l">Website</div><div class="oc-v">locully.org</div></div>
+      <div><div class="oc-l">Email</div><div class="oc-v">sunny@locully.org</div></div>
+    </div>
+    <div class="pf-copy">© 2026 Locully Co. Ltd. · Bangkok · 1 / 8</div>
+  </div>
+</div>
+
+<!-- ══ 01 ADOPTION ══ -->
+<div class="page">
+  <div class="ph"><img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully"><div class="ph-right">01 · Adoption &amp; Usage</div></div>
+  <div class="pc">
+    <div class="cat-head">
+      <div>
+        <div class="sec-eyebrow"><span class="line"></span> 01 — Adoption &amp; Usage</div>
+        <div class="sec-title">How many people <span>use AI search</span></div>
+      </div>
+      <div class="sec-intro">AI search is no longer early-adopter behaviour. The headline numbers are now measured in billions of people every single week.</div>
+    </div>
+    <div class="scards">
+      <div class="scard"><div class="scard-num">2.5B</div><div class="scard-claim">ChatGPT prompts sent <strong>per day</strong> globally — roughly 330M from the US.</div><div class="scard-src">OpenAI via TechCrunch · Jul 2025</div></div>
+      <div class="scard"><div class="scard-num">900M</div><div class="scard-claim">ChatGPT <strong>weekly active users</strong>, up from 800M in October 2025.</div><div class="scard-src">OpenAI · Feb 2026</div></div>
+      <div class="scard"><div class="scard-num">2B+</div><div class="scard-claim">Monthly <strong>Google AI Overviews</strong> users across 200+ countries.</div><div class="scard-src">Alphabet Q2 2025 earnings</div></div>
+      <div class="scard"><div class="scard-num">34%</div><div class="scard-claim">Of US adults have <strong>used ChatGPT</strong> — rising to 58% of under-30s.</div><div class="scard-src">Pew Research · Jun 2025</div></div>
+    </div>
+    <div class="why">
+      <div class="why-l">Why it matters</div>
+      <ul class="why-list">
+        <li>AI search is now <strong>mainstream, not niche</strong> — a third of US adults and most under-30s already use ChatGPT regularly.</li>
+        <li>At billions of weekly users, your customers are <strong>already asking AI</strong> about your category — whether or not you show up.</li>
+        <li>Both OpenAI and Google report usage <strong>compounding every quarter</strong> — this trend is accelerating, not levelling off.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf"><div class="outro-contact"><div><div class="oc-l">Website</div><div class="oc-v">locully.org</div></div></div><div class="pf-copy">© 2026 Locully Co. Ltd. · Bangkok · 2 / 8</div></div>
+</div>
+
+<!-- ══ 02 AI OVERVIEWS ══ -->
+<div class="page">
+  <div class="ph"><img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully"><div class="ph-right">02 · Google AI Overviews</div></div>
+  <div class="pc">
+    <div class="cat-head">
+      <div>
+        <div class="sec-eyebrow"><span class="line"></span> 02 — Google AI Overviews</div>
+        <div class="sec-title">What AI Overviews <span>do to your clicks</span></div>
+      </div>
+      <div class="sec-intro">AI Overviews sit on top of the world's biggest search engine. The data on how they reshape clicks is now clear.</div>
+    </div>
+    <div class="scards">
+      <div class="scard"><div class="scard-num">18%</div><div class="scard-claim">Of all Google searches now <strong>produce an AI summary</strong>; 58% of users saw one this month.</div><div class="scard-src">Pew Research · Jul 2025</div></div>
+      <div class="scard"><div class="scard-num">8% vs 15%</div><div class="scard-claim">Click-through <strong>with an AI summary vs without</strong> — roughly half the clicks.</div><div class="scard-src">Pew Research · Jul 2025</div></div>
+      <div class="scard"><div class="scard-num">1%</div><div class="scard-claim">Of users clicked a <strong>source link inside</strong> an AI summary.</div><div class="scard-src">Pew Research · Jul 2025</div></div>
+      <div class="scard"><div class="scard-num">−34.5%</div><div class="scard-claim">Click-through drop for the <strong>#1 organic result</strong> when an AI Overview appears.</div><div class="scard-src">Ahrefs · 2025</div></div>
+    </div>
+    <div class="why">
+      <div class="why-l">Why it matters</div>
+      <ul class="why-list">
+        <li>When an AI summary appears, it <strong>roughly halves the clicks</strong> reaching your website — even from position one.</li>
+        <li>Being the <strong>source that gets quoted</strong> now matters more than ranking, because users rarely click through to verify.</li>
+        <li>Informational and question queries <strong>trigger AI Overviews most</strong> — exactly where top-of-funnel discovery happens.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf"><div class="outro-contact"><div><div class="oc-l">Website</div><div class="oc-v">locully.org</div></div></div><div class="pf-copy">© 2026 Locully Co. Ltd. · Bangkok · 3 / 8</div></div>
+</div>
+
+<!-- ══ 03 ZERO-CLICK ══ -->
+<div class="page">
+  <div class="ph"><img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully"><div class="ph-right">03 · Zero-Click &amp; Behaviour</div></div>
+  <div class="pc">
+    <div class="cat-head">
+      <div>
+        <div class="sec-eyebrow amber"><span class="line"></span> 03 — Zero-Click &amp; Behaviour Shift</div>
+        <div class="sec-title">The decline of <span class="aspan">the click</span></div>
+      </div>
+      <div class="sec-intro">The bigger story behind AI search is the decline of the click itself. Users get the answer and never leave the results page.</div>
+    </div>
+    <div class="scards">
+      <div class="scard amber"><div class="scard-num">25%</div><div class="scard-claim">Forecast drop in <strong>traditional search volume</strong> by 2026 as users shift to AI.</div><div class="scard-src">Gartner · Feb 2024</div></div>
+      <div class="scard amber"><div class="scard-num">68%</div><div class="scard-claim">Of US Google searches <strong>end without a click</strong> — up from 60% in 2024.</div><div class="scard-src">SparkToro / Similarweb · Jun 2026</div></div>
+      <div class="scard amber"><div class="scard-num">15–25%</div><div class="scard-claim">Estimated <strong>organic traffic loss</strong> as ~80% rely on zero-click results.</div><div class="scard-src">Bain &amp; Company · Feb 2025</div></div>
+      <div class="scard amber"><div class="scard-num">41%</div><div class="scard-claim">Of <strong>Gen Z</strong> turn to social platforms first when searching, ahead of search engines.</div><div class="scard-src">Sprout Social · May 2025</div></div>
+    </div>
+    <div class="why amber">
+      <div class="why-l">Why it matters</div>
+      <ul class="why-list">
+        <li>The click that traditional SEO was built to win is <strong>no longer guaranteed</strong> — most searches now end on the page.</li>
+        <li>Organic traffic is <strong>structurally shrinking</strong>, so ranking visibility no longer equals website traffic.</li>
+        <li>Younger audiences are <strong>diversifying</strong> across social and AI — relying on one search channel is now a real risk.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf"><div class="outro-contact"><div><div class="oc-l">Website</div><div class="oc-v">locully.org</div></div></div><div class="pf-copy">© 2026 Locully Co. Ltd. · Bangkok · 4 / 8</div></div>
+</div>
+
+<!-- ══ 04 BUSINESS IMPACT ══ -->
+<div class="page">
+  <div class="ph"><img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully"><div class="ph-right">04 · Business Impact</div></div>
+  <div class="pc">
+    <div class="cat-head">
+      <div>
+        <div class="sec-eyebrow green"><span class="line"></span> 04 — Business Impact</div>
+        <div class="sec-title">Small volume, <span class="gspan">high quality</span></div>
+      </div>
+      <div class="sec-intro">If AI keeps the click, does it still send business? Yes — in small but unusually high-quality volumes.</div>
+    </div>
+    <div class="scards">
+      <div class="scard green"><div class="scard-num">+357%</div><div class="scard-claim">Year-over-year growth in <strong>AI referral traffic</strong> to websites.</div><div class="scard-src">Similarweb · Jul 2025</div></div>
+      <div class="scard green"><div class="scard-num">7.1%</div><div class="scard-claim">ChatGPT referral <strong>conversion rate</strong> — second only to paid search.</div><div class="scard-src">Similarweb · May 2026</div></div>
+      <div class="scard green"><div class="scard-num">10×</div><div class="scard-claim">Higher sign-up rate for LLM visitors — <strong>1.66% vs 0.15%</strong> for search (1,277 domains).</div><div class="scard-src">Microsoft Clarity · Nov 2025</div></div>
+      <div class="scard green"><div class="scard-num">94%</div><div class="scard-claim">Of enterprises plan to <strong>increase GEO investment</strong> in 2026.</div><div class="scard-src">Conductor · Jan 2026</div></div>
+    </div>
+    <div class="why green">
+      <div class="why-l">Why it matters</div>
+      <ul class="why-list">
+        <li>AI referral traffic is still small, but it converts at among the <strong>highest rates of any channel</strong>.</li>
+        <li>It concentrates on <strong>high-intent pages</strong> — pricing, solutions, comparisons — so quality outweighs raw volume.</li>
+        <li>With 94% of enterprises funding GEO, the <strong>competitive window is closing</strong> — early movers win the citations.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf"><div class="outro-contact"><div><div class="oc-l">Website</div><div class="oc-v">locully.org</div></div></div><div class="pf-copy">© 2026 Locully Co. Ltd. · Bangkok · 5 / 8</div></div>
+</div>
+
+<!-- ══ 05 GEO MECHANICS ══ -->
+<div class="page">
+  <div class="ph"><img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully"><div class="ph-right">05 · How LLMs Cite Sources</div></div>
+  <div class="pc">
+    <div class="cat-head">
+      <div>
+        <div class="sec-eyebrow"><span class="line"></span> 05 — How LLMs Choose &amp; Cite Sources</div>
+        <div class="sec-title">What actually <span>gets you cited</span></div>
+      </div>
+      <div class="sec-intro">This is what matters most if you want to be quoted: what really drives whether an AI names your brand.</div>
+    </div>
+    <div class="scards">
+      <div class="scard"><div class="scard-num">Up to 40%</div><div class="scard-claim">Visibility gain from <strong>GEO tactics</strong>: citing sources, quotes, statistics. Keyword stuffing hurt.</div><div class="scard-src">Aggarwal et al., KDD 2024 · arXiv</div></div>
+      <div class="scard"><div class="scard-num">~3×</div><div class="scard-claim">Stronger correlation of <strong>brand mentions</strong> with AIO visibility than backlinks (75,000 brands).</div><div class="scard-src">Ahrefs · May 2025</div></div>
+      <div class="scard"><div class="scard-num">No uplift</div><div class="scard-claim">Adding <strong>schema markup</strong> gave no meaningful AI-citation lift on already-cited pages.</div><div class="scard-src">Ahrefs · 2026</div></div>
+      <div class="scard"><div class="scard-num">Reddit #1</div><div class="scard-claim">Most-cited <strong>domain</strong> across all AI engines, then YouTube &amp; LinkedIn (30M sources).</div><div class="scard-src">Peec AI via Search Engine Land · Mar 2026</div></div>
+    </div>
+    <div class="why">
+      <div class="why-l">Why it matters</div>
+      <ul class="why-list">
+        <li><strong>Brand mentions</strong> across the open web move AI visibility far more than backlinks or schema markup do.</li>
+        <li>Concise, source-cited, <strong>statistic-rich</strong> content gets quoted — the old keyword-density playbook actively backfires.</li>
+        <li><strong>UGC platforms</strong> (Reddit, YouTube, LinkedIn) dominate AI citations, so presence there is now a direct visibility lever.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf"><div class="outro-contact"><div><div class="oc-l">Website</div><div class="oc-v">locully.org</div></div></div><div class="pf-copy">© 2026 Locully Co. Ltd. · Bangkok · 6 / 8</div></div>
+</div>
+
+<!-- ══ 06 LOCAL / HEALTHCARE / THAILAND ══ -->
+<div class="page">
+  <div class="ph"><img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully"><div class="ph-right">06 · Local · Healthcare · Thailand</div></div>
+  <div class="pc">
+    <div class="cat-head">
+      <div>
+        <div class="sec-eyebrow"><span class="line"></span> 06 — Local, Healthcare &amp; Thailand</div>
+        <div class="sec-title">Where AI meets <span>local discovery</span></div>
+      </div>
+      <div class="sec-intro">For clinics and local businesses — especially in Thailand — the AI shift is already changing how customers find you.</div>
+    </div>
+    <div class="scards">
+      <div class="scard"><div class="scard-num">40M</div><div class="scard-claim">People ask ChatGPT a <strong>health question</strong> every day — ~70% outside clinic hours.</div><div class="scard-src">OpenAI · Jan 2026</div></div>
+      <div class="scard"><div class="scard-num">45%</div><div class="scard-claim">Of US consumers use AI to <strong>find a local business</strong> — up from 6% a year earlier.</div><div class="scard-src">BrightLocal · Mar 2026</div></div>
+      <div class="scard"><div class="scard-num">67.8M</div><div class="scard-claim"><strong>Internet users in Thailand</strong> — 94.7% of the population. A near-saturated, AI-ready market.</div><div class="scard-src">DataReportal · Nov 2025</div></div>
+      <div class="scard"><div class="scard-num">2.42B</div><div class="scard-claim">People worldwide actively use <strong>generative AI tools</strong> — up 141% year-over-year.</div><div class="scard-src">DataReportal · Apr 2026</div></div>
+    </div>
+    <div class="why">
+      <div class="why-l">Why it matters</div>
+      <ul class="why-list">
+        <li>Patients and local buyers increasingly <strong>ask AI first</strong> — and often at night, when your business is closed.</li>
+        <li>Thailand's <strong>near-universal connectivity</strong> and millions of medical tourists make it a prime AI-discovery market.</li>
+        <li>Being <strong>named in the AI answer</strong> wins the booking; competitors absent from AI lose it without ever knowing.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf"><div class="outro-contact"><div><div class="oc-l">Website</div><div class="oc-v">locully.org</div></div></div><div class="pf-copy">© 2026 Locully Co. Ltd. · Bangkok · 7 / 8</div></div>
+</div>
+
+<!-- ══ CLOSING ══ -->
+<div class="page">
+  <div class="ph"><img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully"><div class="ph-right">The Opportunity</div></div>
+  <div class="pc" style="display:flex;flex-direction:column;gap:7mm;">
+    <div class="sec-eyebrow"><span class="line"></span> What this means for you</div>
+    <div class="close-grid">
+      <div>
+        <div class="page-title" style="font-size:30pt;">Is your business <span>the answer</span> AI gives — or invisible to it?</div>
+        <div class="lead" style="margin-top:5mm;">Every statistic in this report points to the same shift: AI search is where buying decisions now begin. The businesses that get named inside ChatGPT, Perplexity and Google AI Overviews capture that demand. Everyone else never sees the leads they lose. <strong>Locully helps clinics and businesses in Thailand get found and recommended in AI search.</strong></div>
+        <div class="proof-row">
+          <div class="proof-b"><div class="proof-n">3 → 27</div><div class="proof-l">AI-sourced consultations / month<br>for one Bangkok clinic, in 6 months</div></div>
+          <div class="proof-b"><div class="proof-n">+9×</div><div class="proof-l">growth in AI-sourced<br>paid bookings</div></div>
+        </div>
+        <a class="cta-btn" href="https://locully.org/ai-search-visibility/">Get a free AI visibility audit →</a>
+      </div>
+      <div class="panel">
+        <div class="panel-l">Sources &amp; Methodology</div>
+        <div class="src-note">Every statistic was checked against its <strong>original source</strong> before publishing. We prioritised primary sources — earnings calls, Pew, Gartner, academic papers and first-party platform data — over second-hand roundups, and dropped any figure we couldn't trace. Full pillar with live links: <strong>locully.org/blog/ai-search-statistics</strong></div>
+        <div class="src-list">
+          <span class="src-chip">Pew Research</span>
+          <span class="src-chip">Gartner</span>
+          <span class="src-chip">Alphabet / Google</span>
+          <span class="src-chip">OpenAI</span>
+          <span class="src-chip">Microsoft</span>
+          <span class="src-chip">SparkToro</span>
+          <span class="src-chip">Bain &amp; Company</span>
+          <span class="src-chip">Adobe</span>
+          <span class="src-chip">Similarweb</span>
+          <span class="src-chip">Microsoft Clarity</span>
+          <span class="src-chip">Previsible</span>
+          <span class="src-chip">Conductor</span>
+          <span class="src-chip">Ahrefs</span>
+          <span class="src-chip">Semrush</span>
+          <span class="src-chip">seoClarity</span>
+          <span class="src-chip">BrightEdge</span>
+          <span class="src-chip">arXiv (KDD'24)</span>
+          <span class="src-chip">Search Engine Land</span>
+          <span class="src-chip">Sprout Social</span>
+          <span class="src-chip">BrightLocal</span>
+          <span class="src-chip">DataReportal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf">
+    <div class="outro-contact">
+      <div><div class="oc-l">Email</div><div class="oc-v">sunny@locully.org</div></div>
+      <div><div class="oc-l">Phone</div><div class="oc-v">+66 62 695 9444</div></div>
+      <div><div class="oc-l">Website</div><div class="oc-v">locully.org</div></div>
+    </div>
+    <div class="pf-copy">© 2026 Locully Co. Ltd. · Bangkok · 8 / 8</div>
+  </div>
+</div>
+
+</body>
+</html>

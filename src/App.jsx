@@ -29,6 +29,7 @@ import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import SeoAioPage from '@/pages/SeoAioPage';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
+import LeadMagnetPopup from '@/components/LeadMagnetPopup';
 
 // Homepage — ported 1:1 from homepage-mockup.html (CSS scoped under .lcm).
 const HomePage = () => {
@@ -90,6 +91,7 @@ function App() {
       <SiteSchema />
       <ScrollToTop />
       <WhatsAppPopup />
+      <LeadMagnetPopup />
       <div className="min-h-screen bg-white">
         <Nav />
         <Routes>
