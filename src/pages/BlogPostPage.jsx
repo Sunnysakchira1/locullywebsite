@@ -27,19 +27,19 @@ export default function BlogPostPage({ slug }) {
     author: {
       '@type': 'Organization',
       name: 'Locully',
-      url: 'https://locully.org',
+      url: 'https://www.locully.org',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Locully',
-      url: 'https://locully.org',
+      url: 'https://www.locully.org',
       logo: {
         '@type': 'ImageObject',
         url: 'https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png',
       },
     },
     description: post.metaDescription,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://locully.org/blog/${post.slug}/` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.locully.org/blog/${post.slug}/` },
   };
 
   const schemaFaq = post.faqs && post.faqs.length > 0 ? {
@@ -56,9 +56,9 @@ export default function BlogPostPage({ slug }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://locully.org' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://locully.org/blog/' },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://locully.org/blog/${post.slug}/` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.locully.org' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.locully.org/blog/' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.locully.org/blog/${post.slug}/` },
     ],
   };
 
@@ -75,10 +75,10 @@ export default function BlogPostPage({ slug }) {
         <meta property="og:title" content={`${post.metaTitle} | Locully`} />
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://locully.org/blog/${post.slug}/`} />
+        <meta property="og:url" content={`https://www.locully.org/blog/${post.slug}/`} />
         <meta property="article:published_time" content={post.publishDate} />
         <meta property="article:modified_time" content={post.updatedDate || post.publishDate} />
-        <link rel="canonical" href={`https://locully.org/blog/${post.slug}/`} />
+        <link rel="canonical" href={`https://www.locully.org/blog/${post.slug}/`} />
         <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
         {schemaFaq && <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>}

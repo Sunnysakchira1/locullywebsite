@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
       <Helmet>
         <title>Privacy Policy | Locully</title>
         <meta name="description" content="Locully's privacy policy — how we collect, use, and protect your personal data." />
-        <link rel="canonical" href="https://locully.org/privacy-policy" />
+        <link rel="canonical" href="https://www.locully.org/privacy-policy" />
         <meta name="robots" content="noindex" />
       </Helmet>
 

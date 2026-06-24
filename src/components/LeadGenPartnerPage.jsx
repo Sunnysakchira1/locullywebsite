@@ -41,7 +41,7 @@ const LeadGenPartnerPage = () => {
       <Helmet>
         <title>Local Marketing Partner in Thailand | Fairs & Expos | Locully</title>
         <meta name="description" content="Your Local Marketing Partner for international fairs in Thailand." />
-        <link rel="canonical" href="https://locully.org/lead-gen-partner" />
+        <link rel="canonical" href="https://www.locully.org/lead-gen-partner" />
       </Helmet>
 
       <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>

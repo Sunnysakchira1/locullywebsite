@@ -21,8 +21,8 @@ export default function BlogIndexPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://locully.org' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://locully.org/blog/' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.locully.org' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.locully.org/blog/' },
     ],
   };
 
@@ -34,7 +34,7 @@ export default function BlogIndexPage() {
     itemListElement: posts.map((p, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      url: `https://locully.org/blog/${p.slug}/`,
+      url: `https://www.locully.org/blog/${p.slug}/`,
       name: p.title,
     })),
   };
@@ -49,8 +49,8 @@ export default function BlogIndexPage() {
         <meta property="og:title" content="Blog — AI Search Optimization Insights for Clinics | Locully" />
         <meta property="og:description" content="Guides, explainers, and checklists on AI search optimization for Thailand clinics." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://locully.org/blog/" />
-        <link rel="canonical" href="https://locully.org/blog/" />
+        <meta property="og:url" content="https://www.locully.org/blog/" />
+        <link rel="canonical" href="https://www.locully.org/blog/" />
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaItemList)}</script>
       </Helmet>

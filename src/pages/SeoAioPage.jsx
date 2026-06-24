@@ -76,9 +76,9 @@ export default function SeoAioPage() {
       <Helmet>
         <title>AI Search Visibility & SEO Services | Locully</title>
         <meta name="description" content="Locully helps brands rank #1 in ChatGPT, Google AI, Perplexity, and Gemini. Full-service AI search optimisation and SEO — built around the way search actually works in 2025." />
-        <link rel="canonical" href="https://locully.org/ai-search-visibility" />
+        <link rel="canonical" href="https://www.locully.org/ai-search-visibility" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://locully.org/ai-search-visibility" />
+        <meta property="og:url" content="https://www.locully.org/ai-search-visibility" />
         <meta property="og:title" content="AI Search Visibility & SEO Services | Locully" />
         <meta property="og:description" content="Get recommended by ChatGPT, Google AI, and Perplexity. Locully builds your AI search presence from the ground up." />
       </Helmet>

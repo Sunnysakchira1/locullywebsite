@@ -50,7 +50,7 @@ export const posts = [
     category: 'Guide',
     readTime: '9 min read',
     excerpt: 'Everything Thailand clinic owners need to know about AI search optimization — why it\'s different from traditional SEO, how it works, and what to do first.',
-    relatedPosts: ['why-clinic-not-showing-chatgpt', 'how-chatgpt-chooses-clinic-recommendation', 'geo-vs-seo-clinics-bangkok', 'ai-search-audit-clinic-bangkok'],
+    relatedPosts: ['why-clinic-not-showing-chatgpt', 'how-chatgpt-chooses-clinic-recommendation', 'ai-search-statistics', 'geo-vs-seo-clinics-bangkok', 'ai-search-audit-clinic-bangkok'],
     relatedClinics: ['physiotherapy-clinics', 'dental-clinics', 'beauty-clinics', 'fertility-clinics'],
     faqs: [
       { q: 'What is AI search optimization for clinics?', a: 'AI search optimization (also called GEO — Generative Engine Optimisation) is the process of making your clinic visible in AI-generated answers on platforms like ChatGPT, Perplexity, and Google AI Overviews. Unlike traditional SEO, which ranks your site in a list of links, AI search means the AI mentions your clinic by name in its direct answer.' },
@@ -99,7 +99,7 @@ export const posts = [
         </p>
         <InfoBox title="The visibility gap">
           <p style={{ ...s.p, marginBottom: 0 }}>
-            68% of healthcare queries now trigger AI Overviews in Google. For ChatGPT and Perplexity, the gap is even more stark — AI gives one consolidated answer, not a ranked list. Clinics without AI-optimized content are invisible to this growing patient channel.
+            68% of healthcare queries now trigger AI Overviews in Google. For ChatGPT and Perplexity, the gap is even more stark — AI gives one consolidated answer, not a ranked list. Clinics without AI-optimized content are invisible to this growing patient channel. See the full <Link to="/blog/ai-search-statistics/" style={s.ilink}>AI search statistics for 2026</Link> for the data behind this shift.
           </p>
         </InfoBox>
         <p style={s.p}>
@@ -200,7 +200,7 @@ export const posts = [
     category: 'Troubleshooting',
     readTime: '6 min read',
     excerpt: "Six specific reasons your clinic isn't appearing in AI recommendations — and what to fix first.",
-    relatedPosts: ['ai-search-optimization-clinics-thailand', 'ai-search-audit-clinic-bangkok', 'how-chatgpt-chooses-clinic-recommendation', 'geo-vs-seo-clinics-bangkok'],
+    relatedPosts: ['ai-search-optimization-clinics-thailand', 'ai-search-statistics', 'ai-search-audit-clinic-bangkok', 'how-chatgpt-chooses-clinic-recommendation', 'geo-vs-seo-clinics-bangkok'],
     relatedClinics: ['physiotherapy-clinics', 'dental-clinics', 'beauty-clinics', 'wellness-clinics'],
     faqs: [
       { q: "Why isn't my clinic showing up in ChatGPT results?", a: "The most common reasons are: no English-language content about your clinic exists online, your website blocks AI crawlers, you have no structured data (schema markup), your Google Business Profile is incomplete, or no third-party sources mention your clinic by name. ChatGPT can only recommend what it knows — and it only knows what has been published in a crawlable, readable format." },
@@ -578,7 +578,7 @@ export const posts = [
     category: 'Explainer',
     readTime: '7 min read',
     excerpt: "GEO and SEO both matter — but they're different systems. Here's what each one does for clinics, and how to think about both in 2026.",
-    relatedPosts: ['ai-search-optimization-clinics-thailand', 'how-chatgpt-chooses-clinic-recommendation', 'why-clinic-not-showing-chatgpt', 'how-to-choose-ai-optimization-agency-clinic-thailand'],
+    relatedPosts: ['ai-search-optimization-clinics-thailand', 'ai-search-statistics', 'how-chatgpt-chooses-clinic-recommendation', 'why-clinic-not-showing-chatgpt', 'how-to-choose-ai-optimization-agency-clinic-thailand'],
     relatedClinics: ['physiotherapy-clinics', 'dental-clinics', 'wellness-clinics', 'beauty-clinics'],
     faqs: [
       { q: 'What is the difference between GEO and SEO for clinics?', a: "SEO (Search Engine Optimisation) gets your clinic ranked in Google's list of links. GEO (Generative Engine Optimisation) gets your clinic recommended in AI-generated answers from ChatGPT, Perplexity, and Google AI Overviews. SEO is about ranking positions; GEO is about being cited by name in direct answers. Both are important — but they require different strategies." },
@@ -592,7 +592,7 @@ export const posts = [
     Content: () => (
       <div>
         <p style={s.p}>
-          Bangkok clinic owners are increasingly hearing about GEO — Generative Engine Optimization. It's being positioned as the new SEO, the thing that's replacing traditional search optimization. That framing is both useful and misleading.
+          Bangkok clinic owners are increasingly hearing about GEO — Generative Engine Optimization. It's being positioned as the new SEO, the thing that's replacing traditional search optimization. That framing is both useful and misleading — though the <Link to="/blog/ai-search-statistics/" style={s.ilink}>AI search adoption data</Link> shows why the conversation is happening now.
         </p>
         <p style={s.p}>
           GEO and traditional SEO are different tools solving different problems. This guide explains what each one does, where they overlap, and how Bangkok clinic owners should think about both in 2026.
@@ -733,7 +733,7 @@ export const posts = [
     category: 'Checklist',
     readTime: '6 min read',
     excerpt: "A 10-point checklist to audit your clinic's current AI search visibility — and identify exactly what to fix first.",
-    relatedPosts: ['why-clinic-not-showing-chatgpt', 'ai-search-optimization-clinics-thailand', 'how-chatgpt-chooses-clinic-recommendation', 'geo-vs-seo-clinics-bangkok'],
+    relatedPosts: ['why-clinic-not-showing-chatgpt', 'ai-search-optimization-clinics-thailand', 'ai-search-statistics', 'how-chatgpt-chooses-clinic-recommendation', 'geo-vs-seo-clinics-bangkok'],
     relatedClinics: ['physiotherapy-clinics', 'dental-clinics', 'beauty-clinics', 'wellness-clinics'],
     faqs: [
       { q: 'What is an AI search audit for clinics?', a: "An AI search audit tests how visible your clinic is across AI platforms — ChatGPT, Perplexity, Google AI Overviews — and identifies the specific gaps preventing you from being recommended. It typically covers: current AI visibility scores, crawler access, structured data quality, content gaps, Google Business Profile completeness, and third-party mention analysis." },
@@ -1020,7 +1020,7 @@ export const posts = [
     category: 'Guide',
     readTime: '10 min read',
     excerpt: 'SEO explained from scratch — how search engines decide what to rank, what actually moves the needle, and why SEO in 2026 means optimising for both Google and AI.',
-    relatedPosts: ['on-page-seo-optimization-guide', 'backlinks-guide-seo', 'programmatic-seo-guide', 'geo-vs-seo-clinics-bangkok'],
+    relatedPosts: ['on-page-seo-optimization-guide', 'backlinks-guide-seo', 'ai-search-statistics', 'programmatic-seo-guide', 'geo-vs-seo-clinics-bangkok'],
     relatedClinics: [],
     faqs: [
       { q: 'What is SEO and how does it work?', a: "SEO (Search Engine Optimisation) is the practice of improving your website so that search engines like Google rank it higher for relevant searches. Search engines crawl the web, index the content they find, and then rank pages based on hundreds of signals — including the quality and relevance of your content, the authority of your website, and technical factors like page speed. The goal is to appear at the top of organic (non-paid) search results for queries your target audience is making." },
@@ -1159,7 +1159,7 @@ export const posts = [
           The biggest shift in search since mobile happened between 2023 and 2026: AI-generated answers became the dominant format for high-intent queries.
         </p>
         <p style={s.p}>
-          Google AI Overviews appear at the top of results for nearly half of all searches. ChatGPT handles over 100 million queries per day. Perplexity crossed 100 million monthly users.
+          Google AI Overviews appear at the top of results for nearly half of all searches. ChatGPT handles over 100 million queries per day. Perplexity crossed 100 million monthly users. For the latest verified figures, see our <Link to="/blog/ai-search-statistics/" style={s.ilink}>AI search statistics for 2026</Link>.
         </p>
         <p style={s.p}>
           The signals that drive AI citations overlap significantly with traditional SEO — authoritative content, clean technical infrastructure, strong external links — but the output is different. In AI search, the goal isn't to rank #1 in a list. It's to be named within a generated answer.

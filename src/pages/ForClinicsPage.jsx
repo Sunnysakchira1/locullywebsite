@@ -10,8 +10,8 @@ const schemaBreadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://locully.org' },
-    { '@type': 'ListItem', position: 2, name: 'AI Optimization for Clinics', item: 'https://locully.org/ai-optimization/' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.locully.org' },
+    { '@type': 'ListItem', position: 2, name: 'AI Optimization for Clinics', item: 'https://www.locully.org/ai-optimization/' },
   ],
 };
 
@@ -25,8 +25,8 @@ export default function ForClinicsPage() {
         <title>AI Optimization for Bangkok Clinics | Locully</title>
         <meta name="description" content="Locully helps Bangkok clinics appear in ChatGPT, Perplexity, and Google AI Overviews. Choose your clinic type to see how AIO works for you." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://locully.org/ai-optimization/" />
-        <link rel="canonical" href="https://locully.org/ai-optimization/" />
+        <meta property="og:url" content="https://www.locully.org/ai-optimization/" />
+        <link rel="canonical" href="https://www.locully.org/ai-optimization/" />
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
       </Helmet>
 

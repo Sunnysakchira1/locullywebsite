@@ -127,9 +127,9 @@ export default function LeadMagnetPopup() {
                 </>
               ) : (
                 <>
-                  <div style={C.rEyebrow}>Get the free PDF</div>
-                  <h3 style={C.rH}>Where should we send it?</h3>
-                  <p style={C.rP}>Drop your email and the report downloads instantly. No spam — just the data.</p>
+                  <div style={C.rEyebrow}>Free PDF · Instant download</div>
+                  <h3 style={C.rH}>Get the 2026 report</h3>
+                  <p style={C.rP}>Enter your email and the PDF downloads instantly. No spam — just the data.</p>
                   <form onSubmit={submit}>
                     <input
                       style={C.input}
@@ -141,7 +141,7 @@ export default function LeadMagnetPopup() {
                       autoFocus
                     />
                     <button style={C.btn} type="submit" disabled={status === 'sending'}>
-                      {status === 'sending' ? 'Sending…' : 'Send me the report →'}
+                      {status === 'sending' ? 'Preparing…' : 'Download the report →'}
                     </button>
                   </form>
                   {status === 'error' && <p style={C.err}>Please enter a valid email and try again.</p>}

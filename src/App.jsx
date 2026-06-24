@@ -71,7 +71,7 @@ const HomePage = () => {
       <Helmet>
         <title>Locully | Get Your Business Recommended by ChatGPT</title>
         <meta name="description" content="Get recommended by ChatGPT when patients search for clinics like yours. Locully makes your brand the answer AI search engines give." />
-        <link rel="canonical" href="https://locully.org/" />
+        <link rel="canonical" href="https://www.locully.org/" />
       </Helmet>
       <div className="lcm" dangerouslySetInnerHTML={{ __html: homeHtml }} />
       <CaseStudyGate />

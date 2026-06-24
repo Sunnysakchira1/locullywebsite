@@ -60,7 +60,7 @@ export default function ClinicPage({ slug }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: `AI Optimization for ${clinic.namePlural}`,
-    provider: { '@id': 'https://locully.org/#organization' },
+    provider: { '@id': 'https://www.locully.org/#organization' },
     areaServed: { '@type': 'City', name: 'Bangkok' },
     description: clinic.metaDescription,
     serviceType: 'AI Search Optimization',
@@ -80,9 +80,9 @@ export default function ClinicPage({ slug }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://locully.org' },
-      { '@type': 'ListItem', position: 2, name: 'AI Optimization for Clinics', item: 'https://locully.org/ai-optimization/' },
-      { '@type': 'ListItem', position: 3, name: clinic.namePlural, item: `https://locully.org/ai-optimization/${clinic.slug}/` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.locully.org' },
+      { '@type': 'ListItem', position: 2, name: 'AI Optimization for Clinics', item: 'https://www.locully.org/ai-optimization/' },
+      { '@type': 'ListItem', position: 3, name: clinic.namePlural, item: `https://www.locully.org/ai-optimization/${clinic.slug}/` },
     ],
   };
 
@@ -96,8 +96,8 @@ export default function ClinicPage({ slug }) {
         <meta property="og:title" content={`${clinic.headline} | Locully`} />
         <meta property="og:description" content={clinic.metaDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://locully.org/ai-optimization/${clinic.slug}/`} />
-        <link rel="canonical" href={`https://locully.org/ai-optimization/${clinic.slug}/`} />
+        <meta property="og:url" content={`https://www.locully.org/ai-optimization/${clinic.slug}/`} />
+        <link rel="canonical" href={`https://www.locully.org/ai-optimization/${clinic.slug}/`} />
         <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
