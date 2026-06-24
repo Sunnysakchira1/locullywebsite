@@ -65,10 +65,12 @@ export default function LeadMagnetPopup() {
     glow: { position: 'absolute', top: -90, right: -90, width: 240, height: 240, borderRadius: '50%', background: 'radial-gradient(circle, rgba(204,100,50,0.10), transparent 70%)' },
     eyebrow: { fontFamily: 'var(--mono, monospace)', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--terra, #CC6432)' },
     leftH: { fontFamily: 'var(--serif, Georgia, serif)', fontWeight: 700, fontSize: 30, lineHeight: 1.1, letterSpacing: '-0.01em', margin: '14px 0 0', color: 'var(--ink, #1A1108)' },
-    leftP: { fontSize: 13.5, color: 'var(--muted, #6B6157)', lineHeight: 1.6, marginTop: 14, fontWeight: 400 },
-    bullets: { listStyle: 'none', padding: 0, margin: '18px 0 0', display: 'flex', flexDirection: 'column', gap: 9 },
-    bullet: { fontFamily: 'var(--mono, monospace)', fontSize: 12, color: 'var(--ink2, #3D2F1E)', display: 'flex', gap: 9, alignItems: 'center' },
-    dot: { color: 'var(--terra, #CC6432)' },
+    leftP: { fontSize: 13, color: 'var(--muted, #6B6157)', lineHeight: 1.55, marginTop: 12, fontWeight: 400 },
+    whatsIn: { fontFamily: 'var(--mono, monospace)', fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--terra, #CC6432)', marginTop: 18, marginBottom: 10 },
+    bullets: { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 },
+    bullet: { fontFamily: 'var(--sans, sans-serif)', fontSize: 11.5, color: 'var(--muted, #6B6157)', lineHeight: 1.45, display: 'flex', gap: 8, alignItems: 'flex-start' },
+    dot: { color: 'var(--terra, #CC6432)', flexShrink: 0, fontWeight: 700 },
+    bStrong: { color: 'var(--ink, #1A1108)', fontWeight: 600 },
     right: { padding: '40px 34px', display: 'flex', flexDirection: 'column', justifyContent: 'center' },
     rEyebrow: { fontFamily: 'var(--mono, monospace)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--terra, #CC6432)' },
     rH: { fontFamily: 'var(--serif, Georgia, serif)', fontWeight: 600, fontSize: 23, lineHeight: 1.2, color: 'var(--ink, #1A1108)', margin: '8px 0 6px' },
@@ -104,13 +106,15 @@ export default function LeadMagnetPopup() {
             {/* Left — the offer */}
             <div style={C.left} className="lm-left">
               <div style={C.glow} />
-              <div style={C.eyebrow}>Free Report · 2026</div>
+              <div style={C.eyebrow}>Free Report · 8 pages</div>
               <h3 style={C.leftH}>AI Search Statistics 2026</h3>
-              <p style={C.leftP}>60+ verified, cited data points on ChatGPT, AI Overviews and how AI decides which brands to recommend.</p>
+              <p style={C.leftP}>The data behind the shift to AI search — how people use ChatGPT, AI Overviews and Perplexity, and how AI decides which brands to recommend.</p>
+              <div style={C.whatsIn}>What's inside</div>
               <ul style={C.bullets}>
-                <li style={C.bullet}><span style={C.dot}>→</span> Every stat sourced &amp; dated</li>
-                <li style={C.bullet}><span style={C.dot}>→</span> 6 categories, 5-page PDF</li>
-                <li style={C.bullet}><span style={C.dot}>→</span> Built for marketers &amp; owners</li>
+                <li style={C.bullet}><span style={C.dot}>→</span><span><strong style={C.bStrong}>60+ stats across 6 themes</strong> — adoption, AI Overviews, zero-click, referral traffic, GEO &amp; local/healthcare</span></li>
+                <li style={C.bullet}><span style={C.dot}>→</span><span><strong style={C.bStrong}>A "why it matters" takeaway</strong> on every section — what each number means for your business</span></li>
+                <li style={C.bullet}><span style={C.dot}>→</span><span><strong style={C.bStrong}>Every figure sourced &amp; dated</strong> — Pew, Gartner, Google, OpenAI, Ahrefs &amp; more</span></li>
+                <li style={C.bullet}><span style={C.dot}>→</span><span><strong style={C.bStrong}>Built for marketers &amp; owners</strong> — skimmable, shareable, instant download</span></li>
               </ul>
             </div>
 
