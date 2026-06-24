@@ -39,7 +39,10 @@ export default function BlogIndexPage() {
     })),
   };
 
-  const [pillar, ...rest] = posts;
+  // Feature the AI Search Statistics pillar as the top article; fall back to first post.
+  const FEATURED_SLUG = 'ai-search-statistics';
+  const pillar = posts.find((p) => p.slug === FEATURED_SLUG) || posts[0];
+  const rest = posts.filter((p) => p !== pillar);
 
   return (
     <>
