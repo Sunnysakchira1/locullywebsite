@@ -103,7 +103,7 @@ export default function BlogIndexPage() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <div className="l-label" style={{ marginBottom: 20 }}>Insights</div>
               <h1 className="l-h1" style={{ marginBottom: 20, maxWidth: 640, fontSize: 'clamp(36px, 5vw, 64px)' }}>
-                AI Search for Clinics — <em className="l-serif-em">The guides</em>
+                Locully <em className="l-serif-em">Blog</em>
               </h1>
               <p style={{ fontSize: 17, color: 'var(--muted)', maxWidth: 520, lineHeight: 1.7, fontWeight: 300 }}>
                 Practical guides on how Thailand clinics get recommended by ChatGPT, Perplexity, and Google AI Overviews.
