@@ -127,6 +127,9 @@ function App() {
           <Route path="/blog/backlinks-guide-seo/" element={<BlogPostPage slug="backlinks-guide-seo" />} />
           <Route path="/blog/programmatic-seo-guide/" element={<BlogPostPage slug="programmatic-seo-guide" />} />
           <Route path="/blog/ai-search-statistics/" element={<BlogPostPage slug="ai-search-statistics" />} />
+          <Route path="/blog/how-ai-chooses-sources-to-cite/" element={<BlogPostPage slug="how-ai-chooses-sources-to-cite" />} />
+          <Route path="/blog/zero-click-search-statistics/" element={<BlogPostPage slug="zero-click-search-statistics" />} />
+          <Route path="/blog/how-many-people-use-chatgpt/" element={<BlogPostPage slug="how-many-people-use-chatgpt" />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/ai-search-visibility" element={<SeoAioPage />} />
         </Routes>

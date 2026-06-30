@@ -1766,7 +1766,7 @@ export const posts = [
     category: 'Statistics',
     readTime: '12 min read',
     excerpt: '60+ verified AI search statistics for 2026 — adoption, AI Overviews, zero-click search, LLM referral traffic, and how AI chooses what to cite. Every number sourced and linked.',
-    relatedPosts: ['ai-search-optimization-clinics-thailand', 'geo-vs-seo-clinics-bangkok', 'why-clinic-not-showing-chatgpt'],
+    relatedPosts: ['how-many-people-use-chatgpt', 'zero-click-search-statistics', 'how-ai-chooses-sources-to-cite', 'geo-vs-seo-clinics-bangkok', 'why-clinic-not-showing-chatgpt'],
     faqs: [
       { q: 'How many people use AI search in 2026?', a: 'ChatGPT alone has 900 million weekly active users and handles 2.5 billion prompts per day, while Google AI Overviews reach over 2 billion people monthly and the Gemini app has 750 million monthly users. In the US, 34% of adults have used ChatGPT, rising to 58% of under-30s. AI search is now mainstream, not niche.' },
       { q: 'Do AI Overviews really reduce website clicks?', a: 'Yes. Pew Research found users clicked through to a website on only 8% of searches that showed an AI summary, versus 15% without one — roughly halving click-through. Only 1% clicked a link inside the AI summary itself. Ahrefs separately measured a 34.5% click-through drop for the #1 organic result when an AI Overview is present.' },
@@ -1822,7 +1822,7 @@ export const posts = [
           <Stat lead="~55%">ChatGPT&rsquo;s estimated share of AI-chatbot web visits in early 2026, down from ~76% a year earlier — Similarweb data via aggregator, directional (<Ext href="https://vertu.com/lifestyle/ai-chatbot-market-share-2026-chatgpt-drops-to-68-as-google-gemini-surges-to-18-2">reported Apr 2026</Ext>).</Stat>
         </Ul>
         <p style={s.p}>
-          AI search isn&rsquo;t early-adopter behaviour anymore — it&rsquo;s how a third of US adults, and the majority of under-30s, already research questions. For the mechanics, see our guide to <Link to="/blog/how-chatgpt-chooses-clinic-recommendation/" style={s.ilink}>how ChatGPT chooses which clinic to recommend</Link>.
+          AI search isn&rsquo;t early-adopter behaviour anymore — it&rsquo;s how a third of US adults, and the majority of under-30s, already research questions. Deep dive: <Link to="/blog/how-many-people-use-chatgpt/" style={s.ilink}>how many people use ChatGPT in 2026</Link>. For the mechanics, see our guide to <Link to="/blog/how-chatgpt-chooses-clinic-recommendation/" style={s.ilink}>how ChatGPT chooses which clinic to recommend</Link>.
         </p>
 
         <h2 style={s.h2}>2. Google AI Overviews Statistics</h2>
@@ -1861,7 +1861,7 @@ export const posts = [
           <Stat lead="53%">of consumers distrust AI search results, and 61% want a way to turn AI summaries off — adoption and trust aren&rsquo;t the same thing (<Ext href="https://www.gartner.com/en/newsroom/press-releases/2025-09-03-gartner-survey-finds-53-percent-of-consumers-distrust-ai-powered-search-results0">Gartner, Sep 2025</Ext>).</Stat>
         </Ul>
         <p style={s.p}>
-          The shift is structural, not seasonal. Search is becoming an answer engine, and the click — what traditional SEO was built to win — is no longer guaranteed. That&rsquo;s exactly why <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO and SEO are now different disciplines</Link>.
+          The shift is structural, not seasonal. Search is becoming an answer engine, and the click — what traditional SEO was built to win — is no longer guaranteed. Deep dive: <Link to="/blog/zero-click-search-statistics/" style={s.ilink}>the zero-click search statistics for 2026</Link>. That&rsquo;s exactly why <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO and SEO are now different disciplines</Link>.
         </p>
 
         <h2 style={s.h2}>4. Business Impact: LLM Referral Traffic &amp; Conversion Statistics</h2>
@@ -1901,7 +1901,7 @@ export const posts = [
           <Stat lead="32.3% → 54.5%">the rise in AI Overview citations that also rank organically over 16 months — but nearly half still come from non-ranking pages (<Ext href="https://www.brightedge.com/resources/weekly-ai-search-insights/rank-overlap-after-16-months-of-aio">BrightEdge, Oct 2025</Ext>).</Stat>
         </Ul>
         <p style={s.p}>
-          The mechanics point one way: get mentioned across the web (especially Reddit, YouTube and authoritative third-party sites), write concise quotable passages, cite your own sources, and add real statistics. Schema and keyword density barely move the needle here. For the fundamentals underneath all of it, see our guides to <Link to="/blog/on-page-seo-optimization-guide/" style={s.ilink}>on-page SEO</Link> and <Link to="/blog/backlinks-guide-seo/" style={s.ilink}>building backlinks and brand mentions</Link>.
+          The mechanics point one way: get mentioned across the web (especially Reddit, YouTube and authoritative third-party sites), write concise quotable passages, cite your own sources, and add real statistics. Schema and keyword density barely move the needle here. Deep dive: <Link to="/blog/how-ai-chooses-sources-to-cite/" style={s.ilink}>how AI decides which sources to cite</Link>. For the fundamentals underneath all of it, see our guides to <Link to="/blog/on-page-seo-optimization-guide/" style={s.ilink}>on-page SEO</Link> and <Link to="/blog/backlinks-guide-seo/" style={s.ilink}>building backlinks and brand mentions</Link>.
         </p>
 
         <h2 style={s.h2}>6. Local, Healthcare &amp; Thailand AI Search Statistics</h2>
@@ -1977,6 +1977,249 @@ export const posts = [
         <Callout>
           <strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout and updated as new research is released.
         </Callout>
+      </div>
+    ),
+  },
+
+  // ── SPOKE: HOW AI CHOOSES SOURCES TO CITE ────────────────────────────────────
+  {
+    slug: 'how-ai-chooses-sources-to-cite',
+    title: 'How AI Decides Which Sources to Cite (And How to Get Cited)',
+    metaTitle: 'How AI Decides Which Sources to Cite',
+    metaDescription: 'How do AI search engines choose which sources to cite? The data: brand mentions beat backlinks ~3×, citing sources and stats lifts visibility 30–40%, schema barely helps.',
+    publishDate: '2026-06-30',
+    updatedDate: '2026-06-30',
+    category: 'Statistics',
+    readTime: '6 min read',
+    excerpt: 'AI cites sources based on brand mentions, quotable content and clear sourcing — not backlinks or schema. The verified data on how to get cited by ChatGPT, Perplexity and Google AI.',
+    relatedPosts: ['ai-search-statistics', 'geo-vs-seo-clinics-bangkok', 'why-clinic-not-showing-chatgpt'],
+    faqs: [
+      { q: 'How does ChatGPT decide which sources to cite?', a: 'ChatGPT weights sources by how often and how authoritatively an entity is mentioned across its training data and live web results, favouring well-corroborated brands and concise, quotable, clearly-sourced content. Brand mentions correlate with AI visibility about three times more strongly than backlinks, and citing sources or statistics measurably lifts the odds of being quoted.' },
+      { q: 'Do backlinks help you get cited by AI?', a: 'Backlinks help indirectly — high-authority sites are more likely to appear in training data — but they are a weaker signal than brand mentions. Ahrefs measured a 0.218 correlation for backlinks versus 0.664 for web mentions across 75,000 brands. Earning mentions across the web matters more than accumulating links alone.' },
+      { q: 'Does schema markup help AI cite my page?', a: 'Not meaningfully, according to a controlled Ahrefs study. Adding schema produced roughly no change in AI citations and slightly reduced AI Overview citations on already-cited pages. Schema still helps search engines interpret your content, so it is worth having — but it is not a reliable lever for getting cited in AI answers.' },
+      { q: 'Which websites do AI search engines cite most?', a: 'User-generated and video platforms dominate. In Google AI Overviews, YouTube (20.9%), Reddit (19.6%) and Facebook (11.6%) are the most-cited domains. Across all AI engines combined, Reddit ranks first, followed by YouTube and LinkedIn — which is why brand presence on those platforms is now a genuine visibility lever.' },
+      { q: 'What is a "ghost citation"?', a: 'A ghost citation is when an AI answer uses your page as a source but never mentions your brand name in the visible text. Semrush found this happens with 61.7% of AI citations — meaning a link can drive an answer without the user ever seeing who provided it.' },
+    ],
+    Content: () => (
+      <div>
+        <p style={s.p}>
+          AI search engines choose which sources to cite based mostly on <strong style={s.strong}>how often a brand is mentioned across the web — not how many backlinks it has</strong>. In an Ahrefs study of 75,000 brands, web mentions correlated with AI Overview visibility at 0.664, versus just 0.218 for backlinks — roughly three times stronger. Citing sources, adding quotations, and including statistics also lift a page&rsquo;s visibility in AI answers by 30–40%.
+        </p>
+        <Callout>
+          <strong style={s.strong}>TL;DR:</strong> Getting cited by ChatGPT, Perplexity and Google AI Overviews is driven by brand mentions, quotable content and clear sourcing — not the old SEO levers. Across 75,000 brands, mentions correlated ~3× more strongly with AI visibility than backlinks. Academic testing found citing sources, quotes and statistics each lift AI visibility 30–40%, while schema markup showed no meaningful citation uplift. UGC platforms like Reddit and YouTube dominate citations.
+        </Callout>
+
+        <h2 style={s.h2}>What actually makes AI cite a source?</h2>
+        <p style={s.p}>
+          The signals that get a page cited in AI answers are different from the signals that rank it on Google. Three patterns show up consistently across the research.
+        </p>
+        <h3 style={s.h3}>1. Brand mentions beat backlinks</h3>
+        <p style={s.p}>
+          Ahrefs analysed 75,000 brands and found web mentions correlated with AI Overview visibility at <strong style={s.strong}>0.664</strong>, versus <strong style={s.strong}>0.218</strong> for backlinks — about three times stronger (<Ext href="https://ahrefs.com/blog/ai-overview-brand-correlation/">Ahrefs, May 2025</Ext>). The authors stress correlation isn&rsquo;t proof of causation, but the gap is hard to ignore: AI models appear to weight how often and how widely an entity is talked about, not just who links to it.
+        </p>
+        <h3 style={s.h3}>2. Quotable, sourced, stat-rich content wins</h3>
+        <p style={s.p}>
+          The foundational academic paper on Generative Engine Optimisation tested specific tactics and found GEO techniques lifted a source&rsquo;s visibility in AI answers by <strong style={s.strong}>up to 40%</strong> (<Ext href="https://arxiv.org/abs/2311.09735">Aggarwal et al., KDD 2024</Ext>). The three most effective — citing sources, adding quotations, and adding statistics — each delivered 30–40% relative improvement. Notably, keyword stuffing <em>reduced</em> visibility.
+        </p>
+        <h3 style={s.h3}>3. Schema markup barely moves the needle</h3>
+        <p style={s.p}>
+          This surprises people. In an Ahrefs controlled test, adding schema markup produced <strong style={s.strong}>no meaningful uplift</strong> in AI citations and slightly reduced AI Overview citations by 4.6% on already-cited pages (<Ext href="https://ahrefs.com/blog/schema-ai-citations/">Ahrefs, 2026</Ext>). Schema still helps Google understand your page — it just isn&rsquo;t the AI-citation lever many assume.
+        </p>
+
+        <h2 style={s.h2}>Where AI pulls its citations from</h2>
+        <p style={s.p}>
+          AI answers lean heavily on user-generated content, social platforms and video. In Google AI Overviews, the most-cited domains are <strong style={s.strong}>YouTube (20.9%), Reddit (19.6%) and Facebook (11.6%)</strong> (<Ext href="https://ahrefs.com/blog/most-cited-domains-ai-overviews/">Ahrefs Brand Radar</Ext>). Across all AI engines combined, <strong style={s.strong}>Reddit ranks #1</strong>, followed by YouTube and LinkedIn, in an analysis of 30 million sources (<Ext href="https://searchengineland.com/ai-search-engines-cite-reddit-youtube-and-linkedin-most-study-473138">Peec AI via Search Engine Land</Ext>).
+        </p>
+        <p style={s.p}>
+          There&rsquo;s a catch worth knowing: being cited doesn&rsquo;t always mean being <em>named</em>. Semrush found <strong style={s.strong}>61.7% of AI citations don&rsquo;t produce a brand mention</strong> — the &ldquo;ghost citation&rdquo; problem, where your link is used but your name never appears in the answer (<Ext href="https://www.semrush.com/blog/the-ghost-citations-study/">Semrush, 2026</Ext>).
+        </p>
+
+        <h2 style={s.h2}>Why this matters for your business</h2>
+        <p style={s.p}>
+          If you&rsquo;ve been told &ldquo;just build backlinks and add schema&rdquo; to win AI search, the data says that&rsquo;s the wrong playbook. The pages that get cited are concise (the average AI Overview answer is just <strong style={s.strong}>119 words</strong> — <Ext href="https://www.semrush.com/blog/ai-overviews-study/">Semrush</Ext>), clearly sourced, and backed by a brand that gets talked about across the web.
+        </p>
+        <p style={s.p}>
+          This is the core of <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>Generative Engine Optimisation, which works differently from traditional SEO</Link>. It&rsquo;s also why so many businesses are <Link to="/blog/why-clinic-not-showing-chatgpt/" style={s.ilink}>invisible in ChatGPT despite ranking on Google</Link>. For the full dataset, see our <Link to="/blog/ai-search-statistics/" style={s.ilink}>AI search statistics for 2026</Link> and our breakdown of <Link to="/blog/how-chatgpt-chooses-clinic-recommendation/" style={s.ilink}>how ChatGPT chooses which business to recommend</Link>.
+        </p>
+
+        <Divider />
+        <h2 style={s.h2}>Frequently Asked Questions</h2>
+        <h3 style={s.h3}>How does ChatGPT decide which sources to cite?</h3>
+        <p style={s.p}>ChatGPT weights sources by how often and how authoritatively an entity is mentioned across its training data and live web results, favouring well-corroborated brands and concise, quotable, clearly-sourced content. Brand mentions correlate with AI visibility about three times more strongly than backlinks.</p>
+        <h3 style={s.h3}>Do backlinks help you get cited by AI?</h3>
+        <p style={s.p}>Backlinks help indirectly — high-authority sites are more likely to appear in training data — but they&rsquo;re a weaker signal than brand mentions. Ahrefs measured a 0.218 correlation for backlinks versus 0.664 for web mentions across 75,000 brands.</p>
+        <h3 style={s.h3}>Does schema markup help AI cite my page?</h3>
+        <p style={s.p}>Not meaningfully, according to a controlled Ahrefs study. Adding schema produced roughly no change in AI citations and slightly reduced AI Overview citations on already-cited pages. It still helps search engines interpret your content, so it&rsquo;s worth having — but it isn&rsquo;t a reliable AI-citation lever.</p>
+        <h3 style={s.h3}>Which websites do AI search engines cite most?</h3>
+        <p style={s.p}>User-generated and video platforms dominate. In Google AI Overviews, YouTube (20.9%), Reddit (19.6%) and Facebook (11.6%) are the most-cited domains. Across all AI engines combined, Reddit ranks first, followed by YouTube and LinkedIn.</p>
+
+        <Divider />
+        <h2 style={s.h2}>Get cited, not just ranked</h2>
+        <p style={s.p}>
+          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews — the same work that took one Bangkok clinic from 3 to 27 AI-sourced consultations a month. See how our <Link to="/ai-search-visibility/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>start with a free AI search audit</Link>.
+        </p>
+        <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
+      </div>
+    ),
+  },
+
+  // ── SPOKE: ZERO-CLICK SEARCH STATISTICS ──────────────────────────────────────
+  {
+    slug: 'zero-click-search-statistics',
+    title: 'Zero-Click Search Statistics 2026: What the Data Shows',
+    metaTitle: 'Zero-Click Search Statistics 2026',
+    metaDescription: 'Zero-click search statistics for 2026: ~68% of US Google searches end without a click, up from 58.5% in 2024. The verified data, sources, and what it means.',
+    publishDate: '2026-06-30',
+    updatedDate: '2026-06-30',
+    category: 'Statistics',
+    readTime: '6 min read',
+    excerpt: 'About 68% of US Google searches now end without a click — up from 58.5% in 2024. The verified zero-click search statistics, their sources, and what they mean for your traffic.',
+    relatedPosts: ['ai-search-statistics', 'how-ai-chooses-sources-to-cite', 'geo-vs-seo-clinics-bangkok'],
+    faqs: [
+      { q: 'What percentage of searches are zero-click in 2026?', a: 'About 68% of US Google searches end without a click in 2026, according to SparkToro\'s analysis of Similarweb clickstream data — up from a 58.5% benchmark in 2024. That means fewer than one in three searches now sends a visitor to the open web, driven partly by AI summaries, featured snippets and knowledge panels.' },
+      { q: 'Are zero-click searches getting more common?', a: 'Yes. The US zero-click rate rose from roughly 58.5% in 2024 to about 68% in early 2026. AI Overviews are accelerating the shift: Pew found click-through to websites roughly halves (15% to 8%) when an AI summary appears, and only 1% of users click a link inside the summary.' },
+      { q: 'Do AI Overviews cause zero-click searches?', a: 'AI Overviews are a major contributor, but not the only one. Featured snippets, knowledge panels and local packs created zero-click behaviour years before AI summaries. What AI Overviews add is a longer, more complete answer at the top of the page, which Pew found cuts website click-through roughly in half.' },
+      { q: 'Is the Gartner "25% decline" a measured drop?', a: 'No. Gartner\'s figure is a forecast that traditional search engine volume will fall 25% by 2026 as users adopt AI chatbots — it\'s a prediction about query volume, not a measured loss of website traffic. It\'s frequently misquoted as a "25% traffic drop," which the original wording does not say.' },
+      { q: 'How should businesses respond to zero-click search?', a: 'Shift from chasing clicks to owning the answer. That means structuring content so it\'s the source featured snippets and AI answers quote, building brand mentions across the web, and strengthening the channels that still convert. This is the core of Generative Engine Optimisation.' },
+    ],
+    Content: () => (
+      <div>
+        <p style={s.p}>
+          <strong style={s.strong}>About 68% of US Google searches now end without a click</strong> to any website, according to SparkToro&rsquo;s 2026 analysis of Similarweb clickstream data — up from roughly 60% in 2024. In other words, fewer than one in three searches still sends a visitor to the open web. AI summaries are accelerating the trend: when an AI overview appears, the click-through rate to websites roughly halves.
+        </p>
+        <Callout>
+          <strong style={s.strong}>TL;DR:</strong> A zero-click search ends without the user clicking any result — they get the answer on the page itself. In 2026, ~68% of US Google searches are zero-click, up from a 58.5% benchmark in 2024. When an AI summary shows, only 8% of users click a website versus 15% without one. Gartner forecasts a 25% drop in traditional search volume by 2026.
+        </Callout>
+
+        <h2 style={s.h2}>What is a zero-click search?</h2>
+        <p style={s.p}>
+          A zero-click search is a search that resolves on the results page — through a featured snippet, a knowledge panel, a local pack, or now an AI Overview — so the user never clicks through to a website. The answer is delivered before any link is needed. For businesses, it means an impression without a visit.
+        </p>
+
+        <h2 style={s.h2}>The key zero-click statistics</h2>
+        <Ul>
+          <Li><strong style={s.strong}>68%</strong> of US Google searches ended without a click in early 2026, up from 60% in 2024 — fewer than one third now reach the open web (<Ext href="https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/">SparkToro / Similarweb</Ext>).</Li>
+          <Li><strong style={s.strong}>58.5%</strong> of US searches were zero-click in the prior benchmark; for every 1,000 searches, only 360 clicks reached the open web (<Ext href="https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/">SparkToro / Datos</Ext>).</Li>
+          <Li><strong style={s.strong}>8% vs 15%</strong> — users clicked a website on just 8% of searches that showed an AI summary, versus 15% without one (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research</Ext>).</Li>
+          <Li><strong style={s.strong}>1%</strong> of users clicked a source link inside an AI summary (<Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research</Ext>).</Li>
+          <Li><strong style={s.strong}>~80%</strong> of consumers rely on zero-click results in at least 40% of searches, which Bain estimates cuts organic web traffic by 15–25% (<Ext href="https://www.bain.com/insights/goodbye-clicks-hello-ai-zero-click-search-redefines-marketing/">Bain &amp; Company</Ext>).</Li>
+          <Li><strong style={s.strong}>25%</strong> — Gartner&rsquo;s forecast drop in traditional search engine volume by 2026. Note: a forecast about search <em>volume</em>, not a measured traffic loss (<Ext href="https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents">Gartner</Ext>).</Li>
+        </Ul>
+
+        <h2 style={s.h2}>A note on methodology</h2>
+        <p style={s.p}>
+          These figures come from different methods, which is why they don&rsquo;t all match. SparkToro&rsquo;s numbers are derived from Similarweb/Datos clickstream panels (real browsing behaviour). Pew&rsquo;s 8%-vs-15% figure is observational, based on 68,879 searches from 900 US adults. Gartner&rsquo;s 25% is a forward-looking forecast, frequently misquoted as a &ldquo;traffic&rdquo; drop when it actually refers to search <em>volume</em>. Read together, the direction is unambiguous even where the exact percentages differ.
+        </p>
+
+        <h2 style={s.h2}>Why zero-click search matters</h2>
+        <p style={s.p}>
+          Zero-click means visibility no longer equals traffic. You can &ldquo;rank&rdquo; and still get no visit — the answer was served on the page. The strategic response isn&rsquo;t to fight the snippet; it&rsquo;s to <strong style={s.strong}>be the source the snippet or AI answer quotes</strong>, and to build presence on the channels that still drive action.
+        </p>
+        <p style={s.p}>
+          This is why <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO and SEO have become different disciplines</Link>, and why getting <Link to="/blog/how-ai-chooses-sources-to-cite/" style={s.ilink}>named inside AI answers</Link> is now its own skill. For the complete picture, see our <Link to="/blog/ai-search-statistics/" style={s.ilink}>AI search statistics for 2026</Link> and the fundamentals in our <Link to="/blog/what-is-seo-complete-guide/" style={s.ilink}>guide to what SEO is in 2026</Link>.
+        </p>
+
+        <Divider />
+        <h2 style={s.h2}>Frequently Asked Questions</h2>
+        <h3 style={s.h3}>What percentage of searches are zero-click in 2026?</h3>
+        <p style={s.p}>About 68% of US Google searches end without a click in 2026, according to SparkToro&rsquo;s analysis of Similarweb clickstream data — up from a 58.5% benchmark in 2024. Fewer than one in three searches now sends a visitor to the open web.</p>
+        <h3 style={s.h3}>Do AI Overviews cause zero-click searches?</h3>
+        <p style={s.p}>AI Overviews are a major contributor, but not the only one. Featured snippets, knowledge panels and local packs created zero-click behaviour years before AI summaries. What AI Overviews add is a longer answer at the top of the page, which Pew found cuts website click-through roughly in half.</p>
+        <h3 style={s.h3}>Is the Gartner &ldquo;25% decline&rdquo; a measured drop?</h3>
+        <p style={s.p}>No. Gartner&rsquo;s figure is a forecast that traditional search engine <em>volume</em> will fall 25% by 2026 as users adopt AI chatbots — a prediction about query volume, not a measured loss of website traffic. It&rsquo;s frequently misquoted as a &ldquo;25% traffic drop.&rdquo;</p>
+
+        <Divider />
+        <h2 style={s.h2}>Turn zero-click into zero-loss</h2>
+        <p style={s.p}>
+          If most searches end without a click, the win is being the answer — not just a link in a list nobody opens. Locully optimises businesses to be cited and recommended inside AI search and featured snippets. See how our <Link to="/ai-search-visibility/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>get a free AI search audit</Link>.
+        </p>
+        <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
+      </div>
+    ),
+  },
+
+  // ── SPOKE: HOW MANY PEOPLE USE CHATGPT ───────────────────────────────────────
+  {
+    slug: 'how-many-people-use-chatgpt',
+    title: 'How Many People Use ChatGPT? (2026 Statistics)',
+    metaTitle: 'How Many People Use ChatGPT? 2026 Statistics',
+    metaDescription: 'How many people use ChatGPT in 2026? 900M weekly active users, ~2.5B prompts/day, and 34% of US adults (58% of under-30s). Verified ChatGPT user statistics.',
+    publishDate: '2026-06-30',
+    updatedDate: '2026-06-30',
+    category: 'Statistics',
+    readTime: '5 min read',
+    excerpt: 'ChatGPT has 900 million weekly active users and handles ~2.5 billion prompts a day. The verified 2026 ChatGPT user statistics — plus Gemini, Perplexity and Copilot for context.',
+    relatedPosts: ['ai-search-statistics', 'why-clinic-not-showing-chatgpt', 'how-ai-chooses-sources-to-cite'],
+    faqs: [
+      { q: 'How many people use ChatGPT in 2026?', a: 'ChatGPT has about 900 million weekly active users as of February 2026, up from 800 million in October 2025, and processes roughly 2.5 billion prompts per day globally. Among the US public, Pew Research found 34% of adults have used it, rising to 58% of adults under 30.' },
+      { q: 'Is ChatGPT the most-used AI tool?', a: 'ChatGPT is the largest single AI assistant by weekly users, but the broader AI landscape is bigger still. Google\'s Gemini app has 750 million+ monthly users and Google AI Overviews reach over 2 billion people monthly, while Perplexity and Microsoft Copilot add hundreds of millions more interactions across search and enterprise tools.' },
+      { q: 'How many ChatGPT users are in the United States?', a: 'OpenAI reports roughly 330 million of ChatGPT\'s ~2.5 billion daily prompts come from the US. On adoption, Pew Research found 34% of US adults have used ChatGPT — about double the 2023 share — with usage highest among adults under 30, at 58%.' },
+      { q: 'How fast is ChatGPT growing?', a: 'Quickly. ChatGPT\'s weekly active users rose from 800 million in October 2025 to 900 million by February 2026, and US adult adoption roughly doubled between 2023 and 2025. The growth reflects a wider shift toward AI assistants for everyday questions, including product, service and local-business research.' },
+      { q: 'Where do these ChatGPT statistics come from?', a: 'The user and usage figures come from OpenAI\'s own announcements (reported via TechCrunch and Axios), and the US-adoption figures come from Pew Research Center survey data. Comparison figures for Gemini, Perplexity and Copilot come from Alphabet and Microsoft earnings disclosures and company statements.' },
+    ],
+    Content: () => (
+      <div>
+        <p style={s.p}>
+          <strong style={s.strong}>ChatGPT has 900 million weekly active users as of February 2026</strong> and handles roughly <strong style={s.strong}>2.5 billion prompts per day</strong> globally, according to OpenAI. In the United States, 34% of adults say they have used ChatGPT — about double the share in 2023 — rising to 58% among adults under 30. By any measure, it is now one of the most-used software products on earth.
+        </p>
+        <Callout>
+          <strong style={s.strong}>TL;DR:</strong> As of early 2026, ChatGPT has 900 million weekly active users, up from 800 million in October 2025, and processes ~2.5 billion prompts a day. 34% of US adults have used it, including 58% of under-30s. It&rsquo;s part of a broader AI-search shift: Google AI Overviews reach 2B+ people monthly and the Gemini app has 750M+ monthly users.
+        </Callout>
+
+        <h2 style={s.h2}>How many people use ChatGPT in 2026?</h2>
+        <p style={s.p}>
+          ChatGPT reached <strong style={s.strong}>900 million weekly active users</strong> in February 2026, up from <strong style={s.strong}>800 million</strong> at OpenAI&rsquo;s DevDay in October 2025 (<Ext href="https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users">OpenAI via TechCrunch</Ext>). On volume, users send roughly <strong style={s.strong}>2.5 billion prompts every day</strong>, with about 330 million of those coming from the United States (<Ext href="https://techcrunch.com/2025/07/21/chatgpt-users-send-2-5-billion-prompts-a-day/">OpenAI via Axios/TechCrunch</Ext>).
+        </p>
+        <p style={s.p}>
+          For adoption among the general public, the cleanest primary source is Pew Research: <strong style={s.strong}>34% of US adults</strong> have used ChatGPT as of mid-2025 — about double the 2023 figure — climbing to <strong style={s.strong}>58% of adults under 30</strong> (<Ext href="https://www.pewresearch.org/short-reads/2025/06/25/34-of-us-adults-have-used-chatgpt-about-double-the-share-in-2023/">Pew Research</Ext>).
+        </p>
+
+        <h2 style={s.h2}>ChatGPT user statistics at a glance</h2>
+        <table style={s.table}>
+          <thead><tr><th style={s.th}>Metric</th><th style={s.th}>Figure</th><th style={s.th}>Source</th></tr></thead>
+          <tbody>
+            <tr><td style={s.td}>Weekly active users</td><td style={s.td}>900 million (Feb 2026)</td><td style={s.td}>OpenAI</td></tr>
+            <tr><td style={s.td}>Prior milestone</td><td style={s.td}>800 million (Oct 2025)</td><td style={s.td}>OpenAI DevDay</td></tr>
+            <tr><td style={s.td}>Prompts per day</td><td style={s.td}>~2.5 billion</td><td style={s.td}>OpenAI</td></tr>
+            <tr><td style={s.td}>US adults who&rsquo;ve used it</td><td style={s.td}>34% (58% of under-30s)</td><td style={s.td}>Pew Research</td></tr>
+          </tbody>
+        </table>
+
+        <h2 style={s.h2}>ChatGPT in context: the wider AI-search shift</h2>
+        <p style={s.p}>ChatGPT is the biggest single AI assistant, but it isn&rsquo;t the whole story. The shift to AI search spans several platforms:</p>
+        <Ul>
+          <Li><strong style={s.strong}>Google AI Overviews</strong> reach 2 billion+ people monthly across 200+ countries (<Ext href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2025/">Alphabet Q2 2025 earnings</Ext>).</Li>
+          <Li><strong style={s.strong}>Google Gemini</strong> app has 750 million+ monthly active users (<Ext href="https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/">Alphabet Q4 2025 earnings</Ext>).</Li>
+          <Li><strong style={s.strong}>Perplexity</strong> processed 780 million queries in May 2025, growing 20%+ month over month (<Ext href="https://techcrunch.com/2025/06/05/perplexity-received-780-million-queries-last-month-ceo-says">Perplexity CEO</Ext>).</Li>
+          <Li><strong style={s.strong}>Microsoft 365 Copilot</strong> has 20 million+ paid enterprise seats (<Ext href="https://techcrunch.com/2026/04/29/microsoft-says-it-has-over-20m-paid-copilot-users-and-they-really-are-using-it/">Microsoft Q3 FY2026 earnings</Ext>).</Li>
+        </Ul>
+        <p style={s.p}>
+          A note on the numbers: &ldquo;weekly active users&rdquo; (ChatGPT), &ldquo;monthly active users&rdquo; (Gemini), &ldquo;queries&rdquo; (Perplexity) and &ldquo;paid seats&rdquo; (Copilot) are different metrics and aren&rsquo;t directly comparable — but together they show AI assistants are now mainstream, not niche.
+        </p>
+
+        <h2 style={s.h2}>Why ChatGPT usage matters for your business</h2>
+        <p style={s.p}>
+          When a third of US adults — and most under-30s — use ChatGPT, a meaningful share are asking it the same questions they used to type into Google: which clinic, which product, which service. If your business isn&rsquo;t part of the answer, you&rsquo;re invisible to that demand. This is why so many businesses <Link to="/blog/why-clinic-not-showing-chatgpt/" style={s.ilink}>rank on Google but never appear in ChatGPT</Link>, and why <Link to="/blog/how-ai-chooses-sources-to-cite/" style={s.ilink}>how AI chooses which sources to cite</Link> is now a discipline of its own.
+        </p>
+        <p style={s.p}>
+          For the full data set, see our <Link to="/blog/ai-search-statistics/" style={s.ilink}>AI search statistics for 2026</Link>, the breakdown of <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO vs SEO</Link>, and our guide to <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>getting your business recommended by AI</Link>.
+        </p>
+
+        <Divider />
+        <h2 style={s.h2}>Frequently Asked Questions</h2>
+        <h3 style={s.h3}>How many people use ChatGPT in 2026?</h3>
+        <p style={s.p}>ChatGPT has about 900 million weekly active users as of February 2026, up from 800 million in October 2025, and processes roughly 2.5 billion prompts per day globally. Among the US public, Pew Research found 34% of adults have used it, rising to 58% of adults under 30.</p>
+        <h3 style={s.h3}>Is ChatGPT the most-used AI tool?</h3>
+        <p style={s.p}>ChatGPT is the largest single AI assistant by weekly users, but the broader landscape is bigger. Google&rsquo;s Gemini app has 750 million+ monthly users and Google AI Overviews reach over 2 billion people monthly, while Perplexity and Microsoft Copilot add hundreds of millions more interactions.</p>
+        <h3 style={s.h3}>How many ChatGPT users are in the United States?</h3>
+        <p style={s.p}>OpenAI reports roughly 330 million of ChatGPT&rsquo;s ~2.5 billion daily prompts come from the US. On adoption, Pew Research found 34% of US adults have used ChatGPT — about double the 2023 share — with usage highest among under-30s, at 58%.</p>
+
+        <Divider />
+        <h2 style={s.h2}>Be part of the answer</h2>
+        <p style={s.p}>
+          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI — work that took one Bangkok clinic from 3 to 27 AI-sourced consultations a month. See how our <Link to="/ai-search-visibility/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>get a free AI search audit</Link>.
+        </p>
+        <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
     ),
   },
