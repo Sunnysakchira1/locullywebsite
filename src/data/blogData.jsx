@@ -92,7 +92,7 @@ export const posts = [
 
         <h2 style={s.h2}>Why Thailand Clinics Are Particularly Vulnerable</h2>
         <p style={s.p}>
-          Thailand's clinic market — Bangkok especially — is one of the most competitive in Asia for medical tourism. Dental, physiotherapy, aesthetic, fertility, and wellness clinics compete heavily for the same pool of expat and international patients.
+          Thailand's clinic market — Bangkok especially — is one of the most competitive in Asia for medical tourism. Dental, physiotherapy, <Link to="/ai-optimization/beauty-clinics/" style={s.ilink}>aesthetic</Link>, <Link to="/ai-optimization/fertility-clinics/" style={s.ilink}>fertility</Link>, and <Link to="/ai-optimization/wellness-clinics/" style={s.ilink}>wellness</Link> clinics compete heavily for the same pool of expat and international patients.
         </p>
         <p style={s.p}>
           These patients overwhelmingly use English-language AI tools to research and decide. When they ask ChatGPT "best dental clinic Bangkok for foreigners" or "English-speaking physio Sukhumvit," a small number of clinics get recommended. Most don't.
@@ -923,7 +923,7 @@ export const posts = [
         </p>
         <Ul>
           <Li><strong style={s.strong}>YMYL content standards</strong> — Google and AI systems apply stricter trust requirements to healthcare content. A specialist knows how to build E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness) specifically for medical queries.</Li>
-          <Li><strong style={s.strong}>Patient search behavior</strong> — The queries patients ask AI for dental, physio, fertility, and aesthetic clinics are all different. A specialist understands each patient journey and what content each requires.</Li>
+          <Li><strong style={s.strong}>Patient search behavior</strong> — The queries patients ask AI for dental, physio, <Link to="/ai-optimization/fertility-clinics/" style={s.ilink}>fertility</Link>, and <Link to="/ai-optimization/beauty-clinics/" style={s.ilink}>aesthetic</Link> clinics are all different. A specialist understands each patient journey and what content each requires.</Li>
           <Li><strong style={s.strong}>Competitive landscape</strong> — Bangkok's clinic market has specific dynamics. Who ranks now, why they rank, and what it takes to displace them is domain knowledge a generalist doesn't have.</Li>
           <Li><strong style={s.strong}>Content accuracy requirements</strong> — Medical content cannot be fabricated or exaggerated. A specialist works with your clinical team to ensure content is accurate and approved — not mass-generated.</Li>
         </Ul>
@@ -993,7 +993,7 @@ export const posts = [
 
         <h3 style={s.h3}>How much should AI optimization cost for a Bangkok clinic?</h3>
         <p style={s.p}>
-          Reputable AI optimization retainers for clinics in Thailand typically range from ฿25,000–80,000/month depending on scope — number of treatment pages, content volume, reporting depth, and competitive intensity. Anything significantly below that range is likely cutting corners on content quality or clinical review. See our <Link to="/packages" style={s.ilink}>packages page</Link> for Locully's pricing.
+          Reputable AI optimization retainers for clinics in Thailand typically range from ฿25,000–80,000/month depending on scope — number of treatment pages, content volume, reporting depth, and competitive intensity. Anything significantly below that range is likely cutting corners on content quality or clinical review. See our <Link to="/packages" style={s.ilink}>packages page</Link> for Locully's pricing — or, if you'd rather pay for results than a monthly retainer, our <Link to="/lead-gen-partner" style={s.ilink}>pay-per-lead partnership</Link> is a performance-based alternative.
         </p>
 
         <h3 style={s.h3}>Should I hire a local Bangkok agency or an international one?</h3>
@@ -1168,7 +1168,7 @@ export const posts = [
           Effective search strategy in 2026 optimises for both simultaneously. Good SEO practice feeds AI visibility. AI-optimised content tends to perform better in traditional search. They aren't competing strategies — they're two faces of the same discipline.
         </p>
         <p style={s.p}>
-          For a deeper look at how the two interact, see our guide on <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO vs SEO</Link> and the <Link to="/ai-search-visibility" style={s.ilink}>Locully AI Search Visibility service</Link>.
+          For a deeper look at how the two interact, see our guide on <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO vs SEO</Link>, our breakdown of <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>SEO and AI search for clinics specifically</Link>, and the <Link to="/ai-search-visibility" style={s.ilink}>Locully AI Search Visibility service</Link>.
         </p>
 
         <Divider />
@@ -1231,7 +1231,7 @@ export const posts = [
           On-page SEO is the process of optimising individual pages so they rank higher for the queries they target. It's the most direct lever in search engine optimisation — you control every element on your own pages. And unlike link building, you can execute it without anyone else's cooperation.
         </p>
         <p style={s.p}>
-          Done right, on-page SEO simultaneously improves Google rankings, increases AI citation rates, and improves conversion. This guide covers every major element, in priority order.
+          Done right, on-page SEO simultaneously improves Google rankings, increases AI citation rates, and improves conversion. It's one of the three disciplines that make up <Link to="/blog/what-is-seo-complete-guide/" style={s.ilink}>search engine optimisation as a whole</Link>. This guide covers every major element, in priority order.
         </p>
 
         <h2 style={s.h2}>1. Title Tags</h2>
@@ -1269,7 +1269,7 @@ export const posts = [
           <Li><strong style={s.strong}>H3s:</strong> Sub-sections within an H2. Use for detailed breakdowns, step-by-step lists, or specific sub-questions.</Li>
         </Ul>
         <p style={s.p}>
-          Strong header architecture also dramatically improves AI citability. AI models extract information by section — a page with clear, descriptive headers gives AI engines a map of what each section covers and when to cite it.
+          Strong header architecture also dramatically improves <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>AI citability</Link>. AI models extract information by section — a page with clear, descriptive headers gives AI engines a map of what each section covers and when to cite it.
         </p>
 
         <h2 style={s.h2}>4. Content Depth and Search Intent</h2>
@@ -1330,7 +1330,7 @@ export const posts = [
           A page with no internal links pointing to it — an "orphan page" — is harder for Google to discover and receives none of your site's accumulated authority. Every important page should receive at least 2–3 internal links from other relevant pages.
         </p>
         <Ul>
-          <Li>Use descriptive anchor text — "physiotherapy clinics in Bangkok" is a better anchor than "click here" or "read more."</Li>
+          <Li>Use descriptive anchor text — <Link to="/ai-optimization/physiotherapy-clinics/" style={s.ilink}>"physiotherapy clinics in Bangkok"</Link> is a better anchor than "click here" or "read more."</Li>
           <Li>Link from high-authority pages (homepage, pillar posts) to pages you want to rank.</Li>
           <Li>Avoid linking to the same page repeatedly from the same article with different anchor texts — this can dilute the signal.</Li>
           <Li>Internal linking also improves session depth: users who follow internal links to related content stay longer, which is a positive engagement signal.</Li>
@@ -1424,7 +1424,7 @@ export const posts = [
           Backlinks are links from one website to another. When Site A publishes an article and includes a link pointing to Site B, that's a backlink for Site B.
         </p>
         <p style={s.p}>
-          Google treats links as votes of trust. If hundreds of credible websites link to your content, Google interprets that as a signal that your content is valuable enough to reference. This remains one of the three most important ranking signals in Google's algorithm — and it has been for over 25 years.
+          Google treats links as votes of trust. If hundreds of credible websites link to your content, Google interprets that as a signal that your content is valuable enough to reference. This remains one of the <Link to="/blog/what-is-seo-complete-guide/" style={s.ilink}>three most important ranking signals</Link> in Google's algorithm — and it has been for over 25 years.
         </p>
         <p style={s.p}>
           This guide explains how Google uses backlinks, what makes a link genuinely valuable, and which link building strategies are worth your time and budget.
@@ -1456,7 +1456,7 @@ export const posts = [
 
         <h3 style={s.h3}>2. Relevance</h3>
         <p style={s.p}>
-          A link from a healthcare publication to a clinic's website is more valuable than the same DR link from a fishing website. Google evaluates topical relevance when determining how much trust a link should pass. Links from contextually related sites reinforce your authority in a specific domain — not just in general.
+          A link from a healthcare publication to <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>a clinic's website</Link> is more valuable than the same DR link from a fishing website. Google evaluates topical relevance when determining how much trust a link should pass. Links from contextually related sites reinforce your authority in a specific domain — not just in general.
         </p>
 
         <h3 style={s.h3}>3. Anchor text</h3>
@@ -1505,7 +1505,7 @@ export const posts = [
 
         <h3 style={s.h3}>5. Building linkable assets</h3>
         <p style={s.p}>
-          The most scalable link acquisition strategy is creating content so useful that people link to it naturally. Original research, comprehensive guides, free tools, data visualizations, and authoritative statistics attract links without active outreach.
+          The most scalable link acquisition strategy is creating content so useful that people link to it naturally. Original research, comprehensive guides, free tools, data visualizations, and <Link to="/blog/ai-search-statistics/" style={s.ilink}>authoritative statistics</Link> attract links without active outreach.
         </p>
         <p style={s.p}>
           This is higher investment upfront but lower ongoing effort. A well-researched study can attract links for years without any active link building activity.
@@ -1593,7 +1593,7 @@ export const posts = [
           Instead of writing one article about "best physiotherapy clinics in Bangkok," you build a system that generates "best physiotherapy clinics in Bangkok," "best physiotherapy clinics in Phuket," "best physiotherapy clinics in Chiang Mai" — and a hundred more variations — each populated with location-specific data and genuinely differentiated content.
         </p>
         <p style={s.p}>
-          Done correctly, programmatic SEO is one of the highest-leverage growth tactics in organic search. Done incorrectly, it produces the thin, repetitive content Google penalises. This guide explains how to build it right.
+          Done correctly, programmatic SEO is one of the highest-leverage growth tactics in <Link to="/blog/what-is-seo-complete-guide/" style={s.ilink}>organic search</Link>. Done incorrectly, it produces the thin, repetitive content Google penalises. This guide explains how to build it right.
         </p>
 
         <h2 style={s.h2}>How Programmatic SEO Works</h2>
@@ -1702,7 +1702,7 @@ export const posts = [
 
         <h2 style={s.h2}>Technical Requirements</h2>
         <p style={s.p}>
-          Programmatic SEO has specific technical requirements beyond standard on-page SEO:
+          Programmatic SEO has specific technical requirements beyond <Link to="/blog/on-page-seo-optimization-guide/" style={s.ilink}>standard on-page SEO</Link>:
         </p>
         <Ul>
           <Li><strong style={s.strong}>URL structure:</strong> Always use subfolders (<code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/locations/bangkok/</code>), not subdomains (<code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>bangkok.yoursite.com</code>). Subdomains don't inherit domain authority.</Li>
@@ -1739,7 +1739,7 @@ export const posts = [
 
         <h3 style={s.h3}>Can programmatic SEO work for small businesses?</h3>
         <p style={s.p}>
-          Yes — the pattern doesn't require technical resources. A clinic with multiple treatment pages structured consistently, a service provider generating location-specific landing pages, or a consultant building use-case pages can all benefit. The scale doesn't need to be thousands of pages. Even 20–50 well-structured pages built from a consistent template is programmatic SEO in principle.
+          Yes — the pattern doesn't require technical resources. <Link to="/ai-optimization/" style={s.ilink}>A clinic with multiple treatment pages</Link> structured consistently, a service provider generating location-specific landing pages, or a consultant building use-case pages can all benefit. The scale doesn't need to be thousands of pages. Even 20–50 well-structured pages built from a consistent template is programmatic SEO in principle.
         </p>
 
         <h3 style={s.h3}>Does programmatic SEO replace editorial content?</h3>
