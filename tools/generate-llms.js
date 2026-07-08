@@ -1,182 +1,116 @@
 #!/usr/bin/env node
 
+/**
+ * Generates public/llms.txt — a guide to the site for AI crawlers.
+ *
+ * URLs are authoritative (match the routes in App.jsx). Clinic pages are pulled
+ * from src/data/clinicData.js and blog posts from src/data/blogData.jsx so new
+ * posts/clinics appear automatically. Static pages are curated below.
+ *
+ * (Rewritten 2026-07: the previous version used `routes.length` on a Map — always
+ * undefined — so every page fell back to a slugged component name, e.g. /forclinics,
+ * and it only scanned src/pages/. Result: llms.txt listed one page with a dead URL.)
+ */
+
 import fs from 'fs';
 import path from 'path';
 
-const CLEAN_CONTENT_REGEX = {
-  comments: /\/\*[\s\S]*?\*\/|\/\/.*$/gm,
-  templateLiterals: /`[\s\S]*?`/g,
-  strings: /'[^']*'|"[^"]*"/g,
-  jsxExpressions: /\{.*?\}/g,
-  htmlEntities: {
-    quot: /&quot;/g,
-    amp: /&amp;/g,
-    lt: /&lt;/g,
-    gt: /&gt;/g,
-    apos: /&apos;/g
+const SITE = 'https://www.locully.org';
+
+// Curated static pages (rarely change). URLs match App.jsx routes exactly.
+const STATIC_PAGES = [
+  { url: '/', title: 'Locully — AI Search Visibility for Bangkok Clinics',
+    desc: 'Get your clinic recommended by ChatGPT, Perplexity, and Google AI Overviews. Locully is a Bangkok agency specialising in AI search visibility (GEO/AIO) for healthcare clinics.' },
+  { url: '/ai-optimization/', title: 'AI Optimization for Bangkok Clinics',
+    desc: 'How AI search optimization works for clinics — choose your clinic type to see the specific strategy.' },
+  { url: '/ai-search-visibility', title: 'AI Search Visibility Service',
+    desc: "Locully's core service: making your clinic the answer AI assistants give when patients search." },
+  { url: '/packages', title: 'One-Off Packages',
+    desc: 'No-retainer packages — content writing and backlink building for clinics, priced per project.' },
+  { url: '/lead-gen-partner', title: 'Local Marketing Partner for Fairs & Expos',
+    desc: 'Locully as your on-the-ground local marketing team for international fairs and expos in Thailand.' },
+  { url: '/about', title: 'About Locully',
+    desc: 'Bangkok-based agency specialising exclusively in AI search visibility for healthcare clinics.' },
+  { url: '/blog/', title: 'Blog',
+    desc: 'Guides on AI search, GEO/AIO, and SEO for clinics.' },
+  { url: '/privacy-policy', title: 'Privacy Policy',
+    desc: 'How Locully collects, uses, and protects personal data.' },
+];
+
+// Extract a list of {field: value} for each object in a data file.
+// Matches a JS string literal (single or double quoted, with escapes) after `key:`.
+function extractField(src, key) {
+  const re = new RegExp(key + '\\s*:\\s*(["\'])((?:\\\\.|(?!\\1).)*)\\1', 'g');
+  const out = [];
+  let m;
+  while ((m = re.exec(src)) !== null) {
+    out.push(m[2].replace(/\\(['"])/g, '$1').replace(/\s+/g, ' ').trim());
   }
-};
-
-const EXTRACTION_REGEX = {
-  route: /<Route\s+[^>]*>/g,
-  path: /path=["']([^"']+)["']/,
-  element: /element=\{<(\w+)[^}]*\/?\s*>\}/,
-  helmet: /<Helmet[^>]*?>([\s\S]*?)<\/Helmet>/i,
-  helmetTest: /<Helmet[\s\S]*?<\/Helmet>/i,
-  title: /<title[^>]*?>\s*(.*?)\s*<\/title>/i,
-  description: /<meta\s+name=["']description["']\s+content=["'](.*?)["']/i
-};
-
-function cleanContent(content) {
-  return content
-    .replace(CLEAN_CONTENT_REGEX.comments, '')
-    .replace(CLEAN_CONTENT_REGEX.templateLiterals, '""')
-    .replace(CLEAN_CONTENT_REGEX.strings, '""');
+  return out;
 }
 
-function cleanText(text) {
-  if (!text) return text;
-  
-  return text
-    .replace(CLEAN_CONTENT_REGEX.jsxExpressions, '')
-    .replace(CLEAN_CONTENT_REGEX.htmlEntities.quot, '"')
-    .replace(CLEAN_CONTENT_REGEX.htmlEntities.amp, '&')
-    .replace(CLEAN_CONTENT_REGEX.htmlEntities.lt, '<')
-    .replace(CLEAN_CONTENT_REGEX.htmlEntities.gt, '>')
-    .replace(CLEAN_CONTENT_REGEX.htmlEntities.apos, "'")
-    .trim();
-}
-
-function extractRoutes(appJsxPath) {
-  if (!fs.existsSync(appJsxPath)) return new Map();
-
-  try {
-    const content = fs.readFileSync(appJsxPath, 'utf8');
-    const routes = new Map();
-    const routeMatches = [...content.matchAll(EXTRACTION_REGEX.route)];
-    
-    for (const match of routeMatches) {
-      const routeTag = match[0];
-      const pathMatch = routeTag.match(EXTRACTION_REGEX.path);
-      const elementMatch = routeTag.match(EXTRACTION_REGEX.element);
-      const isIndex = routeTag.includes('index');
-      
-      if (elementMatch) {
-        const componentName = elementMatch[1];
-        let routePath;
-        
-        if (isIndex) {
-          routePath = '/';
-        } else if (pathMatch) {
-          routePath = pathMatch[1].startsWith('/') ? pathMatch[1] : `/${pathMatch[1]}`;
-        }
-        
-        routes.set(componentName, routePath);
-      }
-    }
-
-    return routes;
-  } catch (error) {
-    return new Map();
+// Zip parallel field arrays into objects (all pages define every field, so
+// index alignment is safe). Returns [] if counts disagree, so a parse drift
+// never emits mismatched data.
+function zipPages(file, fieldMap, makeEntry) {
+  if (!fs.existsSync(file)) return [];
+  const src = fs.readFileSync(file, 'utf8');
+  const cols = {};
+  for (const [name, key] of Object.entries(fieldMap)) cols[name] = extractField(src, key);
+  const lens = Object.values(cols).map(a => a.length);
+  const n = lens[0];
+  if (!n || lens.some(l => l !== n)) {
+    console.error(`⚠️  ${path.basename(file)}: field count mismatch ${JSON.stringify(lens)} — skipping`);
+    return [];
   }
+  return Array.from({ length: n }, (_, i) => {
+    const row = {};
+    for (const name of Object.keys(cols)) row[name] = cols[name][i];
+    return makeEntry(row);
+  });
 }
 
-function findReactFiles(dir) {
-  return fs.readdirSync(dir).map(item => path.join(dir, item));
-}
-
-function extractHelmetData(content, filePath, routes) {
-  const cleanedContent = cleanContent(content);
-  
-  if (!EXTRACTION_REGEX.helmetTest.test(cleanedContent)) {
-    return null;
-  }
-  
-  const helmetMatch = content.match(EXTRACTION_REGEX.helmet);
-  if (!helmetMatch) return null;
-  
-  const helmetContent = helmetMatch[1];
-  const titleMatch = helmetContent.match(EXTRACTION_REGEX.title);
-  const descMatch = helmetContent.match(EXTRACTION_REGEX.description);
-  
-  const title = cleanText(titleMatch?.[1]);
-  const description = cleanText(descMatch?.[1]);
-  
-  const fileName = path.basename(filePath, path.extname(filePath));
-  const url = routes.length && routes.has(fileName) 
-    ? routes.get(fileName) 
-    : generateFallbackUrl(fileName);
-  
-  return {
-    url,
-    title: title || 'Untitled Page',
-    description: description || 'No description available'
-  };
-}
-
-function generateFallbackUrl(fileName) {
-  const cleanName = fileName.replace(/Page$/, '').toLowerCase();
-  return cleanName === 'app' ? '/' : `/${cleanName}`;
-}
-
-function generateLlmsTxt(pages) {
-  const sortedPages = pages.sort((a, b) => a.title.localeCompare(b.title));
-  const pageEntries = sortedPages.map(page => 
-    `- [${page.title}](${page.url}): ${page.description}`
-  ).join('\n');
-  
-  return `## Pages\n${pageEntries}`;
-}
-
-function ensureDirectoryExists(dirPath) {
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
-  }
-}
-
-function processPageFile(filePath, routes) {
-  try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    return extractHelmetData(content, filePath, routes);
-  } catch (error) {
-    console.error(`❌ Error processing ${filePath}:`, error.message);
-    return null;
-  }
+function section(title, pages) {
+  if (!pages.length) return '';
+  const lines = pages.map(p => `- [${p.title}](${SITE}${p.url}): ${p.desc}`).join('\n');
+  return `## ${title}\n${lines}\n`;
 }
 
 function main() {
-  const pagesDir = path.join(process.cwd(), 'src', 'pages');
-  const appJsxPath = path.join(process.cwd(), 'src', 'App.jsx');
+  const cwd = process.cwd();
 
-  let pages = [];
-  
-  if (!fs.existsSync(pagesDir)) {
-    pages.push(processPageFile(appJsxPath, []))
-    pages = pages.filter(Boolean);
-  } else {
-    const routes = extractRoutes(appJsxPath);
-    const reactFiles = findReactFiles(pagesDir);
+  const clinics = zipPages(
+    path.join(cwd, 'src', 'data', 'clinicData.js'),
+    { slug: 'slug', namePlural: 'namePlural', desc: 'metaDescription' },
+    r => ({ url: `/ai-optimization/${r.slug}/`, title: `${r.namePlural} in AI Search`, desc: r.desc })
+  );
 
-    pages = reactFiles
-      .map(filePath => processPageFile(filePath, routes))
-      .filter(Boolean);
-  }
+  const posts = zipPages(
+    path.join(cwd, 'src', 'data', 'blogData.jsx'),
+    { slug: 'slug', title: 'title', desc: 'metaDescription' },
+    r => ({ url: `/blog/${r.slug}/`, title: r.title, desc: r.desc })
+  );
 
-  if (pages.length === 0) {
-    console.error('❌ No pages with Helmet components found!');
-    process.exit(1);
-  }
+  const body = [
+    '# Locully',
+    '',
+    '> Locully is a Bangkok-based agency specialising in AI search visibility (GEO / AIO) for healthcare clinics — making them the clinic ChatGPT, Perplexity, and Google AI Overviews recommend.',
+    '',
+    section('Main Pages', STATIC_PAGES),
+    section('AI Optimization by Clinic Type', clinics),
+    section('Blog', posts),
+    '## Contact',
+    '- Website: https://www.locully.org',
+    '- Email: sunny@locully.org',
+    '- Location: Bangkok, Thailand',
+    '',
+  ].join('\n');
 
-
-  const llmsTxtContent = generateLlmsTxt(pages);
-  const outputPath = path.join(process.cwd(), 'public', 'llms.txt');
-  
-  ensureDirectoryExists(path.dirname(outputPath));
-  fs.writeFileSync(outputPath, llmsTxtContent, 'utf8');
+  const outPath = path.join(cwd, 'public', 'llms.txt');
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, body, 'utf8');
+  console.log(`✓ llms.txt: ${STATIC_PAGES.length} static + ${clinics.length} clinics + ${posts.length} posts`);
 }
 
 const isMainModule = import.meta.url === `file://${process.argv[1]}`;
-
-if (isMainModule) {
-  main();
-}
+if (isMainModule) main();

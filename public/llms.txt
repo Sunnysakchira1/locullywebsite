@@ -1,2 +1,42 @@
-## Pages
-- [AI Optimization for Bangkok Clinics | Locully](/forclinics): Locully helps Bangkok clinics appear in ChatGPT, Perplexity, and Google AI Overviews. Choose your clinic type to see how AIO works for you.
+# Locully
+
+> Locully is a Bangkok-based agency specialising in AI search visibility (GEO / AIO) for healthcare clinics — making them the clinic ChatGPT, Perplexity, and Google AI Overviews recommend.
+
+## Main Pages
+- [Locully — AI Search Visibility for Bangkok Clinics](https://www.locully.org/): Get your clinic recommended by ChatGPT, Perplexity, and Google AI Overviews. Locully is a Bangkok agency specialising in AI search visibility (GEO/AIO) for healthcare clinics.
+- [AI Optimization for Bangkok Clinics](https://www.locully.org/ai-optimization/): How AI search optimization works for clinics — choose your clinic type to see the specific strategy.
+- [AI Search Visibility Service](https://www.locully.org/ai-search-visibility): Locully's core service: making your clinic the answer AI assistants give when patients search.
+- [One-Off Packages](https://www.locully.org/packages): No-retainer packages — content writing and backlink building for clinics, priced per project.
+- [Local Marketing Partner for Fairs & Expos](https://www.locully.org/lead-gen-partner): Locully as your on-the-ground local marketing team for international fairs and expos in Thailand.
+- [About Locully](https://www.locully.org/about): Bangkok-based agency specialising exclusively in AI search visibility for healthcare clinics.
+- [Blog](https://www.locully.org/blog/): Guides on AI search, GEO/AIO, and SEO for clinics.
+- [Privacy Policy](https://www.locully.org/privacy-policy): How Locully collects, uses, and protects personal data.
+
+## AI Optimization by Clinic Type
+- [Physiotherapy Clinics in AI Search](https://www.locully.org/ai-optimization/physiotherapy-clinics/): Help patients find your physiotherapy clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok physio clinics.
+- [Dental Clinics in AI Search](https://www.locully.org/ai-optimization/dental-clinics/): Help patients find your dental clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok dental clinics.
+- [Wellness Clinics in AI Search](https://www.locully.org/ai-optimization/wellness-clinics/): Help patients find your wellness clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok wellness clinics.
+- [IVF Clinics in AI Search](https://www.locully.org/ai-optimization/fertility-clinics/): Help patients find your IVF clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok IVF clinics.
+- [Beauty Clinics in AI Search](https://www.locully.org/ai-optimization/beauty-clinics/): Help patients find your beauty clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok beauty clinics.
+
+## Blog
+- [AI Search Optimization for Clinics in Thailand: The 2026 Guide](https://www.locully.org/blog/ai-search-optimization-clinics-thailand/): Complete guide to AI search optimization for Thailand clinics. Get your clinic recommended in ChatGPT, Perplexity, and Google AI Overviews.
+- [Why Your Clinic Doesn't Appear in ChatGPT Results (And How to Fix It)](https://www.locully.org/blog/why-clinic-not-showing-chatgpt/): Six specific reasons Thailand clinics are invisible in ChatGPT, Perplexity, and Google AI — and the exact fixes to start appearing in AI recommendations.
+- [How ChatGPT Decides Which Clinic to Recommend in Bangkok](https://www.locully.org/blog/how-chatgpt-chooses-clinic-recommendation/): The three signals that determine which Bangkok clinics appear in ChatGPT, Perplexity, and Google AI answers — and what clinic owners can do about each one.
+- [AI Optimization for Dental Clinics in Thailand: A 2026 Guide](https://www.locully.org/blog/ai-optimization-dental-clinics-thailand/): The specific AI search signals dental clinics in Thailand need to get recommended by ChatGPT, Perplexity, and Google AI Overviews in 2026.
+- [GEO vs SEO for Clinics: What Bangkok Clinic Owners Actually Need](https://www.locully.org/blog/geo-vs-seo-clinics-bangkok/): GEO vs SEO for Bangkok clinics: what each one does, how the ranking signals differ, and which to prioritize for maximum patient visibility in 2026.
+- [The AI Search Audit Every Bangkok Clinic Should Run in 2026](https://www.locully.org/blog/ai-search-audit-clinic-bangkok/): A 10-point AI search audit for Bangkok clinics. Check ChatGPT, Perplexity, and Google AI Overviews visibility — and find exactly what to fix first.
+- [What to Look for in an AI Optimization Agency for Your Clinic in Thailand](https://www.locully.org/blog/how-to-choose-ai-optimization-agency-clinic-thailand/): Five questions to ask any AI optimization agency before engaging — and red flags that reveal whether they actually understand healthcare and AI search.
+- [What Is SEO? A Complete Guide to Search Engine Optimisation](https://www.locully.org/blog/what-is-seo-complete-guide/): SEO explained from the ground up — how search engines work, what the three pillars are, how ranking actually happens, and what SEO looks like in 2026 alongside AI search.
+- [On-Page SEO Optimization: The Complete 2026 Guide](https://www.locully.org/blog/on-page-seo-optimization-guide/): Everything you need to know about on-page SEO — title tags, headers, content depth, internal linking, featured snippets, and E-E-A-T signals that move rankings.
+- [Backlinks: What They Are, Why They Matter, and How to Build Them](https://www.locully.org/blog/backlinks-guide-seo/): The complete guide to backlinks — how Google uses them to measure authority, what makes a link valuable, and which link building strategies actually work in 2026.
+- [Programmatic SEO: How to Build Pages at Scale That Actually Rank](https://www.locully.org/blog/programmatic-seo-guide/): How programmatic SEO works, the 12 proven playbooks, when to use it, what separates pages that rank from thin content that gets penalised — and how to build it right.
+- [AI Search Statistics 2026: 60+ Cited Data Points on ChatGPT, AI Overviews & GEO](https://www.locully.org/blog/ai-search-statistics/): 60+ verified AI search statistics for 2026 — ChatGPT, Google AI Overviews, zero-click, referral traffic and GEO citation data. Every stat sourced and linked to its original publisher.
+- [How AI Decides Which Sources to Cite (And How to Get Cited)](https://www.locully.org/blog/how-ai-chooses-sources-to-cite/): How do AI search engines choose which sources to cite? The data: brand mentions beat backlinks ~3×, citing sources and stats lifts visibility 30–40%, schema barely helps.
+- [Zero-Click Search Statistics 2026: What the Data Shows](https://www.locully.org/blog/zero-click-search-statistics/): Zero-click search statistics for 2026: ~68% of US Google searches end without a click, up from 58.5% in 2024. The verified data, sources, and what it means.
+- [How Many People Use ChatGPT? (2026 Statistics)](https://www.locully.org/blog/how-many-people-use-chatgpt/): How many people use ChatGPT in 2026? 900M weekly active users, ~2.5B prompts/day, and 34% of US adults (58% of under-30s). Verified ChatGPT user statistics.
+
+## Contact
+- Website: https://www.locully.org
+- Email: sunny@locully.org
+- Location: Bangkok, Thailand
