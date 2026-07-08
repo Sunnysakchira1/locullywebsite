@@ -993,7 +993,7 @@ export const posts = [
 
         <h3 style={s.h3}>How much should AI optimization cost for a Bangkok clinic?</h3>
         <p style={s.p}>
-          Reputable AI optimization retainers for clinics in Thailand typically range from ฿25,000–80,000/month depending on scope — number of treatment pages, content volume, reporting depth, and competitive intensity. Anything significantly below that range is likely cutting corners on content quality or clinical review. See our <Link to="/packages" style={s.ilink}>packages page</Link> for Locully's pricing — or, if you'd rather pay for results than a monthly retainer, our <Link to="/lead-gen-partner" style={s.ilink}>pay-per-lead partnership</Link> is a performance-based alternative.
+          Reputable AI optimization retainers for clinics in Thailand typically range from ฿25,000–80,000/month depending on scope — number of treatment pages, content volume, reporting depth, and competitive intensity. Anything significantly below that range is likely cutting corners on content quality or clinical review. See our <Link to="/packages" style={s.ilink}>packages page</Link> for Locully's pricing.
         </p>
 
         <h3 style={s.h3}>Should I hire a local Bangkok agency or an international one?</h3>

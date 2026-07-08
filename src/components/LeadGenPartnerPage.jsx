@@ -92,10 +92,10 @@ const LeadGenPartnerPage = () => {
                 <MapPin style={{ width: '14px', height: '14px', color: 'var(--terra)' }} />
                 <span className="l-label">Thailand Local Partner</span>
               </div>
-              <h1 className="l-h1" style={{ marginBottom: '20px' }}>
+              <h1 className="l-h1" style={{ marginBottom: '20px', color: '#FAF6F0' }}>
                 Local Marketing Partner for <em className="l-serif-em">Fairs & Expos</em>
               </h1>
-              <p className="l-body" style={{ marginBottom: '36px', fontSize: '17px' }}>
+              <p className="l-body" style={{ marginBottom: '36px', fontSize: '17px', color: 'rgba(250,246,240,0.86)' }}>
                 Expand your reach in Thailand without the overhead. We are your dedicated team of local marketing experts.
               </p>
               <button onClick={openCalendly} className="l-btn l-btn-lg" style={{ border: 'none' }}>
@@ -133,7 +133,7 @@ const LeadGenPartnerPage = () => {
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,10,8,0.9) 0%, transparent 50%)', display: 'flex', alignItems: 'flex-end', padding: '24px' }}>
                   <div>
                     <div className="l-label" style={{ marginBottom: '6px' }}>Why Thailand?</div>
-                    <h3 className="l-h3">A Strategic Hub</h3>
+                    <h3 className="l-h3" style={{ color: '#FAF6F0' }}>A Strategic Hub</h3>
                   </div>
                 </div>
               </motion.div>
