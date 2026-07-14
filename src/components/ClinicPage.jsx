@@ -274,7 +274,7 @@ export default function ClinicPage({ slug }) {
               </div>
 
               <p className="l-body" style={{ color: 'var(--muted)', maxWidth: 520 }}>
-                When patients submit these queries, AI engines scan available web content and recommend a handful of clinics. Traditional SEO alone doesn't determine who gets recommended — AI optimization does.
+                When patients submit these queries, AI engines scan available web content and recommend a handful of clinics. Traditional SEO alone doesn't determine who gets recommended — <Link to="/blog/ai-search-optimization-clinics-thailand/" style={{ color: 'var(--terra)', textDecoration: 'none', borderBottom: '1px solid rgba(204,100,50,0.4)' }}>AI search optimization</Link> does.
               </p>
             </motion.div>
           </div>
