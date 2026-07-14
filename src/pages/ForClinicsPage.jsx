@@ -43,8 +43,8 @@ export default function ForClinicsPage() {
   return (
     <>
       <Helmet>
-        <title>Get Your Bangkok Clinic Recommended by ChatGPT | Locully</title>
-        <meta name="description" content="Patients ask ChatGPT and Google AI which clinic to choose. Locully makes yours the answer. Pick your clinic type to see how AIO works." />
+        <title>AI Optimization Agency Thailand — GEO & AI Search | Locully</title>
+        <meta name="description" content="Locully is a Thailand AI optimization agency — we get your business recommended by ChatGPT, Perplexity, and Google AI. Pick your clinic type to see how." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.locully.org/ai-optimization/" />
         <link rel="canonical" href="https://www.locully.org/ai-optimization/" />
