@@ -48,7 +48,7 @@ export default function BlogIndexPage() {
     <>
       <Helmet>
         <title>Blog — AI Search Optimization Insights for Clinics | Locully</title>
-        <meta name="description" content="Guides, explainers, and checklists on AI search optimization for Thailand clinics. Learn how to get your clinic recommended by ChatGPT, Perplexity, and Google AI." />
+        <meta name="description" content="Guides, explainers, and checklists on AI search optimization for Thailand clinics — how to get recommended by ChatGPT, Perplexity, and Google AI." />
         <meta property="og:title" content="Blog — AI Search Optimization Insights for Clinics | Locully" />
         <meta property="og:description" content="Guides, explainers, and checklists on AI search optimization for Thailand clinics." />
         <meta property="og:type" content="website" />

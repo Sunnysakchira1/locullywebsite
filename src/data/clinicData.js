@@ -3,7 +3,7 @@ export const clinics = [
     slug: 'physiotherapy-clinics',
     name: 'Physiotherapy',
     namePlural: 'Physiotherapy Clinics',
-    headline: 'AI Optimization for Physiotherapy Clinics in Bangkok',
+    headline: 'AI Optimization for Bangkok Physiotherapy Clinics',
     metaDescription:
       "Help patients find your physiotherapy clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok physio clinics.",
     intro:
