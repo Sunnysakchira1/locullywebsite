@@ -1,6 +1,14 @@
 {
   "outputDirectory": "dist",
   "buildCommand": "npm run build",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "locully.org" }],
+      "destination": "https://www.locully.org/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
