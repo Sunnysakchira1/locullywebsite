@@ -2067,7 +2067,7 @@ export const posts = [
   {
     slug: 'zero-click-search-statistics',
     title: 'Zero-Click Search Statistics 2026: What the Data Shows',
-    metaTitle: 'Zero-Click Search Statistics 2026',
+    metaTitle: 'Zero-Click Search Stats 2026: 68% Never Click',
     metaDescription: 'Zero-click search statistics for 2026: ~68% of US Google searches end without a click, up from 58.5% in 2024. The verified data, sources, and what it means.',
     publishDate: '2026-06-30',
     updatedDate: '2026-06-30',

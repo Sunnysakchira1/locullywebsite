@@ -95,12 +95,12 @@ export default function SeoAioPage() {
   return (
     <>
       <Helmet>
-        <title>AI Search Visibility & SEO Services | Locully</title>
-        <meta name="description" content="Locully helps brands rank #1 in ChatGPT, Google AI, Perplexity, and Gemini. Full-service AI search optimisation and SEO — built around the way search actually works in 2025." />
+        <title>Rank #1 in AI Search: ChatGPT, Perplexity & Google | Locully</title>
+        <meta name="description" content="Get named when ChatGPT, Perplexity, and Google AI recommend a business like yours. Locully builds your AI search visibility from the ground up." />
         <link rel="canonical" href="https://www.locully.org/ai-search-visibility" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.locully.org/ai-search-visibility" />
-        <meta property="og:title" content="AI Search Visibility & SEO Services | Locully" />
+        <meta property="og:title" content="Rank #1 in AI Search: ChatGPT, Perplexity & Google | Locully" />
         <meta property="og:description" content="Get recommended by ChatGPT, Google AI, and Perplexity. Locully builds your AI search presence from the ground up." />
         <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>

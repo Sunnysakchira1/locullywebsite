@@ -75,8 +75,8 @@ const PackagesPage = () => {
   return (
     <>
       <Helmet>
-        <title>One-Off Packages | Locully</title>
-        <meta name="description" content="No retainer. No commitment. One-off SEO, content, and backlink packages priced in Thai Baht." />
+        <title>SEO & Content Packages, No Retainer — Fixed Price | Locully</title>
+        <meta name="description" content="One-off SEO, content, and backlink packages — no retainer, no lock-in, fixed price in Thai Baht. See what's included and what each costs." />
         <link rel="canonical" href="https://www.locully.org/packages" />
       </Helmet>
 

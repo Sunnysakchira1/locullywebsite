@@ -28,8 +28,8 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Locully | SEO & Revenue-Focused Marketing</title>
-        <meta name="description" content="Locully is a revenue-focused SEO agency. We drive growth." />
+        <title>About Locully — Bangkok's AI Search Visibility Agency</title>
+        <meta name="description" content="Locully gets you recommended by ChatGPT, Perplexity, and Google AI — backed by the SEO that makes it stick. Meet the Bangkok team and how we work." />
         <link rel="canonical" href="https://www.locully.org/about" />
       </Helmet>
 
