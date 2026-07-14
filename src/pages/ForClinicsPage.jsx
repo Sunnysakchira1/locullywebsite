@@ -15,6 +15,27 @@ const schemaBreadcrumb = {
   ],
 };
 
+// Curated guides surfaced on the hub — pushes hub authority into the blog cluster
+// and gives clinic owners a reading path.
+const guides = [
+  { slug: 'ai-search-optimization-clinics-thailand', title: 'AI Search Optimization for Clinics: The 2026 Guide', blurb: 'The complete framework for getting your clinic recommended by ChatGPT, Perplexity, and Google AI.' },
+  { slug: 'why-clinic-not-showing-chatgpt', title: "Why Your Clinic Doesn't Appear in ChatGPT", blurb: 'Six reasons clinics are invisible in AI search — and the exact fixes.' },
+  { slug: 'how-chatgpt-chooses-clinic-recommendation', title: 'How ChatGPT Decides Which Clinic to Recommend', blurb: 'The three signals that determine which Bangkok clinics AI recommends.' },
+  { slug: 'ai-search-audit-clinic-bangkok', title: 'The AI Search Audit Every Bangkok Clinic Should Run', blurb: 'A 10-point checklist to see exactly where you stand in AI search.' },
+  { slug: 'geo-vs-seo-clinics-bangkok', title: 'GEO vs SEO for Clinics: What Bangkok Owners Need', blurb: 'What each does, how the signals differ, and which to prioritize.' },
+];
+
+const schemaService = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'AI Optimization for Bangkok Clinics',
+  serviceType: 'AI Search Optimization',
+  provider: { '@id': 'https://www.locully.org/#organization' },
+  areaServed: { '@type': 'City', name: 'Bangkok' },
+  url: 'https://www.locully.org/ai-optimization/',
+  description: 'Locully helps Bangkok clinics appear in ChatGPT, Perplexity, and Google AI Overviews — AI search optimization tailored by clinic type.',
+};
+
 export default function ForClinicsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); setMenuOpen(false); };
@@ -28,6 +49,7 @@ export default function ForClinicsPage() {
         <meta property="og:url" content="https://www.locully.org/ai-optimization/" />
         <link rel="canonical" href="https://www.locully.org/ai-optimization/" />
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
+        <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
       </Helmet>
 
       <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
@@ -125,6 +147,31 @@ export default function ForClinicsPage() {
                     </div>
                   </Link>
                 </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Guides for clinic owners — hub → blog cluster */}
+        <section className="l-section" style={{ background: 'var(--bg2, #130E0A)', borderTop: '1px solid var(--bdr)' }}>
+          <div className="l-container">
+            <div className="l-label" style={{ marginBottom: 12 }}>Guides for clinic owners</div>
+            <h2 className="l-h2" style={{ marginBottom: 32 }}>
+              Learn how <em className="l-serif-em">AI search</em> picks clinics
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 16 }}>
+              {guides.map((g) => (
+                <Link
+                  key={g.slug}
+                  to={`/blog/${g.slug}/`}
+                  style={{ display: 'flex', flexDirection: 'column', padding: '22px', background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 12, textDecoration: 'none', height: '100%', transition: 'border-color 0.2s' }}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--terra)'}
+                  onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--bdr)'}
+                >
+                  <h3 style={{ color: 'var(--cream)', fontWeight: 700, fontSize: 16, marginBottom: 10, fontFamily: 'var(--sans)', lineHeight: 1.35 }}>{g.title}</h3>
+                  <p className="l-body" style={{ color: 'var(--muted)', fontSize: 13.5, marginBottom: 18, flex: 1 }}>{g.blurb}</p>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--terra)', fontSize: 13, fontWeight: 600 }}>Read the guide <ArrowRight style={{ width: 13, height: 13 }} /></span>
+                </Link>
               ))}
             </div>
           </div>

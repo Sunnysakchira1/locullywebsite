@@ -36,6 +36,27 @@ const faqs = [
   }
 ];
 
+const schemaService = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'AI Search Visibility & SEO',
+  serviceType: 'Generative Engine Optimization (GEO / AIO)',
+  provider: { '@id': 'https://www.locully.org/#organization' },
+  areaServed: [{ '@type': 'City', name: 'Bangkok' }, { '@type': 'Country', name: 'Thailand' }],
+  url: 'https://www.locully.org/ai-search-visibility',
+  description: 'Locully makes your brand the answer AI assistants give — optimizing entity authority, structured data, and citation signals so ChatGPT, Perplexity, Google AI Overviews, and Gemini recommend you.',
+};
+
+const schemaFaq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 const FaqItem = ({ q, a }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -81,6 +102,8 @@ export default function SeoAioPage() {
         <meta property="og:url" content="https://www.locully.org/ai-search-visibility" />
         <meta property="og:title" content="AI Search Visibility & SEO Services | Locully" />
         <meta property="og:description" content="Get recommended by ChatGPT, Google AI, and Perplexity. Locully builds your AI search presence from the ground up." />
+        <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
+        <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
       </Helmet>
 
       <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>

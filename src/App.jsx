@@ -74,6 +74,16 @@ const HomePage = () => {
         <title>Locully | Get Your Business Recommended by ChatGPT</title>
         <meta name="description" content="Get recommended by ChatGPT when patients search for clinics like yours. Locully makes your brand the answer AI search engines give." />
         <link rel="canonical" href="https://www.locully.org/" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'AI Search Visibility & SEO',
+          serviceType: 'Generative Engine Optimization (GEO / AIO)',
+          provider: { '@id': 'https://www.locully.org/#organization' },
+          areaServed: [{ '@type': 'City', name: 'Bangkok' }, { '@type': 'Country', name: 'Thailand' }],
+          url: 'https://www.locully.org/',
+          description: 'Locully makes your brand the answer AI assistants give — getting you recommended by ChatGPT, Perplexity, and Google AI Overviews.',
+        })}</script>
       </Helmet>
       <div className="lcm" dangerouslySetInnerHTML={{ __html: homeHtml }} />
       <CaseStudyGate />

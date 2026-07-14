@@ -70,7 +70,7 @@ export const posts = [
           That's AI search. And it's how a growing share of patients — particularly expats, medical tourists, and English-speaking locals — are finding clinics across Thailand right now.
         </p>
         <p style={s.p}>
-          This guide explains what AI search optimization is, why it's different from traditional SEO, and what Thailand clinic owners need to do to appear in those recommendations.
+          This guide explains what AI search optimization is, why it's different from traditional SEO, and what Thailand clinic owners need to do to appear in those recommendations — the core of what <Link to="/" style={s.ilink}>Locully</Link> does for Bangkok clinics.
         </p>
 
         <h2 style={s.h2}>What Is AI Search Optimization — And Why Is It Different from SEO?</h2>
@@ -384,7 +384,7 @@ export const posts = [
           The most common missed opportunity: a clinic that's excellent at something never mentions it explicitly on their website. If you treat a lot of sports injuries, your website needs a sports injury page — not just physiotherapy listed under Services.
         </Callout>
         <p style={s.p}>
-          For a guide on how to structure content for specific clinic types, see our posts on <Link to="/ai-optimization/physiotherapy-clinics/" style={s.ilink}>AI optimization for physiotherapy clinics</Link> and <Link to="/ai-optimization/dental-clinics/" style={s.ilink}>dental clinics</Link>.
+          For a guide on how to structure content for specific clinic types, see our posts on <Link to="/ai-optimization/physiotherapy-clinics/" style={s.ilink}>AI optimization for physiotherapy clinics</Link> and <Link to="/ai-optimization/dental-clinics/" style={s.ilink}>dental clinics</Link> — or browse <Link to="/ai-optimization/" style={s.ilink}>AI optimization by clinic type</Link>.
         </p>
 
         <h2 style={s.h2}>Signal 3: Structured Data — Can AI Parse You Reliably?</h2>
@@ -475,7 +475,7 @@ export const posts = [
           Bangkok has hundreds of dental clinics competing for the same pool of expat, medical-tourist, and English-speaking patients. When those patients ask ChatGPT or Perplexity for a recommendation, a handful of clinics get mentioned — and the rest are invisible.
         </p>
         <p style={s.p}>
-          This guide covers the specific AI search signals that matter for dental clinics in Thailand, what dental patients are actually asking AI, and the content strategy that changes who gets recommended.
+          This guide covers the specific AI search signals that matter for dental clinics in Thailand, what dental patients are actually asking AI, and the content strategy that changes who gets recommended. It's part of how <Link to="/" style={s.ilink}>Locully</Link> handles <Link to="/ai-optimization/" style={s.ilink}>AI optimization for Bangkok clinics</Link>.
         </p>
 
         <h2 style={s.h2}>What Dental Patients Are Asking AI</h2>
