@@ -31,6 +31,7 @@ import NotFound from '@/components/NotFound';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
 import LeadMagnetPopup from '@/components/LeadMagnetPopup';
+import IntroLoader from '@/components/IntroLoader';
 
 // Homepage — ported 1:1 from homepage-mockup.html (CSS scoped under .lcm).
 const HomePage = () => {
@@ -89,6 +90,7 @@ function App() {
 
   return (
     <Router>
+      <IntroLoader />
       <SiteSchema />
       <ScrollToTop />
       <WhatsAppPopup />
