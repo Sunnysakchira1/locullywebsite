@@ -101,7 +101,7 @@ export default function ForClinicsPage() {
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="l-label" style={{ marginBottom: 24, display: 'inline-flex' }}>AI Optimization · Bangkok Clinics</span>
               <h1 className="l-h1" style={{ marginBottom: 16 }}>
-                Your patients are on <em className="l-serif-em">ChatGPT.</em><br />Is your clinic?
+                Get Your Clinic Recommended by <em className="l-serif-em">ChatGPT</em>
               </h1>
               <p className="l-body" style={{ maxWidth: 520, margin: '0 auto 40px', color: 'var(--muted)' }}>
                 Bangkok patients increasingly use AI to find and choose clinics. Locully helps your clinic appear in those recommendations — by clinic type, treatment, and location.
