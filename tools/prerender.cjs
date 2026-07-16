@@ -124,7 +124,9 @@ async function autoScroll(page) {
 }
 
 async function main() {
-  const routes = routesFromSitemap();
+  // Sitemap routes + /privacy-policy (intentionally kept out of the sitemap, but
+  // still needs a static file so it survives without the SPA catch-all rewrite).
+  const routes = [...routesFromSitemap(), '/privacy-policy'];
   if (!fs.existsSync(path.join(DIST, 'index.html'))) {
     throw new Error('dist/index.html missing — run vite build first.');
   }
