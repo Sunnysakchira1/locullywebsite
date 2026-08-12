@@ -25,6 +25,7 @@ const SITE = 'https://www.locully.org';
 const STATIC_PAGES = [
   { path: '/',                     priority: '1.0', changefreq: 'weekly'  },
   { path: '/ai-search-visibility', priority: '0.9', changefreq: 'monthly' },
+  { path: '/audit',                priority: '0.9', changefreq: 'monthly' },
   { path: '/ai-optimization/',     priority: '0.9', changefreq: 'weekly'  },
   { path: '/packages',             priority: '0.8', changefreq: 'monthly' },
   { path: '/lead-gen-partner',     priority: '0.7', changefreq: 'monthly' },

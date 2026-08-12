@@ -27,6 +27,7 @@ import BlogIndexPage from '@/pages/BlogIndexPage';
 import BlogPostPage from '@/pages/BlogPostPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import SeoAioPage from '@/pages/SeoAioPage';
+import AuditPage from '@/pages/AuditPage';
 import NotFound from '@/components/NotFound';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
@@ -145,6 +146,7 @@ function App() {
           <Route path="/blog/how-many-people-use-chatgpt/" element={<BlogPostPage slug="how-many-people-use-chatgpt" />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/ai-search-visibility" element={<SeoAioPage />} />
+          <Route path="/audit" element={<AuditPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />

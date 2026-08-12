@@ -19,6 +19,7 @@ const Nav = () => {
       <ul className="gnav-links">
         <li><Link to="/about">About</Link></li>
         <li><Link to="/ai-search-visibility">Services</Link></li>
+        <li><Link to="/audit">Free Audit</Link></li>
         <li><Link to="/packages">Packages</Link></li>
         <li className="gnav-dd">
           <Link to="/blog/">Blog <span className="gnav-caret">▾</span></Link>
@@ -29,7 +30,7 @@ const Nav = () => {
         </li>
       </ul>
 
-      <a href="/#contact" className="gnav-cta">Get My Free AI Visibility Audit</a>
+      <Link to="/audit" className="gnav-cta">Get My Free AI Visibility Audit</Link>
 
       <button
         className={`gnav-burger${open ? ' open' : ''}`}
@@ -44,10 +45,11 @@ const Nav = () => {
         <div className="gnav-mobile" onClick={close}>
           <Link to="/about">About</Link>
           <Link to="/ai-search-visibility">Services</Link>
+          <Link to="/audit">Free Audit</Link>
           <Link to="/packages">Packages</Link>
           <Link to="/blog/">Blog</Link>
           <Link to="/ai-optimization/" className="gnav-mobile-sub">For Clinics</Link>
-          <a href="/#contact" className="gnav-mobile-cta">Get My Free AI Visibility Audit</a>
+          <Link to="/audit" className="gnav-mobile-cta">Get My Free AI Visibility Audit</Link>
         </div>
       )}
     </nav>
