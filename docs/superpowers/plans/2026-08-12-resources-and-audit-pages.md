@@ -25,9 +25,15 @@
 - **Do not use** `gpt-4o-search-preview` via chat completions — it returns Google Maps links, not real web citations. Use the Responses API with `web_search_preview`.
 - **Commits:** the repo is on `main`, which auto-deploys to production. Create a branch `feat/audit-and-resources` before Task 1 and work there. Do not push to `main` without Sunny's explicit go-ahead.
 
-### ⚠️ Assumption requiring confirmation before Phase 1 ships
+### Pricing decision (settled 2026-08-12)
 
-The audit price is **not recorded anywhere** in the repo or the wiki. This plan uses **฿25,000 one-off, credited in full against the first month if they go on to a retainer** — a standard entry-offer structure that de-risks the purchase. It lives in exactly one constant (`AUDIT_PRICE` in `src/data/auditData.js`) so it can be changed in one edit. **Sunny must confirm or replace this before `/audit` goes live.**
+**The audit is free**, used as the primary BD conversion tool — consistent with the existing 2026 growth strategy in `wiki/locully/agency.md`. It is not priced.
+
+Because it is free, the page carries two things a paid page would not need:
+- a **"Why is it free?"** section — unanswered, free reads as low-value or as bait;
+- **hard qualification in place of a price** — four a month, one business per category per area, and an explicit "if you will never act on this, take the homepage self-check instead."
+
+Terms live in one constant, `AUDIT_OFFER` in `src/data/auditData.js`.
 
 ---
 
@@ -169,7 +175,7 @@ All `/audit` copy in one data module, written in the voice defined in Global Con
 
 **Interfaces:**
 - Consumes: nothing.
-- Produces: named exports `AUDIT_PRICE`, `HERO`, `SYMPTOMS`, `DELIVERABLES`, `PROCESS`, `NOT_INCLUDED`, `PROOF`, `FAQS`. `AuditPage.jsx` (Task 3) imports all eight.
+- Produces: named exports `AUDIT_OFFER`, `HERO`, `SYMPTOMS`, `WHY_FREE`, `DELIVERABLES`, `PROCESS`, `NOT_INCLUDED`, `PROOF`, `FAQS`. `AuditPage.jsx` (Task 3) imports all nine.
 
 - [ ] **Step 1: Write the copy module**
 
@@ -1557,6 +1563,8 @@ git commit -m "feat: add proof gallery and citation chart"
 **Interfaces:**
 - Consumes: `CitationGapTool`, `ProofGallery`, `resourcesData`.
 
+**Phase 2 copy flip:** `/audit` currently points its secondary CTA and two copy references at the homepage eight-question self-check, because `/resources` did not exist when Phase 1 shipped. Once this page is live, change the ghost CTA in `src/pages/AuditPage.jsx` from `/#selfTest` to `/resources`, and update the two references in `src/data/auditData.js` (`WHY_FREE.catch.text` and `NOT_INCLUDED.items[3]`) plus the FAQ "Is there a quicker version?" to point at the free tool instead.
+
 - [ ] **Step 1: Build the page**
 
 Three zones in order — hero + `CitationGapTool`, then `ProofGallery`, then the downloads zone (the existing stats PDF behind an email field posting to Formspree, plus the "next up" placeholder card for the listicle playbook). Copy comes from the mockup. Add `Helmet` with title, description, canonical `https://www.locully.org/resources`, and a `Service` + `BreadcrumbList` JSON-LD pair following the Task 4 pattern.
@@ -1659,9 +1667,9 @@ grep -rn "sk-\|KV_REST_API_TOKEN\|OPENAI_API_KEY=" src/ api/ public/ && echo "SE
 
 Expected: `no secrets in tracked source`.
 
-- [ ] **Step 6: Confirm the price with Sunny**
+- [ ] **Step 6: Confirm the offer terms with Sunny**
 
-`AUDIT_PRICE` in `src/data/auditData.js` is currently the assumed ฿25,000. **Do not merge until Sunny confirms or replaces it.**
+`AUDIT_OFFER` in `src/data/auditData.js` sets capacity (four a month) and exclusivity (one business per category per area). Both appear in the page copy and in the final CTA. Confirm before merging.
 
 - [ ] **Step 7: Merge and deploy**
 
