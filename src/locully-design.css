@@ -982,8 +982,11 @@ img { max-width: 100%; height: auto; }
 .audit-page .aud-lead { color: var(--muted); max-width: 60ch; margin: 0 0 30px; font-size: 15.5px; line-height: 1.6; }
 
 .audit-page .aud-sec { padding: 64px 0; border-top: 1px solid var(--bdr); }
-/* Full-bleed tinted band without leaving the max-width column in the markup. */
-.audit-page .aud-sec-alt { background: var(--bg2); border-top: 1px solid var(--bdr); box-shadow: 0 0 0 100vmax var(--bg2); clip-path: inset(0 -100vmax); }
+/* Full-bleed tinted band without leaving the max-width column in the markup.
+   A pseudo-element stretched to the viewport edges — cheap to paint, unlike a
+   100vmax box-shadow, which blows up the paint region and janks mobile scroll. */
+.audit-page .aud-sec-alt { position: relative; isolation: isolate; border-top: 1px solid var(--bdr); }
+.audit-page .aud-sec-alt::before { content: ''; position: absolute; inset: 0 calc(50% - 50vw); background: var(--bg2); z-index: -1; }
 
 .audit-page .aud-cta-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 28px; }
 .audit-page .aud-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--terra); color: #fff; font-family: var(--mono); font-size: 14px; padding: 14px 24px; border-radius: 9px; text-decoration: none; transition: background .15s ease; }
