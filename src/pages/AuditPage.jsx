@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, ChevronDown, XCircle } from 'lucide-react';
-import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import {
   AUDIT_OFFER, HERO, SYMPTOMS, WHY_FREE, DELIVERABLES,
@@ -71,8 +70,6 @@ const AuditPage = () => {
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
       </Helmet>
-
-      <Nav />
 
       <main>
         {/* HERO */}
