@@ -315,7 +315,7 @@ export const posts = [
 
         <h3 style={s.h3}>Is this something I can do myself?</h3>
         <p style={s.p}>
-          Some of it, yes. Adding FAQ content and writing treatment-specific pages are tasks a clinic manager or content writer can handle. Schema markup and technical audit work typically requires expertise to implement correctly — the kind of work <Link to="/ai-search-visibility" style={s.ilink}>we handle for you</Link>. If you'd rather not navigate it alone, <Link to="/#contact" style={s.ilink}>request a free AI audit</Link> — we'll show you exactly where you stand and what to prioritize.
+          Some of it, yes. Adding FAQ content and writing treatment-specific pages are tasks a clinic manager or content writer can handle. Schema markup and technical audit work typically requires expertise to implement correctly — the kind of work <Link to="/ai-search-visibility" style={s.ilink}>we handle for you</Link>. If you'd rather not navigate it alone, <Link to="/audit" style={s.ilink}>request a free AI audit</Link> — we'll show you exactly where you stand and what to prioritize.
         </p>
       </div>
     ),
@@ -858,7 +858,7 @@ export const posts = [
         </div>
 
         <p style={s.p}>
-          If you'd prefer a professional audit rather than running this yourself, <Link to="/#contact" style={s.ilink}>request a free AI visibility audit</Link> — we'll run it across 20+ queries and give you a detailed report within 48 hours. Or see <Link to="/ai-search-visibility" style={s.ilink}>how our AI search visibility service</Link> turns this checklist into fixes.
+          If you'd prefer a professional audit rather than running this yourself, <Link to="/audit" style={s.ilink}>request a free AI visibility audit</Link> — we'll run it across 20+ queries and give you a detailed report within 48 hours. Or see <Link to="/ai-search-visibility" style={s.ilink}>how our AI search visibility service</Link> turns this checklist into fixes.
         </p>
         <p style={s.p}>
           For guidance on what to do with the results, read our <Link to="/blog/why-clinic-not-showing-chatgpt/" style={s.ilink}>guide to fixing AI visibility gaps</Link> and the <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>full AI search optimization guide for Thailand clinics</Link>.
@@ -981,7 +981,7 @@ export const posts = [
           Locully works exclusively with clinics. We don't split our focus between clinics, restaurants, and e-commerce. Every case study, every query set, every piece of content knowledge we've built is from the clinic sector — Bangkok, Phuket, Chiang Mai, and beyond.
         </p>
         <p style={s.p}>
-          If you'd like to see how that makes a difference, start with a <Link to="/#contact" style={s.ilink}>free AI visibility audit</Link> — we'll benchmark your current AI presence and give you a clear picture of where you stand versus competitors.
+          If you'd like to see how that makes a difference, start with a <Link to="/audit" style={s.ilink}>free AI visibility audit</Link> — we'll benchmark your current AI presence and give you a clear picture of where you stand versus competitors.
         </p>
         <p style={s.p}>
           Or read our <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>complete guide to AI search optimization for Thailand clinics</Link> to understand the full landscape before you engage anyone.

@@ -90,7 +90,7 @@ const FaqItem = ({ q, a }) => {
 export default function SeoAioPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); setMenuOpen(false); };
-  const scrollToContact = () => { window.location.href = '/#contact'; setMenuOpen(false); };
+  const scrollToContact = () => { window.location.href = '/audit'; setMenuOpen(false); };
 
   return (
     <>

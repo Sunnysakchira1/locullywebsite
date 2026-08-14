@@ -11,7 +11,7 @@ export default function BlogIndexPage() {
 
   const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); setMenuOpen(false); };
   const scrollToContact = () => {
-    window.location.href = '/#contact';
+    window.location.href = '/audit';
     setMenuOpen(false);
   };
 
@@ -245,7 +245,7 @@ export default function BlogIndexPage() {
               <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, fontWeight: 300, marginBottom: 32 }}>
                 We'll audit your current AI visibility across ChatGPT, Perplexity, and Google AI Overviews — and show you exactly where you're missing out.
               </p>
-              <a href="/#contact" className="l-btn">
+              <a href="/audit" className="l-btn">
                 Get Your Free AI Audit
                 <ArrowRight style={{ width: 16, height: 16 }} />
               </a>

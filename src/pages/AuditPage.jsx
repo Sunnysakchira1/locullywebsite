@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, ChevronDown, XCircle } from 'lucide-react';
+import { CheckCircle2, ChevronDown, XCircle } from 'lucide-react';
 import Footer from '@/components/Footer';
+import AuditForm from '@/components/AuditForm';
+import SampleGapReport from '@/components/SampleGapReport';
 import {
-  AUDIT_OFFER, HERO, SYMPTOMS, WHY_FREE, DELIVERABLES,
-  PROCESS, NOT_INCLUDED, PROOF, FAQS,
+  AUDIT_OFFER, HERO, TRUST_BAR, FINDINGS, SAMPLE, DELIVERABLES,
+  PROOF, WHY_FREE, PROCESS, NOT_INCLUDED, FAQS,
 } from '@/data/auditData';
+
+const SENJA_WIDGET_ID = 'e78045b1-0c17-4032-ae66-d945b9ace7b2';
 
 const reveal = {
   initial: { opacity: 0, y: 16 },
@@ -25,13 +28,8 @@ const schemaService = {
   areaServed: [{ '@type': 'City', name: 'Bangkok' }, { '@type': 'Country', name: 'Thailand' }],
   url: 'https://www.locully.org/audit',
   description:
-    'A 40-question citation gap analysis across ChatGPT, Perplexity and Google AI Overviews, plus a full technical and structured-data audit. Free, delivered in 5 working days.',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'THB',
-    availability: 'https://schema.org/LimitedAvailability',
-  },
+    'A 40-question citation gap analysis across ChatGPT, Perplexity and Google AI Overviews, plus a technical and structured-data audit. Delivered in 5 working days at no charge.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'THB', availability: 'https://schema.org/LimitedAvailability' },
 };
 
 const schemaFaq = {
@@ -57,13 +55,25 @@ const AuditPage = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const maxProof = Math.max(...PROOF.series.map((p) => p.value));
 
+  // Senja testimonial widget — loaded here rather than in index.html so the
+  // script only costs the pages that actually show it.
+  useEffect(() => {
+    const id = 'senja-widget-script';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('script');
+    s.id = id;
+    s.src = `https://widget.senja.io/widget/${SENJA_WIDGET_ID}/platform.js`;
+    s.async = true;
+    document.body.appendChild(s);
+  }, []);
+
   return (
     <div className="audit-page">
       <Helmet>
-        <title>Free AI Visibility Audit — Find Out Why AI Recommends Your Competitors | Locully</title>
+        <title>AI Visibility Audit — See Which AI Answers Name Your Competitors | Locully</title>
         <meta
           name="description"
-          content="We ask ChatGPT, Perplexity and Google the questions your customers ask, then show you every competitor they named and why you were not one of them. Free, delivered in 5 working days."
+          content="We run 40 buying questions through ChatGPT, Perplexity and Google AI Overviews, record every website they cite, and send you the list of places your name should be. Five working days, no charge."
         />
         <link rel="canonical" href="https://www.locully.org/audit" />
         <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
@@ -72,98 +82,54 @@ const AuditPage = () => {
       </Helmet>
 
       <main>
-        {/* HERO */}
+        {/* HERO — form above the fold, no scrolling to convert */}
         <section className="aud-hero">
-          <p className="aud-eyebrow">{HERO.eyebrow}</p>
-          <h1>{HERO.h1}</h1>
-          <p className="aud-lede">{HERO.sub}</p>
-          <div className="aud-cta-row">
-            <a href="/#contact" className="aud-btn">
-              {HERO.cta} <ArrowRight size={16} aria-hidden="true" />
-            </a>
-            <span className="aud-price">
-              <strong>{AUDIT_OFFER.price}</strong> · report in {AUDIT_OFFER.turnaround}
-            </span>
+          <div className="aud-hero-grid">
+            <div>
+              <p className="aud-eyebrow">{HERO.eyebrow}</p>
+              <h1>{HERO.h1}</h1>
+              <p className="aud-lede">{HERO.sub}</p>
+              <dl className="aud-trustbar">
+                {TRUST_BAR.map((t) => (
+                  <div key={t.stat}>
+                    <dt>{t.stat}</dt>
+                    <dd>{t.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <AuditForm id="audit-form-top" />
           </div>
-          <p className="aud-fine">{HERO.ctaSub}</p>
         </section>
 
-        {/* SYMPTOMS */}
+        {/* SAMPLE REPORT — show the deliverable before asking for anything else */}
+        <section className="aud-sec aud-sec-alt">
+          <motion.div {...reveal}>
+            <h2>{SAMPLE.h2}</h2>
+            <p className="aud-lead">{SAMPLE.lead}</p>
+            <SampleGapReport />
+          </motion.div>
+        </section>
+
+        {/* FINDINGS — evidence, not assumptions about the reader */}
         <section className="aud-sec">
           <motion.div {...reveal}>
-            <h2>{SYMPTOMS.h2}</h2>
-            <p className="aud-lead">{SYMPTOMS.lead}</p>
+            <h2>{FINDINGS.h2}</h2>
+            <p className="aud-lead">{FINDINGS.lead}</p>
             <div className="aud-grid-2">
-              {SYMPTOMS.items.map((s) => (
-                <div className="aud-card" key={s.title}>
-                  <h3>{s.title}</h3>
-                  <p>{s.body}</p>
+              {FINDINGS.items.map((f) => (
+                <div className="aud-finding" key={f.title}>
+                  <span className="aud-finding-stat">{f.stat}</span>
+                  <h3>{f.title}</h3>
+                  <p>{f.body}</p>
                 </div>
               ))}
             </div>
           </motion.div>
         </section>
 
-        {/* WHY FREE */}
+        {/* PROOF — named client, real numbers, video + written testimonials */}
         <section className="aud-sec aud-sec-alt">
-          <motion.div {...reveal}>
-            <h2>{WHY_FREE.h2}</h2>
-            <div className="aud-why-free">
-              {WHY_FREE.body.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-            <div className="aud-catch">
-              <span className="aud-catch-label">{WHY_FREE.catch.label}</span>
-              <p>{WHY_FREE.catch.text}</p>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* DELIVERABLES */}
-        <section className="aud-sec">
-          <motion.div {...reveal}>
-            <h2>{DELIVERABLES.h2}</h2>
-            <p className="aud-lead">{DELIVERABLES.lead}</p>
-            <div className="aud-deliverables">
-              {DELIVERABLES.items.map((d) => (
-                <div className="aud-deliverable" key={d.name}>
-                  <CheckCircle2 size={18} className="aud-tick" aria-hidden="true" />
-                  <div>
-                    <h3>{d.name}</h3>
-                    <p>{d.what}</p>
-                    <p className="aud-why">
-                      <strong>Why it matters:</strong> {d.why}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
-
-        {/* PROCESS */}
-        <section className="aud-sec aud-sec-alt">
-          <motion.div {...reveal}>
-            <h2>{PROCESS.h2}</h2>
-            <ol className="aud-process">
-              {PROCESS.steps.map((s) => (
-                <li key={s.n}>
-                  <span className="aud-step-n">{s.n}</span>
-                  <div>
-                    <h3>
-                      {s.title} <span className="aud-when">{s.when}</span>
-                    </h3>
-                    <p>{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </motion.div>
-        </section>
-
-        {/* PROOF */}
-        <section className="aud-sec">
           <motion.div {...reveal}>
             <h2>{PROOF.h2}</h2>
             <p className="aud-lead">{PROOF.lead}</p>
@@ -182,20 +148,79 @@ const AuditPage = () => {
             </div>
             <p className="aud-callout">{PROOF.callout}</p>
             <p className="aud-honest">{PROOF.honest}</p>
+
+            <div className="aud-senja">
+              <div
+                className="senja-embed"
+                data-id={SENJA_WIDGET_ID}
+                data-mode="shadow"
+                data-lazyload="false"
+                style={{ display: 'block', width: '100%' }}
+              />
+            </div>
           </motion.div>
         </section>
 
-        {/* NOT INCLUDED */}
+        {/* DELIVERABLES */}
+        <section className="aud-sec">
+          <motion.div {...reveal}>
+            <h2>{DELIVERABLES.h2}</h2>
+            <p className="aud-lead">{DELIVERABLES.lead}</p>
+            <div className="aud-deliverables">
+              {DELIVERABLES.items.map((d) => (
+                <div className="aud-deliverable" key={d.name}>
+                  <CheckCircle2 size={18} className="aud-tick" aria-hidden="true" />
+                  <div>
+                    <h3>{d.name}</h3>
+                    <p>{d.what}</p>
+                    <p className="aud-why"><strong>Why it matters:</strong> {d.why}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
+        {/* PROCESS */}
+        <section className="aud-sec aud-sec-alt">
+          <motion.div {...reveal}>
+            <h2>{PROCESS.h2}</h2>
+            <ol className="aud-process">
+              {PROCESS.steps.map((s) => (
+                <li key={s.n}>
+                  <span className="aud-step-n">{s.n}</span>
+                  <div>
+                    <h3>{s.title} <span className="aud-when">{s.when}</span></h3>
+                    <p>{s.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </motion.div>
+        </section>
+
+        {/* WHY NO CHARGE */}
+        <section className="aud-sec">
+          <motion.div {...reveal}>
+            <h2>{WHY_FREE.h2}</h2>
+            <div className="aud-why-free">
+              {WHY_FREE.body.map((p) => <p key={p}>{p}</p>)}
+            </div>
+            <div className="aud-catch">
+              <span className="aud-catch-label">{WHY_FREE.catch.label}</span>
+              <p>{WHY_FREE.catch.text}</p>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* WHEN NOT TO BOOK */}
         <section className="aud-sec aud-sec-alt">
           <motion.div {...reveal}>
             <h2>{NOT_INCLUDED.h2}</h2>
             <p className="aud-lead">{NOT_INCLUDED.lead}</p>
             <ul className="aud-nots">
               {NOT_INCLUDED.items.map((n) => (
-                <li key={n}>
-                  <XCircle size={17} aria-hidden="true" />
-                  <span>{n}</span>
-                </li>
+                <li key={n}><XCircle size={17} aria-hidden="true" /><span>{n}</span></li>
               ))}
             </ul>
           </motion.div>
@@ -204,13 +229,12 @@ const AuditPage = () => {
         {/* FAQ */}
         <section className="aud-sec">
           <motion.div {...reveal}>
-            <h2>Questions people ask before booking</h2>
+            <h2>Before you book</h2>
             <div className="aud-faqs">
               {FAQS.map((f, i) => (
                 <div className={`aud-faq${openFaq === i ? ' open' : ''}`} key={f.q}>
                   <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i}>
-                    <span>{f.q}</span>
-                    <ChevronDown size={18} aria-hidden="true" />
+                    <span>{f.q}</span><ChevronDown size={18} aria-hidden="true" />
                   </button>
                   {openFaq === i && <p>{f.a}</p>}
                 </div>
@@ -219,19 +243,17 @@ const AuditPage = () => {
           </motion.div>
         </section>
 
-        {/* FINAL CTA */}
+        {/* CLOSING FORM */}
         <section className="aud-final">
-          <h2>Find out what AI says about you</h2>
-          <p>
-            Free. Report in {AUDIT_OFFER.turnaround}. {AUDIT_OFFER.capacity}, and {AUDIT_OFFER.exclusivity.toLowerCase()}
-          </p>
-          <div className="aud-cta-row">
-            <a href="/#contact" className="aud-btn">
-              {HERO.cta} <ArrowRight size={16} aria-hidden="true" />
-            </a>
-            <Link to="/#selfTest" className="aud-btn-ghost">
-              Or take the one-minute self-check
-            </Link>
+          <div className="aud-final-grid">
+            <div>
+              <h2>Find out what AI says about you</h2>
+              <p>
+                {AUDIT_OFFER.questions} questions, three engines, {AUDIT_OFFER.turnaround}.
+                {' '}{AUDIT_OFFER.capacity} a month. {AUDIT_OFFER.exclusivity}
+              </p>
+            </div>
+            <AuditForm id="audit-form-bottom" />
           </div>
         </section>
       </main>

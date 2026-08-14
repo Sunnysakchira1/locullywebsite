@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 export default function PrivacyPolicyPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); setMenuOpen(false); };
-  const scrollToContact = () => { window.location.href = '/#contact'; setMenuOpen(false); };
+  const scrollToContact = () => { window.location.href = '/audit'; setMenuOpen(false); };
 
   const s = {
     h2: { fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 600, color: 'var(--cream)', marginTop: 48, marginBottom: 12 },
