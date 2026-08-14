@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { WHATSAPP_DELAY_MS } from '@/lib/popupTiming';
 
 const WA_NUMBER = '66626959444';
 const WA_MESSAGE = 'Hi Locully! I\'d like to learn more about your AI search services.';
@@ -12,7 +13,7 @@ export default function WhatsAppPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!dismissed) setVisible(true);
-    }, 5000);
+    }, WHATSAPP_DELAY_MS);
     return () => clearTimeout(timer);
   }, [dismissed]);
 

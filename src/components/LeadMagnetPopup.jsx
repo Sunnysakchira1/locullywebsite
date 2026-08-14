@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { LEAD_MAGNET_DELAY_MS } from '@/lib/popupTiming';
 
 /**
- * Lead-magnet popup. Appears 8s after load (once per browser session),
+ * Lead-magnet popup. Appears once per browser session, timed to land after
+ * the WhatsApp widget (see lib/popupTiming.js),
  * captures an email to Formspree (same endpoint as the contact form),
  * then delivers the "AI Search Statistics 2026" PDF.
  */
@@ -21,7 +23,7 @@ export default function LeadMagnetPopup() {
     const timer = setTimeout(() => {
       setVisible(true);
       sessionStorage.setItem(SESSION_KEY, '1');
-    }, 8000);
+    }, LEAD_MAGNET_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
 
