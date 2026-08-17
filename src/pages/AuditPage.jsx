@@ -28,7 +28,7 @@ const schemaService = {
   areaServed: [{ '@type': 'City', name: 'Bangkok' }, { '@type': 'Country', name: 'Thailand' }],
   url: 'https://www.locully.org/audit',
   description:
-    'A 40-question citation gap analysis across ChatGPT, Perplexity and Google AI Overviews, plus a technical and structured-data audit. Delivered in 5 working days at no charge.',
+    'We ask ChatGPT, Perplexity and Google 40 questions your customers ask, show you which businesses got recommended instead of you, and check why AI skipped your site. Free, delivered in 5 working days.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'THB', availability: 'https://schema.org/LimitedAvailability' },
 };
 
@@ -70,10 +70,10 @@ const AuditPage = () => {
   return (
     <div className="audit-page">
       <Helmet>
-        <title>AI Visibility Audit — See Which AI Answers Name Your Competitors | Locully</title>
+        <title>Free AI Visibility Audit — Does ChatGPT Recommend You? | Locully</title>
         <meta
           name="description"
-          content="We run 40 buying questions through ChatGPT, Perplexity and Google AI Overviews, record every website they cite, and send you the list of places your name should be. Five working days, no charge."
+          content="We ask ChatGPT, Perplexity and Google 40 questions your customers ask before they buy. Then we show you who got named, and why it wasn't you. Free, in five days."
         />
         <link rel="canonical" href="https://www.locully.org/audit" />
         <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
@@ -229,7 +229,7 @@ const AuditPage = () => {
         {/* FAQ */}
         <section className="aud-sec">
           <motion.div {...reveal}>
-            <h2>Before you book</h2>
+            <h2>Questions we get asked</h2>
             <div className="aud-faqs">
               {FAQS.map((f, i) => (
                 <div className={`aud-faq${openFaq === i ? ' open' : ''}`} key={f.q}>

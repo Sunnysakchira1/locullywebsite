@@ -1,69 +1,67 @@
-// All /audit page copy. Voice: second person, short sentences, a real number in
-// every claim, honest about limits. Edit copy here — never in the JSX.
+// All /audit page copy.
 //
-// Two rules this file exists to enforce:
-//   1. No presumptuous headings. We don't tell the reader what they already
-//      know or how they feel — we show them evidence and let them conclude.
-//   2. "Free" earns its place once. Repeating it makes the offer look cheap
-//      rather than generous.
+// Written for a busy clinic or restaurant owner, not a marketer. Rules:
+//   1. Short sentences. Active voice. No SEO jargon — say "can AI read your
+//      site" instead of "crawlability", "your own pages compete" instead of
+//      "cannibalisation".
+//   2. No presumptuous headings. Show evidence, don't tell the reader how
+//      they feel.
+//   3. "Free" earns its place once.
 
 export const AUDIT_OFFER = {
   turnaround: '5 working days',
   capacity: 'Four a month',
-  exclusivity: 'One business per category, per area — we will not audit two competitors against each other.',
+  exclusivity: 'One business per area. We never audit two competitors.',
   questions: 40,
 };
 
 export const HERO = {
   eyebrow: 'AI Visibility Audit',
-  h1: 'See every AI answer your competitors appear in. And you don\'t.',
-  sub: 'We run 40 buying questions through ChatGPT, Perplexity and Google AI Overviews, record every website each one cites, and send you the list of places your name should be but isn\'t. Five working days, no charge.',
+  h1: 'Does ChatGPT recommend you, or your competitor?',
+  sub: 'We ask ChatGPT, Perplexity and Google 40 questions your customers ask before they buy. Then we show you who got named, and why it wasn\'t you. Free. Five days.',
   formTitle: 'Start your audit',
-  formSub: 'Three fields. We\'ll come back with your question set before we run anything.',
+  formSub: 'Three things. That\'s the whole form.',
   cta: 'Send me my audit',
-  microtrust: 'Four a month · one business per category · you keep the report either way',
+  microtrust: 'Four a month · one business per area · the report is yours to keep',
 };
 
-// Shown under the hero — proof before the reader has to scroll.
 export const TRUST_BAR = [
-  { stat: '9×', label: 'growth in AI-sourced bookings for Form Recovery in six months' },
-  { stat: '40', label: 'buying questions run live, across three AI engines' },
-  { stat: '5 days', label: 'from brief to report and a walkthrough call' },
+  { stat: '9×', label: 'more AI bookings for Form Recovery in six months' },
+  { stat: '40', label: 'questions, asked live to three AI tools' },
+  { stat: '5 days', label: 'from start to report and a call' },
 ];
 
-// Replaces the old "You already know something is off" section. Same job —
-// get the reader nodding — but from evidence rather than assumption.
 export const FINDINGS = {
-  h2: 'What we keep finding',
-  lead: 'Recurring results from audits we\'ve run for Bangkok clinics, restaurants and property firms. Every number here came out of a real report.',
+  h2: 'What we usually find',
+  lead: 'Real results from real audits. Every number came out of a report we sent a client.',
   items: [
     {
       stat: '0 of 3',
-      title: 'AI Overviews cited the client',
-      body: 'A Bangkok aesthetics clinic ranking 4th on Google appeared in none of the three AI Overviews for its own head terms. The cited sources were five competitors and a directory.',
+      title: 'AI answers mentioned the clinic',
+      body: 'A Bangkok clinic sat 4th on Google. AI named five competitors and a directory. Never them.',
     },
     {
       stat: '16 of 16',
-      title: 'keywords where the client competed with itself',
-      body: 'Every tracked keyword returned two to four of the same client\'s URLs. Their blog posts outranked their own service pages by up to 50 positions.',
+      title: 'searches where their pages fought each other',
+      body: 'Their blog posts were beating their own booking pages. By up to 50 places.',
     },
     {
-      stat: '0',
-      title: 'schema output across 500+ posts',
-      body: 'A fertility clinic had a schema plugin installed and configured. It was emitting nothing. No AI engine could identify what the business did.',
+      stat: '500+',
+      title: 'pages AI could not understand',
+      body: 'The plugin that tells AI what the business does was installed, switched on, and doing nothing.',
     },
     {
       stat: '100%',
-      title: 'of prices invisible to AI',
-      body: 'Pricing available only through a LINE conversation. Every engine that tried to answer "how much does it cost" cited a competitor who published theirs.',
+      title: 'of prices hidden from AI',
+      body: 'Prices were only given over LINE. So AI quoted a competitor who published theirs.',
     },
   ],
 };
 
 export const SAMPLE = {
-  h2: 'The centre of the report',
-  lead: 'Your citation gap analysis. Every question, every website the AI actually cited, and whether you were among them. This is a real one with the client and competitors anonymised.',
-  caption: 'Sample — Bangkok dental clinic, 4 of 40 questions shown. Client name and domain removed; findings unchanged.',
+  h2: 'Here is what you get back',
+  lead: 'The main page of the report. Every question we asked, every website AI trusted, and whether you were on the list. This is a real one, with names removed.',
+  caption: 'Real audit — Bangkok dental clinic. 4 of 40 questions shown. Names and web addresses removed.',
   verdict: { cited: 0, total: 40, sources: 173, competitorMentions: 61 },
   prompts: [
     {
@@ -104,8 +102,8 @@ export const SAMPLE = {
       ],
     },
   ],
-  gapsTitle: 'Your gap list',
-  gapsLead: 'The websites AI trusts on your topic that never mention you. Ranked by how often they were cited — that\'s your outreach order.',
+  gapsTitle: 'Where you need to be',
+  gapsLead: 'The websites AI trusts on your topic, that never mention you. Most-quoted first. Work down the list.',
   gaps: [
     { domain: 'expatden.com', prompts: 24, cites: 31, competitor: true, priority: 'High' },
     { domain: 'dentaldepartures.com', prompts: 19, cites: 26, competitor: true, priority: 'High' },
@@ -116,50 +114,50 @@ export const SAMPLE = {
 };
 
 export const DELIVERABLES = {
-  h2: 'Everything in the report',
-  lead: 'Twenty to thirty pages, plus a 45-minute call where we go through it with you.',
+  h2: 'What is in the report',
+  lead: 'About 25 pages, plus a 45-minute call where we walk you through it.',
   items: [
     {
-      name: 'Citation gap analysis',
-      what: '40 buying questions run live through ChatGPT, Perplexity and Google AI Overviews. Every source recorded, your presence or absence flagged on each.',
-      why: 'It gives you the exact list of websites you need to be mentioned on. Not a theory about authority — the actual pages the AI reads before it answers.',
+      name: 'Who AI recommends instead of you',
+      what: 'We ask 40 buying questions and write down every website AI quoted.',
+      why: 'You get the exact list of places you need to be mentioned. Not a guess.',
     },
     {
-      name: 'Competitor citation map',
-      what: 'Which competitors get named, on which questions, and which sites are doing the naming.',
-      why: 'Your real competition is whoever the AI finds easiest to quote. It is often not the business you benchmark against.',
+      name: 'Which competitors keep winning',
+      what: 'Which rivals get named, on which questions, and who is naming them.',
+      why: 'Your real competition is whoever AI finds easiest to quote. Usually not who you think.',
     },
     {
-      name: 'AI crawler access check',
-      what: 'GPTBot, PerplexityBot, ClaudeBot and Google-Extended tested against your live site, plus robots.txt and llms.txt.',
-      why: 'We have found sites blocking every AI crawler at the firewall without knowing. If this is broken, nothing else on this list can work.',
+      name: 'Whether AI can reach your site',
+      what: 'We test if the AI tools are allowed in, or blocked.',
+      why: 'We have found sites blocking every AI tool by accident. If this is broken, nothing else works.',
     },
     {
-      name: 'Structured data audit',
-      what: 'Every schema type on every template, validated. Organization, LocalBusiness, Service, FAQ, Article, author attribution.',
-      why: 'Schema is how a machine reads your business without guessing. Plugins that appear configured frequently emit nothing.',
+      name: 'Whether your site explains itself',
+      what: 'We check the hidden code that tells AI what you do, where you are, and what you charge.',
+      why: 'Without it, AI has to guess. It usually guesses wrong, or picks someone clearer.',
     },
     {
-      name: 'Content extractability review',
-      what: 'Whether your pages answer questions in a form an AI can lift and quote, and where prices, outcomes and credentials are hidden.',
-      why: 'An answer an AI cannot extract is an answer it will take from someone else.',
+      name: 'Whether AI can quote your pages',
+      what: 'We look at how your pages answer questions, and where prices and results are hidden.',
+      why: 'An answer AI cannot lift is an answer it takes from someone else.',
     },
     {
-      name: 'Cannibalisation check',
-      what: 'Every keyword where more than one of your URLs competes, with the live position of each.',
-      why: 'Blog posts outranking your own service pages split your authority and hide the problem inside a healthy-looking average position.',
+      name: 'Whether your pages fight each other',
+      what: 'Every search where two or more of your own pages compete.',
+      why: 'Blog posts beating your booking pages split your traffic and hide the problem.',
     },
     {
-      name: 'Prioritised fix list',
-      what: 'Every finding ranked by impact against effort, with the first 30 days written out.',
-      why: 'Forty problems is a paralysis list. Four is a plan.',
+      name: 'What to fix first',
+      what: 'Every problem ranked by what it is worth against what it costs to fix.',
+      why: 'Forty problems is overwhelming. Four is a plan.',
     },
   ],
 };
 
 export const PROOF = {
-  h2: 'Form Recovery & Wellness, six months after their audit',
-  lead: 'Confirmed paid consultations that came from an AI recommendation. Not enquiries, not sessions — bookings, with the source recorded at the time of booking.',
+  h2: 'Form Recovery & Wellness, six months later',
+  lead: 'Paid consultations that came from an AI recommendation. Not clicks or enquiries — real bookings, with the source recorded when they booked.',
   series: [
     { month: 'Oct', value: 3 },
     { month: 'Nov', value: 13 },
@@ -168,72 +166,72 @@ export const PROOF = {
     { month: 'Feb', value: 13 },
     { month: 'Mar', value: 27 },
   ],
-  callout: '3 → 27 a month. A 9× increase.',
-  honest: 'February dropped. We have left it in, because it is what happened. AI citation volume moves week to week, and a line that only goes up is a line somebody drew.',
+  callout: '3 → 27 a month. Nine times more.',
+  honest: 'February dropped. We left it in, because that is what happened. Any agency showing you a line that only goes up drew that line themselves.',
 };
 
 export const WHY_FREE = {
-  h2: 'Why there\'s no charge',
+  h2: 'Why it is free',
   body: [
-    'Because it beats a pitch.',
-    'We could send you a deck about AI search. Instead we ask the AI about your business and show you the answer. Most owners have never seen it, and it makes the decision obvious in either direction.',
-    'Enough of them ask us to close the gap that the maths works. The rest take the report to their own team, which is genuinely fine — it is written so somebody else can execute it.',
+    'Because showing beats telling.',
+    'We could send you a slide deck about AI search. Instead we ask AI about your business and show you the answer. Most owners have never seen it.',
+    'Enough of them ask us to fix it that the maths works. The rest take the report to their own team. That is fine — we write it so anyone can follow it.',
   ],
   catch: {
-    label: 'The constraint',
-    text: 'It costs us about five days of work, so we run four a month and we qualify first. If you have no intention of acting on what we find, the eight-question self-check on our homepage takes a minute and will tell you most of it.',
+    label: 'The catch',
+    text: 'It takes us about five days of work, so we only do four a month. If you are not going to act on it, take the one-minute check on our homepage instead.',
   },
 };
 
 export const PROCESS = {
-  h2: 'How it runs',
+  h2: 'How it works',
   steps: [
-    { n: '01', title: 'You send three things', body: 'Your website, your city, and the services you want more of. That is the entire brief.', when: 'Day 0' },
-    { n: '02', title: 'We write your question set', body: '40 buying questions a real customer would ask before choosing you. You approve them before anything runs.', when: 'Day 1' },
-    { n: '03', title: 'We run them live', body: 'Every question, through every major AI engine, recording the full citation list behind each answer.', when: 'Days 2–3' },
-    { n: '04', title: 'We audit the site against the gaps', body: 'Crawler access, schema, extractability, cannibalisation — checked against the specific failures the questions exposed.', when: 'Days 3–4' },
-    { n: '05', title: 'Report and walkthrough', body: '45 minutes, screen shared, every finding explained. The report is yours regardless of what you do next.', when: 'Day 5' },
+    { n: '01', title: 'You send three things', body: 'Your website, your city, and what you want more customers for.', when: 'Day 0' },
+    { n: '02', title: 'We write the questions', body: '40 questions a real customer would ask before choosing you. You approve them first.', when: 'Day 1' },
+    { n: '03', title: 'We ask them', body: 'Every question, to every major AI tool. We record who gets named.', when: 'Days 2–3' },
+    { n: '04', title: 'We check your site', body: 'We look for the reasons AI skipped you.', when: 'Days 3–4' },
+    { n: '05', title: 'You get the report', body: '45 minutes on a call, going through it together. The report is yours either way.', when: 'Day 5' },
   ],
 };
 
 export const NOT_INCLUDED = {
-  h2: 'When not to book this',
-  lead: 'Four situations where the audit is the wrong thing to ask us for:',
+  h2: 'When to skip this',
+  lead: 'Four times you should not book:',
   items: [
-    'You want the problem fixed, not diagnosed. This is a diagnosis. Implementation is your team or a separate engagement, and we will tell you which findings you can handle in-house.',
-    'You need results this month. AI engines re-crawl on their own schedule. The clients we track take 60–90 days after the fixes ship before citation counts move.',
-    'Your offer is genuinely weaker than the competition. We can make a machine find you and read you. We cannot make it prefer a clinic with 12 reviews to one with 400.',
-    'You have under 20 pages and no real competitors. The eight-question self-check on our homepage will tell you most of what you need, in a minute.',
+    'You want it fixed, not explained. This tells you what is wrong. Fixing it is your team or a separate job — we will say which parts you can do yourself.',
+    'You need customers this month. AI takes 60–90 days to notice changes. Some things move in 30. Nothing moves in a week.',
+    'Your offer is genuinely weaker. We can get AI to find you and read you. We cannot get it to pick 12 reviews over 400.',
+    'You have a small site and no real competitors. The one-minute check on our homepage will tell you enough.',
   ],
 };
 
 export const FAQS = [
   {
     q: 'How is this different from a normal SEO audit?',
-    a: 'A normal SEO audit checks whether Google can crawl and rank you. This checks whether an AI can read, understand and quote you — then asks the AI directly, 40 times, and records what it says. Most SEO audits never open ChatGPT once.',
+    a: 'A normal audit checks if Google can find you. This checks if AI can understand and quote you — then asks AI 40 times and writes down what it said. Most SEO audits never open ChatGPT once.',
   },
   {
-    q: 'What\'s the catch?',
-    a: 'Capacity, not money. It takes about five days of work, so we run four a month and qualify before starting. We do it because enough owners who see their citation gap ask us to close it. You keep the report either way, and there is nothing to cancel.',
+    q: 'What is the catch?',
+    a: 'Time, not money. It takes five days of work, so we do four a month and check you are a fit first. We do it because enough owners ask us to fix what we find. You keep the report either way.',
   },
   {
-    q: 'Who actually runs it?',
-    a: 'Sunny, who runs Locully, with the same process we use for paying clients. Not an intern, and not a tool that emails you a PDF — the 40 questions are written for your business and reviewed by hand.',
+    q: 'Who does the work?',
+    a: 'Sunny, who runs Locully. Same process we use for paying clients. Not an intern, and not a tool that emails you a PDF — the questions are written for your business by hand.',
   },
   {
-    q: 'How long until I see results?',
-    a: 'Findings on day 5. Results depend on how fast the fixes ship. Citation movement typically starts 60–90 days after that; technical items like crawler access and schema can move inside 30.',
+    q: 'How long until it works?',
+    a: 'You get the report on day 5. After you make the changes, AI usually takes 60–90 days to catch up. A few things move inside 30.',
   },
   {
     q: 'Do you work outside Bangkok?',
-    a: 'Yes. ChatGPT, Perplexity and Gemini behave the same everywhere. Google AI Overviews vary by country, so we run those against your actual market. We have clients in Bangkok, Singapore and the UK.',
+    a: 'Yes. ChatGPT and Perplexity work the same everywhere. Google is different country to country, so we test yours. We have clients in Bangkok, Singapore and the UK.',
   },
   {
     q: 'Will you audit my competitor too?',
-    a: 'Not in the same category and area. If we have audited a dental clinic in Thonglor, we will not take another. You are getting a map of your category — it is worth nothing if we hand the same map to the people you compete with.',
+    a: 'No. One business per area. You are getting a map of your market — it is worth nothing if we hand the same map to the people you compete with.',
   },
   {
-    q: 'What happens to my data?',
-    a: 'The report is yours. We use anonymised findings as examples — like the sample on this page — with names, domains and screenshots removed. We never publish a client\'s identity alongside their weaknesses.',
+    q: 'What happens to my information?',
+    a: 'The report is yours. We sometimes use findings as examples, like the sample on this page, with all names and web addresses removed. We never show a client\'s name next to their weak spots.',
   },
 ];
