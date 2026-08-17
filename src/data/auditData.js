@@ -60,8 +60,33 @@ export const FINDINGS = {
 
 export const SAMPLE = {
   h2: 'Here is what you get back',
-  lead: 'The main page of the report. Every question we asked, every website AI trusted, and whether you were on the list. This is a real one, with names removed.',
+  lead: 'This is the heart of the audit. We call it a citation gap analysis — "citation" because AI quotes websites, "gap" because we find the ones missing your name. Here is how it is built, step by step.',
   caption: 'Real audit — Bangkok dental clinic. 4 of 40 questions shown. Names and web addresses removed.',
+
+  // The walkthrough. Each step names one part of the format and explains it
+  // before the reader sees the data, so the layout teaches as it demonstrates.
+  steps: [
+    {
+      n: '01',
+      name: 'The question',
+      explain: 'We write 40 questions your customers actually type before they buy. Not "dentist Bangkok" — the real ones, like "how much do implants cost". Click any question below to follow it through.',
+    },
+    {
+      n: '02',
+      name: 'The websites AI quoted',
+      explain: 'AI does not invent its answer. It reads pages on the internet and repeats what they say. These are the exact pages it used to answer that question — in the order it used them.',
+    },
+    {
+      n: '03',
+      name: 'Were you in there?',
+      explain: 'We check every quoted page against your website and your business name. This clinic was quoted zero times out of forty. Someone else was quoted 173 times.',
+    },
+    {
+      n: '04',
+      name: 'Where you need to be',
+      explain: 'Now we know exactly which websites AI trusts on your topic. The ones quoted most often, that never mention you, go to the top. That is your to-do list.',
+    },
+  ],
   verdict: { cited: 0, total: 40, sources: 173, competitorMentions: 61 },
   prompts: [
     {
@@ -102,8 +127,8 @@ export const SAMPLE = {
       ],
     },
   ],
-  gapsTitle: 'Where you need to be',
-  gapsLead: 'The websites AI trusts on your topic, that never mention you. Most-quoted first. Work down the list.',
+  gapsTitle: 'Your list, most important first',
+  gapsLead: 'Every one of these was quoted by AI when answering your customers. None of them mention you. Start at the top.',
   gaps: [
     { domain: 'expatden.com', prompts: 24, cites: 31, competitor: true, priority: 'High' },
     { domain: 'dentaldepartures.com', prompts: 19, cites: 26, competitor: true, priority: 'High' },
