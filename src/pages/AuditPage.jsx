@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ChevronDown, XCircle } from 'lucide-react';
@@ -9,8 +9,6 @@ import {
   AUDIT_OFFER, HERO, TRUST_BAR, FINDINGS, SAMPLE, DELIVERABLES,
   PROOF, WHY_FREE, PROCESS, NOT_INCLUDED, FAQS,
 } from '@/data/auditData';
-
-const SENJA_WIDGET_ID = 'e78045b1-0c17-4032-ae66-d945b9ace7b2';
 
 const reveal = {
   initial: { opacity: 0, y: 16 },
@@ -54,18 +52,6 @@ const schemaBreadcrumb = {
 const AuditPage = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const maxProof = Math.max(...PROOF.series.map((p) => p.value));
-
-  // Senja testimonial widget — loaded here rather than in index.html so the
-  // script only costs the pages that actually show it.
-  useEffect(() => {
-    const id = 'senja-widget-script';
-    if (document.getElementById(id)) return;
-    const s = document.createElement('script');
-    s.id = id;
-    s.src = `https://widget.senja.io/widget/${SENJA_WIDGET_ID}/platform.js`;
-    s.async = true;
-    document.body.appendChild(s);
-  }, []);
 
   return (
     <div className="audit-page">
@@ -136,7 +122,7 @@ const AuditPage = () => {
             <div
               className="aud-bars"
               role="img"
-              aria-label="AI-sourced consultations by month: October 3, November 13, December 16, January 17, February 13, March 27."
+              aria-label="AI-sourced consultations by month: October 3, November 13, December 16, January 17, February 13, March 27, April 38."
             >
               {PROOF.series.map((p) => (
                 <div className="aud-bar-col" key={p.month}>
@@ -148,16 +134,6 @@ const AuditPage = () => {
             </div>
             <p className="aud-callout">{PROOF.callout}</p>
             <p className="aud-honest">{PROOF.honest}</p>
-
-            <div className="aud-senja">
-              <div
-                className="senja-embed"
-                data-id={SENJA_WIDGET_ID}
-                data-mode="shadow"
-                data-lazyload="false"
-                style={{ display: 'block', width: '100%' }}
-              />
-            </div>
           </motion.div>
         </section>
 

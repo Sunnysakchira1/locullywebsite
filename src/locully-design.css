@@ -1079,7 +1079,6 @@ img { max-width: 100%; height: auto; }
 .audit-page .aud-finding-stat { font-family: var(--serif); font-size: 30px; color: var(--terra); line-height: 1; display: block; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
 .audit-page .aud-finding p { margin: 0; font-size: 14.5px; color: var(--muted); line-height: 1.6; }
 
-.audit-page .aud-senja { margin-top: 34px; }
 
 .audit-page .aud-final-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; text-align: left; max-width: 1080px; margin: 0 auto; }
 .audit-page .aud-final-grid p { margin: 14px 0 0; }

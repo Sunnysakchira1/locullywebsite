@@ -26,7 +26,7 @@ export const HERO = {
 };
 
 export const TRUST_BAR = [
-  { stat: '9×', label: 'more AI bookings for Form Recovery in six months' },
+  { stat: '13×', label: 'more AI bookings for one Bangkok clinic in seven months' },
   { stat: '40', label: 'questions, asked live to three AI tools' },
   { stat: '5 days', label: 'from start to report and a call' },
 ];
@@ -181,7 +181,7 @@ export const DELIVERABLES = {
 };
 
 export const PROOF = {
-  h2: 'Form Recovery & Wellness, six months later',
+  h2: 'A Bangkok wellness clinic, seven months on',
   lead: 'Paid consultations that came from an AI recommendation. Not clicks or enquiries — real bookings, with the source recorded when they booked.',
   series: [
     { month: 'Oct', value: 3 },
@@ -190,8 +190,9 @@ export const PROOF = {
     { month: 'Jan', value: 17 },
     { month: 'Feb', value: 13 },
     { month: 'Mar', value: 27 },
+    { month: 'Apr', value: 38 },
   ],
-  callout: '3 → 27 a month. Nine times more.',
+  callout: '3 → 38 a month. Almost thirteen times more.',
   honest: 'February dropped. We left it in, because that is what happened. Any agency showing you a line that only goes up drew that line themselves.',
 };
 
