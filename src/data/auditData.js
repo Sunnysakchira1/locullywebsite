@@ -1,184 +1,147 @@
-// All /audit page copy.
+// All copy for /audit.
 //
-// Written for a busy clinic or restaurant owner, not a marketer. Rules:
-//   1. Short sentences. Active voice. No SEO jargon — say "can AI read your
-//      site" instead of "crawlability", "your own pages compete" instead of
-//      "cannibalisation".
-//   2. No presumptuous headings. Show evidence, don't tell the reader how
-//      they feel.
-//   3. "Free" earns its place once.
+// Rules for this file:
+//   1. Every line is a complete sentence. No fragments, no "Free. Five days."
+//      style clipping. A reader should never have to infer the missing half.
+//   2. No marketing or SEO vocabulary. Say what happens, in the words a clinic
+//      owner would use.
+//   3. Four sections only. The page sells the offer before it explains itself.
 
 export const AUDIT_OFFER = {
-  turnaround: '5 working days',
-  capacity: 'Four a month',
-  exclusivity: 'One business per area. We never audit two competitors.',
+  turnaround: 'five working days',
+  capacity: 'four',
   questions: 40,
 };
 
 export const HERO = {
-  eyebrow: 'AI Visibility Audit',
-  h1: 'Does ChatGPT recommend you, or your competitor?',
-  sub: 'We ask ChatGPT the questions your customers ask. Things like "best dentist in Bangkok". Then we show you the names it gave back — and why yours was not one of them.',
+  eyebrow: 'Free AI visibility audit',
+  h1: 'Find out whether ChatGPT recommends your business, or your competitor.',
+  body: [
+    'When someone asks ChatGPT to recommend a business like yours, it gives them a short list of names. Most owners have never seen that list, and most of them are not on it.',
+    'We ask ChatGPT, Perplexity and Google the forty questions your customers ask before they choose. We write down every business and every website that comes back. Then we send you the answer, along with the reasons your name was missing.',
+    'The audit costs nothing and it takes five working days.',
+  ],
   formTitle: 'Start your audit',
-  formSub: 'Three questions. That is the whole form.',
+  formSub: 'We need three things from you, and nothing else.',
   cta: 'Send me my audit',
-  microtrust: 'Free · four a month · we only work with one business per area',
+  microtrust: 'We run four of these a month, and we only work with one business in each area.',
 };
 
-export const TRUST_BAR = [
-  { stat: '13×', label: 'more bookings from AI for one Bangkok clinic' },
-  { stat: '40', label: 'questions we ask, one by one, in real AI tools' },
-  { stat: '5 days', label: 'until you get the answers, and a call to explain them' },
-];
+// The mocked AI answer in the hero. This is the block that explains the product
+// without the reader having to read anything.
+export const DEMO = {
+  question: 'What is the best clinic for dental implants in Bangkok?',
+  intro: 'Based on reviews and expat recommendations, three clinics come up most often:',
+  answers: [
+    { name: 'Bangkok Smile Dental', note: 'Mentioned in most expat guides and directories.' },
+    { name: 'Thonglor Dental Care', note: 'Widely reviewed on international clinic sites.' },
+    { name: 'Sukhumvit Dental Studio', note: 'Appears in several Bangkok dentistry roundups.' },
+  ],
+  verdict: 'Your business was not mentioned.',
+  verdictNote: 'This is what almost every audit looks like on the first day. The three clinics above are not better than you. They are simply easier for ChatGPT to find and quote.',
+};
 
-export const FINDINGS = {
-  h2: 'What we usually find',
-  lead: 'Things we found on real websites. Every number here came from a report we sent a client.',
+export const FINDOUT = {
+  h2: 'What you find out',
+  lead: 'The report answers three questions about your business, and it answers them with evidence rather than opinion.',
   items: [
     {
-      stat: '0 of 3',
-      title: 'AI answers mentioned the clinic',
-      body: 'They were 4th on Google. But when we asked AI, it named five other clinics. Never theirs.',
-    },
-    {
-      stat: '16 of 16',
-      title: 'searches where they competed with themselves',
-      body: 'Their blog posts were beating their own booking page. By up to 50 places.',
-    },
-    {
-      stat: '500+',
-      title: 'pages AI could not make sense of',
-      body: 'They had paid for a tool to fix this. It was switched on. It was doing nothing.',
-    },
-    {
-      stat: '100%',
-      title: 'of their prices were hidden',
-      body: 'You had to ask on LINE to get a price. So AI used a competitor who put theirs online.',
-    },
-  ],
-};
-
-export const SAMPLE = {
-  h2: 'Here is what you get back',
-  lead: 'This is the main part of the report. We ask AI a question. We write down which websites it used to answer. Then we check whether yours was one of them. Here it is, step by step.',
-  caption: 'Real audit — Bangkok dental clinic. 4 of 40 questions shown. Names and web addresses removed.',
-
-  // The walkthrough. Each step names one part of the format and explains it
-  // before the reader sees the data, so the layout teaches as it demonstrates.
-  steps: [
-    {
       n: '01',
-      name: 'The question',
-      explain: 'We write 40 questions a real customer would ask before choosing you. Not "dentist Bangkok". Questions like "how much do implants cost". Pick one below and follow it through.',
+      title: 'Who ChatGPT recommends instead of you',
+      body: 'We show you every business that got named in place of yours, and every website that ChatGPT read in order to name them. You end up with a list of the websites that decide who gets recommended in your market.',
     },
     {
       n: '02',
-      name: 'The websites AI quoted',
-      explain: 'AI does not make its answers up. It reads websites and repeats what they say. These are the websites it read to answer that question, in the order it used them.',
+      title: 'Why your business was left out',
+      body: 'We go through your website the way ChatGPT does. We check whether it is allowed to read your site at all, whether your pages explain what you sell and what you charge, and whether your own pages are competing against each other.',
     },
     {
       n: '03',
-      name: 'Were you in there?',
-      explain: 'Now we look for you. We check every website AI used against your name and your address online. This clinic was never used. Not once in 40 questions.',
+      title: 'What to change first',
+      body: 'We put every problem in order, starting with the ones that will make the biggest difference for the least work. You get a list of four things to do this month, not a list of forty things to worry about.',
     },
-    {
-      n: '04',
-      name: 'Where you need to be',
-      explain: 'We now know which websites AI listens to. The ones it uses most, that never mention you, go at the top. That is your to-do list.',
-    },
-  ],
-  verdict: { cited: 0, total: 40, sources: 173, competitorMentions: 61 },
-  prompts: [
-    {
-      q: 'best clinic for dental implants in Bangkok',
-      cited: false,
-      sources: [
-        { domain: 'expatden.com', title: 'Dental Care in Bangkok: A Complete Guide for Expats', competitor: true },
-        { domain: 'dentaldepartures.com', title: 'Top 10 Dental Clinics in Bangkok — Verified Reviews', competitor: true },
-        { domain: 'whatclinic.com', title: 'Dental Implant Clinics in Bangkok, Thailand', competitor: true },
-        { domain: 'reddit.com/r/Bangkok', title: 'Anyone had implants done here? Recommendations?', competitor: false },
-      ],
-    },
-    {
-      q: 'how much do dental implants cost in Bangkok',
-      cited: false,
-      sources: [
-        { domain: 'dentaldepartures.com', title: 'Dental Implant Cost in Thailand vs Australia 2026', competitor: true },
-        { domain: 'expatden.com', title: 'What Dental Work Actually Costs in Bangkok', competitor: true },
-        { domain: 'thethaiger.com', title: 'Medical Tourism Pricing Guide: Thailand 2026', competitor: false },
-      ],
-    },
-    {
-      q: 'which Bangkok dental clinic do expats use',
-      cited: false,
-      sources: [
-        { domain: 'expatden.com', title: 'The Clinics Bangkok Expats Actually Use', competitor: true },
-        { domain: 'reddit.com/r/Bangkok', title: 'Best dentist for a long-term expat?', competitor: true },
-        { domain: 'thethaiger.com', title: 'Healthcare for Foreigners in Bangkok', competitor: false },
-      ],
-    },
-    {
-      q: 'most trusted veneers clinic in Bangkok',
-      cited: false,
-      sources: [
-        { domain: 'whatclinic.com', title: 'Veneers in Bangkok — Clinic Directory', competitor: true },
-        { domain: 'bangkokpost.com', title: 'The Rise of Cosmetic Dentistry in Thailand', competitor: false },
-        { domain: 'expatden.com', title: 'Cosmetic Dentistry in Bangkok: What to Know First', competitor: true },
-      ],
-    },
-  ],
-  gapsTitle: 'Your list, most important first',
-  gapsLead: 'AI used every one of these to answer your customers. None of them mention you. Start at the top.',
-  gaps: [
-    { domain: 'expatden.com', prompts: 24, cites: 31, competitor: true, priority: 'High' },
-    { domain: 'dentaldepartures.com', prompts: 19, cites: 26, competitor: true, priority: 'High' },
-    { domain: 'whatclinic.com', prompts: 17, cites: 22, competitor: true, priority: 'High' },
-    { domain: 'reddit.com/r/Bangkok', prompts: 11, cites: 14, competitor: true, priority: 'Medium' },
-    { domain: 'thethaiger.com', prompts: 8, cites: 9, competitor: false, priority: 'Medium' },
   ],
 };
 
-export const DELIVERABLES = {
-  h2: 'What is in the report',
-  lead: 'About 25 pages. Then a 45-minute call where we go through it with you.',
+// The four parts of the report, shown as a 2x2 grid. These mirror the four tabs
+// of the real Locully citation gap audit exactly: Raw Responses, Competitors
+// Cited, All URLs Cited, Prospect List.
+//
+// To use a real screenshot instead of the built-in mini table, save the image
+// into public/audit/ and set `image` to its path, for example
+// image: '/audit/tab-1-raw-responses.png'. The mini table is used whenever
+// `image` is null. Every screenshot must have client names and web addresses
+// removed before it goes in.
+export const REPORT_TABS = {
+  h2: 'What the report actually looks like',
+  lead: 'The report arrives as a spreadsheet with four tabs. Each tab answers a different question, and they build on each other from left to right. Below is what each one contains, using a dental clinic in Bangkok as the example.',
   items: [
     {
-      name: 'Who AI recommends instead of you',
-      what: 'We ask 40 questions and write down every website AI used to answer them.',
-      why: 'You end up with the exact list of places you need to be mentioned. Not a guess.',
+      n: '01',
+      tab: 'Raw responses',
+      title: 'Every question, and exactly what AI answered',
+      body: 'We keep the full answer to all forty questions, word for word. You can read exactly what a customer would have seen when they asked about a business like yours.',
+      image: null,
+      table: {
+        headers: ['Question', 'You in the answer?', 'Your page used?'],
+        rows: [
+          ['best clinic for dental implants in Bangkok', 'No', 'No'],
+          ['how much do dental implants cost in Bangkok', 'No', 'No'],
+          ['which Bangkok dental clinic do expats use', 'No', 'No'],
+        ],
+      },
     },
     {
-      name: 'Which competitors keep winning',
-      what: 'Which of your rivals get named, on which questions, and which websites are naming them.',
+      n: '02',
+      tab: 'Competitors cited',
+      title: 'Every business AI named instead of you',
+      body: 'We pull out each business AI recommended, and note which question caused it to come up. This tells you who AI thinks your competitors are, which is often not the list you would have written yourself.',
+      image: null,
+      table: {
+        headers: ['Business named', 'Questions', 'Is it you?'],
+        rows: [
+          ['Bangkok Smile Dental', '14', 'No'],
+          ['Thonglor Dental Care', '11', 'No'],
+          ['Sukhumvit Dental Studio', '9', 'No'],
+        ],
+      },
     },
     {
-      name: 'Can AI open your website at all?',
-      what: 'Some websites block AI without meaning to. We check yours.',
-      why: 'We have found sites shutting out every AI tool by accident. If this is wrong, nothing else matters.',
+      n: '03',
+      tab: 'All websites used',
+      title: 'Every website AI read to build its answer',
+      body: 'AI does not invent its answers, it repeats what it reads. This tab lists every single page it used across all forty questions, and marks whether your business appears anywhere on that page.',
+      image: null,
+      table: {
+        headers: ['Website', 'Times used', 'You on it?'],
+        rows: [
+          ['expatden.com', '31', 'No'],
+          ['dentaldepartures.com', '26', 'No'],
+          ['whatclinic.com', '22', 'No'],
+        ],
+      },
     },
     {
-      name: 'Does your website say what you do?',
-      what: 'Your website has hidden notes that tell AI your services, your address and your prices. We check yours are there.',
-    },
-    {
-      name: 'Can AI copy an answer off your page?',
-      what: 'We read your pages the way AI does, and find the answers that are buried or missing.',
-    },
-    {
-      name: 'Are your own pages competing?',
-      what: 'Every search where two or more of your pages are going after the same customer.',
-      why: 'When your blog beats your booking page, you split your own customers in half.',
-    },
-    {
-      name: 'What to fix first',
-      what: 'Every problem in order: what it is worth, and how hard it is to fix.',
+      n: '04',
+      tab: 'Your prospect list',
+      title: 'The websites to go and get listed on',
+      body: 'This is the tab you act on. It is every website AI trusts that does not mention you, sorted so the most valuable one is at the top, with a note on how to approach each one.',
+      image: null,
+      table: {
+        headers: ['Website', 'Times used', 'What to do', 'Priority'],
+        rows: [
+          ['expatden.com', '31', 'Ask to be added to the guide', 'High'],
+          ['dentaldepartures.com', '26', 'Claim your clinic listing', 'High'],
+          ['whatclinic.com', '22', 'Submit clinic profile', 'Medium'],
+        ],
+      },
     },
   ],
 };
 
 export const PROOF = {
-  h2: 'A Bangkok wellness clinic, seven months on',
-  lead: 'People who found this clinic through AI, then booked and paid. Not clicks. Not enquiries. We asked each one how they found the clinic when they booked.',
+  h2: 'What happens after the problems get fixed',
+  lead: 'These are the bookings one Bangkok wellness clinic received from people who found them through AI. Every one of these people booked an appointment and paid for it, and we asked each of them how they found the clinic at the time they booked.',
   series: [
     { month: 'Oct', value: 3 },
     { month: 'Nov', value: 13 },
@@ -188,67 +151,38 @@ export const PROOF = {
     { month: 'Mar', value: 27 },
     { month: 'Apr', value: 38 },
   ],
-  callout: '3 → 38 a month. Almost thirteen times more.',
-  honest: 'February went down. We left it in, because that is what happened. If an agency shows you a line that only goes up, they drew it themselves.',
-};
-
-export const WHY_FREE = {
-  h2: 'Why it is free',
-  body: [
-    'Because showing beats telling.',
-    'We could send you slides about AI search. Instead we ask AI about your business and show you what it said. Enough owners ask us to fix what they see. That pays for the rest.',
-  ],
-  catch: {
-    label: 'The catch',
-    text: 'It takes us five days, so we only do four a month. If you are not going to do anything with it, try the one-minute check on our homepage instead.',
-  },
-};
-
-export const PROCESS = {
-  h2: 'How it works',
-  steps: [
-    { n: '01', title: 'You send three things', body: 'Your website, your city, and what you want more customers for. That is it.', when: 'Day 0' },
-    { n: '02', title: 'We write the questions', body: '40 questions a real customer would ask before picking you. You see them first and can change any of them.', when: 'Day 1' },
-    { n: '03', title: 'We ask them', body: 'Every question, in every big AI tool. We write down which businesses get named.', when: 'Days 2–3' },
-    { n: '04', title: 'We look at your website', body: 'We go through it to find the reasons AI skipped you.', when: 'Days 3–4' },
-    { n: '05', title: 'You get the report', body: 'We spend 45 minutes going through it with you. The report is yours to keep, whatever you decide.', when: 'Day 5' },
-  ],
-};
-
-export const NOT_INCLUDED = {
-  h2: 'When to skip this',
-  lead: 'Four times you should not bother:',
-  items: [
-    'You want it fixed, not explained. This tells you what is wrong. Fixing it is a separate job, or your own team — we will tell you which bits you can do yourself.',
-    'You need customers this month. AI takes two to three months to notice changes. Some things move faster. Nothing moves in a week.',
-    'Your business is genuinely the weaker choice. We can get AI to find you and read you. We cannot make it pick 12 reviews over 400.',
-    'You have a small website and nobody really competing with you. The one-minute check on our homepage will tell you enough.',
-  ],
+  callout: 'They went from three bookings a month to thirty-eight in seven months.',
+  honest: 'February was worse than January, and we have left that month in the chart because that is what actually happened. If an agency shows you a line that only ever goes up, they drew that line themselves.',
 };
 
 export const FAQS = [
   {
-    q: 'How is this different from a normal SEO audit?',
-    a: 'A normal audit checks whether Google can find you. This one checks whether AI can understand you and copy from you. Then it asks AI 40 times and writes down the answers. Most SEO audits never open ChatGPT once.',
+    q: 'Why is the audit free?',
+    a: 'Because showing you the problem works better than telling you about it. We could send you slides explaining AI search, but it is far more convincing to ask ChatGPT about your business and show you what it said. Enough owners ask us to fix what they see that the audit pays for itself, and if you take the report to your own team instead, that is completely fine.',
   },
   {
-    q: 'Who does the work?',
-    a: 'Sunny, who runs Locully. The same way we do it for paying clients. Not an intern, and not a robot that emails you a PDF. The questions are written for your business by hand.',
+    q: 'What is different about this compared to a normal SEO audit?',
+    a: 'A normal SEO audit checks whether Google can find your website. This audit checks whether AI tools can understand your business well enough to recommend it, and then it goes and asks them forty times to see what they actually say. Most SEO audits never open ChatGPT at all.',
   },
   {
-    q: 'How long until it works?',
-    a: 'You get the report in five days. After you make the changes, AI usually takes two to three months to catch up. A few things move faster.',
+    q: 'How long does it take before anything changes?',
+    a: 'You receive the report five working days after you send us your details. Once you make the changes, AI tools usually take two to three months to notice them, although a few technical fixes can take effect sooner than that.',
   },
   {
-    q: 'Do you work outside Bangkok?',
-    a: 'Yes. ChatGPT works the same everywhere. Google changes from country to country, so we test yours. We have clients in Bangkok, Singapore and the UK.',
+    q: 'Who actually does the work?',
+    a: 'Sunny, who runs Locully, does it personally, using the same process we use for clients who pay us. The forty questions are written by hand for your particular business, so this is not a tool that generates a PDF automatically.',
   },
   {
-    q: 'Will you audit my competitor too?',
-    a: 'No. One business per area. You are getting a map of your market. It is worth nothing to you if we hand the same map to the people you are up against.',
+    q: 'Will you do this for my competitor as well?',
+    a: 'No, we will not. We only work with one business in each area and category, because the report is a map of your market and it would be worth nothing to you if we handed the same map to the people you are competing against.',
   },
   {
-    q: 'What happens to my information?',
-    a: 'The report is yours. We sometimes show what we found as an example, like the one on this page, with every name and web address taken out. We never put a client\'s name next to their weak spots.',
+    q: 'What happens to the information you find?',
+    a: 'The report belongs to you. We sometimes use findings as examples, in the way we have on this page, but we remove every name and every web address before we do. We will never put a client\'s name next to their weaknesses.',
   },
 ];
+
+export const CLOSING = {
+  h2: 'Find out what ChatGPT says about your business',
+  body: 'Send us your website, your city and the services you want more customers for. We will write your forty questions, ask them, and send you the answers within five working days.',
+};

@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ChevronDown, XCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Footer from '@/components/Footer';
 import AuditForm from '@/components/AuditForm';
-import SampleGapReport from '@/components/SampleGapReport';
-import {
-  AUDIT_OFFER, HERO, TRUST_BAR, FINDINGS, SAMPLE, DELIVERABLES,
-  PROOF, WHY_FREE, PROCESS, NOT_INCLUDED, FAQS,
-} from '@/data/auditData';
+import AiAnswerDemo from '@/components/AiAnswerDemo';
+import ReportTabs from '@/components/ReportTabs';
+import { HERO, FINDOUT, REPORT_TABS, PROOF, FAQS, CLOSING } from '@/data/auditData';
 
 const reveal = {
   initial: { opacity: 0, y: 16 },
@@ -21,12 +19,12 @@ const schemaService = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'AI Visibility Audit',
-  serviceType: 'Generative Engine Optimization audit',
+  serviceType: 'AI search visibility audit',
   provider: { '@id': 'https://www.locully.org/#organization' },
   areaServed: [{ '@type': 'City', name: 'Bangkok' }, { '@type': 'Country', name: 'Thailand' }],
   url: 'https://www.locully.org/audit',
   description:
-    'We ask ChatGPT, Perplexity and Google 40 questions your customers ask, show you which businesses got recommended instead of you, and check why AI skipped your site. Free, delivered in 5 working days.',
+    'We ask ChatGPT, Perplexity and Google the forty questions your customers ask before they choose a business like yours, then send you the answers and the reasons your business was not mentioned. The audit is free and takes five working days.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'THB', availability: 'https://schema.org/LimitedAvailability' },
 };
 
@@ -59,7 +57,7 @@ const AuditPage = () => {
         <title>Free AI Visibility Audit — Does ChatGPT Recommend You? | Locully</title>
         <meta
           name="description"
-          content="We ask ChatGPT, Perplexity and Google 40 questions your customers ask before they buy. Then we show you who got named, and why it wasn't you. Free, in five days."
+          content="We ask ChatGPT, Perplexity and Google the questions your customers ask before they choose a business like yours, then send you the answers and the reasons your business was not mentioned. Free, in five working days."
         />
         <link rel="canonical" href="https://www.locully.org/audit" />
         <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
@@ -68,53 +66,50 @@ const AuditPage = () => {
       </Helmet>
 
       <main>
-        {/* HERO — form above the fold, no scrolling to convert */}
+        {/* 1 — THE OFFER, AND THE PICTURE THAT EXPLAINS IT */}
         <section className="aud-hero">
+          <p className="aud-eyebrow">{HERO.eyebrow}</p>
+          <h1>{HERO.h1}</h1>
           <div className="aud-hero-grid">
-            <div>
-              <p className="aud-eyebrow">{HERO.eyebrow}</p>
-              <h1>{HERO.h1}</h1>
-              <p className="aud-lede">{HERO.sub}</p>
-              <dl className="aud-trustbar">
-                {TRUST_BAR.map((t) => (
-                  <div key={t.stat}>
-                    <dt>{t.stat}</dt>
-                    <dd>{t.label}</dd>
-                  </div>
-                ))}
-              </dl>
+            <div className="aud-hero-copy">
+              {HERO.body.map((p) => <p key={p}>{p}</p>)}
+              <AiAnswerDemo />
             </div>
-            <AuditForm id="audit-form-top" />
+            <div className="aud-hero-form">
+              <AuditForm id="audit-form-top" />
+            </div>
           </div>
         </section>
 
-        {/* SAMPLE REPORT — show the deliverable before asking for anything else */}
+        {/* 2 — WHAT YOU FIND OUT */}
         <section className="aud-sec aud-sec-alt">
           <motion.div {...reveal}>
-            <h2>{SAMPLE.h2}</h2>
-            <p className="aud-lead">{SAMPLE.lead}</p>
-            <SampleGapReport />
+            <h2>{FINDOUT.h2}</h2>
+            <p className="aud-lead">{FINDOUT.lead}</p>
+            <ol className="aud-findout">
+              {FINDOUT.items.map((it) => (
+                <li key={it.n}>
+                  <span className="aud-findout-n">{it.n}</span>
+                  <div>
+                    <h3>{it.title}</h3>
+                    <p>{it.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </motion.div>
         </section>
 
-        {/* FINDINGS — evidence, not assumptions about the reader */}
+        {/* 3 — WHAT THE REPORT LOOKS LIKE */}
         <section className="aud-sec">
           <motion.div {...reveal}>
-            <h2>{FINDINGS.h2}</h2>
-            <p className="aud-lead">{FINDINGS.lead}</p>
-            <div className="aud-grid-2">
-              {FINDINGS.items.map((f) => (
-                <div className="aud-finding" key={f.title}>
-                  <span className="aud-finding-stat">{f.stat}</span>
-                  <h3>{f.title}</h3>
-                  <p>{f.body}</p>
-                </div>
-              ))}
-            </div>
+            <h2>{REPORT_TABS.h2}</h2>
+            <p className="aud-lead">{REPORT_TABS.lead}</p>
+            <ReportTabs />
           </motion.div>
         </section>
 
-        {/* PROOF — named client, real numbers, video + written testimonials */}
+        {/* 4 — PROOF */}
         <section className="aud-sec aud-sec-alt">
           <motion.div {...reveal}>
             <h2>{PROOF.h2}</h2>
@@ -122,7 +117,7 @@ const AuditPage = () => {
             <div
               className="aud-bars"
               role="img"
-              aria-label="AI-sourced consultations by month: October 3, November 13, December 16, January 17, February 13, March 27, April 38."
+              aria-label="Bookings from AI by month: October 3, November 13, December 16, January 17, February 13, March 27, April 38."
             >
               {PROOF.series.map((p) => (
                 <div className="aud-bar-col" key={p.month}>
@@ -137,100 +132,27 @@ const AuditPage = () => {
           </motion.div>
         </section>
 
-        {/* DELIVERABLES */}
+        {/* 5 — START, WITH THE QUESTIONS PEOPLE ASK FIRST */}
         <section className="aud-sec">
           <motion.div {...reveal}>
-            <h2>{DELIVERABLES.h2}</h2>
-            <p className="aud-lead">{DELIVERABLES.lead}</p>
-            <div className="aud-deliverables">
-              {DELIVERABLES.items.map((d) => (
-                <div className="aud-deliverable" key={d.name}>
-                  <CheckCircle2 size={18} className="aud-tick" aria-hidden="true" />
-                  <div>
-                    <h3>{d.name}</h3>
-                    <p>{d.what}</p>
-                    {d.why && <p className="aud-why"><strong>Why it matters:</strong> {d.why}</p>}
-                  </div>
+            <div className="aud-final-grid">
+              <div>
+                <h2>{CLOSING.h2}</h2>
+                <p className="aud-lead">{CLOSING.body}</p>
+                <div className="aud-faqs">
+                  {FAQS.map((f, i) => (
+                    <div className={`aud-faq${openFaq === i ? ' open' : ''}`} key={f.q}>
+                      <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i}>
+                        <span>{f.q}</span><ChevronDown size={18} aria-hidden="true" />
+                      </button>
+                      {openFaq === i && <p>{f.a}</p>}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <AuditForm id="audit-form-bottom" />
             </div>
           </motion.div>
-        </section>
-
-        {/* PROCESS */}
-        <section className="aud-sec aud-sec-alt">
-          <motion.div {...reveal}>
-            <h2>{PROCESS.h2}</h2>
-            <ol className="aud-process">
-              {PROCESS.steps.map((s) => (
-                <li key={s.n}>
-                  <span className="aud-step-n">{s.n}</span>
-                  <div>
-                    <h3>{s.title} <span className="aud-when">{s.when}</span></h3>
-                    <p>{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </motion.div>
-        </section>
-
-        {/* WHY NO CHARGE */}
-        <section className="aud-sec">
-          <motion.div {...reveal}>
-            <h2>{WHY_FREE.h2}</h2>
-            <div className="aud-why-free">
-              {WHY_FREE.body.map((p) => <p key={p}>{p}</p>)}
-            </div>
-            <div className="aud-catch">
-              <span className="aud-catch-label">{WHY_FREE.catch.label}</span>
-              <p>{WHY_FREE.catch.text}</p>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* WHEN NOT TO BOOK */}
-        <section className="aud-sec aud-sec-alt">
-          <motion.div {...reveal}>
-            <h2>{NOT_INCLUDED.h2}</h2>
-            <p className="aud-lead">{NOT_INCLUDED.lead}</p>
-            <ul className="aud-nots">
-              {NOT_INCLUDED.items.map((n) => (
-                <li key={n}><XCircle size={17} aria-hidden="true" /><span>{n}</span></li>
-              ))}
-            </ul>
-          </motion.div>
-        </section>
-
-        {/* FAQ */}
-        <section className="aud-sec">
-          <motion.div {...reveal}>
-            <h2>Questions we get asked</h2>
-            <div className="aud-faqs">
-              {FAQS.map((f, i) => (
-                <div className={`aud-faq${openFaq === i ? ' open' : ''}`} key={f.q}>
-                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i}>
-                    <span>{f.q}</span><ChevronDown size={18} aria-hidden="true" />
-                  </button>
-                  {openFaq === i && <p>{f.a}</p>}
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
-
-        {/* CLOSING FORM */}
-        <section className="aud-final">
-          <div className="aud-final-grid">
-            <div>
-              <h2>Find out what AI says about you</h2>
-              <p>
-                {AUDIT_OFFER.questions} questions, three engines, {AUDIT_OFFER.turnaround}.
-                {' '}{AUDIT_OFFER.capacity} a month. {AUDIT_OFFER.exclusivity}
-              </p>
-            </div>
-            <AuditForm id="audit-form-bottom" />
-          </div>
         </section>
       </main>
 
