@@ -61,7 +61,7 @@ export default function SampleGapReport() {
       <Step step={s2}>
         <div className="samp-panel">
           <p className="samp-panel-head">
-            Asked <em>“{prompt.q}”</em>, ChatGPT read these {prompt.sources.length} pages:
+            We asked <em>“{prompt.q}”</em>. ChatGPT read these {prompt.sources.length} websites to answer:
           </p>
           <ol className="samp-sources">
             {prompt.sources.map((s, i) => (
@@ -71,12 +71,12 @@ export default function SampleGapReport() {
                   <span className="samp-dom">{s.domain}</span>
                   <span className="samp-title">{s.title}</span>
                 </span>
-                {s.competitor && <span className="samp-comp">names a competitor</span>}
+                {s.competitor && <span className="samp-comp">names a rival</span>}
               </li>
             ))}
           </ol>
           <p className="samp-panel-foot">
-            Not one of them is the clinic&rsquo;s own website.
+            None of them is the clinic&rsquo;s own website.
           </p>
         </div>
       </Step>
@@ -88,18 +88,19 @@ export default function SampleGapReport() {
         <div className="samp-verdict">
           <div className="samp-verdict-main">
             <span className="samp-big">{SAMPLE.verdict.cited}<span className="samp-of">/{SAMPLE.verdict.total}</span></span>
-            <span className="samp-verdict-label">questions where this clinic was quoted</span>
+            <span className="samp-verdict-label">questions where AI mentioned this clinic</span>
           </div>
           <dl className="samp-verdict-stats">
-            <div><dt>{SAMPLE.verdict.sources}</dt><dd>other pages quoted instead</dd></div>
-            <div><dt>{SAMPLE.verdict.competitorMentions}</dt><dd>of those named a competitor</dd></div>
+            <div><dt>{SAMPLE.verdict.sources}</dt><dd>other websites it used instead</dd></div>
+            <div><dt>{SAMPLE.verdict.competitorMentions}</dt><dd>of those named a rival clinic</dd></div>
           </dl>
         </div>
         <p className="samp-flagline">
-          <span className="samp-flag"><X size={12} aria-hidden="true" />Not quoted</span>
-          appears beside every question in your real report.
-          <span className="samp-flag cited"><Check size={12} aria-hidden="true" />Quoted</span>
-          is what we are working towards.
+          You will see
+          <span className="samp-flag"><X size={12} aria-hidden="true" />Not mentioned</span>
+          next to every question in your own report.
+          <span className="samp-flag cited"><Check size={12} aria-hidden="true" />Mentioned</span>
+          is what we are aiming for.
         </p>
       </Step>
 
@@ -114,9 +115,9 @@ export default function SampleGapReport() {
             <thead>
               <tr>
                 <th>Website</th>
-                <th>Questions it answered</th>
-                <th>Times quoted</th>
-                <th>Names a competitor</th>
+                <th>Questions it helped answer</th>
+                <th>Times AI used it</th>
+                <th>Names a rival</th>
                 <th>Priority</th>
               </tr>
             </thead>
@@ -134,8 +135,8 @@ export default function SampleGapReport() {
           </table>
         </div>
         <p className="samp-gaps-foot">
-          The top three were quoted on 24, 19 and 17 of the 40 questions. Get mentioned on those
-          three sites and AI starts finding you on most of the questions your customers ask.
+          AI used the top three websites to answer 24, 19 and 17 of the 40 questions. Get your
+          name onto those three, and AI starts finding you on most of what your customers ask.
         </p>
       </Step>
 
