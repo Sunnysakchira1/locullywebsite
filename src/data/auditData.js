@@ -150,7 +150,6 @@ export const DELIVERABLES = {
     {
       name: 'Which competitors keep winning',
       what: 'Which of your rivals get named, on which questions, and which websites are naming them.',
-      why: 'Your real rival is whoever AI finds easiest to copy. It is usually not who you think.',
     },
     {
       name: 'Can AI open your website at all?',
@@ -160,12 +159,10 @@ export const DELIVERABLES = {
     {
       name: 'Does your website say what you do?',
       what: 'Your website has hidden notes that tell AI your services, your address and your prices. We check yours are there.',
-      why: 'Without them AI has to guess. It usually guesses wrong, or picks a business that was clearer.',
     },
     {
       name: 'Can AI copy an answer off your page?',
       what: 'We read your pages the way AI does, and find the answers that are buried or missing.',
-      why: 'If AI cannot lift an answer off your page, it takes one off somebody else\'s.',
     },
     {
       name: 'Are your own pages competing?',
@@ -175,7 +172,6 @@ export const DELIVERABLES = {
     {
       name: 'What to fix first',
       what: 'Every problem in order: what it is worth, and how hard it is to fix.',
-      why: 'A list of forty problems helps nobody. A list of four is something you can start on Monday.',
     },
   ],
 };
@@ -200,8 +196,7 @@ export const WHY_FREE = {
   h2: 'Why it is free',
   body: [
     'Because showing beats telling.',
-    'We could send you slides about AI search. Instead we ask AI about your business, and show you what it said. Most owners have never seen it.',
-    'Enough of them ask us to fix it. That pays for the rest. If you take the report to your own team instead, that is fine — we write it so anyone can follow it.',
+    'We could send you slides about AI search. Instead we ask AI about your business and show you what it said. Enough owners ask us to fix what they see. That pays for the rest.',
   ],
   catch: {
     label: 'The catch',
@@ -235,10 +230,6 @@ export const FAQS = [
   {
     q: 'How is this different from a normal SEO audit?',
     a: 'A normal audit checks whether Google can find you. This one checks whether AI can understand you and copy from you. Then it asks AI 40 times and writes down the answers. Most SEO audits never open ChatGPT once.',
-  },
-  {
-    q: 'What is the catch?',
-    a: 'Time, not money. It takes us five days, so we only do four a month and we check you are a fit first. We do it because enough owners ask us to fix what we find. You keep the report either way.',
   },
   {
     q: 'Who does the work?',

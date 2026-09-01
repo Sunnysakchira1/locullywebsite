@@ -149,7 +149,7 @@ const AuditPage = () => {
                   <div>
                     <h3>{d.name}</h3>
                     <p>{d.what}</p>
-                    <p className="aud-why"><strong>Why it matters:</strong> {d.why}</p>
+                    {d.why && <p className="aud-why"><strong>Why it matters:</strong> {d.why}</p>}
                   </div>
                 </div>
               ))}

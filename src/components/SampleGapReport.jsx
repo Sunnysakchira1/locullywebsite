@@ -122,8 +122,8 @@ export default function SampleGapReport() {
               </tr>
             </thead>
             <tbody>
-              {SAMPLE.gaps.map((g) => (
-                <tr key={g.domain}>
+              {SAMPLE.gaps.map((g, i) => (
+                <tr key={g.domain} className={i === 0 ? 'top' : undefined}>
                   <td className="samp-dom">{g.domain}</td>
                   <td className="num">{g.prompts} of 40</td>
                   <td className="num">{g.cites}</td>

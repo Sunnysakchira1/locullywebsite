@@ -1166,3 +1166,36 @@ img { max-width: 100%; height: auto; }
   .samp-tab { grid-template-columns: 24px 1fr; }
   .samp-tab .samp-tab-pick { grid-column: 2; justify-self: start; margin-top: 6px; }
 }
+
+/* ── /audit: hierarchy. Three things should stop the eye: the headline,
+   the 0/40, and the 13×. Everything else recedes. ── */
+
+/* 1. Headline — bigger, tighter, and the question mark carries weight. */
+.audit-page .aud-hero h1 { font-size: clamp(38px, 5.8vw, 62px); line-height: 1.0; letter-spacing: -.03em; }
+
+/* 2. The 0/40 — the emotional centre of the page. */
+.audit-page .samp-verdict { padding: 30px 32px; }
+.audit-page .samp-big { font-size: 86px; letter-spacing: -.03em; }
+.audit-page .samp-of { font-size: 34px; }
+.audit-page .samp-verdict-label { font-size: 15px; color: var(--cream); max-width: 20ch; }
+.audit-page .samp-verdict-stats dt { font-size: 27px; }
+
+/* 3. The result. */
+.audit-page .aud-callout { font-size: clamp(26px, 3vw, 34px); line-height: 1.15; letter-spacing: -.02em; margin-top: 4px; }
+
+/* Top of the gap list is the one row to act on — mark it, don't just sort it. */
+.samp-table tr.top td { background: var(--bg2); }
+.samp-table tr.top td:first-child { box-shadow: inset 3px 0 0 var(--terra); font-weight: 500; }
+
+/* Supporting copy recedes so the above can lead. */
+.audit-page .aud-why { font-size: 13px; }
+.audit-page .aud-lead { font-size: 15px; }
+
+/* More air between sections so each one lands on its own. */
+.audit-page .aud-sec { padding: 78px 0; }
+.audit-page .samp-step { padding: 28px 30px 30px; }
+@media (max-width: 860px) {
+  .audit-page .aud-sec { padding: 52px 0; }
+  .audit-page .samp-big { font-size: 62px; }
+  .audit-page .samp-step { padding: 20px 18px 22px; }
+}
