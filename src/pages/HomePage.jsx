@@ -8,7 +8,7 @@ import LeadForm from '@/brand/LeadForm';
 import { ASK_CHATGPT_ILLO, CHART_DESKTOP, CHART_MOBILE } from '@/data/homeSvgs';
 import '@/brand/pages/home.css';
 
-/* Homepage — ported from the signed-off mockup (homepage-redesign-2026-09/artboards, v23).
+/* Homepage — ported from the signed-off mockup (homepage-redesign-2026-09/artboards, v24).
    Copy is claims-checked and approved: change it only through ai-claims-guard-cft. */
 
 const URL = 'https://www.locully.org/';
@@ -16,7 +16,7 @@ const TITLE = 'Locully | SEO, GEO & Performance Marketing Agency in Bangkok';
 const DESCRIPTION = 'Locully is a Bangkok-based SEO and AI Search agency helping businesses turn visibility across Google and AI platforms into customers and revenue.';
 const ORG_ID = 'https://www.locully.org/#organization';
 
-const CHART_LABEL = 'AI-sourced paid consultations by month: September 2025 0, October 3, November 13, December 16, January 17, February 13, March 27, April not logged, May 2026 38';
+const CHART_LABEL = 'AI-sourced paid consultations: 0 in September 2025, 38 in May 2026';
 
 const logos = [
   { src: '/images/home/logos/gfc.jpg', alt: 'Genesis Fertility Center' },
@@ -47,9 +47,9 @@ const reviews = [
 const offer = [
   { t: 'A live AI visibility dashboard', d: 'Your own login. Which prompts name you, which name a competitor, tracked over time — not a screenshot in a PDF.' },
   { t: 'Monthly citation placements', d: 'Mentions earned on the third-party sites the models already quote in your category. Delivered as live URLs you can click.' },
-  { t: 'Technical SEO and schema', d: 'Crawler access, site speed, structure, internal links and the structured data that tells Google and the models what your business is.' },
+  { t: 'Technical SEO and schema', d: 'Crawler access, site speed, structure, internal links and structured data that helps Google understand your business.' },
   { t: 'Content written to be quoted', d: 'Pages that answer the buying questions directly, in the format a model can lift. Written in English and Thai where it matters.' },
-  { t: 'Google Business Profile and local SEO', d: 'Map pack positioning, categories, reviews and citations — for every branch you run.' },
+  { t: 'Site architecture and internal linking', d: 'A structure that shows Google and AI engines what you do, and which page answers which question.' },
   { t: 'A monthly enquiry report', d: 'Calls, forms and bookings, and what each one cost. Plain English, no vanity charts.' },
   {
     t: 'Direct access to Sunny',
@@ -60,7 +60,7 @@ const offer = [
 
 const faqs = [
   {
-    q: 'What does an AI SEO agency actually do?',
+    q: 'What does AI search work actually involve?',
     a: 'The same technical and content work a good SEO agency does, plus a second job: making sure AI assistants can read your site, trust your business, and quote you when someone asks them for a recommendation. In practice that means crawler access, structured data, quotable pages and mentions on the third-party sources the models already cite.',
   },
   {
@@ -69,14 +69,14 @@ const faqs = [
   },
   {
     q: 'How long before we see enquiries?',
-    a: 'Month one is measurement, so nothing moves in it. In our AI search work so far, citations have usually started to move in months two to four — some take longer. Google rankings take three to six months for a competitive Bangkok term. Ads usually start bringing enquiries in the first month.',
+    a: 'Month one is measurement, so nothing moves in it. In our AI search work so far, citations have usually started to move in months two to four — some take longer. Google rankings usually take three to six months for a competitive Bangkok term. Ads usually start bringing enquiries in the first month once tracking is live.',
   },
   {
     q: 'Can you guarantee ChatGPT will recommend my business?',
     a: 'No, and be careful with anyone who says otherwise. The models pick their own sources and change them without warning. What we can do is measure where you stand today, fix what stops you being quotable, earn the mentions that make you citable, and show you the movement every month.',
   },
   {
-    q: 'How much does an SEO agency in Bangkok cost?',
+    q: 'How much does Locully cost?',
     a: 'It depends on scope, and we quote after the free call. Bangkok SEO retainers vary widely, so compare what is actually delivered each month, not just the fee.',
   },
   {
@@ -88,8 +88,8 @@ const faqs = [
     a: 'You do, from day one. Ad accounts, analytics, Search Console and Google Business Profile are all in your name, and your dashboard data is yours to export. If we stop working together you keep every one of them.',
   },
   {
-    q: 'What happens on the free call?',
-    a: 'Twenty minutes. We run your real buying questions through ChatGPT, Perplexity and Google AI beforehand and walk you through what came back — including which competitors get recommended instead of you. You keep the findings whether or not you hire us.',
+    q: 'What do I get in the free AI visibility check?',
+    a: "Send us your website. Within five working days you get a report: we run your customers' real buying questions through ChatGPT, Perplexity and Google AI and show you where you appear, who gets named instead of you, and what we would fix first. It is yours to keep, whether or not you hire us.",
   },
 ];
 
@@ -241,32 +241,55 @@ export default function HomePage() {
             lede="Traffic is easy to report. We report calls, forms and bookings, and what each one cost."
           />
           <div className="lb-g3">
-            <ServiceCard icon="search" title="SEO services in Bangkok">
-              <p>Technical fixes, content and links so you can rank on Google for the terms your customers actually search. Local SEO and Google Business Profile included — for local businesses, the map pack is often where enquiries start.</p>
-              <p className="lbh-card-link"><Button variant="text" to="/seo/">Our SEO services</Button></p>
+            <ServiceCard icon="search" title="SEO">
+              <p>Technical fixes, content, authority and strategy to help you rank for the searches that drive customers.</p>
+              <p className="lbh-card-link"><Button variant="text" to="/seo/">Explore SEO</Button></p>
             </ServiceCard>
-            <ServiceCard icon="chart" title="AI search visibility (GEO)">
+            <ServiceCard icon="chart" title="AI search (GEO)">
               <p>Generative engine optimisation — the work that makes you easier to name when someone asks ChatGPT, Perplexity, Gemini or Google AI Overviews for the best in your category. Measured monthly, not guessed at.</p>
-              <p className="lbh-card-link"><Button variant="text" to="/geo/">How GEO works</Button></p>
+              <p className="lbh-card-link"><Button variant="text" to="/geo/">Explore AI search</Button></p>
             </ServiceCard>
             <ServiceCard icon="target" title="Google Ads & Meta Ads">
               <p>Search, Performance Max and paid social, run for cost per customer rather than cost per click. Useful while SEO builds, and worth keeping once it has.</p>
-              <p className="lbh-card-link"><Button variant="text" to="/performance-marketing/">Google Ads and Meta Ads</Button></p>
+              <p className="lbh-card-link"><Button variant="text" to="/performance-marketing/">Explore performance marketing</Button></p>
             </ServiceCard>
           </div>
         </Section>
 
-        {/* 3 · The problem */}
+        {/* 2b · Pull marketing */}
         <Section>
+          <SectionHeader className="lbh-sh-30" eyebrow="Pull marketing" title="Stop chasing people who aren't looking." />
+          <div className="lbh-pull-copy">
+            <p>Most marketing starts with an audience and pushes a message at them. We prefer to start with demand.</p>
+            <p>Someone needs a dentist. A hotel. A property. A supplier. They search Google, ask an AI or respond to an ad at the moment the need exists.</p>
+            <p className="lbh-em">We make sure our clients are there when that happens.</p>
+          </div>
+          <div className="lbh-pull-flow" role="img" aria-label="Need, then search or ask, then discover, then trust, then enquire">
+            {['Need', 'Search / Ask', 'Discover', 'Trust', 'Enquire'].map((step, i, all) => (
+              <React.Fragment key={step}>
+                <span className={`lbh-pf${i === all.length - 1 ? ' last' : ''}`}>{step}</span>
+                {i < all.length - 1 && (
+                  <span className="lbh-pf-arrow" aria-hidden="true">
+                    <span className="lbh-pf-arrow-d">→</span><span className="lbh-pf-arrow-m">↓</span>
+                  </span>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+          <p className="lbh-pull-close">That is why SEO, AI search and ads sit in one team: they are three ways of being there when the need shows up.</p>
+        </Section>
+
+        {/* 3 · Why this matters now */}
+        <Section alt>
           <SectionHeader
             eyebrow="Why this matters now"
-            title="Your next customer is asking an AI, not scrolling page one."
+            title="Your customers don't search in one place anymore."
           />
           <div className="lbh-problem">
             <div>
-              <p>Your customers now ask ChatGPT, Perplexity and Google AI who to go to. The AI gives them a few names and a reason for each. They pick one.</p>
-              <p>If you are not on that list, nothing tells you. No ranking drop. No traffic dip. The customer simply went somewhere else, and you never knew they existed.</p>
-              <p className="lbh-em">That is the gap we measure first, before we sell you anything.</p>
+              <p>Some Google it. Some check Maps. Some ask ChatGPT, Gemini or Perplexity.</p>
+              <p>The channel changes. The intent doesn't: they need something, they're looking for the right business, and somebody gets chosen.</p>
+              <p className="lbh-em">Locully's job is to make sure you're visible at those moments of demand.</p>
               <p className="lbh-problem-link">
                 <Button variant="text" cta>See who ChatGPT names instead of you</Button>
               </p>
@@ -284,17 +307,17 @@ export default function HomePage() {
         </Section>
 
         {/* 4 · Who it's for */}
-        <Section alt tight>
+        <Section tight>
           <SectionHeader className="lbh-sh-44" eyebrow="Who it's for" title="Who Locully works with." lede="Here is the honest line." />
           <div className="lb-g2">
             <div className="lb-fit yes">
               <h3 className="lb-h3">A good fit if</h3>
               <ul className="lb-list">
-                <li>You are a clinic, restaurant, hotel or property company with customers already coming in</li>
+                <li>Your customers already search for what you sell: clinics, hospitality, property, professional services and more</li>
                 <li>You can name what one new customer is worth to you</li>
                 <li>You want enquiries, and you are willing to be measured on them</li>
                 <li>Someone on your side can approve content and give us account access</li>
-                <li>You can commit for six months — the minimum to judge search work fairly</li>
+                <li>You're prepared to give SEO and AI search enough time to compound, typically six months or more</li>
               </ul>
             </div>
             <div className="lb-fit no">
@@ -312,12 +335,12 @@ export default function HomePage() {
         </Section>
 
         {/* 5 · How it works */}
-        <Section id="how">
+        <Section alt id="how">
           <SectionHeader
             className="lbh-sh-24"
             eyebrow="How it works"
-            title="How does GEO or AI SEO work?"
-            lede="Here's our four-step process at Locully. Measure, fix, place, report — and you see step one free, before you pay a baht."
+            title="How Locully turns search visibility into customers"
+            lede="Four steps, whether the work is SEO, AI search or ads. You see step one free, before you pay a baht."
           />
 
           <div className="lb-stage lbh-stage">
@@ -327,16 +350,16 @@ export default function HomePage() {
               <p className="lbh-lead">We find out where you stand before we build anything.</p>
               <ul className="lbh-bl">
                 <li>We agree the real buying questions your customers ask</li>
-                <li>We run them through ChatGPT, Perplexity and Google AI Overviews</li>
-                <li>You see where you appear, where you don't, and who gets named instead</li>
-                <li>Plus a technical and Google ranking audit</li>
+                <li>We check where you rank on Google, and whether ChatGPT, Perplexity and Google AI name you</li>
+                <li>We check your tracking, so every enquiry can be counted</li>
+                <li>You see where you appear, where you don't, and who wins instead</li>
               </ul>
             </div>
             <Figure
               dark
               crop
               src="/images/home/evidence/prompt-tracker.jpg"
-              alt="Prompt tracker showing buying prompts with run history and visibility percentages"
+              alt="Prompt tracker showing eleven buying prompts with run history and visibility percentages"
               imgProps={{ width: 1362, height: 1464 }}
               caption={<>A real tracker from a Bangkok clinic. Eleven buying prompts, fourteen runs each. <b>Three are tagged LOST</b> — we show those too, because a number you cannot lose is not a measurement.</>}
             />
@@ -348,19 +371,18 @@ export default function HomePage() {
               <h3 className="lb-h3-stage">Fix</h3>
               <p className="lbh-lead">The unglamorous part, and often where the first movement comes from.</p>
               <ul className="lbh-bl">
-                <li>Crawler access, so AI engines can actually read your site</li>
-                <li>Schema and site structure</li>
-                <li>The pages that should answer your customers' questions</li>
-                <li>Google Business Profile and local listings cleaned up</li>
+                <li>Technical and indexation issues</li>
+                <li>Site architecture and internal linking</li>
+                <li>Content gaps across your buying queries</li>
               </ul>
             </div>
             <div className="lbh-fixcard">
               <div className="lbh-fixcard-t">What gets fixed first</div>
               <ul className="lbh-bl">
-                <li>AI crawlers blocked in robots.txt or by a hosting setting</li>
-                <li>Pages AI engines can't read or quote</li>
-                <li>Missing or broken structured data</li>
-                <li>Inconsistent business name, address and phone across listings</li>
+                <li>Pages search and AI engines can't retrieve or understand</li>
+                <li>Missing or incorrect structured data</li>
+                <li>Weak entity signals, so Google and AI aren't sure who you are</li>
+                <li>Blocked crawlers and indexation errors</li>
               </ul>
             </div>
           </div>
@@ -371,8 +393,8 @@ export default function HomePage() {
               <h3 className="lb-h3-stage">Place</h3>
               <p className="lbh-lead">AI models quote sources they already trust.</p>
               <ul className="lbh-bl">
-                <li>We find the directories, roundups, review sites and press cited in your category</li>
-                <li>We earn you a place in them</li>
+                <li>We find the directories, roundups, review sites and press your customers and AI engines trust</li>
+                <li>We earn you a place in them: links for Google, mentions for AI</li>
                 <li>Every placement comes back to you as a live URL</li>
               </ul>
             </div>
@@ -403,24 +425,28 @@ export default function HomePage() {
               caption={<>A client view from an AI visibility tracker, November 2025. <b>This clinic took 25% of competitor mentions</b> — the highest of every hospital and clinic tracked.</>}
             />
           </div>
-          <p className="lbh-more"><Button variant="text" to="/audit/">What the free AI visibility audit covers</Button></p>
+          <div className="lbh-how-links">
+            <Button variant="text" to="/seo/">See how SEO works</Button>
+            <Button variant="text" to="/geo/">See how GEO works</Button>
+          </div>
         </Section>
 
         {/* 6 · Proof */}
-        <Section alt id="results">
+        <Section id="results">
           <ProofPanel
             label="Result · Bangkok clinic · AI search"
             big="0 → 38"
-            sub="AI-sourced paid consultations in a single month (May 2026). A year earlier, none of this clinic's bookings came from AI."
+            sub="AI-sourced paid consultations in a single month (May 2026), up from zero in September 2025."
             stats={[
-              { n: '96%', l: 'of AI-sourced patients in H1 2026 were new to the clinic' },
+              { n: '96%', l: 'of AI-sourced patients were new to the clinic (five months of 2026 booking data)' },
               { n: '22–30%', l: 'estimated share of H1 2026 revenue from Google (organic, ads and Maps) and AI assistants combined' },
             ]}
           >
+            <p className="lbh-method"><b>Measured:</b> consultations recorded as coming from an AI assistant in the clinic's own booking records · <b>Timeframe:</b> Sep 2025 to May 2026 · <b>What we changed:</b> an AI-readable clinic information page, rebuilt condition and treatment content, and AI answers tracked every month.</p>
             <div className="lbh-chart">
-              <div className="lbh-chart-t">AI-sourced paid consultations per month · Sep 2025 – May 2026</div>
-              <svg className="lbh-chart-d" viewBox="0 0 900 270" role="img" aria-label={CHART_LABEL} dangerouslySetInnerHTML={{ __html: CHART_DESKTOP }} />
-              <svg className="lbh-chart-m" viewBox="0 0 344 196" role="img" aria-label={CHART_LABEL} dangerouslySetInnerHTML={{ __html: CHART_MOBILE }} />
+              <div className="lbh-chart-t">AI-sourced paid consultations in a month · before vs best month</div>
+              <svg className="lbh-chart-d" viewBox="0 0 900 250" role="img" aria-label={CHART_LABEL} dangerouslySetInnerHTML={{ __html: CHART_DESKTOP }} />
+              <svg className="lbh-chart-m" viewBox="0 0 344 200" role="img" aria-label={CHART_LABEL} dangerouslySetInnerHTML={{ __html: CHART_MOBILE }} />
             </div>
           </ProofPanel>
           <ResultsNote />
@@ -429,7 +455,7 @@ export default function HomePage() {
         </Section>
 
         {/* 6b · Testimonials */}
-        <Section>
+        <Section alt>
           <SectionHeader className="lbh-sh-44" eyebrow="In their words" title="What our clients say." lede="Three clients, in their own words." />
           <div className="lbh-reviews">
             {reviews.map((r) => (
@@ -441,7 +467,7 @@ export default function HomePage() {
         </Section>
 
         {/* 7 · Offer stack */}
-        <Section alt>
+        <Section>
           <SectionHeader
             className="lbh-sh-46"
             eyebrow="What you get"
@@ -468,18 +494,20 @@ export default function HomePage() {
         </Section>
 
         {/* 10 · FAQ */}
-        <Section id="faq">
+        <Section alt id="faq">
           <SectionHeader className="lbh-sh-40" eyebrow="FAQ" title="Questions businesses ask us." />
           <FAQ qAs="h3" items={faqs} />
         </Section>
 
         {/* 11 · Lead form */}
         <LeadForm
+          alt={false}
           eyebrow="Free AI visibility check"
           title="Find out if ChatGPT already recommends you."
-          lede="Send us your website. We run your customers' real questions through ChatGPT, Perplexity and Google AI, then walk you through who gets named instead of you. 20 minutes. Free. Yours to keep."
+          lede="Send us your website. Within five working days we send you a report on where you appear in Google and AI answers, who gets named instead of you, and what we would fix first. Free, and yours to keep."
           subject="New AI Visibility Check Request — Locully homepage"
           idPrefix="home"
+          footer={<p className="lbh-more"><Button variant="text" to="/audit/">See what the free AI visibility audit covers</Button></p>}
         />
 
         <Footer />

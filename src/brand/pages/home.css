@@ -1,5 +1,5 @@
 /* Brand v2 — Homepage (/) styles. Ported from the signed-off mockup
-   homepage-redesign-2026-09/artboards/Main.dc.html + Mobile.dc.html (v23).
+   homepage-redesign-2026-09/artboards/Main.dc.html + Mobile.dc.html (v24).
    Tokens come from src/brand/brand.css (scoped under .lb). */
 
 /* ═══ Hero: text left, vertical VSL right ══════════════════════ */
@@ -75,15 +75,39 @@
 .lb-shead.lbh-sh-46 { margin-bottom: 46px; }
 .lb-shead.lbh-sh-40 { margin-bottom: 40px; }
 .lb-shead.lbh-sh-24 { margin-bottom: 24px; }
+.lb-shead.lbh-sh-30 { margin-bottom: 30px; }
 @media (max-width: 760px) {
   .lb-shead.lbh-sh-44, .lb-shead.lbh-sh-46 { margin-bottom: 30px; }
   .lb-shead.lbh-sh-40 { margin-bottom: 26px; }
   .lb-shead.lbh-sh-24 { margin-bottom: 8px; }
+  .lb-shead.lbh-sh-30 { margin-bottom: 14px; }
 }
 
 /* service cards: contextual link */
 .lbh-card-link { margin-top: 22px; }
 .lb .lbh-card-link .lb-tlink { font-size: 16px; }
+
+/* ═══ Pull marketing ═════════════════════════════════════════ */
+.lbh-pull-copy { max-width: 760px; margin: 0 auto; text-align: center; }
+.lb .lbh-pull-copy p { font-size: 19px; line-height: 1.65; margin: 0 0 17px; }
+.lb .lbh-pull-copy p:last-child { margin-bottom: 0; }
+.lb .lbh-pull-copy p.lbh-em { color: var(--lb-ink); font-weight: 500; }
+.lbh-pull-flow { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 40px auto 0; }
+.lbh-pf { background: #ffffff; border: 1px solid var(--lb-rule); border-radius: 999px; padding: 14px 24px; font-size: 17px; line-height: 1.2; font-weight: 600; color: var(--lb-ink); }
+.lbh-pf.last { background: var(--lb-accent); border-color: var(--lb-accent); color: #ffffff; }
+.lbh-pf-arrow { color: var(--lb-accent-deep); font-size: 20px; font-weight: 700; line-height: 1; }
+.lbh-pf-arrow-m { display: none; }
+.lb p.lbh-pull-close { text-align: center; max-width: 700px; margin: 36px auto 0; font-size: 18px; line-height: 1.6; color: var(--lb-ink); font-weight: 500; }
+@media (max-width: 760px) {
+  .lbh-pull-copy { text-align: left; }
+  .lb .lbh-pull-copy p { font-size: 16px; margin-bottom: 16px; }
+  .lbh-pull-flow { flex-direction: column; gap: 6px; margin-top: 26px; }
+  .lbh-pf { padding: 11px 22px; font-size: 16px; }
+  .lbh-pf-arrow { font-size: 18px; }
+  .lbh-pf-arrow-d { display: none; }
+  .lbh-pf-arrow-m { display: inline; }
+  .lb p.lbh-pull-close { margin-top: 24px; font-size: 16.5px; }
+}
 
 /* ═══ Problem ══════════════════════════════════════════════════ */
 .lbh-problem { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: center; }
@@ -119,12 +143,18 @@
   .lbh-stage .lb-fig.crop .lb-frame { max-height: 300px; }
 }
 
+.lbh-how-links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-top: 44px; }
+@media (max-width: 760px) { .lbh-how-links { flex-direction: column; gap: 14px; align-items: center; margin-top: 30px; } }
+
 /* ═══ Results: chart ═══════════════════════════════════════════ */
+.lb .lb-proof p.lbh-method { margin: 18px 0 0; font-size: 14.5px; line-height: 1.6; color: var(--lb-on-dark-muted); max-width: 820px; }
+.lb .lb-proof p.lbh-method b { color: var(--lb-on-dark-body); font-weight: 600; }
 .lbh-chart { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--lb-on-dark-rule); }
 .lbh-chart-t { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lb-on-dark-muted); margin-bottom: 14px; line-height: 1.5; }
 .lbh-chart svg { display: block; width: 100%; height: auto; font-family: var(--lb-font); }
 .lbh-chart-m { display: none !important; }
 @media (max-width: 760px) {
+  .lb .lb-proof p.lbh-method { margin-top: 14px; font-size: 13px; line-height: 1.55; }
   .lbh-chart { margin-top: 22px; padding-top: 18px; }
   .lbh-chart-t { font-size: 11px; letter-spacing: 0.12em; margin-bottom: 10px; }
   .lbh-chart-d { display: none !important; }
