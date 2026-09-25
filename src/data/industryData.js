@@ -40,7 +40,7 @@ export const SERVICE_LINKS = {
 
 /** The one approved headline result. Shown on some clinic pages and the hub only. */
 export const RESULT = {
-  label: 'A Bangkok wellness clinic',
+  label: 'A Bangkok clinic',
   big: '0 → 38',
   sub: 'AI-sourced paid consultations in a single month (May 2026).',
 };

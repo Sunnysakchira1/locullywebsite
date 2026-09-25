@@ -115,10 +115,10 @@ const schemaCrumbs = {
 };
 
 const Funnel = () => (
-  <div className="lbp-pm-funnel" role="img" aria-label="Ad spend leads to clicks, enquiries and customers. Most agencies report clicks; Locully optimises for customers.">
+  <div className="lbp-pm-funnel" role="img" aria-label="Ad spend leads to clicks, enquiries and customers. Locully optimises for customers, not clicks.">
     <p className="lbp-pm-funnel-t">Where we aim your ad spend</p>
     <div className="lbp-pm-step">Ad spend <small>You pay Google and Meta</small></div>
-    <div className="lbp-pm-step">Clicks <small>Most agencies report here</small></div>
+    <div className="lbp-pm-step">Clicks <small>Easy to count, not the goal</small></div>
     <div className="lbp-pm-step">Enquiries <small>Calls, forms, bookings</small></div>
     <div className="lbp-pm-step win">Customers <small>We optimise here</small></div>
   </div>
@@ -147,7 +147,7 @@ export default function PerformanceMarketingPage() {
           eyebrow="Performance marketing · Google Ads and Meta Ads"
           visual={<Funnel />}
           title="Google Ads agency in Bangkok, run for cost per customer"
-          lede="Locully is a Google Ads agency in Bangkok that also runs Meta Ads. We manage Search, Performance Max, Facebook and Instagram campaigns for cost per customer, not cost per click. Tracking goes in first, so every baht of ad spend ties back to a call, a form, a booking or a visit."
+          lede="Locully is a Google Ads agency in Bangkok that also runs Meta Ads. We manage Search, Performance Max, Facebook and Instagram campaigns for cost per customer, not cost per click. Tracking goes in first, so ad spend ties back to calls, forms, bookings and visits."
         >
           <div className="lb-hero-cta">
             <Button cta>Get my free ads audit</Button>

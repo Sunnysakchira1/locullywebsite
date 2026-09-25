@@ -61,7 +61,7 @@ const services = [
     title: 'Link building',
     body: (
       <p>
-        Locully earns links from relevant sites in your market and reports each one as a live PAGE_URL. We stay clear of link schemes, which break{' '}
+        Locully earns links from relevant sites in your market and reports each one as a live URL. We stay clear of link schemes, which break{' '}
         <Ext href="https://developers.google.com/search/docs/essentials/spam-policies">Google's spam policies</Ext> and can sink a site.
       </p>
     ),
@@ -84,7 +84,7 @@ const retainer = [
   { t: 'A technical SEO audit and fix list', d: 'Crawl, indexing, speed, structure and schema, fixed in priority order.' },
   { t: 'A keyword and page plan', d: 'Which page targets which term, in English, Thai or both.' },
   { t: 'Content written for your buyers', d: 'New pages and rewrites that answer buying questions directly.' },
-  { t: 'Links from relevant sites', d: 'Each placement reported to you as a live PAGE_URL.' },
+  { t: 'Links from relevant sites', d: 'Each placement reported to you as a live URL.' },
   { t: 'Google Business Profile upkeep', d: 'Categories, details and photos kept accurate, where walk-in customers matter.' },
   { t: 'AI search basics', d: "We check that AI crawlers can reach your site, so AI assistants aren't blocked from reading it." },
   { t: 'A monthly enquiry report', d: 'Calls, forms and bookings, and what each one cost.' },
@@ -146,8 +146,8 @@ const faqs = [
   },
   {
     q: "What's the difference between SEO and GEO?",
-    a: 'SEO helps you rank on Google. GEO, generative engine optimisation, helps you get named inside AI answers from ChatGPT, Perplexity and Google AI Overviews. Every Locully SEO retainer covers the AI search basics, and our GEO service goes further.',
-    node: <p>SEO helps you rank on Google. GEO, generative engine optimisation, helps you get named inside AI answers from ChatGPT, Perplexity and Google AI Overviews. Every Locully SEO retainer covers the AI search basics, and our <Link to="/geo/">GEO service</Link> goes further.</p>,
+    a: 'SEO helps you get found on Google. GEO, generative engine optimisation, makes you easier to name inside AI answers from ChatGPT, Perplexity and Google AI Overviews. Every Locully SEO retainer covers the AI search basics, and our GEO service goes further.',
+    node: <p>SEO helps you get found on Google. GEO, generative engine optimisation, makes you easier to name inside AI answers from ChatGPT, Perplexity and Google AI Overviews. Every Locully SEO retainer covers the AI search basics, and our <Link to="/geo/">GEO service</Link> goes further.</p>,
   },
   {
     q: 'Who owns the accounts and the data?',
@@ -280,7 +280,7 @@ export default function SeoPage() {
           <SectionHeader
             eyebrow="Google and AI search"
             title="SEO in Thailand now includes AI search."
-            lede="Your customers still search Google. More of them now ask ChatGPT first."
+            lede="Some customers search Google. Some ask ChatGPT, Gemini or Perplexity. Locully covers both."
           />
           <div className="lb-narrow-copy" style={{ marginBottom: 44 }}>
             <p className="lb-body-lg">
@@ -418,7 +418,7 @@ export default function SeoPage() {
         <LeadForm
           eyebrow="Free AI visibility check"
           title="Get a free check from our SEO team in Bangkok."
-          lede="Send us your website. We run your customers' real questions through ChatGPT, Perplexity and Google AI, then walk you through who gets named instead of you. Twenty minutes. Free. Yours to keep."
+          lede="Send us your website. We run your customers' real questions through ChatGPT, Perplexity and Google AI, Within five working days we send you a report on who gets named instead of you, and what we would fix first. Free, and yours to keep."
           subject="New free check request (SEO page) — Locully"
           idPrefix="seo"
         />

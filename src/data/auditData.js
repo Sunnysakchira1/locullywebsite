@@ -216,7 +216,7 @@ export const PROOF = {
   label: 'Result · Bangkok clinic',
   big: '0 → 38',
   sub: 'AI-sourced paid consultations in a single month (May 2026). The clinic had none from AI search when the work began.',
-  body: "These are paid bookings from patients who found the clinic through AI assistants, counted in the clinic's own booking records. Clicks and impressions aren't counted.",
+  body: "These are paid bookings the clinic recorded as coming from an AI assistant, counted in the clinic's own booking records. Clicks and impressions aren't counted.",
   note: "Results are shown without client names. Figures come from each client's booking records, GA4 or ads account. Results depend on your market, budget and starting position. No agency can promise a model will name you.",
 };
 

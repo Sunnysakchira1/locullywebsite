@@ -40,7 +40,7 @@ async function launchBrowser() {
 
 const DIST = path.join(__dirname, '..', 'dist');
 const SITEMAP = path.join(__dirname, '..', 'public', 'sitemap.xml');
-const PORT = 4178;
+const PORT = Number(process.env.PRERENDER_PORT) || 4178; // override when builds run in parallel
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',

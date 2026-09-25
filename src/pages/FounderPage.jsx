@@ -129,7 +129,7 @@ const FounderPage = () => {
         <Section alt narrow>
           <SectionHeader eyebrow="Biography" title="About Rachaphon Sakchiraphong" />
           <p className="lb-body-lg">
-            Rachaphon Sakchiraphong founded Locully in Bangkok in 2020. The company trades as Locully Co. Ltd. and has
+            Rachaphon Sakchiraphong founded Locully in Bangkok in 2020. The legal entity is Locully Co. Ltd., and the business has
             used the Locully name since 2025. <Link to="/about">Read more about Locully</Link>.
           </p>
           <p className="lb-body-lg">
