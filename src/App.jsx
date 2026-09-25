@@ -28,6 +28,7 @@ import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import GeoPage from '@/pages/GeoPage';
 import ContactPage from '@/pages/ContactPage';
 import SeoPage from '@/pages/SeoPage';
+import PerformanceMarketingPage from '@/pages/PerformanceMarketingPage';
 import NotFound from '@/components/NotFound';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
@@ -145,6 +146,8 @@ function App() {
           <Route path="/blog/zero-click-search-statistics/" element={<BlogPostPage slug="zero-click-search-statistics" />} />
           <Route path="/blog/how-many-people-use-chatgpt/" element={<BlogPostPage slug="how-many-people-use-chatgpt" />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/performance-marketing" element={<Navigate to="/performance-marketing/" replace />} />
+          <Route path="/performance-marketing/" element={<PerformanceMarketingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />
