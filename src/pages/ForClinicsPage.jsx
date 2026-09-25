@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Menu, X } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { clinics } from '@/data/clinicData';
+import { Page, Breadcrumb, PageHero, Section, SectionHeader, Button } from '@/brand/components';
+import LeadForm from '@/brand/LeadForm';
+import { Clinic } from '@/brand/Illustrations';
+import '@/brand/pages/clinic.css';
 
 const schemaBreadcrumb = {
   '@context': 'https://schema.org',
@@ -37,8 +39,7 @@ const schemaService = {
 };
 
 export default function ForClinicsPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); setMenuOpen(false); };
+  const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); };
 
   return (
     <>
@@ -52,133 +53,69 @@ export default function ForClinicsPage() {
         <script type="application/ld+json">{JSON.stringify(schemaService)}</script>
       </Helmet>
 
-      <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
-
-        {/* Nav */}
-        <nav className="l-subpage-nav">
-          <Link to="/">
-            <img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully" className="l-subpage-logo" />
-          </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <button onClick={openCalendly} className="l-btn l-btn-sm l-nav-audit" style={{ border: 'none' }}>Book a Call</button>
-            <button className="l-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-              {menuOpen ? <X style={{ width: 18, height: 18 }} /> : <Menu style={{ width: 18, height: 18 }} />}
-            </button>
-          </div>
-        </nav>
-
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div className="l-nav-mobile" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.18 }}>
-              <Link to="/" onClick={() => setMenuOpen(false)}>← Home</Link>
-              <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-              <Link to="/ai-search-visibility" onClick={() => setMenuOpen(false)}>AI Search Visibility</Link>
-              <Link to="/packages" onClick={() => setMenuOpen(false)}>One-Off Packages</Link>
-              <Link to="/blog/" onClick={() => setMenuOpen(false)}>Blog</Link>
-              <button onClick={openCalendly} style={{ color: 'var(--terra)', background: 'none', border: 'none', cursor: 'pointer', padding: '14px 0', fontFamily: 'var(--sans)', fontSize: 16, textAlign: 'left', width: '100%', fontWeight: 600 }}>
-                Book a Call →
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <div className="l-subpage-nav-spacer" />
-
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" style={{ padding: '12px 0', borderBottom: '1px solid var(--bdr)' }}>
-          <div className="l-container">
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--muted)' }}>
-              <Link to="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
-              <span>/</span>
-              <span style={{ color: 'var(--cream)' }}>AI Optimization for Clinics</span>
-            </div>
-          </div>
-        </nav>
+      <Page className="lbp-clinic">
+        <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'AI Optimization for Clinics' }]} />
 
         {/* Hero */}
-        <section className="l-page-hero">
-          <div className="l-container l-page-hero-inner" style={{ textAlign: 'center' }}>
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <span className="l-label" style={{ marginBottom: 24, display: 'inline-flex' }}>AI Optimization · Bangkok Clinics</span>
-              <h1 className="l-h1" style={{ marginBottom: 16 }}>
-                AI Optimization Agency <em className="l-serif-em">Thailand</em>
-              </h1>
-              <p className="l-body" style={{ maxWidth: 520, margin: '0 auto 40px', color: 'var(--muted)' }}>
-                Bangkok patients increasingly use AI to find and choose clinics. Locully helps your clinic appear in those recommendations — by clinic type, treatment, and location.
-              </p>
-              <button className="l-btn" onClick={openCalendly} style={{ border: 'none' }}>
-                Book a free consultation
-                <ArrowRight style={{ width: 16, height: 16 }} />
-              </button>
-            </motion.div>
+        <PageHero
+          as="section"
+          eyebrow="AI Optimization · Bangkok Clinics"
+          title="AI Optimization Agency Thailand"
+          lede="Bangkok patients increasingly use AI to find and choose clinics. Locully helps your clinic appear in those recommendations — by clinic type, treatment, and location."
+          visual={<Clinic />}
+        >
+          <div className="lb-hero-cta lb-btn-row">
+            <Button cta />
+            <Button variant="outline" onClick={openCalendly}>Book a free consultation</Button>
           </div>
-        </section>
+        </PageHero>
 
         {/* Clinic grid */}
-        <section className="l-section" style={{ background: 'var(--bg)' }}>
-          <div className="l-container">
-            <div className="l-label" style={{ marginBottom: 32 }}>Choose your clinic type</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 16 }}>
-              {clinics.map((clinic, i) => (
-                <motion.div
-                  key={clinic.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
-                >
-                  <Link
-                    to={`/ai-optimization/${clinic.slug}/`}
-                    style={{ display: 'flex', flexDirection: 'column', padding: '24px', background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 12, textDecoration: 'none', height: '100%', transition: 'border-color 0.2s' }}
-                    onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--terra)'}
-                    onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--bdr)'}
-                  >
-                    <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--terra)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
-                      Bangkok · AI Optimization
-                    </div>
-                    <h2 style={{ color: 'var(--cream)', fontWeight: 700, fontSize: 20, marginBottom: 10, fontFamily: 'var(--sans)' }}>
-                      {clinic.namePlural}
-                    </h2>
-                    <p className="l-body" style={{ color: 'var(--muted)', fontSize: 14, marginBottom: 20, flex: 1, lineClamp: 2, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
-                      {clinic.intro}
-                    </p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: 'var(--terra)', fontSize: 13, fontWeight: 600 }}>
-                      See how it works <ArrowRight style={{ width: 13, height: 13 }} />
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+        <Section alt>
+          <SectionHeader eyebrow="Choose your clinic type" style={{ marginBottom: 32 }} />
+          <div className="lb-g3">
+            {clinics.map((clinic) => (
+              <Link key={clinic.slug} to={`/ai-optimization/${clinic.slug}/`} className="lb-card sm lb-card-link">
+                <span className="lb-label lbp-clinic-card-eyebrow">Bangkok · AI Optimization</span>
+                <h2 className="lb-h3">{clinic.namePlural}</h2>
+                <p className="lbp-clinic-card-p">{clinic.intro}</p>
+                <div className="lb-card-foot">
+                  <span className="lbp-clinic-more">See how it works <span aria-hidden="true">→</span></span>
+                </div>
+              </Link>
+            ))}
           </div>
-        </section>
+        </Section>
 
         {/* Guides for clinic owners — hub → blog cluster */}
-        <section className="l-section" style={{ background: 'var(--bg2, #130E0A)', borderTop: '1px solid var(--bdr)' }}>
-          <div className="l-container">
-            <div className="l-label" style={{ marginBottom: 12 }}>Guides for clinic owners</div>
-            <h2 className="l-h2" style={{ marginBottom: 32 }}>
-              Learn how <em className="l-serif-em">AI search</em> picks clinics
-            </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 16 }}>
-              {guides.map((g) => (
-                <Link
-                  key={g.slug}
-                  to={`/blog/${g.slug}/`}
-                  style={{ display: 'flex', flexDirection: 'column', padding: '22px', background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 12, textDecoration: 'none', height: '100%', transition: 'border-color 0.2s' }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--terra)'}
-                  onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--bdr)'}
-                >
-                  <h3 style={{ color: 'var(--cream)', fontWeight: 700, fontSize: 16, marginBottom: 10, fontFamily: 'var(--sans)', lineHeight: 1.35 }}>{g.title}</h3>
-                  <p className="l-body" style={{ color: 'var(--muted)', fontSize: 13.5, marginBottom: 18, flex: 1 }}>{g.blurb}</p>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--terra)', fontSize: 13, fontWeight: 600 }}>Read the guide <ArrowRight style={{ width: 13, height: 13 }} /></span>
-                </Link>
-              ))}
-            </div>
+        <Section>
+          <SectionHeader eyebrow="Guides for clinic owners" title="Learn how AI search picks clinics" />
+          <div className="lb-g3">
+            {guides.map((g) => (
+              <Link key={g.slug} to={`/blog/${g.slug}/`} className="lb-card sm lb-card-link">
+                <h3 className="lb-h3">{g.title}</h3>
+                <p>{g.blurb}</p>
+                <div className="lb-card-foot">
+                  <span className="lbp-clinic-more">Read the guide <span aria-hidden="true">→</span></span>
+                </div>
+              </Link>
+            ))}
           </div>
-        </section>
+        </Section>
+
+        {/* Lead form */}
+        <LeadForm
+          eyebrow="Free AI visibility check"
+          title="Find out if ChatGPT already recommends you."
+          footer={(
+            <div className="lb-ctarow" style={{ marginTop: 28 }}>
+              <Button variant="outline" onClick={openCalendly}>Book a free consultation</Button>
+            </div>
+          )}
+        />
 
         <Footer />
-      </div>
+      </Page>
     </>
   );
 }
