@@ -1,142 +1,295 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import {
-  Briefcase, ShoppingCart, ShieldCheck, HeartPulse,
-  Flower2, Utensils, LineChart, Users
-} from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
-import FounderCard from './FounderCard';
+import FounderCard, { FOUNDER_DISPLAY, FOUNDER_PATH, FOUNDER_LINKEDIN } from './FounderCard';
 import {
-  Page, PageHero, Section, SectionHeader, Button, Icon, Figure,
+  Page, PageHero, Section, SectionHeader, Button, Cta, Figure, ServiceCard, Stage, FAQ,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
 import { Team } from '@/brand/Illustrations';
 import '@/brand/pages/about.css';
 
+const SITE = 'https://www.locully.org';
+const URL = `${SITE}/about`;
+const ORG_ID = `${SITE}/#organization`;
+const PERSON_ID = `${SITE}${FOUNDER_PATH}#person`;
+
+const TITLE = "About Locully | Bangkok's AI Search Visibility Agency";
+const DESCRIPTION = 'Locully is a Bangkok agency for SEO, GEO (AI search) and Google and Meta Ads. Founded 2020, led by Rachaphon Sakchiraphong (Sunny). See who we are and how we work.';
+
+const facts = [
+  ['Legal name', 'Locully Co. Ltd'],
+  ['What Locully is', 'A digital marketing agency for SEO, GEO (AI search) and performance marketing'],
+  ['Founded', '2020, rebranded as Locully in 2025'],
+  ['Founder and CEO', <Link key="f" to={FOUNDER_PATH}>{FOUNDER_DISPLAY}</Link>],
+  ['Headquarters', '92 Central Park Offices, Floor 35, Rama 4 Road, Silom, Bangrak, Bangkok 10500, Thailand'],
+  ['Markets', 'Thailand and Singapore'],
+  ['Languages', 'English and Thai'],
+  ['Contact', <span key="c"><a href="mailto:sunny@locully.org">sunny@locully.org</a> · <a href="tel:+66626959444">+66 62 695 9444</a></span>],
+];
+
+const services = [
+  {
+    icon: 'search',
+    title: 'SEO',
+    to: '/seo/',
+    link: 'SEO services',
+    body: 'Locully improves how your business shows up on Google Search. The work covers technical SEO, on-page fixes, keyword research, content, internal linking and link building, in English and Thai.',
+  },
+  {
+    icon: 'bot',
+    title: 'GEO (AI search)',
+    to: '/geo/',
+    link: 'GEO services',
+    body: 'Locully works on how AI assistants find, understand and describe your business. That includes ChatGPT, Claude, Google Gemini, Perplexity and Google AI Overviews.',
+  },
+  {
+    icon: 'target',
+    title: 'Performance marketing',
+    to: '/performance-marketing/',
+    link: 'Performance marketing',
+    body: 'Locully plans and runs Google Ads and Meta Ads: strategy, setup, tracking, creative and budget. Your media spend goes straight to Google and Meta, and we never mark it up.',
+  },
+];
+
+const steps = [
+  { title: 'Measure', body: 'Locully records where you stand: Google rankings, Google Maps, and what AI assistants say about you on a fixed set of buying questions.' },
+  { title: 'Fix', body: 'Locully repairs the site, the content and the business details that search engines and AI assistants read.' },
+  { title: 'Place', body: 'Locully earns mentions of your business on trusted third-party sites, the kind Google and AI assistants read.' },
+  { title: 'Report', body: 'Every month you get a report tied to enquiries, bookings and cost per acquisition. Same questions, same method, so each month compares cleanly with the last.' },
+];
+
+const industries = [
+  { icon: 'shield', title: 'Healthcare clinics', body: 'Physiotherapy, dental, wellness, fertility and beauty clinics. Patients use AI assistants to compare clinics. Locully helps clinics show up in those answers and on Google.' },
+  { icon: 'pin', title: 'Property', body: 'Developers and agents selling to Thai and international buyers, who research online before they call.' },
+  { icon: 'users', title: 'Other service businesses', body: 'If your customers search before they buy, the same work applies. Ask us.' },
+];
+
+const faqs = [
+  { q: 'What is Locully?', a: 'Locully is a digital marketing agency in Bangkok, Thailand. It helps businesses get found on Google Search, Google Maps and AI assistants like ChatGPT, and runs their Google and Meta advertising.' },
+  { q: 'Where is Locully based?', a: 'Locully is headquartered at 92 Central Park Offices, Rama 4 Road, Silom, Bangkok. The team works from Bangkok and serves clients in Thailand and Singapore.' },
+  { q: 'When was Locully founded?', a: 'The business was founded in 2020 and rebranded as Locully in 2025. The legal entity is Locully Co. Ltd.' },
+  {
+    q: 'Who founded Locully?',
+    a: <p>Rachaphon Sakchiraphong, known as Sunny, founded Locully and runs it as CEO. <Link to={FOUNDER_PATH}>Read Sunny’s profile</Link>.</p>,
+    text: 'Rachaphon Sakchiraphong, known as Sunny, founded Locully and runs it as CEO.',
+  },
+  {
+    q: 'What is GEO?',
+    a: <p>GEO (generative engine optimisation) is the work of helping AI assistants recognise a business, understand it and mention it when someone asks for a recommendation. <Link to="/geo/">How Locully does GEO</Link>.</p>,
+    text: 'GEO (generative engine optimisation) is the work of helping AI assistants recognise a business, understand it and mention it when someone asks for a recommendation.',
+  },
+  { q: 'Does Locully guarantee results?', a: 'No. No agency can guarantee a ranking or an AI citation. Locully commits to a defined scope of work and a measurement method, reported every month.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': `${URL}#webpage`,
+      url: URL,
+      name: TITLE,
+      description: DESCRIPTION,
+      inLanguage: 'en',
+      isPartOf: { '@type': 'WebSite', '@id': `${SITE}/#website`, url: SITE, name: 'Locully' },
+      about: { '@id': ORG_ID },
+      mainEntity: { '@id': ORG_ID },
+    },
+    {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Locully Co. Ltd',
+      alternateName: 'Locully',
+      url: SITE,
+      description: 'Locully is a digital marketing agency in Bangkok, Thailand, providing SEO, GEO (AI search visibility) and performance marketing on Google and Meta.',
+      foundingDate: '2020',
+      founder: { '@id': PERSON_ID },
+      telephone: '+66626959444',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '92 Central Park Offices, Floor 35, Rama 4 Road',
+        addressLocality: 'Silom, Bangrak',
+        addressRegion: 'Bangkok',
+        postalCode: '10500',
+        addressCountry: 'TH',
+      },
+      areaServed: [{ '@type': 'Country', name: 'Thailand' }, { '@type': 'Country', name: 'Singapore' }],
+      knowsLanguage: ['en', 'th'],
+      knowsAbout: ['Search engine optimisation', 'Generative engine optimisation', 'Google Ads', 'Meta Ads'],
+      sameAs: ['https://www.linkedin.com/company/74875853/'],
+    },
+    {
+      '@type': 'Person',
+      '@id': PERSON_ID,
+      name: 'Rachaphon Sakchiraphong',
+      url: `${SITE}${FOUNDER_PATH}`,
+      jobTitle: 'Founder and CEO',
+      worksFor: { '@id': ORG_ID },
+      sameAs: [FOUNDER_LINKEDIN],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${URL}#faq`,
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.text || f.a },
+      })),
+    },
+  ],
+};
+
 const AboutPage = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
-  const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); };
-
-  const industries = [
-    { icon: ShoppingCart, title: "E-Commerce", description: "Driving high-intent traffic that converts into sales." },
-    { icon: Briefcase, title: "SaaS", description: "Scaling user acquisition and reducing churn." },
-    { icon: ShieldCheck, title: "Insurance", description: "Navigating complex regulations to capture leads." },
-    { icon: HeartPulse, title: "Healthcare", description: "Building trust for clinics and medical providers." },
-    { icon: Flower2, title: "Wellness", description: "Connecting holistic brands with consumers." },
-    { icon: Utensils, title: "Hospitality", description: "Boosting bookings for hotels and travel." },
-    { icon: LineChart, title: "Finance", description: "Generating qualified leads for financial services." }
-  ];
 
   return (
     <>
       <Helmet>
-        <title>About Locully — Bangkok's AI Search Visibility Agency</title>
-        <meta name="description" content="Locully gets you recommended by ChatGPT, Perplexity, and Google AI — backed by the SEO that makes it stick. Meet the Bangkok team and how we work." />
-        <link rel="canonical" href="https://www.locully.org/about" />
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href={URL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:url" content={URL} />
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
       <Page className="lbp-about">
-        {/* Hero */}
         <PageHero
-          as="section"
           eyebrow="About Locully"
           visual={<Team />}
-          title={<>We Don't Just Do Marketing.<br />We Drive Revenue.</>}
-          lede="Locully is an agency built on the belief that traffic is vanity, and conversion is sanity."
-        />
+          title="About Locully, a Bangkok agency for SEO, AI search and performance marketing"
+          lede="Locully is a digital marketing agency in Bangkok, Thailand. We help businesses get found where their customers search, compare and make decisions: Google Search, Google Maps and AI assistants like ChatGPT."
+        >
+          <Cta note="Founded 2020 · Rebranded as Locully 2025 · Bangkok · Thailand and Singapore" />
+        </PageHero>
 
-        {/* Team */}
-        <Section style={{ borderTop: '1px solid var(--lb-rule-soft)' }}>
-          <SectionHeader eyebrow="The Team" title="Meet the People Behind Locully" />
-          <div className="lbp-about-people">
-            <FounderCard />
-            <div className="lbp-about-person">
-              <Figure src="/rachanon.jpeg" alt="Rachanon Sakchiraphong - Head of Partnerships at Locully" />
-              <div className="lbp-about-body">
-                <span className="lb-eyebrow">Head of Partnerships</span>
-                <div className="lbp-about-name">Rachanon Sakchiraphong</div>
-                <p className="lbp-about-role">Head of Partnerships</p>
-                <blockquote className="lbp-about-quote">
-                  Rachanon brings years of hands-on experience spanning large-scale events management, government projects, and professional events organisation across Thailand and Southeast Asia. His background coordinating high-profile initiatives — from public sector programmes to major corporate events — gives Locully a unique edge in building the strategic partnerships and relationships that drive real-world authority for our clients.
-                </blockquote>
-              </div>
-            </div>
+        {/* Facts */}
+        <Section alt narrow>
+          <SectionHeader eyebrow="Company facts" title="Locully company facts" lede="Who we are, in one table." />
+          <div className="lb-table-wrap">
+            <table className="lb-table lbp-about-facts">
+              <tbody>
+                {facts.map(([k, v]) => (
+                  <tr key={k}><th scope="row">{k}</th><td>{v}</td></tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </Section>
 
-        {/* Adaptability */}
+        {/* Services */}
+        <Section>
+          <SectionHeader
+            eyebrow="Services"
+            title="What Locully does: SEO, GEO and performance marketing"
+            lede="Locully runs three services, all aimed at more enquiries from people who are already looking for you."
+          />
+          <div className="lb-g3">
+            {services.map((s) => (
+              <ServiceCard key={s.title} icon={s.icon} title={s.title}>
+                <p>{s.body}</p>
+                <Button variant="text" to={s.to}>{s.link}</Button>
+              </ServiceCard>
+            ))}
+          </div>
+        </Section>
+
+        {/* How it works */}
         <Section alt>
-          <div className="lb-split" style={{ alignItems: 'start' }}>
-            <div className="lbp-about-split-copy">
-              <span className="lb-eyebrow">Our Approach</span>
-              <h2 className="lb-h2">Adaptability is Our Superpower</h2>
-              <p className="lb-body-lg">The digital landscape changes daily. Rigid strategies die fast.</p>
-              <p className="lb-body-lg">At Locully, we build agile, data-driven strategies that evolve with search — including AI-powered search.</p>
+          <SectionHeader
+            eyebrow="How we work"
+            title="How Locully works: pull marketing in four steps"
+            lede="Your buyers are already searching. Locully helps them find you."
+          />
+          <p className="lb-body-lg lbp-about-intro">
+            Locully’s approach is pull marketing. Instead of pushing messages at people and hoping they care,
+            we help you get found by people who are already searching for what you sell.
+          </p>
+          <div className="lb-stages lbp-about-stages">
+            {steps.map((s, i) => (
+              <Stage key={s.title} n={i + 1} title={s.title}>{s.body}</Stage>
+            ))}
+          </div>
+          <p className="lb-body-lg lbp-about-intro">
+            Most clients work with Locully on a monthly retainer. One team runs SEO, AI visibility and paid ads
+            together, so the channels feed each other.
+          </p>
+        </Section>
 
-              <div className="lbp-about-feats">
-                {[
-                  { icon: 'trend', title: 'Revenue-First Mindset', desc: 'We optimize for your bottom line, not vanity metrics.' },
-                  { icon: 'users', title: 'Dedicated Strategists', desc: 'Direct access to senior team members.' },
-                ].map(({ icon, title, desc }) => (
-                  <div key={title} className="lbp-about-feat">
-                    <Icon name={icon} />
-                    <div>
-                      <div className="lbp-about-feat-t">{title}</div>
-                      <p className="lbp-about-feat-d">{desc}</p>
-                    </div>
-                  </div>
-                ))}
+        {/* Team */}
+        <Section>
+          <SectionHeader eyebrow="The team" title="Who runs Locully" lede="A founder-led team in Bangkok." />
+          <p className="lb-body-lg lbp-about-intro">
+            Locully is led by its founder and CEO, <Link to={FOUNDER_PATH}>{FOUNDER_DISPLAY}</Link>. Sunny sets the
+            strategy on every client account. A Bangkok team handles SEO, content, paid media and reporting, and all
+            of it is done in-house.
+          </p>
+          <div className="lbp-about-people">
+            <FounderCard />
+            <div className="lbp-about-person">
+              <Figure src="/rachanon.jpeg" alt="Rachanon Sakchiraphong, Head of Partnerships at Locully" />
+              <div className="lbp-about-body">
+                <span className="lb-eyebrow">Partnerships</span>
+                <h3 className="lbp-about-name">Rachanon Sakchiraphong</h3>
+                <p className="lbp-about-role">Head of Partnerships, Locully</p>
+                <p className="lbp-about-text">Rachanon looks after Locully’s partnerships.</p>
               </div>
-            </div>
-
-            <div className="lb-fit yes">
-              <h3 className="lb-h3">Why Clients Choose Us</h3>
-              <ul className="lb-list lg">
-                {[
-                  "We treat your business like our own.",
-                  "Transparent reporting — no vanity metrics.",
-                  "Deep expertise in technical SEO & AI search.",
-                  "Direct access to senior strategists.",
-                ].map((item) => <li key={item}>{item}</li>)}
-              </ul>
             </div>
           </div>
         </Section>
 
         {/* Industries */}
-        <Section>
+        <Section alt>
           <SectionHeader
             eyebrow="Industries"
-            title="Industries We've Mastered"
-            lede="Diverse experience means cross-industry insights."
+            title="Industries Locully works with"
+            lede="Clinics and property companies, plus other service businesses that depend on being found."
           />
-          <div className="lbp-about-ind">
-            {industries.map(({ icon: IconC, title, description }) => (
-              <div key={title} className="lb-card">
-                <span className="lbp-about-disc"><IconC aria-hidden="true" /></span>
-                <div className="lb-h3">{title}</div>
-                <p>{description}</p>
-              </div>
+          <div className="lb-g3">
+            {industries.map((it) => (
+              <ServiceCard key={it.title} icon={it.icon} title={it.title} small>{it.body}</ServiceCard>
             ))}
-
-            <button type="button" className="lbp-about-ind-cta" onClick={openCalendly}>
-              <span className="lbp-about-disc"><Users aria-hidden="true" /></span>
-              <span className="lb-h3">Your Industry</span>
-              <span className="lbp-about-ind-d">Don't see your sector?</span>
-              <span className="lb-tlink">Contact Us <span aria-hidden="true">→</span></span>
-            </button>
+          </div>
+          <div className="lb-ctarow" style={{ marginTop: 32 }}>
+            <Button variant="text" to="/industries/">See all industries</Button>
           </div>
         </Section>
 
-        {/* CTA + lead form */}
+        {/* Reporting */}
+        <Section narrow>
+          <SectionHeader eyebrow="Reporting" title="How Locully reports results" />
+          <p className="lb-body-lg">
+            Visibility only matters when it produces something commercially useful. Locully’s reports connect the
+            work to search rankings, Google Maps visibility, AI mentions and citations, enquiries, conversions and
+            cost per acquisition.
+          </p>
+          <p className="lb-body-lg">
+            Locully commits to the work and to the way it is measured. We don’t promise positions, because no agency
+            can promise a model will name you.
+          </p>
+          <div className="lb-ctarow" style={{ marginTop: 24 }}>
+            <Button variant="text" to="/case-studies/">See anonymised client results</Button>
+          </div>
+        </Section>
+
+        {/* FAQ */}
+        <Section narrow style={{ borderTop: '1px solid var(--lb-rule-soft)' }}>
+          <SectionHeader eyebrow="FAQ" title="Questions about Locully" />
+          <FAQ items={faqs} />
+        </Section>
+
         <LeadForm
           eyebrow="Free AI visibility check"
-          title="Ready to Stop Guessing?"
-          lede="Your competition isn't waiting. Let's build a strategy that turns your website into your best salesperson."
+          title="Get a free AI visibility check from Locully"
+          lede="Send us your website. We’ll check how Google and AI assistants see your business and tell you what we find."
           footer={(
-            <div className="lb-ctarow" style={{ marginTop: 28 }}>
-              <Button variant="outline" onClick={openCalendly}>Speak to Us</Button>
-            </div>
+            <p className="lb-cta-note" style={{ textAlign: 'center', margin: '24px auto 0' }}>
+              Prefer to talk first? <Link to="/contact/">Contact Locully</Link>
+            </p>
           )}
         />
 

@@ -27,6 +27,7 @@ import BlogIndexPage from '@/pages/BlogIndexPage';
 import BlogPostPage from '@/pages/BlogPostPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import SeoAioPage from '@/pages/SeoAioPage';
+import FounderPage from '@/pages/FounderPage';
 import NotFound from '@/components/NotFound';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
@@ -110,6 +111,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/lead-gen-partner" element={<LeadGenPartnerPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/rachaphon-sakchiraphong" element={<Navigate to="/rachaphon-sakchiraphong/" replace />} />
+          <Route path="/rachaphon-sakchiraphong/" element={<FounderPage />} />
           <Route path="/packages" element={<PackagesPage />} />
           {/* Trailing-slash redirects */}
           <Route path="/ai-optimization" element={<Navigate to="/ai-optimization/" replace />} />
