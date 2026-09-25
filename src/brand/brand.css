@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════
    LOCULLY BRAND v2 — Website theme
    Source: homepage-redesign-2026-09/design-system (tokens.json "site")
-   Scoped under .lb so it coexists with the retired locully-design.css
-   (still used by HomePage). Nav (.bnav) and Footer (.bfoot) are global.
+   Scoped under .lb. Nav (.bnav) and Footer (.bfoot) are global.
+   (The retired locully-design.css was removed with the old homepage.)
 ═══════════════════════════════════════════════════════════════ */
 
 :root {
@@ -68,6 +68,9 @@
     --lb-nav-h: 62px;
   }
 }
+
+/* Global base font (was set by the retired locully-design.css). */
+body { font-family: var(--lb-font); }
 
 /* ── Page scope ─────────────────────────────────────────────── */
 .lb {
