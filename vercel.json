@@ -4,8 +4,58 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "locully.org" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "locully.org"
+        }
+      ],
       "destination": "https://www.locully.org/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/packages/",
+      "destination": "/packages",
+      "permanent": true
+    },
+    {
+      "source": "/lead-gen-partner/",
+      "destination": "/lead-gen-partner",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/ai-search-visibility/",
+      "destination": "/ai-search-visibility",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug([^/.]+)",
+      "destination": "/blog/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization",
+      "destination": "/ai-optimization/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/:slug([^/.]+)",
+      "destination": "/ai-optimization/:slug/",
       "permanent": true
     }
   ]
