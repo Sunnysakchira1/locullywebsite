@@ -89,7 +89,7 @@ const results = [
     industry: 'Healthcare',
     metric1: '+350%', label1: 'AI Citation Increase',
     metric2: '90%', label2: 'Top-3 Placement Rate',
-    detail: 'Physio clinic went from 30 AI mentions to 112 in 90 days. Now the dominant recommendation for sports recovery queries in Bangkok.'
+    detail: 'A Bangkok wellness clinic went from 30 AI mentions to 112 in 90 days. Now the dominant recommendation for sports recovery queries in Bangkok.'
   },
   {
     industry: 'Aesthetics',
