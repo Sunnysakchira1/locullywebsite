@@ -1,48 +1,38 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Linkedin, Mail } from 'lucide-react';
+import { Figure } from '@/brand/components';
+import '@/brand/pages/about.css';
 
 const FounderCard = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="l-founder"
-    >
+    <div className="lbp-about-person">
       {/* Image */}
-      <div className="l-founder-img">
-        <img
-          src="/sunny.jpeg"
-          alt="Sunny Sakchiraphong - Founder of Locully"
-        />
-      </div>
+      <Figure src="/sunny.jpeg" alt="Sunny Sakchiraphong - Founder of Locully" />
 
       {/* Content */}
-      <div className="l-founder-body">
-        <div className="l-founder-tag">The Founder</div>
-        <div className="l-founder-name">Sunny Sakchiraphong</div>
-        <div className="l-founder-role">Founder & SEO Strategist</div>
+      <div className="lbp-about-body">
+        <span className="lb-eyebrow">The Founder</span>
+        <div className="lbp-about-name">Sunny Sakchiraphong</div>
+        <p className="lbp-about-role">Founder & SEO Strategist</p>
 
-        <blockquote className="l-founder-quote">
+        <blockquote className="lbp-about-quote">
           "After 6+ years in the SEO trenches, I realized most agencies focus on vanity metrics — traffic that doesn't convert. I built Locully to change that."
           <br /><br />
-          "My philosophy: <strong style={{ color: 'var(--cream)', fontStyle: 'normal' }}>No impact on revenue = no point in marketing.</strong> We don't just chase rankings; we chase growth."
+          "My philosophy: <strong>No impact on revenue = no point in marketing.</strong> We don't just chase rankings; we chase growth."
         </blockquote>
 
-        <div className="l-founder-links">
-          <a href="https://www.linkedin.com/in/rachaphon-sakchiraphong/" target="_blank" rel="noopener noreferrer" className="l-founder-link">
+        <div className="lbp-about-links">
+          <a href="https://www.linkedin.com/in/rachaphon-sakchiraphong/" target="_blank" rel="noopener noreferrer" className="lb-btn-o">
             <Linkedin style={{ width: '16px', height: '16px' }} />
             LinkedIn
           </a>
-          <a href="mailto:sunny@locully.org" className="l-founder-link">
+          <a href="mailto:sunny@locully.org" className="lb-btn-o">
             <Mail style={{ width: '16px', height: '16px' }} />
             Email Sunny
           </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

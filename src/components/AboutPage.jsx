@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   Briefcase, ShoppingCart, ShieldCheck, HeartPulse,
-  Flower2, Utensils, LineChart, ArrowRight, TrendingUp,
-  Users, Menu, X
+  Flower2, Utensils, LineChart, Users
 } from 'lucide-react';
 import Footer from '@/components/Footer';
 import FounderCard from './FounderCard';
+import {
+  Page, PageHero, Section, SectionHeader, Button, Icon, Figure,
+} from '@/brand/components';
+import LeadForm from '@/brand/LeadForm';
+import { Team } from '@/brand/Illustrations';
+import '@/brand/pages/about.css';
 
 const AboutPage = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => { window.scrollTo(0, 0); }, []);
-  const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); setMenuOpen(false); };
+  const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); };
 
   const industries = [
     { icon: ShoppingCart, title: "E-Commerce", description: "Driving high-intent traffic that converts into sales." },
@@ -33,219 +35,113 @@ const AboutPage = () => {
         <link rel="canonical" href="https://www.locully.org/about" />
       </Helmet>
 
-      <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
-        {/* Nav */}
-        <nav className="l-subpage-nav">
-          <Link to="/">
-            <img
-              src="/locully-logo.png"
-              alt="Locully"
-              className="l-subpage-logo"
-            />
-          </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Link to="/" style={{ color: 'var(--muted)', fontSize: '14px', textDecoration: 'none', fontWeight: 500, display: 'none' }} className="l-nav-back">
-              ← Back
-            </Link>
-            <button onClick={openCalendly} className="l-btn l-btn-sm" style={{ border: 'none' }}>Speak to Us</button>
-            <button className="l-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-              {menuOpen ? <X style={{ width: 18, height: 18 }} /> : <Menu style={{ width: 18, height: 18 }} />}
-            </button>
-          </div>
-        </nav>
-
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div className="l-nav-mobile" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.18 }}>
-              <Link to="/" onClick={() => setMenuOpen(false)}>← Home</Link>
-              <Link to="/ai-search-visibility" onClick={() => setMenuOpen(false)}>AI Search Visibility</Link>
-              <Link to="/ai-optimization/" onClick={() => setMenuOpen(false)}>AI Optimization for Clinics</Link>
-              <Link to="/packages" onClick={() => setMenuOpen(false)}>One-Off Packages</Link>
-              <Link to="/blog/" onClick={() => setMenuOpen(false)}>Blog</Link>
-              <button onClick={openCalendly} style={{ color: 'var(--terra)', background: 'none', border: 'none', cursor: 'pointer', padding: '12px 0', fontFamily: 'var(--sans)', fontSize: 15, textAlign: 'left', width: '100%', fontWeight: 600 }}>
-                Book a Call →
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <div className="l-subpage-nav-spacer" />
-
+      <Page className="lbp-about">
         {/* Hero */}
-        <section className="l-page-hero">
-          <div className="l-container l-page-hero-inner" style={{ textAlign: 'center' }}>
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              <span className="l-label" style={{ marginBottom: '24px', display: 'inline-flex' }}>About Locully</span>
-              <h1 className="l-h1" style={{ marginBottom: '24px' }}>
-                We Don't Just Do Marketing.<br />
-                <em className="l-serif-em">We Drive Revenue.</em>
-              </h1>
-              <p className="l-body" style={{ maxWidth: '520px', margin: '0 auto' }}>
-                Locully is an agency built on the belief that traffic is vanity, and conversion is sanity.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        <PageHero
+          as="section"
+          eyebrow="About Locully"
+          visual={<Team />}
+          title={<>We Don't Just Do Marketing.<br />We Drive Revenue.</>}
+          lede="Locully is an agency built on the belief that traffic is vanity, and conversion is sanity."
+        />
 
         {/* Team */}
-        <section className="l-section" style={{ background: 'var(--bg2)', paddingTop: '80px', paddingBottom: '80px' }}>
-          <div className="l-container">
-            <div style={{ textAlign: 'center', marginBottom: '52px' }}>
-              <span className="l-label" style={{ marginBottom: '16px', display: 'inline-flex' }}>The Team</span>
-              <h2 className="l-h2">Meet the People Behind Locully</h2>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-              <FounderCard />
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="l-founder"
-              >
-                <div className="l-founder-img">
-                  <img
-                    src="/rachanon.jpeg"
-                    alt="Rachanon Sakchiraphong - Head of Partnerships at Locully"
-                  />
-                </div>
-                <div className="l-founder-body">
-                  <div className="l-founder-tag">Head of Partnerships</div>
-                  <div className="l-founder-name">Rachanon Sakchiraphong</div>
-                  <div className="l-founder-role">Head of Partnerships</div>
-                  <blockquote className="l-founder-quote">
-                    Rachanon brings years of hands-on experience spanning large-scale events management, government projects, and professional events organisation across Thailand and Southeast Asia. His background coordinating high-profile initiatives — from public sector programmes to major corporate events — gives Locully a unique edge in building the strategic partnerships and relationships that drive real-world authority for our clients.
-                  </blockquote>
-                </div>
-              </motion.div>
+        <Section style={{ borderTop: '1px solid var(--lb-rule-soft)' }}>
+          <SectionHeader eyebrow="The Team" title="Meet the People Behind Locully" />
+          <div className="lbp-about-people">
+            <FounderCard />
+            <div className="lbp-about-person">
+              <Figure src="/rachanon.jpeg" alt="Rachanon Sakchiraphong - Head of Partnerships at Locully" />
+              <div className="lbp-about-body">
+                <span className="lb-eyebrow">Head of Partnerships</span>
+                <div className="lbp-about-name">Rachanon Sakchiraphong</div>
+                <p className="lbp-about-role">Head of Partnerships</p>
+                <blockquote className="lbp-about-quote">
+                  Rachanon brings years of hands-on experience spanning large-scale events management, government projects, and professional events organisation across Thailand and Southeast Asia. His background coordinating high-profile initiatives — from public sector programmes to major corporate events — gives Locully a unique edge in building the strategic partnerships and relationships that drive real-world authority for our clients.
+                </blockquote>
+              </div>
             </div>
           </div>
-        </section>
+        </Section>
 
         {/* Adaptability */}
-        <section className="l-section" style={{ background: 'var(--bg3)', paddingTop: '80px', paddingBottom: '80px' }}>
-          <div className="l-container">
-            <div className="l-two-col">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <span className="l-label" style={{ marginBottom: '20px', display: 'inline-flex' }}>Our Approach</span>
-                <h2 className="l-h2" style={{ marginBottom: '20px' }}>
-                  Adaptability is Our <em className="l-serif-em">Superpower</em>
-                </h2>
-                <p className="l-body" style={{ marginBottom: '16px' }}>The digital landscape changes daily. Rigid strategies die fast.</p>
-                <p className="l-body">At Locully, we build agile, data-driven strategies that evolve with search — including AI-powered search.</p>
+        <Section alt>
+          <div className="lb-split" style={{ alignItems: 'start' }}>
+            <div className="lbp-about-split-copy">
+              <span className="lb-eyebrow">Our Approach</span>
+              <h2 className="lb-h2">Adaptability is Our Superpower</h2>
+              <p className="lb-body-lg">The digital landscape changes daily. Rigid strategies die fast.</p>
+              <p className="lb-body-lg">At Locully, we build agile, data-driven strategies that evolve with search — including AI-powered search.</p>
 
-                <div className="l-checklist">
-                  {[
-                    { icon: TrendingUp, title: 'Revenue-First Mindset', desc: 'We optimize for your bottom line, not vanity metrics.' },
-                    { icon: Users, title: 'Dedicated Strategists', desc: 'Direct access to senior team members.' },
-                  ].map(({ icon: Icon, title, desc }) => (
-                    <div key={title} className="l-check-item">
-                      <div className="l-check-icon">
-                        <Icon style={{ width: '12px', height: '12px', color: 'var(--terra)' }} />
-                      </div>
-                      <div>
-                        <div style={{ color: 'var(--cream)', fontWeight: 600, fontSize: '14px', marginBottom: '3px' }}>{title}</div>
-                        <span className="l-check-text">{desc}</span>
-                      </div>
+              <div className="lbp-about-feats">
+                {[
+                  { icon: 'trend', title: 'Revenue-First Mindset', desc: 'We optimize for your bottom line, not vanity metrics.' },
+                  { icon: 'users', title: 'Dedicated Strategists', desc: 'Direct access to senior team members.' },
+                ].map(({ icon, title, desc }) => (
+                  <div key={title} className="lbp-about-feat">
+                    <Icon name={icon} />
+                    <div>
+                      <div className="lbp-about-feat-t">{title}</div>
+                      <p className="lbp-about-feat-d">{desc}</p>
                     </div>
-                  ))}
-                </div>
-              </motion.div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="l-why-box"
-              >
-                <h3 className="l-h3" style={{ marginBottom: '24px' }}>Why Clients Choose Us</h3>
+            <div className="lb-fit yes">
+              <h3 className="lb-h3">Why Clients Choose Us</h3>
+              <ul className="lb-list lg">
                 {[
                   "We treat your business like our own.",
                   "Transparent reporting — no vanity metrics.",
                   "Deep expertise in technical SEO & AI search.",
                   "Direct access to senior strategists.",
-                ].map((item, i) => (
-                  <div key={i} className="l-why-item">
-                    <div className="l-why-dot" />
-                    <span className="l-why-text">{item}</span>
-                  </div>
-                ))}
-              </motion.div>
+                ].map((item) => <li key={item}>{item}</li>)}
+              </ul>
             </div>
           </div>
-        </section>
+        </Section>
 
         {/* Industries */}
-        <section className="l-section" style={{ background: 'var(--bg2)', paddingTop: '80px', paddingBottom: '80px' }}>
-          <div className="l-container">
-            <div style={{ textAlign: 'center', marginBottom: '52px' }}>
-              <span className="l-label" style={{ marginBottom: '16px', display: 'inline-flex' }}>Industries</span>
-              <h2 className="l-h2" style={{ marginBottom: '12px' }}>Industries We've Mastered</h2>
-              <p className="l-body" style={{ maxWidth: '400px', margin: '0 auto' }}>Diverse experience means cross-industry insights.</p>
-            </div>
+        <Section>
+          <SectionHeader
+            eyebrow="Industries"
+            title="Industries We've Mastered"
+            lede="Diverse experience means cross-industry insights."
+          />
+          <div className="lbp-about-ind">
+            {industries.map(({ icon: IconC, title, description }) => (
+              <div key={title} className="lb-card">
+                <span className="lbp-about-disc"><IconC aria-hidden="true" /></span>
+                <div className="lb-h3">{title}</div>
+                <p>{description}</p>
+              </div>
+            ))}
 
-            <div className="l-industries-grid">
-              {industries.map(({ icon: Icon, title, description }, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.07 }}
-                  className="l-industry-card"
-                >
-                  <div className="l-industry-icon">
-                    <Icon style={{ width: '20px', height: '20px', color: 'var(--terra)' }} />
-                  </div>
-                  <div className="l-industry-title">{title}</div>
-                  <div className="l-industry-desc">{description}</div>
-                </motion.div>
-              ))}
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: industries.length * 0.07 }}
-                className="l-industry-card l-industry-cta"
-                onClick={openCalendly}
-              >
-                <div className="l-industry-icon">
-                  <Users style={{ width: '20px', height: '20px', color: '#fff' }} />
-                </div>
-                <div className="l-industry-title">Your Industry</div>
-                <div className="l-industry-desc">Don't see your sector?</div>
-                <div style={{ marginTop: '12px', display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#fff', fontWeight: 700, fontSize: '13px', borderBottom: '1px solid rgba(255,255,255,0.5)', paddingBottom: '2px' }}>
-                  Contact Us <ArrowRight style={{ width: '14px', height: '14px' }} />
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="l-cta-band">
-          <div className="l-container">
-            <h2 className="l-h2" style={{ marginBottom: '16px' }}>
-              Ready to Stop <em className="l-serif-em">Guessing?</em>
-            </h2>
-            <p className="l-body" style={{ maxWidth: '460px', margin: '0 auto 36px' }}>
-              Your competition isn't waiting. Let's build a strategy that turns your website into your best salesperson.
-            </p>
-            <button onClick={openCalendly} className="l-btn l-btn-lg" style={{ border: 'none' }}>
-              Speak to Us <ArrowRight style={{ width: '18px', height: '18px' }} />
+            <button type="button" className="lbp-about-ind-cta" onClick={openCalendly}>
+              <span className="lbp-about-disc"><Users aria-hidden="true" /></span>
+              <span className="lb-h3">Your Industry</span>
+              <span className="lbp-about-ind-d">Don't see your sector?</span>
+              <span className="lb-tlink">Contact Us <span aria-hidden="true">→</span></span>
             </button>
           </div>
-        </section>
+        </Section>
+
+        {/* CTA + lead form */}
+        <LeadForm
+          eyebrow="Free AI visibility check"
+          title="Ready to Stop Guessing?"
+          lede="Your competition isn't waiting. Let's build a strategy that turns your website into your best salesperson."
+          footer={(
+            <div className="lb-ctarow" style={{ marginTop: 28 }}>
+              <Button variant="outline" onClick={openCalendly}>Speak to Us</Button>
+            </div>
+          )}
+        />
 
         <Footer />
-      </div>
+      </Page>
     </>
   );
 };
