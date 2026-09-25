@@ -1,0 +1,47 @@
+/* /performance-marketing/ page-only styles (scoped under .lbp-pm) */
+
+.lbp-pm .lbp-pm-byline { margin: 14px 0 0; font-size: 14.5px; color: var(--lb-muted); }
+.lbp-pm .lbp-pm-byline a { color: var(--lb-ink); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--lb-rule-strong, #ded9d1); }
+
+/* Hero visual: spend-to-customer funnel */
+.lbp-pm-funnel { background: var(--lb-card); border: 1px solid var(--lb-rule); border-radius: var(--lb-radius-card); padding: 30px 28px; }
+.lbp-pm-funnel-t { font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lb-muted); margin: 0 0 18px; }
+.lbp-pm-step { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 14px; padding: 15px 18px; margin: 0 auto 10px; background: var(--lb-tint-neutral); color: var(--lb-ink); font-weight: 600; font-size: 17px; }
+.lbp-pm-step:nth-child(2) { width: 100%; }
+.lbp-pm-step:nth-child(3) { width: 94%; }
+.lbp-pm-step:nth-child(4) { width: 88%; }
+.lbp-pm-step:nth-child(5) { width: 82%; margin-bottom: 0; background: var(--lb-tint); border: 1px solid var(--lb-tint-border); }
+.lbp-pm-step small { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--lb-muted); text-align: right; }
+.lbp-pm-step.win small { color: var(--lb-accent-deep); }
+
+/* In-short / TL;DR box */
+.lbp-pm-tldr { max-width: 860px; margin: 0 auto; background: var(--lb-tint); border: 1px solid var(--lb-tint-border); border-radius: var(--lb-radius-lg); padding: 26px 30px; }
+.lbp-pm-tldr p { margin: 0; font-size: 17.5px; line-height: 1.65; color: var(--lb-body); }
+.lbp-pm-tldr strong { color: var(--lb-ink); }
+
+/* Numbered tracking list */
+.lbp-pm-ol { list-style: none; counter-reset: pm; margin: 0; padding: 0; display: grid; gap: 14px; }
+.lbp-pm-ol li { counter-increment: pm; position: relative; padding: 20px 22px 20px 70px; background: var(--lb-card); border: 1px solid var(--lb-rule); border-radius: var(--lb-radius-lg); font-size: 16.5px; line-height: 1.6; color: var(--lb-body); }
+.lbp-pm-ol li::before { content: counter(pm, decimal-leading-zero); position: absolute; left: 22px; top: 20px; font-weight: 700; color: var(--lb-accent-deep); font-size: 17px; }
+.lbp-pm-ol strong { color: var(--lb-ink); }
+
+.lbp-pm a.lbp-pm-link, .lbp-pm .lbp-pm-copy a { color: var(--lb-accent-deep); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.lbp-pm .lbp-pm-copy p { margin: 0 0 16px; }
+.lbp-pm .lbp-pm-copy p:last-child { margin-bottom: 0; }
+
+.lbp-pm-proof-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: var(--lb-split-gap); align-items: start; }
+.lbp-pm-proof-grid .lb-fig img { width: 100%; height: auto; display: block; }
+@media (max-width: 900px) { .lbp-pm-proof-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.lbp-pm .lb-table td:first-child { color: var(--lb-ink); font-weight: 600; }
+.lbp-pm .lb-table-wrap + .lb-note { margin-top: 16px; text-align: center; }
+.lbp-pm-related { margin-top: 36px; text-align: center; }
+
+@media (max-width: 760px) {
+  .lbp-pm-funnel { padding: 22px 18px; }
+  .lbp-pm-step { font-size: 15.5px; padding: 13px 14px; }
+  .lbp-pm-ol li { padding: 16px 16px 16px 56px; font-size: 15.5px; }
+  .lbp-pm-ol li::before { left: 16px; top: 16px; }
+  .lbp-pm-tldr { padding: 20px 20px; }
+  .lbp-pm-tldr p { font-size: 16px; }
+}
