@@ -5,6 +5,7 @@ import {
   Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Icon, ProofPanel, FAQ,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
+import { AskAi } from '@/brand/Illustrations';
 
 const faqs = [
   {
@@ -143,6 +144,7 @@ export default function SeoAioPage() {
         <PageHero
           as="section"
           eyebrow="AI Search Optimisation"
+          visual={<AskAi />}
           title={<>The Agency That Gets You<br />Recommended by AI</>}
           lede="Search has changed. Millions of people now ask ChatGPT, Google AI, and Perplexity for recommendations instead of scrolling a results page."
         >

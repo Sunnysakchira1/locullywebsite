@@ -32,6 +32,7 @@ import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
 import LeadMagnetPopup from '@/components/LeadMagnetPopup';
 import IntroLoader from '@/components/IntroLoader';
+import { StickyCta } from '@/brand/components';
 
 // Homepage — ported 1:1 from homepage-mockup.html (CSS scoped under .lcm).
 const HomePage = () => {
@@ -148,6 +149,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />
+        <StickyCta />
       </div>
     </Router>
   );

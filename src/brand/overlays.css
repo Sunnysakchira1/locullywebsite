@@ -1,0 +1,90 @@
+/* Brand v2 — global overlays: mobile sticky CTA, toasts, popups.
+   Loaded after brand.css (tokens) and locully-design.css (so .csg-* overrides win). */
+
+/* ═══ Mobile sticky CTA bar ════════════════════════════════════ */
+.lb-sticky { display: none; }
+@media (max-width: 760px) {
+  .lb-sticky {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 190;
+    display: flex; gap: 10px; align-items: center;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.97); border-top: 1px solid var(--lb-rule);
+    font-family: var(--lb-font);
+  }
+  .lb-sticky .lb-btn { flex: 1 1 auto; padding: 14px 18px; font-size: 16px; }
+  .lb-sticky-call { flex: 0 0 auto; width: 50px; height: 50px; border-radius: 999px; border: 1.5px solid var(--lb-rule-strong); display: flex; align-items: center; justify-content: center; background: #ffffff; }
+  body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+}
+
+/* ═══ Toasts ═══════════════════════════════════════════════════ */
+.lb-toast { font-family: var(--lb-font); background: #ffffff; color: var(--lb-ink); border: 1px solid var(--lb-rule); border-radius: 16px; box-shadow: 0 12px 32px rgba(20, 33, 61, 0.12); padding: 18px 40px 18px 20px; }
+.lb-toast .lb-toast-title { font-size: 16px; font-weight: 600; color: var(--lb-ink); }
+.lb-toast .lb-toast-desc { font-size: 14.5px; line-height: 1.5; color: var(--lb-body); opacity: 1; }
+.lb-toast.destructive { background: #ffffff; border-color: var(--lb-signal-risk); border-left-width: 4px; color: var(--lb-ink); }
+.lb-toast.destructive .lb-toast-title { color: var(--lb-signal-risk); }
+.lb-toast button[toast-close] { color: var(--lb-muted); opacity: 1; }
+@media (max-width: 760px) { .lb-toast-viewport { bottom: 84px; top: auto; } }
+
+/* ═══ WhatsApp popup ═══════════════════════════════════════════ */
+.lbwa { position: fixed; bottom: 24px; right: 24px; z-index: 180; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; font-family: var(--lb-font); }
+.lbwa-card { position: relative; width: 280px; background: #ffffff; border: 1px solid var(--lb-rule); border-radius: 20px; padding: 18px 18px 16px; box-shadow: 0 16px 40px rgba(20, 33, 61, 0.14); }
+.lbwa-close { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 999px; border: 0; background: none; color: var(--lb-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.lbwa-close:hover { background: var(--lb-ground-alt); color: var(--lb-ink); }
+.lbwa-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding-right: 26px; }
+.lbwa-av { width: 40px; height: 40px; border-radius: 999px; background: var(--lb-ink); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+.lbwa-t { font-size: 15px; font-weight: 600; color: var(--lb-ink); line-height: 1.2; }
+.lbwa-s { font-size: 13px; color: var(--lb-signal-good); margin-top: 3px; display: flex; align-items: center; gap: 6px; }
+.lbwa-s::before { content: ""; width: 7px; height: 7px; border-radius: 999px; background: var(--lb-signal-good); }
+.lbwa-msg { margin: 0 0 14px; background: var(--lb-ground-alt); border: 1px solid var(--lb-rule-soft); border-radius: 4px 14px 14px 14px; padding: 11px 13px; font-size: 14.5px; line-height: 1.5; color: var(--lb-body); }
+.lbwa-cta { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--lb-ink); color: #ffffff; border: 0; border-radius: 999px; padding: 13px 18px; font-family: var(--lb-font); font-size: 15px; font-weight: 600; cursor: pointer; }
+.lbwa-cta:hover { background: #1f2f55; }
+.lbwa-fab { width: 56px; height: 56px; border-radius: 999px; background: var(--lb-ink); border: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(20, 33, 61, 0.25); }
+.lbwa-fab:focus-visible, .lbwa-cta:focus-visible { outline: 3px solid var(--lb-accent); outline-offset: 3px; }
+@media (max-width: 760px) {
+  .lbwa { right: 14px; bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .lbwa-card { display: none; }
+  .lbwa-fab { width: 50px; height: 50px; }
+}
+
+/* ═══ Lead-magnet popup ════════════════════════════════════════ */
+.lbm-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(20, 33, 61, 0.55); display: flex; align-items: center; justify-content: center; padding: 20px; font-family: var(--lb-font); }
+.lbm-modal { position: relative; width: 100%; max-width: 780px; max-height: calc(100vh - 40px); overflow: auto; background: #ffffff; border-radius: var(--lb-radius-card); display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 24px 60px rgba(20, 33, 61, 0.28); }
+.lbm-left { background: var(--lb-ground-alt); border-right: 1px solid var(--lb-rule); padding: 38px 32px; }
+.lbm-right { padding: 44px 36px; display: flex; flex-direction: column; justify-content: center; }
+.lbm-eyebrow { font-size: 12.5px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lb-accent-deep); }
+.lbm-h { margin: 14px 0 0; font-size: 30px; line-height: 1.12; font-weight: 700; letter-spacing: -0.03em; color: var(--lb-ink); }
+.lbm-rh { margin: 10px 0 8px; font-size: 24px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: var(--lb-ink); }
+.lbm-p { margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--lb-body); }
+.lbm-right .lbm-p { margin: 0 0 20px; }
+.lbm-inside { margin: 22px 0 12px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lb-muted); }
+.lbm-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.lbm-list li { position: relative; padding-left: 24px; font-size: 14px; line-height: 1.5; color: var(--lb-body); }
+.lbm-list li::before { content: ""; position: absolute; left: 3px; top: 7px; width: 8px; height: 8px; border-radius: 999px; background: var(--lb-accent-deep); }
+.lbm-list strong { color: var(--lb-ink); font-weight: 600; }
+.lbm-input { display: block; width: 100%; font-family: var(--lb-font); font-size: 16px; color: var(--lb-ink); padding: 14px 16px; border: 1.5px solid var(--lb-rule-strong); border-radius: var(--lb-radius-input); background: #ffffff; outline: none; }
+.lbm-input:focus { border-color: var(--lb-accent); }
+.lbm-right .lb-btn { width: 100%; margin-top: 12px; }
+.lbm-fine { margin: 12px 0 0; font-size: 13.5px; color: var(--lb-muted); text-align: center; }
+.lbm-err { margin: 10px 0 0; font-size: 14px; color: var(--lb-signal-risk); }
+.lbm-right a { color: var(--lb-accent-deep); font-weight: 600; }
+.lbm-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 36px; height: 36px; border-radius: 999px; border: 1.5px solid var(--lb-rule-strong); background: #ffffff; color: var(--lb-ink); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+@media (max-width: 640px) {
+  .lbm-modal { grid-template-columns: minmax(0, 1fr); max-width: 420px; }
+  .lbm-left { display: none; }
+  .lbm-right { padding: 40px 22px 26px; }
+}
+
+/* ═══ Case-study gate (overrides locully-design.css .csg-*) ════ */
+.csg-overlay { background: rgba(20, 33, 61, 0.55); backdrop-filter: none; }
+.csg-modal { font-family: var(--lb-font); border: 1px solid var(--lb-rule); border-radius: var(--lb-radius-card); padding: 40px 34px 32px; box-shadow: 0 24px 60px rgba(20, 33, 61, 0.28); }
+.csg-close { width: 36px; height: 36px; top: 12px; right: 12px; border-radius: 999px; border: 1.5px solid var(--lb-rule-strong); font-size: 22px; color: var(--lb-ink); display: flex; align-items: center; justify-content: center; }
+.csg-eyebrow { font-family: var(--lb-font); font-size: 12.5px; font-weight: 600; letter-spacing: 0.15em; color: var(--lb-accent-deep); }
+.csg-modal h3 { font-family: var(--lb-font); font-size: 28px; font-weight: 700; letter-spacing: -0.03em; color: var(--lb-ink); }
+.csg-modal p { font-size: 15px; color: var(--lb-body); }
+.csg-modal p a { color: var(--lb-accent-deep); font-weight: 600; }
+.csg-modal input { font-family: var(--lb-font); font-size: 16px; padding: 14px 16px; border: 1.5px solid var(--lb-rule-strong); border-radius: var(--lb-radius-input); background: #ffffff; color: var(--lb-ink); }
+.csg-modal input:focus { border-color: var(--lb-accent); }
+.csg-modal form button { font-family: var(--lb-font); background: var(--lb-accent); border-radius: 999px; padding: 16px; font-size: 16px; box-shadow: none; }
+.csg-modal form button:hover { background: var(--lb-accent-hover); }
+.csg-err { color: var(--lb-signal-risk); font-size: 14px; }
+.csg-fine { font-family: var(--lb-font); font-size: 13.5px; color: var(--lb-muted); letter-spacing: 0; }
