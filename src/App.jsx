@@ -21,12 +21,11 @@ import Nav from '@/components/Nav';
 import homeHtml from '@/home-content.html?raw';
 import CaseStudyGate from '@/components/CaseStudyGate';
 import '@/home-scoped.css';
-import ForClinicsPage from '@/pages/ForClinicsPage';
 import ClinicPage from '@/components/ClinicPage';
 import BlogIndexPage from '@/pages/BlogIndexPage';
 import BlogPostPage from '@/pages/BlogPostPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
-import SeoAioPage from '@/pages/SeoAioPage';
+import GeoPage from '@/pages/GeoPage';
 import NotFound from '@/components/NotFound';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
@@ -112,7 +111,6 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/packages" element={<PackagesPage />} />
           {/* Trailing-slash redirects */}
-          <Route path="/ai-optimization" element={<Navigate to="/ai-optimization/" replace />} />
           <Route path="/ai-optimization/physiotherapy-clinics" element={<Navigate to="/ai-optimization/physiotherapy-clinics/" replace />} />
           <Route path="/ai-optimization/dental-clinics" element={<Navigate to="/ai-optimization/dental-clinics/" replace />} />
           <Route path="/ai-optimization/wellness-clinics" element={<Navigate to="/ai-optimization/wellness-clinics/" replace />} />
@@ -120,7 +118,7 @@ function App() {
           <Route path="/ai-optimization/beauty-clinics" element={<Navigate to="/ai-optimization/beauty-clinics/" replace />} />
           <Route path="/blog" element={<Navigate to="/blog/" replace />} />
 
-          <Route path="/ai-optimization/" element={<ForClinicsPage />} />
+          <Route path="/geo/" element={<GeoPage />} />
           <Route path="/ai-optimization/physiotherapy-clinics/" element={<ClinicPage slug="physiotherapy-clinics" />} />
           <Route path="/ai-optimization/dental-clinics/" element={<ClinicPage slug="dental-clinics" />} />
           <Route path="/ai-optimization/wellness-clinics/" element={<ClinicPage slug="wellness-clinics" />} />
@@ -143,7 +141,6 @@ function App() {
           <Route path="/blog/zero-click-search-statistics/" element={<BlogPostPage slug="zero-click-search-statistics" />} />
           <Route path="/blog/how-many-people-use-chatgpt/" element={<BlogPostPage slug="how-many-people-use-chatgpt" />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/ai-search-visibility" element={<SeoAioPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />
