@@ -27,6 +27,7 @@ import BlogPostPage from '@/pages/BlogPostPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import GeoPage from '@/pages/GeoPage';
 import ContactPage from '@/pages/ContactPage';
+import SeoPage from '@/pages/SeoPage';
 import NotFound from '@/components/NotFound';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
@@ -112,6 +113,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact/" element={<ContactPage />} />
           <Route path="/packages" element={<PackagesPage />} />
+          <Route path="/seo/" element={<SeoPage />} />
           {/* Trailing-slash redirects */}
           <Route path="/ai-optimization/physiotherapy-clinics" element={<Navigate to="/ai-optimization/physiotherapy-clinics/" replace />} />
           <Route path="/ai-optimization/dental-clinics" element={<Navigate to="/ai-optimization/dental-clinics/" replace />} />
