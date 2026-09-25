@@ -6,9 +6,8 @@
 //
 // Rules for this file:
 //   1. Every line is a complete sentence. Plain words a business owner uses.
-//   2. The only result allowed is "0 → 38 AI-sourced paid consultations in a
-//      single month (May 2026)" for an anonymised Bangkok clinic. Never name or
-//      hint at the client (no "wellness", no branch names, no monthly series).
+//   2. No client results on this page: the 0 -> 38 clinic result is confidential
+//      (Sunny, 2026-09-25). Never name or hint at any client.
 //   3. Every business name and count in the demo and the report tabs is
 //      invented, and the page says so next to them.
 
@@ -208,16 +207,6 @@ export const COMPARE = {
     ['What it measures', 'Rankings, errors, speed, links', 'Times you were named, times you were linked, who was named instead'],
     ['What you act on', 'Fixes to your own site', 'Fixes to your site, plus a list of outside websites to get listed on'],
   ],
-};
-
-export const PROOF = {
-  eyebrow: 'Results',
-  h2: 'An AI visibility result from one Bangkok clinic',
-  label: 'Result · Bangkok clinic',
-  big: '0 → 38',
-  sub: 'AI-sourced paid consultations in a single month (May 2026). The clinic had none from AI search when the work began.',
-  body: "These are paid bookings the clinic recorded as coming from an AI assistant, counted in the clinic's own booking records. Clicks and impressions aren't counted.",
-  note: "Results are shown without client names. Figures come from each client's booking records, GA4 or ads account. Results depend on your market, budget and starting position. No agency can promise a model will name you.",
 };
 
 export const FAQS = [

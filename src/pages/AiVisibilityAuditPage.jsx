@@ -7,7 +7,7 @@ import {
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
 import {
-  URL, META, HERO, DEMO, FINDOUT, REPORT, STEPS, EXTERNAL, COMPARE, PROOF, FAQS, CLOSING, RELATED,
+  URL, META, HERO, DEMO, FINDOUT, REPORT, STEPS, EXTERNAL, COMPARE, FAQS, CLOSING, RELATED,
 } from '@/data/auditData';
 import '@/brand/pages/audit.css';
 
@@ -253,17 +253,6 @@ export default function AiVisibilityAuditPage() {
           </div>
         </Section>
 
-        {/* Proof */}
-        <Section alt>
-          <SectionHeader eyebrow={PROOF.eyebrow} title={PROOF.h2} />
-          <ProofPanel label={PROOF.label} big={PROOF.big} sub={PROOF.sub}>
-            <p>{PROOF.body}</p>
-          </ProofPanel>
-          <ResultsNote>{PROOF.note}</ResultsNote>
-          <div style={{ textAlign: 'center', marginTop: 22 }}>
-            <Button variant="text" to="/case-studies/">Read the case studies</Button>
-          </div>
-        </Section>
 
         {/* FAQ */}
         <Section narrow>

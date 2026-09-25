@@ -146,26 +146,13 @@
 .lbh-how-links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-top: 44px; }
 @media (max-width: 760px) { .lbh-how-links { flex-direction: column; gap: 14px; align-items: center; margin-top: 30px; } }
 
-/* ═══ Results: chart ═══════════════════════════════════════════ */
-.lb .lb-proof p.lbh-method { margin: 18px 0 0; font-size: 14.5px; line-height: 1.6; color: var(--lb-on-dark-muted); max-width: 820px; }
-.lb .lb-proof p.lbh-method b { color: var(--lb-on-dark-body); font-weight: 600; }
-.lbh-chart { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--lb-on-dark-rule); }
-.lbh-chart-t { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lb-on-dark-muted); margin-bottom: 14px; line-height: 1.5; }
-.lbh-chart svg { display: block; width: 100%; height: auto; font-family: var(--lb-font); }
-.lbh-chart-m { display: none !important; }
-@media (max-width: 760px) {
-  .lb .lb-proof p.lbh-method { margin-top: 14px; font-size: 13px; line-height: 1.55; }
-  .lbh-chart { margin-top: 22px; padding-top: 18px; }
-  .lbh-chart-t { font-size: 11px; letter-spacing: 0.12em; margin-bottom: 10px; }
-  .lbh-chart-d { display: none !important; }
-  .lbh-chart-m { display: block !important; }
-}
-
 /* ═══ Testimonials ═════════════════════════════════════════════ */
-.lbh-reviews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.lbh-reviews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;
+  width: min(1400px, calc(100vw - 48px)); margin-left: 50%; transform: translateX(-50%); }
 .lbh-rv { margin: 0; border-radius: 18px; overflow: hidden; border: 1px solid var(--lb-rule); background: #cc6433; }
 .lbh-rv img { display: block; width: 100%; height: auto; }
-@media (max-width: 760px) { .lbh-reviews { grid-template-columns: minmax(0, 1fr); gap: 14px; } }
+@media (max-width: 1100px) { .lbh-reviews { grid-template-columns: minmax(0, 1fr); width: min(680px, 100%); gap: 20px; } }
+@media (max-width: 760px) { .lbh-reviews { gap: 14px; } }
 
 /* ═══ Offer stack ══════════════════════════════════════════════ */
 .lbh-stack-wrap { max-width: 800px; margin: 0 auto; }

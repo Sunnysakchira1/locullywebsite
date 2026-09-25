@@ -294,12 +294,11 @@ export default function SeoPage() {
             </p>
           </div>
           <ProofPanel
-            label="Results · two Bangkok clinics · Google and AI search"
+            label="Result · Bangkok clinic · Google search"
             big="77 → 415"
-            sub="Organic Google clicks to a Bangkok fertility clinic's English site, on matched 25-day windows in June, July and August 2026. From the clinic's own Search Console export."
+            sub="Organic Google clicks to a Bangkok clinic's English-language site, on matched 25-day windows in June, July and August 2026. From the clinic's own Search Console export."
             stats={[
               { n: '32.1 → 16.5', l: 'Average Google position for the same site, same windows' },
-              { n: '0 → 38', l: 'AI-sourced paid consultations in a single month (May 2026) for a different Bangkok clinic, up from zero in September 2025' },
             ]}
           />
           <p className="lb-proof-note">

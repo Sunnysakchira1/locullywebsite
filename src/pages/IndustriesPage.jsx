@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import LeadForm from '@/brand/LeadForm';
-import { industries, SERVICE_LINKS, RESULT, HUB } from '@/data/industryData';
+import { industries, SERVICE_LINKS, HUB } from '@/data/industryData';
 import {
   Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Icon, ProofPanel, ResultsNote,
 } from '@/brand/components';
@@ -100,12 +100,6 @@ export default function IndustriesPage() {
           <div className="lb-narrow-copy">
             {HUB.why.map((p) => <p key={p.slice(0, 20)} className="lb-body-lg">{p}</p>)}
           </div>
-        </Section>
-
-        <Section>
-          <SectionHeader eyebrow="Results" title={HUB.resultTitle} />
-          <ProofPanel label={RESULT.label} big={RESULT.big} sub={RESULT.sub} />
-          <ResultsNote />
         </Section>
 
         <LeadForm

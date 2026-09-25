@@ -38,13 +38,6 @@ export const SERVICE_LINKS = {
   ads: { title: 'Performance marketing', to: '/performance-marketing/' },
 };
 
-/** The one approved headline result. Shown on some clinic pages and the hub only. */
-export const RESULT = {
-  label: 'A Bangkok clinic',
-  big: '0 → 38',
-  sub: 'AI-sourced paid consultations in a single month (May 2026).',
-};
-
 /** Measure / Fix / Place / Report — {aud} is replaced with the audience word. */
 export const PROCESS = [
   { n: '01', title: 'Measure', body: 'Locully checks where you appear today: your Google rankings, a fixed set of {aud} questions run through ChatGPT, and how your ads turn into enquiries.' },
@@ -141,7 +134,6 @@ export const industries = [
     ],
     rulesTitle: 'Healthcare marketing rules for physiotherapy clinics in Bangkok',
     verticalRule: { title: 'Recovery claims', body: 'We don’t write lines like "pain-free in three sessions". We describe the treatment and what a session involves instead.' },
-    showResult: false,
     faqTitle: 'Physiotherapy clinic marketing questions',
     faq: [
       { q: 'What does a physiotherapy clinic marketing agency do?', a: 'A physiotherapy clinic marketing agency helps patients find and book your clinic. Locully does that through three channels: SEO for Google, GEO for AI assistants like ChatGPT, and Google and Meta ads. We report on enquiries and bookings wherever tracking allows.' },
@@ -194,7 +186,6 @@ export const industries = [
     ],
     rulesTitle: 'Healthcare marketing rules for dental clinics in Bangkok',
     verticalRule: { title: 'Prices and promotions', body: 'Patients ask AI assistants what implants and whitening cost, and clear price ranges answer that. A discount campaign is advertising, so it goes through the same approval as any other ad.' },
-    showResult: true,
     faqTitle: 'Dental clinic marketing questions',
     faq: [
       { q: 'What does a dental marketing agency in Bangkok do?', a: 'A dental marketing agency brings patients to your chairs. Locully plans the work around the treatments you want to grow, then uses SEO for Google, GEO for AI assistants like ChatGPT, and Google and Meta ads to reach the patients looking for them.' },
@@ -247,7 +238,6 @@ export const industries = [
     ],
     rulesTitle: 'Healthcare marketing rules for wellness clinics in Bangkok',
     verticalRule: { title: 'Health claims', body: 'Wellness services invite claims about detoxing, boosting or curing. We describe what the service is, who delivers it and what a session involves, not what it cures.' },
-    showResult: true,
     faqTitle: 'Wellness clinic marketing questions',
     faq: [
       { q: 'How do you market a wellness clinic in Bangkok?', a: 'Be specific. Locully builds a clear page for each service, makes sure AI assistants understand what the clinic offers, and runs Google and Meta ads for the services with the most demand.' },
@@ -300,7 +290,6 @@ export const industries = [
     ],
     rulesTitle: 'Healthcare marketing rules for fertility clinics in Bangkok',
     verticalRule: { title: 'Success rates and sensitive topics', body: "If you publish success rates, state the period, the patient group and how they were counted, so the figure can't be misread. Fertility treatment in Thailand also has its own law, so we check any fertility-specific wording with your team before it goes live." },
-    showResult: true,
     faqTitle: 'Fertility clinic marketing questions',
     faq: [
       { q: 'What does fertility clinic marketing involve?', a: 'Fertility clinic marketing helps patients researching treatment find your clinic and trust it. Locully uses SEO, GEO and Google and Meta ads, and writes every page for your medical team to approve.' },
@@ -353,7 +342,6 @@ export const industries = [
     ],
     rulesTitle: 'Healthcare marketing rules for aesthetic clinics in Bangkok',
     verticalRule: { title: 'Before-and-after images', body: "Meta allows before-and-after images for general cosmetic procedures when the ad targets people 18 and over, and it doesn't allow ads that make negative statements about a person's appearance. Thai approval rules apply on top." },
-    showResult: true,
     faqTitle: 'Aesthetic clinic marketing questions',
     faq: [
       { q: 'What does an aesthetic clinic marketing agency do?', a: 'An aesthetic clinic marketing agency brings patients in for the treatments you want to grow. Locully does it with SEO for Google, GEO for AI assistants like ChatGPT, and Google and Meta ads.' },
@@ -411,7 +399,6 @@ export const industries = [
       { title: 'No invented urgency', body: '"Only 3 units left" goes on the page only if it’s true on the day.' },
       { title: 'Facts from you', body: 'Prices, completion dates and ownership details come from your team and are checked before they go live.' },
     ],
-    showResult: false,
     faqTitle: 'Real estate marketing questions',
     faq: [
       { q: 'What does a real estate marketing agency do?', a: 'A real estate marketing agency brings buyer and renter enquiries to your projects or listings. Locully does it with SEO for Google, GEO for AI assistants like ChatGPT, and Google and Meta ads for launches and events.' },
@@ -447,7 +434,6 @@ export const HUB = {
     'That is why Locully plans by industry. A dental clinic needs a page per treatment. A fertility clinic needs answers written with its medical team. A developer needs project pages that listing portals can’t match.',
     'We also work with hospitality, food and beverage and professional services businesses. If yours isn’t listed here, the free check still applies.',
   ],
-  resultTitle: 'AI search results for a Bangkok clinic',
   formTitle: 'Get your business found in your industry',
   formLede: "Send us your website. We'll show you where you appear on Google and in AI answers today, and what to fix first.",
 };

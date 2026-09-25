@@ -396,22 +396,6 @@ export default function GeoPage() {
           </div>
         </Section>
 
-        {/* Result */}
-        <Section alt>
-          <SectionHeader eyebrow="Result" title="What GEO did for one Bangkok clinic" />
-          <ProofPanel
-            label="Result · Bangkok clinic"
-            big="0 → 38"
-            sub="AI-sourced paid consultations in a single month (May 2026), for a Bangkok clinic that had none from AI search when the work began. That was its best month, not an average."
-          >
-            <p>Each one is a paid booking the clinic recorded as coming from an AI assistant in its own booking records. Clicks and impressions are not counted.</p>
-          </ProofPanel>
-          <ResultsNote>
-            Results are shown without client names. Figures come from the client’s own booking records. Results depend on
-            your market, budget and starting position. No agency can promise a model will name you.
-          </ResultsNote>
-        </Section>
-
         {/* Self-test */}
         <Section>
           <SectionHeader

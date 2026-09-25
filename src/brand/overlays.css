@@ -10,7 +10,9 @@
     padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
     background: rgba(255, 255, 255, 0.97); border-top: 1px solid var(--lb-rule);
     font-family: var(--lb-font);
+    transform: translateY(110%); transition: transform 0.25s ease;
   }
+  .lb-sticky.show { transform: translateY(0); }
   .lb-sticky .lb-btn { flex: 1 1 auto; padding: 14px 18px; font-size: 16px; }
   .lb-sticky-call { flex: 0 0 auto; width: 50px; height: 50px; border-radius: 999px; border: 1.5px solid var(--lb-rule-strong); display: flex; align-items: center; justify-content: center; background: #ffffff; }
   .bfoot { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
@@ -73,3 +75,5 @@
   .lbm-left { display: none; }
   .lbm-right { padding: 40px 22px 26px; }
 }
+
+@media (prefers-reduced-motion: reduce) { .lb-sticky { transition: none; } }

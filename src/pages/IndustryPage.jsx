@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import LeadForm from '@/brand/LeadForm';
 import {
-  industries, getIndustry, SOURCES, SERVICE_LINKS, RESULT, PROCESS,
+  industries, getIndustry, SOURCES, SERVICE_LINKS, PROCESS,
   CLINIC_SELF_TEST, PROPERTY_SELF_TEST, CLINIC_RULES,
 } from '@/data/industryData';
 import {
@@ -265,18 +265,6 @@ export default function IndustryPage({ slug }) {
             </p>
           )}
         </Section>
-
-        {/* Result (approved headline result only) */}
-        {ind.showResult && (
-          <Section alt>
-            <SectionHeader eyebrow="Results" title="AI search results for a Bangkok clinic" />
-            <ProofPanel label={RESULT.label} big={RESULT.big} sub={RESULT.sub} />
-            <ResultsNote />
-            <div style={{ textAlign: 'center', marginTop: 20 }}>
-              <Button variant="text" to="/case-studies/">Read the case studies</Button>
-            </div>
-          </Section>
-        )}
 
         {/* FAQ */}
         <Section className="lbp-clinic-faq">

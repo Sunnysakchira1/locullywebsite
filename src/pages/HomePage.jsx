@@ -2,10 +2,10 @@ import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from '@/components/Footer';
 import {
-  Page, Section, SectionHeader, Button, Cta, ServiceCard, Figure, ProofPanel, FAQ, Tick, ResultsNote,
+  Page, Section, SectionHeader, Button, Cta, ServiceCard, Figure, FAQ, Tick,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
-import { ASK_CHATGPT_ILLO, CHART_DESKTOP, CHART_MOBILE } from '@/data/homeSvgs';
+import { ASK_CHATGPT_ILLO } from '@/data/homeSvgs';
 import '@/brand/pages/home.css';
 
 /* Homepage — ported from the signed-off mockup (homepage-redesign-2026-09/artboards, v24).
@@ -16,7 +16,6 @@ const TITLE = 'Locully | SEO, GEO & Performance Marketing Agency in Bangkok';
 const DESCRIPTION = 'Locully is a Bangkok-based SEO and AI Search agency helping businesses turn visibility across Google and AI platforms into customers and revenue.';
 const ORG_ID = 'https://www.locully.org/#organization';
 
-const CHART_LABEL = 'AI-sourced paid consultations: 0 in September 2025, 38 in May 2026';
 
 const logos = [
   { src: '/images/home/logos/gfc.jpg', alt: 'Genesis Fertility Center' },
@@ -145,8 +144,8 @@ const Vsl = () => {
         controls
         playsInline
         preload="none"
-        poster="/media/locully-vsl-poster.jpg"
-        src="/media/locully-vsl.mp4"
+        poster="https://jyzmhv9lp5ywshyh.public.blob.vercel-storage.com/media/locully-vsl-poster-1080-vXkZAWH3jcLea8c0YXXro1ZejIz2xs.jpg"
+        src="https://jyzmhv9lp5ywshyh.public.blob.vercel-storage.com/media/locully-vsl-1080-JfHqvpdJjfI7fQEBvBAMN3gukroLqj.mp4"
         aria-label="Locully video: how we get Bangkok businesses found on Google and named by ChatGPT"
         onPlay={() => { setPlaying(true); setStarted(true); }}
         onPause={() => setPlaying(false)}
@@ -431,31 +430,8 @@ export default function HomePage() {
           </div>
         </Section>
 
-        {/* 6 · Proof */}
-        <Section id="results">
-          <ProofPanel
-            label="Result · Bangkok clinic · AI search"
-            big="0 → 38"
-            sub="AI-sourced paid consultations in a single month (May 2026), up from zero in September 2025."
-            stats={[
-              { n: '96%', l: 'of AI-sourced patients were new to the clinic (five months of 2026 booking data)' },
-              { n: '22–30%', l: 'estimated share of H1 2026 revenue from Google (organic, ads and Maps) and AI assistants combined' },
-            ]}
-          >
-            <p className="lbh-method"><b>Measured:</b> consultations recorded as coming from an AI assistant in the clinic's own booking records · <b>Timeframe:</b> Sep 2025 to May 2026 · <b>What we changed:</b> an AI-readable clinic information page, rebuilt condition and treatment content, and AI answers tracked every month.</p>
-            <div className="lbh-chart">
-              <div className="lbh-chart-t">AI-sourced paid consultations in a month · before vs best month</div>
-              <svg className="lbh-chart-d" viewBox="0 0 900 250" role="img" aria-label={CHART_LABEL} dangerouslySetInnerHTML={{ __html: CHART_DESKTOP }} />
-              <svg className="lbh-chart-m" viewBox="0 0 344 200" role="img" aria-label={CHART_LABEL} dangerouslySetInnerHTML={{ __html: CHART_MOBILE }} />
-            </div>
-          </ProofPanel>
-          <ResultsNote />
-          <Cta center note="We show you where you stand today, before you spend a baht." />
-          <p className="lbh-more"><Button variant="text" to="/case-studies/">More results in our case studies</Button></p>
-        </Section>
-
         {/* 6b · Testimonials */}
-        <Section alt>
+        <Section>
           <SectionHeader className="lbh-sh-44" eyebrow="In their words" title="What our clients say." lede="Three clients, in their own words." />
           <div className="lbh-reviews">
             {reviews.map((r) => (
@@ -467,7 +443,7 @@ export default function HomePage() {
         </Section>
 
         {/* 7 · Offer stack */}
-        <Section>
+        <Section alt>
           <SectionHeader
             className="lbh-sh-46"
             eyebrow="What you get"
@@ -494,7 +470,7 @@ export default function HomePage() {
         </Section>
 
         {/* 10 · FAQ */}
-        <Section alt id="faq">
+        <Section id="faq">
           <SectionHeader className="lbh-sh-40" eyebrow="FAQ" title="Questions businesses ask us." />
           <FAQ qAs="h3" items={faqs} />
         </Section>
