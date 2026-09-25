@@ -32,6 +32,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.locully.org/rachaphon-sakchiraphong/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.locully.org/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

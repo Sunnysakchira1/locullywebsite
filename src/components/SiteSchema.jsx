@@ -8,7 +8,7 @@ const organizationSchema = {
   name: 'Locully Co. Ltd',
   url: 'https://www.locully.org',
   logo: 'https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png',
-  foundingDate: '2025',
+  foundingDate: '2020',
   email: 'admin@locully.org',
   telephone: '+66626959444',
   address: {

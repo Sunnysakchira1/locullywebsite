@@ -72,3 +72,34 @@
   .lbp-lgp-expo-card h3 { font-size: 17px; }
   .lbp-lgp-cta .lb-btn { display: flex; width: 100%; }
 }
+
+/* ── /about rebuild (2026-09) + founder page (lbp-founder-*) ───── */
+h3.lbp-about-name { margin: 0 0 6px; }
+.lb .lbp-about-text { margin: 0 0 20px; font-size: 17px; line-height: 1.65; color: var(--lb-body); }
+.lb .lbp-about-intro { max-width: 860px; margin: 0 auto 28px; text-align: center; }
+.lbp-about-stages { max-width: 900px; margin: 0 auto 36px; }
+.lbp-about-facts th { width: 34%; text-transform: none; letter-spacing: 0; font-size: 15px; color: var(--lb-ink); background: var(--lb-ground-alt); border-right: 1px solid var(--lb-rule); vertical-align: top; }
+.lbp-about-facts tr:last-child th { border-bottom: 0; }
+.lbp-about-facts a, .lbp-about-intro a, .lbp-founder .lb-sec a:not(.lb-btn):not(.lb-btn-o):not(.lb-tlink) { color: var(--lb-accent-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 560px) {
+  .lbp-about-facts th, .lbp-about-facts td { display: block; width: auto; border-right: 0; }
+  .lbp-about-facts th { border-bottom: 0; padding-bottom: 4px; }
+  .lbp-about-facts td { padding-top: 0; }
+}
+.lbp-founder-photo { max-width: 380px; margin-left: auto; }
+.lbp-founder-photo .lb-frame { aspect-ratio: 4 / 5; }
+.lbp-founder-photo .lb-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.lbp-founder-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.lbp-founder-links .lb-btn-o { font-size: 15px; padding: 12px 22px; }
+.lbp-founder-quote { margin: 0 auto 20px; max-width: 760px; text-align: center; font-size: 30px; line-height: 1.3; font-weight: 700; letter-spacing: -0.02em; color: var(--lb-ink); }
+.lbp-founder-writing { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.lbp-founder-writing li { background: var(--lb-card); border: 1px solid var(--lb-rule); border-radius: var(--lb-radius-lg); padding: 20px 24px; }
+.lbp-founder-writing a { font-size: 18px; }
+.lbp-founder-writing span { display: block; margin-top: 6px; font-size: 14.5px; color: var(--lb-muted); }
+@media (max-width: 860px) {
+  .lbp-founder-photo { max-width: 300px; margin: 0; }
+  .lbp-founder-quote { font-size: 23px; }
+}
+.lb.lbp-founder .lb-sec p.lb-body-lg, .lb.lbp-about .lb-sec .lb-wn > p.lb-body-lg { margin: 0 0 18px; }
+.lb.lbp-about .lb-card .lb-tlink { display: inline-flex; margin-top: 14px; }
+.lb .lbp-about-facts th { text-transform: none; letter-spacing: 0; font-size: 15px; font-weight: 600; color: var(--lb-ink); }

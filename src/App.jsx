@@ -30,6 +30,7 @@ import ContactPage from '@/pages/ContactPage';
 import SeoPage from '@/pages/SeoPage';
 import PerformanceMarketingPage from '@/pages/PerformanceMarketingPage';
 import AiVisibilityAuditPage from '@/pages/AiVisibilityAuditPage';
+import FounderPage from '@/pages/FounderPage';
 import NotFound from '@/components/NotFound';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
@@ -114,6 +115,8 @@ function App() {
           <Route path="/lead-gen-partner" element={<LeadGenPartnerPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact/" element={<ContactPage />} />
+          <Route path="/rachaphon-sakchiraphong" element={<Navigate to="/rachaphon-sakchiraphong/" replace />} />
+          <Route path="/rachaphon-sakchiraphong/" element={<FounderPage />} />
           <Route path="/packages" element={<PackagesPage />} />
           <Route path="/seo/" element={<SeoPage />} />
           {/* Trailing-slash redirects */}
