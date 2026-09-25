@@ -10,7 +10,7 @@ export const clinics = [
       "Patients looking for a physiotherapist in Bangkok are no longer just Googling. They're asking ChatGPT. If your clinic isn't optimized for AI search, you're invisible to a growing share of new patients.",
     aiQueries: [
       '"best physio clinic for back pain Bangkok"',
-      '"sports injury physiotherapy near Asoke"',
+      '"sports injury physiotherapy near me"',
       '"post-surgery rehab clinic Bangkok recommendation"',
       '"English-speaking physiotherapist Sukhumvit"',
     ],
