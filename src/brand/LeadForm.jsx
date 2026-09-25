@@ -6,13 +6,20 @@ import { CTA_LABEL } from '@/brand/components';
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbdzjegj';
 export const DEFAULT_SUBJECT = 'New AI Visibility Audit Request — Locully';
 
+const emptyForm = (extraFields) => ({
+  name: '', email: '', website: '',
+  ...Object.fromEntries(extraFields.map((f) => [f.name, ''])),
+});
+
 /**
  * The site's one conversion point. Same Formspree fetch + toast + analytics
  * flow as the original ContactForm. Renders only the white form card.
+ * `extraFields` (optional): [{ name, label, placeholder, autoComplete }] adds
+ * optional text inputs after Website; their values post with the same payload.
  */
-export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hint }) => {
+export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hint, extraFields = [] }) => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: '', email: '', website: '' });
+  const [formData, setFormData] = useState(() => emptyForm(extraFields));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -36,7 +43,7 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
       setIsSubmitted(true);
       toast({ title: 'Request Sent!', description: "We've received your audit request and will be in touch shortly." });
       logFormSubmission('AI Visibility Audit Request', true);
-      setTimeout(() => { setFormData({ name: '', email: '', website: '' }); setIsSubmitted(false); }, 4000);
+      setTimeout(() => { setFormData(emptyForm(extraFields)); setIsSubmitted(false); }, 4000);
     } catch {
       toast({ title: 'Something went wrong', description: 'Please try again or email us at admin@locully.org.', variant: 'destructive' });
     } finally {
@@ -57,6 +64,13 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
       <label htmlFor={`${idPrefix}-website`}>Website</label>
       <input id={`${idPrefix}-website`} name="website" type="url" value={formData.website}
         onChange={handleChange} placeholder="https://www.yourbusiness.com" disabled={disabled} required />
+      {extraFields.map((f) => (
+        <React.Fragment key={f.name}>
+          <label htmlFor={`${idPrefix}-${f.name}`}>{f.label} <span className="lb-opt">(optional)</span></label>
+          <input id={`${idPrefix}-${f.name}`} name={f.name} type="text" autoComplete={f.autoComplete || 'off'}
+            value={formData[f.name]} onChange={handleChange} placeholder={f.placeholder} disabled={disabled} />
+        </React.Fragment>
+      ))}
       {hint && <p className="lb-hint">{hint}</p>}
       <button type="submit" className={`lb-btn block${isSubmitted ? ' done' : ''}`} disabled={disabled}>
         {isSubmitting ? (<><span className="lb-spin" aria-hidden="true" /> Sending…</>)
@@ -72,7 +86,7 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
  * Lead-form band: ground-alt section, centred header, form card and an
  * optional aside (rendered beside the form on desktop, under it on mobile).
  */
-const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', aside, subject, idPrefix, hint, children, footer, alt = true }) => (
+const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', aside, subject, idPrefix, hint, extraFields, children, footer, alt = true }) => (
   <section id={id} className={`lb-sec${alt ? ' alt' : ''}`}>
     <div className="lb-w">
       {(eyebrow || title || lede) && (
@@ -84,7 +98,7 @@ const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', asid
       )}
       {children}
       <div className={`lb-lead-wrap${aside ? ' with-aside' : ''}`}>
-        <LeadFormCard subject={subject} idPrefix={idPrefix || id} hint={hint} />
+        <LeadFormCard subject={subject} idPrefix={idPrefix || id} hint={hint} extraFields={extraFields} />
         {aside && <div>{aside}</div>}
       </div>
       {footer}

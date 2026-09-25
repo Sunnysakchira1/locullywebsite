@@ -29,6 +29,7 @@ import GeoPage from '@/pages/GeoPage';
 import ContactPage from '@/pages/ContactPage';
 import SeoPage from '@/pages/SeoPage';
 import PerformanceMarketingPage from '@/pages/PerformanceMarketingPage';
+import AiVisibilityAuditPage from '@/pages/AiVisibilityAuditPage';
 import NotFound from '@/components/NotFound';
 import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
@@ -148,6 +149,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/performance-marketing" element={<Navigate to="/performance-marketing/" replace />} />
           <Route path="/performance-marketing/" element={<PerformanceMarketingPage />} />
+          <Route path="/geo/ai-visibility-audit" element={<Navigate to="/geo/ai-visibility-audit/" replace />} />
+          <Route path="/geo/ai-visibility-audit/" element={<AiVisibilityAuditPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />
