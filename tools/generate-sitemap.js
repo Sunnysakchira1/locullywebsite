@@ -4,7 +4,7 @@
  * Generates public/sitemap.xml from authoritative sources so it never drifts
  * when pages are added:
  *   - static pages: curated list below (must match routes in App.jsx)
- *   - clinic pages: src/data/clinicData.js
+ *   - industry pages: src/data/industryData.js
  *   - blog posts:   src/data/blogData.jsx (lastmod = each post's updatedDate)
  *
  * Only indexable pages are included. /privacy-policy is intentionally omitted
@@ -26,6 +26,7 @@ const STATIC_PAGES = [
   { path: '/',                     priority: '1.0', changefreq: 'weekly'  },
   { path: '/geo/',                 priority: '0.9', changefreq: 'monthly' },
   { path: '/seo/',                 priority: '0.9', changefreq: 'monthly' },
+  { path: '/industries/',          priority: '0.8', changefreq: 'monthly' },
   { path: '/packages',             priority: '0.8', changefreq: 'monthly' },
   { path: '/performance-marketing/', priority: '0.8', changefreq: 'monthly' },
   { path: '/lead-gen-partner',     priority: '0.7', changefreq: 'monthly' },
@@ -89,8 +90,8 @@ function urlEntry({ path: p, priority, changefreq, lastmod }) {
 function main() {
   const cwd = process.cwd();
 
-  const clinics = readData(path.join(cwd, 'src', 'data', 'clinicData.js'), { slug: 'slug' })
-    .map(c => ({ path: `/ai-optimization/${c.slug}/`, priority: '0.8', changefreq: 'monthly' }));
+  const industryPages = readData(path.join(cwd, 'src', 'data', 'industryData.js'), { slug: 'slug' })
+    .map(c => ({ path: `/industries/${c.slug}/`, priority: '0.8', changefreq: 'monthly' }));
 
   const posts = readData(path.join(cwd, 'src', 'data', 'blogData.jsx'),
     { slug: 'slug', updatedDate: 'updatedDate', publishDate: 'publishDate' })
@@ -101,7 +102,7 @@ function main() {
       lastmod: p.updatedDate || p.publishDate,
     }));
 
-  const all = [...STATIC_PAGES, ...clinics, ...posts];
+  const all = [...STATIC_PAGES, ...industryPages, ...posts];
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -115,7 +116,7 @@ function main() {
   const outPath = path.join(cwd, 'public', 'sitemap.xml');
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, xml, 'utf8');
-  console.log(`✓ sitemap.xml: ${STATIC_PAGES.length} static + ${clinics.length} clinics + ${posts.length} posts = ${all.length} URLs`);
+  console.log(`✓ sitemap.xml: ${STATIC_PAGES.length} static + ${industryPages.length} industry pages + ${posts.length} posts = ${all.length} URLs`);
 }
 
 const isMainModule = import.meta.url === `file://${process.argv[1]}`;

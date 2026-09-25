@@ -3,8 +3,8 @@
 /**
  * Generates public/llms.txt — a guide to the site for AI crawlers.
  *
- * URLs are authoritative (match the routes in App.jsx). Clinic pages are pulled
- * from src/data/clinicData.js and blog posts from src/data/blogData.jsx so new
+ * URLs are authoritative (match the routes in App.jsx). Industry pages are pulled
+ * from src/data/industryData.js and blog posts from src/data/blogData.jsx so new
  * posts/clinics appear automatically. Static pages are curated below.
  *
  * (Rewritten 2026-07: the previous version used `routes.length` on a Map — always
@@ -23,6 +23,8 @@ const STATIC_PAGES = [
     desc: 'Get your clinic recommended by ChatGPT, Perplexity, and Google AI Overviews. Locully is a Bangkok agency specialising in AI search visibility (GEO/AIO) for healthcare clinics.' },
   { url: '/geo/', title: 'AI SEO Agency — GEO & AI Search Optimisation',
     desc: "Locully's GEO service: how AI search engines choose which businesses to name, what the work includes, and how AI search visibility is measured." },
+  { url: '/industries/', title: 'Industries: clinics and property',
+    desc: 'How Locully applies SEO, GEO and Google and Meta ads to healthcare clinics and property businesses in Bangkok.' },
   { url: '/packages', title: 'One-Off Packages',
     desc: 'No-retainer packages — content writing and backlink building for clinics, priced per project.' },
   { url: '/lead-gen-partner', title: 'Local Marketing Partner for Fairs & Expos',
@@ -78,9 +80,9 @@ function main() {
   const cwd = process.cwd();
 
   const clinics = zipPages(
-    path.join(cwd, 'src', 'data', 'clinicData.js'),
-    { slug: 'slug', namePlural: 'namePlural', desc: 'metaDescription' },
-    r => ({ url: `/ai-optimization/${r.slug}/`, title: `${r.namePlural} in AI Search`, desc: r.desc })
+    path.join(cwd, 'src', 'data', 'industryData.js'),
+    { slug: 'slug', name: 'name', desc: 'metaDescription' },
+    r => ({ url: `/industries/${r.slug}/`, title: `Marketing for ${r.name.charAt(0).toLowerCase()}${r.name.slice(1)} in Bangkok`, desc: r.desc })
   );
 
   const posts = zipPages(
@@ -95,7 +97,7 @@ function main() {
     '> Locully is a Bangkok-based agency specialising in AI search visibility (GEO / AIO) for healthcare clinics — making them the clinic ChatGPT, Perplexity, and Google AI Overviews recommend.',
     '',
     section('Main Pages', STATIC_PAGES),
-    section('AI Optimization by Clinic Type', clinics),
+    section('Industries', clinics),
     section('Blog', posts),
     '## Contact',
     '- Website: https://www.locully.org',
