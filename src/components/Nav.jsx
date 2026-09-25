@@ -1,53 +1,63 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { goToLeadForm } from '@/brand/components';
 
 /**
- * Shared global navbar — one sticky nav on every page.
+ * Shared global navbar — one fixed nav on every page (brand v2).
  * Desktop: About · Services · Packages · Blog▾ (For Clinics under Blog) + CTA.
- * Mobile: hamburger opens a panel with all links (For Clinics nested under Blog) + CTA.
+ * Mobile: wordmark + "Free AI check" + menu button (all links in the panel).
  */
 const Nav = () => {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
+  const onCta = (e) => { close(); goToLeadForm(e); };
 
   return (
-    <nav className="gnav">
-      <Link to="/" className="gnav-logo" aria-label="Locully home" onClick={close}>
-        <img src="/locully-wordmark.png" alt="Locully" className="gnav-logo-img" />
-      </Link>
+    <nav className="bnav" aria-label="Main">
+      <div className="bnav-in">
+        <Link to="/" className="bnav-logo" aria-label="Locully home" onClick={close}>
+          <img src="/locully-wordmark-navy.png" alt="Locully" width="88" height="26" />
+        </Link>
 
-      <ul className="gnav-links">
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/ai-search-visibility">Services</Link></li>
-        <li><Link to="/packages">Packages</Link></li>
-        <li className="gnav-dd">
-          <Link to="/blog/">Blog <span className="gnav-caret">▾</span></Link>
-          <div className="gnav-dd-menu">
-            <Link to="/ai-optimization/">For Clinics</Link>
-            <Link to="/blog/">All Articles</Link>
-          </div>
-        </li>
-      </ul>
+        <div className="bnav-right">
+          <ul className="bnav-links">
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/ai-search-visibility">Services</Link></li>
+            <li><Link to="/packages">Packages</Link></li>
+            <li className="bnav-dd">
+              <Link to="/blog/">Blog<span className="bnav-caret" aria-hidden="true" /></Link>
+              <div className="bnav-dd-menu">
+                <Link to="/ai-optimization/">For Clinics</Link>
+                <Link to="/blog/">All Articles</Link>
+              </div>
+            </li>
+          </ul>
 
-      <a href="/#contact" className="gnav-cta">Get My Free AI Visibility Audit</a>
+          <a href="/#contact" className="lb-btn bnav-cta" onClick={onCta}>
+            <span className="bnav-cta-full">Free AI visibility check</span>
+            <span className="bnav-cta-short">Free AI check</span>
+          </a>
 
-      <button
-        className={`gnav-burger${open ? ' open' : ''}`}
-        aria-label="Toggle menu"
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-      >
-        <span /><span /><span />
-      </button>
+          <button
+            type="button"
+            className={`bnav-burger${open ? ' open' : ''}`}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span /><span /><span />
+          </button>
+        </div>
+      </div>
 
       {open && (
-        <div className="gnav-mobile" onClick={close}>
+        <div className="bnav-mobile" onClick={close}>
           <Link to="/about">About</Link>
           <Link to="/ai-search-visibility">Services</Link>
           <Link to="/packages">Packages</Link>
           <Link to="/blog/">Blog</Link>
-          <Link to="/ai-optimization/" className="gnav-mobile-sub">For Clinics</Link>
-          <a href="/#contact" className="gnav-mobile-cta">Get My Free AI Visibility Audit</a>
+          <Link to="/ai-optimization/" className="bnav-mobile-sub">For Clinics</Link>
+          <a href="/#contact" className="lb-btn" onClick={onCta}>Get my free AI visibility check</a>
         </div>
       )}
     </nav>

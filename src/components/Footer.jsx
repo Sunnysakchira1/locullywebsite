@@ -4,30 +4,27 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="l-footer">
-      <div className="l-container">
-        <div className="l-footer-grid">
-          <div className="l-footer-logo">
-            <Link to="/">
-              <img
-                src="/locully-logo.png"
-                alt="Locully Logo"
-              />
+    <footer className="bfoot">
+      <div className="bfoot-in">
+        <div className="bfoot-grid">
+          <div>
+            <Link to="/" className="bfoot-logo" aria-label="Locully home">
+              <img src="/locully-wordmark-navy.png" alt="Locully Logo" width="81" height="24" />
             </Link>
-            <p className="l-footer-desc">SEO & AI Visibility Experts.<br />Rank #1 in AI Search.</p>
-            <div className="l-social-row" style={{ marginTop: '20px' }}>
-              <a href="https://www.linkedin.com/company/locully" target="_blank" rel="noopener noreferrer" className="l-social-btn">
+            <p className="bfoot-desc">SEO & AI Visibility Experts.<br />Rank #1 in AI Search.</p>
+            <div className="bfoot-social">
+              <a href="https://www.linkedin.com/company/locully" target="_blank" rel="noopener noreferrer" aria-label="Locully on LinkedIn">
                 <Linkedin style={{ width: '16px', height: '16px' }} />
               </a>
-              <a href="https://instagram.com/locully.th" target="_blank" rel="noopener noreferrer" className="l-social-btn">
+              <a href="https://instagram.com/locully.th" target="_blank" rel="noopener noreferrer" aria-label="Locully on Instagram">
                 <Instagram style={{ width: '16px', height: '16px' }} />
               </a>
             </div>
           </div>
 
           <div>
-            <div className="l-footer-col-title">Navigation</div>
-            <div className="l-footer-links">
+            <div className="bfoot-label">Navigation</div>
+            <div className="bfoot-links">
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/blog/">Blog</Link>
@@ -38,21 +35,22 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className="l-footer-col-title">Contact</div>
-            <div className="l-footer-links">
+            <div className="bfoot-label">Contact</div>
+            <div className="bfoot-links">
               <a href="mailto:sunny@locully.org">sunny@locully.org</a>
-              <span style={{ color: 'var(--muted)', fontSize: '13.5px' }}>+66 62 695 9444</span>
-              <span style={{ color: 'var(--muted2)', fontSize: '12px' }}>Bangkok, Thailand</span>
+              <span>+66 62 695 9444</span>
+              <span>Bangkok, Thailand</span>
             </div>
           </div>
         </div>
 
-        <div className="l-footer-bottom">
-          <p className="l-footer-copy">© 2026 Locully Co. Ltd. All rights reserved.</p>
-          <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-            <a href="https://seojuice.com" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)', textDecoration: 'none' }}>SEOJuice</a>
-            <Link to="/privacy-policy" style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)', textDecoration: 'none' }}>Privacy Policy</Link>
-            <span style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--muted2)' }}>Terms of Service</span>
+        <div className="bfoot-bottom">
+          <p className="bfoot-copy">© 2026 Locully Co. Ltd. All rights reserved.</p>
+          <div className="bfoot-legal">
+            <a href="https://seojuice.com" target="_blank" rel="noopener noreferrer">SEOJuice</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <span>Terms of Service</span>
+            <img src="/locully-mark.png" alt="" className="bfoot-mark" width="12" height="22" />
           </div>
         </div>
       </div>
