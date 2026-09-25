@@ -31,14 +31,14 @@
 .lbwa-close { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 999px; border: 0; background: none; color: var(--lb-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .lbwa-close:hover { background: var(--lb-ground-alt); color: var(--lb-ink); }
 .lbwa-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding-right: 26px; }
-.lbwa-av { width: 40px; height: 40px; border-radius: 999px; background: var(--lb-ink); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+.lbwa-av { width: 40px; height: 40px; border-radius: 999px; background: #25d366; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
 .lbwa-t { font-size: 15px; font-weight: 600; color: var(--lb-ink); line-height: 1.2; }
 .lbwa-s { font-size: 13px; color: var(--lb-signal-good); margin-top: 3px; display: flex; align-items: center; gap: 6px; }
 .lbwa-s::before { content: ""; width: 7px; height: 7px; border-radius: 999px; background: var(--lb-signal-good); }
 .lbwa-msg { margin: 0 0 14px; background: var(--lb-ground-alt); border: 1px solid var(--lb-rule-soft); border-radius: 4px 14px 14px 14px; padding: 11px 13px; font-size: 14.5px; line-height: 1.5; color: var(--lb-body); }
-.lbwa-cta { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--lb-ink); color: #ffffff; border: 0; border-radius: 999px; padding: 13px 18px; font-family: var(--lb-font); font-size: 15px; font-weight: 600; cursor: pointer; }
-.lbwa-cta:hover { background: #1f2f55; }
-.lbwa-fab { width: 56px; height: 56px; border-radius: 999px; background: var(--lb-ink); border: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(20, 33, 61, 0.25); }
+.lbwa-cta { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: #128c7e; color: #ffffff; border: 0; border-radius: 999px; padding: 13px 18px; font-family: var(--lb-font); font-size: 15px; font-weight: 600; cursor: pointer; }
+.lbwa-cta:hover { background: #0f7a6d; }
+.lbwa-fab { width: 56px; height: 56px; border-radius: 999px; background: #25d366; border: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35); }
 .lbwa-fab:focus-visible, .lbwa-cta:focus-visible { outline: 3px solid var(--lb-accent); outline-offset: 3px; }
 @media (max-width: 760px) {
   .lbwa { right: 14px; bottom: calc(84px + env(safe-area-inset-bottom)); }
