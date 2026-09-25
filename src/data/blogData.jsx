@@ -93,7 +93,7 @@ export const posts = [
 
         <h2 style={s.h2}>Why Thailand Clinics Are Particularly Vulnerable</h2>
         <p style={s.p}>
-          Thailand's clinic market — Bangkok especially — is one of the most competitive in Asia for medical tourism. Dental, physiotherapy, <Link to="/ai-optimization/beauty-clinics/" style={s.ilink}>aesthetic</Link>, <Link to="/ai-optimization/fertility-clinics/" style={s.ilink}>fertility</Link>, and <Link to="/ai-optimization/wellness-clinics/" style={s.ilink}>wellness</Link> clinics compete heavily for the same pool of expat and international patients.
+          Thailand's clinic market — Bangkok especially — is one of the most competitive in Asia for medical tourism. Dental, physiotherapy, <Link to="/industries/beauty-clinics/" style={s.ilink}>aesthetic</Link>, <Link to="/industries/fertility-clinics/" style={s.ilink}>fertility</Link>, and <Link to="/industries/wellness-clinics/" style={s.ilink}>wellness</Link> clinics compete heavily for the same pool of expat and international patients.
         </p>
         <p style={s.p}>
           These patients overwhelmingly use English-language AI tools to research and decide. When they ask ChatGPT "best dental clinic Bangkok for foreigners" or "English-speaking physio Sukhumvit," a small number of clinics get recommended. Most don't.
@@ -119,7 +119,7 @@ export const posts = [
           "Dental implants Bangkok" and "teeth whitening Bangkok" are different queries. If your clinic has one Services page listing everything you offer, you're invisible to both. AI needs dedicated pages for each treatment — with specific content, FAQs, and structured data for each service.
         </p>
         <p style={s.p}>
-          This is one of the highest-leverage changes any Thailand clinic can make. See our breakdown for <Link to="/blog/ai-optimization-dental-clinics-thailand/" style={s.ilink}>AI optimization for dental clinics</Link> and <Link to="/ai-optimization/physiotherapy-clinics/" style={s.ilink}>physiotherapy clinics</Link>.
+          This is one of the highest-leverage changes any Thailand clinic can make. See our breakdown for <Link to="/blog/ai-optimization-dental-clinics-thailand/" style={s.ilink}>AI optimization for dental clinics</Link> and <Link to="/industries/physiotherapy-clinics/" style={s.ilink}>physiotherapy clinics</Link>.
         </p>
 
         <h3 style={s.h3}>3. Schema Markup and Structured Data</h3>
@@ -385,7 +385,7 @@ export const posts = [
           The most common missed opportunity: a clinic that's excellent at something never mentions it explicitly on their website. If you treat a lot of sports injuries, your website needs a sports injury page — not just physiotherapy listed under Services.
         </Callout>
         <p style={s.p}>
-          For a guide on how to structure content for specific clinic types, see our posts on <Link to="/ai-optimization/physiotherapy-clinics/" style={s.ilink}>AI optimization for physiotherapy clinics</Link> and <Link to="/ai-optimization/dental-clinics/" style={s.ilink}>dental clinics</Link> — or browse <Link to="/ai-optimization/" style={s.ilink}>AI optimization by clinic type</Link>.
+          For a guide on how to structure content for specific clinic types, see our posts on <Link to="/industries/physiotherapy-clinics/" style={s.ilink}>AI optimization for physiotherapy clinics</Link> and <Link to="/industries/dental-clinics/" style={s.ilink}>dental clinics</Link> — or browse <Link to="/ai-optimization/" style={s.ilink}>AI optimization by clinic type</Link>.
         </p>
 
         <h2 style={s.h2}>Signal 3: Structured Data — Can AI Parse You Reliably?</h2>
@@ -535,7 +535,7 @@ export const posts = [
           <NumLi n="5"><strong style={s.strong}>Dentist profile pages</strong> with credentials, specializations, and years of experience — structured for AI to parse.</NumLi>
         </Ol>
         <p style={s.p}>
-          Locully manages exactly this content architecture for dental clinics. Visit our <Link to="/ai-optimization/dental-clinics/" style={s.ilink}>AI optimization for dental clinics page</Link> for the full service overview.
+          Locully manages exactly this content architecture for dental clinics. Visit our <Link to="/industries/dental-clinics/" style={s.ilink}>AI optimization for dental clinics page</Link> for the full service overview.
         </p>
 
         <h2 style={s.h2}>The Competitive Opportunity</h2>
@@ -924,7 +924,7 @@ export const posts = [
         </p>
         <Ul>
           <Li><strong style={s.strong}>YMYL content standards</strong> — Google and AI systems apply stricter trust requirements to healthcare content. A specialist knows how to build E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness) specifically for medical queries.</Li>
-          <Li><strong style={s.strong}>Patient search behavior</strong> — The queries patients ask AI for dental, physio, <Link to="/ai-optimization/fertility-clinics/" style={s.ilink}>fertility</Link>, and <Link to="/ai-optimization/beauty-clinics/" style={s.ilink}>aesthetic</Link> clinics are all different. A specialist understands each patient journey and what content each requires.</Li>
+          <Li><strong style={s.strong}>Patient search behavior</strong> — The queries patients ask AI for dental, physio, <Link to="/industries/fertility-clinics/" style={s.ilink}>fertility</Link>, and <Link to="/industries/beauty-clinics/" style={s.ilink}>aesthetic</Link> clinics are all different. A specialist understands each patient journey and what content each requires.</Li>
           <Li><strong style={s.strong}>Competitive landscape</strong> — Bangkok's clinic market has specific dynamics. Who ranks now, why they rank, and what it takes to displace them is domain knowledge a generalist doesn't have.</Li>
           <Li><strong style={s.strong}>Content accuracy requirements</strong> — Medical content cannot be fabricated or exaggerated. A specialist works with your clinical team to ensure content is accurate and approved — not mass-generated.</Li>
         </Ul>
@@ -1331,7 +1331,7 @@ export const posts = [
           A page with no internal links pointing to it — an "orphan page" — is harder for Google to discover and receives none of your site's accumulated authority. Every important page should receive at least 2–3 internal links from other relevant pages.
         </p>
         <Ul>
-          <Li>Use descriptive anchor text — <Link to="/ai-optimization/physiotherapy-clinics/" style={s.ilink}>"physiotherapy clinics in Bangkok"</Link> is a better anchor than "click here" or "read more."</Li>
+          <Li>Use descriptive anchor text — <Link to="/industries/physiotherapy-clinics/" style={s.ilink}>"physiotherapy clinics in Bangkok"</Link> is a better anchor than "click here" or "read more."</Li>
           <Li>Link from high-authority pages (homepage, pillar posts) to pages you want to rank.</Li>
           <Li>Avoid linking to the same page repeatedly from the same article with different anchor texts — this can dilute the signal.</Li>
           <Li>Internal linking also improves session depth: users who follow internal links to related content stay longer, which is a positive engagement signal.</Li>

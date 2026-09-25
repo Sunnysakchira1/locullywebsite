@@ -71,3 +71,19 @@
   .lbp-clinic .lb-hero .lb-stat-n { font-size: 24px; }
   .lbp-clinic .lb-hero .lb-stat-l { font-size: 13px; }
 }
+
+/* Industry pages (/industries/) — prefix lbp-ind- */
+.lbp-ind-chips { margin-top: 28px; }
+.lbp-ind-svc { display: flex; flex-direction: column; }
+.lbp-ind-svc .lb-tlink { margin-top: auto; padding-top: 14px; }
+.lbp-ind-rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--lb-grid-gap); max-width: 980px; margin: 0 auto; }
+.lbp-ind-rule { background: var(--lb-card); border: 1px solid var(--lb-rule); border-radius: 16px; padding: 24px 26px; }
+.lbp-ind-rule p { margin: 8px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--lb-body); }
+.lb .lbp-ind-srcline, .lbp-ind-srcline { font-size: 14px; color: var(--lb-muted); margin-top: 12px; text-align: inherit; }
+.lb-shead + .lbp-ind-srcline { text-align: center; margin: -20px 0 28px; }
+.lbp-ind-src { color: var(--lb-accent-deep); text-decoration: underline; text-underline-offset: 2px; }
+.lbp-ind-disclaimer { text-align: center; max-width: 720px; margin: 24px auto 0; }
+@media (max-width: 760px) {
+  .lbp-ind-rules { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .lbp-ind-rule { padding: 20px; }
+}

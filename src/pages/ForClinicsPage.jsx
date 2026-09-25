@@ -2,7 +2,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
-import { clinics } from '@/data/clinicData';
+import { industries } from '@/data/industryData';
+
+const clinics = industries.filter((i) => i.group === 'clinic');
 import { Page, Breadcrumb, PageHero, Section, SectionHeader, Button } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
 import { Clinic } from '@/brand/Illustrations';
@@ -75,10 +77,10 @@ export default function ForClinicsPage() {
           <SectionHeader eyebrow="Choose your clinic type" style={{ marginBottom: 32 }} />
           <div className="lb-g3">
             {clinics.map((clinic) => (
-              <Link key={clinic.slug} to={`/ai-optimization/${clinic.slug}/`} className="lb-card sm lb-card-link">
+              <Link key={clinic.slug} to={`/industries/${clinic.slug}/`} className="lb-card sm lb-card-link">
                 <span className="lb-label lbp-clinic-card-eyebrow">Bangkok · AI Optimization</span>
-                <h2 className="lb-h3">{clinic.namePlural}</h2>
-                <p className="lbp-clinic-card-p">{clinic.intro}</p>
+                <h2 className="lb-h3">{clinic.name}</h2>
+                <p className="lbp-clinic-card-p">{clinic.card}</p>
                 <div className="lb-card-foot">
                   <span className="lbp-clinic-more">See how it works <span aria-hidden="true">→</span></span>
                 </div>

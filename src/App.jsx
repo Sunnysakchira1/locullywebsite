@@ -22,7 +22,9 @@ import homeHtml from '@/home-content.html?raw';
 import CaseStudyGate from '@/components/CaseStudyGate';
 import '@/home-scoped.css';
 import ForClinicsPage from '@/pages/ForClinicsPage';
-import ClinicPage from '@/components/ClinicPage';
+import IndustriesPage from '@/pages/IndustriesPage';
+import IndustryPage from '@/pages/IndustryPage';
+import { industries } from '@/data/industryData';
 import BlogIndexPage from '@/pages/BlogIndexPage';
 import BlogPostPage from '@/pages/BlogPostPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
@@ -113,19 +115,21 @@ function App() {
           <Route path="/packages" element={<PackagesPage />} />
           {/* Trailing-slash redirects */}
           <Route path="/ai-optimization" element={<Navigate to="/ai-optimization/" replace />} />
-          <Route path="/ai-optimization/physiotherapy-clinics" element={<Navigate to="/ai-optimization/physiotherapy-clinics/" replace />} />
-          <Route path="/ai-optimization/dental-clinics" element={<Navigate to="/ai-optimization/dental-clinics/" replace />} />
-          <Route path="/ai-optimization/wellness-clinics" element={<Navigate to="/ai-optimization/wellness-clinics/" replace />} />
-          <Route path="/ai-optimization/fertility-clinics" element={<Navigate to="/ai-optimization/fertility-clinics/" replace />} />
-          <Route path="/ai-optimization/beauty-clinics" element={<Navigate to="/ai-optimization/beauty-clinics/" replace />} />
           <Route path="/blog" element={<Navigate to="/blog/" replace />} />
+          <Route path="/industries" element={<Navigate to="/industries/" replace />} />
+          {industries.map((i) => (
+            <Route key={`${i.slug}-noslash`} path={`/industries/${i.slug}`} element={<Navigate to={`/industries/${i.slug}/`} replace />} />
+          ))}
+          {/* Legacy clinic URLs moved to /industries/ (server 301s live in vercel.json; this is the SPA fallback) */}
+          {industries.filter((i) => i.group === 'clinic').map((i) => (
+            <Route key={`${i.slug}-legacy`} path={`/ai-optimization/${i.slug}/*`} element={<Navigate to={`/industries/${i.slug}/`} replace />} />
+          ))}
+          <Route path="/industries/" element={<IndustriesPage />} />
+          {industries.map((i) => (
+            <Route key={i.slug} path={`/industries/${i.slug}/`} element={<IndustryPage slug={i.slug} />} />
+          ))}
 
           <Route path="/ai-optimization/" element={<ForClinicsPage />} />
-          <Route path="/ai-optimization/physiotherapy-clinics/" element={<ClinicPage slug="physiotherapy-clinics" />} />
-          <Route path="/ai-optimization/dental-clinics/" element={<ClinicPage slug="dental-clinics" />} />
-          <Route path="/ai-optimization/wellness-clinics/" element={<ClinicPage slug="wellness-clinics" />} />
-          <Route path="/ai-optimization/fertility-clinics/" element={<ClinicPage slug="fertility-clinics" />} />
-          <Route path="/ai-optimization/beauty-clinics/" element={<ClinicPage slug="beauty-clinics" />} />
           <Route path="/blog/" element={<BlogIndexPage />} />
           <Route path="/blog/ai-search-optimization-clinics-thailand/" element={<BlogPostPage slug="ai-search-optimization-clinics-thailand" />} />
           <Route path="/blog/why-clinic-not-showing-chatgpt/" element={<BlogPostPage slug="why-clinic-not-showing-chatgpt" />} />
