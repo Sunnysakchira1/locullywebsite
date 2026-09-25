@@ -1973,7 +1973,7 @@ export const posts = [
           Every statistic on this page points to the same conclusion: AI search is now where a large and growing share of buying decisions begin. The businesses that get named inside ChatGPT, Perplexity and Google AI Overviews capture that demand. Everyone else is invisible to it — and won&rsquo;t even see the leads they&rsquo;re losing.
         </p>
         <p style={s.p}>
-          Locully helps clinics and businesses in Thailand get found and recommended in AI search — we took one Bangkok clinic from 3 to 27 AI-sourced consultations a month in six months. To see where you stand, <Link to="/ai-search-visibility" style={s.ilink}>see how our AI Visibility Optimization works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/ai-optimization/" style={s.ilink}>start with a free AI search audit</Link>.
+          Locully helps clinics and businesses in Thailand get found and recommended in AI search — we helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). To see where you stand, <Link to="/ai-search-visibility" style={s.ilink}>see how our AI Visibility Optimization works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/ai-optimization/" style={s.ilink}>start with a free AI search audit</Link>.
         </p>
         <Callout>
           <strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout and updated as new research is released.
@@ -2057,7 +2057,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Get cited, not just ranked</h2>
         <p style={s.p}>
-          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews — the same work that took one Bangkok clinic from 3 to 27 AI-sourced consultations a month. See how our <Link to="/ai-search-visibility" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>start with a free AI search audit</Link>.
+          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews — the same work that helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). See how our <Link to="/ai-search-visibility" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>start with a free AI search audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
@@ -2218,7 +2218,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Be part of the answer</h2>
         <p style={s.p}>
-          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI — work that took one Bangkok clinic from 3 to 27 AI-sourced consultations a month. See how our <Link to="/ai-search-visibility" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>get a free AI search audit</Link>.
+          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI — work that helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). See how our <Link to="/ai-search-visibility" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>get a free AI search audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
