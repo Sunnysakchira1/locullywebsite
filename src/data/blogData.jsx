@@ -3,25 +3,26 @@ import { Link } from 'react-router-dom';
 
 // ─── Shared inline styles for blog prose ────────────────────────────────────
 const s = {
-  h2: { fontFamily: 'var(--serif)', fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 600, color: 'var(--cream)', lineHeight: 1.2, margin: '56px 0 20px', letterSpacing: '-0.01em' },
-  h3: { fontFamily: 'var(--serif)', fontSize: 'clamp(18px, 2vw, 24px)', fontWeight: 600, color: 'var(--cream)', lineHeight: 1.3, margin: '36px 0 14px' },
-  p:  { fontSize: 16, color: 'var(--muted)', lineHeight: 1.8, fontWeight: 300, marginBottom: 20 },
-  ul: { paddingLeft: 0, margin: '16px 0 24px', listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 },
-  ol: { paddingLeft: 0, margin: '16px 0 24px', listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, counterReset: 'blog-ol' },
-  li: { display: 'flex', alignItems: 'flex-start', gap: 12, fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, fontWeight: 300 },
-  dot: { flexShrink: 0, width: 6, height: 6, borderRadius: '50%', background: 'var(--terra)', marginTop: 9 },
-  num: { flexShrink: 0, width: 22, height: 22, borderRadius: '50%', background: 'rgba(204,100,50,0.15)', border: '1px solid rgba(204,100,50,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: 'var(--terra)', fontFamily: 'var(--mono)', marginTop: 2 },
-  callout: { background: 'rgba(204,100,50,0.05)', border: '1px solid rgba(204,100,50,0.2)', borderLeft: '3px solid var(--terra)', borderRadius: '0 8px 8px 0', padding: '20px 24px', margin: '28px 0' },
-  calloutText: { fontSize: 15, color: 'var(--muted)', lineHeight: 1.75, fontWeight: 300, margin: 0 },
-  infoBox: { background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 10, padding: '24px 28px', margin: '28px 0' },
-  infoTitle: { fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--terra)', marginBottom: 14 },
-  table: { width: '100%', borderCollapse: 'collapse', margin: '24px 0', fontSize: 14 },
-  th: { padding: '12px 16px', background: 'var(--surface)', color: 'var(--muted)', fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', textAlign: 'left', borderBottom: '1px solid var(--bdr2)' },
-  td: { padding: '12px 16px', color: 'var(--muted)', borderBottom: '1px solid var(--bdr)', lineHeight: 1.5, verticalAlign: 'top' },
-  strong: { color: 'var(--cream)', fontWeight: 600 },
-  ilink: { color: 'var(--terra)', textDecoration: 'none', fontWeight: 500 },
-  divider: { height: 1, background: 'var(--bdr)', margin: '48px 0' },
+  h2: { fontFamily: 'var(--lb-font)', fontSize: 'clamp(26px, 3.2vw, 34px)', fontWeight: 700, color: 'var(--lb-ink)', lineHeight: 1.18, margin: '56px 0 18px', letterSpacing: '-0.03em' },
+  h3: { fontFamily: 'var(--lb-font)', fontSize: 'clamp(20px, 2.2vw, 24px)', fontWeight: 700, color: 'var(--lb-ink)', lineHeight: 1.25, margin: '36px 0 12px', letterSpacing: '-0.02em' },
+  p:  { fontSize: 'inherit', color: 'var(--lb-body)', lineHeight: 1.7, fontWeight: 400, marginBottom: 20 },
+  ul: { paddingLeft: 0, margin: '16px 0 26px', listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 },
+  ol: { paddingLeft: 0, margin: '16px 0 26px', listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14, counterReset: 'blog-ol' },
+  li: { display: 'flex', alignItems: 'flex-start', gap: 14, fontSize: 'inherit', color: 'var(--lb-body)', lineHeight: 1.65, fontWeight: 400 },
+  dot: { flexShrink: 0, width: 8, height: 8, borderRadius: '50%', background: 'var(--lb-accent-deep)', marginTop: '0.62em' },
+  num: { flexShrink: 0, width: 30, height: 30, borderRadius: '50%', background: 'var(--lb-tint)', border: '1.5px solid var(--lb-tint-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: 'var(--lb-accent-deep)', fontFamily: 'var(--lb-font)', marginTop: 1 },
+  callout: { background: 'var(--lb-tint)', border: '1px solid var(--lb-tint-border)', borderRadius: 16, padding: '20px 24px', margin: '28px 0' },
+  calloutText: { fontSize: 'inherit', color: 'var(--lb-body)', lineHeight: 1.65, fontWeight: 400, margin: 0 },
+  infoBox: { background: 'var(--lb-card)', border: '1px solid var(--lb-rule)', borderRadius: 20, padding: 'clamp(20px, 3vw, 28px)', margin: '28px 0' },
+  infoTitle: { fontFamily: 'var(--lb-font)', fontSize: 13, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--lb-accent-deep)', marginBottom: 14 },
+  table: { width: '100%', borderCollapse: 'collapse', margin: '24px 0', fontSize: 15, background: 'var(--lb-card)' },
+  th: { padding: '13px 16px', background: 'var(--lb-ground-alt)', color: 'var(--lb-muted)', fontFamily: 'var(--lb-font)', fontSize: 12.5, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', textAlign: 'left', borderBottom: '1px solid var(--lb-rule)' },
+  td: { padding: '13px 16px', color: 'var(--lb-body)', borderBottom: '1px solid var(--lb-rule)', lineHeight: 1.5, verticalAlign: 'top' },
+  strong: { color: 'var(--lb-ink)', fontWeight: 600 },
+  ilink: { color: 'var(--lb-accent-deep)', textDecoration: 'underline', textDecorationColor: 'var(--lb-tint-border)', textUnderlineOffset: 3, fontWeight: 500 },
+  divider: { height: 1, background: 'var(--lb-rule)', margin: '48px 0' },
 };
+const code = { fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '0.85em', background: 'var(--lb-tint-neutral)', border: '1px solid var(--lb-rule)', padding: '1px 6px', borderRadius: 6, color: 'var(--lb-ink)' };
 
 const Ul = ({ children }) => <ul style={s.ul}>{children}</ul>;
 const Ol = ({ children }) => <ol style={s.ol}>{children}</ol>;
@@ -843,16 +844,16 @@ export const posts = [
         </Ol>
 
         <h2 style={s.h2}>What Your Score Means</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: 12, margin: '20px 0 32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: 14, margin: '20px 0 32px' }}>
           {[
-            { score: '8–10 ✓', label: 'Strong foundation', desc: 'You have most AI signals in place. Focus on content freshness and expanding treatment pages.', color: '#2d7a4f' },
-            { score: '5–7 ✓', label: 'Moderate gaps', desc: 'You have some foundations but critical gaps. Schema, FAQ, or treatment pages are likely missing.', color: 'var(--terra)' },
-            { score: '0–4 ✓', label: 'Significant gaps', desc: "Your clinic is likely invisible in AI results. You're losing patients to competitors who've done this work.", color: 'rgba(239,68,68,0.8)' },
+            { score: '8–10 ✓', label: 'Strong foundation', desc: 'You have most AI signals in place. Focus on content freshness and expanding treatment pages.', color: 'var(--lb-signal-good)' },
+            { score: '5–7 ✓', label: 'Moderate gaps', desc: 'You have some foundations but critical gaps. Schema, FAQ, or treatment pages are likely missing.', color: 'var(--lb-accent-deep)' },
+            { score: '0–4 ✓', label: 'Significant gaps', desc: "Your clinic is likely invisible in AI results. You're losing patients to competitors who've done this work.", color: 'var(--lb-signal-risk)' },
           ].map(({ score, label, desc, color }) => (
-            <div key={score} style={{ background: 'var(--surface)', border: '1px solid var(--bdr)', borderTop: `3px solid ${color}`, borderRadius: 8, padding: '20px' }}>
-              <div style={{ fontFamily: 'var(--mono)', fontSize: 13, color, fontWeight: 600, marginBottom: 6 }}>{score}</div>
-              <div style={{ color: 'var(--cream)', fontWeight: 600, fontSize: 14, marginBottom: 6 }}>{label}</div>
-              <div style={{ color: 'var(--muted)', fontSize: 13, lineHeight: 1.6 }}>{desc}</div>
+            <div key={score} style={{ background: 'var(--lb-card)', border: '1px solid var(--lb-rule)', borderTop: `4px solid ${color}`, borderRadius: 16, padding: '20px 22px' }}>
+              <div style={{ fontFamily: 'var(--lb-font)', fontSize: 15, color, fontWeight: 700, marginBottom: 6 }}>{score}</div>
+              <div style={{ color: 'var(--lb-ink)', fontWeight: 600, fontSize: 17, marginBottom: 6 }}>{label}</div>
+              <div style={{ color: 'var(--lb-body)', fontSize: 15, lineHeight: 1.6 }}>{desc}</div>
             </div>
           ))}
         </div>
@@ -1053,7 +1054,7 @@ export const posts = [
           Search engines send automated bots (called crawlers or spiders) across the web. These bots follow links from page to page, discovering new content. If a page has no links pointing to it, crawlers may never find it — and if they can't find it, they can't rank it.
         </p>
         <p style={s.p}>
-          Crawlers follow rules. A file called <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>robots.txt</code> on your website tells crawlers which pages to access and which to skip. Getting this wrong — accidentally blocking important pages — is one of the most common technical SEO mistakes.
+          Crawlers follow rules. A file called <code style={code}>robots.txt</code> on your website tells crawlers which pages to access and which to skip. Getting this wrong — accidentally blocking important pages — is one of the most common technical SEO mistakes.
         </p>
 
         <h3 style={s.h3}>2. Indexing</h3>
@@ -1315,10 +1316,10 @@ export const posts = [
           URLs should be short, descriptive, and keyword-bearing. Google uses URL structure as a weak ranking signal and as a way to communicate page context to crawlers.
         </p>
         <Ul>
-          <Li><strong style={s.strong}>Good:</strong> <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/dental-implants-bangkok/</code></Li>
-          <Li><strong style={s.strong}>Bad:</strong> <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/page?id=4382&cat=services&sub=dental</code></Li>
+          <Li><strong style={s.strong}>Good:</strong> <code style={code}>/dental-implants-bangkok/</code></Li>
+          <Li><strong style={s.strong}>Bad:</strong> <code style={code}>/page?id=4382&cat=services&sub=dental</code></Li>
           <Li>Use hyphens, not underscores, to separate words.</Li>
-          <Li>Keep URLs as shallow as possible — avoid deeply nested structures like <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/services/dental/implants/bangkok/</code>.</Li>
+          <Li>Keep URLs as shallow as possible — avoid deeply nested structures like <code style={code}>/services/dental/implants/bangkok/</code>.</Li>
           <Li>Never change URLs that are already indexed without implementing a 301 redirect — each change resets the authority that URL has accumulated.</Li>
         </Ul>
 
@@ -1344,7 +1345,7 @@ export const posts = [
           <Li><strong style={s.strong}>Alt text:</strong> Every image should have descriptive alt text — both for accessibility and for Google's image search index. Describe what the image shows, including relevant keywords where natural.</Li>
           <Li><strong style={s.strong}>File format:</strong> Use WebP or AVIF for web images. These formats are significantly smaller than JPEG/PNG without visible quality loss — directly improving load speed.</Li>
           <Li><strong style={s.strong}>File size:</strong> Compress images before upload. A hero image should be under 200KB. Page images under 100KB. Use tools like Squoosh or TinyPNG.</Li>
-          <Li><strong style={s.strong}>File names:</strong> <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>dental-implant-consultation-bangkok.webp</code> is better than <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>IMG_4821.jpg</code>.</Li>
+          <Li><strong style={s.strong}>File names:</strong> <code style={code}>dental-implant-consultation-bangkok.webp</code> is better than <code style={code}>IMG_4821.jpg</code>.</Li>
         </Ul>
 
         <h2 style={s.h2}>9. Schema Markup</h2>
@@ -1469,7 +1470,7 @@ export const posts = [
 
         <h3 style={s.h3}>4. Do-follow vs no-follow</h3>
         <p style={s.p}>
-          By default, links pass authority — these are "do-follow" links. A "no-follow" attribute (<code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>rel="nofollow"</code>) tells Google not to pass PageRank through that link.
+          By default, links pass authority — these are "do-follow" links. A "no-follow" attribute (<code style={code}>rel="nofollow"</code>) tells Google not to pass PageRank through that link.
         </p>
         <p style={s.p}>
           No-follow links — common on social media, Wikipedia, and most comment sections — don't directly pass ranking authority. They're not worthless (brand visibility, referral traffic, and trust signals still apply), but they're less valuable than do-follow editorial links for rankings.
@@ -1705,7 +1706,7 @@ export const posts = [
           Programmatic SEO has specific technical requirements beyond <Link to="/blog/on-page-seo-optimization-guide/" style={s.ilink}>standard on-page SEO</Link>:
         </p>
         <Ul>
-          <Li><strong style={s.strong}>URL structure:</strong> Always use subfolders (<code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>/locations/bangkok/</code>), not subdomains (<code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--surface)', padding: '1px 6px', borderRadius: 3 }}>bangkok.yoursite.com</code>). Subdomains don't inherit domain authority.</Li>
+          <Li><strong style={s.strong}>URL structure:</strong> Always use subfolders (<code style={code}>/locations/bangkok/</code>), not subdomains (<code style={code}>bangkok.yoursite.com</code>). Subdomains don't inherit domain authority.</Li>
           <Li><strong style={s.strong}>Canonical tags:</strong> Set canonical URLs on each programmatic page to prevent cross-page duplicate content issues.</Li>
           <Li><strong style={s.strong}>Indexing control:</strong> Not every programmatic page should be indexed. Very thin or low-traffic variations can be excluded (noindex) to prevent them from diluting your domain's quality signal.</Li>
           <Li><strong style={s.strong}>Sitemaps:</strong> Submit programmatic page sitemaps separately so Google can process them at scale. Monitor indexation rate — if Google is de-indexing your pages, it's a quality signal problem.</Li>
