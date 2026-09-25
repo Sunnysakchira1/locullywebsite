@@ -25,7 +25,13 @@
 .lbh-vplay.playing .lbh-vplay-c, .lbh-vplay.playing .lbh-vplay-l { opacity: 0; }
 
 @media (max-width: 900px) {
-  .lbh-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  /* Stacked hero: headline, sub-line, then the video, then the CTA + note (Sunny, 2026-09-26). */
+  .lbh-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .lbh-hero-text { display: contents; }
+  .lbh-hero-text > .lb-h1 { order: 1; }
+  .lbh-hero-text > .lb-lede { order: 2; }
+  .lbh-hero-media { order: 3; margin-top: 28px; }
+  .lbh-hero-text > .lbh-hero-cta { order: 4; }
 }
 @media (max-width: 760px) {
   .lbh-hero { padding: 40px 0 22px; }

@@ -241,8 +241,8 @@ export const FAQS = [
 ];
 
 export const CLOSING = {
-  eyebrow: 'Free AI visibility check',
-  h2: 'Get your free AI visibility audit',
+  eyebrow: 'AI audit',
+  h2: 'Get your AI audit',
   lede: "Send us your website. We'll write your questions, ask ChatGPT, Perplexity and Google AI, and send you the answers within five working days.",
   asideTitle: 'What happens next',
   aside: [

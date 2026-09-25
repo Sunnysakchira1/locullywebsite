@@ -148,7 +148,7 @@ const PackagesPage = () => (
 
       {/* CTA + lead form */}
       <LeadForm
-        eyebrow="Free AI visibility check"
+        eyebrow="AI audit"
         title="Not sure which package is right?"
         lede="Book a free 30-minute call and we'll tell you exactly what will move the needle for your business."
         footer={(

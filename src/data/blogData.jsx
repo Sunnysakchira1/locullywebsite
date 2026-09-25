@@ -316,7 +316,7 @@ export const posts = [
 
         <h3 style={s.h3}>Is this something I can do myself?</h3>
         <p style={s.p}>
-          Some of it, yes. Adding FAQ content and writing treatment-specific pages are tasks a clinic manager or content writer can handle. Schema markup and technical audit work typically requires expertise to implement correctly — the kind of work <Link to="/geo/" style={s.ilink}>we handle for you</Link>. If you'd rather not navigate it alone, <Link to="/audit/" style={s.ilink}>request a free AI audit</Link> — we'll show you exactly where you stand and what to prioritize.
+          Some of it, yes. Adding FAQ content and writing treatment-specific pages are tasks a clinic manager or content writer can handle. Schema markup and technical audit work typically requires expertise to implement correctly — the kind of work <Link to="/geo/" style={s.ilink}>we handle for you</Link>. If you'd rather not navigate it alone, <Link to="/audit/" style={s.ilink}>get your AI audit</Link> — we'll show you exactly where you stand and what to prioritize.
         </p>
       </div>
     ),
@@ -859,7 +859,7 @@ export const posts = [
         </div>
 
         <p style={s.p}>
-          If you'd prefer a professional audit rather than running this yourself, <Link to="/audit/" style={s.ilink}>request a free AI visibility audit</Link> — we'll run it across 20+ queries and give you a detailed report within 48 hours. Or see <Link to="/geo/" style={s.ilink}>how our AI search visibility service</Link> turns this checklist into fixes.
+          If you'd prefer a professional audit rather than running this yourself, <Link to="/audit/" style={s.ilink}>request an AI visibility audit</Link> — we'll run it across 20+ queries and give you a detailed report within 48 hours. Or see <Link to="/geo/" style={s.ilink}>how our AI search visibility service</Link> turns this checklist into fixes.
         </p>
         <p style={s.p}>
           For guidance on what to do with the results, read our <Link to="/blog/why-clinic-not-showing-chatgpt/" style={s.ilink}>guide to fixing AI visibility gaps</Link> and the <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>full AI search optimization guide for Thailand clinics</Link>.
@@ -982,7 +982,7 @@ export const posts = [
           Locully works exclusively with clinics. We don't split our focus between clinics, restaurants, and e-commerce. Every case study, every query set, every piece of content knowledge we've built is from the clinic sector — Bangkok, Phuket, Chiang Mai, and beyond.
         </p>
         <p style={s.p}>
-          If you'd like to see how that makes a difference, start with a <Link to="/audit/" style={s.ilink}>free AI visibility audit</Link> — we'll benchmark your current AI presence and give you a clear picture of where you stand versus competitors.
+          If you'd like to see how that makes a difference, start with an <Link to="/audit/" style={s.ilink}>AI visibility audit</Link> — we'll benchmark your current AI presence and give you a clear picture of where you stand versus competitors.
         </p>
         <p style={s.p}>
           Or read our <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>complete guide to AI search optimization for Thailand clinics</Link> to understand the full landscape before you engage anyone.
@@ -1973,7 +1973,7 @@ export const posts = [
           Every statistic on this page points to the same conclusion: AI search is now where a large and growing share of buying decisions begin. The businesses that get named inside ChatGPT, Perplexity and Google AI Overviews capture that demand. Everyone else is invisible to it — and won&rsquo;t even see the leads they&rsquo;re losing.
         </p>
         <p style={s.p}>
-          Locully helps clinics and businesses in Thailand get found and recommended in AI search. To see where you stand, <Link to="/geo/" style={s.ilink}>see how our AI Visibility Optimization works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/geo/" style={s.ilink}>start with a free AI search audit</Link>.
+          Locully helps clinics and businesses in Thailand get found and recommended in AI search. To see where you stand, <Link to="/geo/" style={s.ilink}>see how our AI Visibility Optimization works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/audit/" style={s.ilink}>start with an AI audit</Link>.
         </p>
         <Callout>
           <strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout and updated as new research is released.
@@ -2057,7 +2057,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Get cited, not just ranked</h2>
         <p style={s.p}>
-          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/geo/" style={s.ilink}>start with a free AI search audit</Link>.
+          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/audit/" style={s.ilink}>start with an AI audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
@@ -2132,7 +2132,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Turn zero-click into zero-loss</h2>
         <p style={s.p}>
-          If most searches end without a click, the win is being the answer — not just a link in a list nobody opens. Locully optimises businesses to be cited and recommended inside AI search and featured snippets. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/geo/" style={s.ilink}>get a free AI search audit</Link>.
+          If most searches end without a click, the win is being the answer — not just a link in a list nobody opens. Locully optimises businesses to be cited and recommended inside AI search and featured snippets. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/audit/" style={s.ilink}>get your AI audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
@@ -2218,7 +2218,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Be part of the answer</h2>
         <p style={s.p}>
-          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/geo/" style={s.ilink}>get a free AI search audit</Link>.
+          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/audit/" style={s.ilink}>get your AI audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>

@@ -151,7 +151,7 @@ const ContactPage = () => (
       <LeadForm
         id="book"
         idPrefix="contact"
-        title="Get a free AI visibility check from our Bangkok team"
+        title="Get your AI audit from our Bangkok team"
         lede="Send your name, email and website. We'll look at how your business shows up in Google and in AI assistants, then get back to you."
         subject="New contact-page request — Locully"
         aside={<ContactAside />}

@@ -279,8 +279,8 @@ const AboutPage = () => {
         </Section>
 
         <LeadForm
-          eyebrow="Free AI visibility check"
-          title="Get a free AI visibility check from Locully"
+          eyebrow="AI audit"
+          title="Get your AI audit from Locully"
           lede="Send us your website. We’ll check how Google and AI assistants see your business and tell you what we find."
           footer={(
             <p className="lb-cta-note" style={{ textAlign: 'center', margin: '24px auto 0' }}>

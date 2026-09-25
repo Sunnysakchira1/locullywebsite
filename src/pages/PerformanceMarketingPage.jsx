@@ -150,7 +150,7 @@ export default function PerformanceMarketingPage() {
           lede="Locully is a Google Ads agency in Bangkok that also runs Meta Ads. We manage Search, Performance Max, Facebook and Instagram campaigns for cost per customer, not cost per click. Tracking goes in first, so ad spend ties back to calls, forms, bookings and visits."
         >
           <div className="lb-hero-cta">
-            <Button cta>Get my free ads audit</Button>
+            <Button cta>Get your ads audit</Button>
             <p className="lb-cta-note">Media spend is paid straight to Google and Meta. We never mark it up.</p>
           </div>
           <p className="lbp-pm-byline">
@@ -341,11 +341,11 @@ export default function PerformanceMarketingPage() {
         </Section>
 
         <LeadForm
-          eyebrow="Free ads audit"
+          eyebrow="Ads audit"
           title="Get a free Google Ads and Meta Ads audit"
           lede="Send us your website and tell us which ad accounts you run. We review your campaigns and conversion tracking, then send you the fixes we would make first. Free, and yours to keep."
           subject="New Ads Audit Request (Performance Marketing page) — Locully"
-          ctaLabel="Get my free ads audit"
+          ctaLabel="Get your ads audit"
           extraFields={[
             { name: 'platforms', label: 'Which ad accounts do you run?', placeholder: 'Google Ads, Meta Ads, or both' },
             { name: 'monthly_spend', label: 'Rough monthly ad spend', placeholder: 'e.g. ฿50,000' },
@@ -353,7 +353,7 @@ export default function PerformanceMarketingPage() {
           idPrefix="pm"
           footer={(
             <p className="lb-note" style={{ textAlign: 'center', marginTop: 24 }}>
-              Want to know how you show up in ChatGPT too? Read about the <Link to="/audit/">free AI visibility audit</Link>, or <Link to="/contact/">contact us</Link>.
+              Want to know how you show up in ChatGPT too? Read about the <Link to="/audit/">AI visibility audit</Link>, or <Link to="/contact/">contact us</Link>.
             </p>
           )}
         />

@@ -412,8 +412,8 @@ export default function SeoPage() {
 
         {/* Lead form */}
         <LeadForm
-          eyebrow="Free AI visibility check"
-          title="Get a free check from our SEO team in Bangkok."
+          eyebrow="AI audit"
+          title="Get your AI audit from our SEO team in Bangkok."
           lede="Send us your website. We run your customers' real questions through ChatGPT, Perplexity and Google AI, Within five working days we send you a report on who gets named instead of you, and what we would fix first. Free, and yours to keep."
           subject="New free check request (SEO page) — Locully"
           idPrefix="seo"

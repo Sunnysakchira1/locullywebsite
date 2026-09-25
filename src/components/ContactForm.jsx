@@ -9,8 +9,8 @@ const ContactForm = () => (
     <LeadForm
       id="contact"
       idPrefix="contact"
-      eyebrow="Free Audit"
-      title="Get Your Free AI Audit"
+      eyebrow="AI audit"
+      title="Get your AI audit"
       lede="See where you show up in ChatGPT, Google AI and Claude. Your report arrives within five working days."
       aside={(
         <div>

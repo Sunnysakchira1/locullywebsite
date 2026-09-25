@@ -467,8 +467,8 @@ export default function GeoPage() {
         {/* Lead form */}
         <LeadForm
           alt={false}
-          eyebrow="Free AI visibility check"
-          title="Get your free AI visibility check"
+          eyebrow="AI audit"
+          title="Get your AI audit"
           lede="Tell us your website. We’ll check what AI assistants say when your customers ask for a business like yours, and send you what we find. No cost, no commitment."
           subject="New AI Visibility Check Request (GEO page) — Locully"
           idPrefix="geo"

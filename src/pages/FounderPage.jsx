@@ -195,9 +195,9 @@ const FounderPage = () => {
         </Section>
 
         <LeadForm
-          eyebrow="Free AI visibility check"
+          eyebrow="AI audit"
           title="Work with Sunny’s team at Locully"
-          lede="Get a free AI visibility check. Sunny’s team will look at how Google and AI assistants see your business."
+          lede="Get your AI audit. Sunny’s team will look at how Google and AI assistants see your business."
           subject="New AI Visibility Check Request (founder page) - Locully"
         />
 

@@ -192,7 +192,7 @@ export default function HomePage() {
         {/* 1 · Above the fold: text + CTA left, vertical VSL right */}
         <header id="top" className="lbh-hero">
           <div className="lb-w lbh-hero-grid">
-            <div>
+            <div className="lbh-hero-text">
               <h1 className="lb-h1">Get found wherever your customers search.</h1>
               <p className="lb-lede">
                 Locully is a Bangkok-based SEO and AI Search agency helping businesses turn visibility across Google and AI platforms into customers and revenue.
@@ -202,7 +202,7 @@ export default function HomePage() {
                 note="We run your customers' real questions through ChatGPT, Perplexity and Google AI, then show you who gets named instead of you. Free, and yours to keep."
               />
             </div>
-            <div>
+            <div className="lbh-hero-media">
               <Vsl />
             </div>
           </div>
@@ -478,12 +478,12 @@ export default function HomePage() {
         {/* 11 · Lead form */}
         <LeadForm
           alt={false}
-          eyebrow="Free AI visibility check"
+          eyebrow="AI audit"
           title="Find out if ChatGPT already recommends you."
           lede="Send us your website. Within five working days we send you a report on where you appear in Google and AI answers, who gets named instead of you, and what we would fix first. Free, and yours to keep."
           subject="New AI Visibility Check Request — Locully homepage"
           idPrefix="home"
-          footer={<p className="lbh-more"><Button variant="text" to="/audit/">See what the free AI visibility audit covers</Button></p>}
+          footer={<p className="lbh-more"><Button variant="text" to="/audit/">See what the AI audit covers</Button></p>}
         />
 
         <Footer />

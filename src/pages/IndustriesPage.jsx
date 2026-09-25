@@ -103,7 +103,7 @@ export default function IndustriesPage() {
         </Section>
 
         <LeadForm
-          eyebrow="Free AI visibility check"
+          eyebrow="AI audit"
           title={HUB.formTitle}
           lede={HUB.formLede}
           subject="Free AI visibility check — industries hub"

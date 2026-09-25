@@ -288,7 +288,7 @@ export default function IndustryPage({ slug }) {
         </Section>
 
         <LeadForm
-          eyebrow="Free AI visibility check"
+          eyebrow="AI audit"
           title={ind.formTitle}
           lede={ind.formLede}
           subject={`Free AI visibility check — ${ind.name} (industries page)`}

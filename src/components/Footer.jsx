@@ -28,7 +28,7 @@ const Footer = () => {
               <Link to="/seo/">SEO</Link>
               <Link to="/geo/">AI search / GEO</Link>
               <Link to="/performance-marketing/">Performance marketing</Link>
-              <Link to="/audit/">Free AI visibility audit</Link>
+              <Link to="/audit/">AI visibility audit</Link>
               <Link to="/packages">One-off SEO packages</Link>
               <Link to="/lead-gen-partner">Fairs &amp; expos partner</Link>
             </div>

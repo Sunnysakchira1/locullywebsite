@@ -129,7 +129,7 @@ export default function BlogIndexPage() {
 
         {/* CTA + lead form */}
         <LeadForm
-          eyebrow="Free Audit"
+          eyebrow="AI audit"
           title="Ready to see where your brand stands in AI search?"
           lede="We'll audit your current AI visibility across ChatGPT, Perplexity, and Google AI Overviews — and show you exactly where you're missing out."
         />

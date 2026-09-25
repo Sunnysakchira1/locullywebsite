@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 /* Brand v2 building blocks. Styles live in src/brand/brand.css (scoped under .lb). */
 
-export const CTA_LABEL = 'Get my free AI visibility check';
+export const CTA_LABEL = 'Get your AI audit';
 
 const cx = (...c) => c.filter(Boolean).join(' ');
 
@@ -129,7 +129,7 @@ export const StickyCta = () => {
   }, []);
   return (
     <div className={cx('lb-sticky', show && 'show')} role="region" aria-label="Quick contact" aria-hidden={!show}>
-      <a href="/audit/#book" className="lb-btn" onClick={goToLeadForm} tabIndex={show ? 0 : -1}>Free AI visibility check</a>
+      <a href="/audit/#book" className="lb-btn" onClick={goToLeadForm} tabIndex={show ? 0 : -1}>Get your AI audit</a>
       <a href="tel:+66626959444" className="lb-sticky-call" aria-label="Call Locully on +66 62 695 9444" tabIndex={show ? 0 : -1}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" stroke="#14213d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </a>
