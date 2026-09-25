@@ -8,14 +8,14 @@ const CaseStudies = () => {
 
   const studies = [
     {
-      company: 'Physio & Wellness Clinic, Bangkok',
+      company: 'A Bangkok wellness clinic',
       industry: 'HEALTHCARE',
       stats: [
         { value: '+350%', label: 'AI Mentions' },
         { value: '90%', label: 'Top 3 Rankings' },
         { value: '20–25', label: 'AI Enquiries/Mo' }
       ],
-      prompts: ['Best physiotherapist in Thonglor', 'Physio for runners Bangkok', 'Best chinese medicine clinic'],
+      prompts: ['Best physiotherapist in Bangkok', 'Physio for runners Bangkok', 'Best chinese medicine clinic'],
       achievement: 'Increased AI mentions from 30 to 112. Now appears in Top 3 for 90% of all physio-related AI prompts in Bangkok.',
     },
     {

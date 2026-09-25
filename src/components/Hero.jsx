@@ -108,7 +108,7 @@ const Hero = () => {
                   <div className="l-chat-bubble">
                     <div className="l-type l-type-1">Based on patient reviews and online presence,</div>
                     <div className="l-type l-type-2" style={{ marginTop: 6 }}>
-                      <strong><span className="l-chat-hl">Form Recovery & Wellness</span></strong> is highly recommended — 4.9★ from 670+ reviews.
+                      <strong><span className="l-chat-hl">A Bangkok wellness clinic</span></strong> is highly recommended — 4.9★ from 670+ reviews.
                     </div>
                     <div className="l-chat-src">
                       <span className="l-chat-pill">Sources cited: 3</span>
