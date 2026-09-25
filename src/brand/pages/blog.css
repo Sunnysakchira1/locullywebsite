@@ -74,3 +74,9 @@
   .lbp-blog-post .lb-crumbs li:last-child { flex: 1 1 auto; min-width: 0; }
   .lbp-blog-post .lb-crumbs li:last-child span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 }
+
+/* Tables without the .l-blog-table-wrap wrapper: scroll inside themselves on phones instead of being clipped. */
+@media (max-width: 760px) {
+  .lbp-blog-prose table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .lbp-blog-prose .l-blog-table-wrap table { display: table; max-width: none; overflow: visible; }
+}
