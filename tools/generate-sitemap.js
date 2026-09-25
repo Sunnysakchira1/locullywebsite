@@ -30,6 +30,7 @@ const STATIC_PAGES = [
   { path: '/lead-gen-partner',     priority: '0.7', changefreq: 'monthly' },
   { path: '/about',                priority: '0.6', changefreq: 'monthly' },
   { path: '/blog/',                priority: '0.8', changefreq: 'weekly'  },
+  { path: '/geo/ai-visibility-audit/', priority: '0.8', changefreq: 'monthly' },
 ];
 
 // Higher-value posts keep their curated priority; everything else defaults to 0.7.
