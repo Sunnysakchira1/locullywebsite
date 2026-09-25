@@ -24,7 +24,7 @@ const NotFound = () => (
       >
         <div className="lbp-404-links">
           <Button to="/">Back to home</Button>
-          <Button variant="outline" to="/ai-optimization/">AI Optimization for Clinics</Button>
+          <Button variant="outline" to="/geo/">GEO &amp; AI search optimisation</Button>
           <Button variant="outline" to="/blog/">Read the blog</Button>
         </div>
       </PageHero>

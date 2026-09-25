@@ -34,8 +34,13 @@
       "permanent": true
     },
     {
+      "source": "/ai-search-visibility",
+      "destination": "/geo/",
+      "permanent": true
+    },
+    {
       "source": "/ai-search-visibility/",
-      "destination": "/ai-search-visibility",
+      "destination": "/geo/",
       "permanent": true
     },
     {
@@ -50,7 +55,17 @@
     },
     {
       "source": "/ai-optimization",
-      "destination": "/ai-optimization/",
+      "destination": "/geo/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/",
+      "destination": "/geo/",
+      "permanent": true
+    },
+    {
+      "source": "/geo",
+      "destination": "/geo/",
       "permanent": true
     },
     {

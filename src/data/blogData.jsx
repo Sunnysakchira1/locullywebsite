@@ -316,7 +316,7 @@ export const posts = [
 
         <h3 style={s.h3}>Is this something I can do myself?</h3>
         <p style={s.p}>
-          Some of it, yes. Adding FAQ content and writing treatment-specific pages are tasks a clinic manager or content writer can handle. Schema markup and technical audit work typically requires expertise to implement correctly — the kind of work <Link to="/ai-search-visibility" style={s.ilink}>we handle for you</Link>. If you'd rather not navigate it alone, <Link to="/#contact" style={s.ilink}>request a free AI audit</Link> — we'll show you exactly where you stand and what to prioritize.
+          Some of it, yes. Adding FAQ content and writing treatment-specific pages are tasks a clinic manager or content writer can handle. Schema markup and technical audit work typically requires expertise to implement correctly — the kind of work <Link to="/geo/" style={s.ilink}>we handle for you</Link>. If you'd rather not navigate it alone, <Link to="/#contact" style={s.ilink}>request a free AI audit</Link> — we'll show you exactly where you stand and what to prioritize.
         </p>
       </div>
     ),
@@ -385,7 +385,7 @@ export const posts = [
           The most common missed opportunity: a clinic that's excellent at something never mentions it explicitly on their website. If you treat a lot of sports injuries, your website needs a sports injury page — not just physiotherapy listed under Services.
         </Callout>
         <p style={s.p}>
-          For a guide on how to structure content for specific clinic types, see our posts on <Link to="/ai-optimization/physiotherapy-clinics/" style={s.ilink}>AI optimization for physiotherapy clinics</Link> and <Link to="/ai-optimization/dental-clinics/" style={s.ilink}>dental clinics</Link> — or browse <Link to="/ai-optimization/" style={s.ilink}>AI optimization by clinic type</Link>.
+          For a guide on how to structure content for specific clinic types, see our posts on <Link to="/ai-optimization/physiotherapy-clinics/" style={s.ilink}>AI optimization for physiotherapy clinics</Link> and <Link to="/ai-optimization/dental-clinics/" style={s.ilink}>dental clinics</Link> — or browse <Link to="/geo/" style={s.ilink}>how Locully's GEO service works</Link>.
         </p>
 
         <h2 style={s.h2}>Signal 3: Structured Data — Can AI Parse You Reliably?</h2>
@@ -476,7 +476,7 @@ export const posts = [
           Bangkok has hundreds of dental clinics competing for the same pool of expat, medical-tourist, and English-speaking patients. When those patients ask ChatGPT or Perplexity for a recommendation, a handful of clinics get mentioned — and the rest are invisible.
         </p>
         <p style={s.p}>
-          This guide covers the specific AI search signals that matter for dental clinics in Thailand, what dental patients are actually asking AI, and the content strategy that changes who gets recommended. It's part of how <Link to="/" style={s.ilink}>Locully</Link> handles <Link to="/ai-optimization/" style={s.ilink}>AI optimization for Bangkok clinics</Link>.
+          This guide covers the specific AI search signals that matter for dental clinics in Thailand, what dental patients are actually asking AI, and the content strategy that changes who gets recommended. It's part of how <Link to="/" style={s.ilink}>Locully</Link> handles <Link to="/geo/" style={s.ilink}>GEO and AI search optimisation</Link>.
         </p>
 
         <h2 style={s.h2}>What Dental Patients Are Asking AI</h2>
@@ -695,7 +695,7 @@ export const posts = [
           If you're starting fresh with limited resources, GEO typically shows a higher return in the short term for Bangkok clinics targeting expat and medical-tourist patients. These patients skew heavily toward AI search platforms. GEO is also faster — results in 60–90 days versus 6–12 months for SEO.
         </p>
         <p style={s.p}>
-          If you already have a solid SEO foundation, adding GEO optimization is incremental work — schema markup, FAQ expansion, content restructuring — that pays dividends on both channels simultaneously. See <Link to="/ai-optimization/" style={s.ilink}>how AI optimization works for your clinic type</Link>.
+          If you already have a solid SEO foundation, adding GEO optimization is incremental work — schema markup, FAQ expansion, content restructuring — that pays dividends on both channels simultaneously. See <Link to="/geo/" style={s.ilink}>how GEO works</Link>.
         </p>
         <p style={s.p}>
           Read our <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>complete guide to AI search optimization for Thailand clinics</Link> for the full framework, or <Link to="/blog/how-to-choose-ai-optimization-agency-clinic-thailand/" style={s.ilink}>learn what to look for in an AI optimization agency</Link> before you engage one.
@@ -859,7 +859,7 @@ export const posts = [
         </div>
 
         <p style={s.p}>
-          If you'd prefer a professional audit rather than running this yourself, <Link to="/#contact" style={s.ilink}>request a free AI visibility audit</Link> — we'll run it across 20+ queries and give you a detailed report within 48 hours. Or see <Link to="/ai-search-visibility" style={s.ilink}>how our AI search visibility service</Link> turns this checklist into fixes.
+          If you'd prefer a professional audit rather than running this yourself, <Link to="/#contact" style={s.ilink}>request a free AI visibility audit</Link> — we'll run it across 20+ queries and give you a detailed report within 48 hours. Or see <Link to="/geo/" style={s.ilink}>how our AI search visibility service</Link> turns this checklist into fixes.
         </p>
         <p style={s.p}>
           For guidance on what to do with the results, read our <Link to="/blog/why-clinic-not-showing-chatgpt/" style={s.ilink}>guide to fixing AI visibility gaps</Link> and the <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>full AI search optimization guide for Thailand clinics</Link>.
@@ -1169,7 +1169,7 @@ export const posts = [
           Effective search strategy in 2026 optimises for both simultaneously. Good SEO practice feeds AI visibility. AI-optimised content tends to perform better in traditional search. They aren't competing strategies — they're two faces of the same discipline.
         </p>
         <p style={s.p}>
-          For a deeper look at how the two interact, see our guide on <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO vs SEO</Link>, our breakdown of <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>SEO and AI search for clinics specifically</Link>, and the <Link to="/ai-search-visibility" style={s.ilink}>Locully AI Search Visibility service</Link>.
+          For a deeper look at how the two interact, see our guide on <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO vs SEO</Link>, our breakdown of <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>SEO and AI search for clinics specifically</Link>, and the <Link to="/geo/" style={s.ilink}>Locully AI Search Visibility service</Link>.
         </p>
 
         <Divider />
@@ -1517,7 +1517,7 @@ export const posts = [
           The relationship between backlinks and AI citation is indirect but real. AI models like ChatGPT and Perplexity are trained on data from the web — and high-authority sites with many quality inbound links are more likely to be included in that training data and to appear in AI search results.
         </p>
         <p style={s.p}>
-          More directly: when Perplexity pulls sources to answer a query, it tends to cite sites with established domain authority. A strong backlink profile isn't just a Google signal — it's a trust signal that AI systems inherit from their training data, and building it is core to <Link to="/ai-search-visibility" style={s.ilink}>AI search visibility</Link>.
+          More directly: when Perplexity pulls sources to answer a query, it tends to cite sites with established domain authority. A strong backlink profile isn't just a Google signal — it's a trust signal that AI systems inherit from their training data, and building it is core to <Link to="/geo/" style={s.ilink}>AI search visibility</Link>.
         </p>
 
         <h2 style={s.h2}>Links to Avoid</h2>
@@ -1740,7 +1740,7 @@ export const posts = [
 
         <h3 style={s.h3}>Can programmatic SEO work for small businesses?</h3>
         <p style={s.p}>
-          Yes — the pattern doesn't require technical resources. <Link to="/ai-optimization/" style={s.ilink}>A clinic with multiple treatment pages</Link> structured consistently, a service provider generating location-specific landing pages, or a consultant building use-case pages can all benefit. The scale doesn't need to be thousands of pages. Even 20–50 well-structured pages built from a consistent template is programmatic SEO in principle.
+          Yes — the pattern doesn't require technical resources. <Link to="/geo/" style={s.ilink}>A clinic with multiple treatment pages</Link> structured consistently, a service provider generating location-specific landing pages, or a consultant building use-case pages can all benefit. The scale doesn't need to be thousands of pages. Even 20–50 well-structured pages built from a consistent template is programmatic SEO in principle.
         </p>
 
         <h3 style={s.h3}>Does programmatic SEO replace editorial content?</h3>
@@ -1973,7 +1973,7 @@ export const posts = [
           Every statistic on this page points to the same conclusion: AI search is now where a large and growing share of buying decisions begin. The businesses that get named inside ChatGPT, Perplexity and Google AI Overviews capture that demand. Everyone else is invisible to it — and won&rsquo;t even see the leads they&rsquo;re losing.
         </p>
         <p style={s.p}>
-          Locully helps clinics and businesses in Thailand get found and recommended in AI search — we helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). To see where you stand, <Link to="/ai-search-visibility" style={s.ilink}>see how our AI Visibility Optimization works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/ai-optimization/" style={s.ilink}>start with a free AI search audit</Link>.
+          Locully helps clinics and businesses in Thailand get found and recommended in AI search — we helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). To see where you stand, <Link to="/geo/" style={s.ilink}>see how our AI Visibility Optimization works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/geo/" style={s.ilink}>start with a free AI search audit</Link>.
         </p>
         <Callout>
           <strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout and updated as new research is released.
@@ -2057,7 +2057,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Get cited, not just ranked</h2>
         <p style={s.p}>
-          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews — the same work that helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). See how our <Link to="/ai-search-visibility" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>start with a free AI search audit</Link>.
+          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews — the same work that helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/geo/" style={s.ilink}>start with a free AI search audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
@@ -2132,7 +2132,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Turn zero-click into zero-loss</h2>
         <p style={s.p}>
-          If most searches end without a click, the win is being the answer — not just a link in a list nobody opens. Locully optimises businesses to be cited and recommended inside AI search and featured snippets. See how our <Link to="/ai-search-visibility" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>get a free AI search audit</Link>.
+          If most searches end without a click, the win is being the answer — not just a link in a list nobody opens. Locully optimises businesses to be cited and recommended inside AI search and featured snippets. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/geo/" style={s.ilink}>get a free AI search audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
@@ -2218,7 +2218,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Be part of the answer</h2>
         <p style={s.p}>
-          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI — work that helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). See how our <Link to="/ai-search-visibility" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/ai-optimization/" style={s.ilink}>get a free AI search audit</Link>.
+          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI — work that helped one Bangkok clinic go from zero to 38 AI-sourced paid consultations in a single month (May 2026). See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/geo/" style={s.ilink}>get a free AI search audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>

@@ -4,7 +4,7 @@ import { goToLeadForm } from '@/brand/components';
 
 /**
  * Shared global navbar — one fixed nav on every page (brand v2).
- * Desktop: About · Services · Packages · Blog▾ (For Clinics under Blog) + CTA.
+ * Desktop: About · Services (→ /geo/) · Packages · Blog + CTA.
  * Mobile: wordmark + "Free AI check" + menu button (all links in the panel).
  */
 const Nav = () => {
@@ -22,15 +22,9 @@ const Nav = () => {
         <div className="bnav-right">
           <ul className="bnav-links">
             <li><Link to="/about">About</Link></li>
-            <li><Link to="/ai-search-visibility">Services</Link></li>
+            <li><Link to="/geo/">Services</Link></li>
             <li><Link to="/packages">Packages</Link></li>
-            <li className="bnav-dd">
-              <Link to="/blog/">Blog<span className="bnav-caret" aria-hidden="true" /></Link>
-              <div className="bnav-dd-menu">
-                <Link to="/ai-optimization/">For Clinics</Link>
-                <Link to="/blog/">All Articles</Link>
-              </div>
-            </li>
+            <li><Link to="/blog/">Blog</Link></li>
           </ul>
 
           <a href="/#contact" className="lb-btn bnav-cta" onClick={onCta}>
@@ -53,10 +47,9 @@ const Nav = () => {
       {open && (
         <div className="bnav-mobile" onClick={close}>
           <Link to="/about">About</Link>
-          <Link to="/ai-search-visibility">Services</Link>
+          <Link to="/geo/">Services</Link>
           <Link to="/packages">Packages</Link>
           <Link to="/blog/">Blog</Link>
-          <Link to="/ai-optimization/" className="bnav-mobile-sub">For Clinics</Link>
           <a href="/#contact" className="lb-btn" onClick={onCta}>Get my free AI visibility check</a>
         </div>
       )}

@@ -96,7 +96,7 @@ const ServicesDropdown = ({ isMobile = false, closeMenu }) => {
               }}
             >
               <div style={{ padding: '8px 0' }}>
-                <Link to="/ai-search-visibility" style={linkStyle} onClick={handleLinkClick}
+                <Link to="/geo/" style={linkStyle} onClick={handleLinkClick}
                   onMouseEnter={e => e.currentTarget.style.background = 'rgba(204,100,50,0.08)'}
                   onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                 >
@@ -110,7 +110,7 @@ const ServicesDropdown = ({ isMobile = false, closeMenu }) => {
 
                 <div style={{ height: '1px', background: 'var(--bdr)', margin: '0 16px' }} />
 
-                <Link to="/ai-optimization/" style={linkStyle} onClick={handleLinkClick}
+                <Link to="/geo/" style={linkStyle} onClick={handleLinkClick}
                   onMouseEnter={e => e.currentTarget.style.background = 'rgba(204,100,50,0.08)'}
                   onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                 >

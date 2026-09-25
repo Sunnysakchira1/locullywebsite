@@ -95,7 +95,7 @@ export default function ClinicPage({ slug }) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.locully.org' },
-      { '@type': 'ListItem', position: 2, name: 'AI Optimization for Clinics', item: 'https://www.locully.org/ai-optimization/' },
+      { '@type': 'ListItem', position: 2, name: 'GEO', item: 'https://www.locully.org/geo/' },
       { '@type': 'ListItem', position: 3, name: clinic.namePlural, item: `https://www.locully.org/ai-optimization/${clinic.slug}/` },
     ],
   };
@@ -121,7 +121,7 @@ export default function ClinicPage({ slug }) {
       <Page className="lbp-clinic">
         <Breadcrumb items={[
           { label: 'Home', to: '/' },
-          { label: 'For Clinics', to: '/ai-optimization/' },
+          { label: 'GEO', to: '/geo/' },
           { label: clinic.namePlural },
         ]} />
 
