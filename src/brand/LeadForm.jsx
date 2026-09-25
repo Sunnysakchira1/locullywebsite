@@ -31,12 +31,19 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
       toast({ title: 'Missing Information', description: 'Please fill in all required fields.', variant: 'destructive' });
       return;
     }
+    // Accept "example.com", "www.example.com" or a full URL; add https:// when it's missing.
+    const site = formData.website.trim();
+    if (/\s/.test(site) || !/\.[a-z]{2,}/i.test(site)) {
+      toast({ title: 'Check your website', description: 'Enter your website address, e.g. yourbusiness.com', variant: 'destructive' });
+      return;
+    }
+    const website = /^https?:\/\//i.test(site) ? site : `https://${site}`;
     setIsSubmitting(true);
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ ...formData, _subject: subject }),
+        body: JSON.stringify({ ...formData, website, _subject: subject }),
       });
       const data = await res.json();
       if (!res.ok || data.error) throw new Error(data.error || 'Submission failed');
@@ -62,8 +69,9 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
       <input id={`${idPrefix}-email`} name="email" type="email" autoComplete="email" value={formData.email}
         onChange={handleChange} placeholder="you@yourbusiness.com" disabled={disabled} required />
       <label htmlFor={`${idPrefix}-website`}>Website</label>
-      <input id={`${idPrefix}-website`} name="website" type="url" value={formData.website}
-        onChange={handleChange} placeholder="https://www.yourbusiness.com" disabled={disabled} required />
+      <input id={`${idPrefix}-website`} name="website" type="text" inputMode="url" autoComplete="url"
+        autoCapitalize="none" autoCorrect="off" spellCheck={false} value={formData.website}
+        onChange={handleChange} placeholder="yourbusiness.com" disabled={disabled} required />
       {extraFields.map((f) => (
         <React.Fragment key={f.name}>
           <label htmlFor={`${idPrefix}-${f.name}`}>{f.label} <span className="lb-opt">(optional)</span></label>

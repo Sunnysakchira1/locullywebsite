@@ -11,8 +11,7 @@ const ContactForm = () => (
       idPrefix="contact"
       eyebrow="Free Audit"
       title="Get Your Free AI Audit"
-      lede="See where you rank in ChatGPT, Google AI, and Claude — in 48 hours."
-      hint="Include https://www. — e.g. https://www.yourclinic.com"
+      lede="See where you show up in ChatGPT, Google AI and Claude. Your report arrives within five working days."
       aside={(
         <div>
           <div className="lb-callout">
