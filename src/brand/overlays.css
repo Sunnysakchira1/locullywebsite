@@ -1,5 +1,5 @@
 /* Brand v2 — global overlays: mobile sticky CTA, toasts, popups.
-   Loaded after brand.css (tokens) and locully-design.css (so .csg-* overrides win). */
+   Loaded after brand.css (tokens). */
 
 /* ═══ Mobile sticky CTA bar ════════════════════════════════════ */
 .lb-sticky { display: none; }
@@ -73,18 +73,3 @@
   .lbm-left { display: none; }
   .lbm-right { padding: 40px 22px 26px; }
 }
-
-/* ═══ Case-study gate (overrides locully-design.css .csg-*) ════ */
-.csg-overlay { background: rgba(20, 33, 61, 0.55); backdrop-filter: none; }
-.csg-modal { font-family: var(--lb-font); border: 1px solid var(--lb-rule); border-radius: var(--lb-radius-card); padding: 40px 34px 32px; box-shadow: 0 24px 60px rgba(20, 33, 61, 0.28); }
-.csg-close { width: 36px; height: 36px; top: 12px; right: 12px; border-radius: 999px; border: 1.5px solid var(--lb-rule-strong); font-size: 22px; color: var(--lb-ink); display: flex; align-items: center; justify-content: center; }
-.csg-eyebrow { font-family: var(--lb-font); font-size: 12.5px; font-weight: 600; letter-spacing: 0.15em; color: var(--lb-accent-deep); }
-.csg-modal h3 { font-family: var(--lb-font); font-size: 28px; font-weight: 700; letter-spacing: -0.03em; color: var(--lb-ink); }
-.csg-modal p { font-size: 15px; color: var(--lb-body); }
-.csg-modal p a { color: var(--lb-accent-deep); font-weight: 600; }
-.csg-modal input { font-family: var(--lb-font); font-size: 16px; padding: 14px 16px; border: 1.5px solid var(--lb-rule-strong); border-radius: var(--lb-radius-input); background: #ffffff; color: var(--lb-ink); }
-.csg-modal input:focus { border-color: var(--lb-accent); }
-.csg-modal form button { font-family: var(--lb-font); background: var(--lb-accent); border-radius: 999px; padding: 16px; font-size: 16px; box-shadow: none; }
-.csg-modal form button:hover { background: var(--lb-accent-hover); }
-.csg-err { color: var(--lb-signal-risk); font-size: 14px; }
-.csg-fine { font-family: var(--lb-font); font-size: 13.5px; color: var(--lb-muted); letter-spacing: 0; }
