@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  ArrowRight, Menu, X, Bot, Search, Globe, TrendingUp,
-  FileText, Link2, ShieldCheck, BarChart3, Zap, Users,
-  CheckCircle2, ChevronDown
-} from 'lucide-react';
 import Footer from '@/components/Footer';
+import {
+  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Icon, ProofPanel, FAQ,
+} from '@/brand/components';
+import LeadForm from '@/brand/LeadForm';
 
 const faqs = [
   {
@@ -57,41 +54,74 @@ const schemaFaq = {
   })),
 };
 
-const FaqItem = ({ q, a }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <div style={{ borderBottom: '1px solid var(--bdr)' }}>
-      <button
-        onClick={() => setOpen(!open)}
-        style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 12 }}
-      >
-        <span style={{ fontFamily: 'var(--sans)', fontSize: 15, fontWeight: 600, color: 'var(--cream)', lineHeight: 1.5 }}>{q}</span>
-        <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }} style={{ flexShrink: 0 }}>
-          <ChevronDown style={{ width: 18, height: 18, color: 'var(--muted)' }} />
-        </motion.div>
-      </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.22 }}
-            style={{ overflow: 'hidden' }}
-          >
-            <p style={{ fontFamily: 'var(--sans)', fontSize: 14, color: 'var(--muted)', lineHeight: 1.8, paddingBottom: 20, fontWeight: 300 }}>{a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+const shiftStats = [
+  { stat: '47%', label: 'of Google searches now show AI Overviews' },
+  { stat: '100M+', label: 'ChatGPT queries per day (Jan 2025)' },
+  { stat: '4.4×', label: 'higher conversion from AI-referred leads' },
+];
+
+const signals = [
+  { icon: 'doc', title: 'Content Authority', body: 'AI engines cite sources that demonstrate expertise. Long-form, factually dense content — structured with clear headings, direct answers, and specific claims — signals that your brand knows what it\'s talking about. Thin content doesn\'t get cited.' },
+  { icon: 'globe', title: 'Entity Recognition', body: 'An entity is a clearly defined thing: a brand, a person, a product, a location. AI models rely on entity graphs to connect recommendations to the right context. We ensure your brand entity is well-defined, consistent, and linked across the web.' },
+  { icon: 'link', title: 'Citation Signals', body: 'When authoritative third-party sources — publications, review platforms, industry directories — mention and link to your brand, it builds the trust profile AI models use to gauge credibility. Backlinks aren\'t just for Google.' },
+  { icon: 'shield', title: 'Structured Data', body: 'Schema markup tells AI crawlers precisely what your business is, what it does, where it operates, and how it\'s been reviewed. Pages with clean structured data are significantly easier for AI engines to parse and recommend.' },
+];
+
+const methodology = [
+  { step: '01', title: 'AI Visibility Audit', body: 'Before we touch anything, we test. We run structured queries across ChatGPT, Perplexity, Google AI Overviews, and Gemini — and document exactly how often your brand is mentioned, what context it\'s mentioned in, and how you compare to your direct competitors. This becomes your baseline. Every month, we measure against it.' },
+  { step: '02', title: 'Content & Topical Authority', body: 'We audit your existing content and identify the gaps between what you\'ve published and what AI engines are citing in your niche. Then we build out a content plan — long-form articles, FAQs, comparison pieces, and opinion content — structured specifically to be cited as a source. This isn\'t blog writing. It\'s AI citation engineering.' },
+  { step: '03', title: 'Entity & Schema Optimisation', body: 'We build and reinforce your brand\'s entity graph: consistent name, address, contact details, and category signals across your website, Google Business Profile, and key directories. We implement and audit JSON-LD structured data on every key page. This is the infrastructure AI engines use to confirm who you are and what you do.' },
+  { step: '04', title: 'Citation & Authority Building', body: 'We place editorial backlinks on relevant, high-authority publications in your niche. These aren\'t generic link placements — they\'re crafted to mention your brand in context, reinforcing the association AI engines build between your name and your category. Each placement is documented with full metrics.' },
+  { step: '05', title: 'Technical & Crawl Optimisation', body: 'AI crawlers follow different patterns than Google\'s crawler. We audit your robots.txt, ensure your llms.txt is in place, check that your sitemap is clean and complete, and verify that your content is indexed and readable by the models that matter. We also ensure your site passes Core Web Vitals — speed and stability signals that influence how much AI crawlers prioritise your content.' },
+];
+
+const deliverables = [
+  { icon: 'chart', title: 'Monthly AI Visibility Report', body: 'Citation frequency across all major AI engines, keyword-by-keyword tracking, month-on-month trend, and a priority action list.' },
+  { icon: 'doc', title: 'Long-Form Content', body: 'AI-citation-optimised articles published on your site. Each one targets a keyword cluster and is structured for both AI and Google.' },
+  { icon: 'link', title: 'Editorial Backlinks', body: 'High-DR placements on industry-relevant publications — with full placement reports showing domain metrics and live URLs.' },
+  { icon: 'shield', title: 'Schema & Technical Fixes', body: 'Structured data implementation, crawl error remediation, llms.txt, and Core Web Vitals monitoring.' },
+  { icon: 'globe', title: 'Entity Optimisation', body: 'NAP consistency audit, Google Business Profile optimisation, and directory submissions to key AI-cited sources.' },
+  { icon: 'chat', title: 'Strategy Calls', body: 'Monthly 30-minute call to walk through results, refine direction, and answer questions. Direct access to senior strategists — not account managers.' },
+];
+
+const results = [
+  {
+    industry: 'Healthcare',
+    metric1: '+350%', label1: 'AI Citation Increase',
+    metric2: '90%', label2: 'Top-3 Placement Rate',
+    detail: 'Physio clinic went from 30 AI mentions to 112 in 90 days. Now the dominant recommendation for sports recovery queries in Bangkok.'
+  },
+  {
+    industry: 'Aesthetics',
+    metric1: '+289%', label1: 'AI Mentions',
+    metric2: '75%', label2: 'Conversion from AI Leads',
+    detail: 'Beauty clinic featured in ChatGPT\'s top 3 responses for Botox and filler queries. Conversion rate from AI-referred leads is 3× higher than paid ads.'
+  },
+];
+
+const fit = [
+  { check: true, text: 'Clinics and healthcare providers where patients research before booking' },
+  { check: true, text: 'Professional services firms — consultancies, agencies, financial advisors' },
+  { check: true, text: 'SaaS and software businesses where category searches drive trial sign-ups' },
+  { check: true, text: 'Hospitality, wellness, and lifestyle brands in competitive markets' },
+  { check: true, text: 'Businesses that have invested in SEO but haven\'t adapted to AI search yet' },
+  { check: true, text: 'Companies entering a new market who need to establish authority fast' },
+  { check: false, text: 'Pure price-comparison products where brand doesn\'t influence decisions' },
+  { check: false, text: 'Businesses looking for results in under 30 days — AI visibility is earned, not bought' },
+];
+
+const timeline = [
+  { phase: 'Week 1–2', title: 'Audit & Baseline', body: 'We run your brand through every major AI engine across 30+ relevant prompts. We document your current citation rate, analyse your top 3 competitors, and map the gap between where you are and where you need to be.' },
+  { phase: 'Week 3–4', title: 'Strategy & Kickoff', body: 'We present the audit findings, agree on the 90-day strategy, and begin technical work immediately — schema, llms.txt, crawlability fixes. This is the fastest-moving phase and often shows early results within 30 days.' },
+  { phase: 'Month 2–3', title: 'Content & Authority Build', body: 'Articles go live on a rolling schedule. Backlink placements begin. We monitor citation frequency weekly and adjust the content angle if we see early data pointing us in a better direction.' },
+  { phase: 'Month 3+', title: 'Compound & Optimise', body: 'AI visibility compounds. Each new citation, each new article, each new backlink increases the likelihood of future mentions. We expand into new query clusters and refine what\'s working. Monthly reporting keeps you informed throughout.' },
+];
+
+const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); };
+
+const BookCall = () => <Button variant="outline" onClick={openCalendly}>Book a Call</Button>;
 
 export default function SeoAioPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const openCalendly = () => { window.open('https://calendly.com/locully/30min', '_blank'); setMenuOpen(false); };
-  const scrollToContact = () => { window.location.href = '/#contact'; setMenuOpen(false); };
-
   return (
     <>
       <Helmet>
@@ -106,448 +136,234 @@ export default function SeoAioPage() {
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
       </Helmet>
 
-      <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
-
-        {/* Nav */}
-        <nav className="l-subpage-nav">
-          <Link to="/">
-            <img src="https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png" alt="Locully" className="l-subpage-logo" />
-          </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <button onClick={scrollToContact} className="l-btn l-btn-sm l-nav-audit" style={{ border: 'none' }}>Get Free Audit</button>
-            <button className="l-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-              {menuOpen ? <X style={{ width: 18, height: 18 }} /> : <Menu style={{ width: 18, height: 18 }} />}
-            </button>
-          </div>
-        </nav>
-
-        {menuOpen && (
-          <motion.div className="l-nav-mobile" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.18 }}>
-            <Link to="/" onClick={() => setMenuOpen(false)}>← Home</Link>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-            <Link to="/ai-optimization/" onClick={() => setMenuOpen(false)}>AI Optimization for Clinics</Link>
-            <Link to="/packages" onClick={() => setMenuOpen(false)}>One-Off Packages</Link>
-            <Link to="/blog/" onClick={() => setMenuOpen(false)}>Blog</Link>
-            <button onClick={openCalendly} style={{ color: 'var(--terra)', background: 'none', border: 'none', cursor: 'pointer', padding: '14px 0', fontFamily: 'var(--sans)', fontSize: 16, textAlign: 'left', width: '100%', fontWeight: 600 }}>
-              Book a Call →
-            </button>
-          </motion.div>
-        )}
-
-        <div className="l-subpage-nav-spacer" />
-
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" style={{ padding: '12px 0', borderBottom: '1px solid var(--bdr)' }}>
-          <div className="l-container">
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--muted)' }}>
-              <Link to="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
-              <span>/</span>
-              <span style={{ color: 'var(--cream)' }}>AI Search Visibility</span>
-            </div>
-          </div>
-        </nav>
+      <Page className="lb-seoaio">
+        <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'AI Search Visibility' }]} />
 
         {/* Hero */}
-        <section className="l-page-hero" style={{ paddingBottom: 80 }}>
-          <div className="l-container l-page-hero-inner">
-            <div style={{ maxWidth: 720 }}>
-              <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 24, display: 'inline-flex' }}>AI Search Optimisation</span>
-                <h1 className="l-h1" style={{ marginBottom: 20 }}>
-                  The Agency That Gets You<br />
-                  <em className="l-serif-em">Recommended by AI</em>
-                </h1>
-                <p className="l-body" style={{ maxWidth: 560, marginBottom: 36, fontSize: 17 }}>
-                  Search has changed. Millions of people now ask ChatGPT, Google AI, and Perplexity for recommendations instead of scrolling a results page.
-                </p>
-                <p className="l-body" style={{ maxWidth: 560, marginBottom: 40 }}>
-                  We build your brand's presence across every AI engine — so when your ideal customer asks, you're the answer.
-                </p>
-                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                  <button onClick={scrollToContact} className="l-btn">
-                    Get Free AI Audit
-                    <ArrowRight style={{ width: 16, height: 16 }} />
-                  </button>
-                  <button onClick={openCalendly} className="l-btn-ghost">Book a Call</button>
-                </div>
-              </motion.div>
-            </div>
+        <PageHero
+          as="section"
+          eyebrow="AI Search Optimisation"
+          title={<>The Agency That Gets You<br />Recommended by AI</>}
+          lede="Search has changed. Millions of people now ask ChatGPT, Google AI, and Perplexity for recommendations instead of scrolling a results page."
+        >
+          <p className="lb-body-lg" style={{ margin: '16px 0 0', maxWidth: 640 }}>
+            We build your brand's presence across every AI engine — so when your ideal customer asks, you're the answer.
+          </p>
+          <div className="lb-hero-cta lb-btn-row">
+            <Button cta />
+            <BookCall />
           </div>
-        </section>
+        </PageHero>
 
         {/* The New Reality */}
-        <section className="l-section" style={{ background: 'var(--bg2)', paddingTop: 80, paddingBottom: 80 }}>
-          <div className="l-container">
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 20, display: 'inline-flex' }}>The Shift</span>
-                <h2 className="l-h2" style={{ marginBottom: 24 }}>Search Has Changed. <em className="l-serif-em">Permanently.</em></h2>
-
-                <p className="l-body" style={{ marginBottom: 16 }}>
-                  In 2023, Google processed roughly 8.5 billion searches per day. ChatGPT now handles over 100 million queries daily — and growing. Perplexity crossed 100 million monthly users in early 2025. Google's own AI Overviews appear in over 47% of search results.
-                </p>
-                <p className="l-body" style={{ marginBottom: 16 }}>
-                  People aren't clicking ten blue links and deciding. They're asking a question and reading one answer. The brand inside that answer wins the lead. The brands not mentioned don't exist.
-                </p>
-                <p className="l-body" style={{ marginBottom: 40 }}>
-                  This isn't a trend to watch. It's the new operating reality. And the window to establish AI search authority before your competitors do is closing.
-                </p>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
-                  {[
-                    { stat: '47%', label: 'of Google searches now show AI Overviews' },
-                    { stat: '100M+', label: 'ChatGPT queries per day (Jan 2025)' },
-                    { stat: '4.4×', label: 'higher conversion from AI-referred leads' },
-                  ].map(({ stat, label }) => (
-                    <div key={stat} style={{ padding: '24px 20px', background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 10, textAlign: 'center' }}>
-                      <div style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 600, color: 'var(--terra)', marginBottom: 8 }}>{stat}</div>
-                      <div style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--muted)', lineHeight: 1.5 }}>{label}</div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+        <Section alt>
+          <SectionHeader eyebrow="The Shift" title="Search Has Changed. Permanently." />
+          <div className="lb-narrow-copy">
+            <p className="lb-body-lg">
+              In 2023, Google processed roughly 8.5 billion searches per day. ChatGPT now handles over 100 million queries daily — and growing. Perplexity crossed 100 million monthly users in early 2025. Google's own AI Overviews appear in over 47% of search results.
+            </p>
+            <p className="lb-body-lg">
+              People aren't clicking ten blue links and deciding. They're asking a question and reading one answer. The brand inside that answer wins the lead. The brands not mentioned don't exist.
+            </p>
+            <p className="lb-body-lg lb-em">
+              This isn't a trend to watch. It's the new operating reality. And the window to establish AI search authority before your competitors do is closing.
+            </p>
           </div>
-        </section>
+          <div className="lb-g3" style={{ marginTop: 44 }}>
+            {shiftStats.map(({ stat, label }) => (
+              <div key={stat} className="lb-card sm lb-statcard">
+                <span className="lb-stat-n">{stat}</span>
+                <span className="lb-stat-l">{label}</span>
+              </div>
+            ))}
+          </div>
+        </Section>
 
         {/* How AI Engines Decide */}
-        <section className="l-section" style={{ background: 'var(--bg3)', paddingTop: 80, paddingBottom: 80 }}>
-          <div className="l-container">
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 20, display: 'inline-flex' }}>The Mechanics</span>
-                <h2 className="l-h2" style={{ marginBottom: 24 }}>How AI Engines Choose <em className="l-serif-em">Who to Recommend</em></h2>
-
-                <p className="l-body" style={{ marginBottom: 16 }}>
-                  AI language models don't rank pages. They build a model of who the authoritative entities are in a given domain — and when asked a question, they reference those entities.
-                </p>
-                <p className="l-body" style={{ marginBottom: 16 }}>
-                  That model is built from everything the AI has read: articles, reviews, forum discussions, news mentions, structured data, and citations across the web.
-                </p>
-                <p className="l-body" style={{ marginBottom: 40 }}>
-                  The brands that appear most consistently, in the most credible contexts, with the clearest signals about what they do and who they serve — those are the brands AI models recommend. The good news: these signals can be built. That's what we do.
-                </p>
-
-                <div style={{ display: 'grid', gap: 16 }}>
-                  {[
-                    { icon: FileText, title: 'Content Authority', body: 'AI engines cite sources that demonstrate expertise. Long-form, factually dense content — structured with clear headings, direct answers, and specific claims — signals that your brand knows what it\'s talking about. Thin content doesn\'t get cited.' },
-                    { icon: Globe, title: 'Entity Recognition', body: 'An entity is a clearly defined thing: a brand, a person, a product, a location. AI models rely on entity graphs to connect recommendations to the right context. We ensure your brand entity is well-defined, consistent, and linked across the web.' },
-                    { icon: Link2, title: 'Citation Signals', body: 'When authoritative third-party sources — publications, review platforms, industry directories — mention and link to your brand, it builds the trust profile AI models use to gauge credibility. Backlinks aren\'t just for Google.' },
-                    { icon: ShieldCheck, title: 'Structured Data', body: 'Schema markup tells AI crawlers precisely what your business is, what it does, where it operates, and how it\'s been reviewed. Pages with clean structured data are significantly easier for AI engines to parse and recommend.' },
-                  ].map(({ icon: Icon, title, body }) => (
-                    <div key={title} style={{ display: 'flex', gap: 20, padding: '24px', background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 10 }}>
-                      <div style={{ width: 44, height: 44, borderRadius: 10, background: 'rgba(204,100,50,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                        <Icon style={{ width: 20, height: 20, color: 'var(--terra)' }} />
-                      </div>
-                      <div>
-                        <div style={{ fontFamily: 'var(--sans)', fontSize: 15, fontWeight: 600, color: 'var(--cream)', marginBottom: 6 }}>{title}</div>
-                        <p className="l-body" style={{ margin: 0 }}>{body}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+        <Section>
+          <SectionHeader eyebrow="The Mechanics" title="How AI Engines Choose Who to Recommend" />
+          <div className="lb-narrow-copy">
+            <p className="lb-body-lg">
+              AI language models don't rank pages. They build a model of who the authoritative entities are in a given domain — and when asked a question, they reference those entities.
+            </p>
+            <p className="lb-body-lg">
+              That model is built from everything the AI has read: articles, reviews, forum discussions, news mentions, structured data, and citations across the web.
+            </p>
+            <p className="lb-body-lg">
+              The brands that appear most consistently, in the most credible contexts, with the clearest signals about what they do and who they serve — those are the brands AI models recommend. The good news: these signals can be built. That's what we do.
+            </p>
           </div>
-        </section>
+          <div className="lb-g2" style={{ marginTop: 44 }}>
+            {signals.map(({ icon, title, body }) => (
+              <div key={title} className="lb-card">
+                <Icon name={icon} />
+                <div className="lb-h3-card">{title}</div>
+                <p>{body}</p>
+              </div>
+            ))}
+          </div>
 
-        {/* CTA Strip 1 */}
-        <div style={{ background: 'var(--terra)', padding: '28px 0' }}>
-          <div className="l-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap' }}>
-            <p style={{ fontFamily: 'var(--sans)', fontSize: 15, fontWeight: 500, color: '#fff', margin: 0 }}>
+          {/* CTA strip 1 */}
+          <div className="lb-ctarow lb-ctastrip">
+            <p className="lb-body-lg lb-em" style={{ margin: '0 0 22px' }}>
               Want to see where your brand stands in AI search right now?
             </p>
-            <div style={{ display: 'flex', gap: 10, flexShrink: 0 }}>
-              <button onClick={scrollToContact} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: 'var(--terra)', padding: '10px 22px', borderRadius: 6, border: 'none', fontWeight: 700, fontSize: 13, cursor: 'pointer', fontFamily: 'var(--sans)' }}>
-                Get Free Audit <ArrowRight style={{ width: 14, height: 14 }} />
-              </button>
-              <button onClick={openCalendly} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.15)', color: '#fff', padding: '10px 22px', borderRadius: 6, border: '1px solid rgba(255,255,255,0.35)', fontWeight: 600, fontSize: 13, cursor: 'pointer', fontFamily: 'var(--sans)' }}>
-                Book a Call
-              </button>
+            <div className="lb-btn-row" style={{ justifyContent: 'center' }}>
+              <Button cta />
+              <BookCall />
             </div>
           </div>
-        </div>
+        </Section>
 
         {/* Our Methodology */}
-        <section className="l-section" style={{ background: 'var(--bg2)', paddingTop: 80, paddingBottom: 80 }}>
-          <div className="l-container">
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 20, display: 'inline-flex' }}>Our Approach</span>
-                <h2 className="l-h2" style={{ marginBottom: 24 }}>The Locully <em className="l-serif-em">Methodology</em></h2>
-
-                <p className="l-body" style={{ marginBottom: 16 }}>
-                  We don't have a template. Every client starts with an audit — we measure exactly where you stand in AI search today, identify the gaps, and build a strategy around closing them.
-                </p>
-                <p className="l-body" style={{ marginBottom: 40 }}>
-                  The work runs across five interconnected areas. You won't see results from any single one in isolation. AI visibility is built by stacking signals — and we manage all five simultaneously.
-                </p>
-
-                <div style={{ display: 'grid', gap: 32 }}>
-                  {[
-                    {
-                      step: '01',
-                      title: 'AI Visibility Audit',
-                      body: 'Before we touch anything, we test. We run structured queries across ChatGPT, Perplexity, Google AI Overviews, and Gemini — and document exactly how often your brand is mentioned, what context it\'s mentioned in, and how you compare to your direct competitors. This becomes your baseline. Every month, we measure against it.',
-                    },
-                    {
-                      step: '02',
-                      title: 'Content & Topical Authority',
-                      body: 'We audit your existing content and identify the gaps between what you\'ve published and what AI engines are citing in your niche. Then we build out a content plan — long-form articles, FAQs, comparison pieces, and opinion content — structured specifically to be cited as a source. This isn\'t blog writing. It\'s AI citation engineering.',
-                    },
-                    {
-                      step: '03',
-                      title: 'Entity & Schema Optimisation',
-                      body: 'We build and reinforce your brand\'s entity graph: consistent name, address, contact details, and category signals across your website, Google Business Profile, and key directories. We implement and audit JSON-LD structured data on every key page. This is the infrastructure AI engines use to confirm who you are and what you do.',
-                    },
-                    {
-                      step: '04',
-                      title: 'Citation & Authority Building',
-                      body: 'We place editorial backlinks on relevant, high-authority publications in your niche. These aren\'t generic link placements — they\'re crafted to mention your brand in context, reinforcing the association AI engines build between your name and your category. Each placement is documented with full metrics.',
-                    },
-                    {
-                      step: '05',
-                      title: 'Technical & Crawl Optimisation',
-                      body: 'AI crawlers follow different patterns than Google\'s crawler. We audit your robots.txt, ensure your llms.txt is in place, check that your sitemap is clean and complete, and verify that your content is indexed and readable by the models that matter. We also ensure your site passes Core Web Vitals — speed and stability signals that influence how much AI crawlers prioritise your content.',
-                    },
-                  ].map(({ step, title, body }) => (
-                    <div key={step} style={{ display: 'flex', gap: 24 }}>
-                      <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, color: 'var(--terra)', letterSpacing: '0.1em', paddingTop: 3, flexShrink: 0, width: 28 }}>{step}</div>
-                      <div style={{ borderLeft: '1px solid var(--bdr)', paddingLeft: 24 }}>
-                        <div style={{ fontFamily: 'var(--sans)', fontSize: 16, fontWeight: 600, color: 'var(--cream)', marginBottom: 10 }}>{title}</div>
-                        <p className="l-body" style={{ margin: 0 }}>{body}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+        <Section alt>
+          <SectionHeader eyebrow="Our Approach" title="The Locully Methodology" />
+          <div className="lb-narrow-copy" style={{ marginBottom: 24 }}>
+            <p className="lb-body-lg">
+              We don't have a template. Every client starts with an audit — we measure exactly where you stand in AI search today, identify the gaps, and build a strategy around closing them.
+            </p>
+            <p className="lb-body-lg">
+              The work runs across five interconnected areas. You won't see results from any single one in isolation. AI visibility is built by stacking signals — and we manage all five simultaneously.
+            </p>
           </div>
-        </section>
+          <div className="lb-stages">
+            {methodology.map(({ step, title, body }) => (
+              <div key={step} className="lb-stage text-only">
+                <div><div className="lb-num">{step}</div></div>
+                <div>
+                  <div className="lb-h3-stage">{title}</div>
+                  <p>{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
 
         {/* What's Included */}
-        <section className="l-section" style={{ background: 'var(--bg)', paddingTop: 80, paddingBottom: 80 }}>
-          <div className="l-container">
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 20, display: 'inline-flex' }}>Deliverables</span>
-                <h2 className="l-h2" style={{ marginBottom: 24 }}>What You Actually <em className="l-serif-em">Receive</em></h2>
-
-                <p className="l-body" style={{ marginBottom: 40 }}>
-                  We work on a monthly retainer. Every engagement includes a defined scope — no vague promises, no "strategy only" work without execution.
-                </p>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16, marginBottom: 40 }}>
-                  {[
-                    { icon: BarChart3, title: 'Monthly AI Visibility Report', body: 'Citation frequency across all major AI engines, keyword-by-keyword tracking, month-on-month trend, and a priority action list.' },
-                    { icon: FileText, title: 'Long-Form Content', body: 'AI-citation-optimised articles published on your site. Each one targets a keyword cluster and is structured for both AI and Google.' },
-                    { icon: Link2, title: 'Editorial Backlinks', body: 'High-DR placements on industry-relevant publications — with full placement reports showing domain metrics and live URLs.' },
-                    { icon: ShieldCheck, title: 'Schema & Technical Fixes', body: 'Structured data implementation, crawl error remediation, llms.txt, and Core Web Vitals monitoring.' },
-                    { icon: Globe, title: 'Entity Optimisation', body: 'NAP consistency audit, Google Business Profile optimisation, and directory submissions to key AI-cited sources.' },
-                    { icon: Zap, title: 'Strategy Calls', body: 'Monthly 30-minute call to walk through results, refine direction, and answer questions. Direct access to senior strategists — not account managers.' },
-                  ].map(({ icon: Icon, title, body }) => (
-                    <div key={title} style={{ padding: '24px', background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 10 }}>
-                      <div style={{ width: 40, height: 40, borderRadius: 8, background: 'rgba(204,100,50,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                        <Icon style={{ width: 18, height: 18, color: 'var(--terra)' }} />
-                      </div>
-                      <div style={{ fontFamily: 'var(--sans)', fontSize: 14, fontWeight: 600, color: 'var(--cream)', marginBottom: 6 }}>{title}</div>
-                      <p className="l-body" style={{ margin: 0, fontSize: 13 }}>{body}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+        <Section>
+          <SectionHeader
+            eyebrow="Deliverables"
+            title="What You Actually Receive"
+            lede={'We work on a monthly retainer. Every engagement includes a defined scope — no vague promises, no "strategy only" work without execution.'}
+          />
+          <div className="lb-g3">
+            {deliverables.map(({ icon, title, body }) => (
+              <div key={title} className="lb-card">
+                <Icon name={icon} />
+                <div className="lb-h3">{title}</div>
+                <p>{body}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </Section>
 
         {/* Results */}
-        <section className="l-section" style={{ background: 'var(--bg3)', paddingTop: 80, paddingBottom: 80 }}>
-          <div className="l-container">
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 20, display: 'inline-flex' }}>Results</span>
-                <h2 className="l-h2" style={{ marginBottom: 24 }}>What Our Clients <em className="l-serif-em">Have Achieved</em></h2>
-
-                <p className="l-body" style={{ marginBottom: 40 }}>
-                  Numbers from real engagements. Clients are anonymised at their request, but the data is auditable.
-                </p>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16, marginBottom: 32 }}>
-                  {[
-                    {
-                      industry: 'Healthcare',
-                      metric1: '+350%', label1: 'AI Citation Increase',
-                      metric2: '90%', label2: 'Top-3 Placement Rate',
-                      detail: 'Physio clinic went from 30 AI mentions to 112 in 90 days. Now the dominant recommendation for sports recovery queries in Bangkok.'
-                    },
-                    {
-                      industry: 'Aesthetics',
-                      metric1: '+289%', label1: 'AI Mentions',
-                      metric2: '75%', label2: 'Conversion from AI Leads',
-                      detail: 'Beauty clinic featured in ChatGPT\'s top 3 responses for Botox and filler queries. Conversion rate from AI-referred leads is 3× higher than paid ads.'
-                    },
-                  ].map(({ industry, metric1, label1, metric2, label2, detail }) => (
-                    <div key={industry} style={{ padding: 28, background: 'var(--surface)', border: '1px solid var(--bdr)', borderRadius: 12 }}>
-                      <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 700, color: 'var(--terra)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 16 }}>{industry}</div>
-                      <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
-                        <div>
-                          <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 600, color: 'var(--terra)', lineHeight: 1 }}>{metric1}</div>
-                          <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted2)', marginTop: 4 }}>{label1}</div>
-                        </div>
-                        <div>
-                          <div style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 600, color: 'var(--cream)', lineHeight: 1 }}>{metric2}</div>
-                          <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted2)', marginTop: 4 }}>{label2}</div>
-                        </div>
-                      </div>
-                      <p className="l-body" style={{ margin: 0, fontSize: 13 }}>{detail}</p>
+        <Section alt>
+          <SectionHeader
+            eyebrow="Results"
+            title="What Our Clients Have Achieved"
+            lede="Numbers from real engagements. Clients are anonymised at their request, but the data is auditable."
+          />
+          <ProofPanel>
+            <div className="lb-proof-cases">
+              {results.map(({ industry, metric1, label1, metric2, label2, detail }) => (
+                <div key={industry} className="lb-proof-case">
+                  <div className="lb-proof-lab">Result · {industry}</div>
+                  <div className="lb-proof-pair">
+                    <div>
+                      <div className="lb-proof-n lb-proof-n-xl">{metric1}</div>
+                      <div className="lb-proof-l">{label1}</div>
                     </div>
-                  ))}
+                    <div>
+                      <div className="lb-proof-n lb-proof-n-xl lb-proof-white">{metric2}</div>
+                      <div className="lb-proof-l">{label2}</div>
+                    </div>
+                  </div>
+                  <p className="lb-proof-sub">{detail}</p>
                 </div>
-
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <a
-                    href="https://locully-client-success-m8a58k2.gamma.site/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--terra)', fontSize: 13, fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--sans)' }}
-                  >
-                    View full case studies <ArrowRight style={{ width: 13, height: 13 }} />
-                  </a>
-                </div>
-              </motion.div>
+              ))}
             </div>
-          </div>
-        </section>
+          </ProofPanel>
 
-        {/* CTA Strip 2 */}
-        <div style={{ background: 'var(--surface)', borderTop: '1px solid var(--bdr)', borderBottom: '1px solid var(--bdr)', padding: '28px 0' }}>
-          <div className="l-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap' }}>
-            <p style={{ fontFamily: 'var(--sans)', fontSize: 15, fontWeight: 500, color: 'var(--cream)', margin: 0 }}>
-              Ready to build your AI search presence?{' '}
-              <span style={{ color: 'var(--muted)', fontWeight: 400 }}>Free audit, no commitment.</span>
+          <div style={{ textAlign: 'center', marginTop: 30 }}>
+            <Button variant="text" href="https://locully-client-success-m8a58k2.gamma.site/" target="_blank" rel="noopener noreferrer">
+              View full case studies
+            </Button>
+          </div>
+
+          {/* CTA strip 2 */}
+          <div className="lb-ctarow lb-ctastrip">
+            <p className="lb-body-lg" style={{ margin: '0 0 22px' }}>
+              <span className="lb-em">Ready to build your AI search presence?</span>{' '}
+              <span>Free audit, no commitment.</span>
             </p>
-            <div style={{ display: 'flex', gap: 10, flexShrink: 0 }}>
-              <button onClick={scrollToContact} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--terra)', color: '#fff', padding: '10px 22px', borderRadius: 6, border: 'none', fontWeight: 700, fontSize: 13, cursor: 'pointer', fontFamily: 'var(--sans)' }}>
-                Get Free Audit <ArrowRight style={{ width: 14, height: 14 }} />
-              </button>
-              <button onClick={openCalendly} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'none', color: 'var(--terra)', padding: '10px 22px', borderRadius: 6, border: '1px solid var(--terra)', fontWeight: 600, fontSize: 13, cursor: 'pointer', fontFamily: 'var(--sans)' }}>
-                Book a Call
-              </button>
+            <div className="lb-btn-row" style={{ justifyContent: 'center' }}>
+              <Button cta />
+              <BookCall />
             </div>
           </div>
-        </div>
+        </Section>
 
         {/* Who It's For */}
-        <section className="l-section" style={{ background: 'var(--bg2)', paddingTop: 80, paddingBottom: 80 }}>
-          <div className="l-container">
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 20, display: 'inline-flex' }}>Fit</span>
-                <h2 className="l-h2" style={{ marginBottom: 24 }}>Who This Is <em className="l-serif-em">Right For</em></h2>
-
-                <p className="l-body" style={{ marginBottom: 32 }}>
-                  We work best with businesses where trust plays a central role in the buying decision — and where an AI recommendation carries real weight.
-                </p>
-
-                <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
-                  {[
-                    { check: true, text: 'Clinics and healthcare providers where patients research before booking' },
-                    { check: true, text: 'Professional services firms — consultancies, agencies, financial advisors' },
-                    { check: true, text: 'SaaS and software businesses where category searches drive trial sign-ups' },
-                    { check: true, text: 'Hospitality, wellness, and lifestyle brands in competitive markets' },
-                    { check: true, text: 'Businesses that have invested in SEO but haven\'t adapted to AI search yet' },
-                    { check: true, text: 'Companies entering a new market who need to establish authority fast' },
-                    { check: false, text: 'Pure price-comparison products where brand doesn\'t influence decisions' },
-                    { check: false, text: 'Businesses looking for results in under 30 days — AI visibility is earned, not bought' },
-                  ].map(({ check, text }, i) => (
-                    <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                      <div style={{ marginTop: 3, flexShrink: 0 }}>
-                        {check
-                          ? <CheckCircle2 style={{ width: 16, height: 16, color: 'var(--terra)' }} />
-                          : <div style={{ width: 16, height: 16, borderRadius: '50%', border: '1.5px solid var(--bdr2)', flexShrink: 0 }} />
-                        }
-                      </div>
-                      <span style={{ fontFamily: 'var(--sans)', fontSize: 14, color: check ? 'var(--muted)' : 'var(--muted2)', lineHeight: 1.6, fontWeight: 300 }}>{text}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="l-body">
-                  If you're not sure whether this fits, book a 30-minute call. We'll tell you honestly — and if it's not the right move for your business right now, we'll say so.
-                </p>
-              </motion.div>
+        <Section>
+          <SectionHeader
+            eyebrow="Fit"
+            title="Who This Is Right For"
+            lede="We work best with businesses where trust plays a central role in the buying decision — and where an AI recommendation carries real weight."
+          />
+          <div className="lb-g2" style={{ alignItems: 'start' }}>
+            <div className="lb-fit yes">
+              <ul className="lb-list lg">
+                {fit.filter((f) => f.check).map((f) => <li key={f.text}>{f.text}</li>)}
+              </ul>
+            </div>
+            <div className="lb-fit no">
+              <ul className="lb-list dash lg">
+                {fit.filter((f) => !f.check).map((f) => <li key={f.text}>{f.text}</li>)}
+              </ul>
             </div>
           </div>
-        </section>
+          <p className="lb-body-lg" style={{ textAlign: 'center', maxWidth: 680, margin: '36px auto 0' }}>
+            If you're not sure whether this fits, book a 30-minute call. We'll tell you honestly — and if it's not the right move for your business right now, we'll say so.
+          </p>
+        </Section>
 
         {/* Process Timeline */}
-        <section className="l-section" style={{ background: 'var(--bg)', paddingTop: 80, paddingBottom: 80 }}>
-          <div className="l-container">
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 20, display: 'inline-flex' }}>Process</span>
-                <h2 className="l-h2" style={{ marginBottom: 24 }}>How We <em className="l-serif-em">Get Started</em></h2>
-
-                <div style={{ display: 'grid', gap: 0 }}>
-                  {[
-                    { phase: 'Week 1–2', title: 'Audit & Baseline', body: 'We run your brand through every major AI engine across 30+ relevant prompts. We document your current citation rate, analyse your top 3 competitors, and map the gap between where you are and where you need to be.' },
-                    { phase: 'Week 3–4', title: 'Strategy & Kickoff', body: 'We present the audit findings, agree on the 90-day strategy, and begin technical work immediately — schema, llms.txt, crawlability fixes. This is the fastest-moving phase and often shows early results within 30 days.' },
-                    { phase: 'Month 2–3', title: 'Content & Authority Build', body: 'Articles go live on a rolling schedule. Backlink placements begin. We monitor citation frequency weekly and adjust the content angle if we see early data pointing us in a better direction.' },
-                    { phase: 'Month 3+', title: 'Compound & Optimise', body: 'AI visibility compounds. Each new citation, each new article, each new backlink increases the likelihood of future mentions. We expand into new query clusters and refine what\'s working. Monthly reporting keeps you informed throughout.' },
-                  ].map(({ phase, title, body }, i, arr) => (
-                    <div key={phase} style={{ display: 'flex', gap: 24, paddingBottom: i < arr.length - 1 ? 32 : 0, position: 'relative' }}>
-                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0, width: 20 }}>
-                        <div style={{ width: 12, height: 12, borderRadius: '50%', background: 'var(--terra)', flexShrink: 0, marginTop: 4 }} />
-                        {i < arr.length - 1 && <div style={{ flex: 1, width: 1, background: 'var(--bdr)', marginTop: 6 }} />}
-                      </div>
-                      <div style={{ paddingBottom: i < arr.length - 1 ? 8 : 0 }}>
-                        <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--terra)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>{phase}</div>
-                        <div style={{ fontFamily: 'var(--sans)', fontSize: 15, fontWeight: 600, color: 'var(--cream)', marginBottom: 8 }}>{title}</div>
-                        <p className="l-body" style={{ margin: 0 }}>{body}</p>
-                      </div>
-                    </div>
-                  ))}
+        <Section alt>
+          <SectionHeader eyebrow="Process" title="How We Get Started" />
+          <div className="lb-timeline">
+            {timeline.map(({ phase, title, body }) => (
+              <div key={phase} className="lb-tl-row">
+                <div className="lb-tl-phase"><span className="lb-tag">{phase}</span></div>
+                <div>
+                  <div className="lb-h3">{title}</div>
+                  <p className="lb-body-lg" style={{ margin: 0 }}>{body}</p>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </Section>
 
         {/* FAQ */}
-        <section className="l-section" style={{ background: 'var(--bg3)', paddingTop: 80, paddingBottom: 80 }}>
-          <div className="l-container">
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                <span className="l-label" style={{ marginBottom: 20, display: 'inline-flex' }}>FAQ</span>
-                <h2 className="l-h2" style={{ marginBottom: 40 }}>Common <em className="l-serif-em">Questions</em></h2>
-                <div>
-                  {faqs.map(faq => <FaqItem key={faq.q} {...faq} />)}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <Section>
+          <SectionHeader eyebrow="FAQ" title="Common Questions" style={{ marginBottom: 40 }} />
+          <FAQ items={faqs} />
+        </Section>
 
-        {/* CTA */}
-        <section className="l-cta-band">
-          <div className="l-container">
-            <h2 className="l-h2" style={{ marginBottom: 16 }}>
-              Start With a <em className="l-serif-em">Free Audit</em>
-            </h2>
-            <p className="l-body" style={{ maxWidth: 480, margin: '0 auto 36px' }}>
-              We'll show you exactly where your brand stands in AI search today — ChatGPT, Perplexity, Google AI, and Gemini — and what it would take to rank #1.
-            </p>
-            <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <button onClick={scrollToContact} className="l-btn l-btn-lg" style={{ border: 'none' }}>
-                Get Free AI Audit <ArrowRight style={{ width: 18, height: 18 }} />
-              </button>
-              <button onClick={openCalendly} className="l-btn-ghost l-btn-lg">Book a Call</button>
+        {/* CTA + lead form */}
+        <LeadForm
+          eyebrow="Free AI visibility check"
+          title="Start With a Free Audit"
+          lede="We'll show you exactly where your brand stands in AI search today — ChatGPT, Perplexity, Google AI, and Gemini — and what it would take to rank #1."
+          footer={(
+            <div className="lb-ctarow" style={{ marginTop: 28 }}>
+              <BookCall />
             </div>
-          </div>
-        </section>
+          )}
+        />
 
         <Footer />
-      </div>
+      </Page>
     </>
   );
 }

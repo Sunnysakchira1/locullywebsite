@@ -72,7 +72,7 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
  * Lead-form band: ground-alt section, centred header, form card and an
  * optional aside (rendered beside the form on desktop, under it on mobile).
  */
-const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', aside, subject, idPrefix, hint, children, alt = true }) => (
+const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', aside, subject, idPrefix, hint, children, footer, alt = true }) => (
   <section id={id} className={`lb-sec${alt ? ' alt' : ''}`}>
     <div className="lb-w">
       {(eyebrow || title || lede) && (
@@ -87,6 +87,7 @@ const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', asid
         <LeadFormCard subject={subject} idPrefix={idPrefix || id} hint={hint} />
         {aside && <div>{aside}</div>}
       </div>
+      {footer}
     </div>
   </section>
 );
