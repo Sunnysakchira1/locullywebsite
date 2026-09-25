@@ -5,18 +5,20 @@
 ## Main Pages
 - [Locully — AI Search Visibility for Bangkok Clinics](https://www.locully.org/): Get your clinic recommended by ChatGPT, Perplexity, and Google AI Overviews. Locully is a Bangkok agency specialising in AI search visibility (GEO/AIO) for healthcare clinics.
 - [AI SEO Agency — GEO & AI Search Optimisation](https://www.locully.org/geo/): Locully's GEO service: how AI search engines choose which businesses to name, what the work includes, and how AI search visibility is measured.
+- [Industries: clinics and property](https://www.locully.org/industries/): How Locully applies SEO, GEO and Google and Meta ads to healthcare clinics and property businesses in Bangkok.
 - [One-Off Packages](https://www.locully.org/packages): No-retainer packages — content writing and backlink building for clinics, priced per project.
 - [Local Marketing Partner for Fairs & Expos](https://www.locully.org/lead-gen-partner): Locully as your on-the-ground local marketing team for international fairs and expos in Thailand.
 - [About Locully](https://www.locully.org/about): Bangkok-based agency specialising exclusively in AI search visibility for healthcare clinics.
 - [Blog](https://www.locully.org/blog/): Guides on AI search, GEO/AIO, and SEO for clinics.
 - [Privacy Policy](https://www.locully.org/privacy-policy): How Locully collects, uses, and protects personal data.
 
-## AI Optimization by Clinic Type
-- [Physiotherapy Clinics in AI Search](https://www.locully.org/ai-optimization/physiotherapy-clinics/): Help patients find your physiotherapy clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok physio clinics.
-- [Dental Clinics in AI Search](https://www.locully.org/ai-optimization/dental-clinics/): Help patients find your dental clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok dental clinics.
-- [Wellness Clinics in AI Search](https://www.locully.org/ai-optimization/wellness-clinics/): Help patients find your wellness clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok wellness clinics.
-- [IVF Clinics in AI Search](https://www.locully.org/ai-optimization/fertility-clinics/): Help patients find your IVF clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok IVF clinics.
-- [Beauty Clinics in AI Search](https://www.locully.org/ai-optimization/beauty-clinics/): Help patients find your beauty clinic through ChatGPT, Perplexity & Google AI. Locully's AIO service for Bangkok beauty clinics.
+## Industries
+- [Marketing for physiotherapy clinics in Bangkok](https://www.locully.org/industries/physiotherapy-clinics/): Locully helps Bangkok physiotherapy clinics get found on Google and in ChatGPT, with SEO, GEO and Google and Meta ads. Get a free AI visibility check.
+- [Marketing for dental clinics in Bangkok](https://www.locully.org/industries/dental-clinics/): SEO, AI search and Google and Meta ads for Bangkok dental clinics. Locully builds treatment pages patients find and tracks booked consultations.
+- [Marketing for wellness clinics in Bangkok](https://www.locully.org/industries/wellness-clinics/): Locully markets Bangkok wellness clinics with SEO, GEO and paid ads: clear service pages, AI search visibility and ads that stay within health ad rules.
+- [Marketing for fertility and IVF clinics in Bangkok](https://www.locully.org/industries/fertility-clinics/): SEO, AI search and compliant ads for Bangkok fertility and IVF clinics. Locully helps patients researching treatment find clear, approved answers from you.
+- [Marketing for aesthetic and beauty clinics in Bangkok](https://www.locully.org/industries/beauty-clinics/): Locully helps Bangkok aesthetic and beauty clinics get found for every treatment on Google, ChatGPT and Meta, with SEO, GEO and paid ads.
+- [Marketing for property developers and agencies in Bangkok](https://www.locully.org/industries/property/): Locully helps Bangkok property developers and real estate agencies get found on Google and in AI assistants, and runs Google and Meta ads for launches.
 
 ## Blog
 - [AI Search Optimization for Clinics in Thailand: The 2026 Guide](https://www.locully.org/blog/ai-search-optimization-clinics-thailand/): Complete guide to AI search optimization for Thailand clinics. Get your clinic recommended in ChatGPT, Perplexity, and Google AI Overviews.

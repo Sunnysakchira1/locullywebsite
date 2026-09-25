@@ -122,7 +122,7 @@ export default function BlogPostPage({ slug }) {
             <p className="lbp-blog-chiplabel">AI optimization for your clinic type</p>
             <div className="lb-chips">
               {post.relatedClinics.map((clinicSlug) => (
-                <Link key={clinicSlug} to={`/ai-optimization/${clinicSlug}/`} className="lb-chip">
+                <Link key={clinicSlug} to={`/industries/${clinicSlug}/`} className="lb-chip">
                   {clinicLabels[clinicSlug] || clinicSlug} <ArrowRight style={{ width: 14, height: 14 }} aria-hidden="true" />
                 </Link>
               ))}

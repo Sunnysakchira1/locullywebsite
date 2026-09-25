@@ -11,7 +11,7 @@ const Footer = () => {
             <Link to="/" className="bfoot-logo" aria-label="Locully home">
               <img src="/locully-wordmark-navy.png" alt="Locully Logo" width="81" height="24" />
             </Link>
-            <p className="bfoot-desc">SEO & AI Visibility Experts.<br />Rank #1 in AI Search.</p>
+            <p className="bfoot-desc">SEO, AI search (GEO) and performance marketing agency in Bangkok.</p>
             <div className="bfoot-social">
               <a href="https://www.linkedin.com/company/locully" target="_blank" rel="noopener noreferrer" aria-label="Locully on LinkedIn">
                 <Linkedin style={{ width: '16px', height: '16px' }} />
@@ -23,19 +23,30 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className="bfoot-label">Navigation</div>
+            <div className="bfoot-label">Services</div>
             <div className="bfoot-links">
-              <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/blog/">Blog</Link>
-              <Link to="/lead-gen-partner">Lead Gen Partner</Link>
-              <Link to="/packages">One-Off Packages</Link>
-              <Link to="/geo/">GEO &amp; AI search optimisation</Link>
+              <Link to="/seo/">SEO</Link>
+              <Link to="/geo/">AI search / GEO</Link>
+              <Link to="/performance-marketing/">Performance marketing</Link>
+              <Link to="/geo/ai-visibility-audit/">Free AI visibility audit</Link>
+              <Link to="/packages">One-off SEO packages</Link>
+              <Link to="/lead-gen-partner">Fairs &amp; expos partner</Link>
             </div>
           </div>
 
           <div>
-            <div className="bfoot-label">Contact</div>
+            <div className="bfoot-label">Company</div>
+            <div className="bfoot-links">
+              <Link to="/about">About Locully</Link>
+              <Link to="/rachaphon-sakchiraphong/">Founder</Link>
+              <Link to="/industries/">Industries</Link>
+              <Link to="/blog/">Insights</Link>
+              <Link to="/contact/">Contact</Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="bfoot-label"><Link to="/contact/">Contact</Link></div>
             <div className="bfoot-links">
               <a href="mailto:sunny@locully.org">sunny@locully.org</a>
               <span>+66 62 695 9444</span>
@@ -49,8 +60,7 @@ const Footer = () => {
           <div className="bfoot-legal">
             <a href="https://seojuice.com" target="_blank" rel="noopener noreferrer">SEOJuice</a>
             <Link to="/privacy-policy">Privacy Policy</Link>
-            <span>Terms of Service</span>
-            <img src="/locully-mark.png" alt="" className="bfoot-mark" width="12" height="22" />
+                        <img src="/locully-mark.png" alt="" className="bfoot-mark" width="12" height="22" />
           </div>
         </div>
       </div>

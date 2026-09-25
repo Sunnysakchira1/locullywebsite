@@ -69,8 +69,88 @@
       "permanent": true
     },
     {
-      "source": "/ai-optimization/:slug([^/.]+)",
-      "destination": "/ai-optimization/:slug/",
+      "source": "/ai-optimization/physiotherapy-clinics",
+      "destination": "/industries/physiotherapy-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/physiotherapy-clinics/",
+      "destination": "/industries/physiotherapy-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/dental-clinics",
+      "destination": "/industries/dental-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/dental-clinics/",
+      "destination": "/industries/dental-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/wellness-clinics",
+      "destination": "/industries/wellness-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/wellness-clinics/",
+      "destination": "/industries/wellness-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/fertility-clinics",
+      "destination": "/industries/fertility-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/fertility-clinics/",
+      "destination": "/industries/fertility-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/beauty-clinics",
+      "destination": "/industries/beauty-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-optimization/beauty-clinics/",
+      "destination": "/industries/beauty-clinics/",
+      "permanent": true
+    },
+    {
+      "source": "/seo",
+      "destination": "/seo/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/performance-marketing",
+      "destination": "/performance-marketing/",
+      "permanent": true
+    },
+    {
+      "source": "/geo/ai-visibility-audit",
+      "destination": "/geo/ai-visibility-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/rachaphon-sakchiraphong",
+      "destination": "/rachaphon-sakchiraphong/",
+      "permanent": true
+    },
+    {
+      "source": "/industries",
+      "destination": "/industries/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/:slug([^/.]+)",
+      "destination": "/industries/:slug/",
       "permanent": true
     }
   ]

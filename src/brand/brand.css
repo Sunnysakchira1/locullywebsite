@@ -540,7 +540,7 @@
 /* ═══ Global Footer (.bfoot) ═══════════════════════════════════ */
 .bfoot { background: var(--lb-ink); padding: 52px 0 0; font-family: var(--lb-font); -webkit-font-smoothing: antialiased; }
 .bfoot-in { max-width: var(--lb-container); margin: 0 auto; padding: 0 var(--lb-gutter); }
-.bfoot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 44px; }
+.bfoot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; }
 .bfoot-logo img { height: 24px; width: auto; display: block; filter: brightness(0) invert(1) opacity(0.94); }
 .bfoot .bfoot-desc { font-size: 15px; line-height: 1.6; color: var(--lb-on-dark-muted); margin: 18px 0 0; max-width: 280px; }
 .bfoot-social { display: flex; gap: 10px; margin-top: 22px; }
@@ -561,3 +561,5 @@
   .bfoot-logo img { height: 21px; }
   .bfoot-bottom { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px 0 24px; }
 }
+
+.bfoot-label a { color: inherit; text-decoration: none; }
