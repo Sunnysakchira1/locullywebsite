@@ -28,6 +28,7 @@ const STATIC_PAGES = [
   { path: '/packages',             priority: '0.8', changefreq: 'monthly' },
   { path: '/lead-gen-partner',     priority: '0.7', changefreq: 'monthly' },
   { path: '/about',                priority: '0.6', changefreq: 'monthly' },
+  { path: '/contact/',             priority: '0.5', changefreq: 'yearly'  },
   { path: '/blog/',                priority: '0.8', changefreq: 'weekly'  },
 ];
 
