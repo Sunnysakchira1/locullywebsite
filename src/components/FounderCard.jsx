@@ -34,7 +34,7 @@ const FounderCard = () => (
           <Linkedin style={{ width: '16px', height: '16px' }} aria-hidden="true" />
           LinkedIn
         </a>
-        <a href="mailto:sunny@locully.org" className="lb-btn-o">
+        <a href="mailto:admin@locully.org" className="lb-btn-o">
           <Mail style={{ width: '16px', height: '16px' }} aria-hidden="true" />
           Email Sunny
         </a>

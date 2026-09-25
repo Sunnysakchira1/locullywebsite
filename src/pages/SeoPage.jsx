@@ -294,9 +294,13 @@ export default function SeoPage() {
             </p>
           </div>
           <ProofPanel
-            label="Result · Bangkok clinic · AI search"
-            big="0 → 38"
-            sub="AI-sourced paid consultations in a single month (May 2026). Up from zero in September 2025, counted from the clinic's own booking records."
+            label="Results · two Bangkok clinics · Google and AI search"
+            big="77 → 415"
+            sub="Organic Google clicks to a Bangkok fertility clinic's English site, on matched 25-day windows in June, July and August 2026. From the clinic's own Search Console export."
+            stats={[
+              { n: '32.1 → 16.5', l: 'Average Google position for the same site, same windows' },
+              { n: '0 → 38', l: 'AI-sourced paid consultations in a single month (May 2026) for a different Bangkok clinic, up from zero in September 2025' },
+            ]}
           />
           <p className="lb-proof-note">
             Results are shown without client names. Results depend on your market, budget and starting position. No agency can promise a model

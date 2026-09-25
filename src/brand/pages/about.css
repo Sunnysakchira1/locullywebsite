@@ -103,3 +103,5 @@ h3.lbp-about-name { margin: 0 0 6px; }
 .lb.lbp-founder .lb-sec p.lb-body-lg, .lb.lbp-about .lb-sec .lb-wn > p.lb-body-lg { margin: 0 0 18px; }
 .lb.lbp-about .lb-card .lb-tlink { display: inline-flex; margin-top: 14px; }
 .lb .lbp-about-facts th { text-transform: none; letter-spacing: 0; font-size: 15px; font-weight: 600; color: var(--lb-ink); }
+
+.lbp-about-person--noimg { grid-template-columns: minmax(0, 1fr); }

@@ -15,7 +15,7 @@ export const goToLeadForm = (e) => {
   if (target) {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } else {
-    window.location.href = '/geo/ai-visibility-audit/#book';
+    window.location.href = '/audit/#book';
   }
 };
 
@@ -120,7 +120,7 @@ export const PageHero = ({ eyebrow, meta, title, lede, children, visual, aside, 
 /** Mobile-only sticky CTA bar: primary button + round phone button. */
 export const StickyCta = () => (
   <div className="lb-sticky" role="region" aria-label="Quick contact">
-    <a href="/geo/ai-visibility-audit/#book" className="lb-btn" onClick={goToLeadForm}>Free AI visibility check</a>
+    <a href="/audit/#book" className="lb-btn" onClick={goToLeadForm}>Free AI visibility check</a>
     <a href="tel:+66626959444" className="lb-sticky-call" aria-label="Call Locully on +66 62 695 9444">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" stroke="#14213d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
     </a>

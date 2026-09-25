@@ -156,8 +156,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/performance-marketing" element={<Navigate to="/performance-marketing/" replace />} />
           <Route path="/performance-marketing/" element={<PerformanceMarketingPage />} />
-          <Route path="/geo/ai-visibility-audit" element={<Navigate to="/geo/ai-visibility-audit/" replace />} />
-          <Route path="/geo/ai-visibility-audit/" element={<AiVisibilityAuditPage />} />
+          <Route path="/audit" element={<Navigate to="/audit/" replace />} />
+          <Route path="/audit/" element={<AiVisibilityAuditPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />

@@ -101,7 +101,7 @@ function main() {
     section('Blog', posts),
     '## Contact',
     '- Website: https://www.locully.org',
-    '- Email: sunny@locully.org',
+    '- Email: admin@locully.org',
     '- Location: Bangkok, Thailand',
     '',
   ].join('\n');

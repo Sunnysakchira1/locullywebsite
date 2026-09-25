@@ -12,7 +12,7 @@ const SERVICES = [
   { to: '/seo/', label: 'SEO' },
   { to: '/geo/', label: 'AI search / GEO' },
   { to: '/performance-marketing/', label: 'Performance marketing' },
-  { to: '/geo/ai-visibility-audit/', label: 'Free AI visibility audit' },
+  { to: '/audit/', label: 'Free AI visibility audit' },
 ];
 
 const Nav = () => {
@@ -45,7 +45,7 @@ const Nav = () => {
             <li><Link to="/about">About</Link></li>
           </ul>
 
-          <a href="/geo/ai-visibility-audit/#book" className="lb-btn bnav-cta" onClick={onCta}>
+          <a href="/audit/#book" className="lb-btn bnav-cta" onClick={onCta}>
             <span className="bnav-cta-full">Free AI visibility check</span>
             <span className="bnav-cta-short">Free AI check</span>
           </a>
@@ -67,12 +67,12 @@ const Nav = () => {
           <Link to="/seo/">SEO</Link>
           <Link to="/geo/">AI search / GEO</Link>
           <Link to="/performance-marketing/">Performance marketing</Link>
-          <Link to="/geo/ai-visibility-audit/" className="bnav-mobile-sub">Free AI visibility audit</Link>
+          <Link to="/audit/" className="bnav-mobile-sub">Free AI visibility audit</Link>
           <Link to="/industries/">Industries</Link>
           <Link to="/blog/">Insights</Link>
           <Link to="/about">About</Link>
           <Link to="/contact/">Contact</Link>
-          <a href="/geo/ai-visibility-audit/#book" className="lb-btn" onClick={onCta}>Get my free AI visibility check</a>
+          <a href="/audit/#book" className="lb-btn" onClick={onCta}>Get my free AI visibility check</a>
         </div>
       )}
     </nav>

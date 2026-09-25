@@ -231,7 +231,7 @@ export default function IndustryPage({ slug }) {
             </div>
           </div>
           <p className="lb-body-lg lbp-clinic-note" style={{ textAlign: 'center' }}>
-            See how the <Link to="/geo/ai-visibility-audit/">AI visibility audit</Link> measures where you stand.
+            See how the <Link to="/audit/">AI visibility audit</Link> measures where you stand.
           </p>
         </Section>
 

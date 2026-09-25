@@ -129,7 +129,7 @@ const FounderPage = () => {
         <Section alt narrow>
           <SectionHeader eyebrow="Biography" title="About Rachaphon Sakchiraphong" />
           <p className="lb-body-lg">
-            Rachaphon Sakchiraphong founded Locully in Bangkok in 2020. The company trades as Locully Co. Ltd and has
+            Rachaphon Sakchiraphong founded Locully in Bangkok in 2020. The company trades as Locully Co. Ltd. and has
             used the Locully name since 2025. <Link to="/about">Read more about Locully</Link>.
           </p>
           <p className="lb-body-lg">
@@ -187,9 +187,9 @@ const FounderPage = () => {
               LinkedIn
             </a>
             <Link to="/about" className="lb-btn-o">Locully company page</Link>
-            <a href="mailto:sunny@locully.org" className="lb-btn-o">
+            <a href="mailto:admin@locully.org" className="lb-btn-o">
               <Mail style={{ width: '16px', height: '16px' }} aria-hidden="true" />
-              sunny@locully.org
+              admin@locully.org
             </a>
           </div>
         </Section>

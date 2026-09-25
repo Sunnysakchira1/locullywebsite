@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import FounderCard, { FOUNDER_DISPLAY, FOUNDER_PATH, FOUNDER_LINKEDIN } from './FounderCard';
 import {
-  Page, PageHero, Section, SectionHeader, Button, Cta, Figure, ServiceCard, Stage, FAQ,
+  Page, PageHero, Section, SectionHeader, Button, Cta, ServiceCard, Stage, FAQ,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
 import { Team } from '@/brand/Illustrations';
@@ -19,14 +19,14 @@ const TITLE = "About Locully | Bangkok's AI Search Visibility Agency";
 const DESCRIPTION = 'Locully is a Bangkok agency for SEO, GEO (AI search) and Google and Meta Ads. Founded 2020, led by Rachaphon Sakchiraphong (Sunny). See who we are and how we work.';
 
 const facts = [
-  ['Legal name', 'Locully Co. Ltd'],
+  ['Legal name', 'Locully Co. Ltd.'],
   ['What Locully is', 'A digital marketing agency for SEO, GEO (AI search) and performance marketing'],
   ['Founded', '2020, rebranded as Locully in 2025'],
   ['Founder and CEO', <Link key="f" to={FOUNDER_PATH}>{FOUNDER_DISPLAY}</Link>],
   ['Headquarters', '92 Central Park Offices, Floor 35, Rama 4 Road, Silom, Bangrak, Bangkok 10500, Thailand'],
   ['Markets', 'Thailand and Singapore'],
   ['Languages', 'English and Thai'],
-  ['Contact', <span key="c"><a href="mailto:sunny@locully.org">sunny@locully.org</a> · <a href="tel:+66626959444">+66 62 695 9444</a></span>],
+  ['Contact', <span key="c"><a href="mailto:admin@locully.org">admin@locully.org</a> · <a href="tel:+66626959444">+66 62 695 9444</a></span>],
 ];
 
 const services = [
@@ -100,7 +100,7 @@ const schema = {
     {
       '@type': 'Organization',
       '@id': ORG_ID,
-      name: 'Locully Co. Ltd',
+      name: 'Locully Co. Ltd.',
       alternateName: 'Locully',
       url: SITE,
       description: 'Locully is a digital marketing agency in Bangkok, Thailand, providing SEO, GEO (AI search visibility) and performance marketing on Google and Meta.',
@@ -230,8 +230,7 @@ const AboutPage = () => {
           </p>
           <div className="lbp-about-people">
             <FounderCard />
-            <div className="lbp-about-person">
-              <Figure src="/rachanon.jpeg" alt="Rachanon Sakchiraphong, Head of Partnerships at Locully" />
+            <div className="lbp-about-person lbp-about-person--noimg">
               <div className="lbp-about-body">
                 <span className="lb-eyebrow">Partnerships</span>
                 <h3 className="lbp-about-name">Rachanon Sakchiraphong</h3>

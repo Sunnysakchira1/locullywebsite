@@ -134,8 +134,8 @@
       "permanent": true
     },
     {
-      "source": "/geo/ai-visibility-audit",
-      "destination": "/geo/ai-visibility-audit/",
+      "source": "/audit",
+      "destination": "/audit/",
       "permanent": true
     },
     {

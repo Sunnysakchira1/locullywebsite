@@ -14,7 +14,7 @@ const ORG_ID = 'https://www.locully.org/#organization';
 // Contact channels. WhatsApp number from WhatsAppPopup.jsx; Calendly URL as used across the site.
 const PHONE_DISPLAY = '+66 62 695 9444';
 const PHONE_TEL = 'tel:+66626959444';
-const EMAIL = 'sunny@locully.org';
+const EMAIL = 'admin@locully.org';
 const WHATSAPP_URL = 'https://wa.me/66626959444';
 const CALENDLY_URL = 'https://calendly.com/locully/30min';
 const REPLY_TIME = 'We usually reply within one working day';
@@ -40,7 +40,7 @@ const schema = {
     {
       '@type': 'Organization',
       '@id': ORG_ID,
-      name: 'Locully Co. Ltd',
+      name: 'Locully Co. Ltd.',
       url: 'https://www.locully.org',
       contactPoint: [
         {
@@ -110,7 +110,7 @@ const ContactAside = () => (
 );
 
 const details = [
-  ['Legal name', 'Locully Co. Ltd'],
+  ['Legal name', 'Locully Co. Ltd.'],
   ['Trading as', 'Locully'],
   ['Founded', '2020, rebranded as Locully in 2025'],
   ['Founder and CEO', <Link key="f" to="/rachaphon-sakchiraphong/">Rachaphon Sakchiraphong (Sunny)</Link>],
@@ -125,7 +125,7 @@ const ContactPage = () => (
   <>
     <Helmet>
       <title>Contact Locully | Bangkok SEO and GEO agency</title>
-      <meta name="description" content="Contact Locully, a digital marketing agency in Bangkok, Thailand. Call +66 62 695 9444, email sunny@locully.org or send the form. We usually reply within one working day." />
+      <meta name="description" content="Contact Locully, a digital marketing agency in Bangkok, Thailand. Call +66 62 695 9444, email admin@locully.org or send the form. We usually reply within one working day." />
       <link rel="canonical" href={URL} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={URL} />

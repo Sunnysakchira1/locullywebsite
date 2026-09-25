@@ -28,7 +28,7 @@ const Footer = () => {
               <Link to="/seo/">SEO</Link>
               <Link to="/geo/">AI search / GEO</Link>
               <Link to="/performance-marketing/">Performance marketing</Link>
-              <Link to="/geo/ai-visibility-audit/">Free AI visibility audit</Link>
+              <Link to="/audit/">Free AI visibility audit</Link>
               <Link to="/packages">One-off SEO packages</Link>
               <Link to="/lead-gen-partner">Fairs &amp; expos partner</Link>
             </div>
@@ -48,7 +48,7 @@ const Footer = () => {
           <div>
             <div className="bfoot-label"><Link to="/contact/">Contact</Link></div>
             <div className="bfoot-links">
-              <a href="mailto:sunny@locully.org">sunny@locully.org</a>
+              <a href="mailto:admin@locully.org">admin@locully.org</a>
               <span>+66 62 695 9444</span>
               <span>Bangkok, Thailand</span>
             </div>

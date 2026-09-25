@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
             </ul>
 
             <h2>6. Your Rights</h2>
-            <p>You have the right to request access to, correction of, or deletion of any personal data we hold about you. To exercise these rights, contact us at <a href="mailto:sunny@locully.org">sunny@locully.org</a>.</p>
+            <p>You have the right to request access to, correction of, or deletion of any personal data we hold about you. To exercise these rights, contact us at <a href="mailto:admin@locully.org">admin@locully.org</a>.</p>
 
             <h2>7. Changes to This Policy</h2>
             <p>We may update this Privacy Policy from time to time. The date at the top of this page reflects the most recent revision. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
@@ -80,7 +80,7 @@ export default function PrivacyPolicyPage() {
             <h2>8. Contact</h2>
             <p>
               For any questions about this Privacy Policy:<br />
-              <a href="mailto:sunny@locully.org">sunny@locully.org</a><br />
+              <a href="mailto:admin@locully.org">admin@locully.org</a><br />
               Locully Co. Ltd., Bangkok, Thailand
             </p>
           </div>

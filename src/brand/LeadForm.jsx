@@ -17,7 +17,7 @@ const emptyForm = (extraFields) => ({
  * `extraFields` (optional): [{ name, label, placeholder, autoComplete }] adds
  * optional text inputs after Website; their values post with the same payload.
  */
-export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hint, extraFields = [] }) => {
+export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hint, extraFields = [], ctaLabel = CTA_LABEL }) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState(() => emptyForm(extraFields));
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -75,9 +75,9 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
       <button type="submit" className={`lb-btn block${isSubmitted ? ' done' : ''}`} disabled={disabled}>
         {isSubmitting ? (<><span className="lb-spin" aria-hidden="true" /> Sending…</>)
           : isSubmitted ? 'Request sent'
-          : CTA_LABEL}
+          : ctaLabel}
       </button>
-      <p className="lb-fine">Or call <a href="tel:+66626959444">+66 62 695 9444</a> · sunny@locully.org</p>
+      <p className="lb-fine">Or call <a href="tel:+66626959444">+66 62 695 9444</a> · admin@locully.org</p>
     </form>
   );
 };
@@ -86,7 +86,7 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
  * Lead-form band: ground-alt section, centred header, form card and an
  * optional aside (rendered beside the form on desktop, under it on mobile).
  */
-const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', aside, subject, idPrefix, hint, extraFields, children, footer, alt = true }) => (
+const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', aside, subject, idPrefix, hint, extraFields, ctaLabel, children, footer, alt = true }) => (
   <section id={id} className={`lb-sec${alt ? ' alt' : ''}`}>
     <div className="lb-w">
       {(eyebrow || title || lede) && (
@@ -98,7 +98,7 @@ const LeadForm = ({ id = 'book', eyebrow, title, lede, headingAs: H = 'h2', asid
       )}
       {children}
       <div className={`lb-lead-wrap${aside ? ' with-aside' : ''}`}>
-        <LeadFormCard subject={subject} idPrefix={idPrefix || id} hint={hint} extraFields={extraFields} />
+        <LeadFormCard subject={subject} idPrefix={idPrefix || id} hint={hint} extraFields={extraFields} ctaLabel={ctaLabel} />
         {aside && <div>{aside}</div>}
       </div>
       {footer}

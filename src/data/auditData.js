@@ -1,4 +1,4 @@
-// All copy for /geo/ai-visibility-audit/ (the free AI visibility audit).
+// All copy for /audit/ (the free AI visibility audit).
 //
 // Source: the unmerged /audit page (branch feat/audit-and-resources), rewritten
 // through locully-content-writer → sounds-human-cft → ai-claims-guard-cft →
@@ -12,7 +12,7 @@
 //   3. Every business name and count in the demo and the report tabs is
 //      invented, and the page says so next to them.
 
-export const PATH = '/geo/ai-visibility-audit/';
+export const PATH = '/audit/';
 export const URL = `https://www.locully.org${PATH}`;
 
 // Offer terms in one place. ⚠️ Confirm with Sunny before launch.
@@ -261,7 +261,7 @@ export const CLOSING = {
     'Within five working days, you get the four-tab report and a short fix list.',
     'No obligation. The report is yours whether or not you work with us.',
   ],
-  subject: 'Free AI visibility audit request (/geo/ai-visibility-audit/)',
+  subject: 'Free AI visibility audit request (/audit/)',
   extraFields: [
     { name: 'city', label: 'City', placeholder: 'Bangkok', autoComplete: 'address-level2' },
     { name: 'services', label: 'Services you want more customers for', placeholder: 'dental implants, veneers' },
