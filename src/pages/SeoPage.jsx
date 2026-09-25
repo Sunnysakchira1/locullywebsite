@@ -305,9 +305,6 @@ export default function SeoPage() {
             Results are shown without client names. Results depend on your market, budget and starting position. No agency can promise a model
             will name you, or that Google will rank you first.
           </p>
-          <div style={{ textAlign: 'center', marginTop: 22 }}>
-            <Button variant="text" to="/case-studies/">See our case studies</Button>
-          </div>
         </Section>
 
         {/* Retainer offer stack */}

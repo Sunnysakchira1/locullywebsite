@@ -270,9 +270,6 @@ const AboutPage = () => {
             Locully commits to the work and to the way it is measured. We don’t promise positions, because no agency
             can promise a model will name you.
           </p>
-          <div className="lb-ctarow" style={{ marginTop: 24 }}>
-            <Button variant="text" to="/case-studies/">See anonymised client results</Button>
-          </div>
         </Section>
 
         {/* FAQ */}

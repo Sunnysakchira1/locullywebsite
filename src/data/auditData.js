@@ -262,5 +262,4 @@ export const RELATED = [
   { to: '/blog/ai-search-audit-clinic-bangkok/', label: 'The AI search audit a Bangkok clinic can run itself' },
   { to: '/blog/why-clinic-not-showing-chatgpt/', label: "Why your clinic isn't showing up in ChatGPT" },
   { to: '/blog/how-ai-chooses-sources-to-cite/', label: 'How AI chooses which sources to cite' },
-  { to: '/case-studies/', label: 'Case studies' },
 ];

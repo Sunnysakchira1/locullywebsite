@@ -330,7 +330,7 @@ export default function PerformanceMarketingPage() {
               Healthcare ads follow extra rules. Google restricts many medical and treatment ads (<Ext href="https://support.google.com/adspolicy/answer/176031">Google’s healthcare and medicines policy</Ext>), and Meta has its own limits. We plan clinic campaigns inside those rules from day one. See <Link to="/industries/">the industries we work with</Link>.
             </p>
             <p className="lb-body-lg">
-              Exhibiting at a fair or expo in Thailand? That runs as its own offer: <Link to="/lead-gen-partner">lead generation for fairs and expos</Link>. Want the bigger picture first? <Link to="/case-studies/">See our case studies</Link> or <Link to="/about">meet the team</Link>.
+              Exhibiting at a fair or expo in Thailand? That runs as its own offer: <Link to="/lead-gen-partner">lead generation for fairs and expos</Link>. Want the bigger picture first? <Link to="/about">Meet the team</Link>.
             </p>
           </div>
         </Section>
