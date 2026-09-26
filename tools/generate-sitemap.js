@@ -11,15 +11,18 @@
  * because it is noindex — listing a noindex page in the sitemap sends Google
  * contradictory signals.
  *
- * lastmod policy: blog posts carry a real date from the data. Static and clinic
- * pages have no reliable per-page change date, so lastmod is omitted for them
- * (valid, and better than a build-time date that would churn on every deploy).
+ * lastmod policy: blog posts carry a real date from the data. Static and industry
+ * pages share SITE_LASTMOD, a month-level W3C date (YYYY-MM) bumped by hand when
+ * those pages change — never a build-time date, which would churn on every deploy.
  */
 
 import fs from 'fs';
 import path from 'path';
 
 const SITE = 'https://www.locully.org';
+
+// Last real change to the static + industry pages (brand v2 relaunch, Sept 2026).
+const SITE_LASTMOD = '2026-09';
 
 // path, priority, changefreq. URLs must match App.jsx routes exactly.
 const STATIC_PAGES = [
@@ -90,7 +93,7 @@ function main() {
   const cwd = process.cwd();
 
   const industryPages = readData(path.join(cwd, 'src', 'data', 'industryData.js'), { slug: 'slug' })
-    .map(c => ({ path: `/industries/${c.slug}/`, priority: '0.8', changefreq: 'monthly' }));
+    .map(c => ({ path: `/industries/${c.slug}/`, priority: '0.8', changefreq: 'monthly', lastmod: SITE_LASTMOD }));
 
   const posts = readData(path.join(cwd, 'src', 'data', 'blogData.jsx'),
     { slug: 'slug', updatedDate: 'updatedDate', publishDate: 'publishDate' })
@@ -101,7 +104,8 @@ function main() {
       lastmod: p.updatedDate || p.publishDate,
     }));
 
-  const all = [...STATIC_PAGES, ...industryPages, ...posts];
+  const staticPages = STATIC_PAGES.map(p => ({ ...p, lastmod: SITE_LASTMOD }));
+  const all = [...staticPages, ...industryPages, ...posts];
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
