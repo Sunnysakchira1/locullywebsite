@@ -27,7 +27,6 @@ const STATIC_PAGES = [
   { path: '/geo/',                 priority: '0.9', changefreq: 'monthly' },
   { path: '/seo/',                 priority: '0.9', changefreq: 'monthly' },
   { path: '/industries/',          priority: '0.8', changefreq: 'monthly' },
-  { path: '/packages',             priority: '0.8', changefreq: 'monthly' },
   { path: '/performance-marketing/', priority: '0.8', changefreq: 'monthly' },
   { path: '/lead-gen-partner',     priority: '0.7', changefreq: 'monthly' },
   { path: '/about',                priority: '0.6', changefreq: 'monthly' },

@@ -4,7 +4,6 @@ import { Toaster } from '@/components/ui/toaster';
 import { logPageView } from '@/lib/analytics';
 import LeadGenPartnerPage from '@/components/LeadGenPartnerPage';
 import AboutPage from '@/components/AboutPage';
-import PackagesPage from '@/components/PackagesPage';
 import ScrollToTop from '@/components/ScrollToTop';
 import Nav from '@/components/Nav';
 import IndustriesPage from '@/pages/IndustriesPage';
@@ -47,7 +46,6 @@ function App() {
           <Route path="/contact/" element={<ContactPage />} />
           <Route path="/rachaphon-sakchiraphong" element={<Navigate to="/rachaphon-sakchiraphong/" replace />} />
           <Route path="/rachaphon-sakchiraphong/" element={<FounderPage />} />
-          <Route path="/packages" element={<PackagesPage />} />
           <Route path="/seo/" element={<SeoPage />} />
           {/* Trailing-slash redirects */}
           <Route path="/blog" element={<Navigate to="/blog/" replace />} />

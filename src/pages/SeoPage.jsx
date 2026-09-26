@@ -124,8 +124,8 @@ const guides = [
 const faqs = [
   {
     q: 'How much does an SEO agency in Bangkok cost?',
-    a: 'It depends on scope, and Locully quotes after the free check. Bangkok SEO retainers vary widely, so compare what gets delivered each month, not just the fee. If you want a single piece of work, our one-off SEO packages list fixed prices.',
-    node: <p>It depends on scope, and Locully quotes after the free check. Bangkok SEO retainers vary widely, so compare what gets delivered each month, not just the fee. If you want a single piece of work, our <Link to="/packages">one-off SEO packages</Link> list fixed prices.</p>,
+    a: 'It depends on scope, and Locully quotes after the free check. Bangkok SEO retainers vary widely, so compare what gets delivered each month, not just the fee.',
+    node: <p>It depends on scope, and Locully quotes after the free check. Bangkok SEO retainers vary widely, so compare what gets delivered each month, not just the fee.</p>,
   },
   {
     q: 'How long does SEO take to work?',
@@ -325,9 +325,6 @@ export default function SeoPage() {
               </div>
             ))}
           </div>
-          <p className="lb-body-lg" style={{ textAlign: 'center', margin: '32px auto 0', maxWidth: 680 }}>
-            Need one piece of work instead of a retainer? Our <Link to="/packages">one-off SEO packages</Link> cover content and link building at a fixed price.
-          </p>
           <div className="lb-ctarow" style={{ marginTop: 32 }}>
             <Button cta />
           </div>

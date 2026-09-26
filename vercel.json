@@ -19,8 +19,13 @@
       "permanent": true
     },
     {
+      "source": "/packages",
+      "destination": "/seo/",
+      "permanent": true
+    },
+    {
       "source": "/packages/",
-      "destination": "/packages",
+      "destination": "/seo/",
       "permanent": true
     },
     {

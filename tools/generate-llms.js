@@ -25,8 +25,6 @@ const STATIC_PAGES = [
     desc: "Locully's GEO service: how AI search engines choose which businesses to name, what the work includes, and how AI search visibility is measured." },
   { url: '/industries/', title: 'Industries: clinics and property',
     desc: 'How Locully applies SEO, GEO and Google and Meta ads to healthcare clinics and property businesses in Bangkok.' },
-  { url: '/packages', title: 'One-Off Packages',
-    desc: 'No-retainer packages — content writing and backlink building for clinics, priced per project.' },
   { url: '/lead-gen-partner', title: 'Local Marketing Partner for Fairs & Expos',
     desc: 'Locully as your on-the-ground local marketing team for international fairs and expos in Thailand.' },
   { url: '/about', title: 'About Locully',

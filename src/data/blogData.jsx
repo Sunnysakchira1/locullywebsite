@@ -60,7 +60,7 @@ export const posts = [
       { q: 'How long does it take to appear in ChatGPT results?', a: 'Most clinics see meaningful improvements within 60–90 days of consistent AI optimization work. The timeline depends on your current online footprint, the quality of your content, and how competitive your category is. Unlike paid ads, results compound over time rather than stopping when you stop spending.' },
       { q: 'Do I need to rebuild my website to appear in AI search?', a: "Not necessarily. Your existing website can be optimised — adding structured data (schema markup), improving the clarity of your services and location information, and ensuring AI crawlers can access your content. A rebuild is rarely required unless the site has fundamental technical barriers." },
       { q: 'Can small clinics compete with large hospitals in AI search?', a: 'Yes — AI search actually favours specificity and trust over sheer size. A specialist clinic with detailed, credible content and strong third-party mentions can consistently outrank a large hospital for niche queries like "sports physio for runners in Bangkok." Specialisation is a competitive advantage.' },
-      { q: 'How much does AI search optimization cost in Thailand?', a: "Costs vary by scope and provider. For clinics in Thailand, a full GEO programme typically ranges from ฿15,000 to ฿50,000+ per month depending on the number of AI platforms targeted, content production requirements, and whether you need one-off or ongoing management. A free audit is the best starting point." },
+      { q: 'How much does AI search optimization cost in Thailand?', a: "Costs vary by scope and provider. For clinics in Thailand, the cost of a GEO programme depends on the number of AI platforms targeted, content production requirements, and whether you need one-off or ongoing management. A free audit is the best starting point." },
     ],
     Content: () => (
       <div>
@@ -902,7 +902,7 @@ export const posts = [
     relatedClinics: ['physiotherapy-clinics', 'dental-clinics', 'fertility-clinics', 'beauty-clinics'],
     faqs: [
       { q: 'What should I look for in an AI search optimization agency?', a: "Look for three things: demonstrated results (specific clinics they've moved into AI recommendations, not vague testimonials), methodology transparency (they should be able to explain exactly what they will do and why), and healthcare experience (AI search for medical businesses has compliance and trust requirements that generic digital marketing agencies don't understand)." },
-      { q: 'How much should AI search optimization cost for a clinic in Thailand?', a: "Expect to pay ฿15,000–฿50,000+ per month for a serious ongoing AI optimization programme from a specialist agency. One-off audit and setup packages typically range from ฿8,000–฿25,000. Be cautious of agencies charging under ฿5,000/month — at that price point, you're getting template deliverables, not bespoke work." },
+      { q: 'How much should AI search optimization cost for a clinic in Thailand?', a: "It depends on scope: the number of treatment pages, content volume, reporting depth and how competitive your market is. Ask any agency for a written scope with its fee, and compare what gets delivered each month, not just the price. Very cheap retainers usually mean template deliverables, not bespoke work." },
       { q: 'What red flags should I watch for when hiring an AI optimization agency?', a: "Key red flags: they promise guaranteed rankings in ChatGPT (no one can guarantee this), they can't explain their methodology in plain terms, they have no healthcare or clinic experience, they use the same deliverables for every client, they don't ask about your target patient profile, or they focus entirely on social media with no mention of technical SEO or structured data." },
       { q: 'How long does an AI optimization engagement typically last?', a: "AI search is not a one-off project — it requires ongoing content, monitoring, and authority building. Most effective engagements run for a minimum of 3–6 months before meaningful results solidify, and ongoing management is recommended to maintain and grow visibility as AI platforms evolve. Be cautious of agencies who push 1-month contracts." },
       { q: 'Can I do AI optimization in-house or do I need an agency?', a: "Some tasks — completing your Google Business Profile, adding schema markup, writing service pages — can be done in-house with the right guidance. However, the technical components (structured data implementation, crawler access configuration, entity building across directories) typically require specialist knowledge. A hybrid approach works well: agency for strategy and technical setup, in-house for content production." },
@@ -994,7 +994,7 @@ export const posts = [
 
         <h3 style={s.h3}>How much should AI optimization cost for a Bangkok clinic?</h3>
         <p style={s.p}>
-          Reputable AI optimization retainers for clinics in Thailand typically range from ฿25,000–80,000/month depending on scope — number of treatment pages, content volume, reporting depth, and competitive intensity. Anything significantly below that range is likely cutting corners on content quality or clinical review. See our <Link to="/packages" style={s.ilink}>packages page</Link> for Locully's pricing.
+          It depends on scope: the number of treatment pages, content volume, reporting depth and how competitive your market is. Ask any agency for a written scope with its fee, and compare what gets delivered each month, not just the price. Locully quotes after the <Link to="/audit/" style={s.ilink}>free GEO audit</Link>.
         </p>
 
         <h3 style={s.h3}>Should I hire a local Bangkok agency or an international one?</h3>
@@ -1198,7 +1198,7 @@ export const posts = [
 
         <h3 style={s.h3}>What's a realistic budget for SEO?</h3>
         <p style={s.p}>
-          For small to medium businesses in competitive markets, effective SEO typically requires ฿20,000–80,000/month in agency or specialist costs, depending on content volume, link building, and technical scope. One-off packages for specific deliverables — content sprints or backlink campaigns — are available at lower entry points. See our <Link to="/packages" style={s.ilink}>packages page</Link> for fixed-price options.
+          The cost of SEO depends on content volume, link building and technical scope, so compare what an agency delivers each month, not just the fee. See <Link to="/seo/" style={s.ilink}>how Locully runs SEO</Link>.
         </p>
       </div>
     ),
@@ -1509,7 +1509,7 @@ export const posts = [
           The most scalable link acquisition strategy is creating content so useful that people link to it naturally. Original research, comprehensive guides, free tools, data visualizations, and <Link to="/blog/ai-search-statistics/" style={s.ilink}>authoritative statistics</Link> attract links without active outreach.
         </p>
         <p style={s.p}>
-          This is higher investment upfront but lower ongoing effort. A well-researched study can attract links for years without any active link building activity. If you'd rather not run outreach in-house, Locully offers <Link to="/packages" style={s.ilink}>done-for-you backlink packages</Link> priced per project.
+          This is higher investment upfront but lower ongoing effort. A well-researched study can attract links for years without any active link building activity. If you'd rather not run outreach in-house, Locully runs link building as part of its <Link to="/seo/" style={s.ilink}>SEO service</Link>.
         </p>
 
         <h2 style={s.h2}>Backlinks and AI Search</h2>
@@ -1973,7 +1973,7 @@ export const posts = [
           Every statistic on this page points to the same conclusion: AI search is now where a large and growing share of buying decisions begin. The businesses that get named inside ChatGPT, Perplexity and Google AI Overviews capture that demand. Everyone else is invisible to it — and won&rsquo;t even see the leads they&rsquo;re losing.
         </p>
         <p style={s.p}>
-          Locully helps clinics and businesses in Thailand get found and recommended in AI search. To see where you stand, <Link to="/geo/" style={s.ilink}>see how our GEO service works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/audit/" style={s.ilink}>start with an AI audit</Link>.
+          Locully helps clinics and businesses in Thailand get found and recommended in AI search. To see where you stand, <Link to="/geo/" style={s.ilink}>see how our GEO service works</Link> or <Link to="/audit/" style={s.ilink}>start with a GEO audit</Link>.
         </p>
         <Callout>
           <strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout and updated as new research is released.
