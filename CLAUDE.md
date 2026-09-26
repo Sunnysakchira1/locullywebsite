@@ -65,7 +65,7 @@ Trailing-slash redirects are explicit in `App.jsx` for all `/ai-optimization/` a
 - **Fonts:** Fraunces (headings/display), DM Mono (labels/eyebrows/metadata), DM Sans (body)
 - **Logo:** `public/locully-logo.png` (also at `/locully/locullywebsite/public/locully-logo.png` for use in reports/proposals)
 - **Tagline:** "SEO & AI Visibility Experts. Rank #1 in AI Search."
-- **Contact:** sunny@locully.org · +66 62 695 9444 · Bangkok, Thailand
+- **Contact:** admin@locully.org (website email; not sunny@) · +66 62 695 9444 · Bangkok, Thailand
 
 ---
 
