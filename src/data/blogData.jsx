@@ -194,7 +194,7 @@ export const posts = [
   {
     slug: 'why-clinic-not-showing-chatgpt',
     title: "Why Your Clinic Doesn't Appear in ChatGPT Results (And How to Fix It)",
-    metaTitle: "Why Your Clinic Doesn't Show in ChatGPT Search",
+    metaTitle: "Why Your Bangkok Clinic Doesn't Show in ChatGPT",
     metaDescription: "Six specific reasons Thailand clinics are invisible in ChatGPT, Perplexity, and Google AI — and the exact fixes to start appearing in AI recommendations.",
     publishDate: '2026-03-19',
     updatedDate: '2026-03-19',
@@ -326,7 +326,7 @@ export const posts = [
   {
     slug: 'how-chatgpt-chooses-clinic-recommendation',
     title: 'How ChatGPT Decides Which Clinic to Recommend in Bangkok',
-    metaTitle: 'How ChatGPT Chooses Which Clinic to Recommend',
+    metaTitle: 'How ChatGPT Picks a Clinic to Recommend in Bangkok',
     metaDescription: 'The three signals that determine which Bangkok clinics appear in ChatGPT, Perplexity, and Google AI answers — and what clinic owners can do about each one.',
     publishDate: '2026-03-19',
     updatedDate: '2026-03-19',
@@ -891,8 +891,8 @@ export const posts = [
   {
     slug: 'how-to-choose-ai-optimization-agency-clinic-thailand',
     title: 'What to Look for in an AI Optimization Agency for Your Clinic in Thailand',
-    metaTitle: 'Choosing an AI Optimization Agency for Clinics',
-    metaDescription: 'Five questions to ask any AI optimization agency before engaging — and red flags that reveal whether they actually understand healthcare and AI search.',
+    metaTitle: 'How to Choose a GEO Agency for Clinics in Thailand',
+    metaDescription: 'Five questions to ask any GEO or AI SEO agency before hiring one for your Thailand clinic, and the red flags that show they don\'t understand healthcare.',
     publishDate: '2026-03-19',
     updatedDate: '2026-03-19',
     category: 'Buyer\'s Guide',

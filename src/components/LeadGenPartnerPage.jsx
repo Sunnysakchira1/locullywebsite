@@ -44,6 +44,10 @@ const LeadGenPartnerPage = () => {
         <title>Your Local Partner for Fairs & Expos in Thailand | Locully</title>
         <meta name="description" content="Exhibiting at a fair or expo in Thailand? Locully is your on-the-ground marketing team — lead capture, local ads, and follow-up that fills your pipeline." />
         <link rel="canonical" href="https://www.locully.org/lead-gen-partner" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.locully.org/lead-gen-partner" />
+        <meta property="og:title" content="Your Local Partner for Fairs & Expos in Thailand | Locully" />
+        <meta property="og:description" content="Exhibiting at a fair or expo in Thailand? Locully is your on-the-ground marketing team — lead capture, local ads, and follow-up that fills your pipeline." />
       </Helmet>
 
       <Page className="lbp-lgp">

@@ -15,8 +15,8 @@ const URL = `${SITE}/about`;
 const ORG_ID = `${SITE}/#organization`;
 const PERSON_ID = `${SITE}${FOUNDER_PATH}#person`;
 
-const TITLE = "About Locully | Bangkok's AI Search Visibility Agency";
-const DESCRIPTION = 'Locully is a Bangkok agency for SEO, GEO (AI search) and Google and Meta Ads. Founded 2020, led by Rachaphon Sakchiraphong (Sunny). See who we are and how we work.';
+const TITLE = 'About Locully | SEO & GEO Agency in Bangkok, Thailand';
+const DESCRIPTION = 'Locully is a Bangkok agency for SEO, GEO and Google and Meta Ads. Founded 2020, led by Rachaphon Sakchiraphong (Sunny). See who we are and how we work.';
 
 const facts = [
   ['Legal name', 'Locully Co. Ltd.'],

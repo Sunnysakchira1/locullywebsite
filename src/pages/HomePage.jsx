@@ -13,7 +13,7 @@ import '@/brand/pages/home.css';
 
 const URL = 'https://www.locully.org/';
 const TITLE = 'Locully | SEO, GEO & Performance Marketing Agency in Bangkok';
-const DESCRIPTION = 'Locully is a Bangkok-based SEO and AI Search agency helping businesses turn visibility across Google and AI platforms into customers and revenue.';
+const DESCRIPTION = 'Locully is an SEO and GEO agency in Bangkok, Thailand. We help your business get found on Google, ChatGPT and AI Overviews, and turn that into customers.';
 const ORG_ID = 'https://www.locully.org/#organization';
 
 

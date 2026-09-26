@@ -24,7 +24,7 @@ export default function BlogIndexPage() {
   const schemaItemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Locully Blog — AI Search Optimization for Clinics',
+    name: 'Locully Blog: SEO and GEO for Bangkok Clinics and Businesses',
     numberOfItems: posts.length,
     itemListElement: posts.map((p, i) => ({
       '@type': 'ListItem',
@@ -42,10 +42,10 @@ export default function BlogIndexPage() {
   return (
     <>
       <Helmet>
-        <title>Blog — AI Search Optimization Insights for Clinics | Locully</title>
-        <meta name="description" content="Guides, explainers, and checklists on AI search optimization for Thailand clinics — how to get recommended by ChatGPT, Perplexity, and Google AI." />
-        <meta property="og:title" content="Blog — AI Search Optimization Insights for Clinics | Locully" />
-        <meta property="og:description" content="Guides, explainers, and checklists on AI search optimization for Thailand clinics." />
+        <title>SEO & GEO Blog for Bangkok Clinics and Businesses | Locully</title>
+        <meta name="description" content="SEO and GEO guides for clinics and businesses in Bangkok and Thailand: how to rank on Google and get recommended by ChatGPT, Perplexity and Google AI." />
+        <meta property="og:title" content="SEO & GEO Blog for Bangkok Clinics and Businesses | Locully" />
+        <meta property="og:description" content="SEO and GEO guides for clinics and businesses in Bangkok and Thailand." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.locully.org/blog/" />
         <link rel="canonical" href="https://www.locully.org/blog/" />

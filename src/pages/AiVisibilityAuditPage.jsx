@@ -17,8 +17,8 @@ const schemaService = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   '@id': `${URL}#service`,
-  name: 'AI Visibility Audit',
-  alternateName: 'Free AI visibility check',
+  name: 'GEO Audit',
+  alternateName: ['AI visibility audit', 'AI SEO audit'],
   serviceType: 'AI search visibility audit',
   url: URL,
   description:

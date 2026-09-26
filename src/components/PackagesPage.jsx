@@ -74,9 +74,13 @@ const openCalendly = () => { window.open('https://calendly.com/locully/30min', '
 const PackagesPage = () => (
   <>
     <Helmet>
-      <title>SEO & Content Packages, No Retainer — Fixed Price | Locully</title>
-      <meta name="description" content="One-off SEO, content, and backlink packages — no retainer, no lock-in, fixed price in Thai Baht. See what's included and what each costs." />
+      <title>Fixed-Price SEO Packages in Bangkok, No Retainer | Locully</title>
+      <meta name="description" content="One-off SEO, content and backlink packages from a Bangkok agency. Fixed price in Thai Baht, no retainer, no lock-in. See what each one includes." />
       <link rel="canonical" href="https://www.locully.org/packages" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.locully.org/packages" />
+      <meta property="og:title" content="Fixed-Price SEO Packages in Bangkok, No Retainer | Locully" />
+      <meta property="og:description" content="One-off SEO, content and backlink packages from a Bangkok agency. Fixed price in Thai Baht, no retainer, no lock-in. See what each one includes." />
     </Helmet>
 
     <Page className="lbp-pkg">

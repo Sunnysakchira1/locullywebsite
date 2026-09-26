@@ -22,9 +22,9 @@ export const AUDIT_OFFER = {
 };
 
 export const META = {
-  title: 'Free AI Visibility Audit: Does ChatGPT Name You? | Locully',
+  title: 'Free GEO Audit in Bangkok: Does ChatGPT Name You? | Locully',
   description:
-    "Locully's free AI visibility audit asks ChatGPT, Perplexity and Google AI the questions your customers ask, then shows who gets named instead of you, and why.",
+    "Locully's free GEO audit asks ChatGPT, Perplexity and Google AI what your customers ask, then shows who gets named instead of you, and why.",
 };
 
 export const HERO = {

@@ -17,8 +17,8 @@ import '@/brand/pages/geo.css';
  */
 
 const URL = 'https://www.locully.org/geo/';
-const TITLE = 'AI SEO Agency | GEO & AI Search Optimisation | Locully';
-const DESCRIPTION = 'Locully is an AI SEO agency in Bangkok. Our GEO work helps ChatGPT, Perplexity and Google AI Overviews find, trust and cite your business.';
+const TITLE = 'AI SEO & GEO Agency in Bangkok, Thailand | Locully';
+const DESCRIPTION = 'Locully is an AI SEO and GEO agency in Bangkok, Thailand. We helps ChatGPT, Perplexity and Google AI Overviews find, trust and cite your business.';
 
 const Ext = ({ href, children }) => (
   <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
