@@ -12,7 +12,7 @@ const SERVICES = [
   { to: '/seo/', label: 'SEO' },
   { to: '/geo/', label: 'AI search / GEO' },
   { to: '/performance-marketing/', label: 'Performance marketing' },
-  { to: '/audit/', label: 'AI visibility audit' },
+  { to: '/audit/', label: 'GEO audit' },
 ];
 
 const Nav = () => {
@@ -67,7 +67,7 @@ const Nav = () => {
           <Link to="/seo/">SEO</Link>
           <Link to="/geo/">AI search / GEO</Link>
           <Link to="/performance-marketing/">Performance marketing</Link>
-          <Link to="/audit/" className="bnav-mobile-sub">AI visibility audit</Link>
+          <Link to="/audit/" className="bnav-mobile-sub">GEO audit</Link>
           <Link to="/industries/">Industries</Link>
           <Link to="/blog/">Insights</Link>
           <Link to="/about">About</Link>

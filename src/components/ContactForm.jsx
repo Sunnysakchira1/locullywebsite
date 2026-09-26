@@ -17,7 +17,7 @@ const ContactForm = () => (
           <div className="lb-callout">
             <p>
               <span className="lb-em">Free, no obligation.</span>{' '}
-              We'll send you a full report on your current AI visibility and what it would take to rank #1.
+              We'll send you a full report on where you show up in AI search and what it would take to get named.
             </p>
           </div>
           <p className="lb-note" style={{ marginTop: 14 }}>Secure submission · We respect your privacy</p>

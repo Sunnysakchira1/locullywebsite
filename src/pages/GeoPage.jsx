@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: 'How long does GEO take?',
-    text: 'Technical and entity fixes start in the first month. Pages and third-party mentions build over the following months. Locully reviews the prompt set every month and judges the trend over a quarter. We’d be wary of anyone promising AI visibility in days.',
+    text: 'Technical and entity fixes start in the first month. Pages and third-party mentions build over the following months. Locully reviews the prompt set every month and judges the trend over a quarter. We’d be wary of anyone promising GEO results in days.',
   },
   {
     q: 'Can any agency guarantee ChatGPT will recommend my business?',
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: 'How much does GEO cost?',
-    text: 'Locully runs GEO on a monthly retainer, scoped to your market, the number of questions tracked and the languages you need. The free AI visibility check comes first. It shows what the work would involve before you commit to anything.',
+    text: 'Locully runs GEO on a monthly retainer, scoped to your market, the number of questions tracked and the languages you need. The free GEO audit comes first. It shows what the work would involve before you commit to anything.',
   },
 ];
 
@@ -130,7 +130,7 @@ const compareRows = [
 ];
 
 const workstreams = [
-  { icon: 'target', title: 'AI visibility baseline', body: 'We build a fixed set of buying-intent questions from the way your customers search, in English and Thai where both matter. Then we record who AI names today and which sources it trusts.' },
+  { icon: 'target', title: 'GEO baseline', body: 'We build a fixed set of buying-intent questions from the way your customers search, in English and Thai where both matter. Then we record who AI names today and which sources it trusts.' },
   { icon: 'code', title: 'Crawl and technical fixes', body: 'We check that AI crawlers can reach and read your key pages. Robots rules, rendering, speed and indexing come first. Structured data gets cleaned up as normal SEO hygiene.' },
   { icon: 'pin', title: 'Entity and profile consistency', body: 'We align your name, category, address and services across your site, Google Business Profile and the directories AI engines read. One business, one set of facts.' },
   { icon: 'doc', title: 'Answer-ready pages', body: 'We rewrite and build the pages that answer your customers’ buying questions. Each one leads with a direct answer and names your business, service and location.' },
@@ -142,7 +142,7 @@ const stages = [
   { n: '01', title: 'Week 1–2 · Baseline', body: 'We build your prompt set, run it and map who AI names and which sources it cites. You see where you stand against your direct competitors.' },
   { n: '02', title: 'Week 3–4 · Plan and first fixes', body: 'We agree priorities with you and start the technical and entity fixes straight away. These are the fastest changes to make.' },
   { n: '03', title: 'Month 2–3 · Pages and mentions', body: 'New and rewritten pages go live on a schedule. Third-party placements begin. We re-run the prompt set and adjust.' },
-  { n: '04', title: 'Month 3 onward · Compound', body: 'We expand into new questions and new sources, and keep what’s working. AI visibility builds on itself, so we judge it quarter by quarter.' },
+  { n: '04', title: 'Month 3 onward · Compound', body: 'We expand into new questions and new sources, and keep what’s working. GEO builds on itself, so we judge it quarter by quarter.' },
 ];
 
 const measures = [
@@ -437,7 +437,7 @@ export default function GeoPage() {
               <h3 className="lb-h3">Not a fit</h3>
               <List large dash items={[
                 'Products where only price decides the sale',
-                'Anyone who needs results in 30 days. AI visibility is earned over months.',
+                'Anyone who needs results in 30 days. GEO results are earned over months.',
               ]} />
             </div>
           </div>

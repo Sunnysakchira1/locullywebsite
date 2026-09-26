@@ -143,7 +143,7 @@ export default function IndustryPage({ slug }) {
                 {isClinic
                   ? "Patients are choosing the clinics they can find and trust online, and right now that isn't always you."
                   : 'Buyers are researching your projects without you in the conversation.'}
-                {' '}A free AI visibility check shows where you stand and what to fix first.
+                {' '}A free GEO audit shows where you stand and what to fix first.
               </p>
               <div style={{ marginTop: 18 }}><Button cta /></div>
             </div>
@@ -231,7 +231,7 @@ export default function IndustryPage({ slug }) {
             </div>
           </div>
           <p className="lb-body-lg lbp-clinic-note" style={{ textAlign: 'center' }}>
-            See how the <Link to="/audit/">AI visibility audit</Link> measures where you stand.
+            See how the <Link to="/audit/">GEO audit</Link> measures where you stand.
           </p>
         </Section>
 

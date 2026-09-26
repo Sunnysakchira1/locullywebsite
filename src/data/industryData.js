@@ -138,7 +138,7 @@ export const industries = [
     faq: [
       { q: 'What does a physiotherapy clinic marketing agency do?', a: 'A physiotherapy clinic marketing agency helps patients find and book your clinic. Locully does that through three channels: SEO for Google, GEO for AI assistants like ChatGPT, and Google and Meta ads. We report on enquiries and bookings wherever tracking allows.' },
       { q: 'Should a physio clinic focus on Google or on AI search?', a: 'Both. Google and AI assistants largely draw on the same thing: clear pages about conditions, treatments and therapists. A condition page written well for Google usually serves ChatGPT too, so Locully works on both at once.' },
-      { q: 'How long does physiotherapy SEO take?', a: 'Ads produce data in the first month. Search and AI visibility are measured over 60 to 90 days, because structural changes take roughly 70 days to show. We agree what to measure before we start.' },
+      { q: 'How long does physiotherapy SEO take?', a: 'Ads produce data in the first month. SEO and GEO results are measured over 60 to 90 days, because structural changes take roughly 70 days to show. We agree what to measure before we start.' },
       { q: 'Can you market my clinic in English and Thai?', a: 'Yes. Locully writes and optimises pages in both, so you can reach Thai patients as well as English-speaking expats and visitors.' },
       { q: 'Can Locully guarantee my clinic appears in ChatGPT?', a: 'No. No agency can promise a model will name you. Locully commits to a defined scope of work and a fixed measurement method, reported monthly.' },
     ],
@@ -244,7 +244,7 @@ export const industries = [
       { q: 'Why is "wellness" hard to rank for?', a: 'The word covers yoga studios, spas and medical clinics at once. Google and AI assistants need clear signals about what you do. Clinics that describe each service on its own page give them those signals.' },
       { q: 'We offer many services. Where do we start?', a: 'With the services that have the most search demand and the best margin for you. Locully checks demand first, then builds those pages before the rest.' },
       { q: 'Can wellness clinics advertise on Meta?', a: 'Yes, within the rules. Meta requires health ads to target people aged 18 and over, and Thai law requires approval before a clinic publishes an ad. Locully writes copy that describes the service without health claims.' },
-      { q: 'How do you measure AI visibility for a wellness clinic?', a: 'Against a fixed set of questions patients ask, re-run on a schedule so each run is comparable. We check whether your clinic was named and whether your website was cited, and we open every cited page.' },
+      { q: 'How do you measure GEO results for a wellness clinic?', a: 'Against a fixed set of questions patients ask, re-run on a schedule so each run is comparable. We check whether your clinic was named and whether your website was cited, and we open every cited page.' },
     ],
     formTitle: 'Get your wellness clinic found',
     formLede: "Send us your website. We'll show you what ChatGPT says your clinic offers today, and what to fix first.",

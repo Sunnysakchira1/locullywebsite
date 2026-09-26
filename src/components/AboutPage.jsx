@@ -215,7 +215,7 @@ const AboutPage = () => {
             ))}
           </div>
           <p className="lb-body-lg lbp-about-intro">
-            Most clients work with Locully on a monthly retainer. One team runs SEO, AI visibility and paid ads
+            Most clients work with Locully on a monthly retainer. One team runs SEO, GEO and paid ads
             together, so the channels feed each other.
           </p>
         </Section>

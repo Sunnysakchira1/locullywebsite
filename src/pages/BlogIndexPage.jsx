@@ -131,7 +131,7 @@ export default function BlogIndexPage() {
         <LeadForm
           eyebrow="AI audit"
           title="Ready to see where your brand stands in AI search?"
-          lede="We'll audit your current AI visibility across ChatGPT, Perplexity, and Google AI Overviews — and show you exactly where you're missing out."
+          lede="We'll audit where you show up across ChatGPT, Perplexity, and Google AI Overviews — and show you exactly where you're missing out."
         />
 
         <Footer />

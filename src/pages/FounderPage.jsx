@@ -146,7 +146,7 @@ const FounderPage = () => {
           <SectionHeader eyebrow="Role" title="What Rachaphon Sakchiraphong does at Locully" />
           <List large items={[
             'Sets the strategy for each Locully client account, across search and paid ads.',
-            'Oversees how Locully measures AI visibility: a fixed set of buying questions, re-run on a schedule, with every cited page opened and checked.',
+            'Oversees how Locully measures GEO results: a fixed set of buying questions, re-run on a schedule, with every cited page opened and checked.',
             'Leads Locully’s work on Google Search, Google Maps and AI assistants.',
           ]} />
         </Section>

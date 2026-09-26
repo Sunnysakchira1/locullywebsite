@@ -22,7 +22,7 @@ const schemaService = {
   serviceType: 'AI search visibility audit',
   url: URL,
   description:
-    "Locully's AI visibility audit is a free check of whether ChatGPT, Perplexity and Google AI recommend a business. Locully asks the AI tools 30 or more real buying questions, records every business named and every website cited, checks whether AI crawlers can read the site, and delivers a four-tab report with a ranked fix list in five working days.",
+    "Locully's GEO audit is a free check of whether ChatGPT, Perplexity and Google AI recommend a business. Locully asks the AI tools 30 or more real buying questions, records every business named and every website cited, checks whether AI crawlers can read the site, and delivers a four-tab report with a ranked fix list in five working days.",
   provider: { '@id': ORG_ID },
   areaServed: [
     { '@type': 'City', name: 'Bangkok' },
@@ -35,7 +35,7 @@ const schemaService = {
     price: '0',
     priceCurrency: 'THB',
     url: `${URL}#book`,
-    description: 'Free AI visibility audit, delivered in five working days.',
+    description: 'Free GEO audit, delivered in five working days.',
     seller: { '@id': ORG_ID },
   },
 };
@@ -57,7 +57,7 @@ const schemaBreadcrumb = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.locully.org/' },
     { '@type': 'ListItem', position: 2, name: 'GEO', item: 'https://www.locully.org/geo/' },
-    { '@type': 'ListItem', position: 3, name: 'AI visibility audit', item: URL },
+    { '@type': 'ListItem', position: 3, name: 'GEO audit', item: URL },
   ],
 };
 
@@ -109,7 +109,7 @@ const ReportTab = ({ item }) => (
     <p>{item.body}</p>
     <div className="lba-tab-shot">
       {item.image ? (
-        <img src={item.image} alt={`Example of the ${item.tab} tab from an AI visibility audit`} loading="lazy" />
+        <img src={item.image} alt={`Example of the ${item.tab} tab from a GEO audit`} loading="lazy" />
       ) : (
         <div className="lb-table-wrap">
           <table className="lb-table lba-mini">
@@ -161,7 +161,7 @@ export default function AiVisibilityAuditPage() {
       </Helmet>
 
       <Page className="lb-audit">
-        <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'GEO', to: '/geo/' }, { label: 'AI visibility audit' }]} />
+        <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'GEO', to: '/geo/' }, { label: 'GEO audit' }]} />
 
         {/* Hero */}
         <PageHero
@@ -220,7 +220,7 @@ export default function AiVisibilityAuditPage() {
           </div>
         </Section>
 
-        {/* AI visibility audit vs SEO audit */}
+        {/* GEO audit vs SEO audit */}
         <Section>
           <SectionHeader eyebrow={COMPARE.eyebrow} title={COMPARE.h2} lede={COMPARE.lede} />
           <div className="lb-table-wrap lba-compare">
@@ -256,7 +256,7 @@ export default function AiVisibilityAuditPage() {
 
         {/* FAQ */}
         <Section narrow>
-          <SectionHeader eyebrow="FAQ" title="AI visibility audit questions" style={{ marginBottom: 40 }} />
+          <SectionHeader eyebrow="FAQ" title="GEO audit questions" style={{ marginBottom: 40 }} />
           <FAQ items={FAQS} qAs="h3" />
           <p className="lba-faq-foot">
             Read our <Link to="/privacy-policy">privacy policy</Link> for how we handle what you send us.

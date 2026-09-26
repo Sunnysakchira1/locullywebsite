@@ -29,10 +29,10 @@ export const META = {
 
 export const HERO = {
   meta: ['Updated September 2026', 'Free', 'Five working days'],
-  eyebrow: 'Free AI visibility audit',
-  h1: 'Free AI visibility audit: see who ChatGPT recommends instead of you',
+  eyebrow: 'Free GEO audit',
+  h1: 'Free GEO audit: see who ChatGPT recommends instead of you',
   lede:
-    "Locully's AI visibility audit is a free check of whether ChatGPT, Perplexity and Google AI recommend your business. We ask them the questions your customers ask before they buy, and show you every answer and every business named in your place.",
+    "Locully's GEO audit is a free check of whether ChatGPT, Perplexity and Google AI recommend your business. We ask them the questions your customers ask before they buy, and show you every answer and every business named in your place.",
   body: [
     "When someone asks ChatGPT to recommend a business like yours, it gives them a short list of names. Most owners never look at that list. Many of the businesses we check aren't on it.",
     "It's free. It takes five working days.",
@@ -57,8 +57,8 @@ export const DEMO = {
 
 export const FINDOUT = {
   eyebrow: 'What you find out',
-  h2: 'What the AI visibility audit tells you',
-  lede: "Locully's AI visibility audit answers three questions about your business, with evidence rather than opinion.",
+  h2: 'What the GEO audit tells you',
+  lede: "Locully's GEO audit answers three questions about your business, with evidence rather than opinion.",
   items: [
     {
       n: '01',
@@ -87,8 +87,8 @@ export const FINDOUT = {
 // and web address removed, and set `image` to its path.
 export const REPORT = {
   eyebrow: 'The report',
-  h2: "What's in your AI visibility audit report",
-  lede: "The AI visibility audit report is a spreadsheet with four tabs. Each tab answers one question, and they build from left to right. Here's each one, using a Bangkok dental clinic as the example.",
+  h2: "What's in your GEO audit report",
+  lede: "The GEO audit report is a spreadsheet with four tabs. Each tab answers one question, and they build from left to right. Here's each one, using a Bangkok dental clinic as the example.",
   caption: 'Business names and counts are invented. Your report uses your own questions and your market.',
   items: [
     {
@@ -156,8 +156,8 @@ export const REPORT = {
 
 export const STEPS = {
   eyebrow: 'The process',
-  h2: 'How the free AI visibility audit works',
-  lede: 'The free AI visibility audit takes five working days from the day you send your website.',
+  h2: 'How the free GEO audit works',
+  lede: 'The free GEO audit takes five working days from the day you send your website.',
   items: [
     {
       n: '1',
@@ -198,9 +198,9 @@ export const EXTERNAL = {
 
 export const COMPARE = {
   eyebrow: 'The difference',
-  h2: 'AI visibility audit vs an SEO audit',
-  lede: 'An SEO audit checks whether Google can find and rank your pages. An AI visibility audit checks whether AI assistants name you when a customer asks for a recommendation.',
-  headers: ['', 'SEO audit', 'AI visibility audit'],
+  h2: 'GEO audit vs an SEO audit',
+  lede: 'An SEO audit checks whether Google can find and rank your pages. A GEO audit checks whether AI assistants name you when a customer asks for a recommendation.',
+  headers: ['', 'SEO audit', 'GEO audit'],
   rows: [
     ['The question it answers', 'Can Google crawl, index and rank my pages?', 'Do ChatGPT, Perplexity and Google AI name my business?'],
     ['Where it looks', "Your website and Google's results", 'Real AI answers, and every website those answers relied on'],
@@ -211,12 +211,12 @@ export const COMPARE = {
 
 export const FAQS = [
   {
-    q: 'Why is the AI visibility audit free?',
-    a: "The AI visibility audit is free because showing you the problem works better than describing it. Slides about AI search convince nobody. The real answers ChatGPT gives about your business usually do. Some owners ask us to fix what they see. If you take the report to your own team instead, that's fine.",
+    q: 'Why is the GEO audit free?',
+    a: "The GEO audit is free because showing you the problem works better than describing it. Slides about AI search convince nobody. The real answers ChatGPT gives about your business usually do. Some owners ask us to fix what they see. If you take the report to your own team instead, that's fine.",
   },
   {
-    q: 'How is an AI visibility audit different from an SEO audit?',
-    a: 'An SEO audit checks whether Google can find and rank your website. An AI visibility audit checks whether AI assistants name your business, then asks them your customers\' questions to see what they say. A standard SEO audit checks Google, not AI answers. The table above shows the full difference.',
+    q: 'How is a GEO audit different from an SEO audit?',
+    a: 'An SEO audit checks whether Google can find and rank your website. A GEO audit checks whether AI assistants name your business, then asks them your customers\' questions to see what they say. A standard SEO audit checks Google, not AI answers. The table above shows the full difference.',
   },
   {
     q: 'Which AI tools does the audit cover?',
@@ -236,7 +236,7 @@ export const FAQS = [
   },
   {
     q: 'What happens to the information you find?',
-    a: "The AI visibility audit report belongs to you. We sometimes use findings as examples, like the ones on this page, but we remove every business name and web address first. We never put a business's name next to its weaknesses.",
+    a: "The GEO audit report belongs to you. We sometimes use findings as examples, like the ones on this page, but we remove every business name and web address first. We never put a business's name next to its weaknesses.",
   },
 ];
 

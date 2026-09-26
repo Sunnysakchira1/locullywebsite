@@ -60,7 +60,7 @@ export const posts = [
       { q: 'How long does it take to appear in ChatGPT results?', a: 'Most clinics see meaningful improvements within 60–90 days of consistent AI optimization work. The timeline depends on your current online footprint, the quality of your content, and how competitive your category is. Unlike paid ads, results compound over time rather than stopping when you stop spending.' },
       { q: 'Do I need to rebuild my website to appear in AI search?', a: "Not necessarily. Your existing website can be optimised — adding structured data (schema markup), improving the clarity of your services and location information, and ensuring AI crawlers can access your content. A rebuild is rarely required unless the site has fundamental technical barriers." },
       { q: 'Can small clinics compete with large hospitals in AI search?', a: 'Yes — AI search actually favours specificity and trust over sheer size. A specialist clinic with detailed, credible content and strong third-party mentions can consistently outrank a large hospital for niche queries like "sports physio for runners in Bangkok." Specialisation is a competitive advantage.' },
-      { q: 'How much does AI search optimization cost in Thailand?', a: "Costs vary by scope and provider. For clinics in Thailand, a full AI visibility programme typically ranges from ฿15,000 to ฿50,000+ per month depending on the number of AI platforms targeted, content production requirements, and whether you need one-off or ongoing management. A free audit is the best starting point." },
+      { q: 'How much does AI search optimization cost in Thailand?', a: "Costs vary by scope and provider. For clinics in Thailand, a full GEO programme typically ranges from ฿15,000 to ฿50,000+ per month depending on the number of AI platforms targeted, content production requirements, and whether you need one-off or ongoing management. A free audit is the best starting point." },
     ],
     Content: () => (
       <div>
@@ -164,7 +164,7 @@ export const posts = [
 
         <h3 style={s.h3}>Is AI search optimization only relevant for Bangkok clinics?</h3>
         <p style={s.p}>
-          No — it applies equally to clinics in Phuket, Chiang Mai, Pattaya, and anywhere else patients use AI to research healthcare. If anything, clinics in secondary cities have less competition and can establish AI visibility faster.
+          No — it applies equally to clinics in Phuket, Chiang Mai, Pattaya, and anywhere else patients use AI to research healthcare. If anything, clinics in secondary cities have less competition and can get recommended by AI faster.
         </p>
 
         <h3 style={s.h3}>Does my clinic need a new website?</h3>
@@ -309,7 +309,7 @@ export const posts = [
           Google Maps reviews and ChatGPT citations are separate systems. Google Maps visibility depends on your Google Business Profile and review count. ChatGPT recommendations depend on your website's content structure, schema markup, and authority signals — almost entirely different factors. You can have 500 Google reviews and zero ChatGPT presence, or be highly cited in ChatGPT with 50 reviews.
         </p>
 
-        <h3 style={s.h3}>How quickly can these fixes improve my AI visibility?</h3>
+        <h3 style={s.h3}>How quickly can these fixes get my clinic named in AI search?</h3>
         <p style={s.p}>
           For structural fixes like adding FAQ sections and treatment pages, visible improvement typically comes within 60–90 days as AI engines re-index your content. Schema markup can show faster results — sometimes within weeks — because it provides explicit, machine-readable signals.
         </p>
@@ -427,7 +427,7 @@ export const posts = [
 
         <h3 style={s.h3}>Does ChatGPT ever recommend clinics it's never encountered before?</h3>
         <p style={s.p}>
-          For queries where ChatGPT's training data is thin, it will defer to more current sources — or express uncertainty. Newer clinics can still gain AI visibility faster than established ones if they build strong, well-structured content quickly, because AI weights content quality, not just historical presence.
+          For queries where ChatGPT's training data is thin, it will defer to more current sources — or express uncertainty. Newer clinics can still get named in AI answers faster than established ones if they build strong, well-structured content quickly, because AI weights content quality, not just historical presence.
         </p>
 
         <h3 style={s.h3}>Can I contact ChatGPT or OpenAI to ask them to recommend my clinic?</h3>
@@ -737,9 +737,9 @@ export const posts = [
     relatedPosts: ['why-clinic-not-showing-chatgpt', 'ai-search-optimization-clinics-thailand', 'ai-search-statistics', 'how-chatgpt-chooses-clinic-recommendation', 'geo-vs-seo-clinics-bangkok'],
     relatedClinics: ['physiotherapy-clinics', 'dental-clinics', 'beauty-clinics', 'wellness-clinics'],
     faqs: [
-      { q: 'What is an AI search audit for clinics?', a: "An AI search audit tests how visible your clinic is across AI platforms — ChatGPT, Perplexity, Google AI Overviews — and identifies the specific gaps preventing you from being recommended. It typically covers: current AI visibility scores, crawler access, structured data quality, content gaps, Google Business Profile completeness, and third-party mention analysis." },
+      { q: 'What is an AI search audit for clinics?', a: "An AI search audit tests how visible your clinic is across AI platforms — ChatGPT, Perplexity, Google AI Overviews — and identifies the specific gaps preventing you from being recommended. It typically covers: current AI mention rates, crawler access, structured data quality, content gaps, Google Business Profile completeness, and third-party mention analysis." },
       { q: 'How do I check if my clinic appears in ChatGPT results?', a: "Open ChatGPT and ask: 'What are the best [your specialty] clinics in [your city]?' Try several variations — include your district, your target patient type (expats, medical tourists), and specific conditions you treat. If your clinic doesn't appear in the top 3 results across most relevant queries, you have a visibility gap." },
-      { q: 'What does an AI search audit include?', a: 'A comprehensive AI search audit covers: AI visibility test (manual queries on ChatGPT, Perplexity, Google AI), robots.txt and crawler access check, schema markup audit, Google Business Profile completeness, NAP (name/address/phone) consistency across directories, content quality assessment, and a prioritised list of fixes.' },
+      { q: 'What does an AI search audit include?', a: 'A comprehensive AI search audit covers: AI answer test (manual queries on ChatGPT, Perplexity, Google AI), robots.txt and crawler access check, schema markup audit, Google Business Profile completeness, NAP (name/address/phone) consistency across directories, content quality assessment, and a prioritised list of fixes.' },
       { q: 'What are the most common AI search problems found in clinic audits?', a: "The most frequent issues are: AI crawlers blocked by robots.txt, no schema markup, incomplete or unverified Google Business Profile, inconsistent clinic name/address across platforms, no English-language content, and zero third-party mentions. Most clinics have at least three of these issues — all of them fixable." },
       { q: 'How often should a Bangkok clinic run an AI search audit?', a: 'A full audit once every 6 months is a reasonable baseline. You should also run a quick spot-check (manual AI queries) every 4–6 weeks, and after any major changes to your website, Google Business Profile, or service offerings. AI platforms update their outputs frequently, so monitoring is ongoing.' },
       { q: 'How long does an AI search audit take?', a: 'A thorough AI search audit takes 2–5 business days to complete properly. A basic self-audit (checking manual queries, reviewing robots.txt, checking schema) can be done in a few hours. Locully delivers a full written audit report within 48 hours of receiving a clinic submission.' },
@@ -751,10 +751,10 @@ export const posts = [
           Before you invest in AI optimization, you need to know where you actually stand. Many Bangkok clinic owners assume their clinic appears in AI results — most are surprised to discover it doesn't.
         </p>
         <p style={s.p}>
-          This audit takes 30 minutes and gives you a clear picture of your current AI visibility and the specific gaps to fix. No tools or technical knowledge required for most of it.
+          This audit takes 30 minutes and gives you a clear picture of where you show up in AI search and the specific gaps to fix. No tools or technical knowledge required for most of it.
         </p>
 
-        <h2 style={s.h2}>Step 1: Check Your Current AI Visibility (Before the Audit)</h2>
+        <h2 style={s.h2}>Step 1: Check Where You Show Up in AI Search (Before the Audit)</h2>
         <p style={s.p}>
           Start by understanding your baseline. Open each platform and run these tests:
         </p>
@@ -859,10 +859,10 @@ export const posts = [
         </div>
 
         <p style={s.p}>
-          If you'd prefer a professional audit rather than running this yourself, <Link to="/audit/" style={s.ilink}>request an AI visibility audit</Link> — we'll run it across 20+ queries and give you a detailed report within 48 hours. Or see <Link to="/geo/" style={s.ilink}>how our AI search visibility service</Link> turns this checklist into fixes.
+          If you'd prefer a professional audit rather than running this yourself, <Link to="/audit/" style={s.ilink}>request a GEO audit</Link> — we'll run it across 20+ queries and give you a detailed report within 48 hours. Or see <Link to="/geo/" style={s.ilink}>how our AI search visibility service</Link> turns this checklist into fixes.
         </p>
         <p style={s.p}>
-          For guidance on what to do with the results, read our <Link to="/blog/why-clinic-not-showing-chatgpt/" style={s.ilink}>guide to fixing AI visibility gaps</Link> and the <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>full AI search optimization guide for Thailand clinics</Link>.
+          For guidance on what to do with the results, read our <Link to="/blog/why-clinic-not-showing-chatgpt/" style={s.ilink}>guide to fixing AI search gaps</Link> and the <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>full AI search optimization guide for Thailand clinics</Link>.
         </p>
 
         <Divider />
@@ -933,7 +933,7 @@ export const posts = [
 
         <h3 style={s.h3}>1. Can you show me AI citation evidence for a current client?</h3>
         <p style={s.p}>
-          Any agency making claims about AI visibility should be able to demonstrate it. Ask for a screenshot or screen recording of a client's clinic being cited in ChatGPT, Perplexity, or Google AI Overviews — for a real patient query, not a search of the clinic's name.
+          Any agency making claims about GEO results should be able to demonstrate it. Ask for a screenshot or screen recording of a client's clinic being cited in ChatGPT, Perplexity, or Google AI Overviews — for a real patient query, not a search of the clinic's name.
         </p>
         <p style={s.p}>
           An agency that can't show this either doesn't do the work or doesn't track results. Neither is acceptable.
@@ -947,7 +947,7 @@ export const posts = [
           A generic agency will give you a blank look or a vague answer. A specialist will have a clear process.
         </p>
 
-        <h3 style={s.h3}>3. How do you measure AI visibility — and what does a monthly report look like?</h3>
+        <h3 style={s.h3}>3. How do you measure GEO results — and what does a monthly report look like?</h3>
         <p style={s.p}>
           AI search isn't measured by keyword rankings. It's measured by citation frequency across a defined query set. Ask to see an example monthly report — it should show: which queries were tested, which platforms were tested, whether the clinic appeared, and how that changes month over month.
         </p>
@@ -971,7 +971,7 @@ export const posts = [
           <Li><strong style={s.strong}>AI-generated content in bulk, no clinical review</strong> — Mass-producing content without medical accuracy checks is a liability. It also produces generic content that doesn't differentiate your clinic.</Li>
           <Li><strong style={s.strong}>No mention of schema markup</strong> — Schema is foundational for AI optimization. An agency that doesn't mention it either doesn't understand GEO or isn't implementing it.</Li>
           <Li><strong style={s.strong}>Lock-in contracts without deliverable milestones</strong> — AI optimization should produce demonstrable results within 90 days. If an agency can't define what success looks like in the first quarter, be cautious.</Li>
-          <Li><strong style={s.strong}>Conflating social media presence with AI visibility</strong> — Instagram followers and Reels have almost no bearing on ChatGPT or Perplexity citations. Agencies that conflate these don't understand AI search.</Li>
+          <Li><strong style={s.strong}>Conflating social media presence with AI search presence</strong> — Instagram followers and Reels have almost no bearing on ChatGPT or Perplexity citations. Agencies that conflate these don't understand AI search.</Li>
         </Ul>
 
         <h2 style={s.h2}>Why Specialization Matters</h2>
@@ -982,7 +982,7 @@ export const posts = [
           Locully works exclusively with clinics. We don't split our focus between clinics, restaurants, and e-commerce. Every case study, every query set, every piece of content knowledge we've built is from the clinic sector — Bangkok, Phuket, Chiang Mai, and beyond.
         </p>
         <p style={s.p}>
-          If you'd like to see how that makes a difference, start with an <Link to="/audit/" style={s.ilink}>AI visibility audit</Link> — we'll benchmark your current AI presence and give you a clear picture of where you stand versus competitors.
+          If you'd like to see how that makes a difference, start with a <Link to="/audit/" style={s.ilink}>GEO audit</Link> — we'll benchmark your current AI presence and give you a clear picture of where you stand versus competitors.
         </p>
         <p style={s.p}>
           Or read our <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>complete guide to AI search optimization for Thailand clinics</Link> to understand the full landscape before you engage anyone.
@@ -1166,7 +1166,7 @@ export const posts = [
           The signals that drive AI citations overlap significantly with traditional SEO — authoritative content, clean technical infrastructure, strong external links — but the output is different. In AI search, the goal isn't to rank #1 in a list. It's to be named within a generated answer.
         </p>
         <p style={s.p}>
-          Effective search strategy in 2026 optimises for both simultaneously. Good SEO practice feeds AI visibility. AI-optimised content tends to perform better in traditional search. They aren't competing strategies — they're two faces of the same discipline.
+          Effective search strategy in 2026 optimises for both simultaneously. Good SEO practice feeds GEO. AI-optimised content tends to perform better in traditional search. They aren't competing strategies — they're two faces of the same discipline.
         </p>
         <p style={s.p}>
           For a deeper look at how the two interact, see our guide on <Link to="/blog/geo-vs-seo-clinics-bangkok/" style={s.ilink}>GEO vs SEO</Link>, our breakdown of <Link to="/blog/ai-search-optimization-clinics-thailand/" style={s.ilink}>SEO and AI search for clinics specifically</Link>, and the <Link to="/geo/" style={s.ilink}>Locully AI Search Visibility service</Link>.
@@ -1772,7 +1772,7 @@ export const posts = [
       { q: 'How many people use AI search in 2026?', a: 'ChatGPT alone has 900 million weekly active users and handles 2.5 billion prompts per day, while Google AI Overviews reach over 2 billion people monthly and the Gemini app has 750 million monthly users. In the US, 34% of adults have used ChatGPT, rising to 58% of under-30s. AI search is now mainstream, not niche.' },
       { q: 'Do AI Overviews really reduce website clicks?', a: 'Yes. Pew Research found users clicked through to a website on only 8% of searches that showed an AI summary, versus 15% without one — roughly halving click-through. Only 1% clicked a link inside the AI summary itself. Ahrefs separately measured a 34.5% click-through drop for the #1 organic result when an AI Overview is present.' },
       { q: 'What percentage of Google searches are zero-click?', a: 'About 68% of US Google searches ended without a click in early 2026, according to SparkToro using Similarweb data — up from roughly 60% in 2024. That means less than one third of searches now send a click to the open web, driven partly by AI summaries and featured answers.' },
-      { q: 'What actually makes an LLM cite your brand?', a: 'The strongest measured signal is brand mentions across the web, which correlated with AI Overview visibility about three times more strongly than backlinks in Ahrefs research on 75,000 brands. Academic research found that citing sources, adding quotations, and including statistics each lifted AI visibility 30–40%. Notably, schema markup showed no meaningful citation uplift, and keyword stuffing reduced visibility.' },
+      { q: 'What actually makes an LLM cite your brand?', a: 'The strongest measured signal is brand mentions across the web, which correlated with AI Overview visibility about three times more strongly than backlinks in Ahrefs research on 75,000 brands. Academic research found that citing sources, adding quotations, and including statistics each lifted visibility in AI answers 30–40%. Notably, schema markup showed no meaningful citation uplift, and keyword stuffing reduced visibility.' },
       { q: 'Is AI search traffic worth optimising for if it is still small?', a: 'The volume is small — around 0.13% of total sessions — but the quality is high. ChatGPT referral traffic converted at 7.1% in Similarweb data, second only to paid search, and Microsoft Clarity found LLM visitors signed up at over ten times the rate of search visitors. AI referral traffic also grew 357% year over year, and 94% of enterprises plan to increase GEO investment in 2026.' },
       { q: 'Are people really using AI to find clinics and local businesses?', a: '45% of US consumers now use AI tools to find or choose a local business, up from 6% a year earlier. In healthcare specifically, 40 million people ask ChatGPT a health question every day, and about 70% of those conversations happen outside clinic hours. For service businesses, being named in AI answers is becoming a primary discovery channel.' },
     ],
@@ -1953,7 +1953,7 @@ export const posts = [
 
         <h3 style={s.h3}>What actually makes an LLM cite your brand?</h3>
         <p style={s.p}>
-          The strongest measured signal is brand mentions across the web, which correlated with AI Overview visibility about three times more strongly than backlinks in Ahrefs research on 75,000 brands. Academic research found that citing sources, adding quotations and including statistics each lifted AI visibility 30–40%. Notably, schema markup showed no meaningful citation uplift, and keyword stuffing reduced visibility.
+          The strongest measured signal is brand mentions across the web, which correlated with AI Overview visibility about three times more strongly than backlinks in Ahrefs research on 75,000 brands. Academic research found that citing sources, adding quotations and including statistics each lifted visibility in AI answers 30–40%. Notably, schema markup showed no meaningful citation uplift, and keyword stuffing reduced visibility.
         </p>
 
         <h3 style={s.h3}>Is AI search traffic worth optimising for if it is still small?</h3>
@@ -1973,7 +1973,7 @@ export const posts = [
           Every statistic on this page points to the same conclusion: AI search is now where a large and growing share of buying decisions begin. The businesses that get named inside ChatGPT, Perplexity and Google AI Overviews capture that demand. Everyone else is invisible to it — and won&rsquo;t even see the leads they&rsquo;re losing.
         </p>
         <p style={s.p}>
-          Locully helps clinics and businesses in Thailand get found and recommended in AI search. To see where you stand, <Link to="/geo/" style={s.ilink}>see how our AI Visibility Optimization works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/audit/" style={s.ilink}>start with an AI audit</Link>.
+          Locully helps clinics and businesses in Thailand get found and recommended in AI search. To see where you stand, <Link to="/geo/" style={s.ilink}>see how our GEO service works</Link>, <Link to="/packages" style={s.ilink}>explore our packages</Link>, or <Link to="/audit/" style={s.ilink}>start with an AI audit</Link>.
         </p>
         <Callout>
           <strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout and updated as new research is released.
@@ -1995,7 +1995,7 @@ export const posts = [
     excerpt: 'AI cites sources based on brand mentions, quotable content and clear sourcing — not backlinks or schema. The verified data on how to get cited by ChatGPT, Perplexity and Google AI.',
     relatedPosts: ['ai-search-statistics', 'geo-vs-seo-clinics-bangkok', 'why-clinic-not-showing-chatgpt'],
     faqs: [
-      { q: 'How does ChatGPT decide which sources to cite?', a: 'ChatGPT weights sources by how often and how authoritatively an entity is mentioned across its training data and live web results, favouring well-corroborated brands and concise, quotable, clearly-sourced content. Brand mentions correlate with AI visibility about three times more strongly than backlinks, and citing sources or statistics measurably lifts the odds of being quoted.' },
+      { q: 'How does ChatGPT decide which sources to cite?', a: 'ChatGPT weights sources by how often and how authoritatively an entity is mentioned across its training data and live web results, favouring well-corroborated brands and concise, quotable, clearly-sourced content. Brand mentions correlate with AI Overview visibility about three times more strongly than backlinks, and citing sources or statistics measurably lifts the odds of being quoted.' },
       { q: 'Do backlinks help you get cited by AI?', a: 'Backlinks help indirectly — high-authority sites are more likely to appear in training data — but they are a weaker signal than brand mentions. Ahrefs measured a 0.218 correlation for backlinks versus 0.664 for web mentions across 75,000 brands. Earning mentions across the web matters more than accumulating links alone.' },
       { q: 'Does schema markup help AI cite my page?', a: 'Not meaningfully, according to a controlled Ahrefs study. Adding schema produced roughly no change in AI citations and slightly reduced AI Overview citations on already-cited pages. Schema still helps search engines interpret your content, so it is worth having — but it is not a reliable lever for getting cited in AI answers.' },
       { q: 'Which websites do AI search engines cite most?', a: 'User-generated and video platforms dominate. In Google AI Overviews, YouTube (20.9%), Reddit (19.6%) and Facebook (11.6%) are the most-cited domains. Across all AI engines combined, Reddit ranks first, followed by YouTube and LinkedIn — which is why brand presence on those platforms is now a genuine visibility lever.' },
@@ -2007,7 +2007,7 @@ export const posts = [
           AI search engines choose which sources to cite based mostly on <strong style={s.strong}>how often a brand is mentioned across the web — not how many backlinks it has</strong>. In an Ahrefs study of 75,000 brands, web mentions correlated with AI Overview visibility at 0.664, versus just 0.218 for backlinks — roughly three times stronger. Citing sources, adding quotations, and including statistics also lift a page&rsquo;s visibility in AI answers by 30–40%.
         </p>
         <Callout>
-          <strong style={s.strong}>TL;DR:</strong> Getting cited by ChatGPT, Perplexity and Google AI Overviews is driven by brand mentions, quotable content and clear sourcing — not the old SEO levers. Across 75,000 brands, mentions correlated ~3× more strongly with AI visibility than backlinks. Academic testing found citing sources, quotes and statistics each lift AI visibility 30–40%, while schema markup showed no meaningful citation uplift. UGC platforms like Reddit and YouTube dominate citations.
+          <strong style={s.strong}>TL;DR:</strong> Getting cited by ChatGPT, Perplexity and Google AI Overviews is driven by brand mentions, quotable content and clear sourcing — not the old SEO levers. Across 75,000 brands, mentions correlated ~3× more strongly with AI Overview visibility than backlinks. Academic testing found citing sources, quotes and statistics each lift visibility in AI answers 30–40%, while schema markup showed no meaningful citation uplift. UGC platforms like Reddit and YouTube dominate citations.
         </Callout>
 
         <h2 style={s.h2}>What actually makes AI cite a source?</h2>
@@ -2046,7 +2046,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Frequently Asked Questions</h2>
         <h3 style={s.h3}>How does ChatGPT decide which sources to cite?</h3>
-        <p style={s.p}>ChatGPT weights sources by how often and how authoritatively an entity is mentioned across its training data and live web results, favouring well-corroborated brands and concise, quotable, clearly-sourced content. Brand mentions correlate with AI visibility about three times more strongly than backlinks.</p>
+        <p style={s.p}>ChatGPT weights sources by how often and how authoritatively an entity is mentioned across its training data and live web results, favouring well-corroborated brands and concise, quotable, clearly-sourced content. Brand mentions correlate with AI Overview visibility about three times more strongly than backlinks.</p>
         <h3 style={s.h3}>Do backlinks help you get cited by AI?</h3>
         <p style={s.p}>Backlinks help indirectly — high-authority sites are more likely to appear in training data — but they&rsquo;re a weaker signal than brand mentions. Ahrefs measured a 0.218 correlation for backlinks versus 0.664 for web mentions across 75,000 brands.</p>
         <h3 style={s.h3}>Does schema markup help AI cite my page?</h3>
@@ -2057,7 +2057,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Get cited, not just ranked</h2>
         <p style={s.p}>
-          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/audit/" style={s.ilink}>start with an AI audit</Link>.
+          Most businesses are optimised to rank on Google and invisible inside AI answers. Locully builds the brand-mention, citability and entity signals that get clinics and businesses named in ChatGPT, Perplexity and Google AI Overviews. See how our <Link to="/geo/" style={s.ilink}>GEO service works</Link>, or <Link to="/audit/" style={s.ilink}>start with an AI audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
@@ -2132,7 +2132,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Turn zero-click into zero-loss</h2>
         <p style={s.p}>
-          If most searches end without a click, the win is being the answer — not just a link in a list nobody opens. Locully optimises businesses to be cited and recommended inside AI search and featured snippets. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/audit/" style={s.ilink}>get your AI audit</Link>.
+          If most searches end without a click, the win is being the answer — not just a link in a list nobody opens. Locully optimises businesses to be cited and recommended inside AI search and featured snippets. See how our <Link to="/geo/" style={s.ilink}>GEO service works</Link>, or <Link to="/audit/" style={s.ilink}>get your AI audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>
@@ -2218,7 +2218,7 @@ export const posts = [
         <Divider />
         <h2 style={s.h2}>Be part of the answer</h2>
         <p style={s.p}>
-          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI. See how our <Link to="/geo/" style={s.ilink}>AI Visibility Optimization works</Link>, or <Link to="/audit/" style={s.ilink}>get your AI audit</Link>.
+          If 900 million people a week are asking ChatGPT for recommendations, the question is whether your business is one of them. Locully optimises clinics and businesses to be found and recommended across ChatGPT, Perplexity and Google AI. See how our <Link to="/geo/" style={s.ilink}>GEO service works</Link>, or <Link to="/audit/" style={s.ilink}>get your AI audit</Link>.
         </p>
         <Callout><strong style={s.strong}>Last updated:</strong> June 2026. Statistics are sourced from the original publishers linked throughout.</Callout>
       </div>

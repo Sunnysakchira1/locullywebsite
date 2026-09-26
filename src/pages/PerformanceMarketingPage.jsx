@@ -353,7 +353,7 @@ export default function PerformanceMarketingPage() {
           idPrefix="pm"
           footer={(
             <p className="lb-note" style={{ textAlign: 'center', marginTop: 24 }}>
-              Want to know how you show up in ChatGPT too? Read about the <Link to="/audit/">AI visibility audit</Link>, or <Link to="/contact/">contact us</Link>.
+              Want to know how you show up in ChatGPT too? Read about the <Link to="/audit/">GEO audit</Link>, or <Link to="/contact/">contact us</Link>.
             </p>
           )}
         />

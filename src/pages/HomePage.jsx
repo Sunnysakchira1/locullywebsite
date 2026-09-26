@@ -44,7 +44,7 @@ const reviews = [
 ];
 
 const offer = [
-  { t: 'A live AI visibility dashboard', d: 'Your own login. Which prompts name you, which name a competitor, tracked over time — not a screenshot in a PDF.' },
+  { t: 'A live GEO dashboard', d: 'Your own login. Which prompts name you, which name a competitor, tracked over time — not a screenshot in a PDF.' },
   { t: 'Monthly citation placements', d: 'Mentions earned on the third-party sites the models already quote in your category. Delivered as live URLs you can click.' },
   { t: 'Technical SEO and schema', d: 'Crawler access, site speed, structure, internal links and structured data that helps Google understand your business.' },
   { t: 'Content written to be quoted', d: 'Pages that answer the buying questions directly, in the format a model can lift. Written in English and Thai where it matters.' },
@@ -87,7 +87,7 @@ const faqs = [
     a: 'You do, from day one. Ad accounts, analytics, Search Console and Google Business Profile are all in your name, and your dashboard data is yours to export. If we stop working together you keep every one of them.',
   },
   {
-    q: 'What do I get in the free AI visibility check?',
+    q: 'What do I get in the free GEO audit?',
     a: "Send us your website. Within five working days you get a report: we run your customers' real buying questions through ChatGPT, Perplexity and Google AI and show you where you appear, who gets named instead of you, and what we would fix first. It is yours to keep, whether or not you hire us.",
   },
 ];
@@ -419,9 +419,9 @@ export default function HomePage() {
             </div>
             <Figure
               src="/images/home/evidence/ai-visibility-dashboard.jpg"
-              alt="AI visibility dashboard showing mention rate, average rank, citations and competitor share of voice"
+              alt="GEO dashboard showing mention rate, average rank, citations and competitor share of voice"
               imgProps={{ width: 2472, height: 1160 }}
-              caption={<>A client view from an AI visibility tracker, November 2025. <b>This clinic took 25% of competitor mentions</b> — the highest of every hospital and clinic tracked.</>}
+              caption={<>A client view from a GEO tracker, November 2025. <b>This clinic took 25% of competitor mentions</b> — the highest of every hospital and clinic tracked.</>}
             />
           </div>
           <div className="lbh-how-links">

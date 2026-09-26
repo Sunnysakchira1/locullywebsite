@@ -78,7 +78,7 @@ const services = [
     body: 'Technical, on-page and content work that helps you get found on Google for the searches your customers run.',
   },
   {
-    icon: 'bot', title: 'GEO and AI visibility', to: '/geo/', link: 'See our GEO services',
+    icon: 'bot', title: 'GEO and AI search', to: '/geo/', link: 'See our GEO services',
     body: 'Work that makes your business easier for ChatGPT, Perplexity and Google AI Overviews to name.',
   },
   {
