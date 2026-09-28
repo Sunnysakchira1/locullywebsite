@@ -172,3 +172,58 @@
   .lbh-page #book .lb-shead .lb-lede { font-size: 16px; }
   .lbh-page #book .lb-shead { margin-bottom: 24px; }
 }
+
+/* ── How it works: steps + sticky evidence panel (StepsPanel.jsx) ── */
+.lb-sp { margin-top: 20px; }
+.lb-sp-item { border-radius: var(--lb-radius-lg); border: 1px solid transparent; padding: 22px 24px; transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.lb-sp-item.on { background: var(--lb-card); border-color: var(--lb-rule); box-shadow: 0 10px 30px rgba(20, 33, 61, 0.06); }
+.lb-sp-h { margin: 0; }
+.lb-sp-btn { display: flex; align-items: center; gap: 16px; width: 100%; margin: 0; padding: 0; background: none; border: 0; text-align: left; font: inherit; color: inherit; cursor: pointer; border-radius: 12px; }
+.lb-sp-btn:focus-visible { outline: 2px solid var(--lb-accent); outline-offset: 6px; }
+.lb-sp-num { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 40px; height: 40px; border-radius: 999px; background: var(--lb-tint); border: 1.5px solid var(--lb-tint-border); font-size: 14px; font-weight: 700; color: var(--lb-accent-deep); transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease; }
+.lb-sp-item.on .lb-sp-num { background: var(--lb-accent); border-color: var(--lb-accent); color: #ffffff; }
+.lb-sp-title { flex: 1 1 auto; font-size: 26px; line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; color: var(--lb-muted); transition: color 0.25s ease; }
+.lb-sp-item.on .lb-sp-title, .lb-sp-btn:hover .lb-sp-title { color: var(--lb-ink); }
+.lb-sp-caret { flex: 0 0 auto; width: 9px; height: 9px; margin-right: 4px; border-right: 1.5px solid var(--lb-muted); border-bottom: 1.5px solid var(--lb-muted); transform: translateY(-3px) rotate(45deg); transition: transform 0.3s ease; }
+.lb-sp-item.on .lb-sp-caret { transform: translateY(2px) rotate(-135deg); border-color: var(--lb-ink); }
+.lb .lb-sp-lead { margin: 8px 0 0 56px; font-size: 17px; line-height: 1.55; color: var(--lb-body); }
+.lb-sp-item.on .lb-sp-lead { color: var(--lb-ink); font-weight: 500; }
+/* Collapsed bullets stay in the DOM; visibility hides them from AT/tab order once the close finishes. */
+.lb-sp-body { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.35s; }
+.lb-sp-item.on .lb-sp-body { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s; }
+.lb-sp-body-in { min-height: 0; overflow: hidden; }
+.lb-sp-body .lbh-bl { margin: 16px 0 2px 56px; }
+.lb-sp-body .lbh-bl li { font-size: 16px; margin-bottom: 9px; }
+.lb-sp-media { display: none; }
+.lb-sp-media.on { display: block; animation: lb-sp-in 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+@keyframes lb-sp-in { from { opacity: 0; transform: translateY(12px) scale(0.985); } to { opacity: 1; transform: none; } }
+.lb-sp-media .lb-fig.crop .lb-frame { max-height: 470px; }
+.lb-sp-media .lbh-fixcard { padding: 36px 38px; }
+
+@media (min-width: 901px) {
+  .lb-sp { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); column-gap: 56px; align-items: start; }
+  .lb-sp-list { display: flex; flex-direction: column; gap: 6px; }
+  .lb-sp-panel { position: sticky; top: calc(var(--lb-nav-h) + 28px); }
+}
+@media (max-width: 900px) {
+  .lb-sp { display: flex; flex-direction: column; gap: 6px; }
+  .lb-sp-list, .lb-sp-panel { display: contents; }
+  /* Collapse instantly so StepsPanel can hold the tapped step in place; opening still animates. */
+  .lb-sp-body { transition: none; }
+  .lb-sp-item { padding: 18px 18px; }
+  .lb-sp-media.on { margin: 12px 0 8px; }
+}
+@media (max-width: 760px) {
+  .lb-sp { margin-top: 12px; }
+  .lb-sp-item { padding: 16px 14px; border-radius: 16px; }
+  .lb-sp-btn { gap: 12px; }
+  .lb-sp-num { width: 34px; height: 34px; font-size: 13px; }
+  .lb-sp-title { font-size: 21px; }
+  .lb .lb-sp-lead { margin-left: 46px; font-size: 15.5px; }
+  .lb-sp-body .lbh-bl { margin-left: 46px; }
+  .lb-sp-body .lbh-bl li { font-size: 15px; }
+  .lb-sp-media .lb-fig.crop .lb-frame { max-height: 300px; }
+  .lb-sp-media .lbh-fixcard { padding: 22px 20px; }
+}
+.lbh-pd { max-width: 520px; margin-left: auto; }
+@media (max-width: 900px) { .lbh-pd { max-width: none; margin-left: 0; } }

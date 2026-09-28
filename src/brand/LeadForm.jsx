@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 import { logFormSubmission } from '@/lib/analytics';
 import { CTA_LABEL } from '@/brand/components';
 
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbdzjegj';
 export const DEFAULT_SUBJECT = 'New AI Visibility Audit Request — Locully';
+/** window CustomEvent: detail { fieldName: value } pre-fills matching fields in any LeadFormCard. */
+export const PREFILL_EVENT = 'lb:lead-prefill';
 
 const emptyForm = (extraFields) => ({
   name: '', email: '', website: '',
@@ -24,6 +26,18 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  useEffect(() => {
+    const onPrefill = (e) => {
+      const known = Object.entries(e.detail || {}).filter(([k, v]) => k in formData && typeof v === 'string');
+      if (!known.length) return;
+      setFormData((prev) => ({ ...prev, ...Object.fromEntries(known) }));
+      // Land the cursor on the first field once the smooth scroll has had time to settle.
+      setTimeout(() => document.getElementById(`${idPrefix}-name`)?.focus({ preventScroll: true }), 700);
+    };
+    window.addEventListener(PREFILL_EVENT, onPrefill);
+    return () => window.removeEventListener(PREFILL_EVENT, onPrefill);
+  }, [formData, idPrefix]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

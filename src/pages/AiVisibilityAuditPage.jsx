@@ -3,9 +3,10 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import {
-  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, Icon, ProofPanel, FAQ, ResultsNote, Tick,
+  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Icon, ProofPanel, FAQ, ResultsNote, Tick,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
+import AskAiInput from '@/brand/AskAiInput';
 import {
   URL, META, HERO, DEMO, FINDOUT, REPORT, STEPS, EXTERNAL, COMPARE, FAQS, CLOSING, RELATED,
 } from '@/data/auditData';
@@ -69,7 +70,7 @@ const Ext = ({ href, children }) => (
 const AiAnswerDemo = () => (
   <figure className="lba-demo" aria-label="Example: ChatGPT recommends three clinics and not yours">
     <div className="lba-demo-q">
-      <span className="lba-demo-label">Someone asks ChatGPT</span>
+      <span className="lba-demo-label lba-demo-label-row">Someone asks ChatGPT<span className="lb-pd-tag">Example</span></span>
       <p>{DEMO.question}</p>
     </div>
     <div className="lba-demo-a">
@@ -173,7 +174,7 @@ export default function AiVisibilityAuditPage() {
           visual={<AiAnswerDemo />}
         >
           {HERO.body.map((p) => <p key={p} className="lb-body-lg lba-hero-p">{p}</p>)}
-          <Cta note={HERO.note} />
+          <AskAiInput className="lba-ask" label={HERO.askLabel} placeholder={HERO.askPlaceholder} note={HERO.note} />
         </PageHero>
 
         {/* What you find out */}

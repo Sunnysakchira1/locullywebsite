@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { goToLeadForm } from '@/brand/components';
+import { useGoToAudit } from '@/brand/components';
 import { industries } from '@/data/industryData';
 
 /**
@@ -18,7 +18,7 @@ const SERVICES = [
 const Nav = () => {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
-  const onCta = (e) => { close(); goToLeadForm(e); };
+  const onCta = useGoToAudit(close); // always opens /audit/; scrolls to its form when already there
 
   return (
     <nav className="bnav" aria-label="Main">
@@ -45,7 +45,7 @@ const Nav = () => {
             <li><Link to="/about">About</Link></li>
           </ul>
 
-          <a href="/audit/#book" className="lb-btn bnav-cta" onClick={onCta}>
+          <a href="/audit/" className="lb-btn bnav-cta" onClick={onCta}>
             <span className="bnav-cta-full">Get your AI audit</span>
             <span className="bnav-cta-short">AI audit</span>
           </a>
@@ -72,7 +72,7 @@ const Nav = () => {
           <Link to="/blog/">Insights</Link>
           <Link to="/about">About</Link>
           <Link to="/contact/">Contact</Link>
-          <a href="/audit/#book" className="lb-btn" onClick={onCta}>Get your AI audit</a>
+          <a href="/audit/" className="lb-btn" onClick={onCta}>Get your AI audit</a>
         </div>
       )}
     </nav>

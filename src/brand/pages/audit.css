@@ -85,3 +85,4 @@
   .lb .lba-compare tr td:last-child { border-bottom: 0; }
   .lba-related { margin-top: 36px; }
 }
+.lba-demo-label-row { display: flex; align-items: center; gap: 10px; }

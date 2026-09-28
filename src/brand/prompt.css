@@ -1,0 +1,69 @@
+/* ── AI prompt demo (AiPromptDemo.jsx) + ask input (AskAiInput.jsx) ── */
+.lb-pd { margin: 0; background: var(--lb-card); border: 1px solid var(--lb-rule); border-radius: var(--lb-radius-card); padding: 22px; box-shadow: 0 18px 44px rgba(20, 33, 61, 0.08); }
+.lb-pd-label { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lb-muted); margin-bottom: 8px; }
+
+/* Prompt box */
+.lb-pd-box { background: var(--lb-tint-neutral); border: 1px solid var(--lb-rule); border-radius: 18px; padding: 14px 16px 10px; transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; }
+.lb-pd.is-typing .lb-pd-box { background: var(--lb-card); border-color: var(--lb-tint-border); box-shadow: 0 0 0 3px var(--lb-tint); }
+.lb .lb-pd p.lb-pd-q { margin: 0; font-size: 16.5px; font-weight: 600; color: var(--lb-ink); line-height: 1.45; }
+.lb-pd-q { position: relative; }
+.lb-pd-q.is-anim .lb-pd-full { color: transparent; }
+.lb-pd-typed { position: absolute; inset: 0; }
+.lb-pd-tag { margin-left: auto; padding: 3px 9px; border-radius: var(--lb-radius-pill); background: var(--lb-tint); border: 1px solid var(--lb-tint-border); color: var(--lb-accent-deep); font-size: 11px; letter-spacing: 0.12em; }
+/* Plain inline with zero net advance: no width and no line-break opportunity, so text never reflows. */
+.lb-pd-caret { border-left: 2px solid var(--lb-accent); margin-right: -2px; animation: lb-pd-blink 1s steps(1) infinite; }
+@keyframes lb-pd-blink { 50% { opacity: 0; } }
+.lb-pd-bar { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+.lb-pd-engine { display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: var(--lb-radius-pill); background: var(--lb-card); border: 1px solid var(--lb-rule); font-size: 13px; font-weight: 600; color: var(--lb-body); }
+.lb-pd-dot { width: 7px; height: 7px; border-radius: 999px; background: var(--lb-signal-good); }
+.lb-pd-send { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 999px; background: var(--lb-rule-strong); color: #ffffff; transition: background-color 0.25s ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.lb-pd-send.ready { background: var(--lb-accent); }
+.lb-pd.is-thinking .lb-pd-send { transform: scale(0.88); }
+
+/* Thinking dots */
+.lb-pd-think { display: inline-flex; gap: 4px; }
+.lb-pd-think i { width: 5px; height: 5px; border-radius: 999px; background: var(--lb-muted); animation: lb-pd-bounce 0.9s ease-in-out infinite; }
+.lb-pd-think i:nth-child(2) { animation-delay: 0.15s; }
+.lb-pd-think i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes lb-pd-bounce { 0%, 80%, 100% { opacity: 0.3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+
+/* Answer (space is always reserved, so nothing below the card jumps) */
+.lb-pd-a { padding: 18px 4px 6px; }
+.lb .lb-pd p.lb-pd-intro { margin: 0 0 12px; font-size: 15.5px; color: var(--lb-body); line-height: 1.5; }
+.lb-pd-a ol { list-style: none; margin: 0; padding: 0; }
+.lb-pd-a li { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-top: 1px solid var(--lb-rule-soft); }
+.lb-pd-a li:first-child { border-top: 0; }
+.lb-pd-rank { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 999px; background: var(--lb-ink); color: #ffffff; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+.lb-pd-a strong { display: block; color: var(--lb-ink); font-size: 16px; font-weight: 600; }
+.lb-pd-note { display: block; font-size: 14px; color: var(--lb-muted); line-height: 1.45; margin-top: 2px; }
+.lb-pd-verdict { display: flex; gap: 12px; align-items: flex-start; margin-top: 10px; background: var(--lb-tint); border: 1px solid var(--lb-tint-border); border-radius: 14px; padding: 14px 16px; color: var(--lb-accent-deep); }
+.lb-pd-verdict svg { flex: 0 0 auto; margin-top: 2px; }
+.lb-pd-verdict strong { display: block; color: var(--lb-ink); font-size: 16px; font-weight: 700; }
+.lb .lb-pd .lb-pd-verdict p { margin: 4px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--lb-body); }
+.lb-pd-in { opacity: 0; transform: translateY(8px); }
+.lb-pd-a.shown .lb-pd-in { opacity: 1; transform: none; transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); transition-delay: calc(var(--d) * 0.22s); }
+.lb-pd.is-done .lb-pd-in { transition-delay: 0s; }
+.lb-pd figcaption { font-size: 13px; color: var(--lb-muted); padding: 12px 4px 0; }
+@media (max-width: 760px) {
+  .lb-pd { padding: 16px; }
+  .lb .lb-pd p.lb-pd-q { font-size: 15.5px; }
+  .lb-pd-label { font-size: 11px; letter-spacing: 0.1em; }
+  .lb-pd-tag { font-size: 10px; padding: 2px 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lb-pd-in { opacity: 1; transform: none; }
+}
+
+/* Ask input: prompt-box look, real form */
+.lb-ask { margin-top: 36px; max-width: 580px; }
+.lb-ask-box { display: flex; align-items: center; gap: 8px; background: var(--lb-card); border: 1.5px solid var(--lb-rule-strong); border-radius: var(--lb-radius-pill); padding: 6px 6px 6px 22px; box-shadow: 0 10px 30px rgba(20, 33, 61, 0.06); transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.lb-ask-box:focus-within { border-color: var(--lb-accent); box-shadow: 0 0 0 4px var(--lb-tint); }
+.lb-ask-box input { flex: 1 1 auto; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 16.5px; color: var(--lb-ink); padding: 10px 0; }
+.lb-ask-box input::placeholder { color: var(--lb-muted); }
+.lb-ask-box .lb-btn { flex: 0 0 auto; white-space: nowrap; }
+@media (max-width: 760px) {
+  .lb-ask { margin-top: 24px; }
+  .lb-ask-box { flex-direction: column; align-items: stretch; border-radius: 20px; padding: 6px; }
+  .lb-ask-box input { padding: 12px 14px; font-size: 16px; }
+  .lb-ask-box .lb-btn { display: flex; justify-content: center; width: 100%; }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 /* Brand v2 building blocks. Styles live in src/brand/brand.css (scoped under .lb). */
 
@@ -117,10 +117,24 @@ export const PageHero = ({ eyebrow, meta, title, lede, children, visual, aside, 
   );
 };
 
+/** Click handler for global CTAs (navbar, mobile sticky bar): open the audit page;
+ *  once already on it, scroll to its form. `before` runs first (e.g. close the mobile menu). */
+export const useGoToAudit = (before) => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  return (e) => {
+    if (before) before();
+    if (pathname.startsWith('/audit')) { goToLeadForm(e); return; }
+    e.preventDefault();
+    navigate('/audit/');
+  };
+};
+
 /** Mobile-only sticky CTA bar: primary button + round phone button.
  *  Hidden on the first screen (so it never covers the hero or the video), slides in once the visitor scrolls. */
 export const StickyCta = () => {
   const [show, setShow] = React.useState(false);
+  const goToAudit = useGoToAudit();
   React.useEffect(() => {
     const onScroll = () => setShow(window.scrollY > window.innerHeight * 0.8);
     onScroll();
@@ -129,7 +143,7 @@ export const StickyCta = () => {
   }, []);
   return (
     <div className={cx('lb-sticky', show && 'show')} role="region" aria-label="Quick contact" aria-hidden={!show}>
-      <a href="/audit/#book" className="lb-btn" onClick={goToLeadForm} tabIndex={show ? 0 : -1}>Get your AI audit</a>
+      <a href="/audit/" className="lb-btn" onClick={goToAudit} tabIndex={show ? 0 : -1}>Get your AI audit</a>
       <a href="tel:+66626959444" className="lb-sticky-call" aria-label="Call Locully on +66 62 695 9444" tabIndex={show ? 0 : -1}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" stroke="#14213d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </a>

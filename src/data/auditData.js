@@ -38,6 +38,8 @@ export const HERO = {
     "It's free. It takes five working days.",
   ],
   note: 'No sales call needed to start. We only need your website.',
+  askLabel: 'What do your customers ask AI?',
+  askPlaceholder: 'e.g. best dental implant clinic in Bangkok',
 };
 
 // The mocked AI answer in the hero. Clinic names are invented.
@@ -254,6 +256,7 @@ export const CLOSING = {
   extraFields: [
     { name: 'city', label: 'City', placeholder: 'Bangkok', autoComplete: 'address-level2' },
     { name: 'services', label: 'Services you want more customers for', placeholder: 'dental implants, veneers' },
+    { name: 'question', label: 'A question your customers ask AI', placeholder: 'best dental implant clinic in Bangkok' },
   ],
 };
 

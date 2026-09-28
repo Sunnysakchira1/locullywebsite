@@ -5,7 +5,9 @@ import {
   Page, Section, SectionHeader, Button, Cta, ServiceCard, Figure, FAQ, Tick,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
-import { ASK_CHATGPT_ILLO } from '@/data/homeSvgs';
+import StepsPanel from '@/brand/StepsPanel';
+import AiPromptDemo from '@/brand/AiPromptDemo';
+import { DEMO } from '@/data/auditData';
 import '@/brand/pages/home.css';
 
 /* Homepage — ported from the signed-off mockup (homepage-redesign-2026-09/artboards, v24).
@@ -294,13 +296,7 @@ export default function HomePage() {
               </p>
             </div>
             <div>
-              <svg
-                className="lbh-illo"
-                viewBox="0 0 560 330"
-                role="img"
-                aria-label="Illustration: a person at a laptop asking ChatGPT for the best business in Bangkok"
-                dangerouslySetInnerHTML={{ __html: ASK_CHATGPT_ILLO }}
-              />
+              <AiPromptDemo demo={DEMO} className="lbh-pd" />
             </div>
           </div>
         </Section>
@@ -342,88 +338,88 @@ export default function HomePage() {
             lede="Four steps, whether the work is SEO, AI search or ads. You see step one free, before you pay a baht."
           />
 
-          <div className="lb-stage lbh-stage">
-            <div>
-              <div className="lb-num">01</div>
-              <h3 className="lb-h3-stage">Measure</h3>
-              <p className="lbh-lead">We find out where you stand before we build anything.</p>
-              <ul className="lbh-bl">
-                <li>We agree the real buying questions your customers ask</li>
-                <li>We check where you rank on Google, and whether ChatGPT, Perplexity and Google AI name you</li>
-                <li>We check your tracking, so every enquiry can be counted</li>
-                <li>You see where you appear, where you don't, and who wins instead</li>
-              </ul>
-            </div>
-            <Figure
-              dark
-              crop
-              src="/images/home/evidence/prompt-tracker.jpg"
-              alt="Prompt tracker showing eleven buying prompts with run history and visibility percentages"
-              imgProps={{ width: 1362, height: 1464 }}
-              caption={<>A real tracker from a Bangkok clinic. Eleven buying prompts, fourteen runs each. <b>Three are tagged LOST</b> — we show those too, because a number you cannot lose is not a measurement.</>}
-            />
-          </div>
-
-          <div className="lb-stage lbh-stage">
-            <div>
-              <div className="lb-num">02</div>
-              <h3 className="lb-h3-stage">Fix</h3>
-              <p className="lbh-lead">The unglamorous part, and often where the first movement comes from.</p>
-              <ul className="lbh-bl">
-                <li>Technical and indexation issues</li>
-                <li>Site architecture and internal linking</li>
-                <li>Content gaps across your buying queries</li>
-              </ul>
-            </div>
-            <div className="lbh-fixcard">
-              <div className="lbh-fixcard-t">What gets fixed first</div>
-              <ul className="lbh-bl">
-                <li>Pages search and AI engines can't retrieve or understand</li>
-                <li>Missing or incorrect structured data</li>
-                <li>Weak entity signals, so Google and AI aren't sure who you are</li>
-                <li>Blocked crawlers and indexation errors</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="lb-stage lbh-stage">
-            <div>
-              <div className="lb-num">03</div>
-              <h3 className="lb-h3-stage">Place</h3>
-              <p className="lbh-lead">AI models quote sources they already trust.</p>
-              <ul className="lbh-bl">
-                <li>We find the directories, roundups, review sites and press your customers and AI engines trust</li>
-                <li>We earn you a place in them: links for Google, mentions for AI</li>
-                <li>Every placement comes back to you as a live URL</li>
-              </ul>
-            </div>
-            <Figure
-              src="/images/home/evidence/ai-cited-domains.jpg"
-              alt="Table of every domain cited by AI in a category, with the client and a competitor tagged"
-              imgProps={{ width: 1708, height: 976 }}
-              caption={<>Every site the AI cited in one category, ranked. <b>This is the list we earn you a place on</b> — named domains, not a promise.</>}
-            />
-          </div>
-
-          <div className="lb-stage lbh-stage">
-            <div>
-              <div className="lb-num">04</div>
-              <h3 className="lb-h3-stage">Report</h3>
-              <p className="lbh-lead">One number we report on: enquiries.</p>
-              <ul className="lbh-bl">
-                <li>A live dashboard you can log into any time</li>
-                <li>A monthly report in plain English</li>
-                <li>Enquiries, and what each one cost</li>
-                <li>What we did, and what we do next</li>
-              </ul>
-            </div>
-            <Figure
-              src="/images/home/evidence/ai-visibility-dashboard.jpg"
-              alt="GEO dashboard showing mention rate, average rank, citations and competitor share of voice"
-              imgProps={{ width: 2472, height: 1160 }}
-              caption={<>A client view from a GEO tracker, November 2025. <b>This clinic took 25% of competitor mentions</b> — the highest of every hospital and clinic tracked.</>}
-            />
-          </div>
+          <StepsPanel
+            steps={[
+              {
+                title: 'Measure',
+                lead: 'We find out where you stand before we build anything.',
+                bullets: [
+                  'We agree the real buying questions your customers ask',
+                  'We check where you rank on Google, and whether ChatGPT, Perplexity and Google AI name you',
+                  'We check your tracking, so every enquiry can be counted',
+                  "You see where you appear, where you don't, and who wins instead",
+                ],
+                preload: ['/images/home/evidence/prompt-tracker.jpg'],
+                media: (
+                  <Figure
+                    dark
+                    crop
+                    src="/images/home/evidence/prompt-tracker.jpg"
+                    alt="Prompt tracker showing eleven buying prompts with run history and visibility percentages"
+                    imgProps={{ width: 1362, height: 1464 }}
+                    caption={<>A real tracker from a Bangkok clinic. Eleven buying prompts, fourteen runs each. <b>Three are tagged LOST</b> — we show those too, because a number you cannot lose is not a measurement.</>}
+                  />
+                ),
+              },
+              {
+                title: 'Fix',
+                lead: 'The unglamorous part, and often where the first movement comes from.',
+                bullets: [
+                  'Technical and indexation issues',
+                  'Site architecture and internal linking',
+                  'Content gaps across your buying queries',
+                ],
+                media: (
+                  <div className="lbh-fixcard">
+                    <div className="lbh-fixcard-t">What gets fixed first</div>
+                    <ul className="lbh-bl">
+                      <li>Pages search and AI engines can't retrieve or understand</li>
+                      <li>Missing or incorrect structured data</li>
+                      <li>Weak entity signals, so Google and AI aren't sure who you are</li>
+                      <li>Blocked crawlers and indexation errors</li>
+                    </ul>
+                  </div>
+                ),
+              },
+              {
+                title: 'Place',
+                lead: 'AI models quote sources they already trust.',
+                bullets: [
+                  'We find the directories, roundups, review sites and press your customers and AI engines trust',
+                  'We earn you a place in them: links for Google, mentions for AI',
+                  'Every placement comes back to you as a live URL',
+                ],
+                preload: ['/images/home/evidence/ai-cited-domains.jpg'],
+                media: (
+                  <Figure
+                    src="/images/home/evidence/ai-cited-domains.jpg"
+                    alt="Table of every domain cited by AI in a category, with the client and a competitor tagged"
+                    imgProps={{ width: 1708, height: 976 }}
+                    caption={<>Every site the AI cited in one category, ranked. <b>This is the list we earn you a place on</b> — named domains, not a promise.</>}
+                  />
+                ),
+              },
+              {
+                title: 'Report',
+                lead: 'One number we report on: enquiries.',
+                bullets: [
+                  'A live dashboard you can log into any time',
+                  'A monthly report in plain English',
+                  'Enquiries, and what each one cost',
+                  'What we did, and what we do next',
+                ],
+                preload: ['/images/home/evidence/ai-visibility-dashboard.jpg'],
+                media: (
+                  <Figure
+                    src="/images/home/evidence/ai-visibility-dashboard.jpg"
+                    alt="GEO dashboard showing mention rate, average rank, citations and competitor share of voice"
+                    imgProps={{ width: 2472, height: 1160 }}
+                    caption={<>A client view from a GEO tracker, November 2025. <b>This clinic took 25% of competitor mentions</b> — the highest of every hospital and clinic tracked.</>}
+                  />
+                ),
+              },
+            ]}
+          />
           <div className="lbh-how-links">
             <Button variant="text" to="/seo/">See how SEO works</Button>
             <Button variant="text" to="/geo/">See how GEO works</Button>
