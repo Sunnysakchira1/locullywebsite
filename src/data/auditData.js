@@ -51,7 +51,7 @@ export const DEMO = {
     { name: 'Clearview Dental Clinic', note: 'Reviewed on international clinic sites.' },
     { name: 'Maple Tree Dental', note: 'Listed in Bangkok dentistry roundups.' },
   ],
-  verdict: "Your clinic wasn't mentioned.",
+  verdict: "Your business wasn't mentioned.",
   verdictNote:
     'First audits often look like this. The three clinics above got named because ChatGPT could find them on sites it trusts. It says nothing about who does better work.',
   caption: 'An example answer. The clinic names are invented.',
