@@ -116,7 +116,7 @@ const schemaBreadcrumb = {
 const signals = [
   { icon: 'code', title: 'Crawl access', body: 'AI engines can only cite pages they can reach and read. Blocked crawlers and content that only loads through scripts can drop you out before the answer is written.' },
   { icon: 'globe', title: 'Entity clarity', body: 'An entity is what a machine understands your business to be. Your name, category, location and services need to match everywhere: your site, Google Business Profile, directories and social profiles. Mixed signals make a model less sure who you are.' },
-  { icon: 'users', title: 'Third-party corroboration', body: 'AI engines lean heavily on what other sites say about you, not only on what you say about yourself. In the AI answers we track, reviews, “best of” lists, directories, local press and forum threads come up as sources again and again. If competitors appear there and you don’t, the model names them.' },
+  { icon: 'users', title: 'Third-party corroboration', body: 'AI engines lean heavily on what other sites say about you, not only on what you say about yourself. In the AI answers we track, reviews, “best of” lists, directories, local press and forum threads come up as sources again and again. If competitors appear there and you don’t, the model names them.', extra: <>Locully is listed among the GEO agencies in Bangkok in <Ext href="https://www.getaiso.com/best-geo-agencies/bangkok">Aiso’s directory of AI search agencies</Ext>.</> },
   { icon: 'doc', title: 'Answer-ready pages', body: 'AI engines quote passages that answer a question directly. A page that says what you do, for whom, where and to what standard is easier to quote than a page of slogans.' },
 ];
 
@@ -309,7 +309,7 @@ export default function GeoPage() {
           />
           <div className="lb-g2">
             {signals.map((s) => (
-              <ServiceCard key={s.title} icon={s.icon} title={s.title}>{s.body}</ServiceCard>
+              <ServiceCard key={s.title} icon={s.icon} title={s.title}>{s.body}{s.extra && <> {s.extra}</>}</ServiceCard>
             ))}
           </div>
           <div className="lb-narrow-copy lbp-geo-after">

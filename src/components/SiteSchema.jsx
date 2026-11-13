@@ -32,6 +32,9 @@ export default function SiteSchema() {
   return (
     <Helmet>
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+      {/* Default share image; pages that set their own og:image (e.g. /founder) override it. */}
+      <meta property="og:image" content="https://www.locully.org/og-image.png" />
+      <meta name="twitter:card" content="summary_large_image" />
     </Helmet>
   );
 }
