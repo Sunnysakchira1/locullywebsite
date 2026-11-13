@@ -33,7 +33,7 @@ export default function BlogPostPage({ slug }) {
       url: 'https://www.locully.org',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://horizons-cdn.hostinger.com/ca6fff5d-5563-48f9-b39f-3faa84296ff9/68e793544c569f64d62f0f8841197574.png',
+        url: 'https://www.locully.org/locully-logo-square.png',
       },
     },
     description: post.metaDescription,
