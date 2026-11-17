@@ -19,7 +19,7 @@ const emptyForm = (extraFields) => ({
  * `extraFields` (optional): [{ name, label, placeholder, autoComplete }] adds
  * optional text inputs after Website; their values post with the same payload.
  */
-export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hint, extraFields = [], ctaLabel }) => {
+export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hint, extraFields = [], ctaLabel, children }) => {
   const { toast } = useToast();
   const t = useT();
   const f = t.form;
@@ -78,6 +78,7 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
 
   return (
     <form className="lb-lead" onSubmit={handleSubmit} action={FORMSPREE_ENDPOINT} method="POST">
+      {children}
       <label htmlFor={`${idPrefix}-name`}>{f.name}</label>
       <input id={`${idPrefix}-name`} name="name" type="text" autoComplete="name" value={formData.name}
         onChange={handleChange} placeholder={f.namePh} disabled={disabled} required />

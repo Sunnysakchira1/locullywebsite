@@ -1,0 +1,33 @@
+/* Client logo strip (SEO + GEO pages). Mirrors the homepage .lbh-logos marquee. */
+.lb-logos { padding: 8px 0 64px; background: var(--lb-ground); }
+.lb p.lb-logos-label { margin: 0 0 26px; text-align: center; font-size: 14.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lb-muted); padding: 0 16px; }
+.lb-marq { position: relative; overflow: hidden; }
+.lb-marq:focus-visible { outline: 3px solid var(--lb-accent); outline-offset: 2px; }
+.lb-marq::before, .lb-marq::after { content: ""; position: absolute; top: 0; bottom: 0; width: 160px; z-index: 2; pointer-events: none; }
+.lb-marq::before { left: 0; background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0)); }
+.lb-marq::after { right: 0; background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)); }
+.lb-marq-track { display: flex; align-items: center; gap: 22px; width: max-content; list-style: none; margin: 0; padding: 0; animation: lb-marq 48s linear infinite; }
+@keyframes lb-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.lb-marq:hover .lb-marq-track, .lb-marq:focus-within .lb-marq-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .lb-marq-track { animation: none; } }
+.lb-logo { flex: 0 0 auto; width: 178px; height: 89px; border: 1px solid var(--lb-rule); border-radius: 14px; overflow: hidden; background: #ffffff; }
+.lb-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+/* Hero form card (top right of the SEO + GEO heroes) */
+.lb-hero-form .lb-lead { max-width: none; box-shadow: 0 18px 44px rgba(20, 33, 61, 0.1); }
+.lb .lb-hero-form-t { margin: 0 0 6px; font-size: 22px; line-height: 1.25; font-weight: 700; color: var(--lb-ink); }
+.lb .lb-hero-form-d { margin: 0 0 18px; font-size: 14.5px; line-height: 1.5; color: var(--lb-muted); }
+
+@media (max-width: 760px) {
+  .lb-logos { padding-bottom: 40px; }
+  .lb p.lb-logos-label { font-size: 12px; margin-bottom: 18px; }
+  .lb-marq::before, .lb-marq::after { width: 44px; }
+  .lb-marq-track { gap: 14px; animation-duration: 34s; }
+  .lb-logo { width: 132px; height: 66px; border-radius: 12px; }
+}
+
+html[lang="th"] .lb p.lb-logos-label { letter-spacing: 0; text-transform: none; }
+/* When the hero form stacks under the text, the hero button right above it is redundant. */
+@media (max-width: 1020px) {
+  .lb-hero:has(.lb-hero-form) .lb-hero-text .lb-hero-cta { display: none; }
+}

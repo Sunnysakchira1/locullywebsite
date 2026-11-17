@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import {
-  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, Icon, Tick, ProofPanel, FAQ, List, Stage,
+  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, Icon, Tick, FAQ, List, Stage,
 } from '@/brand/components';
-import LeadForm from '@/brand/LeadForm';
-import { Article } from '@/brand/Illustrations';
+import LeadForm, { LeadFormCard } from '@/brand/LeadForm';
+import LogoStrip from '@/brand/LogoStrip';
 import { Hreflang } from '@/i18n';
 
 /*
@@ -228,7 +228,14 @@ export default function SeoPageTh() {
           eyebrow="รับทำ SEO · กรุงเทพฯ และประเทศไทย"
           title="บริษัทรับทำ SEO ในกรุงเทพฯ ที่วัดผลจากลูกค้าที่ติดต่อเข้ามา"
           lede="Locully คือบริษัทรับทำ SEO ในกรุงเทพฯ ประเทศไทย เราแก้เว็บไซต์ของคุณ เขียนหน้าที่ลูกค้าของคุณค้นหา และหาลิงก์ที่ช่วยให้ Google เชื่อถือคุณ ทุกเดือนเรารายงานจำนวนสายโทร ฟอร์ม และการจองที่มาจากการค้นหา พร้อมต้นทุนต่อราย"
-          visual={<Article />}
+          visual={(
+            <div className="lb-hero-form">
+              <LeadFormCard subject="New free check request (SEO page hero) — Locully [TH]" idPrefix="seo-hero">
+                <p className="lb-hero-form-t">ขอรับ AI Audit ฟรี</p>
+                <p className="lb-hero-form-d">เรานำคำถามจริงของลูกค้าคุณไปถาม ChatGPT, Perplexity และ Google AI แล้วแสดงให้เห็นว่าใครถูกกล่าวถึงแทนคุณ</p>
+              </LeadFormCard>
+            </div>
+          )}
         >
           <Cta note="ฟรี เราแสดงให้คุณเห็นว่าใครถูกกล่าวถึงแทนคุณใน ChatGPT, Perplexity และ Google AI และผลการตรวจเป็นของคุณ" />
           <div className="lb-callout" style={{ marginTop: 32 }}>
@@ -240,6 +247,8 @@ export default function SeoPageTh() {
             </p>
           </div>
         </PageHero>
+
+        <LogoStrip />
 
         {/* Services */}
         <Section alt>
@@ -297,16 +306,8 @@ export default function SeoPageTh() {
               ด้วยการติดตาม prompt การวางการอ้างอิง และงานด้าน entity
             </p>
           </div>
-          <ProofPanel
-            label="ผลลัพธ์ · คลินิกในกรุงเทพฯ · Google Search"
-            big="77 → 415"
-            sub="จำนวนคลิก organic จาก Google มายังเว็บไซต์ภาษาอังกฤษของคลินิกแห่งหนึ่งในกรุงเทพฯ เทียบช่วงเวลา 25 วันที่ตรงกันในเดือนมิถุนายน กรกฎาคม และสิงหาคม 2026 ข้อมูลจากไฟล์ส่งออก Search Console ของคลินิกเอง"
-            stats={[
-              { n: '32.1 → 16.5', l: 'อันดับเฉลี่ยบน Google ของเว็บไซต์เดียวกัน ในช่วงเวลาเดียวกัน' },
-            ]}
-          />
           <p className="lb-proof-note">
-            เราแสดงผลลัพธ์โดยไม่เปิดเผยชื่อลูกค้า ผลลัพธ์ขึ้นอยู่กับตลาด งบประมาณ และจุดเริ่มต้นของคุณ ไม่มีเอเจนซี่ใดสัญญาได้ว่าโมเดล AI
+            ผลลัพธ์ขึ้นอยู่กับตลาด งบประมาณ และจุดเริ่มต้นของคุณ ไม่มีเอเจนซี่ใดสัญญาได้ว่าโมเดล AI
             จะกล่าวถึงคุณ หรือ Google จะจัดให้คุณอยู่อันดับหนึ่ง
           </p>
         </Section>

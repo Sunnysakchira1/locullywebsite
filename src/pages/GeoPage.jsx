@@ -6,7 +6,8 @@ import {
   Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, ServiceCard, Icon,
   FAQ, List, StatRow,
 } from '@/brand/components';
-import LeadForm from '@/brand/LeadForm';
+import LeadForm, { LeadFormCard } from '@/brand/LeadForm';
+import LogoStrip from '@/brand/LogoStrip';
 import { Hreflang } from '@/i18n';
 import '@/brand/pages/geo.css';
 
@@ -253,16 +254,20 @@ export default function GeoPage() {
           title="GEO agency in Bangkok that gets you found in ChatGPT and Google AI"
           lede="Locully is a GEO agency in Bangkok, Thailand. Generative engine optimisation (GEO), also called AI SEO, is the work that makes your business easier for ChatGPT, Perplexity and Google AI Overviews to find, trust and cite."
           visual={(
-            <figure className="lbp-geo-shot">
-              <img src="/images/geo/ai-visibility-tracker.jpg" alt="Locully's AI visibility tracker: prompts won and lost each run, links in ChatGPT answers, and results by type of question" width="1280" height="1214" decoding="async" />
-              <figcaption>Our tracker, client view. Prompt text is blurred for confidentiality.</figcaption>
-            </figure>
+            <div className="lb-hero-form">
+              <LeadFormCard subject="New AI Visibility Check Request (GEO page hero) — Locully" idPrefix="geo-hero">
+                <p className="lb-hero-form-t">Get your free GEO audit</p>
+                <p className="lb-hero-form-d">We check what AI assistants say when your customers ask for a business like yours, and send you what we find.</p>
+              </LeadFormCard>
+            </div>
           )}
         >
           <p className="lb-body-lg lbp-geo-hero-line">We’ve done SEO since 2020. Now we do the same job inside AI answers.</p>
           <Cta note="Free. We check how AI answers questions about your business and send you what we find." />
           <p className="lb-note lbp-geo-updated">Updated November 2026</p>
         </PageHero>
+
+        <LogoStrip />
 
         {/* In short */}
         <Section tight narrow>

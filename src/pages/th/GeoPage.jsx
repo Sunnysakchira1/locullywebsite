@@ -6,7 +6,8 @@ import {
   Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, ServiceCard, Icon,
   FAQ, List, StatRow,
 } from '@/brand/components';
-import LeadForm from '@/brand/LeadForm';
+import LeadForm, { LeadFormCard } from '@/brand/LeadForm';
+import LogoStrip from '@/brand/LogoStrip';
 import { Hreflang } from '@/i18n';
 import '@/brand/pages/geo.css';
 
@@ -254,16 +255,20 @@ export default function GeoPageTh() {
           title="รับทำ GEO กรุงเทพฯ ให้ ChatGPT และ Google AI แนะนำธุรกิจของคุณ"
           lede="Locully คือเอเจนซี่ GEO ในกรุงเทพฯ ประเทศไทย Generative Engine Optimization (GEO) หรือที่บางคนเรียกว่า AI SEO คืองานที่ทำให้ ChatGPT, Perplexity และ Google AI Overviews ค้นเจอ เชื่อถือ และอ้างอิงธุรกิจของคุณได้ง่ายขึ้น"
           visual={(
-            <figure className="lbp-geo-shot">
-              <img src="/images/geo/ai-visibility-tracker.jpg" alt="ตัวติดตาม AI visibility ของ Locully แสดงคำถามที่ได้และเสียในแต่ละรอบ ลิงก์ในคำตอบของ ChatGPT และผลลัพธ์ตามประเภทคำถาม" width="1280" height="1214" decoding="async" />
-              <figcaption>ตัวติดตามผลของเรา ในมุมมองของลูกค้า ข้อความคำถามถูกเบลอเพื่อรักษาความลับ</figcaption>
-            </figure>
+            <div className="lb-hero-form">
+              <LeadFormCard subject="New AI Visibility Check Request (GEO page hero) — Locully [TH]" idPrefix="geo-hero">
+                <p className="lb-hero-form-t">ขอรับผลตรวจ GEO ฟรี</p>
+                <p className="lb-hero-form-d">เราตรวจว่าผู้ช่วย AI ตอบอย่างไรเมื่อลูกค้าของคุณถามหาธุรกิจแบบของคุณ แล้วส่งสิ่งที่พบให้คุณ</p>
+              </LeadFormCard>
+            </div>
           )}
         >
           <p className="lb-body-lg lbp-geo-hero-line">เราทำ SEO มาตั้งแต่ปี 2020 วันนี้เราทำงานเดียวกันในคำตอบของ AI</p>
           <Cta note="ฟรี เราตรวจว่า AI ตอบคำถามเกี่ยวกับธุรกิจของคุณอย่างไร แล้วส่งสิ่งที่พบให้คุณ" />
           <p className="lb-note lbp-geo-updated">อัปเดตเดือนพฤศจิกายน 2026</p>
         </PageHero>
+
+        <LogoStrip />
 
         {/* In short */}
         <Section tight narrow>

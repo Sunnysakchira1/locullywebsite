@@ -7,6 +7,7 @@ import {
 import LeadForm from '@/brand/LeadForm';
 import StepsPanel from '@/brand/StepsPanel';
 import AiPromptDemo from '@/brand/AiPromptDemo';
+import { CLIENT_LOGOS } from '@/data/clientLogos';
 import { Hreflang } from '@/i18n';
 import { DEMO } from '@/data/th/auditData';
 import '@/brand/pages/home.css';
@@ -21,16 +22,7 @@ const DESCRIPTION = 'Locully คือบริษัทรับทำ SEO แ�
 const ORG_ID = 'https://www.locully.org/#organization';
 
 
-const logos = [
-  { src: '/images/home/logos/gfc.jpg', alt: 'Genesis Fertility Center' },
-  { src: '/images/home/logos/cosmo.jpg', alt: 'The Cosmo Clinic' },
-  { src: '/images/home/logos/achyut.jpg', alt: 'Achyut Bhavan' },
-  { src: '/images/home/logos/valuation.jpg', alt: 'Valuation Master Class' },
-  { src: '/images/home/logos/investors.jpg', alt: 'Investors Clinic' },
-  { src: '/images/home/logos/akira.jpg', alt: 'Akira Pattaya' },
-  { src: '/images/home/logos/eataly.jpg', alt: 'Eataly Soi 8' },
-  { src: '/images/home/logos/amorretto.jpg', alt: 'Amorretto Cafe & Bistro' },
-];
+const logos = CLIENT_LOGOS;
 
 const reviews = [
   {

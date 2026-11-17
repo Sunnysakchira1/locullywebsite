@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import {
-  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, Icon, Tick, ProofPanel, FAQ, List, Stage,
+  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, Icon, Tick, FAQ, List, Stage,
 } from '@/brand/components';
-import LeadForm from '@/brand/LeadForm';
-import { Article } from '@/brand/Illustrations';
+import LeadForm, { LeadFormCard } from '@/brand/LeadForm';
+import LogoStrip from '@/brand/LogoStrip';
 import { Hreflang } from '@/i18n';
 
 /*
@@ -226,7 +226,14 @@ export default function SeoPage() {
           eyebrow="SEO services · Bangkok and Thailand"
           title="An SEO agency in Bangkok, measured on enquiries."
           lede="Locully is an SEO agency in Bangkok, Thailand. We fix your website, write the pages your customers search for, and earn the links that help Google trust you. Every month we report the calls, forms and bookings your search traffic brought in, and what each one cost."
-          visual={<Article />}
+          visual={(
+            <div className="lb-hero-form">
+              <LeadFormCard subject="New free check request (SEO page hero) — Locully" idPrefix="seo-hero">
+                <p className="lb-hero-form-t">Get your free AI audit</p>
+                <p className="lb-hero-form-d">We run your customers' real questions through ChatGPT, Perplexity and Google AI, and show you who gets named instead of you.</p>
+              </LeadFormCard>
+            </div>
+          )}
         >
           <Cta note="Free. We show you who gets named instead of you in ChatGPT, Perplexity and Google AI, and you keep the findings." />
           <div className="lb-callout" style={{ marginTop: 32 }}>
@@ -238,6 +245,8 @@ export default function SeoPage() {
             </p>
           </div>
         </PageHero>
+
+        <LogoStrip />
 
         {/* Services */}
         <Section alt>
@@ -295,16 +304,8 @@ export default function SeoPage() {
               citation placements and entity work.
             </p>
           </div>
-          <ProofPanel
-            label="Result · Bangkok clinic · Google search"
-            big="77 → 415"
-            sub="Organic Google clicks to a Bangkok clinic's English-language site, on matched 25-day windows in June, July and August 2026. From the clinic's own Search Console export."
-            stats={[
-              { n: '32.1 → 16.5', l: 'Average Google position for the same site, same windows' },
-            ]}
-          />
           <p className="lb-proof-note">
-            Results are shown without client names. Results depend on your market, budget and starting position. No agency can promise a model
+            Results depend on your market, budget and starting position. No agency can promise a model
             will name you, or that Google will rank you first.
           </p>
         </Section>
