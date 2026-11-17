@@ -1,104 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
     <loc>https://www.locully.org/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.locully.org/geo/</loc>
-    <lastmod>2026-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/geo/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/geo/"/>
+    <lastmod>2026-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.locully.org/seo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/seo/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/seo/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.locully.org/industries/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/performance-marketing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/performance-marketing/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/performance-marketing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/performance-marketing/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/lead-gen-partner</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/lead-gen-partner"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/lead-gen-partner"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/lead-gen-partner"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.locully.org/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/about"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/about"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.locully.org/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/contact/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.locully.org/rachaphon-sakchiraphong/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/rachaphon-sakchiraphong/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/rachaphon-sakchiraphong/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/rachaphon-sakchiraphong/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.locully.org/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/blog/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/blog/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/audit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/audit/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/audit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/audit/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/industries/physiotherapy-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/physiotherapy-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/physiotherapy-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/physiotherapy-clinics/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/industries/dental-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/dental-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/dental-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/dental-clinics/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/industries/wellness-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/wellness-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/wellness-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/wellness-clinics/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/industries/fertility-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/fertility-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/fertility-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/fertility-clinics/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/industries/beauty-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/beauty-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/beauty-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/beauty-clinics/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.locully.org/industries/property/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/property/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/property/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/property/"/>
     <lastmod>2026-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -190,6 +241,159 @@
   <url>
     <loc>https://www.locully.org/blog/how-many-people-use-chatgpt/</loc>
     <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/geo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/geo/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/geo/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/seo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/seo/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/seo/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/industries/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/performance-marketing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/performance-marketing/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/performance-marketing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/performance-marketing/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/lead-gen-partner</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/lead-gen-partner"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/lead-gen-partner"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/lead-gen-partner"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/about"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/about"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/contact/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/rachaphon-sakchiraphong/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/rachaphon-sakchiraphong/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/rachaphon-sakchiraphong/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/rachaphon-sakchiraphong/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/blog/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/blog/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/audit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/audit/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/audit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/audit/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/industries/physiotherapy-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/physiotherapy-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/physiotherapy-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/physiotherapy-clinics/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/industries/dental-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/dental-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/dental-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/dental-clinics/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/industries/wellness-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/wellness-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/wellness-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/wellness-clinics/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/industries/fertility-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/fertility-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/fertility-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/fertility-clinics/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/industries/beauty-clinics/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/beauty-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/beauty-clinics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/beauty-clinics/"/>
+    <lastmod>2026-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.locully.org/th/industries/property/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.locully.org/industries/property/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.locully.org/th/industries/property/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.locully.org/industries/property/"/>
+    <lastmod>2026-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

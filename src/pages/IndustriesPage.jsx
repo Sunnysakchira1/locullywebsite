@@ -8,6 +8,7 @@ import {
   Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Icon, ProofPanel, ResultsNote,
 } from '@/brand/components';
 import { AskAi } from '@/brand/Illustrations';
+import { Hreflang } from '@/i18n';
 import '@/brand/pages/clinic.css';
 
 const SITE = 'https://www.locully.org';
@@ -57,6 +58,7 @@ export default function IndustriesPage() {
         <script type="application/ld+json">{JSON.stringify(schemaCollection)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaCrumbs)}</script>
       </Helmet>
+      <Hreflang path="/industries/" />
 
       <Page className="lbp-clinic lbp-ind">
         <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'Industries' }]} />

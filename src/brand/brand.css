@@ -566,3 +566,23 @@ body { font-family: var(--lb-font); }
 }
 
 .bfoot-label a { color: inherit; text-decoration: none; }
+
+/* ── Language switcher + Thai typography ─────────────────────────── */
+.bnav-links a.bnav-lang, .bnav-mobile a.bnav-lang { display: inline-flex; align-items: center; justify-content: center; padding: 6px 12px; border: 1px solid var(--lb-rule-strong); border-radius: 999px; font-size: 13.5px; font-weight: 600; color: var(--lb-ink); line-height: 1.2; }
+.bnav-links a.bnav-lang:hover { border-color: var(--lb-accent); color: var(--lb-accent-deep); }
+.bnav-mobile a.bnav-lang { align-self: flex-start; margin: 14px 0 4px; padding: 9px 16px; font-size: 15px; }
+/* Thai: Google Sans has no Thai glyphs, so Thai text falls through to Noto Sans Thai.
+   Thai has tall vowel/tone marks: no negative tracking, looser leading on headings. */
+:root { --lb-font: "Google Sans", "Noto Sans Thai", system-ui, -apple-system, sans-serif; }
+html[lang="th"] .lb h1, html[lang="th"] .lb h2, html[lang="th"] .lb h3, html[lang="th"] .lb h4,
+html[lang="th"] .lb-h1, html[lang="th"] .lb-h2, html[lang="th"] .lb-h3, html[lang="th"] .lb-h3-card, html[lang="th"] .lb-h3-stage,
+html[lang="th"] .lb-qa-q { letter-spacing: 0; line-height: 1.4; }
+html[lang="th"] .lb-h1 { font-size: 50px; line-height: 1.3; }
+html[lang="th"] .lb-h2 { font-size: 42px; line-height: 1.35; }
+html[lang="th"] .lb-eyebrow, html[lang="th"] .lb-label, html[lang="th"] .bfoot-label { letter-spacing: 0.02em; }
+html[lang="th"] .lb p, html[lang="th"] .lb li { line-height: 1.8; word-break: normal; overflow-wrap: anywhere; }
+html[lang="th"] .lb-btn, html[lang="th"] .lb-btn-o { line-height: 1.3; }
+@media (max-width: 760px) {
+  html[lang="th"] .lb-h1 { font-size: 32px; line-height: 1.35; }
+  html[lang="th"] .lb-h2 { font-size: 28px; line-height: 1.4; }
+}

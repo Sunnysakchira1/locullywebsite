@@ -8,6 +8,7 @@ import {
   Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Figure, List,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
+import { Hreflang } from '@/i18n';
 import '@/brand/pages/about.css';
 
 const SITE = 'https://www.locully.org';
@@ -100,6 +101,7 @@ const FounderPage = () => {
         <meta property="profile:last_name" content="Sakchiraphong" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
+      <Hreflang path={FOUNDER_PATH} />
 
       <Page className="lbp-founder">
         <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'About', to: '/about' }, { label: 'Rachaphon Sakchiraphong' }]} />

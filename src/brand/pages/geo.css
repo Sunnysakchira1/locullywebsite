@@ -55,3 +55,69 @@
   .lb-table.lb-table tbody th { width: 26%; font-size: 13.5px; padding: 12px 10px; }
   .lbp-geo-after { margin-top: 26px; }
 }
+
+/* ── Broken-up copy: lists and sub-heads inside narrow copy and the callout ── */
+.lbp-geo-copy .lb-h3 { margin: 30px 0 12px; }
+.lbp-geo-copy .lb-list { margin: 0 0 20px; }
+.lbp-geo-copy .lb-list:last-child { margin-bottom: 0; }
+.lbp-geo-copy .lb-list + p { margin-top: 4px; }
+.lbp-geo-tldr .lb-list { margin: 12px 0 14px; }
+.lbp-geo-tldr .lb-list li { font-size: 17px; margin-bottom: 8px; color: var(--lb-ink); }
+.lbp-geo-stats { max-width: 960px; margin: 0 auto; }
+.lbp-geo-stats .lb-stat-n { white-space: nowrap; }
+
+/* ── Process: four-step timeline ── */
+.lbp-geo-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; position: relative; counter-reset: none; }
+.lbp-geo-steps::before { content: ""; position: absolute; left: 22px; right: 22px; top: 22px; height: 2px; background: linear-gradient(90deg, var(--lb-accent) 0%, var(--lb-tint-border) 100%); }
+.lbp-geo-step { position: relative; display: flex; flex-direction: column; min-width: 0; }
+.lbp-geo-step-dot { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 999px; background: var(--lb-ink); color: #fff; font-size: 15px; font-weight: 700; letter-spacing: 0.02em; box-shadow: 0 0 0 6px var(--lb-ground-alt); }
+.lbp-geo-step:first-child .lbp-geo-step-dot { background: var(--lb-accent-deep); }
+.lbp-geo-step-card { flex: 1; display: flex; flex-direction: column; margin-top: 22px; padding: 24px 22px; background: var(--lb-card); border: 1px solid var(--lb-rule); border-radius: var(--lb-radius-lg); }
+.lbp-geo-step-when { align-self: flex-start; padding: 5px 11px; border-radius: 999px; background: var(--lb-tint); border: 1px solid var(--lb-tint-border); color: var(--lb-accent-deep); font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.lbp-geo-step-card .lb-h3 { margin: 14px 0 14px; font-size: 20px; }
+.lbp-geo-step-card .lb-list li { font-size: 15.5px; padding-left: 24px; margin-bottom: 9px; }
+.lbp-geo-step-card .lb-list li::before { left: 2px; top: 8px; width: 7px; height: 7px; }
+.lb .lbp-geo-step-out { margin: auto 0 0; padding-top: 16px; border-top: 1px solid var(--lb-rule); font-size: 15px; line-height: 1.5; font-weight: 600; color: var(--lb-ink); }
+.lbp-geo-step-card .lb-list { margin-bottom: 18px; }
+
+/* ── Measurement: sample run card + six measures ── */
+.lbp-geo-m { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.lbp-geo-run { margin: 0; padding: 28px 26px; border-radius: var(--lb-radius-card); background: var(--lb-ink); color: var(--lb-on-dark-body); position: sticky; top: 96px; }
+.lbp-geo-run-lab { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lb-accent-on-dark); }
+.lbp-geo-run-q { margin: 14px 0 22px; padding: 16px 18px; border-radius: 14px; background: var(--lb-on-dark-rule); color: #fff; font-size: 17px; line-height: 1.45; font-weight: 500; }
+.lbp-geo-run-list { list-style: none; margin: 0; padding: 0; }
+.lbp-geo-run-list li { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid var(--lb-on-dark-rule); }
+.lb .lbp-geo-run-list strong { display: block; color: #fff; font-size: 15.5px; font-weight: 600; }
+.lb .lbp-geo-run-list span { display: block; margin-top: 2px; font-size: 13.5px; line-height: 1.4; color: var(--lb-on-dark-muted); }
+.lbp-geo-run-list em { flex: 0 0 auto; min-width: 46px; padding: 5px 12px; border-radius: 999px; font-style: normal; font-size: 13.5px; font-weight: 700; text-align: center; }
+.lbp-geo-run-list em.yes { background: rgba(77, 180, 125, 0.18); color: #8fdcb0; }
+.lbp-geo-run-list em.no { background: rgba(224, 122, 122, 0.18); color: #f0a3a3; }
+.lbp-geo-run-list em.num { background: var(--lb-on-dark-fill); color: #fff; }
+.lbp-geo-run figcaption { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--lb-on-dark-rule); font-size: 13px; line-height: 1.45; color: var(--lb-on-dark-muted); }
+.lbp-geo-m-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.lbp-geo-m-grid li { display: flex; gap: 16px; align-items: flex-start; padding: 22px 20px; background: var(--lb-card); border: 1px solid var(--lb-rule); border-radius: var(--lb-radius-lg); }
+.lbp-geo-m-ic { flex: 0 0 auto; width: 38px; height: 38px; }
+.lbp-geo-m-grid .lb-h3 { margin: 0 0 6px; font-size: 18px; }
+.lb .lbp-geo-m-grid p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--lb-body); }
+
+@media (max-width: 1020px) {
+  .lbp-geo-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
+  .lbp-geo-steps::before { display: none; }
+  .lbp-geo-m { grid-template-columns: minmax(0, 1fr); }
+  .lbp-geo-run { position: static; }
+}
+@media (max-width: 760px) {
+  .lbp-geo-steps { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+  .lbp-geo-steps::before { display: block; left: 22px; right: auto; top: 22px; bottom: 22px; width: 2px; height: auto; background: linear-gradient(180deg, var(--lb-accent) 0%, var(--lb-tint-border) 100%); }
+  .lbp-geo-step { flex-direction: row; gap: 16px; padding-bottom: 20px; }
+  .lbp-geo-step:last-child { padding-bottom: 0; }
+  .lbp-geo-step-dot { flex: 0 0 auto; }
+  .lbp-geo-step-card { margin-top: 0; padding: 20px 18px; }
+  .lbp-geo-m-grid { grid-template-columns: minmax(0, 1fr); }
+  .lbp-geo-run { padding: 22px 20px; }
+}
+
+/* Hero: tracker screenshot (client view, prompt text blurred) */
+.lbp-geo-shot { margin: 0; }
+.lbp-geo-shot img { display: block; width: 100%; height: auto; border-radius: var(--lb-radius-fig); border: 1px solid rgba(20, 33, 61, 0.1); box-shadow: var(--lb-shadow-video); background: #f4f4f7; }
+.lbp-geo-shot figcaption { margin-top: 12px; font-size: 13px; line-height: 1.45; color: var(--lb-muted); text-align: center; }

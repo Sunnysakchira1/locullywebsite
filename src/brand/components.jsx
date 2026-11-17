@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useT, useLp, isThPath } from '@/i18n';
 
 /* Brand v2 building blocks. Styles live in src/brand/brand.css (scoped under .lb). */
 
@@ -15,7 +16,7 @@ export const goToLeadForm = (e) => {
   if (target) {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } else {
-    window.location.href = '/audit/#book';
+    window.location.href = isThPath(window.location.pathname) ? '/th/audit/#book' : '/audit/#book';
   }
 };
 
@@ -33,6 +34,7 @@ export const Page = ({ children, className }) => (
  * `cta` makes it the site-wide lead-form CTA (label + #book anchor).
  */
 export const Button = ({ variant = 'primary', size, block, to, href, cta, children, className, onClick, ...rest }) => {
+  const t = useT();
   const cls = cx(
     variant === 'outline' ? 'lb-btn-o' : variant === 'text' ? 'lb-tlink' : 'lb-btn',
     size === 'sm' && 'sm',
@@ -41,7 +43,7 @@ export const Button = ({ variant = 'primary', size, block, to, href, cta, childr
   );
   const content = (
     <>
-      {cta && !children ? CTA_LABEL : children}
+      {cta && !children ? t.cta : children}
       {variant === 'text' && <span aria-hidden="true">→</span>}
     </>
   );
@@ -122,11 +124,12 @@ export const PageHero = ({ eyebrow, meta, title, lede, children, visual, aside, 
 export const useGoToAudit = (before) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const l = useLp();
   return (e) => {
     if (before) before();
-    if (pathname.startsWith('/audit')) { goToLeadForm(e); return; }
+    if (pathname.startsWith('/audit') || pathname.startsWith('/th/audit')) { goToLeadForm(e); return; }
     e.preventDefault();
-    navigate('/audit/');
+    navigate(l('/audit/'));
   };
 };
 
@@ -135,6 +138,8 @@ export const useGoToAudit = (before) => {
 export const StickyCta = () => {
   const [show, setShow] = React.useState(false);
   const goToAudit = useGoToAudit();
+  const t = useT();
+  const l = useLp();
   React.useEffect(() => {
     const onScroll = () => setShow(window.scrollY > window.innerHeight * 0.8);
     onScroll();
@@ -142,9 +147,9 @@ export const StickyCta = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return (
-    <div className={cx('lb-sticky', show && 'show')} role="region" aria-label="Quick contact" aria-hidden={!show}>
-      <a href="/audit/" className="lb-btn" onClick={goToAudit} tabIndex={show ? 0 : -1}>Get your AI audit</a>
-      <a href="tel:+66626959444" className="lb-sticky-call" aria-label="Call Locully on +66 62 695 9444" tabIndex={show ? 0 : -1}>
+    <div className={cx('lb-sticky', show && 'show')} role="region" aria-label={t.sticky.region} aria-hidden={!show}>
+      <a href={l('/audit/')} className="lb-btn" onClick={goToAudit} tabIndex={show ? 0 : -1}>{t.cta}</a>
+      <a href="tel:+66626959444" className="lb-sticky-call" aria-label={t.sticky.call} tabIndex={show ? 0 : -1}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" stroke="#14213d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </a>
     </div>

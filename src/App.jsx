@@ -24,6 +24,21 @@ import SiteSchema from '@/components/SiteSchema';
 import WhatsAppPopup from '@/components/WhatsAppPopup';
 import LeadMagnetPopup from '@/components/LeadMagnetPopup';
 import { StickyCta } from '@/brand/components';
+import { HtmlLang } from '@/i18n';
+// Thai (/th/) pages. Every path here must also be in src/i18n/th-paths.js.
+import HomePageTh from '@/pages/th/HomePage';
+import GeoPageTh from '@/pages/th/GeoPage';
+import SeoPageTh from '@/pages/th/SeoPage';
+import PerformanceMarketingPageTh from '@/pages/th/PerformanceMarketingPage';
+import AiVisibilityAuditPageTh from '@/pages/th/AiVisibilityAuditPage';
+import IndustriesPageTh from '@/pages/th/IndustriesPage';
+import IndustryPageTh from '@/pages/th/IndustryPage';
+import AboutPageTh from '@/pages/th/AboutPage';
+import FounderPageTh from '@/pages/th/FounderPage';
+import ContactPageTh from '@/pages/th/ContactPage';
+import LeadGenPartnerPageTh from '@/pages/th/LeadGenPartnerPage';
+import PrivacyPolicyPageTh from '@/pages/th/PrivacyPolicyPage';
+import BlogIndexPageTh from '@/pages/th/BlogIndexPage';
 
 function App() {
   useEffect(() => {
@@ -34,6 +49,7 @@ function App() {
   return (
     <Router>
       <SiteSchema />
+      <HtmlLang />
       <ScrollToTop />
       <WhatsAppPopup />
       <LeadMagnetPopup />
@@ -84,6 +100,34 @@ function App() {
           <Route path="/performance-marketing/" element={<PerformanceMarketingPage />} />
           <Route path="/audit" element={<Navigate to="/audit/" replace />} />
           <Route path="/audit/" element={<AiVisibilityAuditPage />} />
+          {/* Thai site (/th/). Blog posts are English-only for now. */}
+          <Route path="/th" element={<Navigate to="/th/" replace />} />
+          <Route path="/th/" element={<HomePageTh />} />
+          <Route path="/th/geo" element={<Navigate to="/th/geo/" replace />} />
+          <Route path="/th/geo/" element={<GeoPageTh />} />
+          <Route path="/th/seo" element={<Navigate to="/th/seo/" replace />} />
+          <Route path="/th/seo/" element={<SeoPageTh />} />
+          <Route path="/th/performance-marketing" element={<Navigate to="/th/performance-marketing/" replace />} />
+          <Route path="/th/performance-marketing/" element={<PerformanceMarketingPageTh />} />
+          <Route path="/th/audit" element={<Navigate to="/th/audit/" replace />} />
+          <Route path="/th/audit/" element={<AiVisibilityAuditPageTh />} />
+          <Route path="/th/industries" element={<Navigate to="/th/industries/" replace />} />
+          <Route path="/th/industries/" element={<IndustriesPageTh />} />
+          {industries.map((i) => (
+            <Route key={`th-${i.slug}`} path={`/th/industries/${i.slug}/`} element={<IndustryPageTh slug={i.slug} />} />
+          ))}
+          {industries.map((i) => (
+            <Route key={`th-${i.slug}-noslash`} path={`/th/industries/${i.slug}`} element={<Navigate to={`/th/industries/${i.slug}/`} replace />} />
+          ))}
+          <Route path="/th/about" element={<AboutPageTh />} />
+          <Route path="/th/rachaphon-sakchiraphong" element={<Navigate to="/th/rachaphon-sakchiraphong/" replace />} />
+          <Route path="/th/rachaphon-sakchiraphong/" element={<FounderPageTh />} />
+          <Route path="/th/contact" element={<Navigate to="/th/contact/" replace />} />
+          <Route path="/th/contact/" element={<ContactPageTh />} />
+          <Route path="/th/lead-gen-partner" element={<LeadGenPartnerPageTh />} />
+          <Route path="/th/privacy-policy" element={<PrivacyPolicyPageTh />} />
+          <Route path="/th/blog" element={<Navigate to="/th/blog/" replace />} />
+          <Route path="/th/blog/" element={<BlogIndexPageTh />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />

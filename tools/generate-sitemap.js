@@ -18,16 +18,20 @@
 
 import fs from 'fs';
 import path from 'path';
+import { TH_PATHS, TH_NOINDEX, thPath } from '../src/i18n/th-paths.js';
 
 const SITE = 'https://www.locully.org';
 
 // Last real change to the static + industry pages (brand v2 relaunch, Sept 2026).
 const SITE_LASTMOD = '2026-09';
 
+// Thai (/th/) pages first published.
+const TH_LASTMOD = '2026-11';
+
 // path, priority, changefreq. URLs must match App.jsx routes exactly.
 const STATIC_PAGES = [
   { path: '/',                     priority: '1.0', changefreq: 'weekly'  },
-  { path: '/geo/',                 priority: '0.9', changefreq: 'monthly' },
+  { path: '/geo/',                 priority: '0.9', changefreq: 'monthly', lastmod: '2026-11' },
   { path: '/seo/',                 priority: '0.9', changefreq: 'monthly' },
   { path: '/industries/',          priority: '0.8', changefreq: 'monthly' },
   { path: '/performance-marketing/', priority: '0.8', changefreq: 'monthly' },
@@ -78,10 +82,24 @@ function readData(file, fields) {
   });
 }
 
-function urlEntry({ path: p, priority, changefreq, lastmod }) {
+// EN paths with an indexable Thai twin at /th + path (see src/i18n/th-paths.js).
+const HAS_TH = new Set(TH_PATHS.filter((p) => !TH_NOINDEX.includes(p)));
+
+// hreflang alternates for a page pair, keyed by the ENGLISH path. Same set on both URLs (reciprocal).
+function alternates(enPath) {
+  if (!HAS_TH.has(enPath)) return [];
+  return [
+    `    <xhtml:link rel="alternate" hreflang="en" href="${SITE}${enPath}"/>`,
+    `    <xhtml:link rel="alternate" hreflang="th" href="${SITE}${thPath(enPath)}"/>`,
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${enPath}"/>`,
+  ];
+}
+
+function urlEntry({ path: p, enPath, priority, changefreq, lastmod }) {
   return [
     '  <url>',
     `    <loc>${SITE}${p}</loc>`,
+    ...alternates(enPath || p),
     lastmod ? `    <lastmod>${lastmod}</lastmod>` : null,
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority}</priority>`,
@@ -104,11 +122,15 @@ function main() {
       lastmod: p.updatedDate || p.publishDate,
     }));
 
-  const staticPages = STATIC_PAGES.map(p => ({ ...p, lastmod: SITE_LASTMOD }));
-  const all = [...staticPages, ...industryPages, ...posts];
+  const staticPages = STATIC_PAGES.map(p => ({ lastmod: SITE_LASTMOD, ...p }));
+  const en = [...staticPages, ...industryPages, ...posts];
+  // Thai twins: same priority/changefreq, lastmod = the month the Thai site launched.
+  const th = en.filter((p) => HAS_TH.has(p.path))
+    .map((p) => ({ ...p, enPath: p.path, path: thPath(p.path), lastmod: TH_LASTMOD }));
+  const all = [...en, ...th];
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     '',
     all.map(urlEntry).join('\n'),
     '',
@@ -119,7 +141,7 @@ function main() {
   const outPath = path.join(cwd, 'public', 'sitemap.xml');
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, xml, 'utf8');
-  console.log(`✓ sitemap.xml: ${STATIC_PAGES.length} static + ${industryPages.length} industry pages + ${posts.length} posts = ${all.length} URLs`);
+  console.log(`✓ sitemap.xml: ${STATIC_PAGES.length} static + ${industryPages.length} industry pages + ${posts.length} posts + ${th.length} Thai = ${all.length} URLs`);
 }
 
 const isMainModule = import.meta.url === `file://${process.argv[1]}`;

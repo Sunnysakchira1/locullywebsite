@@ -7,6 +7,7 @@ import {
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
 import AskAiInput from '@/brand/AskAiInput';
+import { Hreflang } from '@/i18n';
 import {
   URL, META, HERO, DEMO, FINDOUT, REPORT, STEPS, EXTERNAL, COMPARE, FAQS, CLOSING, RELATED,
 } from '@/data/auditData';
@@ -160,6 +161,7 @@ export default function AiVisibilityAuditPage() {
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
       </Helmet>
+      <Hreflang path="/audit/" />
 
       <Page className="lb-audit">
         <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'GEO', to: '/geo/' }, { label: 'GEO audit' }]} />

@@ -7,6 +7,7 @@ import {
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
 import { Article } from '@/brand/Illustrations';
+import { Hreflang } from '@/i18n';
 
 /*
  * /seo/ — Locully's SEO service page. Owns the broad commercial SEO cluster
@@ -215,6 +216,7 @@ export default function SeoPage() {
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
       </Helmet>
+      <Hreflang path="/seo/" />
 
       <Page className="lbp-seo">
         <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'SEO' }]} />

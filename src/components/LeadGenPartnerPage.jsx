@@ -9,6 +9,7 @@ import {
   Page, PageHero, Section, SectionHeader, Button, Figure, StatRow,
 } from '@/brand/components';
 import { Expo } from '@/brand/Illustrations';
+import { Hreflang } from '@/i18n';
 import '@/brand/pages/about.css';
 
 const LeadGenPartnerPage = () => {
@@ -49,6 +50,7 @@ const LeadGenPartnerPage = () => {
         <meta property="og:title" content="Your Local Partner for Fairs & Expos in Thailand | Locully" />
         <meta property="og:description" content="Exhibiting at a fair or expo in Thailand? Locully is your on-the-ground marketing team — lead capture, local ads, and follow-up that fills your pipeline." />
       </Helmet>
+      <Hreflang path="/lead-gen-partner" />
 
       <Page className="lbp-lgp">
         {/* Hero */}

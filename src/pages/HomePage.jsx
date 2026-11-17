@@ -7,6 +7,7 @@ import {
 import LeadForm from '@/brand/LeadForm';
 import StepsPanel from '@/brand/StepsPanel';
 import AiPromptDemo from '@/brand/AiPromptDemo';
+import { Hreflang } from '@/i18n';
 import { DEMO } from '@/data/auditData';
 import '@/brand/pages/home.css';
 
@@ -189,6 +190,7 @@ export default function HomePage() {
         <script type="application/ld+json">{JSON.stringify(schemaWebsite)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
       </Helmet>
+      <Hreflang path="/" />
 
       <Page className="lbh-page">
         {/* 1 · Above the fold: text + CTA left, vertical VSL right */}

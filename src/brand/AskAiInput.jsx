@@ -1,5 +1,6 @@
 import React, { useId, useState } from 'react';
-import { CTA_LABEL, goToLeadForm } from '@/brand/components';
+import { goToLeadForm } from '@/brand/components';
+import { useT } from '@/i18n';
 import { PREFILL_EVENT } from '@/brand/LeadForm';
 import { logEvent } from '@/lib/analytics';
 import './prompt.css';
@@ -9,6 +10,7 @@ import './prompt.css';
 export default function AskAiInput({ label, placeholder, field = 'question', note, className }) {
   const [value, setValue] = useState('');
   const id = useId();
+  const t = useT();
 
   const submit = (e) => {
     e.preventDefault();
@@ -34,7 +36,7 @@ export default function AskAiInput({ label, placeholder, field = 'question', not
           enterKeyHint="go"
           maxLength={200}
         />
-        <button type="submit" className="lb-btn sm">{CTA_LABEL}</button>
+        <button type="submit" className="lb-btn sm">{t.cta}</button>
       </div>
       {note && <p className="lb-cta-note">{note}</p>}
     </form>

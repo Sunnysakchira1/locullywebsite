@@ -6,6 +6,7 @@ import {
   Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Icon,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
+import { Hreflang } from '@/i18n';
 import '@/brand/pages/contact.css';
 
 const URL = 'https://www.locully.org/contact/';
@@ -133,6 +134,7 @@ const ContactPage = () => (
       <meta property="og:description" content="Contact Locully, an SEO and GEO agency in Bangkok, Thailand. Call, WhatsApp or send the form. We usually reply within one working day." />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
+    <Hreflang path="/contact/" />
 
     <Page className="lbp-contact">
       <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'Contact' }]} />

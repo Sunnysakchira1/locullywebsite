@@ -8,6 +8,7 @@ import {
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
 import { Team } from '@/brand/Illustrations';
+import { Hreflang } from '@/i18n';
 import '@/brand/pages/about.css';
 
 const SITE = 'https://www.locully.org';
@@ -156,6 +157,7 @@ const AboutPage = () => {
         <meta property="og:url" content={URL} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
+      <Hreflang path="/about" />
 
       <Page className="lbp-about">
         <PageHero

@@ -3,22 +3,22 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import {
-  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, ServiceCard, ProofPanel,
-  ResultsNote, FAQ, List, Stage,
+  Page, Breadcrumb, PageHero, Section, SectionHeader, Button, Cta, ServiceCard, Icon,
+  FAQ, List, StatRow,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
-import { AskAi } from '@/brand/Illustrations';
+import { Hreflang } from '@/i18n';
 import '@/brand/pages/geo.css';
 
 /*
- * /geo/ — Locully's single commercial page for GEO / AI SEO / AI search optimisation.
+ * /geo/ — Locully's single commercial page for GEO (AI SEO / AI search optimisation kept as secondary terms).
  * Absorbs /ai-search-visibility and /ai-optimization/ (301'd here in vercel.json).
  * Copy source: homepage-redesign-2026-09/geo-page/final-copy.md (claims-guarded, QA: SHIP).
  */
 
 const URL = 'https://www.locully.org/geo/';
-const TITLE = 'AI SEO & GEO Agency in Bangkok, Thailand | Locully';
-const DESCRIPTION = 'Locully is an AI SEO and GEO agency in Bangkok, Thailand. We helps ChatGPT, Perplexity and Google AI Overviews find, trust and cite your business.';
+const TITLE = 'GEO Agency in Bangkok, Thailand (AI SEO) | Locully';
+const DESCRIPTION = 'Locully is a GEO agency in Bangkok, Thailand. We help ChatGPT, Perplexity and Google AI Overviews find, trust and cite your business. Also known as AI SEO.';
 
 const Ext = ({ href, children }) => (
   <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
@@ -30,8 +30,8 @@ const GOOGLE_AI_FEATURES = 'https://developers.google.com/search/docs/appearance
 /* FAQ: `text` feeds FAQPage schema and must match what renders. `a` is the rendered answer. */
 const faqs = [
   {
-    q: 'What is an AI SEO agency?',
-    text: 'An AI SEO agency helps a business get found and recommended inside AI answers from ChatGPT, Perplexity, Gemini and Google AI Overviews. It works on crawl access, entity consistency, third-party mentions and answer-ready pages. Locully is an AI SEO agency based in Bangkok, Thailand.',
+    q: 'What is a GEO agency?',
+    text: 'A GEO agency helps a business get found and recommended inside AI answers from ChatGPT, Perplexity, Gemini and Google AI Overviews. It works on crawl access, entity consistency, third-party mentions and answer-ready pages. Locully is a GEO agency based in Bangkok, Thailand.',
   },
   {
     q: 'Is GEO the same as AI SEO, AEO or AI search optimisation?',
@@ -81,7 +81,7 @@ const schemaService = {
   '@id': `${URL}#service`,
   name: 'Generative engine optimisation (GEO)',
   alternateName: ['AI SEO', 'AI search optimisation', 'Answer engine optimisation (AEO)', 'Generative Engine Optimization'],
-  serviceType: 'AI SEO / Generative Engine Optimization',
+  serviceType: 'Generative Engine Optimization (GEO)',
   description: DESCRIPTION,
   url: URL,
   provider: { '@id': 'https://www.locully.org/#organization' },
@@ -139,19 +139,43 @@ const workstreams = [
 ];
 
 const stages = [
-  { n: '01', title: 'Week 1–2 · Baseline', body: 'We build your prompt set, run it and map who AI names and which sources it cites. You see where you stand against your direct competitors.' },
-  { n: '02', title: 'Week 3–4 · Plan and first fixes', body: 'We agree priorities with you and start the technical and entity fixes straight away. These are the fastest changes to make.' },
-  { n: '03', title: 'Month 2–3 · Pages and mentions', body: 'New and rewritten pages go live on a schedule. Third-party placements begin. We re-run the prompt set and adjust.' },
-  { n: '04', title: 'Month 3 onward · Compound', body: 'We expand into new questions and new sources, and keep what’s working. GEO builds on itself, so we judge it quarter by quarter.' },
+  {
+    n: '01', when: 'Week 1–2', title: 'Baseline',
+    points: ['We build your prompt set and run it.', 'We map who AI names and which sources it cites.'],
+    out: 'You see where you stand against your direct competitors.',
+  },
+  {
+    n: '02', when: 'Week 3–4', title: 'Plan and first fixes',
+    points: ['We agree priorities with you.', 'Technical and entity fixes start straight away.'],
+    out: 'The fastest changes get made first.',
+  },
+  {
+    n: '03', when: 'Month 2–3', title: 'Pages and mentions',
+    points: ['New and rewritten pages go live on a schedule.', 'Third-party placements begin.'],
+    out: 'We re-run the prompt set and adjust.',
+  },
+  {
+    n: '04', when: 'Month 3 onward', title: 'Compound',
+    points: ['We expand into new questions and new sources.', 'We keep what’s working.'],
+    out: 'GEO builds on itself, so we judge it quarter by quarter.',
+  },
 ];
 
 const measures = [
-  <><strong>Prompt set.</strong> 30 or more real buying questions per business, tagged by stage: exploring, comparing, ready to book.</>,
-  <><strong>Mentioned vs cited.</strong> Did the answer name you? Did it link you? We count them separately.</>,
-  <><strong>Share of voice.</strong> How often you’re named against your direct competitors on the same questions.</>,
-  <><strong>How you’re described.</strong> Being named with the wrong price, location or service is a problem, so we check that too.</>,
-  <><strong>Dated runs.</strong> ChatGPT answers are collected on a schedule, so this month compares fairly with last month. Where your Search Console property shows it, we also track Google’s AI features in the generative AI performance report.</>,
-  <><strong>Business outcome.</strong> We tie visibility to what you care about: enquiries, bookings and consultations, from your own booking records or GA4.</>,
+  { icon: 'chat', t: 'Prompt set', d: '30 or more real buying questions per business, tagged by stage: exploring, comparing, ready to book.' },
+  { icon: 'link', t: 'Mentioned vs cited', d: 'Did the answer name you? Did it link you? We count them separately.' },
+  { icon: 'chart', t: 'Share of voice', d: 'How often you’re named against your direct competitors on the same questions.' },
+  { icon: 'tick', t: 'How you’re described', d: 'Being named with the wrong price, location or service is a problem, so we check that too.' },
+  { icon: 'calendar', t: 'Dated runs', d: 'ChatGPT answers are collected on a schedule, so this month compares fairly with last month. Where your Search Console property shows it, we also track Google’s AI features.' },
+  { icon: 'trend', t: 'Business outcome', d: 'We tie visibility to enquiries, bookings and consultations, from your own booking records or GA4.' },
+];
+
+/* Illustration only: shows the four things one dated run records. Not client data. */
+const runChecks = [
+  { k: 'Mentioned', q: 'Was your name in the answer?', v: 'Yes', tone: 'yes' },
+  { k: 'Cited', q: 'Did the answer link your site?', v: 'No', tone: 'no' },
+  { k: 'Described correctly', q: 'Right service, price and location?', v: 'Yes', tone: 'yes' },
+  { k: 'Competitors named', q: 'Who else was in the answer?', v: '3', tone: 'num' },
 ];
 
 const testItems = [
@@ -218,6 +242,7 @@ export default function GeoPage() {
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
       </Helmet>
+      <Hreflang path="/geo/" />
 
       <Page className="lbp-geo">
         <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'GEO' }]} />
@@ -225,13 +250,18 @@ export default function GeoPage() {
         {/* Hero */}
         <PageHero
           eyebrow="GEO · Generative engine optimisation · Bangkok"
-          title="AI SEO agency that helps you get found in ChatGPT and Google AI"
-          lede="Locully is an AI SEO agency in Bangkok, Thailand. We do generative engine optimisation (GEO): the work that makes your business easier for ChatGPT, Perplexity and Google AI Overviews to find, trust and cite."
-          visual={<AskAi />}
+          title="GEO agency in Bangkok that gets you found in ChatGPT and Google AI"
+          lede="Locully is a GEO agency in Bangkok, Thailand. Generative engine optimisation (GEO), also called AI SEO, is the work that makes your business easier for ChatGPT, Perplexity and Google AI Overviews to find, trust and cite."
+          visual={(
+            <figure className="lbp-geo-shot">
+              <img src="/images/geo/ai-visibility-tracker.jpg" alt="Locully's AI visibility tracker: prompts won and lost each run, links in ChatGPT answers, and results by type of question" width="1280" height="1214" decoding="async" />
+              <figcaption>Our tracker, client view. Prompt text is blurred for confidentiality.</figcaption>
+            </figure>
+          )}
         >
           <p className="lb-body-lg lbp-geo-hero-line">We’ve done SEO since 2020. Now we do the same job inside AI answers.</p>
           <Cta note="Free. We check how AI answers questions about your business and send you what we find." />
-          <p className="lb-note lbp-geo-updated">Updated September 2026</p>
+          <p className="lb-note lbp-geo-updated">Updated November 2026</p>
         </PageHero>
 
         {/* In short */}
@@ -239,65 +269,82 @@ export default function GeoPage() {
           <div className="lb-callout lbp-geo-tldr">
             <span className="lb-label">In short</span>
             <p>
-              Locully is a Bangkok AI SEO agency that does generative engine optimisation (GEO) for service businesses in
-              Thailand and Singapore. The work has four parts: AI crawlers can read your site, the facts about your
-              business match everywhere, the third-party sites AI engines trust mention you, and your pages answer buying
-              questions directly. Locully measures progress on a fixed set of real customer questions, re-run on a
-              schedule, and reports what AI actually says about you. No agency can promise a model will name you.
+              Locully is a Bangkok GEO agency. We do generative engine optimisation (GEO) for service businesses in
+              Thailand and Singapore. The work has four parts:
+            </p>
+            <List items={[
+              'AI crawlers can read your site.',
+              'The facts about your business match everywhere.',
+              'The third-party sites AI engines trust mention you.',
+              'Your pages answer buying questions directly.',
+            ]} />
+            <p>
+              We measure progress on a fixed set of real customer questions, re-run on a schedule, and report what AI
+              actually says about you. No agency can promise a model will name you.
             </p>
           </div>
         </Section>
 
         {/* Definition */}
         <Section>
-          <SectionHeader eyebrow="Definition" title="What an AI SEO agency does" />
-          <div className="lb-narrow-copy">
+          <SectionHeader eyebrow="Definition" title="What a GEO agency does" />
+          <div className="lb-narrow-copy lbp-geo-copy">
             <p className="lb-body-lg">
-              An AI SEO agency makes a business easier for AI assistants to recommend. When someone asks ChatGPT “best
+              A GEO agency makes a business easier for AI assistants to recommend. When someone asks ChatGPT “best
               international school in Bangkok” or “which property agent for expats in Sukhumvit”, the assistant writes one
-              answer. It names two or three businesses. An AI SEO agency works on the signals that decide which names
+              answer. It names two or three businesses. A GEO agency works on the signals that decide which names
               those are.
             </p>
-            <p className="lb-body-lg">
-              The industry has several names for this work. Generative engine optimisation (GEO) comes from a 2023
-              research paper by Pranjal Aggarwal and colleagues,{' '}
-              <Ext href="https://arxiv.org/abs/2311.09735">“GEO: Generative Engine Optimization”</Ext>, later published at
-              KDD 2024. You’ll also see AI SEO, AI search optimisation, answer engine optimisation (AEO) and LLM
-              visibility. It’s the same job. Locully calls it GEO and runs it as one service.
-            </p>
+            <h3 className="lb-h3">One job, several names</h3>
+            <List large items={[
+              <><strong>GEO (generative engine optimisation).</strong> The name comes from a 2023 research paper by Pranjal Aggarwal and colleagues, <Ext href="https://arxiv.org/abs/2311.09735">“GEO: Generative Engine Optimization”</Ext>, later published at KDD 2024.</>,
+              <><strong>AI SEO</strong> and <strong>AI search optimisation.</strong></>,
+              <><strong>AEO</strong> (answer engine optimisation).</>,
+              <><strong>LLM visibility.</strong></>,
+            ]} />
+            <p className="lb-body-lg">It’s the same job. Locully calls it GEO and runs it as one service.</p>
+            <h3 className="lb-h3">What GEO adds to SEO</h3>
             <p className="lb-body-lg">
               GEO sits on top of SEO and builds on it. The pages and signals that earn a Google ranking also feed the AI
-              answers. GEO adds the parts SEO often skips: third-party mentions, entity consistency, and measuring what
-              the models say about you.
+              answers. GEO adds the parts SEO often skips:
             </p>
+            <List large items={[
+              'Third-party mentions.',
+              'Entity consistency.',
+              'Measuring what the models say about you.',
+            ]} />
           </div>
         </Section>
 
         {/* Why */}
         <Section alt>
-          <SectionHeader eyebrow="The shift" title="Why AI search changes who gets the customer" />
-          <div className="lb-narrow-copy">
-            <p className="lb-body-lg">
-              AI search changes the buying journey because the answer arrives before the click. People ask a question
-              and read one reply. The businesses inside that reply are the ones most likely to get the enquiry. The rest
-              may never make the shortlist.
+          <SectionHeader
+            eyebrow="The shift"
+            title="Why AI search changes who gets the customer"
+            lede="The answer now arrives before the click. People ask a question and read one reply. The businesses inside that reply are the ones most likely to get the enquiry."
+          />
+          <StatRow className="lbp-geo-stats" stats={[
+            { n: '900M', l: 'weekly active ChatGPT users, February 2026' },
+            { n: '8% vs 15%', l: 'of US Google visits ended in a click on a traditional result, with an AI summary vs without' },
+            { n: '1%', l: 'of those visits clicked a link inside the AI summary' },
+          ]} />
+          <div className="lb-narrow-copy lbp-geo-copy lbp-geo-after">
+            <p className="lb-note">
+              Sources:{' '}
+              <Ext href="https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users">OpenAI’s announcement, reported by TechCrunch</Ext>;{' '}
+              <Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research Center, July 2025</Ext>.
             </p>
             <p className="lb-body-lg">
-              The scale is no longer small. ChatGPT reached{' '}
-              <Ext href="https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users">900 million weekly active users in February 2026</Ext>,
-              per OpenAI’s announcement reported by TechCrunch. See{' '}
-              <Link to="/blog/how-many-people-use-chatgpt/">how many people use ChatGPT</Link> for the full trend. On
-              Google,{' '}
-              <Ext href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research Center found in July 2025</Ext>{' '}
-              that US Google users clicked a traditional result on 8% of visits when an AI summary appeared, against 15%
-              without one. They clicked a link inside the summary on only 1% of visits.
+              So ranking alone gets you less than it did, and being named inside the answer matters more. The full
+              numbers:
             </p>
-            <p className="lb-body-lg">
-              So ranking alone gets you less than it did, and being named inside the answer matters more. For the full
-              numbers, read our <Link to="/blog/ai-search-statistics/">AI search statistics roundup</Link> and our
-              breakdown of <Link to="/blog/zero-click-search-statistics/">zero-click search statistics</Link>.
-            </p>
+            <List large items={[
+              <Link key="a" to="/blog/how-many-people-use-chatgpt/">How many people use ChatGPT</Link>,
+              <Link key="b" to="/blog/ai-search-statistics/">AI search statistics roundup</Link>,
+              <Link key="c" to="/blog/zero-click-search-statistics/">Zero-click search statistics</Link>,
+            ]} />
           </div>
+          <Cta center note="Free. See which AI answers name you and which name a competitor." />
         </Section>
 
         {/* Mechanics */}
@@ -309,7 +356,10 @@ export default function GeoPage() {
           />
           <div className="lb-g2">
             {signals.map((s) => (
-              <ServiceCard key={s.title} icon={s.icon} title={s.title}>{s.body}{s.extra && <> {s.extra}</>}</ServiceCard>
+              <ServiceCard key={s.title} icon={s.icon} title={s.title}>
+                <p>{s.body}</p>
+                {s.extra && <p>{s.extra}</p>}
+              </ServiceCard>
             ))}
           </div>
           <div className="lb-narrow-copy lbp-geo-after">
@@ -324,13 +374,13 @@ export default function GeoPage() {
         {/* GEO vs SEO */}
         <Section alt>
           <SectionHeader eyebrow="GEO vs SEO" title="GEO vs SEO: what changes and what doesn’t" />
-          <div className="lb-narrow-copy">
-            <p className="lb-body-lg">
-              GEO and SEO share one foundation, and GEO adds work on top.{' '}
-              <Ext href={GOOGLE_AI_GUIDE}>Google’s guidance on generative AI features</Ext> says SEO best practice still
-              applies to AI Overviews and AI Mode. It also says you can ignore “hacks” like special AI text files,
-              chunking tricks and fake mentions. We agree. Locully doesn’t sell hacks.
-            </p>
+          <div className="lb-narrow-copy lbp-geo-copy">
+            <p className="lb-body-lg">GEO and SEO share one foundation, and GEO adds work on top.</p>
+            <List large items={[
+              <><Ext href={GOOGLE_AI_GUIDE}>Google’s guidance on generative AI features</Ext> says SEO best practice still applies to AI Overviews and AI Mode.</>,
+              'It also says you can ignore “hacks” like special AI text files, chunking tricks and fake mentions.',
+              'We agree. Locully doesn’t sell hacks.',
+            ]} />
           </div>
           <div className="lb-table-wrap lbp-geo-table">
             <table className="lb-table">
@@ -368,6 +418,7 @@ export default function GeoPage() {
               <ServiceCard key={w.title} icon={w.icon} title={w.title}>{w.body}</ServiceCard>
             ))}
           </div>
+          <Cta center note="Free. The audit shows which of these your business needs first." />
         </Section>
 
         {/* Process */}
@@ -375,13 +426,22 @@ export default function GeoPage() {
           <SectionHeader
             eyebrow="The process"
             title="How a GEO engagement runs"
-            lede="A Locully GEO engagement runs in four stages. The first thing you get is a clear picture of where you stand. Visibility follows the work."
+            lede="Four stages. The first thing you get is a clear picture of where you stand. Visibility follows the work."
           />
-          <div className="lb-stages">
+          <ol className="lbp-geo-steps">
             {stages.map((s) => (
-              <Stage key={s.n} n={s.n} title={s.title}>{s.body}</Stage>
+              <li key={s.n} className="lbp-geo-step">
+                <span className="lbp-geo-step-dot" aria-hidden="true">{s.n}</span>
+                <div className="lbp-geo-step-card">
+                  <span className="lbp-geo-step-when">{s.when}</span>
+                  <h3 className="lb-h3">{s.title}</h3>
+                  <List items={s.points} />
+                  <p className="lbp-geo-step-out">{s.out}</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
+          <Cta center note="Step one is free. No commitment." />
         </Section>
 
         {/* Measurement */}
@@ -389,11 +449,38 @@ export default function GeoPage() {
           <SectionHeader
             eyebrow="Measurement"
             title="How we measure AI search visibility"
-            lede="Locully measures AI search visibility on a fixed prompt set, re-run on a schedule. A figure means nothing without the questions behind it and the date it was measured, so every number we report comes with both."
+            lede="A fixed prompt set, re-run on a schedule. Every number we report comes with the questions behind it and the date it was measured."
           />
-          <div className="lb-panel lbp-geo-measure">
-            <List large items={measures} />
+          <div className="lbp-geo-m">
+            <figure className="lbp-geo-run">
+              <span className="lbp-geo-run-lab">One question · one dated run</span>
+              <blockquote className="lbp-geo-run-q">“Which property agent is best for expats in Sukhumvit?”</blockquote>
+              <ul className="lbp-geo-run-list">
+                {runChecks.map((c) => (
+                  <li key={c.k}>
+                    <div>
+                      <strong>{c.k}</strong>
+                      <span>{c.q}</span>
+                    </div>
+                    <em className={c.tone}>{c.v}</em>
+                  </li>
+                ))}
+              </ul>
+              <figcaption>Illustration of what each run records. Not client data.</figcaption>
+            </figure>
+            <ul className="lbp-geo-m-grid">
+              {measures.map((m) => (
+                <li key={m.t}>
+                  <Icon name={m.icon} className="lbp-geo-m-ic" />
+                  <div>
+                    <h3 className="lb-h3">{m.t}</h3>
+                    <p>{m.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
+          <Cta center note="Free. Your first run, on your customers’ real questions." />
         </Section>
 
         {/* Self-test */}
@@ -441,34 +528,20 @@ export default function GeoPage() {
               ]} />
             </div>
           </div>
-        </Section>
-
-        {/* Who does the work */}
-        <Section>
-          <SectionHeader eyebrow="The team" title="Who does the GEO work at Locully" />
-          <div className="lb-narrow-copy">
-            <p className="lb-body-lg">
-              Locully’s founder, Rachaphon “Sunny” Sakchiraphong, runs strategy on every GEO account. A Bangkok team
-              handles SEO, content and reporting. Locully was founded in 2020 and rebranded as Locully in 2025. It works
-              with businesses in Bangkok, across Thailand and in Singapore, in English and Thai.
-            </p>
-            <p className="lb-body-lg">
-              <Button variant="text" to="/about">More about Locully and the team</Button>
-            </p>
-          </div>
+          <Cta center note="No cost, no commitment." />
         </Section>
 
         {/* FAQ */}
-        <Section alt>
-          <SectionHeader eyebrow="FAQ" title="GEO and AI SEO questions, answered" />
+        <Section>
+          <SectionHeader eyebrow="FAQ" title="GEO questions, answered" />
           <FAQ qAs="h3" items={faqs.map((f) => ({ q: f.q, a: f.a || f.text }))} />
         </Section>
 
         {/* Lead form */}
         <LeadForm
-          alt={false}
-          eyebrow="AI audit"
-          title="Get your AI audit"
+          alt
+          eyebrow="GEO audit"
+          title="Get your free GEO audit"
           lede="Tell us your website. We’ll check what AI assistants say when your customers ask for a business like yours, and send you what we find. No cost, no commitment."
           subject="New AI Visibility Check Request (GEO page) — Locully"
           idPrefix="geo"

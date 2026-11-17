@@ -7,6 +7,7 @@ import {
   FAQ, Stage, ResultsNote,
 } from '@/brand/components';
 import LeadForm from '@/brand/LeadForm';
+import { Hreflang } from '@/i18n';
 import '@/brand/pages/performance.css';
 
 const URL = 'https://www.locully.org/performance-marketing/';
@@ -139,6 +140,7 @@ export default function PerformanceMarketingPage() {
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaCrumbs)}</script>
       </Helmet>
+      <Hreflang path="/performance-marketing/" />
 
       <Page className="lbp-pm">
         <Breadcrumb items={[{ label: 'Home', to: '/' }, { label: 'Performance marketing' }]} />

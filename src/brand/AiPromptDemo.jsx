@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useLocale } from '@/i18n';
 import './prompt.css';
 
 /* Animated mock of someone asking ChatGPT: the question types into a prompt box, sends, and the
@@ -17,7 +18,13 @@ const ArrowUp = () => (
   </svg>
 );
 
+const COPY = {
+  en: { asks: (engine) => `Someone asks ${engine}`, example: 'Example', answers: (engine) => `${engine} answers` },
+  th: { asks: (engine) => `มีคนถาม ${engine}`, example: 'ตัวอย่าง', answers: (engine) => `${engine} ตอบว่า` },
+};
+
 export default function AiPromptDemo({ demo, className }) {
+  const c = COPY[useLocale()];
   const engine = demo.engine || 'ChatGPT';
   const q = demo.question;
   // Server/prerender and first client render show the finished state; the effect rewinds it.
@@ -64,8 +71,8 @@ export default function AiPromptDemo({ demo, className }) {
     <figure ref={ref} className={['lb-pd', `is-${phase}`, className].filter(Boolean).join(' ')}>
       <div className="lb-pd-box">
         <span className="lb-pd-label">
-          Someone asks {engine}
-          <span className="lb-pd-tag">Example</span>
+          {c.asks(engine)}
+          <span className="lb-pd-tag">{c.example}</span>
         </span>
         {/* The full question sets the layout; while animating it is transparent and the typed
             prefix is overlaid on top, so the box never reflows as characters appear. */}
@@ -86,7 +93,7 @@ export default function AiPromptDemo({ demo, className }) {
 
       <div className={`lb-pd-a${shown ? ' shown' : ''}`}>
         <span className="lb-pd-label">
-          {engine} answers
+          {c.answers(engine)}
           {phase === 'thinking' && <span className="lb-pd-think" aria-hidden="true"><i /><i /><i /></span>}
         </span>
         <p className="lb-pd-intro lb-pd-in" style={{ '--d': 0 }}>{demo.intro}</p>

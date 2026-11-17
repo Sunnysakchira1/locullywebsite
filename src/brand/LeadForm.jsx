@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 import { logFormSubmission } from '@/lib/analytics';
-import { CTA_LABEL } from '@/brand/components';
+import { useT } from '@/i18n';
 
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbdzjegj';
 export const DEFAULT_SUBJECT = 'New AI Visibility Audit Request — Locully';
@@ -19,8 +19,10 @@ const emptyForm = (extraFields) => ({
  * `extraFields` (optional): [{ name, label, placeholder, autoComplete }] adds
  * optional text inputs after Website; their values post with the same payload.
  */
-export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hint, extraFields = [], ctaLabel = CTA_LABEL }) => {
+export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hint, extraFields = [], ctaLabel }) => {
   const { toast } = useToast();
+  const t = useT();
+  const f = t.form;
   const [formData, setFormData] = useState(() => emptyForm(extraFields));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -42,13 +44,13 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.website) {
-      toast({ title: 'Missing Information', description: 'Please fill in all required fields.', variant: 'destructive' });
+      toast({ title: f.missingT, description: f.missingD, variant: 'destructive' });
       return;
     }
     // Accept "example.com", "www.example.com" or a full URL; add https:// when it's missing.
     const site = formData.website.trim();
     if (/\s/.test(site) || !/\.[a-z]{2,}/i.test(site)) {
-      toast({ title: 'Check your website', description: 'Enter your website address, e.g. yourbusiness.com', variant: 'destructive' });
+      toast({ title: f.siteT, description: f.siteD, variant: 'destructive' });
       return;
     }
     const website = /^https?:\/\//i.test(site) ? site : `https://${site}`;
@@ -62,11 +64,11 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
       const data = await res.json();
       if (!res.ok || data.error) throw new Error(data.error || 'Submission failed');
       setIsSubmitted(true);
-      toast({ title: 'Request Sent!', description: "We've received your audit request and will be in touch shortly." });
+      toast({ title: f.okT, description: f.okD });
       logFormSubmission('AI Visibility Audit Request', true);
       setTimeout(() => { setFormData(emptyForm(extraFields)); setIsSubmitted(false); }, 4000);
     } catch {
-      toast({ title: 'Something went wrong', description: 'Please try again or email us at admin@locully.org.', variant: 'destructive' });
+      toast({ title: f.errT, description: f.errD, variant: 'destructive' });
     } finally {
       setIsSubmitting(false);
     }
@@ -76,30 +78,30 @@ export const LeadFormCard = ({ subject = DEFAULT_SUBJECT, idPrefix = 'lead', hin
 
   return (
     <form className="lb-lead" onSubmit={handleSubmit} action={FORMSPREE_ENDPOINT} method="POST">
-      <label htmlFor={`${idPrefix}-name`}>Your name</label>
+      <label htmlFor={`${idPrefix}-name`}>{f.name}</label>
       <input id={`${idPrefix}-name`} name="name" type="text" autoComplete="name" value={formData.name}
-        onChange={handleChange} placeholder="Your name" disabled={disabled} required />
-      <label htmlFor={`${idPrefix}-email`}>Email</label>
+        onChange={handleChange} placeholder={f.namePh} disabled={disabled} required />
+      <label htmlFor={`${idPrefix}-email`}>{f.email}</label>
       <input id={`${idPrefix}-email`} name="email" type="email" autoComplete="email" value={formData.email}
         onChange={handleChange} placeholder="you@yourbusiness.com" disabled={disabled} required />
-      <label htmlFor={`${idPrefix}-website`}>Website</label>
+      <label htmlFor={`${idPrefix}-website`}>{f.website}</label>
       <input id={`${idPrefix}-website`} name="website" type="text" inputMode="url" autoComplete="url"
         autoCapitalize="none" autoCorrect="off" spellCheck={false} value={formData.website}
         onChange={handleChange} placeholder="yourbusiness.com" disabled={disabled} required />
-      {extraFields.map((f) => (
-        <React.Fragment key={f.name}>
-          <label htmlFor={`${idPrefix}-${f.name}`}>{f.label} <span className="lb-opt">(optional)</span></label>
-          <input id={`${idPrefix}-${f.name}`} name={f.name} type="text" autoComplete={f.autoComplete || 'off'}
-            value={formData[f.name]} onChange={handleChange} placeholder={f.placeholder} disabled={disabled} />
+      {extraFields.map((x) => (
+        <React.Fragment key={x.name}>
+          <label htmlFor={`${idPrefix}-${x.name}`}>{x.label} <span className="lb-opt">{f.optional}</span></label>
+          <input id={`${idPrefix}-${x.name}`} name={x.name} type="text" autoComplete={x.autoComplete || 'off'}
+            value={formData[x.name]} onChange={handleChange} placeholder={x.placeholder} disabled={disabled} />
         </React.Fragment>
       ))}
       {hint && <p className="lb-hint">{hint}</p>}
       <button type="submit" className={`lb-btn block${isSubmitted ? ' done' : ''}`} disabled={disabled}>
-        {isSubmitting ? (<><span className="lb-spin" aria-hidden="true" /> Sending…</>)
-          : isSubmitted ? 'Request sent'
-          : ctaLabel}
+        {isSubmitting ? (<><span className="lb-spin" aria-hidden="true" /> {f.sending}</>)
+          : isSubmitted ? f.sent
+          : (ctaLabel || t.cta)}
       </button>
-      <p className="lb-fine">Or call <a href="tel:+66626959444">+66 62 695 9444</a> · admin@locully.org</p>
+      <p className="lb-fine">{f.orCall} <a href="tel:+66626959444">+66 62 695 9444</a> · admin@locully.org</p>
     </form>
   );
 };

@@ -12,6 +12,7 @@ import {
   ProofPanel, ResultsNote,
 } from '@/brand/components';
 import { Clinic, AskAi } from '@/brand/Illustrations';
+import { Hreflang } from '@/i18n';
 import '@/brand/pages/clinic.css';
 
 const SITE = 'https://www.locully.org';
@@ -91,6 +92,7 @@ export default function IndustryPage({ slug }) {
         <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaCrumbs)}</script>
       </Helmet>
+      <Hreflang path={`/industries/${slug}/`} />
 
       <Page className="lbp-clinic lbp-ind">
         <Breadcrumb items={[

@@ -157,6 +157,71 @@
       "source": "/industries/:slug([^/.]+)",
       "destination": "/industries/:slug/",
       "permanent": true
+    },
+    {
+      "source": "/th",
+      "destination": "/th/",
+      "permanent": true
+    },
+    {
+      "source": "/th/geo",
+      "destination": "/th/geo/",
+      "permanent": true
+    },
+    {
+      "source": "/th/seo",
+      "destination": "/th/seo/",
+      "permanent": true
+    },
+    {
+      "source": "/th/performance-marketing",
+      "destination": "/th/performance-marketing/",
+      "permanent": true
+    },
+    {
+      "source": "/th/audit",
+      "destination": "/th/audit/",
+      "permanent": true
+    },
+    {
+      "source": "/th/contact",
+      "destination": "/th/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/th/blog",
+      "destination": "/th/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/th/rachaphon-sakchiraphong",
+      "destination": "/th/rachaphon-sakchiraphong/",
+      "permanent": true
+    },
+    {
+      "source": "/th/industries",
+      "destination": "/th/industries/",
+      "permanent": true
+    },
+    {
+      "source": "/th/industries/:slug([^/.]+)",
+      "destination": "/th/industries/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/th/about/",
+      "destination": "/th/about",
+      "permanent": true
+    },
+    {
+      "source": "/th/lead-gen-partner/",
+      "destination": "/th/lead-gen-partner",
+      "permanent": true
+    },
+    {
+      "source": "/th/privacy-policy/",
+      "destination": "/th/privacy-policy",
+      "permanent": true
     }
   ]
 }

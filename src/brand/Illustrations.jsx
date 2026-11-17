@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocale } from '@/i18n';
 
 /*
  * Flat hero illustrations in the homepage style (Main.dc.html, viewBox 0 0 560 330):
@@ -19,8 +20,44 @@ const RULE = '#e7e2d9';
 const NEUTRAL = '#f3f1ed';
 const FONT = 'Google Sans, system-ui, sans-serif';
 
-const Frame = ({ id, label, floor = true, children }) => (
-  <svg viewBox="0 0 560 330" role="img" aria-label={label} className="lb-illo">
+/* Visible and spoken text, per locale. `label` on <Frame> is a key into `labels`. */
+const COPY = {
+  en: {
+    labels: {
+      askAi: 'Illustration: a person at a laptop asking ChatGPT for a recommendation',
+      article: 'Illustration: an article with a chart, under a magnifying glass',
+      clinic: 'Illustration: a clinic, and a phone asking an AI assistant for the best clinic nearby',
+      team: 'Illustration: two people talking over a laptop',
+      expo: 'Illustration: an expo booth with visitors becoming qualified leads',
+      packages: 'Illustration: three package cards with ticked deliverables',
+      privacy: 'Illustration: a policy document protected by a shield and lock',
+      lost: 'Illustration: a folded map with a dashed route and a question-mark pin',
+    },
+    chatPrompt: 'What can I help with?',
+    askQuery: 'best [your business] in Bangkok?',
+    clinicQuery: 'best clinic near me?',
+  },
+  th: {
+    labels: {
+      askAi: 'ภาพประกอบ: คนนั่งหน้าแล็ปท็อป กำลังถาม ChatGPT ให้ช่วยแนะนำ',
+      article: 'ภาพประกอบ: บทความที่มีกราฟ อยู่ใต้แว่นขยาย',
+      clinic: 'ภาพประกอบ: คลินิก และโทรศัพท์ที่กำลังถาม AI ว่าคลินิกไหนดีที่สุดในบริเวณใกล้เคียง',
+      team: 'ภาพประกอบ: คนสองคนคุยกันหน้าแล็ปท็อป',
+      expo: 'ภาพประกอบ: บูธงานเอ็กซ์โป และผู้เข้าชมที่กลายเป็นลีดคุณภาพ',
+      packages: 'ภาพประกอบ: การ์ดแพ็กเกจสามใบ พร้อมรายการงานที่ติ๊กแล้ว',
+      privacy: 'ภาพประกอบ: เอกสารนโยบายที่มีโล่และแม่กุญแจปกป้อง',
+      lost: 'ภาพประกอบ: แผนที่พับ มีเส้นทางเป็นเส้นประ และหมุดเครื่องหมายคำถาม',
+    },
+    chatPrompt: 'มีอะไรให้ช่วยไหม',
+    askQuery: '[ธุรกิจของคุณ] ที่ดีที่สุดในกรุงเทพฯ',
+    clinicQuery: 'คลินิกที่ดีที่สุดใกล้ฉัน',
+  },
+};
+
+const Frame = ({ id, label, floor = true, children }) => {
+  const locale = useLocale();
+  return (
+  <svg viewBox="0 0 560 330" role="img" aria-label={COPY[locale].labels[label]} className="lb-illo">
     <defs>
       <clipPath id={`lbclip-${id}`}><rect x="0" y="0" width="560" height="330" rx="24" /></clipPath>
     </defs>
@@ -30,19 +67,22 @@ const Frame = ({ id, label, floor = true, children }) => (
       {children}
     </g>
   </svg>
-);
+  );
+};
 
 /* Person at a laptop asking ChatGPT (the homepage illustration). */
-export const AskAi = ({ query = 'best [your business] in Bangkok?' }) => (
-  <Frame id="ask-ai" label="Illustration: a person at a laptop asking ChatGPT for a recommendation">
+export const AskAi = ({ query }) => {
+  const c = COPY[useLocale()];
+  return (
+  <Frame id="ask-ai" label="askAi">
     <rect x="196" y="38" width="320" height="206" rx="14" fill={INK} />
     <rect x="208" y="50" width="296" height="182" rx="7" fill="#ffffff" />
     <circle cx="228" cy="70" r="8" fill={INK} />
     <path d="M224.5 70h7M228 66.5v7" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" />
     <text x="244" y="75" fontFamily={FONT} fontSize="13" fontWeight="600" fill={INK}>ChatGPT</text>
-    <text x="356" y="126" textAnchor="middle" fontFamily={FONT} fontSize="16" fontWeight="500" fill={INK}>What can I help with?</text>
+    <text x="356" y="126" textAnchor="middle" fontFamily={FONT} fontSize="16" fontWeight="500" fill={INK}>{c.chatPrompt}</text>
     <rect x="226" y="158" width="260" height="42" rx="21" fill={NEUTRAL} stroke={RULE} />
-    <text x="244" y="184" fontFamily={FONT} fontSize="12.5" fill={INK}>{query}</text>
+    <text x="244" y="184" fontFamily={FONT} fontSize="12.5" fill={INK}>{query || c.askQuery}</text>
     <rect x="436" y="171" width="2" height="16" fill={ACC} />
     <circle cx="467" cy="179" r="13" fill={INK} />
     <path d="M467 185v-11M462 178.5l5-5 5 5" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
@@ -56,11 +96,12 @@ export const AskAi = ({ query = 'best [your business] in Bangkok?' }) => (
     <ellipse cx="163" cy="152" rx="8" ry="12" fill={SKIN} />
     <path d="M84 110C98 92 138 88 156 108" stroke={INK2} strokeWidth="6" strokeLinecap="round" fill="none" />
   </Frame>
-);
+  );
+};
 
 /* Article sheet, a navy back card and a magnifier: guides and insights. */
 export const Article = () => (
-  <Frame id="article" label="Illustration: an article with a chart, under a magnifying glass">
+  <Frame id="article" label="article">
     <rect x="352" y="62" width="150" height="190" rx="14" fill={INK} />
     <rect x="372" y="86" width="84" height="9" rx="4.5" fill="#ffffff" />
     <rect x="372" y="104" width="58" height="9" rx="4.5" fill="#ffffff" />
@@ -106,8 +147,10 @@ const Emblem = ({ type }) => {
 };
 
 /* Clinic storefront with an emblem, and a phone asking an AI for a clinic. */
-export const Clinic = ({ type }) => (
-  <Frame id={`clinic-${type || 'any'}`} label="Illustration: a clinic, and a phone asking an AI assistant for the best clinic nearby">
+export const Clinic = ({ type }) => {
+  const c = COPY[useLocale()];
+  return (
+  <Frame id={`clinic-${type || 'any'}`} label="clinic">
     <rect x="70" y="100" width="230" height="182" fill="#ffffff" />
     <rect x="58" y="84" width="254" height="28" rx="7" fill={INK} />
     <circle cx="185" cy="140" r="27" fill={ACC} />
@@ -122,7 +165,7 @@ export const Clinic = ({ type }) => (
     <rect x="370" y="58" width="130" height="224" rx="15" fill="#ffffff" />
     <rect x="410" y="64" width="50" height="6" rx="3" fill={INK} />
     <rect x="386" y="84" width="104" height="30" rx="15" fill={NEUTRAL} stroke={RULE} />
-    <text x="398" y="103" fontFamily={FONT} fontSize="10.5" fill={INK}>best clinic near me?</text>
+    <text x="398" y="103" fontFamily={FONT} fontSize="10.5" fill={INK}>{c.clinicQuery}</text>
     <rect x="382" y="126" width="106" height="92" rx="11" fill={TINT} stroke="#f0c9ae" />
     <circle cx="398" cy="145" r="7" fill={ACC} />
     <rect x="412" y="141" width="60" height="8" rx="4" fill={INK} />
@@ -132,11 +175,12 @@ export const Clinic = ({ type }) => (
     <rect x="382" y="230" width="106" height="8" rx="4" fill={NEUTRAL} />
     <rect x="382" y="246" width="84" height="8" rx="4" fill={NEUTRAL} />
   </Frame>
-);
+  );
+};
 
 /* Two people talking over a laptop: the team. */
 export const Team = () => (
-  <Frame id="team" label="Illustration: two people talking over a laptop">
+  <Frame id="team" label="team">
     <rect x="44" y="38" width="170" height="60" rx="18" fill="#ffffff" stroke={RULE} strokeWidth="1.5" />
     <rect x="64" y="58" width="110" height="8" rx="4" fill={INK} />
     <rect x="64" y="74" width="76" height="8" rx="4" fill={STONE} />
@@ -161,7 +205,7 @@ export const Team = () => (
 
 /* Expo booth feeding leads into a form. */
 export const Expo = () => (
-  <Frame id="expo" label="Illustration: an expo booth with visitors becoming qualified leads">
+  <Frame id="expo" label="expo">
     <rect x="46" y="54" width="288" height="200" rx="12" fill="#ffffff" stroke={RULE} strokeWidth="1.5" />
     <rect x="46" y="54" width="288" height="46" rx="12" fill={INK} />
     <rect x="46" y="84" width="288" height="16" fill={INK} />
@@ -191,7 +235,7 @@ export const Expo = () => (
 
 /* Three stacked package cards, the front one ticked. */
 export const Packages = () => (
-  <Frame id="packages" label="Illustration: three package cards with ticked deliverables">
+  <Frame id="packages" label="packages">
     <rect x="96" y="78" width="170" height="196" rx="16" fill="#ffffff" stroke={RULE} strokeWidth="1.5" />
     <rect x="118" y="100" width="70" height="10" rx="5" fill={STONE} />
     <rect x="118" y="124" width="120" height="7" rx="3.5" fill={NEUTRAL} />
@@ -217,7 +261,7 @@ export const Packages = () => (
 
 /* A policy sheet behind a navy shield with an orange lock. */
 export const Privacy = () => (
-  <Frame id="privacy" label="Illustration: a policy document protected by a shield and lock">
+  <Frame id="privacy" label="privacy">
     <rect x="118" y="40" width="210" height="244" rx="16" fill="#ffffff" stroke={RULE} strokeWidth="1.5" />
     <rect x="142" y="66" width="120" height="12" rx="6" fill={INK} />
     {[98, 114, 130, 154, 170, 186, 210, 226].map((y, i) => (
@@ -233,7 +277,7 @@ export const Privacy = () => (
 
 /* A folded map with a dashed route and a pin: page not found. */
 export const Lost = () => (
-  <Frame id="lost" label="Illustration: a folded map with a dashed route and a question-mark pin">
+  <Frame id="lost" label="lost">
     <path d="M78 76L200 56L320 76L442 56V262L320 282L200 262L78 282Z" fill="#ffffff" stroke={RULE} strokeWidth="1.5" />
     <path d="M200 56V262M320 76V282" stroke={RULE} strokeWidth="1.5" />
     <path d="M200 56L320 76V282L200 262Z" fill={NEUTRAL} />
