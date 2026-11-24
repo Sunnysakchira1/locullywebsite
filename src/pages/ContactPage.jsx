@@ -125,13 +125,13 @@ const details = [
 const ContactPage = () => (
   <>
     <Helmet>
-      <title>Contact Locully | SEO & GEO Agency in Bangkok</title>
-      <meta name="description" content="Contact Locully, an SEO and GEO agency in Bangkok, Thailand. Call +66 62 695 9444, WhatsApp or send the form. We usually reply within one working day." />
+      <title>Contact Locully | Bangkok, Thailand</title>
+      <meta name="description" content="Contact the Locully team in Bangkok, Thailand. Call +66 62 695 9444, WhatsApp or send the form. We usually reply within one working day." />
       <link rel="canonical" href={URL} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={URL} />
-      <meta property="og:title" content="Contact Locully | SEO & GEO Agency in Bangkok" />
-      <meta property="og:description" content="Contact Locully, an SEO and GEO agency in Bangkok, Thailand. Call, WhatsApp or send the form. We usually reply within one working day." />
+      <meta property="og:title" content="Contact Locully | Bangkok, Thailand" />
+      <meta property="og:description" content="Contact the Locully team in Bangkok, Thailand. Call, WhatsApp or send the form. We usually reply within one working day." />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
     <Hreflang path="/contact/" />

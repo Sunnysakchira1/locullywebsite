@@ -20,7 +20,7 @@ const WHATSAPP_URL = 'https://wa.me/66626959444';
 const CALENDLY_URL = 'https://calendly.com/locully/30min';
 const REPLY_TIME = 'ปกติเราตอบกลับภายในหนึ่งวันทำการ';
 
-const TITLE = 'ติดต่อ Locully | บริษัทรับทำ SEO และ GEO ในกรุงเทพฯ';
+const TITLE = 'ติดต่อ Locully | กรุงเทพฯ ประเทศไทย';
 
 // Facts: /Users/sunny/Locully/wiki/locully/brand.md (§1, §2). Company registration number is
 // not recorded there, so it is deliberately omitted.
@@ -128,12 +128,12 @@ const ContactPageTh = () => (
   <>
     <Helmet>
       <title>{TITLE}</title>
-      <meta name="description" content="ติดต่อ Locully บริษัทรับทำ SEO และ GEO ในกรุงเทพฯ ประเทศไทย โทร +66 62 695 9444 แชตทาง WhatsApp หรือส่งแบบฟอร์ม ปกติเราตอบกลับภายในหนึ่งวันทำการ" />
+      <meta name="description" content="ติดต่อทีม Locully ในกรุงเทพฯ ประเทศไทย โทร +66 62 695 9444 แชตทาง WhatsApp หรือส่งแบบฟอร์ม ปกติเราตอบกลับภายในหนึ่งวันทำการ" />
       <link rel="canonical" href={URL} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={URL} />
       <meta property="og:title" content={TITLE} />
-      <meta property="og:description" content="ติดต่อ Locully บริษัทรับทำ SEO และ GEO ในกรุงเทพฯ ประเทศไทย โทร แชตทาง WhatsApp หรือส่งแบบฟอร์ม ปกติเราตอบกลับภายในหนึ่งวันทำการ" />
+      <meta property="og:description" content="ติดต่อทีม Locully ในกรุงเทพฯ ประเทศไทย โทร แชตทาง WhatsApp หรือส่งแบบฟอร์ม ปกติเราตอบกลับภายในหนึ่งวันทำการ" />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
     <Hreflang path="/contact/" />

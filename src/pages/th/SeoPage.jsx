@@ -302,7 +302,7 @@ export default function SeoPageTh() {
               ค่าบริการ SEO รายเดือนทุกแพ็กเกจจึงรวมงานพื้นฐานที่ทำให้ผู้ช่วย AI อ่านเว็บไซต์ของคุณได้
             </p>
             <p className="lb-body-lg">
-              ถ้า AI Search คือเป้าหมายหลักของคุณ <Link to="/th/geo/">บริการรับทำ GEO และการมองเห็นบน AI Search</Link> ของเราลงลึกกว่า
+              ถ้า AI Search คือเป้าหมายหลักของคุณ <Link to="/th/geo/">บริการรับทำ GEO, AEO และ AI SEO</Link> ของเราลงลึกกว่า
               ด้วยการติดตาม prompt การวางการอ้างอิง และงานด้าน entity
             </p>
           </div>

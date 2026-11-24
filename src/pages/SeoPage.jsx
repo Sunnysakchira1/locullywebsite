@@ -300,7 +300,7 @@ export default function SeoPage() {
               the basics that let AI assistants read your site.
             </p>
             <p className="lb-body-lg">
-              If AI search is your main goal, our <Link to="/geo/">GEO and AI search visibility service</Link> goes deeper, with prompt tracking,
+              If AI search is your main goal, our <Link to="/geo/">GEO and AI SEO service</Link> goes deeper, with prompt tracking,
               citation placements and entity work.
             </p>
           </div>
